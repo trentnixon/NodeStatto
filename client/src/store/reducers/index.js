@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux';
-import customerReducer from './customer';
+import LOAD from "./Load";
+import DATA from "./Data";
 
 export default combineReducers({
-  customers: customerReducer
+  LOAD:LOAD,
+  DATA:DATA
 })

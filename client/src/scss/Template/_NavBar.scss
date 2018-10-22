@@ -1,0 +1,63 @@
+@at-root{
+.DrawerNav{ 
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  
+    nav{
+        width: inherit;
+    }
+    
+    .NavBarTop{
+        background-color: $ColorBase;
+        min-height: 250px;
+        text-align: center;
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+
+        > div{
+            flex-grow:1;
+            width:100%;
+            justify-content:center;
+        }
+        div.UserName{
+        
+            flex-grow:2;
+            display: flex;
+            flex-direction: column;
+
+            div{ flex-grow:1;  align-self: center;}
+            h1{
+                font-size:1.1em;
+            }
+
+        }
+        div.Actions{
+            display: flex;
+            align-items: flex-end;
+            border-bottom:30px solid white;
+
+            div{
+                flex-grow:1;
+                margin-bottom:-12px;
+                button{
+                    background-color: $ColorBase;
+                }
+            }
+        }
+    }
+
+    .NavBarBottom{
+        min-height: 50px;
+    }
+
+    img.NavigationIcon{ width:25px;     margin-right: 16px;}
+    img.NavigationIcon.Bowling{width:20px;     margin-right: 20px;}
+
+}
+}

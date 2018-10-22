@@ -1,0 +1,39 @@
+header{
+ 
+    position: fixed;
+    z-index: 99999;
+
+    #AppBar{
+  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        align-content: center;
+    
+        img.Logo{
+            height: 35px;
+        }
+    
+        .Right{
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .Center{
+            flex-grow: 2;
+            display: flex;
+            justify-content:flex-start;
+            img.NavigationIcon{ width:25px;}
+            img.NavigationIcon.Bowling{width:20px;}
+        }
+        .Left{
+            justify-content: flex-end;
+            display: flex;
+            flex-grow: 1;
+        }
+    } 
+
+}

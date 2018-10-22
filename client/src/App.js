@@ -1,25 +1,20 @@
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import logo from './logo.svg'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./components/Pages/Login";
+import Stage from "./components/Pages/Stage";
+import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 import './App.css'
-import store from './store'
-import Customers from './components/Customer/customers'
 
-class App extends Component {
-
-  render () {
-    return (
-      <Provider store={ store }>
-        <div className="App">
-          <header className="App-header">
-            <img src={ logo } className="App-logo" alt="logo"/>
-            <h1 className="App-title">React/Redux Express Starter</h1>
-          </header>
-          <Customers/>
-        </div>
-      </Provider>
-    )
+export default class App extends Component {
+    render () { 
+      return ( 
+        <Router>
+            <div id="statto-app">	
+              <Route exact path="/" component={Login}/>
+              <Route exact path="/:playerid" component={Stage} /> 
+              <Route exact path="/error/IDError" component={Wrong_ID} />  
+            </div>
+        </Router> 
+     );
+    }
   }
-}
-
-export default App

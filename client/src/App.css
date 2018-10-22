@@ -1,28 +1,126 @@
-.App {
-  text-align: center;
-}
+/* Theme Variables */
+/*- Build up Dom Elements -*/
+#LoadingScreen {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  overflow: hidden; }
+  #LoadingScreen h2 {
+    color: white;
+    text-align: center; }
+  #LoadingScreen .lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    width: 25%;
+    margin: 100px 50%; }
+  #LoadingScreen .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: white;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite; }
+  #LoadingScreen .lds-facebook div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s; }
+  #LoadingScreen .lds-facebook div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s; }
+  #LoadingScreen .lds-facebook div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px; }
+  50%, 100% {
+    top: 19px;
+    height: 26px; } }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto"; }
+  body #root #Statto #Frame header {
+    position: fixed;
+    z-index: 99999; }
+    body #root #Statto #Frame header #AppBar {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+      align-content: center; }
+      body #root #Statto #Frame header #AppBar img.Logo {
+        height: 35px; }
+      body #root #Statto #Frame header #AppBar .Right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-start; }
+      body #root #Statto #Frame header #AppBar .Center {
+        flex-grow: 2;
+        display: flex;
+        justify-content: flex-start; }
+        body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
+          width: 25px; }
+        body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
+          width: 20px; }
+      body #root #Statto #Frame header #AppBar .Left {
+        justify-content: flex-end;
+        display: flex;
+        flex-grow: 1; }
+  .DrawerNav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    .DrawerNav nav {
+      width: inherit; }
+    .DrawerNav .NavBarTop {
+      background-color: #c5e1ff;
+      min-height: 250px;
+      text-align: center;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .DrawerNav .NavBarTop > div {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center; }
+      .DrawerNav .NavBarTop div.UserName {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column; }
+        .DrawerNav .NavBarTop div.UserName div {
+          flex-grow: 1;
+          align-self: center; }
+        .DrawerNav .NavBarTop div.UserName h1 {
+          font-size: 1.1em; }
+      .DrawerNav .NavBarTop div.Actions {
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 30px solid white; }
+        .DrawerNav .NavBarTop div.Actions div {
+          flex-grow: 1;
+          margin-bottom: -12px; }
+          .DrawerNav .NavBarTop div.Actions div button {
+            background-color: #c5e1ff; }
+    .DrawerNav .NavBarBottom {
+      min-height: 50px; }
+    .DrawerNav img.NavigationIcon {
+      width: 25px;
+      margin-right: 16px; }
+    .DrawerNav img.NavigationIcon.Bowling {
+      width: 20px;
+      margin-right: 20px; }
+  body #root #Statto ul.dots li {
+    float: left;
+    width: 15px;
+    height: 15px;
+    list-style: none;
+    margin: 2px 1px; }
