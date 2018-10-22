@@ -5,13 +5,10 @@ const NavBarTop = (props) => (
             props.DATA.CLEAN.map((team,i)=>{
                    // console.log(team)
                    return(
-                       <div key={i}>
-                        Team Name
-                        </div>
+                       <div key={i}> </div>
                    )
             })
         }
-        
     </div>
 );
 
