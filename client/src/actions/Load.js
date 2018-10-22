@@ -70,6 +70,7 @@ export function FetchData(){
                 // eslint-disable-next-line
                 console.log(res.data);
                 store.dispatch({ type:"CURRENTNAME", payload:res.data});
+                // eslint-disable-next-line 
                 this.CallsToApi.map((api,i)=>{ this.FetchData(api.api,api.path);})
             }
             else if(res.data.length === 0){

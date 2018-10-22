@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button'; 
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 // Icons
@@ -46,7 +45,7 @@ export default class APPBARLAYOUT extends React.Component {
     return (
           <div id="AppBar"> 
             <div className="Right">
-              <img src="/assets/Logo.png" className="Logo"/>
+              <img  alt="Logo"  src="/assets/Logo.png" className="Logo"/>
               <IconButton><Backspace /></IconButton>
             </div>
             <div className="Center">

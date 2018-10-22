@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Frame from "../Template/Frame";
-import Component_Home from "./Parents/Home";
-import Component_History from "./Parents/History";
-import Component_Batting from "./Parents/Batting/Batting";
-import Component_FormGuide from "./Parents/Batting/formguide";
-import Component_Runs from "./Parents/Batting/runs";
-import Component_AVG from "./Parents/Batting/avg";
-import Component_FOR from "./Parents/Batting/for";
-import Component_Bowling from "./Parents/Bowling/Bowling";
-import Component_Formguide from "./Parents/Bowling/formguide";
-import Component_Wickets from "./Parents/Bowling/wickets";
-import Component_Bowling_For from "./Parents/Bowling/for";
-import Component_Bowling_AVG from "./Parents/Bowling/averages";
-import Component_Keeping from "./Parents/Keeping/Keeping";
+import ComponentHome from "./Parents/Home";
+import ComponentHistory from "./Parents/History";
+import ComponentBatting from "./Parents/Batting/Batting";
+import ComponentFormGuide from "./Parents/Batting/formguide";
+import ComponentRuns from "./Parents/Batting/runs";
+import ComponentAVG from "./Parents/Batting/avg";
+import ComponentFOR from "./Parents/Batting/for";
+import ComponentBowling from "./Parents/Bowling/Bowling";
+import ComponentFormguide from "./Parents/Bowling/formguide";
+import ComponentWickets from "./Parents/Bowling/wickets";
+import ComponentBowlingFor from "./Parents/Bowling/for";
+import ComponentBowlingAVG from "./Parents/Bowling/averages";
+import ComponentKeeping from "./Parents/Keeping/Keeping";
 
 // Icons
 
@@ -110,19 +110,19 @@ export default class Statto extends Component {
       <Router>
           <Frame {... this.props} Navigation={Navigation}>
             <div id="display-statto-app">
-              <Route  exact path='/:id' render={()=> <Component_Home {... this.props}/> }/>
-              <Route  exact path="/:id/history" render={()=> <Component_History {... this.props}/> }/>
-              <Route  exact path="/:id/batting" render={()=> <Component_Batting {... this.props}/> }/>
-                <Route  exact path='/:id/batting/formguide' render={()=> <Component_FormGuide {... this.props}/> }/>
-                <Route  exact path='/:id/batting/runs' render={()=> <Component_Runs {... this.props}/> }/>
-                <Route  exact path='/:id/batting/averages' render={()=> <Component_AVG {... this.props}/> }/>
-                <Route  exact path='/:id/batting/foragainst' render={()=> <Component_FOR {... this.props}/> }/>
-              <Route  exact path="/:id/bowling" render={()=> <Component_Bowling {... this.props}/> }/>
-                <Route  exact path="/:id/bowling/formguide" render={()=> <Component_Formguide {... this.props}/> }/>
-                <Route  exact path="/:id/bowling/wickets" render={()=> <Component_Wickets {... this.props}/> }/>
-                <Route  exact path="/:id/bowling/foragainst" render={()=> <Component_Bowling_For {... this.props}/> }/>
-                <Route  exact path="/:id/bowling/aes" render={()=> <Component_Bowling_AVG {... this.props}/> }/>
-              <Route  exact path="/:id/keeping/" render={()=> <Component_Keeping {... this.props}/> }/>
+              <Route  exact path='/:id' render={()=> <ComponentHome {... this.props}/> }/>
+              <Route  exact path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
+              <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
+                <Route  exact path='/:id/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
+                <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
+                <Route  exact path='/:id/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>
+                <Route  exact path='/:id/batting/foragainst' render={()=> <ComponentFOR {... this.props}/> }/>
+              <Route  exact path="/:id/bowling" render={()=> <ComponentBowling {... this.props}/> }/>
+                <Route  exact path="/:id/bowling/formguide" render={()=> <ComponentFormguide {... this.props}/> }/>
+                <Route  exact path="/:id/bowling/wickets" render={()=> <ComponentWickets {... this.props}/> }/>
+                <Route  exact path="/:id/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
+                <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
+              <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
                   
                 
             </div>
