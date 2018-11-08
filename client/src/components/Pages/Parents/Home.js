@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PageHeader from "../../Template/Page/Header";
 import Container from "../../Template/Page/Container";
 import Row from "../../Template/Page/Row";
-
+import Pod from "../../Template/Page/Pod";
 // Overview
 import BasicPod from "../Parents/Home/Home_Runs";
 
@@ -22,12 +22,16 @@ export default class Statto extends Component {
     console.log(this.props.DATA)
     return (
       <div>          
+           <PageHeader>
+                    Previous Game Slider
+          </PageHeader>
           <Container>
-            
+           
             
             <Row>
               <div className="col-md-8">
                 <Row>
+
                   <BasicPod 
                       total={this.props.DATA.CAREER.Career.batting.runs}
                       label="Runs"
@@ -49,6 +53,9 @@ export default class Statto extends Component {
                   />
                   
 
+                    <Pod col="col-md-12" >
+                          Rankings. Line Graph
+                    </Pod>
 
 
                   <PlayedFor

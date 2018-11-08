@@ -51,42 +51,6 @@ class Chart_Games_Home extends Component {
                       type="donut"
                       series={HistoryInt}
                       Labels={HistoryYear}
-
-                    />
-
-                    <BasicChart 
-                      type="line"
-                      series={series}
-                      Labels={HistoryYear}
-                    />
-
-
-                    <BasicChart 
-                      type="bar"
-                      series={series}
-                      Labels={HistoryYear}
-
-                    />
-
-                    <BasicChart 
-                      type="area"
-                      series={series}
-                      Labels={HistoryYear}
-
-                    />
-
-                    <BasicChart 
-                      type="pie"
-                      series={HistoryInt}
-                      Labels={HistoryYear}
-
-                    
-                    />
-
-                    <BasicChart 
-                      type="radialBar"
-                      series={HistoryInt}
-                      Labels={HistoryYear}
                     />
             </Pod>
                
