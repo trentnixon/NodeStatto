@@ -7,7 +7,8 @@ const InitialState ={
     KEEPING:null,
     KEEPING_NON_COUNTING:null,
     CLEAN:null,
-    CURRENTNAME:null
+    CURRENTNAME:null,
+    CAREER:null
 }
 
 const LOAD = (state=InitialState, action) =>{ 
@@ -54,6 +55,12 @@ const LOAD = (state=InitialState, action) =>{
             case "STORE_CLEAN":{
                 //console.log(action.payload);
 				return {...state, CLEAN:action.payload}
+				// eslint-disable-next-line 
+				break
+            }
+            case "STORE_CAREER":{
+                //console.log(action.payload);
+				return {...state, CAREER:action.payload}
 				// eslint-disable-next-line 
 				break
             }

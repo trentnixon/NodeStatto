@@ -14,25 +14,57 @@ header{
         align-content: center;
     
         img.Logo{
-            height: 35px;
+            height: 23px;
+            margin: 12px 0 0 0;
         }
     
-        .Right{
-            flex-grow: 1;
-            display: flex;
+        .Left{
+           
             justify-content: flex-start;
+            display: flex;
+            flex-grow: 1;
         }
         .Center{
             flex-grow: 2;
             display: flex;
             justify-content:flex-start;
-            img.NavigationIcon{ width:25px;}
-            img.NavigationIcon.Bowling{width:20px;}
+            img.NavigationIcon{ width:25px;height: 25px;}
+            img.NavigationIcon.Bowling{width:20px;height: 20px;}
+
+            button{
+                a{
+                    display: flex;
+                    svg{
+                        fill:rgba(0, 0, 0, 0.54);
+                    }
+                }
+            }
+            p{
+                margin: 0 5px 0 0;
+                font-size: .8em;
+                text-align: center;
+                float: right;
+                line-height: 4em;
+            }
         }
-        .Left{
-            justify-content: flex-end;
-            display: flex;
+        .Right{
             flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+
+            h1{
+                font-size: 1.1em;
+                line-height: 2.3em;
+                margin: 0 20px 0 10px;
+            }
+            button{
+                a{
+                    display: flex;
+                    svg{
+                        fill:rgba(0, 0, 0, 0.54);
+                    }
+                }
+            }
         }
     } 
 

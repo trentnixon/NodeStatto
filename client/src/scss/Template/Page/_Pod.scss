@@ -1,0 +1,27 @@
+#Pod{
+    padding: 0 15px 15px 0;
+    
+    .Inner{
+        border:1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        padding: 15px;
+        background-color: #fff;
+
+
+            h1{
+                color: $h1Color;
+                font-size: 1.1em;
+                 
+            }
+            h2{
+                color: $h2Color;
+                font-size: 2.5em;
+                margin: 0;
+                line-height: 1.2em;
+            }
+            button{
+                float: right;
+            }
+
+    }
+}

@@ -14,8 +14,10 @@ import Routes from "./Navigation/Global_Routes";
 import StattoAppBarLayout from "./Navigation/AppBar";
 import NavBarTop from "./Navigation/NavBarTop";
 
+// Developer
+import DeveloperRouter from "../../components/Pages/Dev/DevRouter";
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 const styles = theme => ({
   root: {
@@ -52,9 +54,10 @@ const styles = theme => ({
 
 
 
-const NavBarBottom = () => (
+const NavBarBottom = (props) => (
   <div className="NavBarBottom">
-      Bottom Bar
+       
+        <DeveloperRouter {... props}/>
   </div>
 );
 
@@ -65,7 +68,7 @@ const NavLayout = (props) => (
               <NavBarTop {... props}/>
                   <Routes {... props} />
                 <Divider />
-              <NavBarBottom />
+              <NavBarBottom {... props} />
         </div>
 );
 
@@ -80,7 +83,7 @@ class ResponsiveDrawer extends React.Component {
   };
 
   render() {
-    console.log(this.props)
+
     const { classes, theme } = this.props;
 
     return (
@@ -90,14 +93,19 @@ class ResponsiveDrawer extends React.Component {
         <AppBar className={classes.appBar} color="default">
           <Toolbar>
             <IconButton
-              color="white"
+              color="default" 
               aria-label="Open drawer"
               onClick={this.handleDrawerToggle}
               className={classes.navIconHide}
             >
               <MenuIcon />
             </IconButton>
-              <StattoAppBarLayout   {... this.props} />
+              <StattoAppBarLayout   
+                  {... this.props} 
+                batting={this.props.DATA.CAREER.Career.Meta.Rankings.Batting[0]}
+                bowling={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling[0]}
+                keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
+              />
           </Toolbar>
         </AppBar>
 
@@ -116,7 +124,8 @@ class ResponsiveDrawer extends React.Component {
             }}
           >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
-         
+            
+
             </Drawer>
         </Hidden>
 
@@ -130,7 +139,7 @@ class ResponsiveDrawer extends React.Component {
                 }}
             >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
-            
+         
             </Drawer>
         </Hidden>
 

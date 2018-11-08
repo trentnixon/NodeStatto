@@ -23,6 +23,11 @@ import MultilineChart from '@material-ui/icons/MultilineChart';
 import People from '@material-ui/icons/People';
 import  {Batting, Bowling,Keeping, Wickets,Runs} from "../Icons/icons";
 
+
+// DEV
+
+import DevDisplayDataTable from "./Dev/DisplayData";
+
 const  Navigation =[
     
   {
@@ -101,9 +106,9 @@ const  Navigation =[
     ],
     "icon":<Keeping/>
   } 
-] 
+]  
 export default class Statto extends Component {
-  componentWillMount() { } 
+  componentWillMount() { }  
   render() {
     
     return (
@@ -117,14 +122,15 @@ export default class Statto extends Component {
                 <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
                 <Route  exact path='/:id/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>
                 <Route  exact path='/:id/batting/foragainst' render={()=> <ComponentFOR {... this.props}/> }/>
-              <Route  exact path="/:id/bowling" render={()=> <ComponentBowling {... this.props}/> }/>
+                <Route  exact path="/:id/bowling" render={()=> <ComponentBowling {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/formguide" render={()=> <ComponentFormguide {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/wickets" render={()=> <ComponentWickets {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
               <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
-                  
-                
+
+              <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
+
             </div>
           </Frame>
       </Router>

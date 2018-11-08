@@ -4,9 +4,14 @@ var cheerio = require('cheerio');
 const path = require('path')
 const app = express();
 
-const Domain = 'https://www.lastmanstands.com/player-profile/';
-const URLVAR ='t20?userid=';
+//const Domain = 'https://www.lastmanstands.com/player-profile/';
+//const URLVAR ='t20?userid=';
 
+const Domain = 'https://www.lastmanstands.com/cricket-player/';
+const URLVAR = 't20?playerid=';
+
+// https://www.lastmanstands.com/cricket-player/t20?playerid=47918
+// https://www.lastmanstands.com/cricket-player/batting-career-history/t20?playerid=47918
 const Page = ['/batting-career-history/','/batting-career-history-non-counting-games/',
               '/bowling-career-history/','/bowling-career-history-non-counting-games/',
               '/keeping-career-history/','/keeping-career-history-non-counting-games/' ]
@@ -64,11 +69,12 @@ function DataLoopAddRow(html){
     const data = $('.rank-table tbody tr');
     data.has('td').each(function() {
     
-        var arrayItem = {};
+        var arrayItem = {}; 
         
         $('td', $(this)).each(function(index, item) 
             {
 
+             
                 if(index === 1){
                     arrayItem[1] = [{ meta:null }];
                     arrayItem[2] = SplitA($(item).find('a').attr('href'), $(item).find('a').html());
@@ -87,7 +93,7 @@ function DataLoopAddRow(html){
             });
         
         Rows.push(arrayItem);
-    }); // End Each
+    }); // End Each 
     return Rows;
 }
 
@@ -110,7 +116,7 @@ function ping(html){
 
  app.get('/api/ping/:id', function(req, res){
     url = Domain+URLVAR+req.params.id;
-    //console.log(url)
+    console.log(url)
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
                 res.json(ping(html));
@@ -136,8 +142,8 @@ function ping(html){
      app.get('/api/NonCountingBatting/:id', function(req, res){
         url = Domain+Page[1]+URLVAR+req.params.id;
         request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoopAddRow(html)); }
-        })
+            if(!error && response.statusCode == 200){ res.json(DataLoop(html)); }
+        }) 
     })
 
 
@@ -149,9 +155,7 @@ function ping(html){
     app.get('/api/bowling/:id', function(req, res){
         url = Domain+Page[2]+URLVAR+req.params.id;
         request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){
-                res.json(DataLoop(html));
-            }
+            if(!error && response.statusCode == 200){res.json(DataLoop(html));}
         })
     })
 
@@ -160,9 +164,7 @@ function ping(html){
     app.get('/api/NonCountingBowling/:id', function(req, res){
         url = Domain+Page[3]+URLVAR+req.params.id;
                 request(url, function(error, response, html){
-                    if(!error && response.statusCode == 200){
-                    res.json(DataLoopAddRow(html));
-                }
+                    if(!error && response.statusCode == 200){res.json(DataLoop(html));}
             })
         })
 
@@ -183,7 +185,7 @@ function ping(html){
     app.get('/api/NonCountingKeeping/:id', function(req, res){
         url = Domain+Page[5]+URLVAR+req.params.id;
         request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoopAddRow(html)); }
+            if(!error && response.statusCode == 200){ res.json(DataLoop(html)); }
         })
     })
 

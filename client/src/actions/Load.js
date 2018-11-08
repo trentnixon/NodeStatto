@@ -1,7 +1,8 @@
 import axios from 'axios';
 import store from "../store/index"
+import {FormGuide} from "./FormGuide";
 var _ = require('lodash');
-
+ 
 /**
  * This is the Object Function to fetch, clean and store the Players data to the Reducer
  * 
@@ -12,6 +13,7 @@ export function FetchData(){
     this.id = null
     
     this.StoredData = [];
+    this.FormGuide = [];
 
     this.CallsToApi =[
         {
@@ -68,13 +70,13 @@ export function FetchData(){
 
             if(res.data.length !== 0){
                 // eslint-disable-next-line
-                console.log(res.data);
+                //console.log(res.data); 
                 store.dispatch({ type:"CURRENTNAME", payload:res.data});
                 // eslint-disable-next-line 
                 this.CallsToApi.map((api,i)=>{ this.FetchData(api.api,api.path);})
             }
             else if(res.data.length === 0){
-                console.log(res.data.length);
+                //console.log(res.data.length);
                 store.dispatch({ type:"IDERROR", payload:true});
                 store.dispatch({ type:"IDERROR", payload:false});
                // setTimeout(function(){ store.dispatch({ type:"IDERROR", payload:false})},20)
@@ -95,30 +97,42 @@ export function FetchData(){
         data.map((game,i)=>{
              
                 let FixturePosition = _.findIndex(this.StoredData, function(o) { return o.Meta.Fixture === game["0"]["0"].id; });
-                 
-                if(FixturePosition === -1){
+               
+                if(game["0"]["0"].id  !== '0'){
+                    if(FixturePosition === -1){
          
-                    let FixturePosition = this.StoreFixtures(game);
-                    if(type === 1){ this.StoreBatting(game, FixturePosition) }
-                    if(type === 2){ this.StoreBowling(game, FixturePosition) }
-                    if(type === 3){ this.StoreKeeping(game, FixturePosition) }
-                }
-                else{
-                 
-                    if(type === 1){ this.StoreBatting(game, FixturePosition) }
-                    if(type === 2){ this.StoreBowling(game, FixturePosition) }
-                    if(type === 3){ this.StoreKeeping(game, FixturePosition) }
-                    
+                        let FixturePosition = this.StoreFixtures(game);
+                        if(type === 1){ this.StoreBatting(game, FixturePosition) }
+                        if(type === 2){ this.StoreBowling(game, FixturePosition) }
+                        if(type === 3){ this.StoreKeeping(game, FixturePosition) }
+                    }
+                    else{
+                     
+                        if(type === 1){ this.StoreBatting(game, FixturePosition) }
+                        if(type === 2){ this.StoreBowling(game, FixturePosition) }
+                        if(type === 3){ this.StoreKeeping(game, FixturePosition) }
+                        
+                    }
                 }
                 
-             //  console.log( this.StoredData);
-               
-               // Store Cleaned Data to Reducer
-               store.dispatch({ type:"STORE_CLEAN", payload:this.StoredData });
+                
+           
+            // Store Cleaned Data to Reducer
+                this.StoredData = _.sortBy(this.StoredData, [function(o) { return o.Meta.FixtureInt; }],['desc']);
+                
+               // console.log( this.StoredData.reverse() );
+                store.dispatch({ type:"STORE_CLEAN", payload:this.StoredData.reverse() });
+            // Create ans Store Formguide and Baseline Stats
+
                return true;
         })
-      
+        this.Formguide(this.StoredData);
+    }
 
+
+    this.Formguide = (data)=>{
+        // Send to Formguide 
+        FormGuide(data)
     }
 
     this.ReadyUI =()=>{
@@ -128,7 +142,6 @@ export function FetchData(){
             store.dispatch({ type:"INT_LOAD", payload:false });
             store.dispatch({ type:"SET_UI_READY", payload:true });
     }
-
 
     /**
      * 
@@ -142,10 +155,11 @@ export function FetchData(){
             this.StoredData.push({
                 Meta:{
                     Fixture:game["0"]["0"].id,
+                    FixtureInt:parseInt(game["0"]["0"].id,10),
                     Date:game["0"]["0"].meta,
-                    Team:game[1]["0"].meta,
+                    Team:game[1]["0"].meta.replace(/[|&;$%@"<>()+,]/g, ""),
                     TeamID:game[1]["0"].id,
-                    Opposition:game[2]["0"].meta,
+                    Opposition:game[2]["0"].meta.replace(/[|&;$%@"<>()+,]/g, ""),
                     OppositionID:game[2]["0"].id,
                 }
             })
@@ -165,9 +179,9 @@ export function FetchData(){
                 RunInt:parseInt(game[3], 10),
                 BallsFaced:game[4],
                 BallsFacedInt:parseInt(game[4], 10),
-                RankingBatting:game[11],
+                Ranking:game[11],
                 NotOut:NoutOut
-                }
+            }
      }
 
      this.StoreBowling = (game,FixturePosition) =>{
@@ -179,7 +193,7 @@ export function FetchData(){
                     Figures:game[4],
                     Wickets:SplitFigures[0],
                     Runs:SplitFigures[1],
-                    RankingBatting:game[11]
+                    Ranking:game[11]
             }
     }
 
@@ -187,7 +201,7 @@ export function FetchData(){
         this.StoredData[FixturePosition]["Keeping"]={
                     catches: parseInt(game[3], 10),
                     stumping:parseInt(game[4], 10),
-                    RankingBatting:game[11]
+                    Ranking:game[11]
             }
     }
 }

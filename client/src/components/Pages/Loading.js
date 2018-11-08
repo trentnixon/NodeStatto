@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FetchData } from "../../actions/Load";
+import { FormGuide } from  "../../actions/FormGuide";
 
 const Content = new FetchData();
 
@@ -28,7 +29,17 @@ export default  class Loading extends Component {
                 Content.Clean(this.props.DATA.KEEPING,3);
                 Content.Clean(this.props.DATA.KEEPING_NON_COUNTING,3);
                 
-            }else if(this.props.DATA.CLEAN !== null){ Content.ReadyUI() }
+            }else if(this.props.DATA.CLEAN !== null){ 
+                
+                console.log(this.props);
+
+                if(this.props.DATA.CAREER === null){
+                    FormGuide(this.props.DATA.CLEAN);
+                }else{
+                    Content.ReadyUI();
+                }
+                
+            }
     }
     
     render() {

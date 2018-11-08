@@ -56,32 +56,59 @@ body {
       align-items: center;
       align-content: center; }
       body #root #Statto #Frame header #AppBar img.Logo {
-        height: 35px; }
-      body #root #Statto #Frame header #AppBar .Right {
-        flex-grow: 1;
+        height: 23px;
+        margin: 12px 0 0 0; }
+      body #root #Statto #Frame header #AppBar .Left {
+        justify-content: flex-start;
         display: flex;
-        justify-content: flex-start; }
+        flex-grow: 1; }
       body #root #Statto #Frame header #AppBar .Center {
         flex-grow: 2;
         display: flex;
         justify-content: flex-start; }
         body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
-          width: 25px; }
+          width: 25px;
+          height: 25px; }
         body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
-          width: 20px; }
-      body #root #Statto #Frame header #AppBar .Left {
-        justify-content: flex-end;
+          width: 20px;
+          height: 20px; }
+        body #root #Statto #Frame header #AppBar .Center button a {
+          display: flex; }
+          body #root #Statto #Frame header #AppBar .Center button a svg {
+            fill: rgba(0, 0, 0, 0.54); }
+        body #root #Statto #Frame header #AppBar .Center p {
+          margin: 0 5px 0 0;
+          font-size: .8em;
+          text-align: center;
+          float: right;
+          line-height: 4em; }
+      body #root #Statto #Frame header #AppBar .Right {
+        flex-grow: 1;
         display: flex;
-        flex-grow: 1; }
+        justify-content: flex-end; }
+        body #root #Statto #Frame header #AppBar .Right h1 {
+          font-size: 1.1em;
+          line-height: 2.3em;
+          margin: 0 20px 0 10px; }
+        body #root #Statto #Frame header #AppBar .Right button a {
+          display: flex; }
+          body #root #Statto #Frame header #AppBar .Right button a svg {
+            fill: rgba(0, 0, 0, 0.54); }
   .DrawerNav {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    min-height: 100vh; }
+    .DrawerNav .Collapseable {
+      height: auto;
+      background-color: #f5f5f5; }
+      .DrawerNav .Collapseable a div {
+        padding-left: 35px; }
     .DrawerNav nav {
       width: inherit; }
     .DrawerNav .NavBarTop {
-      background-color: #c5e1ff;
-      min-height: 250px;
+      background-color: #709dce;
+      min-height: 200px;
       text-align: center;
       padding-top: 80px;
       display: flex;
@@ -95,21 +122,31 @@ body {
       .DrawerNav .NavBarTop div.UserName {
         flex-grow: 2;
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        align-items: flex-end;
+        border-bottom: 30px solid #fff; }
         .DrawerNav .NavBarTop div.UserName div {
-          flex-grow: 1;
-          align-self: center; }
-        .DrawerNav .NavBarTop div.UserName h1 {
-          font-size: 1.1em; }
+          align-self: center;
+          align-items: flex-end; }
+          .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
+            width: 70px;
+            height: 70px;
+            border: 8px solid #fff;
+            margin-bottom: -45px;
+            z-index: 10; }
+            .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
+              width: 70px; }
       .DrawerNav .NavBarTop div.Actions {
         display: flex;
-        align-items: flex-end;
-        border-bottom: 30px solid white; }
+        align-items: flex-start; }
         .DrawerNav .NavBarTop div.Actions div {
-          flex-grow: 1;
-          margin-bottom: -12px; }
+          flex-grow: 1; }
           .DrawerNav .NavBarTop div.Actions div button {
-            background-color: #c5e1ff; }
+            background-color: #fff; }
+            .DrawerNav .NavBarTop div.Actions div button a {
+              display: flex; }
+              .DrawerNav .NavBarTop div.Actions div button a svg {
+                fill: rgba(0, 0, 0, 0.54); }
     .DrawerNav .NavBarBottom {
       min-height: 50px; }
     .DrawerNav img.NavigationIcon {
@@ -118,6 +155,35 @@ body {
     .DrawerNav img.NavigationIcon.Bowling {
       width: 20px;
       margin-right: 20px; }
+  body #root #Statto #Frame main {
+    min-height: 100vh;
+    -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+    background-color: #f5f5f5;
+    width: 100%; }
+  body #root #Statto #Frame #PageHeader {
+    background-color: #709dce;
+    padding: 40px;
+    margin: -24px -24px 10px -24px;
+    min-height: 300px; }
+  body #root #Statto #Frame #Pod {
+    padding: 0 15px 15px 0; }
+    body #root #Statto #Frame #Pod .Inner {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      padding: 15px;
+      background-color: #fff; }
+      body #root #Statto #Frame #Pod .Inner h1 {
+        color: #969696;
+        font-size: 1.1em; }
+      body #root #Statto #Frame #Pod .Inner h2 {
+        color: #5a5a5a;
+        font-size: 2.5em;
+        margin: 0;
+        line-height: 1.2em; }
+      body #root #Statto #Frame #Pod .Inner button {
+        float: right; }
   body #root #Statto ul.dots li {
     float: left;
     width: 15px;

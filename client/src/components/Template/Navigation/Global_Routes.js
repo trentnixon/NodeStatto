@@ -17,7 +17,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 400,
     backgroundColor: theme.palette.background.paper,
   },
   nested: {
@@ -58,7 +58,7 @@ createCollapseItem(navItem,i){
 
         let Children = navItem.children.map((children,i)=>{
             return(
-                <Link to={`/${Path}/${navItem.path}/${children.path}`}>
+                <Link key={i} to={`/${Path}/${navItem.path}/${children.path}`}>
                     <ListItem  button className={this.props.nested}>
                         <ListItemIcon>{children.icon}</ListItemIcon>
                         <ListItemText inset primary={children.label}/>
@@ -68,14 +68,14 @@ createCollapseItem(navItem,i){
         })
 
         return(
-            <div>
+            <div key={i} >
                 <ListItem button onClick={()=>{this.handleClick(i)}}>
                   <ListItemIcon>{navItem.icon}</ListItemIcon>
                   <ListItemText inset primary={navItem.label}/>
                     {this.state.open[i] ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                  
-                <Collapse in={this.state.open[i]} timeout="auto" unmountOnExit>
+                <Collapse in={this.state.open[i]} timeout="auto" unmountOnExit className="Collapseable">
                     <List component="div" disablePadding>
                         {Children}
                     </List>
@@ -105,5 +105,5 @@ createCollapseItem(navItem,i){
   }
 }
 
-NestedList.propTypes = { classes: PropTypes.object.isRequired, };
+NestedList.propTypes = { classes: PropTypes.object.isRequired, }; 
 export default withStyles(styles)(NestedList);

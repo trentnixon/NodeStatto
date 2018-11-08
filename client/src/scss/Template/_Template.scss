@@ -1,9 +1,11 @@
 #Frame{
 
+
     @import "./AppBar";
 
     @import "./NavBar"; 
 
+    @import "./Main";
 
-
+    @import "./Page/Page";
 }

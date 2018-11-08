@@ -1,6 +1,7 @@
 const InitialState ={
   Int_Loading:false,
   DATA_CLEAN:false,
+  CAREER:false,
   UI_READY:false, 
   RESET:false,
   ERROR:false,
@@ -29,6 +30,12 @@ const LOAD = (state=InitialState, action) =>{
 				// eslint-disable-next-line 
 				break
             }
+            case "DATA_CAREER":{
+                // console.log(action.payload);
+                 return {...state, CAREER:action.payload}
+                 // eslint-disable-next-line 
+                 break
+             }
 
             // Fetch Initial Meta Data
             case "SET_UI_READY":{
