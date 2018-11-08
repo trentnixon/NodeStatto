@@ -25,7 +25,6 @@ export default class Batting extends Component {
             
         <Title Title="Form Guide" />
         <Row>
-          
           <Pod col="col-md-12" > Previous Scores (last 10) Bar Chart </Pod>
         </Row>
 

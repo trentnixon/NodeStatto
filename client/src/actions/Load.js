@@ -120,7 +120,7 @@ export function FetchData(){
             // Store Cleaned Data to Reducer
                 this.StoredData = _.sortBy(this.StoredData, [function(o) { return o.Meta.FixtureInt; }],['desc']);
                 
-               // console.log( this.StoredData.reverse() );
+               //console.log( this.StoredData.reverse() );
                 store.dispatch({ type:"STORE_CLEAN", payload:this.StoredData.reverse() });
             // Create ans Store Formguide and Baseline Stats
 
@@ -152,10 +152,12 @@ export function FetchData(){
 
      this.StoreFixtures = (game) =>{
             
+         let SplitDate = game["0"]["0"].meta.split('/');
+         let Fixed = new Date( SplitDate[1]+'/'+SplitDate[0]+'/'+SplitDate[2]).getTime();
             this.StoredData.push({
                 Meta:{
                     Fixture:game["0"]["0"].id,
-                    FixtureInt:parseInt(game["0"]["0"].id,10),
+                    FixtureInt:Fixed,
                     Date:game["0"]["0"].meta,
                     Team:game[1]["0"].meta.replace(/[|&;$%@"<>()+,]/g, ""),
                     TeamID:game[1]["0"].id,

@@ -41,7 +41,7 @@ export function FormGuide(data){
     // Lets create a form guide
      // eslint-disable-next-line
     data.map((game,i)=>{
-            console.log(game)
+          //  console.log(game)
  
             // Meta
             if(game.Meta){

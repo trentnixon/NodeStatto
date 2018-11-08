@@ -75,15 +75,15 @@ export default class Statto extends Component {
                       Career={this.props.DATA.CAREER.Career}
                      
                     />
-                </Row>
-             </div>
-             </Row>
-            <Row>
-                <RecentScoresBarChart 
+
+                    <RecentScoresBarChart 
                   {... this.props}
                   col="col-md-12"
                 />
-            </Row>
+                </Row>
+             </div>
+             </Row>
+          
           </Container>
         
       </div>
