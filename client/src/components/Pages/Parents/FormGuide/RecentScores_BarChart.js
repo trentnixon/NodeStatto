@@ -65,6 +65,7 @@ class App extends Component {
     }
 
   render() {
+    console.log(this.state.series);
     return (
          <Pod
           col={this.props.col}

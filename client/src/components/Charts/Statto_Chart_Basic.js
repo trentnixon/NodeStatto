@@ -96,6 +96,8 @@ class Chart_Games_Home extends Component {
 
       render() {
  
+        console.log(this.state.series);
+        
           return (
 
                   <Chart

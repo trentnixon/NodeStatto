@@ -25,18 +25,7 @@ class Chart_Games_Home extends Component {
             HistoryYear.push(h.year)
           }) 
 
-        series = [
-          {
-            name: "Years 2",
-            data: ['9','8','7','6','5','4']
-          },
-            {
-              name: "Years 1",
-              data: ['1','2','3','4','5','6']
-            }
-          ]
-        
-
+  
       }
 
       render() {

@@ -1,0 +1,30 @@
+#Header_Slider{
+    text-align: center;
+    color: $NavCollasable;
+    .slick-slider{
+        .slick-list{
+            .slick-slide{
+                
+                .Previous-header{
+                    h1{
+                        font-size: $HeaderH1Size;
+                    }
+                    h3{ font-size: $HeaderH1Size/2; }
+
+                }
+
+                .Previous-subheader{
+                    h3{ font-size: $HeaderH1Size/2; }
+                }
+
+                .details{
+                    h3{ font-size: $HeaderH1Size/1.5; }
+                    h4{ font-size: $HeaderH1Size/2; }
+                }
+                .scorecard{
+
+                }
+            }
+        }
+    }
+}

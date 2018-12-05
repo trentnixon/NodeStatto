@@ -23,20 +23,32 @@ export default class Batting extends Component {
         </Row>
           
             
-        <Title Title="Form Guide" />
+        <Title Title="Recent Scores" />
         <Row>
-          <Pod col="col-md-12" > Previous Scores (last 10) Bar Chart </Pod>
+          <Pod col="col-md-12" > recent Scores Table.</Pod>
+         
+        </Row>
+        <Title Title="Career" />
+        <Row>
+          <Pod col="col-md-6" > Innings</Pod>
+          <Pod col="col-md-6" > Total Runs </Pod>
+          <Pod col="col-md-4" > Average </Pod>
+          <Pod col="col-md-4" > Strike Rate </Pod>
+          <Pod col="col-md-4" > Highest Score </Pod>
+     
         </Row>
 
+      <Title Title="Achievements and Milestones" />
         <Row>
-          <Pod col="col-md-12" > Average</Pod>
-          <Pod col="col-md-4" >  50s </Pod>
-          <Pod col="col-md-4" > NOs </Pod>
-          <Pod col="col-md-4" > SR </Pod>
-          <Pod col="col-md-4" > BF </Pod>
-          <Pod col="col-md-4" > Runs </Pod>
+          <Pod col="col-md-6" >  Not Outs </Pod>
+          <Pod col="col-md-6" > Ducks </Pod>
+          <Pod col="col-md-4" > Under 10 </Pod>
+          <Pod col="col-md-4" > 20s </Pod>
+          <Pod col="col-md-4" > 30s </Pod>
+          <Pod col="col-md-4" > 40s </Pod>
+          <Pod col="col-md-4" > 50s </Pod>
+          <Pod col="col-md-4" > 100s </Pod>
         </Row>
-
       </Container>
     )
   }

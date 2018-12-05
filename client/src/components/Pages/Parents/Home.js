@@ -3,12 +3,14 @@ import PageHeader from "../../Template/Page/Header";
 import Container from "../../Template/Page/Container";
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
+import PageSubTitle from "../../Elements/type/PageSubTitle";
 // Overview
 import BasicPod from "../Parents/Home/Home_Runs";
+import RankingHomePod from "../Parents/Home/Ranking_Home_Pod";
 
 // Home Page Elements
 
-
+import PreviousGames from "../Parents/Home/PreviousGameSlider";
 import RecentScoresBarChart from "./FormGuide/RecentScores_BarChart";
 import GamesDonut from "./Home/Chart_Games";
 import PlayedFor from "./Home/PlayedForList";
@@ -23,15 +25,18 @@ export default class Statto extends Component {
     return (
       <div>          
            <PageHeader>
-                    Previous Game Slider
-          </PageHeader>
-          <Container>
-           
+                    <PreviousGames 
+                      {... this.props} 
+                    />
+            </PageHeader>
+
             
+          <Container>
             <Row>
               <div className="col-md-8">
                 <Row>
 
+                  <PageSubTitle  Title="Overview" />
                   <BasicPod 
                       total={this.props.DATA.CAREER.Career.batting.runs}
                       label="Runs"
@@ -52,10 +57,29 @@ export default class Statto extends Component {
                     Path="/batting/"
                   />
                   
+                <PageSubTitle  Title="Rankings" />
 
-                    <Pod col="col-md-12" >
-                          Rankings. Line Graph
-                    </Pod>
+                  <RankingHomePod 
+                      total={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
+                      label="Batting"
+                      col="col-md-4"
+                   
+                  />
+                  <RankingHomePod 
+                    total={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling}
+                    label="Bowling"
+                    col="col-md-4"
+                 
+                  />
+
+                  <RankingHomePod 
+                    total={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping}
+                    label="Keeping"
+                    col="col-md-4"
+                   
+                  />
+
+
 
 
                   <PlayedFor
@@ -76,10 +100,7 @@ export default class Statto extends Component {
                      
                     />
 
-                    <RecentScoresBarChart 
-                  {... this.props}
-                  col="col-md-12"
-                />
+                    <RecentScoresBarChart {... this.props} col="col-md-12"  />
                 </Row>
              </div>
              </Row>

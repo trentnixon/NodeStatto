@@ -1,2 +1,22 @@
 
 $FontHeader : 'Roboto';
+
+/* Head Fonts*/
+
+$HeaderH1Size:2em;
+$SubHeaderSize:1.3em;
+
+
+
+
+/* Basic Elements */
+
+.Page_Title{}
+
+.Page_Sub_Title{
+    font-size: $SubHeaderSize;
+    display: inline-block;
+    color: $h2Color;
+    width: 100%;
+    margin: 10px 0 20px;
+}

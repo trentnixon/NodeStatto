@@ -50,11 +50,6 @@ const  Navigation =[
           "icon":<Runs/>
         },
         {
-          "label":"AVG & SR",
-          "path":"averages",
-          "icon":<MultilineChart/>
-        },
-        {
           "label":"For & Against",
           "path":"foragainst",
           "icon":<People/>
