@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PageHeader from "../../Template/Page/Header";
 import Container from "../../Template/Page/Container";
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+//import Pod from "../../Template/Page/Pod";
 import PageSubTitle from "../../Elements/type/PageSubTitle";
 // Overview
 import BasicPod from "../Parents/Home/Home_Runs";
@@ -84,7 +84,7 @@ export default class Statto extends Component {
 
                   <PlayedFor
                     label="Played For"
-                    col="col-md-12"
+                    col="col-md-12" 
                     {... this.props}
                   />
                 </Row>

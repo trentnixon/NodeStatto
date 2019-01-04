@@ -4,7 +4,7 @@ import Pod from "../../../Template/Page/Pod";
 import BasicChart from "../../../../components/Charts/Statto_Chart_Basic";
 
 
-let HistoryInt=[], HistoryYear=[],series=[];
+let HistoryInt=[], HistoryYear=[];
 class Chart_Games_Home extends Component {
     
     constructor(props) {
@@ -19,13 +19,11 @@ class Chart_Games_Home extends Component {
             HistoryYear=[];
             
           //console.log(this.props.Career.Meta.Games.history)
-
+          // eslint-disable-next-line
           this.props.Career.Meta.Games.history.map((h,i)=>{
             HistoryInt.push(h.Int);
             HistoryYear.push(h.year)
-          }) 
-
-  
+          })
       }
 
       render() {
@@ -39,13 +37,11 @@ class Chart_Games_Home extends Component {
                   <BasicChart 
                       type="donut"
                       series={HistoryInt}
-                      Labels={HistoryYear}
+                      Labels={HistoryYear} 
                     />
             </Pod>
-               
           );
         }
-
 }
 
 export default Chart_Games_Home;

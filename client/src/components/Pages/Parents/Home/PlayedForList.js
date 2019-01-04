@@ -7,10 +7,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+//import SwipeableViews from 'react-swipeable-views';
+//import AppBar from '@material-ui/core/AppBar';
+//import Tabs from '@material-ui/core/Tabs';
+//import Tab from '@material-ui/core/Tab';
 
 
 var _ = require('lodash');
@@ -20,6 +20,7 @@ export default class PlayedFor extends Component {
     componentWillMount() { 
         Teams=[]
        // console.log(this.props.DATA.CLEAN)
+       // eslint-disable-next-line
         this.props.DATA.CLEAN.map((game,i)=>{
 
             let TeamPosition = _.findIndex(Teams, function(o) { return o.team === game.Meta.Team; });

@@ -41,8 +41,7 @@ export default class APPBARLAYOUT extends React.Component {
   } 
   
   render() {
-    console.log(this.props.DATA.CAREER.Career.Meta.Rankings);
-    
+    //console.log(this.props.DATA.CAREER.Career.Meta.Rankings);
     return (
           <div id="AppBar"> 
             <div className="Left">

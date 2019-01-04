@@ -1,54 +1,42 @@
 import React, { Component } from 'react';
 
 import Title from "../../../Elements/type/PageTitle";
+import SubTitle from "../../../Elements/type/PageSubTitle";
 import Container from "../../../Template/Page/Container";
 import Row from "../../../Template/Page/Row";
-import Pod from "../../../Template/Page/Pod";
+
+// Sections 
+import SectionContainer from "../../../Sections/SectionContainer";
+import SectionHeader from "../../../Sections/Section_Global_Header";
+import SectionRankings from "../../../Sections/Section_Discipline_Rankings";
+import SectionCareerBatting from "../../../Sections/Section_Career_Batting";
+import SectionMilestonesBatting from "../../../Sections/Section_Career_Milestones_Batting";
+
 
 export default class Batting extends Component {
 
-  componentWillMount() { console.log(this.props.DATA.CLEAN) }
+  componentWillMount() { 
+      // console.log(this.props.DATA) 
+   }
 
   render() {
-    return (
-      <Container>
-        <Row>
-          <Title Title="Batting" />
-        </Row>
-        <Row>
-          <Pod col="col-md-12" > Batting Rankings. Line Graph</Pod>
-          <Pod col="col-md-4" >  Current </Pod>
-          <Pod col="col-md-4" > Best </Pod>
-          <Pod col="col-md-4" > Worst </Pod>
-        </Row>
-          
-            
-        <Title Title="Recent Scores" />
-        <Row>
-          <Pod col="col-md-12" > recent Scores Table.</Pod>
-         
-        </Row>
-        <Title Title="Career" />
-        <Row>
-          <Pod col="col-md-6" > Innings</Pod>
-          <Pod col="col-md-6" > Total Runs </Pod>
-          <Pod col="col-md-4" > Average </Pod>
-          <Pod col="col-md-4" > Strike Rate </Pod>
-          <Pod col="col-md-4" > Highest Score </Pod>
-     
-        </Row>
+    return ( 
+      <Container> 
 
-      <Title Title="Achievements and Milestones" />
-        <Row>
-          <Pod col="col-md-6" >  Not Outs </Pod>
-          <Pod col="col-md-6" > Ducks </Pod>
-          <Pod col="col-md-4" > Under 10 </Pod>
-          <Pod col="col-md-4" > 20s </Pod>
-          <Pod col="col-md-4" > 30s </Pod>
-          <Pod col="col-md-4" > 40s </Pod>
-          <Pod col="col-md-4" > 50s </Pod>
-          <Pod col="col-md-4" > 100s </Pod>
-        </Row>
+        <SectionHeader   h1="Batting" h2="Career"  />
+       
+        <SectionCareerBatting Data={this.props.DATA.CAREER.Career.batting}  Career={this.props.DATA.CLEAN}/>
+        
+        <SectionContainer>
+          <SectionRankings  
+            Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
+            Title="Batting Rankings"
+            SubTitle="Breakdown of the batting rankings over the career"
+          />
+        </SectionContainer>
+        
+        <SectionMilestonesBatting  Data={this.props.DATA.CAREER.Career.batting} />
+
       </Container>
     )
   }

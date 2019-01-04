@@ -1,0 +1,40 @@
+.RankingPods{
+    display: contents;
+    
+    .show{  opacity: 1 !important;}
+
+    .Outer{
+        .Inner{
+            text-align: center;
+            border: none !important;
+        }
+    }
+
+
+    .animated .Inner{
+        background-repeat: no-repeat;
+        background-position:  left center;
+        background-size: 25%;
+
+            h1{
+                display: block;
+                margin: 0 25%;
+                width: 50%;
+                padding: 5px 0;
+            }
+            h1.Page_Title{
+                font-size: .9em !important; 
+            }
+
+            h1.Page_Sub_Title{
+                border-bottom: 1px solid;
+                font-size: 1.6em !important;
+                font-weight: 600; 
+            }
+     
+    }
+    .animated:nth-child(1) .Inner{ background-image: url("/assets/icons/runs.svg");}
+    .animated:nth-child(2) .Inner{ background-image: url("/assets/icons/1414791.svg");}
+    .animated:nth-child(3) .Inner{ background-image: url("/assets/icons/56301.svg");}
+
+}

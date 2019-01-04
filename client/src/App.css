@@ -3,12 +3,92 @@
 /* Basic Elements */
 @import url(~slick-carousel/slick/slick.css);
 @import url(~slick-carousel/slick/slick-theme.css);
+h1, h2, h3 {
+  font-family: "Montserrat"; }
+
+p {
+  font-family: "Roboto"; }
+
 .Page_Sub_Title {
   font-size: 1.3em;
   display: inline-block;
   color: #5a5a5a;
   width: 100%;
   margin: 10px 0 20px; }
+
+.Section_Rankings {
+  display: contents; }
+
+.Section_Career .row > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  width: 100%; }
+  .Section_Career .row > div h1 {
+    flex-grow: 1;
+    width: inherit; }
+  .Section_Career .row > div .Page_Title {
+    font-size: 1em; }
+  .Section_Career .row > div .Page_Sub_Title {
+    text-align: right;
+    font-weight: 800;
+    font-size: 1.5em; }
+
+.atAGlance .row .Radial .Inner div {
+  min-height: auto !important; }
+  .atAGlance .row .Radial .Inner div .apexcharts-canvas {
+    height: 175px !important; }
+
+.atAGlance .row .Radial .Inner .Page_Sub_Title {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: 1.8em !important;
+  font-weight: 100;
+  letter-spacing: 1px; }
+
+.atAGlance .row .Radial .Inner .Page_Sub_Title + .Page_Sub_Title {
+  font-size: .8em !important; }
+
+.atAGlance .row > div {
+  display: inline-block;
+  width: auto; }
+
+.atAGlance .row div.Selector .Inner {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0px !important; }
+
+.RankingPods {
+  display: contents; }
+  .RankingPods .show {
+    opacity: 1 !important; }
+  .RankingPods .Outer .Inner {
+    text-align: center;
+    border: none !important; }
+  .RankingPods .animated .Inner {
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 25%; }
+    .RankingPods .animated .Inner h1 {
+      display: block;
+      margin: 0 25%;
+      width: 50%;
+      padding: 5px 0; }
+    .RankingPods .animated .Inner h1.Page_Title {
+      font-size: .9em !important; }
+    .RankingPods .animated .Inner h1.Page_Sub_Title {
+      border-bottom: 1px solid;
+      font-size: 1.6em !important;
+      font-weight: 600; }
+  .RankingPods .animated:nth-child(1) .Inner {
+    background-image: url("/assets/icons/runs.svg"); }
+  .RankingPods .animated:nth-child(2) .Inner {
+    background-image: url("/assets/icons/1414791.svg"); }
+  .RankingPods .animated:nth-child(3) .Inner {
+    background-image: url("/assets/icons/56301.svg"); }
 
 #Header_Slider {
   text-align: center;
@@ -24,7 +104,27 @@
   #Header_Slider .slick-slider .slick-list .slick-slide .details h4 {
     font-size: 1em; }
 
+.YearSelector {
+  width: 50%;
+  z-index: 100; }
+  .YearSelector label {
+    margin: -8px 0 0 13px;
+    font-size: 1.05em; }
+  .YearSelector .MuiSelect-root-170 div {
+    width: auto; }
+
 /*- Build up Dom Elements -*/
+#Login {
+  background-color: #709dce;
+  height: 100vh;
+  width: 100vw;
+  padding: 10%; }
+  #Login .LoginFormContainer {
+    padding: 3%;
+    background-color: #f5f5f5;
+    border: 1px solid #969696;
+    border-radius: 10px; }
+
 #LoadingScreen {
   height: 100vh;
   width: 100vw;
@@ -192,6 +292,9 @@ body {
     padding: 40px;
     margin: -24px -24px 10px -24px;
     min-height: 300px; }
+  body #root #Statto #Frame .row.ContainerRow > #Pod > .Inner {
+    border: none;
+    background-color: transparent; }
   body #root #Statto #Frame #Pod {
     padding: 0 15px 15px 0; }
     body #root #Statto #Frame #Pod .Inner {
@@ -221,6 +324,15 @@ body {
       body #root #Statto #Frame #Pod .Inner .RankingIcon {
         float: right;
         font-size: 3em; }
+  body #root #Statto #Frame #Pod.NakedPod {
+    padding: 0; }
+    body #root #Statto #Frame #Pod.NakedPod > .Inner {
+      background-color: transparent;
+      padding: 0 15px;
+      border: none; }
+  body #root #Statto #Frame #Pod.ToDo .Inner {
+    border-color: red;
+    background-color: #ffe2e2; }
   body #root #Statto ul.dots li {
     float: left;
     width: 15px;

@@ -38,10 +38,9 @@ class NestedList extends React.Component {
 
   };
 
-  componentWillMount() { 
-    
+  componentWillMount() {
     Path = this.props.match.params.playerid; 
-    console.log(this.props.Navigation)
+    //console.log(this.props.Navigation)
   } 
 
  createListItem(navItem){

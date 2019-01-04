@@ -1,0 +1,65 @@
+.Section_Career{
+    .row{
+        > div{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: flex-start;
+            width: 100%;
+
+            h1{
+                flex-grow: 1; 
+                width: inherit;
+            }
+            .Page_Title{ font-size: 1em;}
+            .Page_Sub_Title{ text-align: right; font-weight: 800; font-size: 1.5em;}
+        }
+    }
+}
+
+.atAGlance{
+    .row{
+        .Radial{
+            .Inner{
+                div{
+                    min-height: auto !important;
+                    .apexcharts-canvas{
+                        height: 175px !important;
+                    }
+                }
+
+                .Page_Sub_Title{ 
+                    text-align: center;
+                    width: 100%;
+                    margin: 0;
+                    font-size: 1.8em !important;
+                    font-weight: 100;
+                    letter-spacing: 1px;
+                }
+
+                .Page_Sub_Title+ .Page_Sub_Title{
+                    font-size: .8em !important;
+                }
+            }
+        }
+
+
+            >div{
+                display: inline-block;
+                width: auto;
+            }
+
+            div.YearSelector{
+               
+            }
+
+            div.Selector{
+                .Inner{
+                    background-color: transparent !important;
+                    border:none !important;
+                    padding: 0px !important;
+                }
+            }
+    }
+}

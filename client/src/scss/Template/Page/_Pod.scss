@@ -41,3 +41,20 @@
 
     }
 }
+
+#Pod.NakedPod{
+    padding: 0;
+    >.Inner{
+        background-color: transparent;
+       padding: 0 15px;
+        border:none;
+    }
+}
+
+#Pod.ToDo{
+    .Inner{
+        border-color: red;
+        background-color: #ffe2e2;
+    }
+   
+}

@@ -6,7 +6,7 @@ class Chart_Games_Home extends Component {
  
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       options: {
           chart: { 
               id: "basic-chart",
@@ -61,7 +61,7 @@ class Chart_Games_Home extends Component {
           },
           xaxis: { categories: [] },
           labels: [],
-          legend: {
+          legend: { 
             show: true,
             floating: false,
             position: 'bottom',
@@ -79,17 +79,16 @@ class Chart_Games_Home extends Component {
           },
       },
      
-      series: []
+      series: [],
     };
   }
-
-
 
       componentWillMount() { 
      
         this.setState({
             series:  update(this.state.series,  {$set: this.props.series}),
             options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels}}}),
+            // eslint-disable-next-line 
             options: update(this.state.options,{labels:{$set:this.props.Labels}})
           })
       }

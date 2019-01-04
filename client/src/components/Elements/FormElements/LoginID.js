@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 class OutlinedTextFields extends React.Component {
 
-    constructor(props) {
+    constructor(props) { 
         super(props);
         this.state = {value: ''};
     
@@ -39,9 +39,9 @@ class OutlinedTextFields extends React.Component {
             id="outlined-full-width"
             value={this.state.value}
             onChange={this.handleChange}
-            label="ID"
-            placeholder="Your ID"
-            helperText="Helper Text!"
+            label="Login"
+            placeholder="Use Your LMS ID"
+            helperText="You can find your LMS ID on your LMS Profile"
             fullWidth
             margin="normal"
             variant="outlined"
@@ -49,7 +49,7 @@ class OutlinedTextFields extends React.Component {
                 shrink: true,
             }}
         />
-
+ 
       </form>
     );
   }

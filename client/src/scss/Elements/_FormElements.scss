@@ -1,0 +1,16 @@
+.YearSelector{
+    width: 50%;
+
+    z-index: 100;
+
+    label{
+        margin: -8px 0 0 13px;
+        font-size: 1.05em;
+    }
+    .MuiSelect-root-170{
+        div{
+            width: auto;
+        }
+    }
+        
+}

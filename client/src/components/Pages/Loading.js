@@ -31,7 +31,7 @@ export default  class Loading extends Component {
                 
             }else if(this.props.DATA.CLEAN !== null){ 
                 
-                console.log(this.props);
+               // console.log(this.props);
 
                 if(this.props.DATA.CAREER === null){
                     FormGuide(this.props.DATA.CLEAN);
