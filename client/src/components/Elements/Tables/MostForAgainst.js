@@ -8,9 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 export default class BattingRecentScores extends Component {
 
-    componentWillMount() { 
-        console.log(this.props.Table) 
-    }
+    componentWillMount() {}
  
     render() {
         return (

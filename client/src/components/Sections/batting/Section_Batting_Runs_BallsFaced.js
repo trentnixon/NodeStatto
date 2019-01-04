@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 // Template
-import Row from "../Template/Page/Row";
-import Pod from "../Template/Page/Pod";
-import Title from "../Elements/type/PageTitle";
-import SubTitle from "../Elements/type/PageSubTitle";
+import Row from "../../Template/Page/Row";
+import Pod from "../../Template/Page/Pod";
+import Title from "../../Elements/type/PageTitle";
+import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Charts
-import Donut from "../Charts/donut"; 
-import Bar from "../Charts/BarChart";
+import Donut from "../../Charts/donut"; 
+import Bar from "../../Charts/BarChart";
 
 let PieRuns=[], Labels=[], PieBalls=[];
 let RunsYear=[
@@ -24,7 +24,11 @@ let RunsYear=[
 
 export default class Section_Rankings extends Component {
     componentWillMount() {
-        PieRuns=[], Labels=[], PieBalls=[];
+
+        PieRuns=[]
+        Labels=[]
+        PieBalls=[];
+
         RunsYear=[
             { 
                 name:"BallsFaced",
@@ -36,10 +40,11 @@ export default class Section_Rankings extends Component {
             }
         ];
      //   console.log(this.props.DATA.CAREER.Career.batting)
+     // eslint-disable-next-line
         this.props.DATA.CAREER.Career.batting.overTheYears.map((h,i)=>{ 
+          
                 PieRuns.push(h.TotalRuns);
                 PieBalls.push(h.TotalBF)
-
                 RunsYear[0].data.push(h.TotalBF);
                 RunsYear[1].data.push(h.HistoryRuns.length);
                 Labels.push(h.int);
@@ -47,7 +52,7 @@ export default class Section_Rankings extends Component {
     }
     render() {
         return (
-            <div className="Section_Runs">
+            <div className="Section Section_Runs">
                 <Row>
                     <Title Title="Balls Faced" />
                 </Row>

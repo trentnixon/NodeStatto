@@ -60,7 +60,7 @@ class Radial extends Component {
                   },
                   value: {
                     formatter: function(val) {
-                      return parseInt(val);
+                      return parseInt(val,10);
                     },
                     color: '#111',
                     fontSize: '24px',
@@ -70,19 +70,7 @@ class Radial extends Component {
                 }
               }
             },
-            fill: {
-             /* type: 'gradient',
-              gradient: {
-                shade: 'dark',
-                type: 'horizontal',
-                shadeIntensity: 0.5,
-                gradientToColors: ['#ABE5A1'],
-                inverseColors: true,
-                opacityFrom: 1,
-                opacityTo: 1,
-                stops: [0, 100]
-              }*/
-            },
+            fill: {},
             series: [70],
             stroke: { lineCap: 'round' },
             labels: [''],
@@ -105,7 +93,7 @@ class Radial extends Component {
                                   value:{
                                     formatter:{
                                       $set:function() {
-                                        return parseInt(data.Value);
+                                        return parseInt(data.Value,10);
                                       } 
                                     } 
                                   }

@@ -10,10 +10,10 @@ import SubTitle from "../Elements/type/PageSubTitle";
 import Chart from "../Charts/LineChart";
 
 export default class Section_Rankings extends Component {
-    componentWillMount() {}
+    componentWillMount() {} 
     render() {
-        console.log(this.props.isVisible)
-        return (
+        console.log(this.props.Rankings)
+        return ( 
                 <div className="Section_Rankings" >
                     <Row class="ContainerRow">
                         <Pod col="col-md-12" > 

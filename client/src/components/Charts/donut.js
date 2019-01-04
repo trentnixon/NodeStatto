@@ -69,14 +69,6 @@ class Chart_Games_Home extends Component {
           },
           theme: {
             palette: 'palette3', // If defined, it will overwrite globals.colors variable
-      /*
-            monochrome: { // monochrome allows you to select just 1 color and fill out the rest with light/dark shade (intensity can be selected)
-              enabled: true,
-              color: '#5A2A27',
-              shadeTo: 'light',
-              shadeIntensity: 0.65
-            }
-            */
           },
       },
      

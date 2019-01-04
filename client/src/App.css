@@ -61,10 +61,23 @@ p {
   border: none !important;
   padding: 0px !important; }
 
+.Section_Milestones .animated .Inner h1 {
+  text-align: center;
+  margin: 0; }
+
+.Section_Milestones .animated .Inner h1.Page_Sub_Title {
+  font-size: 2em !important;
+  color: rgba(51, 178, 223, 0.85) !important;
+  border-bottom: 1px solid;
+  margin: 0 0 10px 0;
+  padding: 0 0 7px 0; }
+
+.Section_Milestones .animated .Inner h1.Page_Title {
+  font-size: 1em !important;
+  font-weight: 600; }
+
 .RankingPods {
   display: contents; }
-  .RankingPods .show {
-    opacity: 1 !important; }
   .RankingPods .Outer .Inner {
     text-align: center;
     border: none !important; }
@@ -287,6 +300,8 @@ body {
     box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
     background-color: #f5f5f5;
     width: 100%; }
+    body #root #Statto #Frame main .show {
+      opacity: 1 !important; }
   body #root #Statto #Frame #PageHeader {
     background-color: #709dce;
     padding: 40px;

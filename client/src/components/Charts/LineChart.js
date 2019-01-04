@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import update from 'react-addons-update'
 import Chart from "react-apexcharts";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
+ 
     this.state = {
       options: {
         chart: {
@@ -47,25 +48,26 @@ class App extends Component {
           horizontalAlign: 'center', 
         },
         theme: {
-          palette: 'palette12', // If defined, it will overwrite globals.colors variable
-    
-          monochrome: { // monochrome allows you to select just 1 color and fill out the rest with light/dark shade (intensity can be selected)
-            enabled: true,
-            color: '#5A2A27',
-            shadeTo: 'light',
-            shadeIntensity: 0.65
-          }
+          palette: 'palette3', // If defined, it will overwrite globals.colors variable
+
         },
-    
+        xaxis: {
+          categories: [],
+        } 
       },
-      series: [
-        {
-          name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
-        }
-      ] 
+      series: [],
     }; 
   } 
+
+  componentWillMount() { 
+     
+    this.setState({
+        series:  update(this.state.series,  {$set: this.props.series}),
+     //   options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels}}}),
+        // eslint-disable-next-line 
+       // options: update(this.state.options,{labels:{$set:this.props.Labels}})
+      })
+  }
 
   render() {
     return (
@@ -74,7 +76,7 @@ class App extends Component {
           <div className="mixed-chart">
             <Chart
               options={this.state.options}
-              series={this.props.series}
+              series={this.state.series}
               type="line"
             
             />

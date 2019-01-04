@@ -50,6 +50,7 @@ export default class Section_Rankings extends Component {
             { name:"Runs",data:[] }
         ]
 
+        // eslint-disable-next-line
         data.map((game,i)=>{
 
             if(game.Bowling){

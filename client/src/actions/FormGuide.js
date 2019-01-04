@@ -4,8 +4,9 @@ var _ = require('lodash');
 let Stats={};
 
 export function FormGuide(data){
-    
-    
+
+    data.reverse()
+
     Stats={
         Career:{
             Meta:{
@@ -300,7 +301,7 @@ function RunOverTheYears(data,game){
 
    findKey = _.findKey(data, { 'int': '20'+from[2]});
      
-   if(findKey == undefined){
+   if(findKey === undefined){
           
     data.push(
                     {
@@ -336,7 +337,7 @@ function BowlingOverTheYears(data,game){
 
    findKey = _.findKey(data, { 'int': '20'+from[2]});
      
-   if(findKey == undefined){
+   if(findKey === undefined){
           
     
     data.push(

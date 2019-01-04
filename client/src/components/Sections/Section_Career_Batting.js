@@ -3,7 +3,7 @@ import update from 'react-addons-update'
 
 import Row from "../Template/Page/Row";
 import Pod from "../Template/Page/Pod";
-import Title from "../Elements/type/PageTitle";
+//import Title from "../Elements/type/PageTitle";
 import SubTitle from "../Elements/type/PageSubTitle";
 
 import MostForAgainst from "../Elements/Tables/MostForAgainst";
@@ -70,64 +70,6 @@ let stats=[
     }
 ];
 
-let ForAgainst=[]
-      /*  For:[
-            {
-                Name:["Innings"],
-                Value:[]
-            },
-            {
-                Name:["Runs"],
-                Value:[]
-            },
-            {
-                Name:["Balls Faced"],
-                Value:[]
-            },
-            {
-                Name:["Not Out's"],
-                Value:[]
-            },
-            {
-                Name:["Average"],
-                Value:[]
-            },
-            {
-                Name:["Strike Rate"],
-                Value:[]
-            }
-        ],
-        Against:[
-            {
-                Name:["Innings"],
-                Value:0
-            },
-            {
-                Name:["Runs"],
-                Value:0
-            },
-            {
-                Name:["Balls Faced"],
-                Value:0
-            },
-            {
-                Name:["Not Out's"],
-                Value:0
-            },
-            {
-                Name:["Average"],
-                Value:0
-            },
-            {
-                Name:["Strike Rate"],
-                Value:0
-            }
-        ]
-    };*/
-
-
-
-
 
 export default class Section_Rankings extends Component {
 
@@ -136,7 +78,6 @@ export default class Section_Rankings extends Component {
         Year:"Career",
         stats:stats,
         Created:0,
-        ForAgainst:ForAgainst
       }
 
       handleChange = event => {
@@ -240,14 +181,11 @@ export default class Section_Rankings extends Component {
         if(Perc  > 100){ Perc = 100}
         return Perc;
     }
-
-    componentWillMount() {  
-            this.createStats(this.props.Data,"Career");
-     }
-
+    componentWillMount() {  this.createStats(this.props.Data,"Career"); }
     shouldComponentUpdate(nextProps, nextState){ return true;}
     componentWillUpdate(nextProps, nextState){}
     render() {
+
         return (
             <div className="Section_Career atAGlance">
 

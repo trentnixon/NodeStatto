@@ -1,7 +1,5 @@
 .RankingPods{
     display: contents;
-    
-    .show{  opacity: 1 !important;}
 
     .Outer{
         .Inner{
@@ -9,7 +7,6 @@
             border: none !important;
         }
     }
-
 
     .animated .Inner{
         background-repeat: no-repeat;
@@ -33,7 +30,7 @@
             }
      
     }
-    .animated:nth-child(1) .Inner{ background-image: url("/assets/icons/runs.svg");}
+    .animated:nth-child(1) .Inner{ background-image: url("/assets/icons/runs.svg"); }
     .animated:nth-child(2) .Inner{ background-image: url("/assets/icons/1414791.svg");}
     .animated:nth-child(3) .Inner{ background-image: url("/assets/icons/56301.svg");}
 

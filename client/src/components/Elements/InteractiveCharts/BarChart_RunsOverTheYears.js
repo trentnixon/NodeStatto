@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
-import Title from "../../Elements/type/PageTitle";
+//import Row from "../../Template/Page/Row";
+//import Pod from "../../Template/Page/Pod";
+//import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../../Elements/type/PageSubTitle";
 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -57,7 +57,8 @@ export default class Section_Rankings extends Component {
             }
         ];
         Labels=[];
-
+        
+        // eslint-disable-next-line
         data.map((game,i)=>{
           //  console.log(game)
             if(game.Batting){
@@ -93,27 +94,25 @@ export default class Section_Rankings extends Component {
     componentWillUpdate(nextProps, nextState){}
     render() {
         return (
-            <Row> 
-                <Pod col="col-md-12" > 
-                    <Title Title="Runs by Year" />
-
-                    <FormControl variant="outlined" className="YearSelector" >
-                        <InputLabel
-                            ref={ref => { this.InputLabelRef = ref; }}
-                            htmlFor="outlined-year-simple"
-                        > Select a Year </InputLabel>
-                        <Select
-                            value={this.state.Year}
-                            onChange={this.handleChange}
-                            input={
+            <div> 
+                <FormControl variant="outlined" className="YearSelector" >
+                    <InputLabel
+                        ref={ref => { this.InputLabelRef = ref; }}
+                        htmlFor="outlined-year-simple"
+                    > 
+                        Select a Year 
+                    </InputLabel>
+                    <Select
+                        value={this.state.Year}
+                        onChange={this.handleChange}
+                        input={
                                 <OutlinedInput 
                                     labelWidth={this.state.labelWidth}
                                     name="year"
                                     id="outlined-year-simple"
                                 />
-                            }
-                        >
-
+                        }
+                    >
                         {
                             this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
                                     return(
@@ -122,17 +121,16 @@ export default class Section_Rankings extends Component {
                             })
                         }
                 
-                        </Select>
-                        </FormControl>
- 
-                    <Bar 
-                        series={this.state.Data}
-                        Labels={this.state.Labels}
-                        Created={this.state.Created}
-                        horizontal={true}
-                    />
-                </Pod>
-            </Row>
+                    </Select>
+                </FormControl>
+                
+                <Bar 
+                    series={this.state.Data}
+                    Labels={this.state.Labels}
+                    Created={this.state.Created}
+                    horizontal={true}
+                />
+            </div>
             )
         }
     } 
