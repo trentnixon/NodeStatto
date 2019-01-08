@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import Pod from "../../../Template/Page/Pod";
-
+import Title from "../../Elements/type/PageTitle";
+import SubTitle from "../../Elements/type/PageSubTitle";
 
 let Data=[],Categories=[],Form=[]
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
             },
             xaxis: {
             categories: []
-            }
+            } 
       },
      
       series: [
@@ -33,7 +33,8 @@ class App extends Component {
         Data=[];
         Categories=[];
 
-        Form = this.props.DATA.CLEAN.slice(0,5);
+        Form = this.props.DATA.CLEAN.slice(Math.max(this.props.DATA.CLEAN.length - 3, 1)).reverse();;
+        
 
         // console.log(Form);
         // eslint-disable-next-line
@@ -65,18 +66,18 @@ class App extends Component {
     }
 
   render() {
-    console.log(this.state.series);
+
     return (
-         <Pod
-          col={this.props.col}
-         >
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
-             
-            />
-        </Pod>
+      <div>
+          <Title Title={this.props.Title} />
+          <SubTitle Title={""} />
+          <Chart
+                  options={this.state.options}
+                  series={this.state.series}
+                  type="bar"
+              />
+      </div>
+            
     );
   }
 }

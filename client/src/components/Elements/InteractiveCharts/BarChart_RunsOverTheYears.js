@@ -19,7 +19,7 @@ let RunsYear=[
         name:"Runs",
         data:[]
     },
-    {
+    { 
         name:"Balls",
         data:[]
     }

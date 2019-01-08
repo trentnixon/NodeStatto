@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Frame from "../Template/Frame";
-import ComponentHome from "./Parents/Home";
-import ComponentHistory from "./Parents/History";
+import ComponentHome from "./Parents/Home/Home";
+import ComponentHistory from "./Parents/History/History";
 import ComponentBatting from "./Parents/Batting/Batting";
 import ComponentFormGuide from "./Parents/Batting/formguide";
 import ComponentRuns from "./Parents/Batting/runs";
@@ -122,7 +122,7 @@ export default class Statto extends Component {
                 <Route  exact path="/:id/bowling/wickets" render={()=> <ComponentWickets {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
-              <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
+                <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
 
               <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
 

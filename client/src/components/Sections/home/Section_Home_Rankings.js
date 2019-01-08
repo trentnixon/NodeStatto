@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import LinkIcon from '@material-ui/icons/Layers'
+import { Link } from "react-router-dom";
 import {Animated} from "react-animated-css";
 
 import Row from "../../Template/Page/Row";
@@ -6,17 +9,18 @@ import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 
-const stones=[
-    { var:"ducks",label:"Ducks"},
-    { var:"s_10",label:"< 10"},
-    { var:"s_20",label:"20 odd"},
-    { var:"s_30",label:"30 odd"},
-    { var:"s_40",label:"40 odd"},
-    { var:"s_50",label:"50 +"},
-    { var:"s_100",label:"100 +"}
-]
+// Pod
+import RankingPod from "../../Elements/pods/Ranking_Home_Pod"
+
+let stones=[];
 export default class Section_Rankings extends Component {
-    componentWillMount() { }
+    componentWillMount() {
+         stones=[
+            { var:this.props.Data.Batting, Path:"/batting/", label:"Batting"},
+            { var:this.props.Data.Bowling, Path:"/bowling/", label:"Bowling"},
+            { var:this.props.Data.Keeping, Path:"/keeping/", label:"Keeping"}
+        ]
+     }
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
@@ -24,13 +28,11 @@ export default class Section_Rankings extends Component {
                 <Row class="ContainerRow">
                     <Pod col="col-md-12" > 
                         <Title Title={this.props.Title}/>
-                        <SubTitle Title={this.props.SubTitle} />
-
                         <Row>  
                         
                             {
                                 stones.map((stone,i)=>{
-                                    console.log("Pod " + this.props.isVisible)
+                                  
                                     let Delay= 200*i;
                                     return(
                                         <Animated  
@@ -41,10 +43,10 @@ export default class Section_Rankings extends Component {
                                             animateOnMount={false}
                                             className={IsVisable + " col-md-4"}
                                         >
-                                            <Pod col="col-md-12">
-                                                <SubTitle Title={this.props.Data[stone.var]} />
-                                                <Title  Title={stone.label} />
-                                            </Pod>
+                                            <RankingPod 
+                                                total={stone.var}
+                                                label={stone.label}
+                                            />
                                         </Animated>
                                     )
                                 }) 

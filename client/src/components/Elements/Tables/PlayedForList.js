@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Pod from "../../../Template/Page/Pod";
+
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,15 +7,13 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-//import SwipeableViews from 'react-swipeable-views';
-//import AppBar from '@material-ui/core/AppBar';
-//import Tabs from '@material-ui/core/Tabs';
-//import Tab from '@material-ui/core/Tab';
+import Title from "../../Elements/type/PageTitle";
+import SubTitle from "../../Elements/type/PageSubTitle";
 
 
 var _ = require('lodash');
 
-let Teams=[];
+let Teams=[], Num=0;
 export default class PlayedFor extends Component {
     componentWillMount() { 
         Teams=[]
@@ -35,15 +33,20 @@ export default class PlayedFor extends Component {
                 Teams[TeamPosition].Int =  Teams[TeamPosition].Int + 1;
             }
         })
+        Num = Teams.length;
     } 
   render() {
 
     //console.log(Teams);
     Teams = _.orderBy(Teams, [function(o) { return o.Int; }],['desc']);
+   
+    Teams= Teams.slice(0,10);
     
       return(
-            <Pod col={this.props.col}>
-                    <h1>{this.props.label}</h1>
+            <div>
+                <Title Title={this.props.Label} />
+                <SubTitle Title={Num + " Teams"} />
+
                     <Table>
                         <TableHead>
                             <TableRow>
@@ -66,7 +69,7 @@ export default class PlayedFor extends Component {
                                 }
                         </TableBody>
                     </Table>
-                </Pod>
+                </div>
       )
   }
 }

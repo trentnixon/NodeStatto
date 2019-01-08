@@ -5,6 +5,8 @@ import Pod from "../../Template/Page/Pod";
 import Title from "../type/PageTitle";
 import SubTitle from "../type/PageSubTitle";
 
+var _ = require('lodash');
+
 let FetchRankings=[{
     Title:"Current",
     value:1
@@ -22,12 +24,16 @@ export default class RankingPods extends Component {
 
     findValue(data,type){
             
-        if(type === 1){ return(data[data.length-1])}
-        else if(type === 2){return Math.min.apply(null, data)} 
-        else if(type === 0){return Math.max.apply(null, data)}
+        if(type === 1){ return(data[data.length-1].rank)}
+        else if(type === 2){
+            return Math.min.apply(null, _.map(data, "rank"))
+        } 
+        else if(type === 0){
+            return Math.max.apply(null, _.map(data, "rank"));
+        }
     }
     render() {
-        console.log(this.props.visable);
+        //console.log(this.props.visable);
        let  IsVisable =  this.props.visable === true ? 'show':'';
         return (
                 <div className="RankingPods" >

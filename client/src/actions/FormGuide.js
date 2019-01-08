@@ -40,6 +40,7 @@ export function FormGuide(data){
             },
             bowling:{
                 wickets:0,
+                innings:0,
                 ob:0,
                 rc:0,
                 economy:0,
@@ -84,6 +85,7 @@ export function FormGuide(data){
             },
             bowling:{
                 wickets:0,
+                innings:0,
                 ob:0,
                 rc:0,
                 economy:0,
@@ -124,19 +126,19 @@ export function FormGuide(data){
             if(game.Batting){
                 Batting = IncludeBatting(Batting,game);
                 // Ranking
-                Meta.Rankings.Batting =  rankingPush(Meta.Rankings.Batting, parseInt(game.Batting.Ranking,10))
+                Meta.Rankings.Batting =  rankingPush(Meta.Rankings.Batting, parseInt(game.Batting.Ranking,10),game.Meta.Date)
             }
             // Bowling
             if(game.Bowling){
                 Bowling = IncludeBowling(Bowling, game)
                 // Ranking
                // console.log(game.Bowling.Ranking)
-                Stats.Career.Meta.Rankings.Bowling =  rankingPush(Stats.Career.Meta.Rankings.Bowling, parseInt(game.Bowling.Ranking,10))
+                Stats.Career.Meta.Rankings.Bowling =  rankingPush(Stats.Career.Meta.Rankings.Bowling, parseInt(game.Bowling.Ranking,10),game.Meta.Date)
             }
             // Keeping
             if(game.Keeping){
                 Keeping =IncludeKeeping(Keeping, game)
-                Stats.Career.Meta.Rankings.Keeping =  rankingPush(Stats.Career.Meta.Rankings.Keeping, parseInt(game.Keeping.Ranking,10))
+                Stats.Career.Meta.Rankings.Keeping =  rankingPush(Stats.Career.Meta.Rankings.Keeping, parseInt(game.Keeping.Ranking,10),game.Meta.Date)
             }
     });
     
@@ -210,6 +212,7 @@ function IncludeBatting(Batting, game){
 function IncludeBowling(Bowling, game){
 
     Bowling.wickets =  Add(Bowling.wickets, parseInt(game.Bowling.Wickets,10))
+    Bowling.innings =   Add(Bowling.innings,1);
     Bowling.ob =  Add(Bowling.ob, parseInt(game.Bowling.OversInt,10))
     Bowling.rc =  Add(Bowling.rc, parseInt(game.Bowling.Runs,10))
     Bowling.economy =  (Bowling.rc/Bowling.ob).toFixed(2)
@@ -237,14 +240,22 @@ function IncludeKeeping(Keeping, game){
 
     return Keeping;
 }
-
+ 
 
 // Supplimentaly Functions
 
 function Add(data,value){  if(!isNaN(value)){ return (data+value);}else{ return data}  }
 
-function rankingPush(data,value){ 
-    if(!isNaN(value)){ data.push(value);}
+function rankingPush(data,value,date){ 
+    let year = date.split('/');
+    if(!isNaN(value)){ 
+            data.push(
+                {
+                    rank:value,
+                    date:'20'+year[2]
+                }
+            );
+    }
     return data
 }
 

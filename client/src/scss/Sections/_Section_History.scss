@@ -1,0 +1,35 @@
+.Section_History{
+
+ul{
+    .animated{
+        li{
+
+            >div{
+
+                >div{ background-color: #d8f9ff; color: #333;}
+                
+                div+div{ 
+                        background-color:unset; 
+                }
+                div+div+div{
+                       // background-color: green;
+                        text-align: right;
+                        padding: 0 20px 0 0;
+                }
+              // span{ display: none;}
+
+            }
+            div+div{
+              //  background-color: red;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+}

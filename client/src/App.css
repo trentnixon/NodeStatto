@@ -36,31 +36,6 @@ p {
     font-weight: 800;
     font-size: 1.5em; }
 
-.atAGlance .row .Radial .Inner div {
-  min-height: auto !important; }
-  .atAGlance .row .Radial .Inner div .apexcharts-canvas {
-    height: 175px !important; }
-
-.atAGlance .row .Radial .Inner .Page_Sub_Title {
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  font-size: 1.8em !important;
-  font-weight: 100;
-  letter-spacing: 1px; }
-
-.atAGlance .row .Radial .Inner .Page_Sub_Title + .Page_Sub_Title {
-  font-size: .8em !important; }
-
-.atAGlance .row > div {
-  display: inline-block;
-  width: auto; }
-
-.atAGlance .row div.Selector .Inner {
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0px !important; }
-
 .Section_Milestones .animated .Inner h1 {
   text-align: center;
   margin: 0; }
@@ -75,6 +50,42 @@ p {
 .Section_Milestones .animated .Inner h1.Page_Title {
   font-size: 1em !important;
   font-weight: 600; }
+
+.atAGlance .Radial .Inner div .apexcharts-canvas {
+  height: 175px !important; }
+
+.atAGlance .Radial .Inner .RadialTextContainer {
+  display: inline-block;
+  width: 100%; }
+  .atAGlance .Radial .Inner .RadialTextContainer .Page_Sub_Title {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 1.8em !important;
+    font-weight: 100;
+    letter-spacing: 1px; }
+  .atAGlance .Radial .Inner .RadialTextContainer .Page_Sub_Title + .Page_Sub_Title {
+    font-size: .8em !important; }
+
+.atAGlance .Radial > div {
+  display: inline-block;
+  width: auto; }
+
+.atAGlance .Radial div.Selector .Inner {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0px !important; }
+
+.Section_History ul .animated li > div > div {
+  background-color: #d8f9ff;
+  color: #333; }
+
+.Section_History ul .animated li > div div + div {
+  background-color: unset; }
+
+.Section_History ul .animated li > div div + div + div {
+  text-align: right;
+  padding: 0 20px 0 0; }
 
 .RankingPods {
   display: contents; }
@@ -311,7 +322,7 @@ body {
     border: none;
     background-color: transparent; }
   body #root #Statto #Frame #Pod {
-    padding: 0 15px 15px 0; }
+    padding: 0 15px 5px 0; }
     body #root #Statto #Frame #Pod .Inner {
       border: 1px solid rgba(0, 0, 0, 0.12);
       border-radius: 5px;

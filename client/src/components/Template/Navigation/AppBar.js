@@ -15,10 +15,6 @@ import  {Batting,Bowling,Keeping} from "../../Icons/icons";
 
 const Nav_Icons=[
   {
-    "icon":<Dashboard />,
-    "link":""
-  },
-  {
     "icon":<Batting />,
     "link":"batting"
   },
@@ -41,28 +37,34 @@ export default class APPBARLAYOUT extends React.Component {
   } 
   
   render() {
-    //console.log(this.props.DATA.CAREER.Career.Meta.Rankings);
     return (
           <div id="AppBar"> 
             <div className="Left">
                 <Hidden smDown> 
                     <img  alt="Logo"  src="/assets/Logo.png" className="Logo"/>
-                    <IconButton><Backspace /></IconButton>
               </Hidden>
             </div>
             <div className="Center">
               <Hidden smDown> 
+                <div>
+                  <IconButton   component={Link} to={`/${Path}/`} >
+                    <Dashboard /> 
+                  </IconButton>
+                </div>
+
                       {
                         Nav_Icons.map((icon,i)=>{
+                          if(this.props[icon.link]){
                             return(
                               <div key={i}>
-                                <IconButton  >
-                                    <Link to={`/${Path}/${icon.link}`}> {icon.icon} </Link>
+                                <IconButton component={Link} to={`/${Path}/${icon.link}`}>
+                                   {icon.icon} 
                                 </IconButton>
-                                 <p>{this.props[icon.link]}</p>
+                                 <p>{this.props[icon.link].rank}</p>
                               </div>
                                 
                             )
+                          }
                         })
                       }
                 </Hidden>
@@ -70,8 +72,8 @@ export default class APPBARLAYOUT extends React.Component {
 
             <div className="Right">
                <Hidden smDown> 
-                  <IconButton><Link to={`/${Path}/search`}> <Search /></Link>  </IconButton>
-                  <IconButton><Link to={`/${Path}/settings`}> <Settings /></Link>  </IconButton>
+                  <IconButton component={Link}  to={`/${Path}/search`}>   <Search />  </IconButton>
+                  <IconButton component={Link} to={`/${Path}/settings`}>  <Settings />  </IconButton>
               </Hidden>
               <h1>{this.props.DATA.CURRENTNAME}</h1>
               <Avatar>{this.props.DATA.CURRENTNAME.charAt(0)}</Avatar>

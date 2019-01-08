@@ -9,9 +9,7 @@ let Previous=[], Runs,Balls, Fig,Overs;
 class PreviousGameSlider extends Component {
 
   componentWillMount() { 
-     Previous = this.props.DATA.CLEAN.slice(0,10);
-     
-   //  const { width } = this.props.size;
+    Previous = this.props.DATA.CLEAN.slice(Math.max(this.props.DATA.CLEAN.length - 10, 1)).reverse();
   }
 
   render() {

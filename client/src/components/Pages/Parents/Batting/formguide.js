@@ -1,32 +1,52 @@
 import React, { Component } from 'react';
-import Title from "../../../Elements/type/PageTitle";
+
 import Container from "../../../Template/Page/Container";
 import PageHeader from "../../../Template/Page/Header"
 // Sections
-import SectionCareerBatting from "../../../Sections/Section_Career_Batting";
+import SectionHeader from "../../../Sections/global/Section_Global_Header";
+import SectionContainer from "../../../Sections/global/SectionContainer";
+import SectionCareerBatting from "../../../Sections/batting/Section_FormGuide_AtAGlance_Batting";
 import SectionMilestonesBatting from "../../../Sections/batting/Section_Career_Milestones_Batting";
 import SectionBattingrecentScores from "../../../Sections/batting/Section_Batting_recentScores";
 
 export default class Formguide
  extends Component {
 
-  componentWillMount() {
-    //console.log(this.props.DATA.CLEAN)
-  } 
+  componentWillMount() {} 
 
-  render() {
-    return (
-      <div>
+  render() { 
+    /**
+     *    
+     * <SectionCareerBatting Data={this.props.DATA.CAREER.Form.batting} />
+           
+     */
+    return ( 
+      <div> 
           <PageHeader>
-              Anlysis and radial Chart
+             */10
           </PageHeader>
           <Container>
-          
-            <Title Title="Form Guide" />
-            <SectionCareerBatting Data={this.props.DATA.CAREER.Form.batting} />
-            <SectionBattingrecentScores  Data={this.props.DATA.CLEAN} />
-            <Title Title="Achievements and Milestones" />
-            <SectionMilestonesBatting  Data={this.props.DATA.CAREER.Form.batting} />
+
+            <SectionHeader   h1="Batting" h2="Form Guide (Based on last 10 Games)"  /> 
+
+              <SectionContainer>
+                <SectionCareerBatting 
+                  Data={this.props.DATA.CAREER.Form.batting} 
+                  Career={this.props.DATA.CAREER.Career}
+                />
+            </SectionContainer>
+
+
+            <SectionContainer>
+              <SectionBattingrecentScores  Data={this.props.DATA.CLEAN} />
+            </SectionContainer>
+
+            <SectionContainer>
+              <SectionMilestonesBatting  
+                Data={this.props.DATA.CAREER.Form.batting} 
+                Title="Milestones and Achievements"
+              />
+            </SectionContainer>
 
           </Container>
         </div>

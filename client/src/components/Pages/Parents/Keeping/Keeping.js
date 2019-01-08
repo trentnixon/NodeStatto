@@ -5,12 +5,14 @@ import Container from "../../../Template/Page/Container";
 import Row from "../../../Template/Page/Row";
 
 // Sections 
-import SectionRankings from "../../../Sections/Section_Discipline_Rankings";
-import SectionCareerKeeping from "../../../Sections/Section_Career_Keeping";
+import SectionRankings from "../../../Sections/global/Section_Discipline_Rankings";
+import SectionCareerKeeping from "../../../Sections/Keeping/Section_Career_Keeping";
 
 export default class Batting extends Component {
 
-  componentWillMount() { console.log(this.props.DATA.CLEAN) }
+  componentWillMount() { 
+    //console.log(this.props.DATA.CLEAN) 
+  }
 
   render() {
     return (

@@ -15,22 +15,20 @@ const NavBarTop = (props) => (
         
         <div className="Actions">
             <div>
-                    <IconButton>
-                        <Link to={`/${props.match.params.playerid}/`}><Dashboard /></Link> 
-                    </IconButton> 
+                <IconButton component={Link} to={`/${props.match.params.playerid}/`}>
+                    <Dashboard />
+                </IconButton> 
             </div>
             <div>
-            <IconButton> 
-                <Link to={`/${props.match.params.playerid}/history`}>
+                <IconButton component={Link}  to={`/${props.match.params.playerid}/history`}> 
                     <History />
-                </Link>
-            </IconButton>
+                </IconButton>
             </div>
             <div>
-                    <IconButton>
-                        <Link to={`/${props.match.params.playerid}/fixtures`}><CalendarToday /></Link> 
-                    </IconButton>
-                </div> 
+                <IconButton component={Link} to={`/${props.match.params.playerid}/fixtures`}>
+                       <CalendarToday />
+                </IconButton>
+            </div> 
             </div>
             <div className="UserName">
             <div>

@@ -63,9 +63,9 @@ class App extends Component {
      
     this.setState({
         series:  update(this.state.series,  {$set: this.props.series}),
-     //   options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels}}}),
+        options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels}}}),
         // eslint-disable-next-line 
-       // options: update(this.state.options,{labels:{$set:this.props.Labels}})
+        options: update(this.state.options,{labels:{$set:this.props.Labels}})
       })
   }
 
@@ -77,7 +77,7 @@ class App extends Component {
             <Chart
               options={this.state.options}
               series={this.state.series}
-              type="line"
+              type="line" 
             
             />
           </div>

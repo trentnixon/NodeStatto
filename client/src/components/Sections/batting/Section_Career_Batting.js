@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update'
 
-import Row from "../Template/Page/Row";
-import Pod from "../Template/Page/Pod";
+import Row from "../../Template/Page/Row";
+import Pod from "../../Template/Page/Pod";
 //import Title from "../Elements/type/PageTitle";
-import SubTitle from "../Elements/type/PageSubTitle";
+import SubTitle from "../../Elements/type/PageSubTitle";
 
-import MostForAgainst from "../Elements/Tables/MostForAgainst";
+import MostForAgainst from "../../Elements/Tables/MostForAgainst";
 
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -14,8 +14,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-// Charts
-import Radial from "../Charts/RankingRadial";
+// Elements
+import RadialPod from "../../Elements/pods/RadialPods";
+
 
 var _ = require('lodash');
 
@@ -26,7 +27,8 @@ let stats=[
         Total:[0],
         Percentage:[0],
         For:["Name"],
-        Against:["Name"]
+        Against:["Name"],
+        Title:"Career Innings"
     },
     {
         Name:["Runs"],
@@ -34,7 +36,8 @@ let stats=[
         Total:[0],
         Percentage:[0],
         For:["Name"],
-        Against:["Name"]
+        Against:["Name"],
+        Title:"Career Runs"
     },
     {
         Name:["Balls Faced"],
@@ -42,7 +45,8 @@ let stats=[
         Total:[0],
         Percentage:[0],
         For:["Name"],
-        Against:["Name"]
+        Against:["Name"],
+        Title:"Career Balls Faced"
     },
     {
         Name:["Not Out's"],
@@ -50,7 +54,8 @@ let stats=[
         Total:[0],
         Percentage:[0],
         For:["Name"],
-        Against:["Name"]
+        Against:["Name"],
+        Title:"Career Not Out's"
     },
     {
         Name:["Average"],
@@ -58,25 +63,28 @@ let stats=[
         Total:[0],
         Percentage:[0],
         For:["Name"],
-        Against:["Name"]
+        Against:["Name"],
+        Title:"Career Average"
     },
     {
         Name:["Strike Rate"],
         Value:[0],
         Total:[0],
         Percentage:[0],
-        For:["Name"],
-        Against:["Name"]
+        For:["Name"], 
+        Against:["Name"],
+        Name:["Strike Rate"],
+        Title:"Career Innings"
     }
 ];
-
+ 
 
 export default class Section_Rankings extends Component {
 
     state = {
         labelWidth: 100,
         Year:"Career",
-        stats:stats,
+        stats:stats, 
         Created:0,
       }
 
@@ -100,31 +108,37 @@ export default class Section_Rankings extends Component {
                                 Value:{$set:[Data.innings]},
                                 Total:{$set:[Data.innings]},
                                 Percentage:{$set:[this.findPercentage(Data.innings,Data.innings)]},
+                                TitleValue:{$set:this.props.Data.innings}
                             },
                             1:{
                                 Value:{$set:[Data.runs]},
                                 Total:{$set:[Data.runs]},
-                                Percentage:{$set:[this.findPercentage(Data.runs,Data.runs)]}
+                                Percentage:{$set:[this.findPercentage(Data.runs,Data.runs)]},
+                                TitleValue:{$set:this.props.Data.runs }
                             },
                             2:{
                                 Value:{$set:[Data.ballsFaced]},
                                 Total:{$set:[Data.ballsFaced]},
-                                Percentage:{$set:[this.findPercentage(Data.ballsFaced,Data.ballsFaced)]}
+                                Percentage:{$set:[this.findPercentage(Data.ballsFaced,Data.ballsFaced)]},
+                                TitleValue:{$set:this.props.Data.ballsFaced}
                             },
                             3:{
                                 Value:{$set:[Data.notOut]},
                                 Total:{$set:[Data.notOut]},
-                                Percentage:{$set:[this.findPercentage(Data.notOut,Data.notOut)]}
+                                Percentage:{$set:[this.findPercentage(Data.notOut,Data.notOut)]},
+                                TitleValue:{$set:this.props.Data.notOut}
                             },
                             4:{
                                 Value:{$set:[Data.average]},
                                 Total:{$set:[Data.average]},
-                                Percentage:{$set:[this.findPercentage(Data.average,Data.average)]}
+                                Percentage:{$set:[this.findPercentage(Data.average,Data.average)]},
+                                TitleValue:{$set:this.props.Data.average}
                             },
                             5:{
                                 Value:{$set:[Data.strikeRate]},
                                 Total:{$set:[Data.strikeRate]},
-                                Percentage:{$set:[this.findPercentage(Data.strikeRate,Data.strikeRate)]}
+                                Percentage:{$set:[this.findPercentage(Data.strikeRate,Data.strikeRate)]},
+                                TitleValue:{$set:this.props.Data.strikeRate}
                             }
                         }
                     ),
@@ -187,8 +201,7 @@ export default class Section_Rankings extends Component {
     render() {
 
         return (
-            <div className="Section_Career atAGlance">
-
+            <div className="atAGlance">
             <Row >
                 <Pod col="col-md-12 Selector" >
                     <FormControl variant="outlined" className="YearSelector" >
@@ -218,94 +231,31 @@ export default class Section_Rankings extends Component {
                 </Pod>
             </Row>   
 
+            <Row >
+                    <Pod col="col-md-12 NakedPod" >
+                        <Row class="Radial" > 
+                            {
+                                this.state.stats.map((radial,i)=>{
+                                    return(
+                                        <RadialPod 
+                                            key={i}
+                                            Value={radial.Value}
+                                            Label={radial.Name}
+                                            Percentage={radial.Percentage}
+                                            Created={this.state.Created}
+                                            TitleValue={radial.TitleValue}
+                                            Title ={radial.Title}
+                                        />
+                                    )
+                                })
+                            }
 
-            <Row > 
-                <Pod col="col-md-4 ToDo">
-                        <SubTitle Title={this.state.Year}/>
-                        <MostForAgainst 
-                        
-                            Table={this.state.stats}
-                        />
-                </Pod>
-                <Pod col="col-md-8 NakedPod" >
-
-                <Row class="Radial" > 
-                        <Pod col="col-md-4" >
-                            <Radial 
-                                Value={this.state.stats[0].Value}
-                                Label={this.state.stats[0].Name}
-                                Percentage={this.state.stats[0].Percentage}
-                                Created={this.state.Created}
-                            />
-                            <SubTitle Title={this.props.Data.innings} />
-                            <SubTitle Title={'Career Innings'} />
-                            
-                        </Pod>
-
-
-                        <Pod col="col-md-4" > 
-                            <Radial 
-                               Value={this.state.stats[1].Value}
-                               Label={this.state.stats[1].Name}
-                               Percentage={this.state.stats[1].Percentage}
-                               Created={this.state.Created}
-                            />
-                          <SubTitle Title={this.props.Data.runs } />
-                            <SubTitle Title={'Career Runs'} />
-                        </Pod>
-
-                        <Pod col="col-md-4" > 
-
-                            <Radial 
-                                Value={this.state.stats[2].Value}
-                                Label={this.state.stats[2].Name}
-                                Percentage={this.state.stats[2].Percentage}
-                                Created={this.state.Created}
-                                />
-                            <SubTitle Title={this.props.Data.ballsFaced} />
-                            <SubTitle Title={'Career Balls Faced'} />
-                        </Pod>
-
-
-
-                        <Pod col="col-md-4" > 
-
-                            <Radial 
-                               Value={this.state.stats[3].Value}
-                               Label={this.state.stats[3].Name}
-                               Percentage={this.state.stats[3].Percentage}
-                               Created={this.state.Created}
-                            />
-                          <SubTitle Title={this.props.Data.notOut} />
-                            <SubTitle Title={'Career Not outs'} />
-
-                        </Pod>
-                        <Pod col="col-md-4" >
-                        <Radial 
-                               Value={this.state.stats[4].Value}
-                               Label={this.state.stats[4].Name}
-                               Percentage={this.state.stats[4].Percentage}
-                               Created={this.state.Created}
-                            />
-                          
-                          <SubTitle Title={this.props.Data.average} />
-                            <SubTitle Title={'Career Average'} />
-                          
-                        </Pod>
-                        <Pod col="col-md-4" >
-
-                        <Radial 
-                               Value={this.state.stats[5].Value}
-                               Label={this.state.stats[5].Name}
-                               Percentage={this.state.stats[5].Percentage}
-                               Created={this.state.Created}
-                            />
-                          
-                          <SubTitle Title={this.props.Data.strikeRate} />
-                            <SubTitle Title={'Career Strike Rate'} />
-                          
-                        </Pod>
                         </Row > 
+                    </Pod>
+
+                    <Pod col="col-md-12 ToDo">
+                        <SubTitle Title={this.state.Year}/>
+                        <MostForAgainst  Table={this.state.stats}  />
                     </Pod>
                 </Row>
             </div>

@@ -8,11 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 export default class BattingRecentScores extends Component {
 
-    componentWillMount() { 
-        //console.log(this.props.Data)
-    }
-
-  
+    componentWillMount() { }
     render() {
         return (
                 <div className="Table " id="RecentScores" >
@@ -29,7 +25,7 @@ export default class BattingRecentScores extends Component {
                         <TableBody>
                             {
                                 // eslint-disable-next-line
-                                this.props.Data.map((game,i)=>{
+                                this.props.Data.slice(0,10).map((game,i)=>{
                                
                                     if(game.Batting){
                                         return(
