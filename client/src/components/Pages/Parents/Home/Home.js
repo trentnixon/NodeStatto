@@ -24,7 +24,7 @@ export default class Statto extends Component {
     console.log(this.props.DATA)
     return (
       <div>          
-           <PageHeader>
+           <PageHeader> 
                 <PreviousGames {... this.props} />
             </PageHeader>
           <Container>
@@ -33,8 +33,8 @@ export default class Statto extends Component {
               <SectionContainer>
                   <Overview 
                     Title="Overview"
-                    {... this.props}
-                  />
+                    {... this.props} 
+                  /> 
               </SectionContainer>
               
               <SectionContainer>
@@ -50,7 +50,7 @@ export default class Statto extends Component {
                     Title="Recent Games"
                     {... this.props} 
                   />
-              </SectionContainer>
+              </SectionContainer> 
               
               <SectionContainer>
                   <Charts 
@@ -58,8 +58,6 @@ export default class Statto extends Component {
                     {... this.props} 
                   />
               </SectionContainer>
-
-             
               
           </Container>
       </div>

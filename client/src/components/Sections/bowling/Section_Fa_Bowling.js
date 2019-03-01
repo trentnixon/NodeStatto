@@ -17,7 +17,7 @@ const stones=[
 
 export default class Section_Rankings extends Component {
     componentWillMount() {}
-    render() {
+    render() { 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
             <div className="Section_Milestones">
@@ -39,9 +39,16 @@ export default class Section_Rankings extends Component {
                                                     animateOnMount={false}
                                                     className={IsVisable + " col-md-4"}
                                                 >
-                                                    <Pod col="col-md-12">
+                                                    <Pod col="col-md-12" canvas="canvas1">
+                                                    <div className="Header">
+                                                        {stone.icon}
+                                                    </div>
+                                                    <div className="Body">
                                                         <SubTitle Title={this.props.Data[stone.var]} />
                                                         <Title  Title={stone.label} />
+                                                    </div>
+                                                    <div className="Footer">
+                                                    </div>
                                                     </Pod>
                                                 </Animated>
                                             )

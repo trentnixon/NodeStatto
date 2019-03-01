@@ -1,5 +1,16 @@
 .atAGlance{
 
+        .Form_Selector{
+            .Inner{
+                text-align: right;
+            }
+
+            div[class*="MuiInputBase-input-"]{
+                text-align: left;
+            }
+        }
+
+
         .Radial{ 
             .Inner{
                 div{
@@ -12,6 +23,8 @@
                 .RadialTextContainer{
                     display: inline-block;
                     width: 100%;
+                    position: relative;
+                    z-index:    100;
                     
                     .Page_Sub_Title{ 
                         text-align: center;

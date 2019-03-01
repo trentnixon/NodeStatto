@@ -128,6 +128,7 @@ export default class Section_Rankings extends Component {
         return (value*played).toFixed(2);
     }
     componentWillMount() {  
+        console.log(this.props.Data);
         this.createStats(this.props.Data,"Career"); 
     }
     shouldComponentUpdate(nextProps, nextState){ return true;}

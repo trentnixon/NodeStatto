@@ -26,9 +26,9 @@ class Chart_Games_Home extends Component {
               background: 'transparent',
               dropShadow: { enabled: false},
               offsetX: 0,
-              offsetY: 0,
+              offsetY: 20,
               toolbar: {
-                  show: true,
+                  show: false,
                   tools: {
                     download: true,
                     selection: true,
@@ -64,7 +64,7 @@ class Chart_Games_Home extends Component {
           legend: { 
             show: true,
             floating: false,
-            position: 'bottom',
+            position: 'top',
             horizontalAlign: 'center', 
           },
           theme: {

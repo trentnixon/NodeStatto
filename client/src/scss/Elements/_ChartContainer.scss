@@ -1,0 +1,63 @@
+.ChartContainer{
+        padding-bottom: 0;
+        .Header{
+            padding: 5px 15px;
+            margin: -15px;
+            //background-color: rgba(51, 178, 223, 0.85) !important;
+            background-color:$ColorBase !important;
+
+            h1.Page_Sub_Title{
+                display: inline;
+               
+                margin: 0;
+                font-size: 1.3em !important;
+                padding: 10px 0;
+                line-height: 1.5em;
+                color: $white !important;
+            }
+            .Avatar{
+                float: right;
+                background-color: $white;
+                color: $h2Color ;
+                font-size: .9em !important;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .Body{
+            padding: 15px;
+        }
+
+        .Footer{
+            padding: 0px;
+            text-align: right;
+        }
+}
+
+
+
+.invert{
+    background-color: $ColorBase !important;
+    border-color: $pureWhite !important;
+
+    .ChartContainer{
+
+        .Header{
+            background-color:$pureWhite !important;
+            h1.Page_Sub_Title{
+                color: $h2Color !important;
+            }
+           
+        }
+        .Body{
+            padding: 15px 0 0;
+        }
+
+        .Footer{
+            a{
+                color: $white;
+            }
+        }
+    }
+}

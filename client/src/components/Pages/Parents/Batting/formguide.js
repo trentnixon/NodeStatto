@@ -27,7 +27,7 @@ export default class Formguide
           </PageHeader>
           <Container>
 
-            <SectionHeader   h1="Batting" h2="Form Guide (Based on last 10 Games)"  /> 
+            <SectionHeader   h1="Batting" h2="Form Guide (Based on last 5 Games)"  /> 
 
               <SectionContainer>
                 <SectionCareerBatting 

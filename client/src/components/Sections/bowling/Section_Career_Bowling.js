@@ -14,7 +14,7 @@ import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 // Elements
-import RadialPod from "../../Elements/pods/RadialPods";
+import FillPods from "../../Elements/pods/FillPods";
 
 var _ = require('lodash');
 
@@ -228,7 +228,7 @@ export default class Section_Rankings extends Component {
                                 this.state.stats.map((radial,i)=>{
                                     console.log(radial)
                                     return(
-                                        <RadialPod 
+                                        <FillPods 
                                             key={i}
                                             Value={radial.Value}
                                             Label={radial.Name}

@@ -6,15 +6,24 @@ ul{
 
             >div{
 
-                >div{ background-color: #d8f9ff; color: #333;}
+                >div{ 
+                        background-color: $white; 
+                        color: $h2Color;}
                 
                 div+div{ 
                         background-color:unset; 
+                        span,p{
+                            color: $white;
+                        }
                 }
                 div+div+div{
                        // background-color: green;
                         text-align: right;
                         padding: 0 20px 0 0;
+                        span,p{
+                            color: $white;
+                        }
+                        
                 }
               // span{ display: none;}
 

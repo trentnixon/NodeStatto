@@ -2,22 +2,48 @@
     .animated{
 
         .Inner{
-            h1{ 
-                text-align: center;
-                margin: 0;
+
+           
+            .Header{
+                img{
+                    width: 30px;
+                    float: right;
+                    margin: 0 15px 0 0;
+                }
             }
-            h1.Page_Sub_Title{
-                font-size: 2em !important;
-                color: rgba(51, 178, 223, 0.85) !important;
-                border-bottom: 1px solid;
-                margin: 0 0 10px 0;
-                padding: 0 0 7px 0;
+            .Body{
+                h1{ 
+                    text-align: center;
+                    margin: 0;
+                }
+                h1.Page_Sub_Title{
+                    font-size: 2em !important;
+                    color: $ColorBase !important;
+                    border-bottom: 1px solid;
+                    margin: 0 0 10px 0;
+                    padding: 0 0 7px 0;
+                }
+                h1.Page_Title{
+                    font-size: 1em !important;
+                    
+                    font-weight: 600;
+                }
             }
-            h1.Page_Title{
-                font-size: 1em !important;
+            .Footer{
+                text-align: right;
+                button{
+                    float: unset !important;
+                    a{
+                        
+                    }
+                }
                 
-                font-weight: 600;
             }
+
+
+           
+
+            
         }
     }
 }

@@ -7,7 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Dashboard from '@material-ui/icons/Dashboard';
 
 import Settings from '@material-ui/icons/Settings';
-import Backspace from '@material-ui/icons/Backspace';
+
 import Search from '@material-ui/icons/Search';
 
 import  {Batting,Bowling,Keeping} from "../../Icons/icons";

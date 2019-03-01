@@ -28,7 +28,7 @@ export default class Formguide
                 Current form */10
             </PageHeader>
             <Container> 
-              <SectionHeader   h1="Bowling" h2="Form Guide (Based on last 10 Games)"  /> 
+              <SectionHeader   h1="Bowling" h2="Form Guide (Based on last 5 Games)"  /> 
              
               <SectionContainer>
                 <SectionCareerBowling 

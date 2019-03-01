@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Frame from "../Template/Frame";
 import ComponentHome from "./Parents/Home/Home";
+import ComponentPlayFor from "./Parents/Home/PlayerForFullList";
+
 import ComponentHistory from "./Parents/History/History";
 import ComponentBatting from "./Parents/Batting/Batting";
 import ComponentFormGuide from "./Parents/Batting/formguide";
@@ -14,7 +16,7 @@ import ComponentWickets from "./Parents/Bowling/wickets";
 import ComponentBowlingFor from "./Parents/Bowling/for";
 import ComponentBowlingAVG from "./Parents/Bowling/averages";
 import ComponentKeeping from "./Parents/Keeping/Keeping";
-
+import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 // Icons
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -110,24 +112,31 @@ export default class Statto extends Component {
       <Router>
           <Frame {... this.props} Navigation={Navigation}>
             <div id="display-statto-app">
-              <Route  exact path='/:id' render={()=> <ComponentHome {... this.props}/> }/>
-              <Route  exact path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
-              <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
+                
+                <Route  exact path='/:id' render={()=> <ComponentHome {... this.props}/> }/>
+                <Route  exact path='/:id/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
+
+
+                <Route  exact path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
+
+                <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
                 <Route  exact path='/:id/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
                 <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
                 <Route  exact path='/:id/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>
                 <Route  exact path='/:id/batting/foragainst' render={()=> <ComponentFOR {... this.props}/> }/>
+
                 <Route  exact path="/:id/bowling" render={()=> <ComponentBowling {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/formguide" render={()=> <ComponentFormguide {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/wickets" render={()=> <ComponentWickets {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
-                <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
 
-              <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
+                <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
+                <Route  exact path="/:id/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
+                <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
 
             </div>
-          </Frame>
+          </Frame> 
       </Router>
     ) 
   }

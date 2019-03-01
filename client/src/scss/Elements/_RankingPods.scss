@@ -2,9 +2,11 @@
     display: contents;
 
     .Outer{
+        padding: 0 0 5px 0 !important;
         .Inner{
             text-align: center;
             border: none !important;
+            background-color: transparent !important;
         }
     }
 

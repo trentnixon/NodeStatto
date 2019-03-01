@@ -144,7 +144,9 @@ export function FormGuide(data){
     
     // Create Form Guide
     // eslint-disable-next-line
-    data.slice(0, 10).map((game,i)=>{
+    //s
+    data.slice(Math.max(data.length - 5, 1)).map((game,i)=>{
+
          // eslint-disable-next-line
         let Meta = Stats.Form.Meta;
         // eslint-disable-next-line

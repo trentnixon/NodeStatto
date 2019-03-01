@@ -2,14 +2,25 @@
 #PageHeader{
     background-color: $ColorBase;
     padding: 40px;
-    margin: -24px -24px 10px -24px;
+    margin: -24px -24px 30px -24px;
     min-height: 300px;
 }
 
 
 // This is the page title section
 .SectionHeader{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: center;
+
     h1{
-        
+       color: $h1Color ;
+       flex-grow:1;
+       width: auto;
+    }
+    h1.Page_Sub_Title{
+        text-align: right;
     }
 }

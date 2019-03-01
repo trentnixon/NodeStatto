@@ -1,0 +1,63 @@
+.Section_Home_RankingPods{
+    .HomeRankingPods{
+        .animated{
+
+            .Inner{
+                padding: 0 !important;
+            
+
+                .Header{
+                    padding: 5px 15px;
+                    //background-color: rgba(51, 178, 223, 0.85) !important;
+                    background-color:$ColorBase !important;
+                    
+                    h1{ 
+                        text-align: left;
+                        margin: 0;
+                        font-size: 1.3em !important;
+                        padding: 5px 0;
+                        color:$h3Color !important;
+                        img{
+                            width: 25px;
+                            float: right;
+                            fill: white;
+                            margin-right: 15px;
+                            background-color: $white;
+                            border-radius: 50px;
+                            padding: 3px;
+                        }
+                    }
+                }
+
+                .Body{
+                    padding: 15px;
+                    h2{
+                        font-size: 2.5em !important;
+                        color: $ColorBase !important;
+                        border-bottom: 1px solid;
+                        margin: 0 0 10px 0;
+                        padding: 0 0 7px 0;
+                        line-height: 2em !important;
+
+                        svg{
+                            float: right;
+                            font-size: 1.6em !important;
+                        }
+                    }
+                    h3{
+                        font-size: 1em !important;
+                        font-weight: 600;
+                        border-top: unset !important;
+                    }
+                }
+
+                .Footer{
+                    padding: 15px;
+                    text-align: right;
+                    display: none;
+                }
+
+            }
+        }
+    }
+}

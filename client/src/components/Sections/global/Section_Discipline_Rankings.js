@@ -45,7 +45,7 @@ export default class Section_Rankings extends Component {
         )
     } 
     render() {
-        console.log(this.props.Rankings) 
+        console.log(this.props.Rankings)  
         return ( 
                 <div className="Section_Rankings" >
                     <Row class="ContainerRow">
@@ -63,7 +63,7 @@ export default class Section_Rankings extends Component {
                                             visable={this.props.isVisible}
                                         />
                                 </Pod>
-                                <Pod col="col-md-3" > 
+                                <Pod col="col-md-3 RankingInt"  canvas="canvas1"> 
                                     <RankingPods 
                                         Rankings={this.props.Rankings} 
                                         visable={this.props.isVisible}

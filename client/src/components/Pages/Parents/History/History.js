@@ -23,7 +23,7 @@ export default class History extends Component {
         <SectionHeader h1="History" />
         <SectionContainer>
           <ListHistory 
-            Title="History"
+            Title="Complete History"
             {... this.props}
           />
         </SectionContainer>

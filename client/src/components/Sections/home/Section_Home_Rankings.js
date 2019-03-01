@@ -9,6 +9,8 @@ import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 
+// Icons
+import  {Batting,Bowling,Keeping} from "../../Icons/icons";
 // Pod
 import RankingPod from "../../Elements/pods/Ranking_Home_Pod"
 
@@ -16,19 +18,19 @@ let stones=[];
 export default class Section_Rankings extends Component {
     componentWillMount() {
          stones=[
-            { var:this.props.Data.Batting, Path:"/batting/", label:"Batting"},
-            { var:this.props.Data.Bowling, Path:"/bowling/", label:"Bowling"},
-            { var:this.props.Data.Keeping, Path:"/keeping/", label:"Keeping"}
+            { var:this.props.Data.Batting, Path:"/batting/", label:"Batting",icon:<Batting/>},
+            { var:this.props.Data.Bowling, Path:"/bowling/", label:"Bowling",icon:<Bowling/>},
+            { var:this.props.Data.Keeping, Path:"/keeping/", label:"Keeping",icon:<Keeping/>}
         ]
      }
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
-            <div className="Section Section_Milestones">
+            <div className="Section Section_Home_RankingPods">
                 <Row class="ContainerRow">
                     <Pod col="col-md-12" > 
                         <Title Title={this.props.Title}/>
-                        <Row>  
+                        <Row class="HomeRankingPods">  
                         
                             {
                                 stones.map((stone,i)=>{
@@ -46,6 +48,7 @@ export default class Section_Rankings extends Component {
                                             <RankingPod 
                                                 total={stone.var}
                                                 label={stone.label}
+                                                icon={stone.icon}
                                             />
                                         </Animated>
                                     )

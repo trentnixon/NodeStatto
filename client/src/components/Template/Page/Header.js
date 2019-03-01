@@ -6,7 +6,7 @@ export default class PageHeader extends Component {
 
   render() {
     return (
-      <div id="PageHeader">
+      <div id="PageHeader" className="canvas1">
             {this.props.children} 
       </div>
     )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Avatar from '@material-ui/core/Avatar';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,11 +9,11 @@ import TableRow from '@material-ui/core/TableRow';
 
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
-
+import ShowMore from "../../Elements/Buttons/ShowMore";
 
 var _ = require('lodash');
 
-let Teams=[], Num=0;
+let Teams=[], Num=0, CTA=null;
 export default class PlayedFor extends Component {
     componentWillMount() { 
         Teams=[]
@@ -37,16 +37,25 @@ export default class PlayedFor extends Component {
     } 
   render() {
 
-    //console.log(Teams);
     Teams = _.orderBy(Teams, [function(o) { return o.Int; }],['desc']);
+    if(this.props.num !== null){
+        Teams= Teams.slice(0,this.props.num); 
+        CTA = <ShowMore 
+                    Label="See All"
+                    class=" CTA ButtonRight"
+                    Player={this.props.match.params.playerid}
+                    Path="playedFor/"
+                />
+    }
    
-    Teams= Teams.slice(0,10);
     
       return(
-            <div>
-                <Title Title={this.props.Label} />
-                <SubTitle Title={Num + " Teams"} />
-
+            <div className="ChartContainer">
+                <div className="Header">
+                        <Avatar className="Avatar" >{Num}</Avatar>
+                        <SubTitle Title={"Teams"} />
+                </div>
+                <div className="Body">
                     <Table>
                         <TableHead>
                             <TableRow>
@@ -54,7 +63,7 @@ export default class PlayedFor extends Component {
                                 <TableCell>Team</TableCell>
                                 <TableCell>Games</TableCell>
                             </TableRow>
-                        </TableHead>
+                        </TableHead> 
                         <TableBody>
                                 {
                                     Teams.map((Team,i)=>{
@@ -70,6 +79,10 @@ export default class PlayedFor extends Component {
                         </TableBody>
                     </Table>
                 </div>
+                <div className="Footer">
+                    {CTA}
+                </div>
+            </div>
       )
   }
 }

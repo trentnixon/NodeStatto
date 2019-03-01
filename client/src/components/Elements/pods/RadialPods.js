@@ -11,11 +11,19 @@ import Radial from "../../Charts/RankingRadial";
 export default class RankingPods extends Component {
     componentWillMount() { } 
     render() {
+        
+        console.log(this.props.Percentage)
+
+        let FillStyle = {
+            height: this.props.Percentage+"%"
+          }
+
         return (
-                <Pod  col="col-md-4 col-sm-6" >
+                <Pod  col="col-md-4 col-lg-4  col-xl-2 col-12 col-sm-6" >
+                    
                     <Radial 
                         Value={this.props.Value}
-                        Label={this.props.Label}
+                        Label={this.props.Label} 
                         Percentage={this.props.Percentage}
                         Created={this.props.Created}
                     />
@@ -23,6 +31,7 @@ export default class RankingPods extends Component {
                         <SubTitle Title={this.props.TitleValue} />
                         <SubTitle Title={this.props.Title} />
                     </div>
+                   
                 </Pod>
             )
         }

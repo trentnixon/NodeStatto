@@ -27,7 +27,7 @@ export default class Section_Rankings extends Component {
                         <SubTitle Title={this.props.SubTitle} />
 
                         <Row>  
-                        
+                         
                             {
                                 stones.map((stone,i)=>{
                                     console.log("Pod " + this.props.isVisible)
@@ -41,11 +41,18 @@ export default class Section_Rankings extends Component {
                                             animateOnMount={false}
                                             className={IsVisable + " col-md-4"}
                                         >
-                                            <Pod col="col-md-12">
+                                            <Pod col="col-md-12" canvas="canvas1">
+                                            <div className="Header">
+                                                {stone.icon}
+                                            </div>
+                                            <div className="Body">
                                                 <SubTitle Title={this.props.Data[stone.var]} />
                                                 <Title  Title={stone.label} />
+                                            </div>
+                                            <div className="Footer">
+                                            </div>
                                             </Pod>
-                                        </Animated>
+                                        </Animated> 
                                     )
                                 }) 
                             }

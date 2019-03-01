@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
-
+import SubTitle from "../../Elements/type/PageSubTitle";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -95,7 +95,12 @@ export default class History extends Component {
             
             <Pod col="col-md-12" >
                     <Row>
-                        <Pod col="col-md-12" > 
+                        
+                        
+                    <Pod col="col-md-12" canvas="invert"> 
+                        <div className="ChartContainer">
+                           
+                            <div className="Body">
                             <List >
                                 <ListHistory 
                                     Games={this.state.List}
@@ -103,7 +108,13 @@ export default class History extends Component {
                                     match={ this.props.match}
                                 />
                             </List>
+                            </div>
+                        </div>
                         </Pod>
+
+
+
+
                     </Row>
             </Pod>
         </Row>

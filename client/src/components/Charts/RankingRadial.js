@@ -11,8 +11,8 @@ class Radial extends Component {
         options :{
           chart: {
               type: 'radialBar',
-              width: '100%',
-              height:175,
+              width: 300,
+  
               toolbar: {
                   show: false
                   }

@@ -14,13 +14,13 @@ export default class HomaeRanking extends Component {
         let Arrow;
         if(data.length > 0){
             if(data[data.length-2].rank < data[data.length-1].rank){
-                Arrow= <TrendingDown nativeColor="red" className="RankingIcon"/>;
+                Arrow= <TrendingDown nativeColor="#ce7070" className="RankingIcon"/>;
             }
             else if(data[data.length-2].rank > data[data.length-1].rank){
-                Arrow =<TrendingUp nativeColor="green" className="RankingIcon"/>;
+                Arrow =<TrendingUp nativeColor="#70ce90" className="RankingIcon"/>;
             }
             else if(data[data.length-2].rank === data[data.length-1].rank){
-                Arrow =<TrendingFlat nativeColor="yellow" className="RankingIcon"/>;
+                Arrow =<TrendingFlat nativeColor="#cec570" className="RankingIcon"/>;
             }
 
             return Arrow;
@@ -37,13 +37,21 @@ export default class HomaeRanking extends Component {
         
     }
     componentWillMount() { }
-
+ 
     render() {
         return(
-            <Pod col={this.props.col}>
-                <h1>{this.props.label}  {this.FindArrow(this.props.total)} </h1>
-                <h2>{this.value(this.props.total,1) }</h2>  
-                <h3>Previous: {this.value(this.props.total,2)}</h3>
+            <Pod col={this.props.col} canvas="canvas1">
+                <div className="Header">
+                    <h1>{this.props.icon} {this.props.label}</h1>
+                </div>
+                <div className="Body">
+                    <h2>{this.value(this.props.total,1) } {this.FindArrow(this.props.total)}</h2>  
+                    <h3>Previous: {this.value(this.props.total,2)}</h3>
+                </div>
+                <div className="Footer">
+                
+                </div>
+                
           </Pod>
         )
     }

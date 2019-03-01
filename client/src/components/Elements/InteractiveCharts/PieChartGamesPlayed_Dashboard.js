@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Avatar from '@material-ui/core/Avatar';
 import Donut from "../../Charts/donut";
 
 import Title from "../../Elements/type/PageTitle";
@@ -8,7 +9,7 @@ let HistoryInt=[], HistoryYear=[];
 class Chart_Games_Home extends Component {
     
     constructor(props) {
-        super(props);
+        super(props); 
     
         this.state = {
           options: {}
@@ -28,14 +29,17 @@ class Chart_Games_Home extends Component {
       render() {
         
           return (
-            <div>
-                <Title Title={this.props.Title} />
-                <SubTitle Title={this.props.DATA.CAREER.Career.Meta.Games.int} />
-    
-                  <Donut 
+            <div className="ChartContainer">
+               <div className="Header">
+                <Avatar className="Avatar"  >{this.props.DATA.CAREER.Career.Meta.Games.int}</Avatar>
+                <SubTitle Title={this.props.Title} />
+               </div>
+               <div className="Body">
+                <Donut 
                       series={HistoryInt}
                       Labels={HistoryYear} 
                     />
+               </div>
             </div>
           );
         }

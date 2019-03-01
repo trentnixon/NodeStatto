@@ -12,6 +12,36 @@ class PreviousGameSlider extends Component {
     Previous = this.props.DATA.CLEAN.slice(Math.max(this.props.DATA.CLEAN.length - 10, 1)).reverse();
   }
 
+  TimeDiff(time){
+      let Current = new Date().getTime()/1000;
+    
+      let difference = Current - time;
+        difference = difference.toFixed(0);
+        
+        let daysDifference = Math.floor(difference/60/60/24);
+        difference -= daysDifference*60*60*24
+
+        let hoursDifference = Math.floor(difference/60/60);
+        difference -= hoursDifference*60*60
+
+        let minutesDifference = Math.floor(difference/60);
+        difference -= minutesDifference*60
+
+        let secondsDifference = Math.floor(difference);
+
+        /*
+        if(daysDifference > 0){ 
+            
+            return daysDifference + ' Days Ago'; 
+        } 
+        
+        else if(hoursDifference > 0) { return hoursDifference  + ' Hours Ago';}
+        
+        else{return minutesDifference  + ' Minutes Ago'; }*/
+
+   //console.log(time, daysDifference)
+   return daysDifference;
+} 
   render() {
    
     
@@ -39,7 +69,6 @@ class PreviousGameSlider extends Component {
                     {
                         Previous.map((game,i)=>{
 
-                        console.log(game)
                           if(game.Batting){
                               Runs = game.Batting.RunsValue;
                               Balls = game.Batting.BallsFaced
@@ -59,7 +88,8 @@ class PreviousGameSlider extends Component {
                                           
                                   </div>
                                   <div className="Previous-subheader col-12">
-                                          <h3>Played # Days Ago</h3>
+                                          <h3>Played {this.TimeDiff(game.Meta.FixtureInt)} Days Ago</h3>
+                                        
                                     </div>
                                     <div className="col-5 nopadding details">
                                           <h3>Runs : {Runs}</h3>

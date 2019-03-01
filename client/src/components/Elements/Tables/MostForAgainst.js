@@ -6,7 +6,74 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+
+let stats=[
+    {
+        Name:["Innings"],
+        Value:[0],
+        Total:[0],
+        Percentage:[0],
+        For:["Name"],
+        Against:["Name"],
+        Title:"Career Innings"
+    },
+    {
+        Name:["Runs"],
+        Value:[0],
+        Total:[0],
+        Percentage:[0],
+        For:["Name"],
+        Against:["Name"],
+        Title:"Career Runs"
+    },
+    {
+        Name:["Balls Faced"],
+        Value:[0],
+        Total:[0],
+        Percentage:[0],
+        For:["Name"],
+        Against:["Name"],
+        Title:"Career Balls Faced"
+    },
+    {
+        Name:["Not Out's"],
+        Value:[0],
+        Total:[0],
+        Percentage:[0],
+        For:["Name"],
+        Against:["Name"],
+        Title:"Career Not Out's"
+    },
+    {
+        Name:["Average"],
+        Value:[0], 
+        Total:[0],
+        Percentage:[0],
+        For:["Name"],
+        Against:["Name"],
+        Title:"Career Average"
+    },
+    {
+        Name:["Strike Rate"],
+        Value:[0],
+        Total:[0],
+        Percentage:[0],
+        For:["Name"], 
+        Against:["Name"],
+        Name:["Strike Rate"],
+        Title:"Career Innings"
+    }
+];
+
+
 export default class BattingRecentScores extends Component {
+
+    state = {
+        labelWidth: 100,
+        Year:"Career",
+        stats:stats, 
+        Created:0,
+      }
 
     componentWillMount() {}
  
@@ -24,7 +91,7 @@ export default class BattingRecentScores extends Component {
                         <TableBody>
                             {
                                 // eslint-disable-next-line
-                                this.props.Table.map((game,i)=>{
+                                this.state.stats.map((game,i)=>{
                                     return(
                                             <TableRow key={i}>
                                                 <TableCell component="th" scope="row">{game.Name[0]}</TableCell>

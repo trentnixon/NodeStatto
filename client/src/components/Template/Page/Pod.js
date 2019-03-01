@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 export default class Pod extends Component {
   render() {
-    return (
+    return ( 
       <div id="Pod" className={"Outer "+this.props.col}>
-            <div className="Inner">
+            <div className={"Inner " +this.props.canvas}>
                     {this.props.children} 
             </div>
       </div>

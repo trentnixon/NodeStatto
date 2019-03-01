@@ -6,6 +6,7 @@
         border-radius: 5px;
         padding: 15px;
         background-color: #fff;
+        position: relative;
 
 
             h1{
@@ -37,6 +38,17 @@
             .RankingIcon{
                 float: right;
                 font-size: 3em;
+            }
+
+            .fill{
+                background-color: rgba(112, 157, 206, .1);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                bottom: 15px;
+                margin: -15px;
+                transition: height 0.25s ease-in;  
+              
             }
 
     }

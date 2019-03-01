@@ -9,8 +9,6 @@ import Title from "../../Elements/type/PageTitle";
 // Charts
 import GamesPlayed from "../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
 import PlayedFor from "../../Elements/Tables/PlayedForList";
-//import BarChartSmallRecentScores from "../../Elements/InteractiveCharts/BarChart_Small_RecentScores";
-
 
 
 export default class Section_Default extends Component { 
@@ -22,21 +20,20 @@ export default class Section_Default extends Component {
                     <Row class="ContainerRow">
                         <Pod col="col-md-12" > 
                             <Row>
-                             <Pod col="col-md-7" > 
+                                <Pod col="col-md-7" canvas="canvas1"> 
                                     <PlayedFor
                                             Label="Teams Played for"
                                             {... this.props}
-                                        />
+                                            num={5}
+                                        /> 
                                 </Pod>
-                                <Pod col="col-md-5" > 
+                                <Pod col="col-md-5" canvas="canvas1"> 
                                         <GamesPlayed 
                                             {... this.props}
-                                            Title="Games Played over Career"
+                                            Title="Games Played"
                                         />
                                      
                                 </Pod>
-                                
-                                
                             </Row>
                         </Pod>
                     </Row>

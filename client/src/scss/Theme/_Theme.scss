@@ -1,6 +1,6 @@
 @import "./colors";
 @import "./type";
-
+@import "./Bg";
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,4 @@
 
 
 // Elements
-@import "../Elements//RankingPods";
-@import "../Elements/Slick_Slider";
-@import "../Elements/FormElements";
+@import "../Elements//Elements";
