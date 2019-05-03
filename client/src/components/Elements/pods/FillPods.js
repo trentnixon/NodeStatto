@@ -12,7 +12,7 @@ export default class RankingPods extends Component {
 
         let FillStyle = {  height: this.props.Percentage+"%" }
         /*
-        <Radial 
+        <Radial  
                         Value={this.props.Value}
                         Label={this.props.Label} 
                         Percentage={this.props.Percentage}

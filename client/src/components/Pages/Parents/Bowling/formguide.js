@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Title from "../../../Elements/type/PageTitle";
+//import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
-import PageHeader from "../../../Template/Page/Header"
+//import PageHeader from "../../../Template/Page/Header"
 
 // Section 
 import SectionHeader from "../../../Sections/global/Section_Global_Header";
@@ -18,17 +18,14 @@ export default class Formguide
 
     /**
      * 
-              
-              
-             
+     * <PageHeader> 
+          Current form /10
+        </PageHeader>    
      */
     return (
       <div>
-            <PageHeader> 
-                Current form */10
-            </PageHeader>
             <Container> 
-              <SectionHeader   h1="Bowling" h2="Form Guide (Based on last 5 Games)"  /> 
+              <SectionHeader h1="Bowling" h2="Form Guide (Based on last 5 Games)"  /> 
              
               <SectionContainer>
                 <SectionCareerBowling 
@@ -46,7 +43,7 @@ export default class Formguide
                     Title="Milestones and Achievements"
                 />
               </SectionContainer>
-              
+
             </Container>
         </div>
     )

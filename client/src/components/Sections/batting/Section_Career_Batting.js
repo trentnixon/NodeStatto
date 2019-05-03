@@ -92,7 +92,7 @@ export default class Section_Rankings extends Component {
         this.createStats(this.props.Data,event.target.value)
       }
 
-     createStats(Data,Year){
+     createStats(Data,Year){ 
             
             this.setState({ 
                     Created: Math.round((new Date()).getTime() / 1000),

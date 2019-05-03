@@ -4,9 +4,8 @@ import update from 'react-addons-update'
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 
-
 // Elements
-import RadialPod from "../../Elements/pods/RadialPods";
+import RadialPod from "../../Elements/pods/FillPods";
 
 var _ = require('lodash');
 
@@ -44,7 +43,6 @@ let stats=[
         Value:[0],
         Total:[0],
         Percentage:[0],
-
         Title:"Expected"
     },
     {
@@ -115,7 +113,7 @@ export default class Section_Rankings extends Component {
  }  
 
      // Functions
-     findPercentage(int,total){ 
+    findPercentage(int,total){ 
         let Perc = (int/total)*100;
         if(Perc  > 100){ Perc = 100}
         return Perc;
@@ -128,7 +126,7 @@ export default class Section_Rankings extends Component {
     }
     componentWillMount() {  
         console.log(this.props)
-            this.createStats(this.props.Data); 
+        this.createStats(this.props.Data); 
     }
 
     render() {

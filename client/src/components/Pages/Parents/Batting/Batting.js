@@ -55,7 +55,7 @@ export default class BattingOverview extends Component {
                 }
             ]}
           
-          />
+          /> 
 
         </SectionContainer>
 

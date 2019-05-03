@@ -5,7 +5,7 @@ import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 
 // Elelemnts
-import RadialPod from "../../Elements/pods/RadialPods";
+import RadialPod from "../../Elements/pods/FillPods";
 
 
 var _ = require('lodash');
@@ -49,7 +49,7 @@ let stats=[
     {
         Name:["Strike Rate"],
         Value:[0],
-        Total:[0], 
+        Total:[0],  
         Percentage:[0],
         Title:"Expected"
     }
@@ -141,6 +141,7 @@ export default class Section_Rankings extends Component {
                             {
                                 this.state.stats.map((radial,i)=>{
                                     return(
+                                       
                                         <RadialPod 
                                             key={i} 
                                             Value={radial.Value}

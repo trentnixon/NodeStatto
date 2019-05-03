@@ -18,13 +18,13 @@ export default class Formguide
     /**
      *    
      * <SectionCareerBatting Data={this.props.DATA.CAREER.Form.batting} />
-           
+             <PageHeader>
+             /10
+             </PageHeader> 
      */
     return ( 
       <div> 
-          <PageHeader>
-             */10
-          </PageHeader>
+       
           <Container>
 
             <SectionHeader   h1="Batting" h2="Form Guide (Based on last 5 Games)"  /> 

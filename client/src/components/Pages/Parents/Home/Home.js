@@ -8,7 +8,7 @@ import SectionContainer from "../../../Sections/global/SectionContainer";
 
 
 // Home Page Elements
-import PreviousGames from "../../../Elements/Sliders/PreviousGameSlider";
+// import PreviousGames from "../../../Elements/Sliders/PreviousGameSlider";
 
 // Sections
 import Overview from "../../../Sections/home/Section_Home_overview";
@@ -22,19 +22,19 @@ export default class Statto extends Component {
 
   render() {
     console.log(this.props.DATA)
-    return (
-      <div>          
-           <PageHeader> 
+    /**
+     *   <PageHeader> 
                 <PreviousGames {... this.props} />
             </PageHeader>
+     */
+    return (
+      <div>          
+         
           <Container>
               <SectionHeader h1="Dashboard" />
 
               <SectionContainer>
-                  <Overview 
-                    Title="Overview"
-                    {... this.props} 
-                  /> 
+                  <Overview Title="Overview" {... this.props} /> 
               </SectionContainer>
               
               <SectionContainer>
