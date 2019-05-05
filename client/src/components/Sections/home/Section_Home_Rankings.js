@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import LinkIcon from '@material-ui/icons/Layers'
-import { Link } from "react-router-dom";
 import {Animated} from "react-animated-css";
+
+// import IconButton from '@material-ui/core/IconButton';
+// import LinkIcon from '@material-ui/icons/Layers'
+// import { Link } from "react-router-dom";
+
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
-import SubTitle from "../../Elements/type/PageSubTitle";
+// import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Icons
 import  {Batting,Bowling,Keeping} from "../../Icons/icons";

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PageHeader from "../../../Template/Page/Header";
+
+// import PageHeader from "../../../Template/Page/Header";
 
 // Sections
 import Container from "../../../Template/Page/Container";
@@ -28,7 +29,7 @@ export default class Statto extends Component {
             </PageHeader>
      */
     return (
-      <div>          
+      <div>           
          
           <Container>
               <SectionHeader h1="Dashboard" />

@@ -1,6 +1,9 @@
 import axios from 'axios';
 import store from "../store/index"
 import {FormGuide} from "./FormGuide";
+import {ForAgainst} from "./ForAgainst";
+
+
 var _ = require('lodash');
  
 /**
@@ -14,6 +17,7 @@ export function FetchData(){
     
     this.StoredData = [];
     this.FormGuide = [];
+
 
     this.CallsToApi =[
         {
@@ -98,7 +102,8 @@ export function FetchData(){
              
                 let FixturePosition = _.findIndex(this.StoredData, function(o) { return o.Meta.Fixture === game["0"]["0"].id; });
                
-                if(game["0"]["0"].id  !== '0'){
+                if(game["0"]["0"].id  !== '0'){ 
+
                     if(FixturePosition === -1){
          
                         let FixturePosition = this.StoreFixtures(game);
@@ -115,18 +120,18 @@ export function FetchData(){
                     }
                 }
                 
-                
-           
             // Store Cleaned Data to Reducer
                 this.StoredData = _.sortBy(this.StoredData, [function(o) { return o.Meta.FixtureInt; }],['desc']);
                 
                //console.log( this.StoredData.reverse() );
                 store.dispatch({ type:"STORE_CLEAN", payload:this.StoredData.reverse() });
             // Create ans Store Formguide and Baseline Stats
-
                return true;
         })
+
         this.Formguide(this.StoredData);
+        ForAgainst(this.StoredData)
+        
     }
 
 

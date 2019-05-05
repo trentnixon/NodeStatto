@@ -3,10 +3,9 @@ import update from 'react-addons-update'
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
-//import Title from "../Elements/type/PageTitle";
-import SubTitle from "../../Elements/type/PageSubTitle";
-
-import MostForAgainst from "../../Elements/Tables/MostForAgainst";
+// import Title from "../Elements/type/PageTitle";
+// import SubTitle from "../../Elements/type/PageSubTitle";
+// import MostForAgainst from "../../Elements/Tables/MostForAgainst";
 
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -65,7 +64,7 @@ let stats=[
         For:["Name"],
         Against:["Name"],
         Title:"Career Average"
-    },
+    }, 
     {
         Name:["Strike Rate"],
         Value:[0],
@@ -73,7 +72,6 @@ let stats=[
         Percentage:[0],
         For:["Name"], 
         Against:["Name"],
-        Name:["Strike Rate"],
         Title:"Career Innings"
     }
 ];
@@ -84,7 +82,7 @@ export default class Section_Rankings extends Component {
     state = {
         labelWidth: 100,
         Year:"Career",
-        stats:stats, 
+        stats:stats,  
         Created:0,
       }
 
@@ -200,6 +198,8 @@ export default class Section_Rankings extends Component {
     componentWillUpdate(nextProps, nextState){}
     render() {
 
+        console.log(this.state.Year);
+
         return (
             <div className="atAGlance">
             <Row class="ContainerRow Form_Selector">
@@ -209,7 +209,7 @@ export default class Section_Rankings extends Component {
                             Select a Year 
                         </InputLabel>
                         <Select
-                            value={this.state.Year}
+                            value={this.state.Year} 
                             onChange={this.handleChange}
                             input={ <OutlinedInput 
                                         labelWidth={this.state.labelWidth}
@@ -249,11 +249,8 @@ export default class Section_Rankings extends Component {
                                     )
                                 })
                             }
-
                         </Row > 
                     </Pod>
-
-                  
                 </Row>
             </div>
             )

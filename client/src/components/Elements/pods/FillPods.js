@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
+// import {Animated} from "react-animated-css";
 
 import Pod from "../../Template/Page/Pod";
 import SubTitle from "../type/PageSubTitle";
@@ -24,11 +24,9 @@ export default class RankingPods extends Component {
                     
                     <div className="RadialTextContainer">
                         
-                        <SubTitle Title={parseInt(this.props.Value).toFixed(0)} />
+                        <SubTitle Title={parseInt(this.props.Value, 10).toFixed(0)} />
                         <SubTitle Title={this.props.Label} />
-                        
-                        
-                        <SubTitle Title={parseInt(this.props.Percentage).toFixed(0)+"% of " +this.props.Title} />
+                        <SubTitle Title={parseInt(this.props.Percentage,10).toFixed(0)+"% of " +this.props.Title} />
                         
                     </div>
                     <div className="fill canvas1" style={FillStyle}>

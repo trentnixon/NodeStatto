@@ -8,7 +8,9 @@ const InitialState ={
     KEEPING_NON_COUNTING:null,
     CLEAN:null,
     CURRENTNAME:null,
-    CAREER:null
+    CAREER:null,
+    FOR:null,
+    AGAINST:null
 }
 
 const LOAD = (state=InitialState, action) =>{ 
@@ -33,6 +35,23 @@ const LOAD = (state=InitialState, action) =>{
 				// eslint-disable-next-line 
 				break
             } 
+
+            case "SET_STATS_FOR":{
+                //console.log(action.payload);
+				return {...state, FOR:action.payload}
+				// eslint-disable-next-line 
+				break
+            } 
+
+            case "SET_STATS_AGAINST":{
+                //console.log(action.payload);
+				return {...state, AGAINST:action.payload}
+				// eslint-disable-next-line 
+				break
+            } 
+
+            
+
             case "STORE_NON_COUNTING_BOWLING":{
                 //console.log(action.payload);
 				return {...state, BOWLING_NON:action.payload}

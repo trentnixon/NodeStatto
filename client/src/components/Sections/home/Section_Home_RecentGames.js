@@ -6,7 +6,7 @@ import Title from "../../Elements/type/PageTitle";
 import ShowMore from "../../Elements/Buttons/ShowMore";
 import ListHistory from "../../Elements/Lists/List_History"
 import List from '@material-ui/core/List';
-import SubTitle from "../../Elements/type/PageSubTitle";
+// import SubTitle from "../../Elements/type/PageSubTitle";
 
 let DisplayList, Data;
 export default class History extends Component {

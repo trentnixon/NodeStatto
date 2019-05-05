@@ -67,7 +67,7 @@ class ScrollableTabsButtonForce extends React.Component {
         {
             this.props.Tabs.map((tab,i)=>{
                     return(
-                        value === i && <TabContainer>{tab.Component}</TabContainer>
+                        value === i && <TabContainer key={i}>{tab.Component}</TabContainer>
                     )
             })
         }

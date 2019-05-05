@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import Title from "../../Elements/type/PageTitle";
+// import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 import ShowMore from "../../Elements/Buttons/ShowMore";
 

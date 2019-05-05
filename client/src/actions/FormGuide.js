@@ -17,7 +17,7 @@ export function FormGuide(data){
             
                 Rankings:{
                     Batting:[],
-                    Bowling:[],
+                    Bowling:[], 
                     Keeping:[]
                 }
             },
@@ -143,8 +143,8 @@ export function FormGuide(data){
     });
     
     // Create Form Guide
+
     // eslint-disable-next-line
-    //s
     data.slice(Math.max(data.length - 5, 1)).map((game,i)=>{
 
          // eslint-disable-next-line

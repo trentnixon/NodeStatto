@@ -53,6 +53,7 @@ export default class APPBARLAYOUT extends React.Component {
                 </div>
 
                       {
+                        // eslint-disable-next-line
                         Nav_Icons.map((icon,i)=>{
                           if(this.props[icon.link]){
                             return(

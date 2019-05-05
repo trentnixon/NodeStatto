@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Avatar from '@material-ui/core/Avatar';
 import Donut from "../../Charts/donut";
 
-import Title from "../../Elements/type/PageTitle";
+// import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 
 let HistoryInt=[], HistoryYear=[];

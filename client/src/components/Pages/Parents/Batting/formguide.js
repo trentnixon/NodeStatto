@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Container from "../../../Template/Page/Container";
-import PageHeader from "../../../Template/Page/Header"
+// import PageHeader from "../../../Template/Page/Header"
 // Sections
 import SectionHeader from "../../../Sections/global/Section_Global_Header";
 import SectionContainer from "../../../Sections/global/SectionContainer";

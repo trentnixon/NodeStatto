@@ -7,8 +7,7 @@ import Pod from "../../Template/Page/Pod";
 // Elelemnts
 import RadialPod from "../../Elements/pods/FillPods";
 
-
-var _ = require('lodash');
+// var _ = require('lodash');
 
 let stats=[
     {

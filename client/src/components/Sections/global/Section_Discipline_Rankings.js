@@ -30,7 +30,8 @@ export default class Section_Rankings extends Component {
     componentWillMount() {
         RankingValue=[{ name:"Ranking",data:[] }];
         Labels=[];
-//        console.log(this.props.Rankings);
+
+        // eslint-disable-next-line
         this.props.Rankings.map((rank,i)=>{
             //console.log(rank)
             RankingValue[0].data.push(rank.rank);
@@ -45,7 +46,7 @@ export default class Section_Rankings extends Component {
         )
     } 
     render() {
-        console.log(this.props.Rankings)  
+       // console.log(this.props.Rankings)  
         return ( 
                 <div className="Section_Rankings" >
                     <Row class="ContainerRow">

@@ -18,7 +18,7 @@ const List_History = (props) => (
                 Bowling=''
                 let Delay= 200*i;
                 let Text = game.Meta.Team +" vs "+ game.Meta.Opposition;
-                let year = game.Meta.Date.split('/')
+                // let year = game.Meta.Date.split('/')
 
                 if(game.Batting){ batting = game.Batting.RunsValue +" from "+ game.Batting.BallsFaced;}
                 if(game.Bowling){ Bowling = game.Bowling.Figures +" off "+ game.Bowling.Overs;}

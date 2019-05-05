@@ -3,20 +3,19 @@ import React, { Component } from 'react';
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 
-import Title from "../../Elements/type/PageTitle";
-//import SubTitle from "../../Elements/type/PageSubTitle";
+// import Title from "../../Elements/type/PageTitle";
+// import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Charts
 import GamesPlayed from "../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
 import PlayedFor from "../../Elements/Tables/PlayedForList";
-
 
 export default class Section_Default extends Component { 
     componentWillMount() {} 
     render() {
      //   console.log(this.props.isVisible)
         return ( 
-                <div className="Section_Charts" >
+                <div className="Section_Charts" > 
                     <Row class="ContainerRow">
                         <Pod col="col-md-12" > 
                             <Row>

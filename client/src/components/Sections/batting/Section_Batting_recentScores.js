@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Row from "../../Template/Page/Row";
+// import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../Elements/type/PageSubTitle";

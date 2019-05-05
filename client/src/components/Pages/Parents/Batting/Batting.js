@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import Container from "../../../Template/Page/Container";
-
-import PhoneIcon from '@material-ui/icons/Phone';
+// import PhoneIcon from '@material-ui/icons/Phone';
 import PeopleIcon from '@material-ui/icons/People';
 import {Batting} from "../../../Icons/icons";
 // Sections 
@@ -16,7 +15,7 @@ import SectionMilestonesBatting from "../../../Sections/batting/Section_Career_M
 import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
 export default class BattingOverview extends Component {
-
+ 
   componentWillMount() { }
 
   /**
@@ -50,7 +49,7 @@ export default class BattingOverview extends Component {
                 },
                 {
                   Title:"For and Against",
-                  Component:<MostForAgainst Table={this.props.DATA.CLEAN}   />,
+                  Component:<MostForAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props} />,
                   Icon:<PeopleIcon />
                 }
             ]}

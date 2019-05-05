@@ -5,7 +5,8 @@ import TrendingUp from '@material-ui/icons/TrendingUp'
 import TrendingDown from '@material-ui/icons/TrendingDown'
 import TrendingFlat from '@material-ui/icons/TrendingFlat'
 
-let Progress = <TrendingFlat />;
+// let Progress = <TrendingFlat />;
+
 export default class HomaeRanking extends Component { 
    
     FindArrow(data){

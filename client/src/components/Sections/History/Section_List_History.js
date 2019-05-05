@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
-import SubTitle from "../../Elements/type/PageSubTitle";
+// import SubTitle from "../../Elements/type/PageSubTitle";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -15,7 +15,10 @@ import List from '@material-ui/core/List';
 
 var _ = require('lodash');
 
-let DisplayList, Data, OvertheYears;
+// let DisplayList, Data, OvertheYears;
+
+// eslint-disable-next-line
+let OvertheYears,Data;
 export default class History extends Component {
 
     state = {
@@ -34,6 +37,7 @@ export default class History extends Component {
       {
           let CreateNewList=[]
           let NewYear;
+          // eslint-disable-next-line
             arr.map((game,i)=>{
                   //  console.log(Year, game)
                     if(Year === "Career"){
@@ -41,7 +45,7 @@ export default class History extends Component {
                     }
                     else{
                         NewYear = game.Meta.Date.split("/")
-                        if(Year == '20'+NewYear[2]){
+                        if(Year === '20'+NewYear[2]){
                             CreateNewList.push(game);  
                         }
                     }

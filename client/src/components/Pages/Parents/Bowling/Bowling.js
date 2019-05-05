@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Title from "../../../Elements/type/PageTitle";
+// import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
-import Row from "../../../Template/Page/Row";
+// import Row from "../../../Template/Page/Row";
 import Pod from "../../../Template/Page/Pod";
 
 // Sections 
