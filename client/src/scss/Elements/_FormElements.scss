@@ -14,3 +14,39 @@
     }
         
 }
+
+
+.GlobalSelect{
+    width: 100%;
+    z-index: 100;
+
+    label{
+        margin: -8px 0 0 13px;
+        font-size: 1.05em;
+    }
+    .MuiSelect-root-170{
+        div{
+            width: auto;
+        }
+    }
+}
+
+
+.RadioButtons{
+    display: flex !important;
+    flex-direction: row ;
+    justify-content:space-evenly;
+    align-content:space-between;
+        
+        legend{
+            text-align: right;
+            margin: 0;
+        }
+
+        div{
+            display: flex;
+            flex-direction: row ;
+            justify-content:space-evenly;
+            align-content:space-between;
+        }
+}

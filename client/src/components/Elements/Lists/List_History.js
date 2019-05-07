@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import Avatar from '@material-ui/core/Avatar';
+//import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import LaunchIcon from '@material-ui/icons/Launch';
 
@@ -28,20 +28,21 @@ const List_History = (props) => (
                         key={i} 
                         animationIn="fadeInUp"
                         isVisible={props.isVisible}
-                        animationInDelay={Delay} 
+                        animationInDelay={Delay}  
                         animateOnMount={false}
                         className={IsVisable + " HistoryItem" }
                     >
 
                         <ListItem button >
-                            <Avatar>{game.Meta.Team[0]}</Avatar>
                             
                             <ListItemText 
                                 primary={Text}
-                                secondary={batting +'  '+ Bowling}
+                                secondary={game.Meta.Date}
+                               
                             />
                             <ListItemText 
-                                secondary={game.Meta.Date}
+                                 primary={batting }
+                                 secondary={Bowling}
                                 
                             />
                            

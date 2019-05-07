@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
+
 // import SubTitle from "../../Elements/type/PageSubTitle";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -15,69 +16,64 @@ import List from '@material-ui/core/List';
 
 var _ = require('lodash');
 
-// let DisplayList, Data, OvertheYears;
-
-// eslint-disable-next-line
-let OvertheYears,Data;
-export default class History extends Component {
+export default class Section_HistoryList extends Component { 
 
     state = {
-        labelWidth: 100,
-        Year:"Career",
-        Created:0,
-        List:[]
+            labelWidth: 100, 
+            Year:"Career",
+            Created:0,
+            List:[]
       }
 
       handleChange = event => {
-        this.createList(this.props.DATA.CLEAN,event.target.value)
+        this.createList(this.props.List,event.target.value,this.props.SelectedID)
       }
     
-      createList(arr , Year)
-        
-      {
-          let CreateNewList=[]
-          let NewYear;
-          // eslint-disable-next-line
-            arr.map((game,i)=>{
-                  //  console.log(Year, game)
-                    if(Year === "Career"){
-                        CreateNewList.push(game);   
-                    }
-                    else{
-                        NewYear = game.Meta.Date.split("/")
-                        if(Year === '20'+NewYear[2]){
-                            CreateNewList.push(game);  
+      createList(arr , Year, SelectedTeam)  
+        {
+            let CreateNewList=[]
+            let NewYear;
+            // eslint-disable-next-line
+                arr.map((game,i)=>{
+                    //    console.log(Year, game.Meta.TeamID,this.props.SelectedID)
+                    if(
+                        game.Meta.TeamID === this.props.SelectedID || 
+                        this.props.SelectedID=== null
+                        )
+                    {
+                        if(Year === "Career"){
+                            CreateNewList.push(game);   
                         }
-                    }
-            })
+                        else{
+                            NewYear = game.Meta.Date.split("/")
+                            if(Year === '20'+NewYear[2]){
+                                CreateNewList.push(game);  
+                            }
+                        }
+                       }
+                })
 
-            CreateNewList = _.orderBy(CreateNewList,['Meta.FixtureInt'],['desc'])
-       
-            this.setState({ 
-                Created: Math.round((new Date()).getTime() / 1000),
-                Year:Year,
-                List:CreateNewList
-            })
+                CreateNewList = _.orderBy(CreateNewList,['Meta.FixtureInt'],['desc'])
+        
+                this.setState({ 
+                    Created: Math.round((new Date()).getTime() / 1000),
+                    Year:Year,
+                    List:CreateNewList
+                })
+        }
 
-      }
   componentWillMount() { 
-       this.createList(this.props.DATA.CLEAN, "Career")
-        Data = this.props.DATA.CLEAN;
-
-        OvertheYears = this.props.DATA.CAREER.Career.batting.overTheYears
+        this.createList(this.props.List, "Career", this.props.SelectedID)
     }
 
-  render() { 
-
+  render() {     
     return (
         <div className="Section_History" > 
-        <Row class="ContainerRow">
-            
-            <Pod col="col-md-12 Selector" >
+            <Row class="ContainerRow">
+                <Pod col="col-md-12 Selector" >
                         <FormControl variant="outlined" className="YearSelector" >
-                            
                             <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                                Select a Year 
+                                Years 
                             </InputLabel>
 
                             <Select
@@ -87,7 +83,7 @@ export default class History extends Component {
                             >
                                 <MenuItem value="Career" >Career</MenuItem>
                                     {
-                                        OvertheYears.map((year,i)=>{
+                                        this.props.Years.map((year,i)=>{
                                             return(
                                                 <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
                                             )
@@ -95,31 +91,24 @@ export default class History extends Component {
                                     }
                             </Select>
                         </FormControl>
-                    </Pod>
+                </Pod>
             
             <Pod col="col-md-12" >
-                    <Row>
-                        
-                        
-                    <Pod col="col-md-12" canvas="invert"> 
+                <Row>  
+                    <Pod col="col-md-12" canvas="canvas1"> 
                         <div className="ChartContainer">
-                           
                             <div className="Body">
-                            <List >
-                                <ListHistory 
-                                    Games={this.state.List}
-                                    isVisible={true}
-                                    match={ this.props.match}
-                                />
-                            </List>
+                                <List>
+                                    <ListHistory 
+                                        Games={this.state.List}
+                                        isVisible={true}
+                                        match={ this.props.Match}
+                                    />
+                                </List>
                             </div>
                         </div>
-                        </Pod>
-
-
-
-
-                    </Row>
+                    </Pod>
+                </Row>
             </Pod>
         </Row>
     </div> 

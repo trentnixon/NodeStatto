@@ -117,8 +117,8 @@ export default class Statto extends Component {
                 <Route  exact path='/:id/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
 
 
-                <Route  exact path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
-
+                <Route   path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
+          
                 <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
                 <Route  exact path='/:id/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
                 <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>

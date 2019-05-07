@@ -27,8 +27,8 @@ export default class Formguide
        
           <Container>
 
-            <SectionHeader   h1="Batting" h2="Form Guide (Based on last 5 Games)"  /> 
-
+            <SectionHeader   h1="Form Guide" h2="Batting"  /> 
+ 
               <SectionContainer>
                 <SectionCareerBatting 
                   Data={this.props.DATA.CAREER.Form.batting} 

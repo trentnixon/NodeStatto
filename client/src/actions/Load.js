@@ -16,7 +16,7 @@ export function FetchData(){
     this.id = null
     
     this.StoredData = [];
-    this.FormGuide = [];
+    this.FormGuide = []; 
 
 
     this.CallsToApi =[

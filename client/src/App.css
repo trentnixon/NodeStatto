@@ -98,20 +98,21 @@ p {
   border: none !important;
   padding: 0px !important; }
 
+.Section_History .Outer {
+  padding: 0; }
+
 .Section_History ul .animated li > div > div {
-  background-color: #f5f5f5;
   color: #5a5a5a; }
 
-.Section_History ul .animated li > div div + div {
-  background-color: unset; }
-  .Section_History ul .animated li > div div + div span, .Section_History ul .animated li > div div + div p {
-    color: #f5f5f5; }
+.Section_History ul .animated li > div div + div span, .Section_History ul .animated li > div div + div p {
+  color: #5a5a5a;
+  text-align: right; }
 
 .Section_History ul .animated li > div div + div + div {
   text-align: right;
   padding: 0 20px 0 0; }
   .Section_History ul .animated li > div div + div + div span, .Section_History ul .animated li > div div + div + div p {
-    color: #f5f5f5; }
+    color: #5a5a5a; }
 
 .Section_Home_RankingPods .HomeRankingPods .animated .Inner {
   padding: 0 !important; }
@@ -205,6 +206,29 @@ p {
     font-size: 1.05em; }
   .YearSelector .MuiSelect-root-170 div {
     width: auto; }
+
+.GlobalSelect {
+  width: 100%;
+  z-index: 100; }
+  .GlobalSelect label {
+    margin: -8px 0 0 13px;
+    font-size: 1.05em; }
+  .GlobalSelect .MuiSelect-root-170 div {
+    width: auto; }
+
+.RadioButtons {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-between; }
+  .RadioButtons legend {
+    text-align: right;
+    margin: 0; }
+  .RadioButtons div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-between; }
 
 .CTA {
   margin: 5px 0 !important; }
