@@ -7,7 +7,13 @@ import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 import './App.css'
 
 // Deply Instructions 
-// //https://www.youtube.com/watch?v=71wSzpLyW9k&t=392s
+// https://www.youtube.com/watch?v=71wSzpLyW9k&t=392s
+
+/**
+ * 1. heroku login
+ * 
+ */
+
 
 
 export default class App extends Component {
