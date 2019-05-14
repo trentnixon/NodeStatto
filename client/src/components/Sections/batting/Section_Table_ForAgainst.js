@@ -40,7 +40,7 @@ export default class SectionTableForAgainst
                     <TableRow>
                         <TableCell align="right"> </TableCell>
                         <TableCell align="right"></TableCell>
-                        <TableCell align="right"> Results : {Rows.length} Teams</TableCell>
+                        <TableCell align="right" className="results"> Results : {Rows.length}</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell align="right">{this.props.Type}</TableCell>

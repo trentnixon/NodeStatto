@@ -10,7 +10,7 @@ export default class ROW_ForandAgainst extends Component {
     render() {
         return (
             <TableRow >
-                <TableCell valign="top"  align="right">
+                <TableCell valign="top"  align="right"> 
                   {this.props.Team}
                 </TableCell>
                 <TableCell valign="top"  align="left">

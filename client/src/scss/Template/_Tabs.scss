@@ -10,6 +10,22 @@
             height: 30px;
         }
     }
+}
 
 
+// Specific Tabs
+
+.TableTabber{
+    div{
+        width: 100%;
+        table{
+            tr{
+                th, td{  padding: 0; 
+                    a{
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
 }

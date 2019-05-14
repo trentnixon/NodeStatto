@@ -49,7 +49,7 @@ export default class RankingPods extends Component {
                                     animateOnMount={false}
                                     className={IsVisable}
                                 >
-                                    <Pod col="col-md-12" >
+                                    <Pod col="col-md-12" type="IconPod" canvas="canvas1" >
                                         <SubTitle Title={this.findValue(this.props.Rankings, rank.value)} />
                                         <Title Title={rank.Title} />
                                     </Pod>
@@ -60,4 +60,4 @@ export default class RankingPods extends Component {
                 </div>
             )
         }
-    }
+    } 

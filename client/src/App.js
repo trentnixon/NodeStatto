@@ -6,6 +6,10 @@ import Stage from "./components/Pages/Stage";
 import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 import './App.css'
 
+// Deply Instructions 
+// //https://www.youtube.com/watch?v=71wSzpLyW9k&t=392s
+
+
 export default class App extends Component {
     render () { 
      return ( 

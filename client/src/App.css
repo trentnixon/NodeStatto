@@ -20,6 +20,12 @@ p {
   background-repeat: repeat;
   background-image: url("/assets/bg/absurdity.png"); }
 
+.Section {
+  margin: 0 0 50px; }
+  .Section h1.Page_Title {
+    font-size: 2em;
+    color: #969696; }
+
 .Section_Rankings {
   display: contents; }
 
@@ -39,31 +45,6 @@ p {
     text-align: right;
     font-weight: 800;
     font-size: 1.5em; }
-
-.Section_Milestones .animated .Inner .Header img {
-  width: 30px;
-  float: right;
-  margin: 0 15px 0 0; }
-
-.Section_Milestones .animated .Inner .Body h1 {
-  text-align: center;
-  margin: 0; }
-
-.Section_Milestones .animated .Inner .Body h1.Page_Sub_Title {
-  font-size: 2em !important;
-  color: #709dce !important;
-  border-bottom: 1px solid;
-  margin: 0 0 10px 0;
-  padding: 0 0 7px 0; }
-
-.Section_Milestones .animated .Inner .Body h1.Page_Title {
-  font-size: 1em !important;
-  font-weight: 600; }
-
-.Section_Milestones .animated .Inner .Footer {
-  text-align: right; }
-  .Section_Milestones .animated .Inner .Footer button {
-    float: unset !important; }
 
 .atAGlance .Form_Selector .Inner {
   text-align: right; }
@@ -98,21 +79,23 @@ p {
   border: none !important;
   padding: 0px !important; }
 
-.Section_History .Outer {
-  padding: 0; }
-
-.Section_History ul .animated li > div > div {
-  color: #5a5a5a; }
-
-.Section_History ul .animated li > div div + div span, .Section_History ul .animated li > div div + div p {
-  color: #5a5a5a;
-  text-align: right; }
-
-.Section_History ul .animated li > div div + div + div {
-  text-align: right;
-  padding: 0 20px 0 0; }
-  .Section_History ul .animated li > div div + div + div span, .Section_History ul .animated li > div div + div + div p {
-    color: #5a5a5a; }
+.Section_History {
+  margin: 0 -15px; }
+  .Section_History .Outer {
+    padding: 0; }
+  .Section_History ul {
+    margin: 0;
+    padding: 0; }
+    .Section_History ul .animated li > div > div {
+      color: #5a5a5a; }
+    .Section_History ul .animated li > div div + div span, .Section_History ul .animated li > div div + div p {
+      color: #5a5a5a;
+      text-align: right; }
+    .Section_History ul .animated li > div div + div + div {
+      text-align: right;
+      padding: 0 20px 0 0; }
+      .Section_History ul .animated li > div div + div + div span, .Section_History ul .animated li > div div + div + div p {
+        color: #5a5a5a; }
 
 .Section_Home_RankingPods .HomeRankingPods .animated .Inner {
   padding: 0 !important; }
@@ -198,6 +181,12 @@ p {
   #Header_Slider .slick-slider .slick-list .slick-slide .details h4 {
     font-size: 1em; }
 
+.filter .Inner {
+  padding: 15px 15px  0 !important; }
+
+.results {
+  text-align: right !important; }
+
 .YearSelector {
   width: 50%;
   z-index: 100; }
@@ -233,8 +222,39 @@ p {
 .CTA {
   margin: 5px 0 !important; }
 
+.ContentContainer {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px; }
+  .ContentContainer .Header {
+    padding: 5px 15px;
+    background-color: #709dce !important;
+    display: flex; }
+    .ContentContainer .Header .Avatar {
+      margin-right: 15px;
+      background-color: #f5f5f5;
+      border-radius: 50px;
+      padding: 3px;
+      color: rgba(0, 0, 0, 0.54) !important;
+      font-size: 1em; }
+    .ContentContainer .Header h1 {
+      text-align: left;
+      margin: 0;
+      font-size: 1.3em !important;
+      padding: 5px 0;
+      color: #f5f5f5 !important; }
+  .ContentContainer .Footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-content: end;
+    background-color: #d8d8d8; }
+    .ContentContainer .Footer a {
+      color: white; }
+
 .ChartContainer {
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12); }
   .ChartContainer .Header {
     padding: 5px 15px;
     margin: -15px;
@@ -270,6 +290,105 @@ p {
     padding: 15px 0 0; }
   .invert .ChartContainer .Footer a {
     color: #f5f5f5; }
+
+/**
+    1. .IconPod
+    Pod Should have a Header, Body and Footer Div
+    Contain a Icon, Main Value and Title
+
+
+    2. .SingleLine
+    Currently has a body div only
+    2 x H1 on the same line.
+
+
+    3. .Zeroed
+    This pod has No padding and No Margin attached to them.
+    Add a new class or inline styling to amend
+*/
+.PodRow .animated {
+  margin: 0;
+  padding: 0; }
+
+.PodRow #Pod {
+  padding: 0 1px 5px 1px; }
+  .PodRow #Pod .Inner {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    position: relative; }
+    .PodRow #Pod .Inner h1 {
+      color: #969696;
+      font-size: 1.1em; }
+    .PodRow #Pod .Inner h2 {
+      color: #5a5a5a;
+      font-size: 2.5em;
+      margin: 0;
+      line-height: 1.2em; }
+    .PodRow #Pod .Inner h3 {
+      color: #5a5a5a;
+      font-size: 1em;
+      margin: 0;
+      line-height: 1.2em;
+      text-align: right;
+      border-top: 1px solid;
+      padding-top: 5px;
+      margin-top: 5px; }
+    .PodRow #Pod .Inner button {
+      float: right; }
+  .PodRow #Pod .IconPod .Header img {
+    width: 30px;
+    float: right;
+    margin: 0 15px 0 0; }
+  .PodRow #Pod .IconPod .Body h1 {
+    text-align: center;
+    margin: 0; }
+  .PodRow #Pod .IconPod .Body h1.Page_Sub_Title {
+    font-size: 2em !important;
+    color: #709dce !important;
+    border-bottom: 1px solid;
+    margin: 0 0 10px 0;
+    padding: 0 0 7px 0; }
+  .PodRow #Pod .IconPod .Body h1.Page_Title {
+    font-size: 1em !important;
+    font-weight: 600; }
+  .PodRow #Pod .IconPod .Footer {
+    text-align: right; }
+    .PodRow #Pod .IconPod .Footer button {
+      float: unset !important; }
+  .PodRow #Pod .IconPod .RankingIcon {
+    float: right;
+    font-size: 3em; }
+  .PodRow #Pod .SingleLine .Body {
+    display: flex; }
+    .PodRow #Pod .SingleLine .Body h1 {
+      width: 50%;
+      margin: 0; }
+    .PodRow #Pod .SingleLine .Body h1 + h1 {
+      text-align: right; }
+  .PodRow #Pod .Zeroed {
+    padding: 0;
+    margin: 0; }
+  .PodRow #Pod .FillPod .fill {
+    background-color: rgba(112, 157, 206, 0.1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 15px;
+    margin: -15px;
+    transition: height 0.25s ease-in; }
+
+#Pod.NakedPod {
+  padding: 0; }
+  #Pod.NakedPod > .Inner {
+    background-color: transparent;
+    padding: 0 15px;
+    border: none; }
+
+#Pod.ToDo .Inner {
+  border-color: red;
+  background-color: #ffe2e2; }
 
 /*- Build up Dom Elements -*/
 #Login {
@@ -327,203 +446,171 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto"; }
-  body #root #Statto #Frame header {
-    position: fixed;
-    z-index: 99999; }
-    body #root #Statto #Frame header #AppBar {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 100%;
-      align-items: center;
-      align-content: center; }
-      body #root #Statto #Frame header #AppBar img.Logo {
-        height: 23px;
-        margin: 12px 0 0 0; }
-      body #root #Statto #Frame header #AppBar .Left {
-        justify-content: flex-start;
+  body #root #Statto #Frame {
+    /*
+*       TABLET NORMAL
+*
+*/
+    /* iPads (landscape) ----------- */
+    /* iPads (portrait) ----------- */
+    /* Medium Phones ----------- */
+    /* Small Phones ----------- */
+    /* Smartphones (portrait) ----------- */ }
+    body #root #Statto #Frame header {
+      position: fixed;
+      z-index: 99999; }
+      body #root #Statto #Frame header #AppBar {
         display: flex;
-        flex-grow: 1; }
-      body #root #Statto #Frame header #AppBar .Center {
-        flex-grow: 2;
-        display: flex;
-        justify-content: flex-start; }
-        body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
-          width: 25px;
-          height: 25px; }
-        body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
-          width: 20px;
-          height: 20px; }
-        body #root #Statto #Frame header #AppBar .Center button a {
-          display: flex; }
-          body #root #Statto #Frame header #AppBar .Center button a svg {
-            fill: rgba(0, 0, 0, 0.54); }
-        body #root #Statto #Frame header #AppBar .Center p {
-          margin: 0 5px 0 0;
-          font-size: .8em;
-          text-align: center;
-          float: right;
-          line-height: 4em; }
-      body #root #Statto #Frame header #AppBar .Right {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-end; }
-        body #root #Statto #Frame header #AppBar .Right h1 {
-          font-size: 1.1em;
-          line-height: 2.3em;
-          margin: 0 20px 0 10px; }
-        body #root #Statto #Frame header #AppBar .Right button a {
-          display: flex; }
-          body #root #Statto #Frame header #AppBar .Right button a svg {
-            fill: rgba(0, 0, 0, 0.54); }
-  .DrawerNav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    min-height: 100vh; }
-    .DrawerNav .Collapseable {
-      height: auto;
-      background-color: #f5f5f5; }
-      .DrawerNav .Collapseable a div {
-        padding-left: 35px; }
-    .DrawerNav nav {
-      width: inherit; }
-    .DrawerNav .NavBarTop {
-      background-color: #709dce;
-      min-height: 200px;
-      text-align: center;
-      padding-top: 80px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        align-content: center; }
+        body #root #Statto #Frame header #AppBar img.Logo {
+          height: 23px;
+          margin: 12px 0 0 0; }
+        body #root #Statto #Frame header #AppBar .Left {
+          justify-content: flex-start;
+          display: flex;
+          flex-grow: 1; }
+        body #root #Statto #Frame header #AppBar .Center {
+          flex-grow: 2;
+          display: flex;
+          justify-content: flex-start; }
+          body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
+            width: 25px;
+            height: 25px; }
+          body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
+            width: 20px;
+            height: 20px; }
+          body #root #Statto #Frame header #AppBar .Center button a {
+            display: flex; }
+            body #root #Statto #Frame header #AppBar .Center button a svg {
+              fill: rgba(0, 0, 0, 0.54); }
+          body #root #Statto #Frame header #AppBar .Center p {
+            margin: 0 5px 0 0;
+            font-size: .8em;
+            text-align: center;
+            float: right;
+            line-height: 4em; }
+        body #root #Statto #Frame header #AppBar .Right {
+          flex-grow: 1;
+          display: flex;
+          justify-content: flex-end; }
+          body #root #Statto #Frame header #AppBar .Right h1 {
+            font-size: 1.1em;
+            line-height: 2.3em;
+            margin: 0 20px 0 10px; }
+          body #root #Statto #Frame header #AppBar .Right button a {
+            display: flex; }
+            body #root #Statto #Frame header #AppBar .Right button a svg {
+              fill: rgba(0, 0, 0, 0.54); }
+    .DrawerNav {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      .DrawerNav .NavBarTop > div {
-        flex-grow: 1;
-        width: 100%;
-        justify-content: center; }
-      .DrawerNav .NavBarTop div.UserName {
-        flex-grow: 2;
+      flex-wrap: nowrap;
+      min-height: 100vh; }
+      .DrawerNav .Collapseable {
+        height: auto;
+        background-color: #f5f5f5; }
+        .DrawerNav .Collapseable a div {
+          padding-left: 35px; }
+      .DrawerNav nav {
+        width: inherit; }
+      .DrawerNav .NavBarTop {
+        background-color: #709dce;
+        min-height: 200px;
+        text-align: center;
+        padding-top: 80px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        border-bottom: 30px solid #fff; }
-        .DrawerNav .NavBarTop div.UserName div {
-          align-self: center;
-          align-items: flex-end; }
-          .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
-            width: 70px;
-            height: 70px;
-            border: 8px solid #fff;
-            margin-bottom: -45px;
-            z-index: 10; }
-            .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
-              width: 70px; }
-      .DrawerNav .NavBarTop div.Actions {
-        display: flex;
-        align-items: flex-start; }
-        .DrawerNav .NavBarTop div.Actions div {
-          flex-grow: 1; }
-          .DrawerNav .NavBarTop div.Actions div button {
-            background-color: #fff; }
-            .DrawerNav .NavBarTop div.Actions div button a {
-              display: flex; }
-              .DrawerNav .NavBarTop div.Actions div button a svg {
-                fill: rgba(0, 0, 0, 0.54); }
-    .DrawerNav .NavBarBottom {
-      min-height: 50px; }
-    .DrawerNav img.NavigationIcon {
-      width: 25px;
-      margin-right: 16px; }
-    .DrawerNav img.NavigationIcon.Bowling {
-      width: 20px;
-      margin-right: 20px; }
-  body #root #Statto #Frame main {
-    min-height: 100vh;
-    -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-    background-color: #f5f5f5;
-    width: 100%; }
-    body #root #Statto #Frame main .show {
-      opacity: 1 !important; }
-  body #root #Statto #Frame #PageHeader {
-    background-color: #709dce;
-    padding: 40px;
-    margin: -24px -24px 30px -24px;
-    min-height: 300px; }
-  body #root #Statto #Frame .SectionHeader {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    align-content: center; }
-    body #root #Statto #Frame .SectionHeader h1 {
-      color: #969696;
-      flex-grow: 1;
-      width: auto; }
-    body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
-      text-align: right; }
-  body #root #Statto #Frame .row.ContainerRow > #Pod > .Inner {
-    border: none;
-    background-color: transparent; }
-    body #root #Statto #Frame .row.ContainerRow > #Pod > .Inner .animated {
-      margin: 0;
-      padding: 0; }
-  body #root #Statto #Frame #Pod {
-    padding: 0 15px 5px 0; }
-    body #root #Statto #Frame #Pod .Inner {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-radius: 5px;
-      padding: 15px;
-      background-color: #fff;
-      position: relative; }
-      body #root #Statto #Frame #Pod .Inner h1 {
+        justify-content: center;
+        align-items: center; }
+        .DrawerNav .NavBarTop > div {
+          flex-grow: 1;
+          width: 100%;
+          justify-content: center; }
+        .DrawerNav .NavBarTop div.UserName {
+          flex-grow: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          border-bottom: 30px solid #fff; }
+          .DrawerNav .NavBarTop div.UserName div {
+            align-self: center;
+            align-items: flex-end; }
+            .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
+              width: 70px;
+              height: 70px;
+              border: 8px solid #fff;
+              margin-bottom: -45px;
+              z-index: 10; }
+              .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
+                width: 70px; }
+        .DrawerNav .NavBarTop div.Actions {
+          display: flex;
+          align-items: flex-start; }
+          .DrawerNav .NavBarTop div.Actions div {
+            flex-grow: 1; }
+            .DrawerNav .NavBarTop div.Actions div button {
+              background-color: #fff; }
+              .DrawerNav .NavBarTop div.Actions div button a {
+                display: flex; }
+                .DrawerNav .NavBarTop div.Actions div button a svg {
+                  fill: rgba(0, 0, 0, 0.54); }
+      .DrawerNav .NavBarBottom {
+        min-height: 50px; }
+      .DrawerNav img.NavigationIcon {
+        width: 25px;
+        margin-right: 16px; }
+      .DrawerNav img.NavigationIcon.Bowling {
+        width: 20px;
+        margin-right: 20px; }
+    body #root #Statto #Frame main {
+      min-height: 100vh;
+      -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+      background-color: #f5f5f5;
+      width: 100%; }
+      body #root #Statto #Frame main .show {
+        opacity: 1 !important; }
+    body #root #Statto #Frame #PageHeader {
+      background-color: #709dce;
+      padding: 40px;
+      margin: -24px -24px 30px -24px;
+      min-height: 300px; }
+    body #root #Statto #Frame .SectionHeader {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: baseline;
+      align-content: center; }
+      body #root #Statto #Frame .SectionHeader h1 {
         color: #969696;
-        font-size: 1.1em; }
-      body #root #Statto #Frame #Pod .Inner h2 {
-        color: #5a5a5a;
-        font-size: 2.5em;
-        margin: 0;
-        line-height: 1.2em; }
-      body #root #Statto #Frame #Pod .Inner h3 {
-        color: #5a5a5a;
-        font-size: 1em;
-        margin: 0;
-        line-height: 1.2em;
-        text-align: right;
-        border-top: 1px solid;
-        padding-top: 5px;
-        margin-top: 5px; }
-      body #root #Statto #Frame #Pod .Inner button {
-        float: right; }
-      body #root #Statto #Frame #Pod .Inner .RankingIcon {
-        float: right;
-        font-size: 3em; }
-      body #root #Statto #Frame #Pod .Inner .fill {
-        background-color: rgba(112, 157, 206, 0.1);
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        bottom: 15px;
-        margin: -15px;
-        transition: height 0.25s ease-in; }
-  body #root #Statto #Frame #Pod.NakedPod {
-    padding: 0; }
-    body #root #Statto #Frame #Pod.NakedPod > .Inner {
-      background-color: transparent;
-      padding: 0 15px;
-      border: none; }
-  body #root #Statto #Frame #Pod.ToDo .Inner {
-    border-color: red;
-    background-color: #ffe2e2; }
-  body #root #Statto #Frame #StattoTabs header {
-    position: relative;
-    background-color: #f5f5f5;
-    padding: 10px 0 0;
-    box-shadow: unset; }
-    body #root #Statto #Frame #StattoTabs header img {
-      height: 30px; }
+        flex-grow: 1;
+        width: auto; }
+      body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
+        text-align: right; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      body #root #Statto #Frame .SectionHeader h1 {
+        font-size: 1.2em; }
+      body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
+        font-size: 1em; } }
+    body #root #Statto #Frame #StattoTabs header {
+      position: relative;
+      background-color: #f5f5f5;
+      padding: 10px 0 0;
+      box-shadow: unset; }
+      body #root #Statto #Frame #StattoTabs header img {
+        height: 30px; }
+    body #root #Statto #Frame .TableTabber div {
+      width: 100%; }
+      body #root #Statto #Frame .TableTabber div table tr th, body #root #Statto #Frame .TableTabber div table tr td {
+        padding: 0; }
+        body #root #Statto #Frame .TableTabber div table tr th a, body #root #Statto #Frame .TableTabber div table tr td a {
+          float: right; }
   body #root #Statto ul.dots li {
     float: left;
     width: 15px;

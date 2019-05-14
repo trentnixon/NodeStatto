@@ -1,7 +1,6 @@
 // to build a pod
 // <Pod col="" type="" canvas="" >
 import React, { Component } from 'react';
-
 export default class Pod extends Component {
   render() {
     return ( 

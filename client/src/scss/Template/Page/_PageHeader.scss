@@ -7,6 +7,8 @@
 }
 
 
+
+
 // This is the page title section
 .SectionHeader{
     flex-direction: row;
@@ -24,3 +26,36 @@
         text-align: right;
     }
 }
+
+
+
+
+/*
+*       TABLET NORMAL
+*
+*/
+    
+/* iPads (landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+    
+/* iPads (portrait) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+
+
+@media only screen and (min-width : 576px) and (max-width : 768px) {}
+
+/* Medium Phones ----------- */
+@media only screen and (min-width : 480px) and (max-width : 576px) {
+
+}
+
+/* Small Phones ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .SectionHeader{
+        h1{ font-size: 1.2em;}
+        h1.Page_Sub_Title{font-size: 1em;}
+    }
+}
+    
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {}

@@ -1,0 +1,9 @@
+  // Single Line Pod
+        
+  .SingleLine{
+    .Body{
+        display: flex;
+        h1{ width: 50%; margin: 0;}
+        h1 + h1{ text-align: right;}
+    }
+}

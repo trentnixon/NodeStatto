@@ -14,7 +14,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 // Elements
-import RadialPod from "../../Elements/pods/FillPods";
+import FillPod from "../../Elements/pods/FillPods";
 
 
 var _ = require('lodash');
@@ -24,7 +24,7 @@ let stats=[
         Name:["Innings"],
         Value:[0],
         Total:[0],
-        Percentage:[0],
+        Percentage:[0], 
         For:["Name"],
         Against:["Name"],
         Title:"Career Innings"
@@ -231,13 +231,11 @@ export default class Section_Rankings extends Component {
                 </Pod>
             </Row>   
 
-            <Row class="">
-                    <Pod col="col-md-12 NakedPod" >
-                        <Row class="Radial" > 
+            <Row class="PodRow">
                             {
                                 this.state.stats.map((radial,i)=>{
                                     return(
-                                        <RadialPod 
+                                        <FillPod  
                                             key={i}
                                             Value={radial.Value}
                                             Label={radial.Name}
@@ -249,8 +247,7 @@ export default class Section_Rankings extends Component {
                                     )
                                 })
                             }
-                        </Row > 
-                    </Pod>
+                      
                 </Row>
             </div>
             )

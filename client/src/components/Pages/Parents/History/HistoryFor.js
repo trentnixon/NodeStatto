@@ -4,7 +4,6 @@ import {Animated} from "react-animated-css";
 
 import HistoryList from "../../../Sections/History/Section_List_History";
 
-
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Template/Page/Pod";
 
@@ -17,10 +16,10 @@ import SubTitle from "../../../Elements/type/PageSubTitle";
 class HistoryPod extends Component {
     render() {
           return(
-            <Pod col="col-md-4" canvas="canvas1">
+            <Pod col="col-md-4" type="SingleLine" canvas="canvas1">
                 <div className="Body">
                     <Title  Title={this.props.Title} />
-                    <SubTitle Title={this.props.Value} />
+                    <Title  Title={this.props.Value} />
                 </div>
             </Pod>
         )
@@ -49,7 +48,6 @@ export default class HistoryFor extends Component {
 
         <SectionHeader  h2="Batting" />  
         <Row>
-       
             <HistoryPod Value={DisplayTeam.Innings}Title="Innings"/>
             <HistoryPod Value={DisplayTeam.Runs}Title="Runs"/>
             <HistoryPod Value={DisplayTeam.AVG}Title="Average"/>

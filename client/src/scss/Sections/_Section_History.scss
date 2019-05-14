@@ -1,48 +1,45 @@
 .Section_History{
-
+    margin:  0 -15px;
     .Outer{
         padding: 0;
     }
-ul{
-    .animated{
-        li{
 
-            >div{
+        ul{
+            margin: 0;
+            padding: 0;
+            .animated{
+                li{
 
-                >div{ 
-                        //background-color: $white; 
-                        color: $h2Color;}
-                
-                div+div{ 
-                        //background-color:unset; 
-                        span,p{
-                            color: $h2Color;
-                            text-align: right;
-                        }
-                }
-                div+div+div{
-                       // background-color: green;
-                        text-align: right;
-                        padding: 0 20px 0 0;
-                        span,p{
-                            color: $h2Color;
-                        }
+                    >div{
+
+                        >div{ 
+                                //background-color: $white; 
+                                color: $h2Color;}
                         
+                        div+div{ 
+                                //background-color:unset; 
+                                span,p{
+                                    color: $h2Color;
+                                    text-align: right;
+                                }
+                        }
+                        div+div+div{
+                            // background-color: green;
+                                text-align: right;
+                                padding: 0 20px 0 0;
+                                span,p{
+                                    color: $h2Color;
+                                }
+                                
+                        }
+                    // span{ display: none;}
+
+                    }
+                        div+div{
+                        //  background-color: red;
+                        }
+                    }
                 }
-              // span{ display: none;}
-
             }
-            div+div{
-              //  background-color: red;
-            }
-
-        }
-    }
-}
-
-
-
-
-
-
+   
 }

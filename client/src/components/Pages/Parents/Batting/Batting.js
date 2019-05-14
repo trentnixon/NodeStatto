@@ -25,7 +25,7 @@ export default class BattingOverview extends Component {
           />
    */
   render() { 
-    return (   
+    return (    
       <Container>  
         <SectionHeader   h1="Overview" h2="Batting"  /> 
 

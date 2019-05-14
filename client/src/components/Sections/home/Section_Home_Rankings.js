@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-// import IconButton from '@material-ui/core/IconButton';
-// import LinkIcon from '@material-ui/icons/Layers'
-// import { Link } from "react-router-dom";
-
-
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
-// import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Icons
-import  {Batting,Bowling,Keeping} from "../../Icons/icons";
+import  {Batting,Bowling,Keeping} from "../../Icons/icons"; 
 // Pod
 import RankingPod from "../../Elements/pods/Ranking_Home_Pod"
 
 let stones=[];
-export default class Section_Rankings extends Component {
+export default class Home_Section_Rankings extends Component {
     componentWillMount() {
          stones=[
             { var:this.props.Data.Batting, Path:"/batting/", label:"Batting",icon:<Batting/>},
@@ -28,12 +21,9 @@ export default class Section_Rankings extends Component {
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
-            <div className="Section Section_Home_RankingPods">
-                <Row class="ContainerRow">
-                    <Pod col="col-md-12" > 
-                        <Title Title={this.props.Title}/>
-                        <Row class="HomeRankingPods">  
-                        
+            <div className="Section_Home_RankingPods">
+                <Title Title={this.props.Title}/>
+                <Row class="PodRow HomeRankingPods">
                             {
                                 stones.map((stone,i)=>{
                                   
@@ -56,8 +46,6 @@ export default class Section_Rankings extends Component {
                                     )
                                 }) 
                             }
-                        </Row>
-                    </Pod>
                 </Row>
             </div>
             )

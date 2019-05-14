@@ -29,17 +29,20 @@ class Chart_Games_Home extends Component {
       render() {
         
           return (
-            <div className="ChartContainer">
-               <div className="Header">
-                <Avatar className="Avatar"  >{this.props.DATA.CAREER.Career.Meta.Games.int}</Avatar>
+            <div className={this.props.col}>
+              <div className="ContentContainer canvas1" >
+                <div className="Header">
                 <SubTitle Title={this.props.Title} />
-               </div>
-               <div className="Body">
-                <Donut 
-                      series={HistoryInt}
-                      Labels={HistoryYear} 
-                    />
-               </div>
+                  <Avatar className="Avatar"  >{this.props.DATA.CAREER.Career.Meta.Games.int}</Avatar>
+                  
+                </div>
+                <div className="Body">
+                  <Donut 
+                        series={HistoryInt}
+                        Labels={HistoryYear} 
+                      />
+                </div>
+              </div>
             </div>
           );
         }

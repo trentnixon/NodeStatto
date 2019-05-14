@@ -26,8 +26,6 @@ export default class RankingPods extends Component {
         return (
                 <Pod  col="col-md-4 col-lg-4  col-xl-2 col-12 col-sm-6" >
                     
-                    
-
                     <div className="RadialTextContainer">
                         <Title 
                             Title={this.props.Label} 

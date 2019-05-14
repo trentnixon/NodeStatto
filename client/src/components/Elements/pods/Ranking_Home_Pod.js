@@ -5,13 +5,14 @@ import TrendingUp from '@material-ui/icons/TrendingUp'
 import TrendingDown from '@material-ui/icons/TrendingDown'
 import TrendingFlat from '@material-ui/icons/TrendingFlat'
 
-// let Progress = <TrendingFlat />;
+// Pod Structure
+import PodHeader from "./PodStructure/Pod_Header";
+import PodFooter from "./PodStructure/Pod_Footer";
+import PodBody from "./PodStructure/Pod_Value_and_Icon_Body";
 
-export default class HomaeRanking extends Component { 
+export default class RankingHomePod extends Component { 
    
     FindArrow(data){
-       
-       // console.log(data)
         let Arrow;
         if(data.length > 0){
             if(data[data.length-2].rank < data[data.length-1].rank){
@@ -23,10 +24,8 @@ export default class HomaeRanking extends Component {
             else if(data[data.length-2].rank === data[data.length-1].rank){
                 Arrow =<TrendingFlat nativeColor="#cec570" className="RankingIcon"/>;
             }
-
             return Arrow;
-        }
-        
+        } 
     }
     value(data,int){
       //  console.log(data);
@@ -34,26 +33,21 @@ export default class HomaeRanking extends Component {
             return data[data.length-int].rank
         }else{
             return 0;
-        }
-        
+        } 
     }
     componentWillMount() { }
- 
+  
     render() {
         return(
-            <Pod col={this.props.col} canvas="canvas1">
-                <div className="Header">
-                    <h1>{this.props.icon} {this.props.label}</h1>
-                </div>
-                <div className="Body">
-                    <h2>{this.value(this.props.total,1) } {this.FindArrow(this.props.total)}</h2>  
-                    <h3>Previous: {this.value(this.props.total,2)}</h3>
-                </div>
-                <div className="Footer">
-                
-                </div>
-                
+            <Pod col={this.props.col} type="IconPod" canvas="canvas1">
+                <PodHeader icon={this.props.icon} label ={this.props.label} />
+                <PodBody 
+                    TopLine={this.value(this.props.total,1) }
+                    Icon = {this.FindArrow(this.props.total)}
+                    BottomLine={"Previous : " +  this.value(this.props.total,2)}
+                />
+                <PodFooter />
           </Pod>
-        )
+        ) 
     }
 }

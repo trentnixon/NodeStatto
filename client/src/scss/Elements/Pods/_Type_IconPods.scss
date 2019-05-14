@@ -1,0 +1,44 @@
+// Section off Types of pods
+// Icon Pod
+
+    .IconPod{
+        .Header{
+            img{
+                width: 30px;
+                float: right;
+                margin: 0 15px 0 0;
+            }
+        }
+        .Body{
+            h1{ 
+                text-align: center;
+                margin: 0;
+            }
+            h1.Page_Sub_Title{
+                font-size: 2em !important;
+                color: $ColorBase !important;
+                border-bottom: 1px solid;
+                margin: 0 0 10px 0;
+                padding: 0 0 7px 0;
+            }
+            h1.Page_Title{
+                font-size: 1em !important;
+                
+                font-weight: 600;
+            }
+        }
+        .Footer{
+            text-align: right;
+            button{
+                float: unset !important;
+                a{
+                    
+                }
+            }
+            
+        }
+        .RankingIcon{
+            float: right;
+            font-size: 3em;
+        }
+    }

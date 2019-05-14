@@ -50,10 +50,11 @@ export default class PlayedFor extends Component {
    
     
       return(
-            <div className="ChartContainer">
+          <div className={this.props.col}>
+            <div className="ContentContainer canvas1">
                 <div className="Header">
-                        <Avatar className="Avatar" >{Num}</Avatar>
-                        <SubTitle Title={"Teams"} />
+                    <SubTitle Title={"Teams"} />
+                    <Avatar className="Avatar" >{Num}</Avatar>
                 </div>
                 <div className="Body">
                     <Table>
@@ -83,6 +84,7 @@ export default class PlayedFor extends Component {
                     {CTA}
                 </div>
             </div>
+        </div>
       )
   }
 }

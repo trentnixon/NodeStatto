@@ -7,10 +7,6 @@ import Container from "../../../Template/Page/Container";
 import SectionHeader from "../../../Sections/global/Section_Global_Header";
 import SectionContainer from "../../../Sections/global/SectionContainer";
 
-
-// Home Page Elements
-// import PreviousGames from "../../../Elements/Sliders/PreviousGameSlider";
-
 // Sections
 import Overview from "../../../Sections/home/Section_Home_overview";
 import Rankings from "../../../Sections/home/Section_Home_Rankings";
@@ -23,21 +19,16 @@ export default class Statto extends Component {
 
   render() {
     console.log(this.props.DATA)
-    /**
-     *   <PageHeader> 
-                <PreviousGames {... this.props} />
-            </PageHeader>
-     */
     return (
       <div>           
          
           <Container>
-              <SectionHeader h1="Dashboard" />
+              <SectionHeader h1="Dashboard" h2="Overview" /> 
 
               <SectionContainer>
-                  <Overview Title="Overview" {... this.props} /> 
+                  <Overview  {... this.props} />  
               </SectionContainer>
-              
+               
               <SectionContainer>
                 <Rankings  
                   Title="Rankings" 
@@ -48,16 +39,13 @@ export default class Statto extends Component {
 
               <SectionContainer>
                   <BriefHistory 
-                    Title="Recent Games"
+                    Title="Recent Games" 
                     {... this.props} 
                   />
               </SectionContainer> 
               
               <SectionContainer>
-                  <Charts 
-                    Title="Quick Rundown"
-                    {... this.props} 
-                  />
+                  <Charts  {... this.props} />
               </SectionContainer>
               
           </Container>

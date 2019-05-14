@@ -1,0 +1,59 @@
+// Current Pod Types
+/**
+    1. .IconPod
+    Pod Should have a Header, Body and Footer Div
+    Contain a Icon, Main Value and Title
+
+
+    2. .SingleLine
+    Currently has a body div only
+    2 x H1 on the same line.
+
+
+    3. .Zeroed
+    This pod has No padding and No Margin attached to them.
+    Add a new class or inline styling to amend
+*/
+
+.PodRow{
+    .animated{ margin: 0; padding: 0; }
+    #Pod{
+            padding: 0 1px 5px 1px;
+            
+            // Generic Inner Styles that are used by ALL Pods
+            .Inner{
+                border:1px solid rgba(0, 0, 0, 0.12);
+                border-radius: 5px;
+                padding: 15px;
+                background-color: #fff;
+                position: relative;
+                
+                
+                @import "./PodType";
+                @import "./PodButtons";
+            }
+
+            @import "./Type_IconPods";
+            @import "./Type_SingleLinePod";
+            @import "./Type_Zeroed";
+            @import "./Type_FilledPod";
+        }
+}
+
+// What is this??
+
+#Pod.NakedPod{
+    padding: 0;
+    >.Inner{
+        background-color: transparent;
+       padding: 0 15px;
+        border:none;
+    }
+}
+
+#Pod.ToDo{
+    .Inner{
+        border-color: red;
+        background-color: #ffe2e2;
+    }
+}

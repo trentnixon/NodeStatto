@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 // Template
 import Container from "../../../Template/Page/Container";
 import Row from "../../../Template/Page/Row";
@@ -11,8 +10,6 @@ import DataTable from "../../../Sections/batting/Section_Table_ForAgainst";
 // Icons
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
-
-import {Batting} from "../../../Icons/icons";
 
 // UI 
 import SectionHeader from "../../../Sections/global/Section_Global_Header";
@@ -65,8 +62,7 @@ const stats=[
 ];
 
 // let AGAINST;
-export default class ForandAgainstMajorTable
- extends Component {
+export default class ForandAgainstMajorTable extends Component {
 
   state = {
     labelWidth: 100,
@@ -109,7 +105,7 @@ export default class ForandAgainstMajorTable
         <Container>
           <SectionHeader  h1="For and Against" h2="Batting"  /> 
             <Row>
-              <Pod col="col-md-12" canvas="canvas1">
+              <Pod col="col-md-12 filter" canvas="canvas1">
                 <Row class="ContainerRow Form_Selector">
                   
                   <Pod col="col-md-6 Selector" canvas="">
@@ -151,15 +147,15 @@ export default class ForandAgainstMajorTable
                             <FormControlLabel value="5" control={<Radio color="primary" />} label=">  5" />
                             <FormControlLabel value="10" control={<Radio color="primary" />} label=">  10" />
                             <FormControlLabel value="20" control={<Radio color="primary" />} label=">  20" />
-                            <FormControlLabel value="50" control={<Radio color="primary" />} label=">  50" />
                         </RadioGroup>
                       </FormControl>
                     </Pod>
+                    
                   </Row> 
               </Pod>
             </Row>
-
-            <SectionContainer>
+            <Row class="TableTabber" >
+            <SectionContainer >
                     <Tabber 
                         Tabs={
                           [
@@ -188,10 +184,9 @@ export default class ForandAgainstMajorTable
                               Icon:<PeopleIconOutline />
                             }
                         ]}
-
                       /> 
             </SectionContainer>
-            
+          </Row>
         </Container>
       </div>
     )

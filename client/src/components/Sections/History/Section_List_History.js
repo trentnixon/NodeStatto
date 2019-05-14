@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
-
+import SectionHeader from "../../Sections/global/Section_Global_Header";
 // import SubTitle from "../../Elements/type/PageSubTitle";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -68,9 +68,11 @@ export default class Section_HistoryList extends Component {
 
   render() {     
     return (
-        <div className="Section_History" > 
+        <div className="Section_History" >
+             <SectionHeader h1="History " h2="Career" />
             <Row class="ContainerRow">
-                <Pod col="col-md-12 Selector" >
+            
+                <Pod col="col-md-12 Selector" type="Zeroed" >
                         <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
                                 Years 
@@ -93,23 +95,19 @@ export default class Section_HistoryList extends Component {
                         </FormControl>
                 </Pod>
             
-            <Pod col="col-md-12" >
-                <Row>  
-                    <Pod col="col-md-12" canvas="canvas1"> 
-                        <div className="ChartContainer">
-                            <div className="Body">
-                                <List>
-                                    <ListHistory 
-                                        Games={this.state.List}
+
+                <div className="ContentContainer canvas1 col-12">
+                    <div className="Body">
+                        <List>
+                            <ListHistory 
+                                Games={this.state.List}
                                         isVisible={true}
                                         match={ this.props.Match}
                                     />
-                                </List>
-                            </div>
-                        </div>
-                    </Pod>
-                </Row>
-            </Pod>
+                        </List>
+                    </div>
+                </div>
+                
         </Row>
     </div> 
     )
