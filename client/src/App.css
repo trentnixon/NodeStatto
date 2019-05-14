@@ -458,7 +458,8 @@ body {
     /* Smartphones (portrait) ----------- */ }
     body #root #Statto #Frame header {
       position: fixed;
-      z-index: 99999; }
+      z-index: 99999;
+      padding: 0; }
       body #root #Statto #Frame header #AppBar {
         display: flex;
         flex-direction: row;
