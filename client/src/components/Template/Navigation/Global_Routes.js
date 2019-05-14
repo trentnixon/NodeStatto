@@ -26,7 +26,9 @@ const styles = theme => ({
 });
 
 let Path=null;
-class NestedList extends React.Component {
+
+
+class NestedLists extends React.Component {
   state = { open: [false,false,false,false,false,false] };
 
   handleClick = (i) => {
@@ -39,7 +41,10 @@ class NestedList extends React.Component {
   };
 
   componentWillMount() {
-    Path = this.props.match.params.playerid; 
+    //console.log(this.props)
+    
+    Path = this.props.Match.params.playerid; 
+    
     //console.log(this.props.Navigation)
   } 
 
@@ -84,7 +89,11 @@ createCollapseItem(navItem,i){
 }
 
   render() {
+
     const { classes } = this.props;
+    
+    //console.log(this.props)
+    
     return (
       <div className={classes.root}>
         <List component="nav" >
@@ -104,5 +113,5 @@ createCollapseItem(navItem,i){
   }
 }
 
-NestedList.propTypes = { classes: PropTypes.object.isRequired, }; 
-export default withStyles(styles)(NestedList);
+NestedLists.propTypes = { classes: PropTypes.object.isRequired, }; 
+export default withStyles(styles)(NestedLists);

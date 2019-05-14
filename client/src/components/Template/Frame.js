@@ -56,7 +56,6 @@ const styles = theme => ({
 
 const NavBarBottom = (props) => (
   <div className="NavBarBottom">
-       
         <DeveloperRouter {... props}/>
   </div>
 );
@@ -66,7 +65,11 @@ const NavLayout = (props) => (
   // eslint-disable-next-line
         <div className="DrawerNav">
               <NavBarTop {... props}/>
-                  <Routes {... props} />
+                  <Routes 
+                    Match={props.match}
+                    Navigation={props.Navigation}
+              
+                  />
                 <Divider />
               <NavBarBottom {... props} />
         </div>
