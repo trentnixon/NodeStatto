@@ -186,7 +186,7 @@ function StripscoreCard(html){
 
  app.get('/api/ping/:id', function(req, res){
     url = Domain+URLVAR+req.params.id;
-   // console.log(url)
+    //console.log(url)
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
                 res.json(ping(html));

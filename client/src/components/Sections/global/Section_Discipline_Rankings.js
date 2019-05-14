@@ -46,7 +46,7 @@ export default class Section_Rankings extends Component {
         )
     } 
     render() {
-       // console.log(this.props.Rankings)  
+       //console.log(this.props.Rankings)  
         return ( 
                 <div className="Section_Rankings" >
                     <Title Title={this.props.Title}/>

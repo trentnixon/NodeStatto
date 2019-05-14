@@ -14,7 +14,7 @@ export default class History extends Component {
 
   componentWillMount() {}
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <Container>
       

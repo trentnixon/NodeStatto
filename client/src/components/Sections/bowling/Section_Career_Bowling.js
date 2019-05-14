@@ -226,7 +226,7 @@ export default class Section_Rankings extends Component {
                         <Row class="Radial" > 
                             {
                                 this.state.stats.map((radial,i)=>{
-                                    console.log(radial)
+                                    //console.log(radial)
                                     return(
                                         <FillPods 
                                             key={i}

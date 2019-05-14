@@ -9,7 +9,9 @@ import PageHeader from "../../../Template/Page/Header";
 
 export default class Averages extends Component {
 
-  componentWillMount() { console.log(this.props.DATA.CLEAN) }
+  componentWillMount() { 
+      //console.log(this.props.DATA.CLEAN) 
+    }
 
   render() {
     return (

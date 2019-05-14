@@ -9,7 +9,7 @@ export default class Formguide
  extends Component {
 
   componentWillMount() {
-    console.log(this.props.DATA.CLEAN)
+    //console.log(this.props.DATA.CLEAN)
   }
 
   render() {

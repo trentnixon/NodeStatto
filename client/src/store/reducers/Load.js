@@ -25,13 +25,13 @@ const LOAD = (state=InitialState, action) =>{
             }
             
             case "DATA_CLEAN":{
-               // console.log(action.payload);
+               //console.log(action.payload);
 				return {...state, DATA_CLEAN:action.payload}
 				// eslint-disable-next-line 
 				break
             }
             case "DATA_CAREER":{
-                // console.log(action.payload);
+                //console.log(action.payload);
                  return {...state, CAREER:action.payload}
                  // eslint-disable-next-line 
                  break
@@ -47,14 +47,14 @@ const LOAD = (state=InitialState, action) =>{
             
             // Fetch Initial Meta Data
             case "SET_UI_MESG":{
-               // console.log(action.payload);
+               //console.log(action.payload);
                 return {...state, Labels: {...state.ProgressReport, ProgressReport:action.payload}}
                 // eslint-disable-next-line 
                 break
             }
             // Fetch Initial Meta Data
             case "IDERROR":{
-                // console.log(action.payload);
+                //console.log(action.payload);
                 return {...state, IDERROR:action.payload}
                  // eslint-disable-next-line 
                  break

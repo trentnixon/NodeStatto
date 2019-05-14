@@ -27,7 +27,7 @@ class ScoreCardFrame extends Component {
     
    componentDidUpdate(nextProps, nextState){}
   render() {
-    console.log(this.props.SC)
+    //console.log(this.props.SC)
 
     if(this.props.SC.SC_Loading !== true){
       return(

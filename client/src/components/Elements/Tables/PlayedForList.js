@@ -17,7 +17,7 @@ let Teams=[], Num=0, CTA=null;
 export default class PlayedFor extends Component {
     componentWillMount() { 
         Teams=[]
-       // console.log(this.props.DATA.CLEAN)
+       //console.log(this.props.DATA.CLEAN)
        // eslint-disable-next-line
         this.props.DATA.CLEAN.map((game,i)=>{
 

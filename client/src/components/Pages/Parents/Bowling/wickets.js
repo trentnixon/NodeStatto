@@ -11,7 +11,9 @@ import InteractiveWicketsOverYears from "../../../Elements/InteractiveCharts/Bar
 
 export default class Batting extends Component {
 
-  componentWillMount() { console.log(this.props.DATA.CLEAN) }
+  componentWillMount() { 
+    //console.log(this.props.DATA.CLEAN) 
+  }
 
   render() {
     return (

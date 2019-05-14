@@ -18,7 +18,7 @@ export default class Statto extends Component {
   componentWillMount() { }
 
   render() {
-    console.log(this.props.DATA)
+    //console.log(this.props.DATA)
     return (
       <div>           
          

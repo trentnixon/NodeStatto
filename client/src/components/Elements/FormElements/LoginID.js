@@ -22,7 +22,7 @@ class OutlinedTextFields extends React.Component {
         
         let  isnum = /^\d+$/.test(this.state.value);
 
-        console.log(event.target.value, isnum, this.state.value)
+        //console.log(event.target.value, isnum, this.state.value)
 
         if(isnum){
             this.props.history.push("/"+this.state.value)
@@ -31,7 +31,7 @@ class OutlinedTextFields extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <form className="" noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         

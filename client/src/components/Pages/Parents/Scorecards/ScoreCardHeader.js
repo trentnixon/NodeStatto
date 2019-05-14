@@ -7,7 +7,7 @@ import Container from "../../../Template/Page/Container";
 export default class Statto extends Component {
 
   componentWillMount() { 
-      console.log(this.props)
+      //console.log(this.props)
   }
 
   render() {

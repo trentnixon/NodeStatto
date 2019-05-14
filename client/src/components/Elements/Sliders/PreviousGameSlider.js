@@ -47,7 +47,7 @@ class PreviousGameSlider extends Component {
     
     const { width, height } = this.props.size
 
-    console.log(width,height );
+    //console.log(width,height );
 
     let  settings = {
         dots: true,

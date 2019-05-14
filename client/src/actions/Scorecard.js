@@ -19,7 +19,7 @@ export function FetchScoreCard(){
                 let Second = res.data[1][1]["0"]
                 First.shift();
                 Second.shift();
-                    console.log(First,Second)
+                    //console.log(First,Second)
                     
                     // Strip down the response from teh api and store in the reducer
 
@@ -33,7 +33,7 @@ export function FetchScoreCard(){
                 
 
     this.start = () => {
-        console.log("Fetch the ScoreCard");
+        //console.log("Fetch the ScoreCard");
         this.FetchData()
     }
     

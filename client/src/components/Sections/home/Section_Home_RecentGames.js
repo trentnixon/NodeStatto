@@ -12,7 +12,7 @@ let DisplayList, Data;
 export default class History extends Component {
  
   componentWillMount() { 
-       // console.log(this.props)
+       //console.log(this.props)
         Data = this.props.DATA.CLEAN;
         DisplayList = Data.slice(Math.max(Data.length - 5, 1)).reverse();
     }

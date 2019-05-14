@@ -7,7 +7,7 @@ import SubTitle from "../../Elements/type/PageSubTitle";
 
 export default class Section_Rankings extends Component {
     componentWillMount() {
-        console.log(this.props)
+        //console.log(this.props)
     }
     render() {
         return (

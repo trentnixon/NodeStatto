@@ -46,27 +46,27 @@ export default class ForandAgainstTable extends Component {
     componentWillMount() {}
  
       find(data, variable, Startvalue){
-          //  console.log(data, variable);
+          //console.log(data, variable);
             let value = Startvalue;
             let pointer = 0; 
 
             // eslint-disable-next-line
             data.map((team,int)=>{
                 if(team[variable] > value){
-                  //  console.log(team, team[variable], variable);
+                  //console.log(team, team[variable], variable);
                     pointer=int;
                     value = team[variable]
                 }
             })
 
-           // console.log(pointer)
+           /console.log(pointer)
         return data[pointer].Team + ' (' + data[pointer][variable] + ')';
       }
       shouldComponentUpdate(nextProps, nextState){ return true;}
       componentWillUpdate(nextProps, nextState){}
     render() {
         
-        console.log(this.props);
+        //console.log(this.props);
 
         return (
                 <div className="Table " id="RecentScores" >

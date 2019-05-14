@@ -110,7 +110,7 @@ export function FormGuide(data){
      // eslint-disable-next-line
     data.map((game,i)=>{
          
-      //  console.log(game);
+      //console.log(game);
             // eslint-disable-next-line
             let Meta = Stats.Career.Meta;
             // eslint-disable-next-line
@@ -132,7 +132,7 @@ export function FormGuide(data){
             if(game.Bowling){
                 Bowling = IncludeBowling(Bowling, game)
                 // Ranking
-               // console.log(game.Bowling.Ranking)
+               //console.log(game.Bowling.Ranking)
                 Stats.Career.Meta.Rankings.Bowling =  rankingPush(Stats.Career.Meta.Rankings.Bowling, parseInt(game.Bowling.Ranking,10),game.Meta.Date)
             }
             // Keeping
@@ -278,7 +278,7 @@ function CountDucks(data,needle,variant){
 }
 
 function BowlingFas(data,wickets, variant){
-   // console.log(wickets, variant)
+   //console.log(wickets, variant)
     if(wickets === variant){data = data+1}
     return data;
 }
@@ -297,18 +297,18 @@ function GameHistory(value,data){
                     Teams:[]
                 })
         }else{
-               // console.log(value[FixturePosition].Int)
+               //console.log(value[FixturePosition].Int)
                 value[FixturePosition].Int = Add(value[FixturePosition].Int, 1)
         }
 
-     //   console.log(value)
+     //console.log(value)
         return value;
 }
 
 
 function RunOverTheYears(data,game){
     
-   // console.log(game);
+   //console.log(game);
     let from = game.Meta.Date.split("/");
     let findKey;
 

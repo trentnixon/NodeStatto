@@ -39,7 +39,7 @@ export default class Section_Rankings extends Component {
                 data:[]
             }
         ];
-     //   console.log(this.props.DATA.CAREER.Career.batting)
+     //console.log(this.props.DATA.CAREER.Career.batting)
      // eslint-disable-next-line
         this.props.DATA.CAREER.Career.batting.overTheYears.map((h,i)=>{ 
           

@@ -35,7 +35,7 @@ export default class Section_HistoryList extends Component {
             let NewYear;
             // eslint-disable-next-line
                 arr.map((game,i)=>{
-                    //    console.log(Year, game.Meta.TeamID,this.props.SelectedID)
+                    //console.log(Year, game.Meta.TeamID,this.props.SelectedID)
                     if(
                         game.Meta.TeamID === this.props.SelectedID || 
                         this.props.SelectedID=== null

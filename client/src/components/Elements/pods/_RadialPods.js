@@ -21,7 +21,7 @@ export default class RankingPods extends Component {
     componentWillMount() { } 
     render() {
 
-            console.log(this.props)
+            //console.log(this.props)
 
         return (
                 <Pod  col="col-md-4 col-lg-4  col-xl-2 col-12 col-sm-6" >

@@ -28,7 +28,7 @@ export default class RankingHomePod extends Component {
         } 
     }
     value(data,int){
-      //  console.log(data);
+      //console.log(data);
         if(data.length>0){
             return data[data.length-int].rank
         }else{

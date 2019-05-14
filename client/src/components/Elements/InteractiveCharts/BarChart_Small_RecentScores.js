@@ -36,7 +36,7 @@ class App extends Component {
         Form = this.props.DATA.CLEAN.slice(Math.max(this.props.DATA.CLEAN.length - 3, 1)).reverse();;
         
 
-        // console.log(Form);
+        //console.log(Form);
         // eslint-disable-next-line
         Form.map((game,i)=>{
             if(game.Batting){

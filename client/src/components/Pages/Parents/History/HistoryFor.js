@@ -33,7 +33,7 @@ export default class HistoryFor extends Component {
   componentWillMount() {
     const state = store.getState();
 
-   // console.log(state, this.props.match.params.teamID);
+   /console.log(state, this.props.match.params.teamID);
    // eslint-disable-next-line
     state.DATA.FOR.map((team,i)=>{
         if(team.ID === this.props.match.params.teamID){

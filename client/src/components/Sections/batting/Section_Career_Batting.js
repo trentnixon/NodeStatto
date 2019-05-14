@@ -198,7 +198,7 @@ export default class Section_Rankings extends Component {
     componentWillUpdate(nextProps, nextState){}
     render() {
 
-      //  console.log(this.state.Year);
+      //console.log(this.state.Year);
 
         return (
             <div className="atAGlance">

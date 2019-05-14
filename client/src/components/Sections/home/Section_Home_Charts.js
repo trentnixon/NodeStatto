@@ -8,7 +8,7 @@ import PlayedFor from "../../Elements/Tables/PlayedForList";
 
 export default class Section_Default extends Component { 
     render() {
-     //   console.log(this.props.isVisible)
+        //console.log(this.props.isVisible)
         return ( 
                 <Row>
                         <PlayedFor

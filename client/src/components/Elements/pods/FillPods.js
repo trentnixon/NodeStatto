@@ -11,7 +11,7 @@ export default class FillPods extends Component {
     componentWillMount() { } 
     render() {
         
-//        console.log(this.props.Percentage);
+        //console.log(this.props.Percentage);
 
         let FillStyle = {  height: this.props.Percentage+"%" }
 

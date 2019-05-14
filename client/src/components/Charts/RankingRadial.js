@@ -105,7 +105,7 @@ class Radial extends Component {
       })
 
      // this.state.options.plotOptions.radialBar.dataLabels.value.formatter(data.Value)
-    //  console.log(this.state.options.plotOptions.radialBar.dataLabels.value.formatter)
+     //console.log(this.state.options.plotOptions.radialBar.dataLabels.value.formatter)
   
     }
   componentWillMount() { 

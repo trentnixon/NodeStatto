@@ -19,7 +19,7 @@ function hasProperty(Property,parent,sub){
 }
 
   function StoreForAgainstDetails(thisGame, StatsFor, int){
-     // console.log(thisGame)
+     //console.log(thisGame)
         let ObjKey = StatsFor[int];
         
         // Meta
@@ -86,7 +86,7 @@ export function ForAgainst(data){
         else{ StoreForAgainstDetails(Thisgame, StatsAgainst,TeamPositionAgainst) }
     })
 
-  //  console.log(StatsFor,StatsAgainst);
+    //console.log(StatsFor,StatsAgainst);
     store.dispatch({ type:"SET_STATS_FOR", payload:StatsFor });
     store.dispatch({ type:"SET_STATS_AGAINST", payload:StatsAgainst });
 }

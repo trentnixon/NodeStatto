@@ -161,7 +161,7 @@ export function FetchData(){
          let Fixed = Math.floor(new Date( SplitDate[1]+'/'+SplitDate[0]+'/20'+SplitDate[2]).getTime()/1000);
          
          //let Fixed = new Date( SplitDate[2]+'/'+SplitDate[1]+'/'+SplitDate[0]).getTime();
-        // console.log(SplitDate, Fixed)
+         //console.log(SplitDate, Fixed)
             this.StoredData.push({
                 Meta:{
                     Fixture:game["0"]["0"].id,

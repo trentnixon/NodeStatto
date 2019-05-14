@@ -60,7 +60,7 @@ export default class Section_Rankings extends Component {
         
         // eslint-disable-next-line
         data.map((game,i)=>{
-          //  console.log(game)
+          //console.log(game)
             if(game.Batting){
                   let Date = game.Meta.Date.split("/");
                   if( year === "20"+Date[2])

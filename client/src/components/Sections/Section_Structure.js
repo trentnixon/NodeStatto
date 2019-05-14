@@ -11,7 +11,7 @@ import SubTitle from "../Elements/type/PageSubTitle";
 export default class Section_Default extends Component {
     componentWillMount() {} 
     render() {
-        console.log(this.props.isVisible)
+        //console.log(this.props.isVisible)
         return ( 
                 <div className="Section_****" >
                     <Row class="ContainerRow">
