@@ -315,7 +315,7 @@ p {
   .PodRow #Pod .Inner {
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px 25px;
     background-color: #fff;
     position: relative; }
     .PodRow #Pod .Inner h1 {
@@ -345,11 +345,11 @@ p {
     text-align: center;
     margin: 0; }
   .PodRow #Pod .IconPod .Body h1.Page_Sub_Title {
-    font-size: 2em !important;
+    font-size: 1.8em !important;
     color: #709dce !important;
     border-bottom: 1px solid;
-    margin: 0 0 10px 0;
-    padding: 0 0 7px 0; }
+    margin: 0 0 0px 0;
+    padding: 0 0 0px 0; }
   .PodRow #Pod .IconPod .Body h1.Page_Title {
     font-size: 1em !important;
     font-weight: 600; }
@@ -357,6 +357,9 @@ p {
     text-align: right; }
     .PodRow #Pod .IconPod .Footer button {
       float: unset !important; }
+    .PodRow #Pod .IconPod .Footer a {
+      margin: 0;
+      padding: 0; }
   .PodRow #Pod .IconPod .RankingIcon {
     float: right;
     font-size: 3em; }

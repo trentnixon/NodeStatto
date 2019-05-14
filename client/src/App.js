@@ -6,14 +6,14 @@ import Stage from "./components/Pages/Stage";
 import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 import './App.css'
 
-// Deply Instructions 
+// Deploy Instructions 
 // https://www.youtube.com/watch?v=71wSzpLyW9k&t=392s
-
 /**
  * 1. heroku login
- * 
- * 2. Commit to git
- * 
+ * 2. Add .
+ * 3. Commit to git
+ * 4. Push to heroku
+ * -- Command list
       git add .
       git commit -am "make it better"
       git push heroku master
