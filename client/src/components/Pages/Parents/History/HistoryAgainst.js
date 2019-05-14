@@ -3,7 +3,7 @@ import store from '../../../../store/index';
 
 import HistoryList from "../../../Sections/History/Section_List_History";
 
-import {Animated} from "react-animated-css";
+// import {Animated} from "react-animated-css";
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Template/Page/Pod";
 
@@ -34,6 +34,7 @@ export default class HistoryFor extends Component {
     DataStore = store.getState();
 
    // console.log(state, this.props.match.params.teamID);
+   // eslint-disable-next-line
    DataStore.DATA.AGAINST.map((team,i)=>{
         if(team.ID === this.props.match.params.teamID){
             DisplayTeam = team

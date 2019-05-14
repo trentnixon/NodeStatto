@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import store from '../../../../store/index';
-import {Animated} from "react-animated-css";
+//import {Animated} from "react-animated-css";
 
 import HistoryList from "../../../Sections/History/Section_List_History";
 
@@ -9,7 +9,7 @@ import Pod from "../../../Template/Page/Pod";
 
 import SectionHeader from "../../../Sections/global/Section_Global_Header";
 import Title from "../../../Elements/type/PageTitle";
-import SubTitle from "../../../Elements/type/PageSubTitle";
+//import SubTitle from "../../../Elements/type/PageSubTitle";
 
 
 
@@ -34,6 +34,7 @@ export default class HistoryFor extends Component {
     const state = store.getState();
 
    // console.log(state, this.props.match.params.teamID);
+   // eslint-disable-next-line
     state.DATA.FOR.map((team,i)=>{
         if(team.ID === this.props.match.params.teamID){
             DisplayTeam = team

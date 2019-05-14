@@ -12,6 +12,11 @@ import './App.css'
 /**
  * 1. heroku login
  * 
+ * 2. Commit to git
+ * 
+      git add .
+      git commit -am "make it better"
+      git push heroku master
  */
 
 

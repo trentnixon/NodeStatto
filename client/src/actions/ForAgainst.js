@@ -1,8 +1,8 @@
 
 import store from "../store/index"
-import {CalculateBatting} from "./CalculateStats"
+//import {CalculateBatting} from "./CalculateStats"
 
-const Batting = new CalculateBatting();
+//const Batting = new CalculateBatting();
 
 
 var _ = require('lodash');

@@ -31,9 +31,6 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 var _ = require('lodash');
 
-const TableStyle = {
-  verticalAlign: 'top'
-};
 
 const stats=[
   {
