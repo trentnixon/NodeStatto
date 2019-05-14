@@ -30,7 +30,7 @@ export default class Section_Rankings extends Component {
                          
                             {
                                 stones.map((stone,i)=>{
-                                    console.log("Pod " + this.props.isVisible)
+                                   // console.log("Pod " + this.props.isVisible)
                                     let Delay= 200*i;
                                     return(
                                         <Animated  

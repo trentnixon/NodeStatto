@@ -61,7 +61,7 @@ export function FetchData(){
 
      /** START THE DATA MINE */
     this.start = () => {
-        console.log(this.id);
+      //console.log(this.id);
 
         store.dispatch({ type:"INT_LOAD", payload:true });
         // eslint-disable-next-line
