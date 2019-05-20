@@ -8,12 +8,13 @@ import TrendingFlat from '@material-ui/icons/TrendingFlat'
 // Pod Structure
 import PodHeader from "./PodStructure/Pod_Header";
 import PodFooter from "./PodStructure/Pod_Footer";
-import PodBody from "./PodStructure/Pod_Value_and_Icon_Body";
+import PodBody from "./PodStructure/Pod_Value_and_Icon_Body"; 
 
 export default class RankingHomePod extends Component { 
    
     FindArrow(data){
         let Arrow;
+       
         if(data.length > 0){
             if(data[data.length-2].rank < data[data.length-1].rank){
                 Arrow= <TrendingDown nativeColor="#ce7070" className="RankingIcon"/>;
@@ -38,6 +39,7 @@ export default class RankingHomePod extends Component {
     componentWillMount() { }
   
     render() {
+        
         return(
             <Pod col={this.props.col} type="IconPod" canvas="canvas1">
                 <PodHeader icon={this.props.icon} label ={this.props.label} />

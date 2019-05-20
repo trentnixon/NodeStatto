@@ -1,7 +1,6 @@
 
 import store from "../store/index"
 //import {CalculateBatting} from "./CalculateStats"
-
 //const Batting = new CalculateBatting();
 
 
@@ -68,6 +67,7 @@ function StoreNew(Thisgame, StatsFor, Team, TeamID){
 
 export function ForAgainst(data){
 
+    console.log("FOR AND AGAINST STARTED") 
     let StatsFor =[]
     let StatsAgainst =[]
 
@@ -86,7 +86,8 @@ export function ForAgainst(data){
         else{ StoreForAgainstDetails(Thisgame, StatsAgainst,TeamPositionAgainst) }
     })
 
-    //console.log(StatsFor,StatsAgainst);
-    store.dispatch({ type:"SET_STATS_FOR", payload:StatsFor });
-    store.dispatch({ type:"SET_STATS_AGAINST", payload:StatsAgainst });
+    store.dispatch({ type:"STORE_FOR", payload:StatsFor });
+    store.dispatch({ type:"STORE_AGAINST", payload:StatsAgainst });
+    store.dispatch({ type:"DATA_SET_FORAGAINST", payload:true});  
+    console.log("FOR AND AGAINST STORED")
 }

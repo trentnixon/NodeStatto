@@ -4,14 +4,17 @@ var cheerio = require('cheerio');
 const path = require('path')
 const app = express();
 
+//const Domain = 'https://www.lastmanstands.com/player-profile/';
+//const URLVAR ='t20?userid=';
+
 const Domain = 'https://www.lastmanstands.com/cricket-player/';
 const URLVAR = 't20/?playerid=';
 // https://www.lastmanstands.com/cricket-player/t20/?playerid=47918
 // https://www.lastmanstands.com/cricket-player/t20?playerid=47918
 // https://www.lastmanstands.com/cricket-player/batting-career-history/t20?playerid=47918
-//const Page = ['/batting-career-history/','/batting-career-history-non-counting-games/',
-//              '/bowling-career-history/','/bowling-career-history-non-counting-games/',
- //             '/keeping-career-history/','/keeping-career-history-non-counting-games/' ]
+const Page = ['/batting-career-history/','/batting-career-history-non-counting-games/',
+              '/bowling-career-history/','/bowling-career-history-non-counting-games/',
+              '/keeping-career-history/','/keeping-career-history-non-counting-games/' ]
 
 /* *****************************************
 **
@@ -35,14 +38,16 @@ const URLVAR = 't20/?playerid=';
         return arr;
     }
 
-
-
-function DataLoop($ , xPath){
+function DataLoop(html){
+        //console.log(data)
         let Rows=[];
-        const data = $(xPath);
+        var $ = cheerio.load(html);
+        const data = $('#pp-batting-history-container .rank-table tbody tr');
 
         data.has('td').each(function() {
+    
             var arrayItem = {};
+            
             $('td', $(this)).each(function(index, item) 
                 {
                     // If Link, Split and Create Object
@@ -55,86 +60,61 @@ function DataLoop($ , xPath){
                     }
                 });
                 Rows.push(arrayItem);
+                console.log(Rows);
         }); // End Each
-        return Rows; 
+        return Rows;
     }
  
+function DataLoopAddRow(html){
 
-    function PullMeta($){
-
-            let Meta={};
-
-            // Player Name
-            Meta["Name"] = $('#player-name-block p').text(); 
-            Meta["Matches"] = $('.non-phone  #player-stats-matches2 span').text();  
-            Meta["Batting_Runs"] = $('.non-phone #player-stats-runs2 span').text();
-            Meta["Batting_Average"] = $('.non-phone #player-stats-batting-average2 span').text();
-            Meta["Batting_SR"] = $('.non-phone #player-stats-strike-rate2 span').text();
-            Meta["Batting_HS"] = $('.non-phone #player-stats-high-score2 span').text();
-
-            Meta["Bowling_Overs"] = $('.non-phone #player-stats-overs2 ').text();
-            Meta["Bowling_Wickets"] = $('.non-phone #player-stats-wickets2 ').text();
-            Meta["Bowling_Economy"] = $('.non-phone #player-stats-economy2 ').text();
-            Meta["Bowling_Average"] = $('.non-phone #player-stats-bowling-average2 ').text();
-            Meta["Bowling_Best"] = $('.non-phone #player-stats-best-figures2 ').text();
-            
-            return Meta;
-    }
-
-
-
-    /** Strip TeamSheet */
-
-function TeamSheet(html){
-    
-    var $ = cheerio.load(html);
-    // team-profile-2019-content-block
-    const TeamTable = $('#team-profile-2019-content-block');
     let Rows=[];
-   // console.log(TeamTable);
-        TeamTable.has('div.team-top-player').each(function() {
-            var arrayItem = {};
-            $('div.name', $(this)).each(function(index, item) 
-           
-                {
-                    // arrayItem[index] = $(item).html();
+    var $ = cheerio.load(html);
+    const data = $('.rank-table tbody tr');
+    data.has('td').each(function() {
+    
+        var arrayItem = {}; 
+        
+        $('td', $(this)).each(function(index, item) 
+            {
 
-                    arrayItem[index]=SplitA($(item).find('a').attr('href'), $(item).find('a').html());
-
-                    //console.log(item);
-                    // If Link, Split and Create Object
-               /*   if($(item).find('a').length != 0){
-                            arrayItem[index]=SplitA($(item).find('a').attr('href'), $(item).find('a').html());
-                    }
-                        //else raw copy, Insert into array
-                    else{
+             
+                if(index === 1){
+                    arrayItem[1] = [{ meta:null }];
+                    arrayItem[2] = SplitA($(item).find('a').attr('href'), $(item).find('a').html());
+                 
+                }else{
+                    if(index > 1){ index++;}
+                        // If Link, Split and Create Object
+                        if($(item).find('a').length != 0){
+                           
+                             arrayItem[index]=SplitA($(item).find('a').attr('href'), $(item).find('a').html());
+                        }
+                            // else raw copy, Insert into array
+                        else{
                             arrayItem[index] = $(item).html();
-                    }*/
-                });
-                Rows.push(arrayItem);
-        }); // End Each
-        //console.log(Rows);
-        return Rows; 
+                        }
+                }
+            });
+        
+        Rows.push(arrayItem);
+    }); // End Each 
+    return Rows;
 }
-
-
 
 
 /** PING */
 function ping(html){
-    let  LMSData={}
-    LMSData["Meta"]={};
-    LMSData["Batting"]={};
-    LMSData["Bowling"]={};
-
-    let $ = cheerio.load(html);
-    
-    LMSData["Meta"] = PullMeta($);
-    LMSData["Batting"] = DataLoop($ , '#pp-batting-history-container .rank-table tbody tr');
-    LMSData["Bowling"]= DataLoop($ , '#pp-bowling-history-container .rank-table tbody tr');
-    
-    return LMSData
+    //console.log(html)
+    var $ = cheerio.load(html);
+   // console.log($('.rank-table tbody tr'));
+   DataLoop(html)
+    const data = $('#pp-new-top-right-details h2');
+    return data.text();
+    //
 }
+
+
+
 
 
 function StripscoreCard(html){
@@ -202,28 +182,7 @@ function StripscoreCard(html){
 /* *****************************************
 ** Create API Routes
 ******************************************** */
- 
- /*********************************************************************************
-     * 
-     * TEAM SHEET
-     * 
-     ********************************************************************************/
- /** Counted Games */
-
- app.get('/api/team/:id', function(req, res){
-  
-    url = 'https://www.lastmanstands.com/team-profile/batting-stats/t20?teamid='+req.params.id;
-   
-    request(url, function(error, response, html){
-        if(!error && response.statusCode == 200){ 
-
-            res.json(TeamSheet(html));
-        }
-    })
-})
-
-
-/*********************************************************************************
+  /*********************************************************************************
      * 
      * PING LMS
      * 
@@ -240,9 +199,6 @@ function StripscoreCard(html){
         }
     })
 })
-
-
-
     /*********************************************************************************
      * 
      * Collect Batting Data
@@ -334,13 +290,6 @@ function StripscoreCard(html){
     })
     
 })
-
-
-
-/** End End Points */
-
-
-
 
 
 if(process.env.NODE_ENV === 'production'){

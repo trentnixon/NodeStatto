@@ -2,123 +2,163 @@ import axios from 'axios';
 import store from "../store/index"
 import {FormGuide} from "./FormGuide";
 import {ForAgainst} from "./ForAgainst";
+
+
 var _ = require('lodash');
  
 /**
  * This is the Object Function to fetch, clean and store the Players data to the Reducer
  * 
- * 
- * 
- * - Fetch / API
- * - Clean Data
- * - Create Form Guide
- * - Create For and Against
- * - Set UI
- * 
- * 
  */
 export function FetchData(){
 
     /** Set Properties */
-    this.id = null;
+    this.id = null
+    
     this.StoredData = [];
     this.FormGuide = []; 
 
-     /** 
-      * 
-      * START THE DATA MINE 
-      * 
-      */
-// 
-// 
+/*
+    this.CallsToApi =[
+        {
+            api:'/api/batting/',
+            path:"STORE_BATTING"
+        },
+        {
+            api:'/api/NonCountingBatting/',
+            path:"STORE_NON_COUNTING_BATTING"
+        },
+        {
+            api:'/api/bowling/',
+            path:"STORE_BOWLING"
+        },
+        {
+            api:'/api/NonCountingBowling/',
+            path:"STORE_NON_COUNTING_BOWLING"
+        },
+        {
+            api:'/api/Keeping/',
+            path:"STORE_KEEPING"
+        },
+        {
+            api:'/api/NonCountingKeeping/',
+            path:"STORE_NON_COUNTING_KEEPING"
+        }
+    ]
+*/
+    /** Set Methods */ 
 
+    /**
+     * FETCH METHODS
+     */
+    
+    // May not need this line anymore
+    //this.FetchData = (api,PATH) =>{  axios.get(api+this.id).then(res => { store.dispatch({ type:PATH, payload:res.data }); });}
+
+
+    /**
+     * SEQUENCE METHODS
+     */ 
+
+     /** START THE DATA MINE */
     this.start = () => {
-        // Set UI to LOAD
+      //console.log(this.id);
+
         store.dispatch({ type:"INT_LOAD", payload:true });
-        console.log('INT_LOAD')
-        // Ping LMS to fetch the players Data
+        // eslint-disable-next-line
+
+        // ping lms to see if user exists
+        //console.log(this.id);
+
         axios.get("/api/ping/"+this.id)
         .then(res => {  
-            if(res.data.length !== 0){
-                
-                // Set UI and Data 
-                this.STOREUITRUE('INT_DATA_TRUE', true);
-                console.log('DATA_RECEIVED');
             
-                // Store Meta
-                //store.dispatch({ type:"STORE_NAME", payload:res.data.Meta.Name}); 
-                store.dispatch({ type:"STORE_META", payload:res.data.Meta}); 
-                
-                
-                this.STOREUITRUE('DATA_SET_LOAD_META', true);
-                console.log('META DATA STORED');
 
-                // Send the Data to be Cleaned
-                let BattingStored = this.Clean(res.data.Batting,1)
-                let BowlingStored = this.Clean(res.data.Bowling,2)
+            if(res.data.length !== 0){
+
+                // eslint-disable-next-line
+                store.dispatch({ type:"ME==", payload:res.data.Meta.Name});
+                store.dispatch({ type:"SET_LOAD_META", payload:true});
+                
+
+
+                this.Clean(res.data.Batting,1)
+                this.Clean(res.data.Bowling,2)
                 //uncomment when Keeping Stats are live
                 //this.Clean(res.data.Keeping,3)
-
-                // Once the Data has been Cleaned, Run any Additoinal logic and set the UI to true
-                if(BattingStored === true && BowlingStored === true){
-                    this.STOREUITRUE('DATA_SET_LOAD_CLEAN',true)
-                    console.log("CLEANED DATA AND STORED");
-                    
-                    FormGuide(this.StoredData)
-                    ForAgainst(this.StoredData)
-                }
-               
+                
+                
+                // eslint-disable-next-line 
+               // this.CallsToApi.map((api,i)=>{ this.FetchData(api.api,api.path);})
             }
             else if(res.data.length === 0){
+                //console.log(res.data.length);
                 store.dispatch({ type:"IDERROR", payload:true});
                 store.dispatch({ type:"IDERROR", payload:false});
+               // setTimeout(function(){ store.dispatch({ type:"IDERROR", payload:false})},20)
             }   
         });
     }
 
 
-
-    /** END API END POINT CALL */
-    /** 
-     * 
-     * CLEAN THE DATA MINE FOR STATTO 
-     * 
-     * */
+    /** CLEAN THE DATA MINE FOR STATTO */
     this.Clean =(data,type)=>{
-    
+        
+        store.dispatch({ type:"SET_LOAD_CLEAN", payload:true});
         store.dispatch({ type:"SET_UI_MESG", payload:"Data Recieved! Cleaning In Progress" });
 
         /**
          * Store Fixture IDs
          */ 
         data.map((game,i)=>{
-             let path = game["0"]["0"];
-      
-                let FixturePosition = _.findIndex(this.StoredData, function(o) { return o.Meta.Fixture === path.id; });
+             
+              //  console.log(game);
+                let FixturePosition = _.findIndex(this.StoredData, function(o) { return o.Meta.Fixture === game["0"]["0"].id; });
                
-                if(path.id  !== '0'){ 
+                if(game["0"]["0"].id  !== '0'){ 
 
                     if(FixturePosition === -1){
+         
                         let FixturePosition = this.StoreFixtures(game);
                         if(type === 1){ this.StoreBatting(game, FixturePosition) }
                         if(type === 2){ this.StoreBowling(game, FixturePosition) }
                         if(type === 3){ this.StoreKeeping(game, FixturePosition) }
                     }
                     else{
+                     
                         if(type === 1){ this.StoreBatting(game, FixturePosition) }
                         if(type === 2){ this.StoreBowling(game, FixturePosition) }
                         if(type === 3){ this.StoreKeeping(game, FixturePosition) }
+                        
                     }
                 }
                 
             // Store Cleaned Data to Reducer
                 this.StoredData = _.sortBy(this.StoredData, [function(o) { return o.Meta.FixtureInt; }],['desc']);
                 store.dispatch({ type:"STORE_CLEAN", payload:this.StoredData.reverse() });
+
+            // Create ans Store Formguide and Baseline Stats
                return true;
         })
-        // Store Clean Loaded        
-        return true;
+
+        // Store Clean Loaded 
+        store.dispatch({ type:"SET_LOAD_CLEAN", payload:true });
+        this.Formguide(this.StoredData);
+        ForAgainst(this.StoredData)
+        
     }
+
+
+    this.Formguide = (data)=>{
+        // Send to Formguide 
+        let Form = FormGuide(data)
+        if(Form === true){
+            console.log("Form Guide Completed")
+            store.dispatch({ type:"SET_CLEAN_COMPLETE", payload:true});
+        }
+    }
+
+
 
 
     /**
@@ -126,17 +166,21 @@ export function FetchData(){
      *  UI STATE CHANGES
      * 
      */
-    this.STOREUITRUE = (Path,Value)=>{ store.dispatch({ type:Path, payload:Value }) }
-  
+    this.ReadyUI =()=>{
+            // Complete Data Fetch
+            store.dispatch({ type:"SET_UI_MESG", payload:"Load Completed.." });
+            setTimeout(function(){ store.dispatch({ type:"SET_UI_READY", payload:true });},500)
+    }
+
     this.SetStattoReady = (LOAD) =>{
 
         if( LOAD.CAREER === true && LOAD.CLEAN === true &&
             LOAD.FORAGAINST === true && LOAD.META === true)
             {
-                this.STOREUITRUE('INT_SET_SATTTO_TRUE', true)
+                store.dispatch({ type:"SET_SATTTO_TRUE", payload:true });
             }
     }
-
+ 
     /**
      * 
      * Aux Functions to assist with the process
@@ -203,4 +247,14 @@ export function FetchData(){
                     Ranking:game[11]
             }
     }
+}
+
+
+export function SetStattoTrue(LOAD){
+   
+    if( LOAD.CAREER === true && LOAD.CLEAN === true &&
+        LOAD.FORAGAINST === true && LOAD.META === true)
+        {
+            store.dispatch({ type:"SET_SATTTO_TRUE", payload:true });
+        }
 }

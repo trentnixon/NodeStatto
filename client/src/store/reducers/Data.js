@@ -1,76 +1,31 @@
 const InitialState ={
-    Data:null,
-    BATTING:null,
-    BATTING_NON:null,
-    BOWLING:null,
-    BOWLING_NON:null,
-    KEEPING:null,
-    KEEPING_NON_COUNTING:null,
     CLEAN:null,
-    CURRENTNAME:null,
+    META:{
+        Name:null
+    },
     CAREER:null,
     FOR:null,
-    AGAINST:null
+    AGAINST:null,    
+    LOGIN:null
 }
 
 const LOAD = (state=InitialState, action) =>{ 
 		// eslint-disable-next-line 
 		switch(action.type){
-
-            case "STORE_BATTING":{
-                //console.log(action.payload);
-				return {...state, BATTING:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
-            case "STORE_NON_COUNTING_BATTING":{
-                //console.log(action.payload);
-				return {...state, BATTING_NON:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
-            case "STORE_BOWLING":{
-                //console.log(action.payload);
-				return {...state, BOWLING:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
-
-            case "SET_STATS_FOR":{
+            
+            case "STORE_FOR":{
                 //console.log(action.payload);
 				return {...state, FOR:action.payload}
 				// eslint-disable-next-line 
 				break
             } 
 
-            case "SET_STATS_AGAINST":{
+            case "STORE_AGAINST":{
                 //console.log(action.payload);
 				return {...state, AGAINST:action.payload}
 				// eslint-disable-next-line 
 				break
             } 
-
-            
-
-            case "STORE_NON_COUNTING_BOWLING":{
-                //console.log(action.payload);
-				return {...state, BOWLING_NON:action.payload}
-				// eslint-disable-next-line 
-				break
-            }
-            case "STORE_KEEPING":{
-                //console.log(action.payload);
-				return {...state, KEEPING:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
-            case "STORE_NON_COUNTING_KEEPING":{
-                //console.log(action.payload);
-				return {...state, KEEPING_NON_COUNTING:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
-            
             case "STORE_CLEAN":{
                 //console.log(action.payload);
 				return {...state, CLEAN:action.payload}
@@ -83,12 +38,20 @@ const LOAD = (state=InitialState, action) =>{
 				// eslint-disable-next-line 
 				break
             }
-            case "CURRENTNAME":{
-                //console.log(action.payload);
-				return {...state, CURRENTNAME:action.payload}
-				// eslint-disable-next-line 
-				break
-            } 
+
+           /** Store Meta */
+           case "STORE_META":{
+            return {...state, META:action.payload}
+            // eslint-disable-next-line 
+            break
+            }
+
+            /** Store LOGIN Auto Complete options */
+            case "SHEET_STORED":{
+                return {...state, META:action.payload}
+                // eslint-disable-next-line 
+                break
+                }
             
         }
 		return state;

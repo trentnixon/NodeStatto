@@ -24,7 +24,7 @@ import './App.css'
 export default class App extends Component {
     render () { 
      return ( 
-        <Router>
+        <Router> 
             <div id="statto-app">
               <Route  path="/:playerid" component={Stage} /> 
               <Route exact path="/" component={Login}/>

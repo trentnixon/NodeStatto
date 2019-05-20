@@ -5,6 +5,7 @@ let Stats={};
 
 export function FormGuide(data){
 
+    console.log("FORM GUIDE STARTED")
     data.reverse()
 
     Stats={
@@ -162,12 +163,13 @@ export function FormGuide(data){
         if(game.Keeping){Keeping =IncludeKeeping(Keeping, game)}
     })
 
-    store.dispatch({ type:"STORE_CAREER", payload:Stats});
 
+        store.dispatch({ type:"STORE_CAREER", payload:Stats});
+        store.dispatch({ type:"DATA_SET_LOAD_CAREER", payload:true});
+        console.log("FORM GUIDE STORED")
+
+    return true;
 }
-
-
-
 
 // Core Section Functions
 
@@ -179,7 +181,6 @@ function IncludeMeta(Meta, game){
 
     return Meta
 }
-
 
  
 function IncludeBatting(Batting, game){

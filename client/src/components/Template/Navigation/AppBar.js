@@ -76,8 +76,8 @@ export default class APPBARLAYOUT extends React.Component {
                   <IconButton component={Link}  to={`/${Path}/search`}>   <Search />  </IconButton>
                   <IconButton component={Link} to={`/${Path}/settings`}>  <Settings />  </IconButton>
               </Hidden>
-              <h1>{this.props.DATA.CURRENTNAME}</h1>
-              <Avatar>{this.props.DATA.CURRENTNAME.charAt(0)}</Avatar>
+              <h1>{this.props.DATA.META.Name}</h1>
+              <Avatar>{this.props.DATA.META.Name.charAt(0)}</Avatar>
             </div>
           </div>
     );

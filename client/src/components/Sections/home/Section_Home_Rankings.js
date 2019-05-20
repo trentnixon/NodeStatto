@@ -7,7 +7,7 @@ import Title from "../../Elements/type/PageTitle";
 // Icons
 import  {Batting,Bowling,Keeping} from "../../Icons/icons"; 
 // Pod
-import RankingPod from "../../Elements/pods/Ranking_Home_Pod"
+import RankingPod from "../../Elements/pods/Ranking_Home_Pod" 
 
 let stones=[];
 export default class Home_Section_Rankings extends Component {
@@ -17,7 +17,7 @@ export default class Home_Section_Rankings extends Component {
             { var:this.props.Data.Bowling, Path:"/bowling/", label:"Bowling",icon:<Bowling/>},
             { var:this.props.Data.Keeping, Path:"/keeping/", label:"Keeping",icon:<Keeping/>}
         ]
-     }
+     } 
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
@@ -26,9 +26,8 @@ export default class Home_Section_Rankings extends Component {
                 <Row class="PodRow HomeRankingPods">
                             {
                                 stones.map((stone,i)=>{
-                                  
                                     let Delay= 200*i;
-                                    return(
+                                    return( 
                                         <Animated  
                                             key={i} 
                                             animationIn="fadeInUp"
