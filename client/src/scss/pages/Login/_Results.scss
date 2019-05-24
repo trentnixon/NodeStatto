@@ -1,0 +1,30 @@
+#TeamSheet{
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    div{
+        flex: 1 0 21%;
+        padding: 7px 0;
+        li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+           
+
+            .RosterItem{
+                    span{
+                        color: $white !important;
+                    }
+            }
+        }
+    }
+} 

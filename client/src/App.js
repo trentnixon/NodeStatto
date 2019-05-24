@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Login from "./components/Pages/Login";
+import Login from "./components/Pages/Parents/Login/Login";
 import Stage from "./components/Pages/Stage";
 import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 import './App.css'

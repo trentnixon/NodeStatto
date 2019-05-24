@@ -2,7 +2,6 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import {FetchSelectedTeam} from "../../../actions/Login"
 
-
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value,Teams) => {
 
@@ -24,12 +23,12 @@ const renderSuggestion = suggestion => (
     {suggestion.name}
   </div>
 );
-
+ 
 let Filter=[];
 export default class AutoComplete extends React.Component{
   constructor() {
     super();
-
+ 
     // Autosuggest is a controlled component.
     // This means that you need to provide an input value
     // and an onChange handler that updates this value (see below).
@@ -50,6 +49,7 @@ export default class AutoComplete extends React.Component{
   // Autosuggest will call this function every time you need to update suggestions.
   // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
+   
     this.setState({
       suggestions: getSuggestions(value,Filter)
     });
@@ -71,8 +71,8 @@ export default class AutoComplete extends React.Component{
   }
 
   onSuggestionSelected(e,v){
-    console.log(v.suggestion.id)
-    FetchSelectedTeam(v.suggestion.id)
+    console.log(v.suggestion);
+    FetchSelectedTeam(v.suggestion)
   }
   render() {
     const { value, suggestions } = this.state;
@@ -83,27 +83,17 @@ export default class AutoComplete extends React.Component{
       value,
       onChange: this.onChange
     };
-
-    if(this.props.LOGIN.LOGIN === true){
-          this.createArray(this.props.LOGIN.LOGINDATA)
-          // Finally, render it!
-          return (
-            <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              getSuggestionValue={getSuggestionValue}
-              renderSuggestion={renderSuggestion}
-              onSuggestionSelected={this.onSuggestionSelected}
-              inputProps={inputProps}
-            />
-          );
-    }
-    else{
-
-        return(
-          <div>Fetching Team List ... </div>
-        )
-    }
+    this.createArray(this.props.LOGIN.LOGINDATA)
+    return (
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        onSuggestionSelected={this.onSuggestionSelected}
+        inputProps={inputProps}
+      />
+    )
   }
 }

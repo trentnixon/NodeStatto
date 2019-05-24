@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Avatar from '@material-ui/core/Avatar';
+import {LOGO} from "../../Icons/icons"
 // Icons
 import Dashboard from '@material-ui/icons/Dashboard';
 
@@ -41,7 +42,7 @@ export default class APPBARLAYOUT extends React.Component {
           <div id="AppBar"> 
             <div className="Left">
                 <Hidden smDown> 
-                    <img  alt="Logo"  src="/assets/Logo.png" className="Logo"/>
+                   <LOGO />
               </Hidden>
             </div>
             <div className="Center">

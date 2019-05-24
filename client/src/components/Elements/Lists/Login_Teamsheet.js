@@ -16,14 +16,14 @@ export default  class Login extends Component {
       console.log(this.props.LOGIN.SELECTEDTEAMLIST)
       if(this.props.LOGIN.SELECTEDSTORED=== true){
         return (
-            <div id="TeamSheet">
+            <ul id="TeamSheet">
                 {
                     this.props.LOGIN.SELECTEDTEAMLIST.map((row,i)=>{
                         let  IsVisable =  this.props.isVisible === true ? 'show':'';
                         let Delay= 200*i;
                             console.log(row)
                             return(
-                                <Animated  
+                                <Animated   
                                     key={i} 
                                     animationIn="flipInX"
                                     isVisible={this.props.isVisible}
@@ -31,24 +31,16 @@ export default  class Login extends Component {
                                     animateOnMount={false}
                                     className={IsVisable + " HistoryItem" }
                                 >
-                                     <ListItem button >
-                                     <ListItemText 
-                                            primary={row.meta}
-                                          
-                                            
-                                        />
-                                         <ListItemSecondaryAction>
-                                <IconButton aria-label="Scorecard" component={Link} to={`/${row.id}/`}>
-                                    <LaunchIcon />
-                                </IconButton>
-                            </ListItemSecondaryAction>
+                                    <li>
+                                     <ListItem button component={Link} to={`/${row.id}/`} >
+                                        <ListItemText primary={row.meta} className="RosterItem"/>
                                      </ListItem>
-                               
+                                     </li>
                                 </Animated>
                             )
                     })
                 }
-            </div>
+            </ul>
            )
       }
       else if(this.props.LOGIN.SELECTEDSTORED === 'fecthing'){
@@ -59,8 +51,7 @@ export default  class Login extends Component {
            )
       }
       else{
-        return(<div>Select a Team above to see players</div>)
-      }
-    
+        return(<div></div>)
+      }    
   }
 } 

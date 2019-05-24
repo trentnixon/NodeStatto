@@ -1,0 +1,39 @@
+.LoginHeader{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+
+    padding: 0 0 3vh 0 ; 
+
+    div.Logo{
+        img.STATTOLOGO{
+            width: 150px;
+            transform: rotate(135deg);
+        }
+    }
+    div.Titles{
+        align-self:center;
+
+        h1.Page_Title{
+            font-size: 2.5em;
+            text-transform: uppercase;
+            line-height: 1.2em;
+            margin: 0%;
+            font-weight: bold;
+            color:#5a5a5a;
+            
+        }
+        h1.Page_Sub_Title{
+            font-size: 1.2em;
+            line-height: 1.2em;
+            margin: 0%;
+            
+            
+        }
+    }
+
+}

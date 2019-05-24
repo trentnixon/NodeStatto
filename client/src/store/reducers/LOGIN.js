@@ -3,6 +3,7 @@ const InitialState ={
     LOGINDATA:null,
     SELECTEDSTORED:null,
     SELECTEDTEAMID:null,
+    SELECTEDTEAMNAME:null,
     SELECTEDTEAMLIST:null
 }
 
@@ -30,6 +31,11 @@ const LOGIN = (state=InitialState, action) =>{
 
             case "SAVE_SELECTED_ID":{
                 return {...state, SELECTEDTEAMID:action.payload}
+                      // eslint-disable-next-line 
+                      break
+              }
+              case "SAVE_SELECTED_NAME":{
+                return {...state, SELECTEDTEAMNAME:action.payload}
                       // eslint-disable-next-line 
                       break
               }

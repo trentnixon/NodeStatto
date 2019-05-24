@@ -1,0 +1,26 @@
+.RosterLoadedHeader{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content:center;
+    color: $white;
+
+    h1{
+        font-size: 1em;
+        strong{
+            font-weight: bold;
+            font-size: 2.5em;
+        }
+       
+    }
+
+    button{
+        color: #1af60f;
+        
+        svg{
+            font-size: 2em;
+        }
+    }
+}

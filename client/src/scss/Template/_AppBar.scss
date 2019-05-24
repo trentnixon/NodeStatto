@@ -14,9 +14,10 @@ header{
         align-items: center; 
         align-content: center;
     
-        img.Logo{
-            height: 23px;
-            margin: 12px 0 0 0;
+        img.STATTOLOGO{
+            height: 50px;
+            margin: 0;
+            transform: rotate(135deg);
         }
     
         .Left{

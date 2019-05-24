@@ -1,51 +1,66 @@
 #LoadingScreen{
     
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-image: url(https://www.transparenttextures.com/patterns/circles.png);
+    background-color: $ColorBase;
     overflow: hidden;
+    padding: 30vh 20vw 0 ;
+    text-align: center;
 
+    .LoadingContainer{
+  
+      padding: 5%;
+      background-color: #5a5a5a;
+      border-radius: 10px;
+ 
+      
 
-    h2{
-      color: white;
-      text-align: center;
-    }
-    .lds-facebook {
+    -webkit-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+
+      h2{
+        color: white;
+        text-align: center;
+
+        font-size: 1em;
+       
+       
+      } 
+  
+  
+      .lds-hourglass {
         display: inline-block;
         position: relative;
         width: 64px;
         height: 64px;
-        width: 25%;
-        margin: 100px 50%;
+    
       }
-      .lds-facebook div {
-        display: inline-block;
-        position: absolute;
-        left: 6px;
-        width: 13px;
-        background: white;
-        animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+      .lds-hourglass:after {
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 6px;
+        box-sizing: border-box;
+        border: 26px solid  $ColorBase ;
+        border-color: $ColorBase  transparent  $ColorBase  transparent;
+        animation: lds-hourglass 1.2s infinite;
       }
-      .lds-facebook div:nth-child(1) {
-        left: 6px;
-        animation-delay: -0.24s;
-      }
-      .lds-facebook div:nth-child(2) {
-        left: 26px;
-        animation-delay: -0.12s;
-      }
-      .lds-facebook div:nth-child(3) {
-        left: 45px;
-        animation-delay: 0;
-      }
-      @keyframes lds-facebook {
+      @keyframes lds-hourglass {
         0% {
-          top: 6px;
-          height: 51px;
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
-        50%, 100% {
-          top: 19px;
-          height: 26px;
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
         }
       }
+    }
 }

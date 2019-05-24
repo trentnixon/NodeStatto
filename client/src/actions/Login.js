@@ -1,13 +1,14 @@
 import axios from 'axios';
 import store from "../store/index"
 
-export function FetchSelectedTeam(id){
+export function FetchSelectedTeam(SelectedTeam){
   // Store ID
-    store.dispatch({ type:"SAVE_SELECTED_ID", payload:id });
+    store.dispatch({ type:"SAVE_SELECTED_ID", payload:SelectedTeam.id });
+    store.dispatch({ type:"SAVE_SELECTED_NAME", payload:SelectedTeam.name });
 
 
     // Fetch Team List
-    axios.get("/api/team/"+id)
+    axios.get("/api/team/"+SelectedTeam.id)
     .then(res => {  
       if(res.data.length !== 0){
         
@@ -29,9 +30,6 @@ export function FetchSelectedTeam(id){
    
 
 } 
-
-
-
 
 
 export function fetchSheets(){
@@ -97,4 +95,13 @@ export function fetchSheets(){
         }
        
     }
+}
+
+export function ResetLogin (){
+  console.log("Reset") 
+  store.dispatch({ type:"SAVE_SELECTED_ID", payload:null});
+  store.dispatch({ type:"SAVE_SELECTED_NAME", payload:null});
+  store.dispatch({ type:"SELECTED_STORED", payload:null});
+  store.dispatch({ type:"SAVE_SELECTED_TEAMLIST", payload:null});
+  
 }

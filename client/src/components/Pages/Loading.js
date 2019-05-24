@@ -22,8 +22,10 @@ export default  class Loading extends Component {
     render() {
         return(
             <div className="container-fluid" id="LoadingScreen">
-                <div className="lds-facebook"><div></div><div></div><div></div></div>
-                <h2>{this.props.LOAD.Labels.ProgressReport}</h2>
+                    <div className="LoadingContainer">
+                        <div class="lds-hourglass"></div> 
+                        <h2>{this.props.LOAD.Labels.ProgressReport}</h2>
+                    </div>
             </div>
         )
     }

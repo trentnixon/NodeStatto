@@ -1,5 +1,6 @@
 import React from 'react';
 
+export const LOGO = ({name}) => ( <img  alt="icon" src="/assets/Logo.svg" className="STATTOLOGO"/>);
 export const Batting = ({name}) => ( <img alt="icon" src="/assets/icons/batting.svg" className="NavigationIcon"/>);
 export const Bowling = ({name}) => ( <img  alt="icon" src="/assets/icons/bowling.svg" className="NavigationIcon Bowling"/>);
 export const Keeping = ({name}) => ( <img  alt="icon" src="/assets/icons/keeping.svg" className="NavigationIcon"/>);
