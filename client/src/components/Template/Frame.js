@@ -106,7 +106,7 @@ class ResponsiveDrawer extends React.Component {
                   {... this.props} 
                 batting={this.props.DATA.CAREER.Career.Meta.Rankings.Batting[0]}
                 bowling={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling[0]}
-                keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
+                //keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
               />
           </Toolbar>
         </AppBar>

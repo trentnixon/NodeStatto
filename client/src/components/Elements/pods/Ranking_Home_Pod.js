@@ -41,7 +41,7 @@ export default class RankingHomePod extends Component {
     render() {
         
         return(
-            <Pod col={this.props.col} type="IconPod" canvas="canvas1">
+            <Pod col={this.props.col} type="RankingPod" canvas="canvas1">
                 <PodHeader icon={this.props.icon} label ={this.props.label} />
                 <PodBody 
                     TopLine={this.value(this.props.total,1) }

@@ -1,3 +1,5 @@
+
+// Default Section Styles
 section{
     margin: 0 0 50px;
     display: flex;
@@ -26,4 +28,4 @@ section{
 }
 
 // Add Custom Sections
-@import "../../Sections/sections";
+@import "../../Sections/index";

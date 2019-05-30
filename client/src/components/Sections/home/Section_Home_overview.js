@@ -33,7 +33,7 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={false}
-                            className={IsVisable + " col-md-4"}
+                            className={IsVisable}
                         >
                             <IconPod 
                                 icon={stone.icon}

@@ -15,7 +15,7 @@ import ComponentFormguide from "./Parents/Bowling/formguide";
 import ComponentWickets from "./Parents/Bowling/wickets";
 import ComponentBowlingFor from "./Parents/Bowling/for";
 import ComponentBowlingAVG from "./Parents/Bowling/averages";
-import ComponentKeeping from "./Parents/Keeping/Keeping";
+//import ComponentKeeping from "./Parents/Keeping/Keeping";
 import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 import ComponentSearch from "./Parents/search/search";
 import ComponentAbout from "./Parents/about/about";
@@ -95,7 +95,7 @@ const  Navigation =[
     ],
     "icon":<Bowling/>
   },
-  {
+  /*{
     "label":"Keeping",
     "path":"keeping",
     "children":[
@@ -106,7 +106,7 @@ const  Navigation =[
       }
     ],
     "icon":<Keeping/>
-  },
+  },*/
   {
     "label":"Change Player",
     "path":"search",
@@ -124,6 +124,7 @@ export default class Statto extends Component {
   componentWillMount() { }  
   render() {
     console.log(this.props)
+    // <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
     return (
       <Router>
           <Frame {... this.props} Navigation={Navigation}>
@@ -145,8 +146,6 @@ export default class Statto extends Component {
                 <Route  exact path="/:id/bowling/wickets" render={()=> <ComponentWickets {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
                 <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
-
-                <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
 
                 <Route  exact path="/:id/search/" render={()=> <ComponentSearch {... this.props}/> }/>
                 <Route  exact path="/:id/settings/" render={()=> <ComponentAbout {... this.props}/> }/>

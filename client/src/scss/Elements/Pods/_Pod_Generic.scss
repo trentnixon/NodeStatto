@@ -1,21 +1,23 @@
  
   .animated{ 
-    #Pod{
-        .Inner{
-            border:1px solid rgba(0, 0, 0, 0.12);
-            border-radius: 5px;
-            padding: 10px 25px;
-            background-color: #fff;
-            position: relative;
-        }
+            #Pod{
+                .Inner{
+                    border:1px solid rgba(0, 0, 0, 0.12);
+                    border-radius: 5px;
+                    padding: 10px 25px;
+                    background-color: #fff;
+                    position: relative;
+                }
 
-    }
+            }
 
 
         // Full Width Pod for Mobile
         @media only screen  and (max-width : 576px) {
 
             flex:1 0 100% !important;
+            margin: 1px 0 !important;
+
             .Inner{
                 padding: 5px 10px !important;
                 display: flex;
