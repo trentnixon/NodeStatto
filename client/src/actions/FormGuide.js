@@ -1,13 +1,13 @@
 import store from "../store/index"
 var _ = require('lodash');
 
-let Stats={};
+
 
 export function FormGuide(data){
 
     console.log("FORM GUIDE STARTED")
     data.reverse()
-
+    let Stats={};
     Stats={
         Career:{
             Meta:{
@@ -106,6 +106,7 @@ export function FormGuide(data){
         }
     };
 
+    console.log(Stats);
 
     // Lets create a form guide
      // eslint-disable-next-line
@@ -164,12 +165,16 @@ export function FormGuide(data){
     })
 
 
+        console.log(Stats);
+
         store.dispatch({ type:"STORE_CAREER", payload:Stats});
         store.dispatch({ type:"DATA_SET_LOAD_CAREER", payload:true});
         console.log("FORM GUIDE STORED")
 
     return true;
 }
+
+
 
 // Core Section Functions
 

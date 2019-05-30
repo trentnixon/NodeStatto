@@ -1,27 +1,30 @@
 .LoginFormContainer{
-
+    flex-grow: 2; 
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: flex-start;
+    align-items: center;
     align-content: center;
 
+        .LoginInner{
+            
+            -webkit-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+            box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+            padding: 2%;
+            background-color: #5a5a5a;
+            border-radius: 10px;
+            width: 80vw;
 
-    padding: 3%;
-    background-color: #5a5a5a;
-    border-radius: 10px;
+            #FormInput{
 
-    -webkit-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
-
-    #FormInput{
-
-    }
-    #Results{
-
-    }
+            }
+            #Results{
+        
+            }
+        }
+    
     @import "./RosterLoadedHeader";
     @import "./Spinner";
     @import "./Login_MSG";

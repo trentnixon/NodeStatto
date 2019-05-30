@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-//import Row from "../../Template/Page/Row";
+import Row from "../../Template/Page/Row";
 //import PodWrapper from "../../Elements/pods/Pod_Outer_Wrapper";
 import Title from "../../Elements/type/PageTitle";
 import ShowMore from "../../Elements/Buttons/ShowMore";
@@ -19,8 +19,7 @@ export default class History extends Component {
 
   render() {
     return (
-        <div className="Section_History" > 
-          
+        <Row> 
           <Title Title={this.props.Title}/>
             
             <div className="ContentContainer canvas1">
@@ -35,14 +34,14 @@ export default class History extends Component {
                 </div>
                 <div className="Footer">
                     <ShowMore 
-                        Label="See All"
+                        Label={this.props.CTA.ALL}
                         class=" CTA ButtonRight"
                         Player={this.props.match.params.playerid}
                         Path="history/"
                     />
                 </div>
             </div>
-    </div> 
+      </Row> 
     )
   }
 } 

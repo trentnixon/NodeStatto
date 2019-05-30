@@ -18,18 +18,18 @@ export default class LoginForm extends Component {
         }
         else if(this.props.LOGIN.SELECTEDTEAMID != null && this.props.LOGIN.SELECTEDTEAMLIST === null){
             return(
-                <FetchingPlayerRoster  TeamName={this.props.LOGIN.SELECTEDTEAMNAME }/>
+                <FetchingPlayerRoster  TeamName={this.props.LOGIN.SELECTEDTEAMNAME } {... this.props}/>
             )
         }
         else if(this.props.LOGIN.SELECTEDTEAMID != null && this.props.LOGIN.SELECTEDTEAMLIST != null){
             return(
-                <PlayersRosterComplete TeamName={this.props.LOGIN.SELECTEDTEAMNAME } />
+                <PlayersRosterComplete TeamName={this.props.LOGIN.SELECTEDTEAMNAME } {... this.props}/>
                 
             )
         }
         else{
             return(
-                <FetchingTeams />
+                <FetchingTeams {... this.props}/> 
             )
         }
   }

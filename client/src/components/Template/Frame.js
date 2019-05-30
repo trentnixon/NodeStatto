@@ -29,12 +29,12 @@ const styles = theme => ({
     width: '100%',
   },
   appBar: {
-    position: 'absolute',
+    position: 'absolute', 
    
   },
   navIconHide: {
     [theme.breakpoints.up('md')]: {
-      display: 'none',
+      display: 'none', 
     },
   },
   toolbar: theme.mixins.toolbar,
@@ -68,7 +68,6 @@ const NavLayout = (props) => (
                   <Routes 
                     Match={props.match}
                     Navigation={props.Navigation}
-              
                   />
                 <Divider />
               <NavBarBottom {... props} />

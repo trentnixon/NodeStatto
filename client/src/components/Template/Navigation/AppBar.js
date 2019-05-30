@@ -6,11 +6,6 @@ import Avatar from '@material-ui/core/Avatar';
 import {LOGO} from "../../Icons/icons"
 // Icons
 import Dashboard from '@material-ui/icons/Dashboard';
-
-import Settings from '@material-ui/icons/Settings';
-
-import Search from '@material-ui/icons/Search';
-
 import  {Batting,Bowling,Keeping} from "../../Icons/icons";
 
 
@@ -42,7 +37,10 @@ export default class APPBARLAYOUT extends React.Component {
           <div id="AppBar"> 
             <div className="Left">
                 <Hidden smDown> 
-                   <LOGO />
+                  <Link to="/">
+                      <LOGO />
+                  </Link>
+                  
               </Hidden>
             </div>
             <div className="Center">
@@ -73,12 +71,10 @@ export default class APPBARLAYOUT extends React.Component {
             </div>
 
             <div className="Right">
-               <Hidden smDown> 
-                  <IconButton component={Link}  to={`/${Path}/search`}>   <Search />  </IconButton>
-                  <IconButton component={Link} to={`/${Path}/settings`}>  <Settings />  </IconButton>
-              </Hidden>
+               
               <h1>{this.props.DATA.META.Name}</h1>
               <Avatar>{this.props.DATA.META.Name.charAt(0)}</Avatar>
+
             </div>
           </div>
     );

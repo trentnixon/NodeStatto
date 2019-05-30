@@ -20,152 +20,46 @@ p {
   background-repeat: repeat;
   background-image: url("/assets/bg/absurdity.png"); }
 
-.Section {
-  margin: 0 0 50px; }
-  .Section h1.Page_Title {
-    font-size: 2em;
-    color: #969696; }
-
-.Section_Rankings {
-  display: contents; }
-
-.Section_Career .row > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: flex-start;
-  width: 100%; }
-  .Section_Career .row > div h1 {
-    flex-grow: 1;
-    width: inherit; }
-  .Section_Career .row > div .Page_Title {
-    font-size: 1em; }
-  .Section_Career .row > div .Page_Sub_Title {
-    text-align: right;
-    font-weight: 800;
-    font-size: 1.5em; }
-
-.atAGlance .Form_Selector .Inner {
-  text-align: right; }
-
-.atAGlance .Form_Selector div[class*="MuiInputBase-input-"] {
-  text-align: left; }
-
-.atAGlance .Radial .Inner div .apexcharts-canvas {
-  height: 175px !important; }
-
-.atAGlance .Radial .Inner .RadialTextContainer {
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  z-index: 100; }
-  .atAGlance .Radial .Inner .RadialTextContainer .Page_Sub_Title {
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    font-size: 1.8em !important;
-    font-weight: 100;
-    letter-spacing: 1px; }
-  .atAGlance .Radial .Inner .RadialTextContainer .Page_Sub_Title + .Page_Sub_Title {
-    font-size: .8em !important; }
-
-.atAGlance .Radial > div {
-  display: inline-block;
-  width: auto; }
-
-.atAGlance .Radial div.Selector .Inner {
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0px !important; }
-
-.Section_History {
-  margin: 0 -15px; }
-  .Section_History .Outer {
-    padding: 0; }
-  .Section_History ul {
-    margin: 0;
-    padding: 0; }
-    .Section_History ul .animated li > div > div {
-      color: #5a5a5a; }
-    .Section_History ul .animated li > div div + div span, .Section_History ul .animated li > div div + div p {
-      color: #5a5a5a;
-      text-align: right; }
-    .Section_History ul .animated li > div div + div + div {
-      text-align: right;
-      padding: 0 20px 0 0; }
-      .Section_History ul .animated li > div div + div + div span, .Section_History ul .animated li > div div + div + div p {
-        color: #5a5a5a; }
-
-.Section_Home_RankingPods .HomeRankingPods .animated .Inner {
-  padding: 0 !important; }
-  .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header {
-    padding: 5px 15px;
-    background-color: #709dce !important; }
-    .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header h1 {
-      text-align: left;
-      margin: 0;
-      font-size: 1.3em !important;
-      padding: 5px 0;
-      color: #f5f5f5 !important; }
-      .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header h1 img {
-        width: 25px;
-        float: right;
-        fill: white;
-        margin-right: 15px;
-        background-color: #f5f5f5;
-        border-radius: 50px;
-        padding: 3px; }
-  .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body {
-    padding: 15px; }
-    .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h2 {
-      font-size: 2.5em !important;
-      color: #709dce !important;
-      border-bottom: 1px solid;
-      margin: 0 0 10px 0;
-      padding: 0 0 7px 0;
-      line-height: 2em !important; }
-      .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h2 svg {
-        float: right;
-        font-size: 1.6em !important; }
-    .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h3 {
-      font-size: 1em !important;
-      font-weight: 600;
-      border-top: unset !important; }
-  .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Footer {
-    padding: 15px;
-    text-align: right;
-    display: none; }
-
-.RankingPods {
-  display: contents; }
-  .RankingPods .Outer {
-    padding: 0 0 5px 0 !important; }
-    .RankingPods .Outer .Inner {
-      text-align: center;
-      border: none !important;
-      background-color: transparent !important; }
-  .RankingPods .animated .Inner {
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 25%; }
-    .RankingPods .animated .Inner h1 {
-      display: block;
-      margin: 0 25%;
-      width: 50%;
-      padding: 5px 0; }
-    .RankingPods .animated .Inner h1.Page_Title {
-      font-size: .9em !important; }
-    .RankingPods .animated .Inner h1.Page_Sub_Title {
-      border-bottom: 1px solid;
-      font-size: 1.6em !important;
-      font-weight: 600; }
-  .RankingPods .animated:nth-child(1) .Inner {
-    background-image: url("/assets/icons/runs.svg"); }
-  .RankingPods .animated:nth-child(2) .Inner {
-    background-image: url("/assets/icons/1414791.svg"); }
-  .RankingPods .animated:nth-child(3) .Inner {
-    background-image: url("/assets/icons/56301.svg"); }
+.RankingInt {
+  height: 100%; }
+  .RankingInt .RankingPods {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: space-evenly; }
+    .RankingInt .RankingPods .Outer {
+      padding: 0 0 5px 0 !important; }
+      .RankingInt .RankingPods .Outer .Inner {
+        text-align: center;
+        border: none !important;
+        background-color: transparent !important; }
+    .RankingInt .RankingPods .animated .Inner {
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 25%; }
+      .RankingInt .RankingPods .animated .Inner h1 {
+        display: block;
+        margin: 0 25%;
+        width: 50%;
+        padding: 5px 0; }
+      .RankingInt .RankingPods .animated .Inner h1.Page_Title {
+        font-size: .9em !important; }
+      .RankingInt .RankingPods .animated .Inner h1.Page_Sub_Title {
+        border-bottom: 1px solid;
+        font-size: 1.6em !important;
+        font-weight: 600; }
+    .RankingInt .RankingPods .animated:nth-child(1) .Inner {
+      background-image: url("/assets/icons/runs.svg"); }
+    .RankingInt .RankingPods .animated:nth-child(2) .Inner {
+      background-image: url("/assets/icons/1414791.svg"); }
+    .RankingInt .RankingPods .animated:nth-child(3) .Inner {
+      background-image: url("/assets/icons/56301.svg"); }
+    @media only screen and (max-width: 576px) {
+      .RankingInt .RankingPods .animated .Inner {
+        background-size: 15%; } }
 
 #Header_Slider {
   text-align: center;
@@ -225,7 +119,8 @@ p {
 .ContentContainer {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 5px; }
+  border-radius: 5px;
+  padding: 2% 3%; }
   .ContentContainer .Header {
     padding: 5px 15px;
     background-color: #709dce !important;
@@ -279,6 +174,12 @@ p {
     padding: 0px;
     text-align: right; }
 
+.graph {
+  flex-grow: 1; }
+
+.icons {
+  flex-grow: 1; }
+
 .invert {
   background-color: #709dce !important;
   border-color: #fff !important; }
@@ -309,24 +210,17 @@ p {
 .PodRow .animated {
   margin: 0;
   padding: 0; }
-
-.PodRow #Pod {
-  padding: 0 1px 5px 1px; }
-  .PodRow #Pod .Inner {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 5px;
-    padding: 10px 25px;
-    background-color: #fff;
-    position: relative; }
-    .PodRow #Pod .Inner h1 {
+  .PodRow .animated #Pod {
+    padding: 0 1px 5px 1px; }
+    .PodRow .animated #Pod .Inner h1 {
       color: #969696;
       font-size: 1.1em; }
-    .PodRow #Pod .Inner h2 {
+    .PodRow .animated #Pod .Inner h2 {
       color: #5a5a5a;
       font-size: 2.5em;
       margin: 0;
       line-height: 1.2em; }
-    .PodRow #Pod .Inner h3 {
+    .PodRow .animated #Pod .Inner h3 {
       color: #5a5a5a;
       font-size: 1em;
       margin: 0;
@@ -335,109 +229,134 @@ p {
       border-top: 1px solid;
       padding-top: 5px;
       margin-top: 5px; }
-    .PodRow #Pod .Inner button {
+    .PodRow .animated #Pod .Inner button {
       float: right; }
-  .PodRow #Pod .IconPod .Header img {
-    width: 30px;
-    float: right;
-    margin: 0 15px 0 0; }
-  .PodRow #Pod .IconPod .Body h1 {
-    text-align: center;
-    margin: 0; }
-  .PodRow #Pod .IconPod .Body h1.Page_Sub_Title {
-    font-size: 1.8em !important;
-    color: #709dce !important;
-    border-bottom: 1px solid;
-    margin: 0 0 0px 0;
-    padding: 0 0 0px 0; }
-  .PodRow #Pod .IconPod .Body h1.Page_Title {
-    font-size: 1em !important;
-    font-weight: 600; }
-  .PodRow #Pod .IconPod .Footer {
-    text-align: right; }
-    .PodRow #Pod .IconPod .Footer button {
-      float: unset !important; }
-    .PodRow #Pod .IconPod .Footer a {
-      margin: 0;
-      padding: 0; }
-  .PodRow #Pod .IconPod .RankingIcon {
-    float: right;
-    font-size: 3em; }
-  .PodRow #Pod .SingleLine .Body {
-    display: flex; }
-    .PodRow #Pod .SingleLine .Body h1 {
-      width: 50%;
+    .PodRow .animated #Pod .IconPod .Header img {
+      width: 30px;
+      float: right;
+      margin: 0 15px 0 0; }
+    .PodRow .animated #Pod .IconPod .Body h1 {
+      text-align: center;
       margin: 0; }
-    .PodRow #Pod .SingleLine .Body h1 + h1 {
+    .PodRow .animated #Pod .IconPod .Body h1.Page_Sub_Title {
+      font-size: 1.8em !important;
+      color: #709dce !important;
+      border-bottom: 1px solid;
+      margin: 0 0 0px 0;
+      padding: 0 0 0px 0; }
+    .PodRow .animated #Pod .IconPod .Body h1.Page_Title {
+      font-size: 1em !important;
+      font-weight: 600; }
+    .PodRow .animated #Pod .IconPod .Footer {
       text-align: right; }
-  .PodRow #Pod .Zeroed {
-    padding: 0;
-    margin: 0; }
-  .PodRow #Pod .FillPod .fill {
-    background-color: rgba(112, 157, 206, 0.1);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    bottom: 15px;
-    margin: -15px;
-    transition: height 0.25s ease-in; }
+      .PodRow .animated #Pod .IconPod .Footer button {
+        float: unset !important; }
+      .PodRow .animated #Pod .IconPod .Footer a {
+        margin: 0;
+        padding: 0; }
+    .PodRow .animated #Pod .IconPod .RankingIcon {
+      float: right;
+      font-size: 3em; }
+    .PodRow .animated #Pod .SingleLine .Body {
+      display: flex; }
+      .PodRow .animated #Pod .SingleLine .Body h1 {
+        width: 50%;
+        margin: 0; }
+      .PodRow .animated #Pod .SingleLine .Body h1 + h1 {
+        text-align: right; }
+    .PodRow .animated #Pod .Zeroed {
+      padding: 0;
+      margin: 0; }
+    .PodRow .animated #Pod .FillPod .fill {
+      background-color: rgba(112, 157, 206, 0.1);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: 15px;
+      margin: -15px;
+      transition: height 0.25s ease-in; }
 
-#Pod.NakedPod {
-  padding: 0; }
-  #Pod.NakedPod > .Inner {
-    background-color: transparent;
-    padding: 0 15px;
-    border: none; }
+.PodRow .animated #Pod .Inner {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 10px 25px;
+  background-color: #fff;
+  position: relative; }
 
-#Pod.ToDo .Inner {
-  border-color: red;
-  background-color: #ffe2e2; }
+@media only screen and (max-width: 576px) {
+  .PodRow .animated {
+    flex: 1 0 100% !important; }
+    .PodRow .animated .Inner {
+      padding: 5px 10px !important;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center; }
+      .PodRow .animated .Inner div {
+        flex: 1 0 33%; }
+      .PodRow .animated .Inner .Body h1.Page_Sub_Title {
+        border-bottom: unset !important; }
+      .PodRow .animated .Inner h1 img {
+        display: none; } }
 
 /*- Build up Dom Elements -*/
 #Login {
   background-color: #709dce;
-  min-height: 100vh;
-  width: 100vw;
-  padding: 10% 5%;
   background-image: url(https://www.transparenttextures.com/patterns/circles.png);
+  padding: 5vh 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: stretch;
+  align-content: center;
   /* Media Queries */ }
   #Login .LoginHeader {
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-end;
     align-content: center;
     padding: 0 0 3vh 0; }
-    #Login .LoginHeader div.Logo img.STATTOLOGO {
-      width: 150px;
-      transform: rotate(135deg); }
-    #Login .LoginHeader div.Titles {
-      align-self: center; }
-      #Login .LoginHeader div.Titles h1.Page_Title {
-        font-size: 2.5em;
-        text-transform: uppercase;
-        line-height: 1.2em;
-        margin: 0%;
-        font-weight: bold;
-        color: #5a5a5a; }
-      #Login .LoginHeader div.Titles h1.Page_Sub_Title {
-        font-size: 1.2em;
-        line-height: 1.2em;
-        margin: 0%; }
+    #Login .LoginHeader div.Logo {
+      margin-bottom: -30px; }
+      #Login .LoginHeader div.Logo img.STATTOLOGO {
+        width: 150px;
+        transform: rotate(135deg); }
+    #Login .LoginHeader div.Titles h1.Page_Title {
+      font-size: 2.5em;
+      text-transform: uppercase;
+      line-height: 1.2em;
+      margin: 0%;
+      font-weight: bold;
+      color: #5a5a5a; }
+    #Login .LoginHeader div.Titles h1.Page_Sub_Title {
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin: 0%;
+      font-weight: 100; }
   #Login .LoginFormContainer {
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: center;
-    padding: 3%;
-    background-color: #5a5a5a;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75); }
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center; }
+    #Login .LoginFormContainer .LoginInner {
+      -webkit-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
+      padding: 2%;
+      background-color: #5a5a5a;
+      border-radius: 10px;
+      width: 80vw; }
     #Login .LoginFormContainer .RosterLoadedHeader {
       display: flex;
       flex-direction: row;
@@ -447,10 +366,12 @@ p {
       align-content: center;
       color: #f5f5f5; }
       #Login .LoginFormContainer .RosterLoadedHeader h1 {
-        font-size: 1em; }
+        font-size: 1em;
+        font-weight: 100; }
         #Login .LoginFormContainer .RosterLoadedHeader h1 strong {
           font-weight: bold;
-          font-size: 2.5em; }
+          font-size: 2.5em;
+          margin-right: 7px; }
       #Login .LoginFormContainer .RosterLoadedHeader button {
         color: #1af60f; }
         #Login .LoginFormContainer .RosterLoadedHeader button svg {
@@ -492,7 +413,7 @@ p {
     #Login .LoginFormContainer .react-autosuggest__container {
       position: relative; }
     #Login .LoginFormContainer .react-autosuggest__input {
-      width: 100%;
+      width: -webkit-fill-available;
       height: 50px;
       padding: 10px 20px;
       font-family: Helvetica, sans-serif;
@@ -537,7 +458,7 @@ p {
       padding: 10px 20px; }
     #Login .LoginFormContainer .react-autosuggest__suggestion--highlighted {
       background-color: #ddd; }
-    #Login .LoginFormContainer #TeamSheet {
+    #TeamSheet {
       display: flex;
       flex-direction: row;
       flex-grow: 1;
@@ -547,35 +468,48 @@ p {
       align-content: center;
       margin: 0;
       padding: 0; }
-      #Login .LoginFormContainer #TeamSheet div {
+      #TeamSheet div {
         flex: 1 0 21%;
         padding: 7px 0; }
-        #Login .LoginFormContainer #TeamSheet div li {
+        #TeamSheet div li {
           margin: 0;
           padding: 0;
           list-style: none; }
-          #Login .LoginFormContainer #TeamSheet div li .RosterItem span {
+          #TeamSheet div li .RosterItem span {
             color: #f5f5f5 !important; }
+    #ChangePlayer #TeamSheet div li .RosterItem span {
+      color: #333 !important; }
   @media only screen and (max-width: 578px) {
-    #Login {
-      padding: 20% 3%; }
-      #Login .LoginHeader div.Titles h1.Page_Sub_Title {
-        font-size: 1em; }
-      #Login .LoginFormContainer #TeamSheet div {
-        flex: 1 0 50%; } }
+    #Login .LoginHeader div.Logo img.STATTOLOGO {
+      width: 100px; }
+    #Login .LoginHeader div.Titles h1.Page_Title {
+      font-size: 2em; }
+    #Login .LoginHeader div.Titles h1.Page_Sub_Title {
+      font-size: .9em; }
+    #Login .LoginFormContainer .LoginInner {
+      width: 90vw; }
+    #Login .LoginFormContainer .RosterLoadedHeader h1 strong {
+      font-size: 2em; }
+    #Login .LoginFormContainer #TeamSheet div {
+      flex: 1 0 50%; } }
 
 #LoadingScreen {
   min-height: 100vh;
   width: 100vw;
   background-image: url(https://www.transparenttextures.com/patterns/circles.png);
   background-color: #709dce;
-  overflow: hidden;
-  padding: 30vh 20vw 0;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
   #LoadingScreen .LoadingContainer {
-    padding: 5%;
     background-color: #5a5a5a;
     border-radius: 10px;
+    padding: 3%;
+    width: 80vw;
     -webkit-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 7px 28px -8px rgba(0, 0, 0, 0.75); }
@@ -614,176 +548,264 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto"; }
-  body #root #Statto #Frame {
-    /*
+  body #root #Statto {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh; }
+    body #root #Statto #Frame {
+      width: 100vw;
+      /*
 *       TABLET NORMAL
 *
 */
-    /* iPads (landscape) ----------- */
-    /* iPads (portrait) ----------- */
-    /* Medium Phones ----------- */
-    /* Small Phones ----------- */
-    /* Smartphones (portrait) ----------- */ }
-    body #root #Statto #Frame header {
-      position: fixed;
-      z-index: 99999;
-      padding: 0; }
-      body #root #Statto #Frame header #AppBar {
+      /* iPads (landscape) ----------- */
+      /* iPads (portrait) ----------- */
+      /* Medium Phones ----------- */
+      /* Small Phones ----------- */
+      /* Smartphones (portrait) ----------- */
+      /* 
+    > .Section
+            >.row
+                > Type
+                > .ContentContainer
+                > .ContentType
+                    > Content
+
+*/ }
+      body #root #Statto #Frame header {
+        position: fixed;
+        z-index: 99999;
+        padding: 0; }
+        body #root #Statto #Frame header #AppBar {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          width: 100%;
+          align-items: center;
+          align-content: center; }
+          body #root #Statto #Frame header #AppBar img.STATTOLOGO {
+            height: 50px;
+            margin: 0;
+            transform: rotate(135deg); }
+          body #root #Statto #Frame header #AppBar .Left {
+            justify-content: flex-start;
+            display: flex;
+            flex-grow: 1; }
+          body #root #Statto #Frame header #AppBar .Center {
+            flex-grow: 2;
+            display: flex;
+            justify-content: flex-start; }
+            body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
+              width: 25px;
+              height: 25px; }
+            body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
+              width: 20px;
+              height: 20px; }
+            body #root #Statto #Frame header #AppBar .Center button a {
+              display: flex; }
+              body #root #Statto #Frame header #AppBar .Center button a svg {
+                fill: rgba(0, 0, 0, 0.54); }
+            body #root #Statto #Frame header #AppBar .Center p {
+              margin: 0 5px 0 0;
+              font-size: .8em;
+              text-align: center;
+              float: right;
+              line-height: 4em; }
+          body #root #Statto #Frame header #AppBar .Right {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end; }
+            body #root #Statto #Frame header #AppBar .Right > div {
+              background-color: #5a5a5a; }
+            body #root #Statto #Frame header #AppBar .Right h1 {
+              font-size: 1.1em;
+              line-height: 2.3em;
+              margin: 0 20px 0 10px;
+              color: #5a5a5a; }
+            body #root #Statto #Frame header #AppBar .Right button a {
+              display: flex; }
+              body #root #Statto #Frame header #AppBar .Right button a svg {
+                fill: rgba(0, 0, 0, 0.54); }
+      .DrawerNav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        min-height: 100vh; }
+        .DrawerNav .Collapseable {
+          height: auto;
+          background-color: #f5f5f5; }
+          .DrawerNav .Collapseable a div {
+            padding-left: 35px; }
+        .DrawerNav nav {
+          width: inherit; }
+        .DrawerNav .NavBarTop {
+          background-color: #709dce;
+          min-height: 200px;
+          text-align: center;
+          padding-top: 80px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .DrawerNav .NavBarTop > div {
+            flex-grow: 1;
+            width: 100%;
+            justify-content: center; }
+          .DrawerNav .NavBarTop div.UserName {
+            flex-grow: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            border-bottom: 30px solid #fff; }
+            .DrawerNav .NavBarTop div.UserName div {
+              align-self: center;
+              align-items: flex-end; }
+              .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
+                width: 70px;
+                height: 70px;
+                border: 8px solid #fff;
+                margin-bottom: -45px;
+                z-index: 10; }
+                .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
+                  width: 70px; }
+          .DrawerNav .NavBarTop div.Actions {
+            display: flex;
+            align-items: flex-start; }
+            .DrawerNav .NavBarTop div.Actions div {
+              flex-grow: 1; }
+              .DrawerNav .NavBarTop div.Actions div button {
+                background-color: #fff; }
+                .DrawerNav .NavBarTop div.Actions div button a {
+                  display: flex; }
+                  .DrawerNav .NavBarTop div.Actions div button a svg {
+                    fill: rgba(0, 0, 0, 0.54); }
+        .DrawerNav .NavBarBottom {
+          min-height: 50px; }
+        .DrawerNav img.NavigationIcon {
+          width: 25px;
+          margin-right: 16px; }
+        .DrawerNav img.NavigationIcon.Bowling {
+          width: 20px;
+          margin-right: 20px; }
+      body #root #Statto #Frame main {
+        min-height: 100vh;
+        -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
+        background-color: #f5f5f5;
+        width: 100%;
+        padding: 1%; }
+        body #root #Statto #Frame main .show {
+          opacity: 1 !important; }
+      body #root #Statto #Frame #PageHeader {
+        background-color: #709dce;
+        padding: 40px;
+        margin: -24px -24px 30px -24px;
+        min-height: 300px; }
+      body #root #Statto #Frame .SectionHeader {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: center;
-        width: 100%;
-        align-items: center;
+        justify-content: space-between;
+        align-items: baseline;
         align-content: center; }
-        body #root #Statto #Frame header #AppBar img.STATTOLOGO {
-          height: 50px;
-          margin: 0;
-          transform: rotate(135deg); }
-        body #root #Statto #Frame header #AppBar .Left {
-          justify-content: flex-start;
-          display: flex;
-          flex-grow: 1; }
-        body #root #Statto #Frame header #AppBar .Center {
-          flex-grow: 2;
-          display: flex;
-          justify-content: flex-start; }
-          body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
-            width: 25px;
-            height: 25px; }
-          body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
-            width: 20px;
-            height: 20px; }
-          body #root #Statto #Frame header #AppBar .Center button a {
-            display: flex; }
-            body #root #Statto #Frame header #AppBar .Center button a svg {
-              fill: rgba(0, 0, 0, 0.54); }
-          body #root #Statto #Frame header #AppBar .Center p {
-            margin: 0 5px 0 0;
-            font-size: .8em;
-            text-align: center;
-            float: right;
-            line-height: 4em; }
-        body #root #Statto #Frame header #AppBar .Right {
+        body #root #Statto #Frame .SectionHeader h1 {
+          color: #969696;
           flex-grow: 1;
-          display: flex;
-          justify-content: flex-end; }
-          body #root #Statto #Frame header #AppBar .Right h1 {
-            font-size: 1.1em;
-            line-height: 2.3em;
-            margin: 0 20px 0 10px; }
-          body #root #Statto #Frame header #AppBar .Right button a {
-            display: flex; }
-            body #root #Statto #Frame header #AppBar .Right button a svg {
-              fill: rgba(0, 0, 0, 0.54); }
-    .DrawerNav {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      min-height: 100vh; }
-      .DrawerNav .Collapseable {
-        height: auto;
-        background-color: #f5f5f5; }
-        .DrawerNav .Collapseable a div {
-          padding-left: 35px; }
-      .DrawerNav nav {
-        width: inherit; }
-      .DrawerNav .NavBarTop {
-        background-color: #709dce;
-        min-height: 200px;
-        text-align: center;
-        padding-top: 80px;
+          width: auto; }
+        body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
+          text-align: right;
+          font-weight: 100; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        body #root #Statto #Frame .SectionHeader h1 {
+          font-size: 1.2em; }
+        body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
+          font-size: 1em; } }
+      body #root #Statto #Frame section {
+        margin: 0 0 50px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center; }
-        .DrawerNav .NavBarTop > div {
-          flex-grow: 1;
-          width: 100%;
-          justify-content: center; }
-        .DrawerNav .NavBarTop div.UserName {
-          flex-grow: 2;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: flex-start; }
+        body #root #Statto #Frame section h1.Page_Title {
+          font-size: 1.3em;
+          color: #969696;
+          font-weight: 100; }
+        body #root #Statto #Frame section h1.Page_Sub_Title {
+          font-size: 1.3em;
+          color: #969696;
+          font-weight: 100; }
+        body #root #Statto #Frame section .row {
           display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          border-bottom: 30px solid #fff; }
-          .DrawerNav .NavBarTop div.UserName div {
-            align-self: center;
-            align-items: flex-end; }
-            .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
-              width: 70px;
-              height: 70px;
-              border: 8px solid #fff;
-              margin-bottom: -45px;
-              z-index: 10; }
-              .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
-                width: 70px; }
-        .DrawerNav .NavBarTop div.Actions {
-          display: flex;
-          align-items: flex-start; }
-          .DrawerNav .NavBarTop div.Actions div {
-            flex-grow: 1; }
-            .DrawerNav .NavBarTop div.Actions div button {
-              background-color: #fff; }
-              .DrawerNav .NavBarTop div.Actions div button a {
-                display: flex; }
-                .DrawerNav .NavBarTop div.Actions div button a svg {
-                  fill: rgba(0, 0, 0, 0.54); }
-      .DrawerNav .NavBarBottom {
-        min-height: 50px; }
-      .DrawerNav img.NavigationIcon {
-        width: 25px;
-        margin-right: 16px; }
-      .DrawerNav img.NavigationIcon.Bowling {
-        width: 20px;
-        margin-right: 20px; }
-    body #root #Statto #Frame main {
-      min-height: 100vh;
-      -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-      -moz-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-      box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
-      background-color: #f5f5f5;
-      width: 100%; }
-      body #root #Statto #Frame main .show {
-        opacity: 1 !important; }
-    body #root #Statto #Frame #PageHeader {
-      background-color: #709dce;
-      padding: 40px;
-      margin: -24px -24px 30px -24px;
-      min-height: 300px; }
-    body #root #Statto #Frame .SectionHeader {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: baseline;
-      align-content: center; }
-      body #root #Statto #Frame .SectionHeader h1 {
-        color: #969696;
-        flex-grow: 1;
-        width: auto; }
-      body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
-        text-align: right; }
-    @media only screen and (min-width: 320px) and (max-width: 480px) {
-      body #root #Statto #Frame .SectionHeader h1 {
-        font-size: 1.2em; }
-      body #root #Statto #Frame .SectionHeader h1.Page_Sub_Title {
-        font-size: 1em; } }
-    body #root #Statto #Frame #StattoTabs header {
-      position: relative;
-      background-color: #f5f5f5;
-      padding: 10px 0 0;
-      box-shadow: unset; }
-      body #root #Statto #Frame #StattoTabs header img {
-        height: 30px; }
-    body #root #Statto #Frame .TableTabber div {
-      width: 100%; }
-      body #root #Statto #Frame .TableTabber div table tr th, body #root #Statto #Frame .TableTabber div table tr td {
-        padding: 0; }
-        body #root #Statto #Frame .TableTabber div table tr th a, body #root #Statto #Frame .TableTabber div table tr td a {
-          float: right; }
-  body #root #Statto ul.dots li {
-    float: left;
-    width: 15px;
-    height: 15px;
-    list-style: none;
-    margin: 2px 1px; }
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: stretch;
+          align-content: flex-start; }
+          body #root #Statto #Frame section .row > h1.Page_Title {
+            flex: 1 0 100%; }
+          body #root #Statto #Frame section .row > div {
+            margin: 0 .2%;
+            padding: 0;
+            flex: 1 0 32.5%; }
+      body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner {
+        padding: 0 !important; }
+        body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header {
+          padding: 5px 15px;
+          background-color: #709dce !important; }
+          body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header h1 {
+            text-align: left;
+            margin: 0;
+            font-size: 1.3em !important;
+            padding: 5px 0;
+            color: #f5f5f5 !important; }
+            body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Header h1 img {
+              width: 25px;
+              float: right;
+              fill: white;
+              margin-right: 15px;
+              background-color: #f5f5f5;
+              border-radius: 50px;
+              padding: 3px; }
+        body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body {
+          padding: 15px; }
+          body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h2 {
+            font-size: 2.5em !important;
+            color: #709dce !important;
+            border-bottom: 1px solid;
+            margin: 0 0 10px 0;
+            padding: 0 0 7px 0;
+            line-height: 2em !important; }
+            body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h2 svg {
+              float: right;
+              font-size: 1.6em !important; }
+          body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Body h3 {
+            font-size: 1em !important;
+            font-weight: 600;
+            border-top: unset !important; }
+        body #root #Statto #Frame .Section_Home_RankingPods .HomeRankingPods .animated .Inner .Footer {
+          padding: 15px;
+          text-align: right;
+          display: none; }
+      body #root #Statto #Frame #StattoTabs header {
+        position: relative;
+        background-color: #f5f5f5;
+        padding: 10px 0 0;
+        box-shadow: unset; }
+        body #root #Statto #Frame #StattoTabs header img {
+          height: 30px; }
+      body #root #Statto #Frame .TableTabber div {
+        width: 100%; }
+        body #root #Statto #Frame .TableTabber div table tr th, body #root #Statto #Frame .TableTabber div table tr td {
+          padding: 0; }
+          body #root #Statto #Frame .TableTabber div table tr th a, body #root #Statto #Frame .TableTabber div table tr td a {
+            float: right; }
+    body #root #Statto ul.dots li {
+      float: left;
+      width: 15px;
+      height: 15px;
+      list-style: none;
+      margin: 2px 1px; }

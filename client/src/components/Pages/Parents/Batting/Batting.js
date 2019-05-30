@@ -20,20 +20,21 @@ export default class BattingOverview extends Component {
 
   /**
    *  <SectionCareerBatting 
-            Data={this.props.DATA.CAREER.Career.batting}  
+            Data={this.props.DATA.CAREER.Career.batting}   
             Career={this.props.DATA.CLEAN}
           />
    */
-  render() { 
+  render() {  
     return (    
       <Container>  
-        <SectionHeader   h1="Overview" h2="Batting"  /> 
+        <SectionHeader   h1={this.props.TITLES.OVERVIEW} h2={this.props.TITLES.BATTING}   /> 
 
         <SectionContainer>
           <SectionRankings  
             Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
-            Title="Batting Rankings"
-            SubTitle="Breakdown of the batting rankings over the career"
+            Title={this.props.TITLES.RANKINGS}
+            SubTitle={this.props.DESC.DESCRANKINGS} 
+            {... this.props}
           />
         </SectionContainer>
 
@@ -43,12 +44,12 @@ export default class BattingOverview extends Component {
             Tabs={
               [
                 {
-                  Title:"Stats",
+                  Title:this.props.SUBS.STATS,
                   Component:<SectionCareerBatting  Data={this.props.DATA.CAREER.Career.batting}  Career={this.props.DATA.CLEAN}/>,
                   Icon:<Batting />
                 },
                 {
-                  Title:"For and Against",
+                  Title:this.props.SUBS.FORAGAINST,
                   Component:<MostForAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props} />,
                   Icon:<PeopleIcon />
                 }
@@ -58,17 +59,15 @@ export default class BattingOverview extends Component {
 
         </SectionContainer>
 
-        
-        
         <SectionContainer>
           <SectionMilestonesBatting  
             Data={this.props.DATA.CAREER.Career.batting} 
-            Title="Milestones and Achievements"
+            Title={this.props.TITLES.MILESTONE}
           />
         </SectionContainer>
-
 
       </Container>
     )
   }
 }
+

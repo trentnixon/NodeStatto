@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+import LABELS from "./Labels";
 import LOAD from "./Load";
 import DATA from "./Data";
 import ScoreCard from "./ScoreCard";
@@ -8,5 +9,6 @@ export default combineReducers({
   LOAD:LOAD,
   DATA:DATA,
   SC:ScoreCard,
-  LOGIN:LOGIN
+  LOGIN:LOGIN,
+  LABELS:LABELS
 })

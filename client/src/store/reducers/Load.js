@@ -18,11 +18,11 @@ const InitialState ={
         },
     Labels:
             {
-            ProgressReport:"Fetching Data"
+                ProgressReport:"Fetching Data"
             }
 }
 
-const LOAD = (state=InitialState, action) =>{
+const LOAD = (state=InitialState, action) =>{ 
 		// eslint-disable-next-line 
 		switch(action.type){
 // UI STATE

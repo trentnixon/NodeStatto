@@ -1,10 +1,16 @@
 #Login{
 
     background-color: $ColorBase;
-    min-height: 100vh;
-    width: 100vw;
-    padding: 10% 5%;
     background-image: url(https://www.transparenttextures.com/patterns/circles.png);
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: stretch;
+    align-content: center;
 
   
     @import "./LoginHeader";
@@ -21,21 +27,41 @@
     //  Mobile Phones
     @media only screen and (max-width : 578px) {
 
-        padding: 20% 3%;
+  
         .LoginHeader{
+            div.Logo{
+                img.STATTOLOGO{
+                    width: 100px;
+                }
+            }
             div.Titles{ 
+                h1.Page_Title{
+                    font-size: 2em
+                }
                 h1.Page_Sub_Title{
-                    font-size: 1em
+                    font-size: .9em
                 }
             }
         }
 
        .LoginFormContainer{
-        #TeamSheet{
-             div{
-                flex: 1 0 50%;
-             }
-        }
+            .LoginInner{
+                width: 90vw;
+            }
+            
+            .RosterLoadedHeader{
+                h1{
+                    strong{
+                        font-size: 2em;
+                       
+                    }
+                }
+            } 
+                #TeamSheet{
+                    div{
+                        flex: 1 0 50%;
+                    }
+                }
        }
     }
 }  

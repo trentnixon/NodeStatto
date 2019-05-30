@@ -60,11 +60,12 @@ function DataLoop($ , xPath){
     }
  
 
-    function PullMeta($){
+    function PullMeta($,id){
 
             let Meta={};
 
             // Player Name
+            Meta["ID"] = id;
             Meta["Name"] = $('#player-name-block p').text(); 
             Meta["Matches"] = $('.non-phone  #player-stats-matches2 span').text();  
             Meta["Batting_Runs"] = $('.non-phone #player-stats-runs2 span').text();
@@ -121,19 +122,21 @@ function TeamSheet(html){
 
 
 /** PING */
-function ping(html){
+function ping(html,id){
+    
     let  LMSData={}
+
     LMSData["Meta"]={};
     LMSData["Batting"]={};
     LMSData["Bowling"]={};
 
     let $ = cheerio.load(html);
     
-    LMSData["Meta"] = PullMeta($);
+    LMSData["Meta"] = PullMeta($,id);
     LMSData["Batting"] = DataLoop($ , '#pp-batting-history-container .rank-table tbody tr');
     LMSData["Bowling"]= DataLoop($ , '#pp-bowling-history-container .rank-table tbody tr');
     
-    return LMSData
+    return LMSData;
 }
 
 
@@ -236,7 +239,7 @@ function StripscoreCard(html){
    
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
-                res.json(ping(html));
+                res.json(ping(html,req.params.id));
         }
     })
 })

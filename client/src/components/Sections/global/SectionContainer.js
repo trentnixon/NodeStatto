@@ -4,10 +4,10 @@ import TrackVisibility from 'react-on-screen';
 const SectionContainer = (props) => {
   
     return (
-        <TrackVisibility once offset={250} className="Section">
+        <TrackVisibility once offset={250} tag="section" className={props.class}> 
              {props.children}
         </TrackVisibility>
     );
 } 
 
-export default SectionContainer;
+export default SectionContainer; 

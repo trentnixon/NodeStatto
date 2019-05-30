@@ -69,8 +69,9 @@ export default class Section_HistoryList extends Component {
   render() {     
     return (
         <div className="Section_History" >
-             <SectionHeader h1="History " h2="Career" />
-            <Row class="ContainerRow">
+             <SectionHeader h1={this.props.TITLES.HISTORY} h2={this.props.TITLES.CAREER} />
+
+            <Row class="ContainerRow"> 
             
                 <Pod col="col-md-12 Selector" type="Zeroed" >
                         <FormControl variant="outlined" className="YearSelector" >
@@ -113,3 +114,12 @@ export default class Section_HistoryList extends Component {
     )
   }
 } 
+
+
+/**
+ *  COMPONENT NOTES
+ *  
+ *  Complete move to Titles and Labels
+ *  
+ * 
+ */

@@ -16,45 +16,21 @@
 */
 
 .PodRow{
-    .animated{ margin: 0; padding: 0; }
+    .animated{ 
+        margin: 0; padding: 0; 
     
     #Pod{
             padding: 0 1px 5px 1px;
-            
             // Generic Inner Styles that are used by ALL Pods
-            .Inner{
-                border:1px solid rgba(0, 0, 0, 0.12);
-                border-radius: 5px;
-                padding: 10px 25px;
-                background-color: #fff;
-                position: relative;
-                
-                
+            .Inner{                
                 @import "./PodType";
                 @import "./PodButtons";
             }
-
             @import "./Type_IconPods";
             @import "./Type_SingleLinePod";
             @import "./Type_Zeroed";
-            @import "./Type_FilledPod";
+            @import "./Type_FilledPod";  
         }
-}
-
-// What is this??
-
-#Pod.NakedPod{
-    padding: 0;
-    >.Inner{
-        background-color: transparent;
-       padding: 0 15px;
-        border:none;
     }
-}
-
-#Pod.ToDo{
-    .Inner{
-        border-color: red;
-        background-color: #ffe2e2;
-    }
+    @import "./Pod_Generic";
 }

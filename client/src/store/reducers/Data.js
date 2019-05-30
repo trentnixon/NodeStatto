@@ -1,14 +1,15 @@
 const InitialState ={
     CLEAN:null,
     META:{
-        Name:null
+        Name:null,
+        ID:null
     },
     CAREER:null,
     FOR:null,
     AGAINST:null,    
     LOGIN:null
 }
-
+ 
 const LOAD = (state=InitialState, action) =>{ 
 		// eslint-disable-next-line 
 		switch(action.type){

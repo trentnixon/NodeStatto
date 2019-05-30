@@ -11,7 +11,7 @@ import Collapse from '@material-ui/core/Collapse';
 
 // Icons
 import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import ExpandMore from '@material-ui/icons/ExpandMore'; 
 
 
 const styles = theme => ({
@@ -48,9 +48,9 @@ class NestedLists extends React.Component {
     //console.log(this.props.Navigation)
   } 
 
- createListItem(navItem){
+ createListItem(navItem,i){
      return(
-        <Link to={`/${Path}/${navItem.path}`}>
+        <Link key={i} to={`/${Path}/${navItem.path}`}>
             <ListItem button>
                 <ListItemIcon>{navItem.icon}</ListItemIcon>
                 <ListItemText inset primary={navItem.label}/>
@@ -103,7 +103,7 @@ createCollapseItem(navItem,i){
                       return(this.createCollapseItem(nav,i))
                     }
                     else{
-                      return( this.createListItem(nav))
+                      return( this.createListItem(nav,i))
                     }
                 })
             }

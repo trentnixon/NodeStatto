@@ -13,38 +13,41 @@ import Rankings from "../../../Sections/home/Section_Home_Rankings";
 import Charts from "../../../Sections/home/Section_Home_Charts";
 import BriefHistory from "../../../Sections/home/Section_Home_RecentGames";
 
+
+let TITLES;
 export default class Statto extends Component {
 
   componentWillMount() { }
 
   render() {
-    //console.log(this.props.DATA)
-    return (
-      <div>           
+    TITLES = this.props.TITLES
+    
+    return ( 
+      <div>            
          
           <Container>
-              <SectionHeader h1="Dashboard" h2="Overview" /> 
+              <SectionHeader h1={TITLES.DASHBOARD} h2={TITLES.OVERVIEW} /> 
 
-              <SectionContainer>
+              <SectionContainer class="Section_Overview">
                   <Overview  {... this.props} />  
-              </SectionContainer>
+              </SectionContainer> 
                
-              <SectionContainer>
+              <SectionContainer class="Section_Home_RankingPods">
                 <Rankings  
-                  Title="Rankings" 
+                  Title={TITLES.RANKINGS} 
                   Data={this.props.DATA.CAREER.Career.Meta.Rankings}
                   {... this.props}
                 />
               </SectionContainer>
 
-              <SectionContainer>
+              <SectionContainer class="Section_History">
                   <BriefHistory 
-                    Title="Recent Games" 
+                    Title={TITLES.RECENT}  
                     {... this.props} 
                   />
               </SectionContainer> 
               
-              <SectionContainer>
+              <SectionContainer class="Section_Default">
                   <Charts  {... this.props} />
               </SectionContainer>
               
@@ -53,3 +56,11 @@ export default class Statto extends Component {
     )
   }
 } 
+
+/**
+ *  COMPONENT NOTES
+ *  
+ *  29-5 : All Components updated with Redux Titles and Labels
+ *  
+ * 
+ */

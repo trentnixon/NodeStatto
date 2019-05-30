@@ -11,7 +11,7 @@ export function FetchSelectedTeam(SelectedTeam){
     axios.get("/api/team/"+SelectedTeam.id)
     .then(res => {  
       if(res.data.length !== 0){
-        
+      
          let Players = []
          Object.keys(res.data[0]).map((row, i) => (
           Players.push(res.data[0][row][0])
@@ -89,12 +89,42 @@ export function fetchSheets(){
         
 
         if(this.results.length === this.range.length){
-            console.log(this.results["0"].Data)
+            //console.log(this.results["0"].Data)
             store.dispatch({ type:"SAVE_SHEET", payload:this.results["0"].Data });
             store.dispatch({ type:"SHEET_STORED", payload:true });
-        }
-       
+        } 
     }
+}
+
+
+export function ResetPlayer(){
+  console.log("ResetPlayer");
+  
+  // Clear out Data
+    store.dispatch({ type:"STORE_CLEAN", payload:null });
+    store.dispatch({ type:"STORE_META", payload:null });
+    store.dispatch({ type:"STORE_CAREER", payload:null });
+    store.dispatch({ type:"STORE_FOR", payload:null });
+    store.dispatch({ type:"STORE_AGAINST", payload:null });
+  
+
+  // false UI
+  store.dispatch({ type:"INT_LOAD", payload:false });
+  store.dispatch({ type:"INT_DATA_TRUE", payload:false });
+  store.dispatch({ type:"INT_SET_UI_READY", payload:false });
+  store.dispatch({ type:"INT_SET_SATTTO_TRUE", payload:false });
+
+  store.dispatch({ type:"DATA_SET_LOAD_META", payload:false });
+  store.dispatch({ type:"DATA_SET_LOAD_CLEAN", payload:false });
+  store.dispatch({ type:"DATA_SET_LOAD_CAREER", payload:false });
+  store.dispatch({ type:"DATA_SET_FORAGAINST", payload:false });
+
+  store.dispatch({ type:"SET_UI_MESG", payload:"Fetching Player" });
+  
+  
+  
+  
+  
 }
 
 export function ResetLogin (){

@@ -8,19 +8,19 @@ import PlayedFor from "../../Elements/Tables/PlayedForList";
 
 export default class Section_Default extends Component { 
     render() {
-        //console.log(this.props.isVisible)
+
         return ( 
                 <Row>
                         <PlayedFor
-                            Label="Teams Played for"
-                            {... this.props}
+                            Label={this.props.TITLES.TEAMS}
                             num={5}
-                            col="col-md-7 col-sm-12"
+                            col="col-md-7 col-sm-12" 
+                            {... this.props}
                         />
                         
                         <GamesPlayed 
                             {... this.props}
-                            Title="Games Played"
+                            Title={this.props.TITLES.PLAYED}
                             col="col-md-5 col-sm-12"
                         />
                 </Row> 

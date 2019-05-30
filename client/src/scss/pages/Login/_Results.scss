@@ -1,5 +1,6 @@
-#TeamSheet{
+@at-root 
 
+#TeamSheet{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -18,13 +19,26 @@
             margin: 0;
             padding: 0;
             list-style: none;
-           
-
             .RosterItem{
                     span{
-                        color: $white !important;
+                        color: $white !important; 
                     }
             }
         }
     }
 } 
+
+@at-root
+#ChangePlayer{
+    #TeamSheet{
+       div{
+           li{ 
+               .RosterItem{ 
+                   span {
+                       color: #333 !important;
+                   }
+               }
+           }
+       }
+    }
+}

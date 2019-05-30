@@ -13,17 +13,16 @@ let stones=[];
 export default class Home_Section_Rankings extends Component {
     componentWillMount() {
          stones=[
-            { var:this.props.Data.Batting, Path:"/batting/", label:"Batting",icon:<Batting/>},
-            { var:this.props.Data.Bowling, Path:"/bowling/", label:"Bowling",icon:<Bowling/>},
-            { var:this.props.Data.Keeping, Path:"/keeping/", label:"Keeping",icon:<Keeping/>}
+            { var:this.props.Data.Batting, Path:"/batting/", label:this.props.TITLES.BATTING,icon:<Batting/>},
+            { var:this.props.Data.Bowling, Path:"/bowling/", label:this.props.TITLES.BOWLING,icon:<Bowling/>},
+            { var:this.props.Data.Keeping, Path:"/keeping/", label:this.props.TITLES.KEEPING,icon:<Keeping/>}
         ]
      } 
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
-            <div className="Section_Home_RankingPods">
-                <Title Title={this.props.Title}/>
-                <Row class="PodRow HomeRankingPods">
+                <Row class="PodRow HomeRankingPods"> 
+                        <Title Title={this.props.Title}/>
                             {
                                 stones.map((stone,i)=>{
                                     let Delay= 200*i;
@@ -40,13 +39,13 @@ export default class Home_Section_Rankings extends Component {
                                                 total={stone.var}
                                                 label={stone.label}
                                                 icon={stone.icon}
+                                                ProNoun={this.props.SUBS.PREVIOUS}
                                             />
                                         </Animated>
                                     )
                                 }) 
                             }
                 </Row>
-            </div>
             )
         }
     } 

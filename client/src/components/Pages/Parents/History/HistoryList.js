@@ -8,11 +8,12 @@ export default class History extends Component {
 
     return (
             <ListHistory  
-                    Title="Complete History"
+                    
                     SelectedID={null}
                     List={this.props.DATA.CLEAN}
                     Years={this.props.DATA.CAREER.Career.batting.overTheYears}
                     Match={this.props.match}
+                    {... this.props}
             />
         
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FetchData } from "../../actions/Load";
 
 const Content = new FetchData();
-
+let LABEL;
 export default  class Loading extends Component {
     componentWillMount() {} 
 
@@ -20,13 +20,16 @@ export default  class Loading extends Component {
     }
     
     render() {
+        LABEL=this.props.LABELS;
         return(
             <div className="container-fluid" id="LoadingScreen">
                     <div className="LoadingContainer">
-                        <div class="lds-hourglass"></div> 
-                        <h2>{this.props.LOAD.Labels.ProgressReport}</h2>
+                        <div className="lds-hourglass"></div> 
+                        <h2>
+                            {LABEL.LOADING.PRONOUN} {LABEL.LOADING.PLAYERPRONOUN}
+                        </h2>
                     </div>
             </div>
         )
     }
-}
+} 

@@ -41,19 +41,19 @@ export default class PlayedFor extends Component {
     if(this.props.num !== null){
         Teams= Teams.slice(0,this.props.num); 
         CTA = <ShowMore 
-                    Label="See All"
+                    Label={this.props.CTA.ALL}
                     class=" CTA ButtonRight"
                     Player={this.props.match.params.playerid}
                     Path="playedFor/"
                 />
     }
-   
+    
     
       return(
           <div className={this.props.col}>
             <div className="ContentContainer canvas1">
                 <div className="Header">
-                    <SubTitle Title={"Teams"} />
+                    <SubTitle Title={this.props.Label} />
                     <Avatar className="Avatar" >{Num}</Avatar>
                 </div>
                 <div className="Body">
@@ -61,8 +61,8 @@ export default class PlayedFor extends Component {
                         <TableHead>
                             <TableRow>
                                 <TableCell>#</TableCell>
-                                <TableCell>Team</TableCell>
-                                <TableCell>Games</TableCell>
+                                <TableCell>{this.props.TITLES.TEAMS}</TableCell>
+                                <TableCell>{this.props.TITLES.GAMES}</TableCell>
                             </TableRow>
                         </TableHead> 
                         <TableBody>

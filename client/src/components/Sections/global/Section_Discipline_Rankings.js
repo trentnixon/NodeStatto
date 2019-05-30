@@ -31,7 +31,7 @@ export default class Section_Rankings extends Component {
         RankingValue=[{ name:"Ranking",data:[] }];
         Labels=[];
 
-        // eslint-disable-next-line
+        // eslint-disable-next-line 
         this.props.Rankings.map((rank,i)=>{
             //console.log(rank)
             RankingValue[0].data.push(rank.rank);
@@ -51,8 +51,8 @@ export default class Section_Rankings extends Component {
                 <div className="Section_Rankings" >
                     <Title Title={this.props.Title}/>
                     <SubTitle Title={this.props.SubTitle} />
-                    <Row>
-                        <div className="ContentContainer canvas1 col-9">
+                    <Row class=""> 
+                        <div className="ContentContainer graph canvas1">
                             <div className="Body">
                                         <Chart 
                                             series={this.state.Data}
@@ -63,7 +63,7 @@ export default class Section_Rankings extends Component {
                                     </div>
                             </div>
 
-                            <div className="ContentContainer canvas1 col-3 ">
+                            <div className="ContentContainer icons canvas1">
                                     <div className="Body RankingInt">
                                         <RankingPods 
                                             Rankings={this.props.Rankings} 

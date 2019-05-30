@@ -34,13 +34,20 @@ export function FetchData(){
 
     this.start = () => {
         // Set UI to LOAD
-        store.dispatch({ type:"INT_LOAD", payload:true });
+        store.dispatch({ type:"INT_LOAD", payload:true }); 
         console.log('INT_LOAD')
         // Ping LMS to fetch the players Data
         axios.get("/api/ping/"+this.id)
         .then(res => {  
-            if(res.data.length !== 0){
+            
+            if(res.data.length !== 0){ 
                 
+                // clear out Array
+                this.StoredData = [];
+                this.FormGuide = []; 
+
+                console.log(res.data);
+
                 // Set UI and Data 
                 this.STOREUITRUE('INT_DATA_TRUE', true);
                 console.log('DATA_RECEIVED');
@@ -129,7 +136,7 @@ export function FetchData(){
     this.STOREUITRUE = (Path,Value)=>{ store.dispatch({ type:Path, payload:Value }) }
   
     this.SetStattoReady = (LOAD) =>{
-
+       //console.log(LOAD);
         if( LOAD.CAREER === true && LOAD.CLEAN === true &&
             LOAD.FORAGAINST === true && LOAD.META === true)
             {

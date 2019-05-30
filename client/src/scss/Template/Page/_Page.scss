@@ -1,2 +1,15 @@
 @import "./PageHeader";
-@import "./Rows";
+
+// Section Structure
+
+/* 
+    > .Section
+            >.row
+                > Type
+                > .ContentContainer
+                > .ContentType
+                    > Content
+
+*/
+
+@import "./Sections";  

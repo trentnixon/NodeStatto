@@ -4,6 +4,7 @@
     background-color: $pureWhite ;
     border:1px solid rgba(0, 0, 0, 0.12);
     border-radius: 5px;
+    padding: 2% 3%;
    
     .Header{ 
         padding: 5px 15px;
@@ -46,12 +47,11 @@
  
 
 
-
-
 // Chart Containers
 .ChartContainer{
         padding-bottom: 0;
         border:1px solid rgba(0, 0, 0, 0.12);
+      
         .Header{
             padding: 5px 15px;
             margin: -15px;
@@ -86,6 +86,16 @@
             text-align: right;
         }
 }
+
+
+// Class Specific
+.graph{ 
+    flex-grow:1;
+}
+.icons{
+    flex-grow: 1;
+}
+
 
 
 // Inverted Container

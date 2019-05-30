@@ -71,7 +71,6 @@ export default class AutoComplete extends React.Component{
   }
 
   onSuggestionSelected(e,v){
-    console.log(v.suggestion);
     FetchSelectedTeam(v.suggestion)
   }
   render() {
@@ -79,7 +78,7 @@ export default class AutoComplete extends React.Component{
    // console.log(this.props.LOGIN)
     // Autosuggest will pass through all these props to the input.
     const inputProps = {
-      placeholder: 'Select a Team',
+      placeholder: this.props.LABELS.LOGIN.SELECTTEAM,
       value,
       onChange: this.onChange
     };

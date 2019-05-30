@@ -17,12 +17,16 @@ import ComponentBowlingFor from "./Parents/Bowling/for";
 import ComponentBowlingAVG from "./Parents/Bowling/averages";
 import ComponentKeeping from "./Parents/Keeping/Keeping";
 import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
+import ComponentSearch from "./Parents/search/search";
+import ComponentAbout from "./Parents/about/about";
 // Icons
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShowChart from '@material-ui/icons/ShowChart';
 import MultilineChart from '@material-ui/icons/MultilineChart';
 import People from '@material-ui/icons/People';
+import Settings from '@material-ui/icons/Settings';
+import Search from '@material-ui/icons/Search';
 import  {Batting, Bowling,Keeping, Wickets,Runs} from "../Icons/icons";
 
 
@@ -102,20 +106,31 @@ const  Navigation =[
       }
     ],
     "icon":<Keeping/>
-  } 
+  },
+  {
+    "label":"Change Player",
+    "path":"search",
+    "icon":<Search/>,
+    "children":null
+  },
+  {
+    "label":"About",
+    "path":"settings",
+    "icon":<Settings/>,
+    "children":null
+  }
 ]  
 export default class Statto extends Component {
   componentWillMount() { }  
   render() {
-    
+    console.log(this.props)
     return (
       <Router>
           <Frame {... this.props} Navigation={Navigation}>
-            <div id="display-statto-app">
+            <div id="display-statto-app"> 
                 
                 <Route  exact path='/:id' render={()=> <ComponentHome {... this.props}/> }/>
                 <Route  exact path='/:id/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
-
 
                 <Route   path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
           
@@ -132,12 +147,25 @@ export default class Statto extends Component {
                 <Route  exact path="/:id/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
 
                 <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
+
+                <Route  exact path="/:id/search/" render={()=> <ComponentSearch {... this.props}/> }/>
+                <Route  exact path="/:id/settings/" render={()=> <ComponentAbout {... this.props}/> }/>
+
                 <Route  exact path="/:id/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
                 <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
-
+                
             </div>
           </Frame> 
       </Router>
     ) 
   }
 }
+
+
+/**
+ *  COMPONENT NOTES
+ *  
+ *  
+ *  
+ * 
+ */

@@ -53,11 +53,12 @@ header{
             flex-grow: 1;
             display: flex;
             justify-content: flex-end;
-
+            >div{ background-color: $h2Color;}
             h1{
                 font-size: 1.1em;
                 line-height: 2.3em;
                 margin: 0 20px 0 10px;
+                color: $h2Color;
             }
             button{
                 a{

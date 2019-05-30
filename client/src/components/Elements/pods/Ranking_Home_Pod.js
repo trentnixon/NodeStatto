@@ -46,8 +46,8 @@ export default class RankingHomePod extends Component {
                 <PodBody 
                     TopLine={this.value(this.props.total,1) }
                     Icon = {this.FindArrow(this.props.total)}
-                    BottomLine={"Previous : " +  this.value(this.props.total,2)}
-                />
+                    BottomLine={this.props.ProNoun +" : " +  this.value(this.props.total,2)}
+                /> 
                 <PodFooter />
           </Pod>
         ) 

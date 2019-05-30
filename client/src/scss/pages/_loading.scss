@@ -4,21 +4,24 @@
     width: 100vw;
     background-image: url(https://www.transparenttextures.com/patterns/circles.png);
     background-color: $ColorBase;
-    overflow: hidden;
-    padding: 30vh 20vw 0 ;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
     .LoadingContainer{
-  
-      padding: 5%;
       background-color: #5a5a5a;
       border-radius: 10px;
- 
+      padding: 3%;
+      width: 80vw;
+      -webkit-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
+      box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
       
 
-    -webkit-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 7px 28px -8px rgba(0,0,0,0.75);
 
       h2{
         color: white;

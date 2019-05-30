@@ -38,7 +38,7 @@ export default class RankingPods extends Component {
         return (
                 <div className="RankingPods" >
                     { 
-                        FetchRankings.map((rank,i)=>{
+                        FetchRankings.map((rank,i)=>{ 
                             let Delay= 200*i;
                             return(
                                 <Animated  

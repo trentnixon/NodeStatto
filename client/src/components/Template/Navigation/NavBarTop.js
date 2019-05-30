@@ -32,7 +32,6 @@ const NavBarTop = (props) => (
             </div>
             <div className="UserName">
             <div>
-             
                 <Avatar
                     alt=""
                     src="https://www.lastmanstands.com/player-uploads/47917.jpg"
