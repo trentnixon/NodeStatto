@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import Row from "../Template/Page/Row";
-import Pod from "../Template/Page/Pod";
+import Pod from "../Elements/pods/Pod_Outer_Wrapper";
+
 
 import Title from "../Elements/type/PageTitle";
 import SubTitle from "../Elements/type/PageSubTitle";
@@ -15,15 +16,15 @@ export default class Section_Default extends Component {
         return ( 
                 <div className="Section_****" >
                     <Row class="ContainerRow">
-                        <Pod col="col-md-12" > 
+                        <Pod col="" > 
                             <Title Title={this.props.Title}/>
                             <SubTitle Title={this.props.SubTitle} />
                         
                             <Row>
-                                <Pod col="col-md-*" > 
+                                <Pod col="" > 
                                         
                                 </Pod>
-                                <Pod col="col-md-*" > 
+                                <Pod col="" > 
                                     
                                 </Pod>
                             </Row>

@@ -29,23 +29,23 @@ export default class BattingOverview extends Component {
       <Container>  
         <SectionHeader   h1={this.props.TITLES.OVERVIEW} h2={this.props.TITLES.BATTING}   /> 
 
-        <SectionContainer>
+        <SectionContainer class="Section_Batting_Rankings complete">
           <SectionRankings  
             Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
             Title={this.props.TITLES.RANKINGS}
-            SubTitle={this.props.DESC.DESCRANKINGS} 
+            SubTitle={this.props.DESC.DESCRANKINGS}  
             {... this.props}
           />
         </SectionContainer>
 
-        <SectionContainer>
-
+        <SectionContainer class="Section_Batting_ForAgainst complete">
+ 
           <Tabber 
             Tabs={
               [
                 {
                   Title:this.props.SUBS.STATS,
-                  Component:<SectionCareerBatting  Data={this.props.DATA.CAREER.Career.batting}  Career={this.props.DATA.CLEAN}/>,
+                  Component:<SectionCareerBatting  {... this.props} Data={this.props.DATA.CAREER.Career.batting}  Career={this.props.DATA.CLEAN}/>,
                   Icon:<Batting />
                 },
                 {
@@ -59,10 +59,11 @@ export default class BattingOverview extends Component {
 
         </SectionContainer>
 
-        <SectionContainer>
+        <SectionContainer class="Section_Batting_Milestones complete ">
           <SectionMilestonesBatting  
             Data={this.props.DATA.CAREER.Career.batting} 
             Title={this.props.TITLES.MILESTONE}
+            {... this.props}
           />
         </SectionContainer>
 

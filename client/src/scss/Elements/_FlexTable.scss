@@ -1,0 +1,55 @@
+.Table{
+    .tr{
+        flex : 1 0 100% !important;
+  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        align-content: flex-start;
+        
+        
+        line-height: 3em;
+
+
+        .th{
+            flex: 1 0 33%;
+            text-indent: 5%;
+       
+            font-size: .8em;
+            color: $h1Color;
+        }
+
+        .td{
+            border-top: 1px solid rgba(224, 224, 224, 1);
+            
+            flex: 1 0 33%;
+            text-indent: 5%;
+            font-size: .9em;
+        }
+
+    }
+
+    .Footer{
+        justify-content: flex-end;
+        display: flex;
+        background-color: $ColorBase;
+        padding: 0 5%;
+    }
+
+    @media only screen  and (max-width : 576px) {
+        .th:first-child,.td:first-child{ 
+                flex: 1 0 100%;
+             
+                text-indent: 3%;
+                background-color: $ColorBase;
+                color: $white;
+            
+        }
+        .Footer{
+            background-color: $white;
+        }
+
+    }
+}

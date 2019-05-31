@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+import Row from "../../Template/Page/Row";
+/*
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+*/
 
 import ShowMore from  "../Buttons/ShowMore";
 
@@ -23,7 +26,7 @@ let stats=[
     },
     {
         Name:["NO"],
-        Title:"Not Out's"
+        Title:"Not Out's" 
     },{
         Name:["AVG"],
         Title:"Average"
@@ -59,7 +62,7 @@ export default class ForandAgainstTable extends Component {
                 }
             })
 
-           /console.log(pointer)
+           console.log(pointer)
         return data[pointer].Team + ' (' + data[pointer][variable] + ')';
       }
       shouldComponentUpdate(nextProps, nextState){ return true;}
@@ -69,44 +72,37 @@ export default class ForandAgainstTable extends Component {
         //console.log(this.props);
 
         return (
-                <div className="Table " id="RecentScores" >
-                   <Table >
-                        <TableHead>
-                        <TableRow>
-                            <TableCell></TableCell>
-                            <TableCell align="right">For</TableCell>
-                            <TableCell align="right">Against</TableCell>
-                        </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {
+                <Row class="Table canvas1"> 
+                    <div className="tr">
+                        <div className="th"></div>
+                        <div className="th">{this.props.SUBS.FOR}</div>
+                        <div className="th">{this.props.SUBS.AGAINST}</div>
+                    </div>
+                    {
                                 // eslint-disable-next-line
                                 this.state.stats.map((game,i)=>{
                                     return(
-                                            <TableRow key={i}>
-                                                <TableCell component="th" scope="row">{game.Title}</TableCell>
-                                                <TableCell align="right">
+                                            <div className="tr" key={i}>
+                                                <div className="td">{game.Title}</div>
+                                                <div className="td">
                                                     { this.find(this.props.Data.FOR,game.Name[0],0 ) }
-                                                </TableCell>
-                                                <TableCell align="right">
+                                                </div>
+                                                <div className="td">
                                                     { this.find(this.props.Data.AGAINST,game.Name[0],0 ) }
-                                                </TableCell>
-                                            </TableRow>
+                                                </div>
+                                            </div>
                                     )
                                 })
                             }
-                        </TableBody>
-                    </Table>
-
                         <div className="Footer">
                                     <ShowMore 
-                                        Label="Full List"
+                                        Label={this.props.CTA.FULL}
                                         class=" CTA ButtonRight"
                                         Player={this.props.match.params.playerid}
                                         Path="batting/foragainst"
                                     />
                         </div>
-                </div>
+                </Row>
             )
         }
     } 

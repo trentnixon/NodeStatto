@@ -10,7 +10,7 @@ const InitialState ={
                 PRELOADTEAMS:"Fetching Teams",
                 PRONOUN:"Fetching",
                 PLAYERROSTER:"Player Roster",
-                PLAYERPRONOUN:"Player"
+                PLAYERPRONOUN:"Player" 
             },
             LOGIN:{
                 SELECTTEAM:"Select a Team",
@@ -39,6 +39,8 @@ const InitialState ={
                     CATCHES:"Catches",
                     PREVIOUS:"Previous",
                     NEXT:"Next",
+                    FOR:"For",
+                    AGAINST:"Against",
                     FORAGAINST:"For and Against",
                     STATS:"Stats"
                 },
@@ -52,7 +54,8 @@ const InitialState ={
                 },
                 CTA:{
                     ALL:"See All",
-                    MORE:"More"
+                    MORE:"More",
+                    FULL:"Full List"
                 }
             },
         },

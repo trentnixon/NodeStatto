@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-import Pod from "../../Template/Page/Pod";
+// import Pod from "../../Template/Page/Pod";
+import Pod from "./Pod_Outer_Wrapper";
 import Title from "../type/PageTitle";
 import SubTitle from "../type/PageSubTitle";
 
@@ -19,7 +20,7 @@ let FetchRankings=[{
 }]
 
 export default class RankingPods extends Component {
-
+ 
     componentWillMount() { } 
 
     findValue(data,type){

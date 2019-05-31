@@ -1,3 +1,42 @@
+// Form Select Elements
+.Form_Selector{
+  //  background-color: green;
+    justify-content: flex-end !important;
+    margin-bottom: 7px;
+
+    #Pod{
+        flex: 0 0 50% !important;
+
+        .Inner{
+            border:unset !important;
+            padding: 0 !important;
+                
+            .YearSelector{
+                width: 100%;
+                z-index: 100;
+            
+                label{
+                    display: none;
+                }
+                .MuiOutlinedInput-input-41{
+                    width: stretch;
+                }
+                .MuiSelect-root-170{
+                    div{
+                        width: auto;
+                    }
+                }
+                    
+            }
+        }
+
+    }
+ 
+    @media only screen  and (max-width : 576px) {
+        #Pod{  flex: 0 0 100% !important; }
+    }
+}
+
 // Filter Pod
 
 .filter{
@@ -11,22 +50,7 @@
 
 
 
-.YearSelector{
-    width: 50%;
 
-    z-index: 100;
-
-    label{
-        margin: -8px 0 0 13px;
-        font-size: 1.05em;
-    }
-    .MuiSelect-root-170{
-        div{
-            width: auto;
-        }
-    }
-        
-}
 
 
 .GlobalSelect{

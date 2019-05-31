@@ -2,36 +2,34 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
+import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
+import ShowMore from "../../Elements/Buttons/ShowMore";
 
 const stones=[
-    { var:"ducks",label:"Ducks"},
-    { var:"s_10",label:"< 10"},
-    { var:"s_20",label:"20 odd"},
-    { var:"s_30",label:"30 odd"},
-    { var:"s_40",label:"40 odd"},
-    { var:"s_50",label:"50 +"},
-    { var:"s_100",label:"100 +"}
+    { var:"ducks",label:"Ducks", path:"batting/scores"},
+    { var:"s_10",label:"< 10",   path:"batting/scores"},
+    { var:"s_20",label:"20 odd", path:"batting/scores"},
+    { var:"s_30",label:"30 odd", path:"batting/scores"},
+    { var:"s_40",label:"40 odd", path:"batting/scores"},
+    { var:"s_50",label:"50 +",   path:"batting/scores"},
+    { var:"s_100",label:"100 +", path:"batting/scores"}
 ]
 export default class Section_Rankings extends Component {
     componentWillMount() { }
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
+        let Path = this.props.match.params.playerid;
         return ( 
-            <div className="Section Section_Milestones">
-                <Row class="ContainerRow">
-                    <Pod col="col-md-12" > 
-                        <Title Title={this.props.Title}/>
-                        <SubTitle Title={this.props.SubTitle} />
-
-                        <Row>  
-                         
-                            {
-                                stones.map((stone,i)=>{
-                                   //console.log("Pod " + this.props.isVisible)
-                                    let Delay= 200*i;
+       
+            <Row class="PodRow">
+                <Title Title={this.props.Title}/>
+                <SubTitle Title={this.props.SubTitle} />
+                    {
+                        stones.map((stone,i)=>{
+                            //console.log("Pod " + this.props.isVisible)
+                            let Delay= 200*i;
                                     return(
                                         <Animated  
                                             key={i} 
@@ -39,27 +37,19 @@ export default class Section_Rankings extends Component {
                                             isVisible={this.props.isVisible}
                                             animationInDelay={Delay}
                                             animateOnMount={false}
-                                            className={IsVisable + " col-md-4"}
+                                            className={IsVisable}
                                         >
-                                            <Pod col="col-md-12" canvas="canvas1">
-                                            <div className="Header">
-                                                {stone.icon}
-                                            </div>
-                                            <div className="Body">
-                                                <SubTitle Title={this.props.Data[stone.var]} />
-                                                <Title  Title={stone.label} />
-                                            </div>
-                                            <div className="Footer">
-                                            </div>
-                                            </Pod>
+                                            <SingleValuePod 
+                                                label={stone.label}
+                                                total={this.props.Data[stone.var]}
+                                                icon= {stone.icon}
+                                                Footer = {<ShowMore Label={this.props.CTA.MORE} class=" CTA ButtonRight" Player={Path} Path={stone.path+"/"+stone.var} />}
+                                            />
                                         </Animated> 
                                     )
                                 }) 
                             }
-                        </Row>
-                    </Pod>
                 </Row>
-            </div>
             )
         }
     } 

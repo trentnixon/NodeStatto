@@ -8,10 +8,10 @@ import Typography from '@material-ui/core/Typography';
 
 function TabContainer(props) {
   return (
-      <div className="TabContainer canvas1" >
-        <Typography component="div" style={{ padding: 8 * 3 }}>
+      <div className="TabContainer" >
+        <Typography component="div">
             {props.children}
-            </Typography>
+        </Typography>
       </div>
    
   );
@@ -53,12 +53,12 @@ class ScrollableTabsButtonForce extends React.Component {
             indicatorColor="primary"
             textColor="primary"
             centered={true}
+            className="StattoTabs"
+
           >
           {
                this.props.Tabs.map((tab,i)=>{
-                   return(
-                        <Tab key={i} label={tab.Title} icon={tab.Icon} />
-                   )
+                   return( <Tab key={i} label={tab.Title} icon={tab.Icon} />)
                })
           }
           </Tabs>

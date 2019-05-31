@@ -1,0 +1,87 @@
+.RankingInt{
+    margin: .2% !important;
+    background-color:  #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 10px 25px;
+    background-color: #fff;
+    position: relative;
+    
+    flex: 1 30% !important; 
+
+    .RankingPods{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        align-content: space-evenly;
+        height: 100%;
+    
+        .Outer{
+            padding: 0 0 5px 0 !important;
+            width: 100%;
+            .Inner{
+                text-align: center;
+                border: none !important;
+                //background-color: transparent !important;
+            }
+        }
+    
+        .animated{ 
+            flex: 1 32%  !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: stretch;
+            .Inner{
+           // background-repeat: no-repeat;
+           // background-position:  left center;
+           // background-size: 10%;
+          
+    
+                h1{
+                    display: block;
+                    margin: 0 25%;
+                    width: 50%;
+                    padding: 5px 0;
+                }
+                h1.Page_Title{
+                    font-size: .9em !important; 
+                }
+    
+                h1.Page_Sub_Title{
+                    border-bottom: 1px solid;
+                    font-size: 1.6em !important;
+                    font-weight: 600; 
+                }
+         
+        }
+    }
+
+       // .animated:nth-child(1) .Inner{ background-image: url("/assets/icons/runs.svg"); }
+       // .animated:nth-child(2) .Inner{ background-image: url("/assets/icons/1414791.svg");}
+       // .animated:nth-child(3) .Inner{ background-image: url("/assets/icons/56301.svg");}
+    
+        // Media Queries
+        @media only screen and(max-width : 576px) {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            .animated{
+                flex: 1 0 100% !important;
+                .Inner{
+                    
+                    h1{
+                        width: 50%;
+                        margin: 0%;
+                    }
+                    h1.Page_Sub_Title{
+                        font-weight: bold !important;
+                        border: unset !important;
+                    }
+                }
+            }
+        }
+    }
+}

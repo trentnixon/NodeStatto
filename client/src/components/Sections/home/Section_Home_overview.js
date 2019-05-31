@@ -27,7 +27,7 @@ export default class Home_Overview extends Component {
                     stones.map((stone,i)=>{
                         let Delay= 200*i;
                     return( 
-                        <Animated  
+                        <Animated   
                             key={i} 
                             animationIn="fadeInUp"
                             isVisible={this.props.isVisible}

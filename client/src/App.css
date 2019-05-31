@@ -21,25 +21,35 @@ p {
   background-image: url("/assets/bg/absurdity.png"); }
 
 .RankingInt {
-  height: 100%; }
+  margin: .2% !important;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 10px 25px;
+  background-color: #fff;
+  position: relative;
+  flex: 1 30% !important; }
   .RankingInt .RankingPods {
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: stretch;
-    align-content: space-evenly; }
+    align-content: space-evenly;
+    height: 100%; }
     .RankingInt .RankingPods .Outer {
-      padding: 0 0 5px 0 !important; }
+      padding: 0 0 5px 0 !important;
+      width: 100%; }
       .RankingInt .RankingPods .Outer .Inner {
         text-align: center;
-        border: none !important;
-        background-color: transparent !important; }
-    .RankingInt .RankingPods .animated .Inner {
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 25%; }
+        border: none !important; }
+    .RankingInt .RankingPods .animated {
+      flex: 1 32%  !important;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch; }
       .RankingInt .RankingPods .animated .Inner h1 {
         display: block;
         margin: 0 25%;
@@ -51,15 +61,18 @@ p {
         border-bottom: 1px solid;
         font-size: 1.6em !important;
         font-weight: 600; }
-    .RankingInt .RankingPods .animated:nth-child(1) .Inner {
-      background-image: url("/assets/icons/runs.svg"); }
-    .RankingInt .RankingPods .animated:nth-child(2) .Inner {
-      background-image: url("/assets/icons/1414791.svg"); }
-    .RankingInt .RankingPods .animated:nth-child(3) .Inner {
-      background-image: url("/assets/icons/56301.svg"); }
     @media only screen and (max-width: 576px) {
-      .RankingInt .RankingPods .animated .Inner {
-        background-size: 15%; } }
+      .RankingInt .RankingPods {
+        flex-direction: row !important;
+        flex-wrap: wrap !important; }
+        .RankingInt .RankingPods .animated {
+          flex: 1 0 100% !important; }
+          .RankingInt .RankingPods .animated .Inner h1 {
+            width: 50%;
+            margin: 0%; }
+          .RankingInt .RankingPods .animated .Inner h1.Page_Sub_Title {
+            font-weight: bold !important;
+            border: unset !important; } }
 
 #Header_Slider {
   text-align: center;
@@ -75,20 +88,32 @@ p {
   #Header_Slider .slick-slider .slick-list .slick-slide .details h4 {
     font-size: 1em; }
 
+.Form_Selector {
+  justify-content: flex-end !important;
+  margin-bottom: 7px; }
+  .Form_Selector #Pod {
+    flex: 0 0 50% !important; }
+    .Form_Selector #Pod .Inner {
+      border: unset !important;
+      padding: 0 !important; }
+      .Form_Selector #Pod .Inner .YearSelector {
+        width: 100%;
+        z-index: 100; }
+        .Form_Selector #Pod .Inner .YearSelector label {
+          display: none; }
+        .Form_Selector #Pod .Inner .YearSelector .MuiOutlinedInput-input-41 {
+          width: stretch; }
+        .Form_Selector #Pod .Inner .YearSelector .MuiSelect-root-170 div {
+          width: auto; }
+  @media only screen and (max-width: 576px) {
+    .Form_Selector #Pod {
+      flex: 0 0 100% !important; } }
+
 .filter .Inner {
   padding: 15px 15px  0 !important; }
 
 .results {
   text-align: right !important; }
-
-.YearSelector {
-  width: 50%;
-  z-index: 100; }
-  .YearSelector label {
-    margin: -8px 0 0 13px;
-    font-size: 1.05em; }
-  .YearSelector .MuiSelect-root-170 div {
-    width: auto; }
 
 .GlobalSelect {
   width: 100%;
@@ -214,17 +239,25 @@ p {
 .PodRow .animated {
   margin: 0;
   padding: 0; }
-  .PodRow .animated #Pod {
-    padding: 0px; }
-    .PodRow .animated #Pod .Inner h1 {
+
+.PodRow #Pod {
+  padding: 0px;
+  margin: .2% !important; }
+  .PodRow #Pod .Inner {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 10px 25px;
+    background-color: #fff;
+    position: relative; }
+    .PodRow #Pod .Inner h1 {
       color: #969696;
       font-size: 1.1em; }
-    .PodRow .animated #Pod .Inner h2 {
+    .PodRow #Pod .Inner h2 {
       color: #5a5a5a;
       font-size: 2.5em;
       margin: 0;
       line-height: 1.2em; }
-    .PodRow .animated #Pod .Inner h3 {
+    .PodRow #Pod .Inner h3 {
       color: #5a5a5a;
       font-size: 1em;
       margin: 0;
@@ -233,52 +266,98 @@ p {
       border-top: 1px solid;
       padding-top: 5px;
       margin-top: 5px; }
-    .PodRow .animated #Pod .Inner button {
+    .PodRow #Pod .Inner button {
       float: right; }
-    .PodRow .animated #Pod .IconPod .Header img {
-      width: 30px;
-      float: right;
-      margin: 0 15px 0 0; }
-    .PodRow .animated #Pod .IconPod .Body h1 {
-      text-align: center;
+  .PodRow #Pod .IconPod .Header img {
+    width: 30px;
+    float: right;
+    margin: 0 15px 0 0; }
+  .PodRow #Pod .IconPod .Body h1 {
+    text-align: center;
+    margin: 0; }
+  .PodRow #Pod .IconPod .Body h1.Page_Sub_Title {
+    font-size: 1.8em !important;
+    color: #709dce !important;
+    border-bottom: 1px solid;
+    margin: 0 0 0px 0;
+    padding: 0 0 0px 0; }
+  .PodRow #Pod .IconPod .Body h1.Page_Title {
+    font-size: 1em !important;
+    font-weight: 600; }
+  .PodRow #Pod .IconPod .Footer {
+    text-align: right; }
+    .PodRow #Pod .IconPod .Footer button {
+      float: unset !important; }
+    .PodRow #Pod .IconPod .Footer a {
+      margin: 0;
+      padding: 0; }
+  .PodRow #Pod .IconPod .RankingIcon {
+    float: right;
+    font-size: 3em; }
+  .PodRow #Pod .SingleLine .Body {
+    display: flex; }
+    .PodRow #Pod .SingleLine .Body h1 {
+      width: 50%;
       margin: 0; }
-    .PodRow .animated #Pod .IconPod .Body h1.Page_Sub_Title {
-      font-size: 1.8em !important;
-      color: #709dce !important;
-      border-bottom: 1px solid;
-      margin: 0 0 0px 0;
-      padding: 0 0 0px 0; }
-    .PodRow .animated #Pod .IconPod .Body h1.Page_Title {
-      font-size: 1em !important;
-      font-weight: 600; }
-    .PodRow .animated #Pod .IconPod .Footer {
+    .PodRow #Pod .SingleLine .Body h1 + h1 {
       text-align: right; }
-      .PodRow .animated #Pod .IconPod .Footer button {
-        float: unset !important; }
-      .PodRow .animated #Pod .IconPod .Footer a {
-        margin: 0;
-        padding: 0; }
-    .PodRow .animated #Pod .IconPod .RankingIcon {
-      float: right;
-      font-size: 3em; }
-    .PodRow .animated #Pod .SingleLine .Body {
-      display: flex; }
-      .PodRow .animated #Pod .SingleLine .Body h1 {
-        width: 50%;
-        margin: 0; }
-      .PodRow .animated #Pod .SingleLine .Body h1 + h1 {
-        text-align: right; }
-    .PodRow .animated #Pod .Zeroed {
-      padding: 0;
-      margin: 0; }
-    .PodRow .animated #Pod .FillPod .fill {
-      background-color: rgba(112, 157, 206, 0.1);
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      bottom: 15px;
-      margin: -15px;
-      transition: height 0.25s ease-in; }
+  .PodRow #Pod .Zeroed {
+    padding: 0;
+    margin: 0; }
+
+.PodRow #Pod .FillPod {
+  overflow: hidden; }
+  .PodRow #Pod .FillPod .Body h3 {
+    font-weight: 100; }
+  .PodRow #Pod .FillPod .fill {
+    background-color: rgba(112, 157, 206, 0.1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 15px;
+    margin: 0 -25px -15px;
+    transition: height 0.25s ease-in; }
+
+@media only screen and (max-width: 576px) {
+  .PodRow #Pod {
+    flex: 1 0 100% !important; }
+    .PodRow #Pod .FillPod {
+      padding: 5px 10px !important;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center; }
+      .PodRow #Pod .FillPod .fill {
+        margin: 0 -10px -15px; }
+      .PodRow #Pod .FillPod .Header {
+        flex: 1 0 30%;
+        background-color: transparent !important;
+        padding: 0 !important; }
+        .PodRow #Pod .FillPod .Header h1 {
+          border-bottom: unset !important;
+          color: #969696 !important;
+          font-size: 1.1em !important; }
+      .PodRow #Pod .FillPod .Body {
+        flex: 1 0 67%;
+        display: flex;
+        padding: 0 10px !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: center; }
+        .PodRow #Pod .FillPod .Body h2 {
+          font-size: 1.6em !important;
+          padding: 0 0px !important;
+          margin: 0 0 5px 0 !important;
+          font-weight: 100; }
+        .PodRow #Pod .FillPod .Body h3 {
+          margin: 0 !important;
+          padding: 0 0 10px 0 !important;
+          color: #969696 !important;
+          border: unset; } }
 
 .PodRow .animated #Pod .Inner {
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -379,6 +458,41 @@ p {
           color: #969696 !important; }
       .PodRow .animated .RankingPod h1 img {
         display: none; } }
+
+.Table .tr {
+  flex: 1 0 100% !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+  line-height: 3em; }
+  .Table .tr .th {
+    flex: 1 0 33%;
+    text-indent: 5%;
+    font-size: .8em;
+    color: #969696; }
+  .Table .tr .td {
+    border-top: 1px solid #e0e0e0;
+    flex: 1 0 33%;
+    text-indent: 5%;
+    font-size: .9em; }
+
+.Table .Footer {
+  justify-content: flex-end;
+  display: flex;
+  background-color: #709dce;
+  padding: 0 5%; }
+
+@media only screen and (max-width: 576px) {
+  .Table .th:first-child, .Table .td:first-child {
+    flex: 1 0 100%;
+    text-indent: 3%;
+    background-color: #709dce;
+    color: #f5f5f5; }
+  .Table .Footer {
+    background-color: #f5f5f5; } }
 
 /*- Build up Dom Elements -*/
 #Login {
@@ -492,7 +606,7 @@ p {
     #Login .LoginFormContainer .react-autosuggest__container {
       position: relative; }
     #Login .LoginFormContainer .react-autosuggest__input {
-      width: -webkit-fill-available;
+      width: stretch;
       height: 50px;
       padding: 10px 20px;
       font-family: Helvetica, sans-serif;
@@ -808,7 +922,8 @@ body {
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: stretch;
-        align-content: flex-start; }
+        align-content: flex-start;
+        overflow: hidden; }
         body #root #Statto #Frame section h1.Page_Title {
           font-size: 1.3em;
           color: #969696;
@@ -830,13 +945,26 @@ body {
             margin: 0 .2%;
             padding: 0;
             flex: 1 0 32.5%; }
-      body #root #Statto #Frame #StattoTabs header {
-        position: relative;
-        background-color: #f5f5f5;
-        padding: 10px 0 0;
-        box-shadow: unset; }
-        body #root #Statto #Frame #StattoTabs header img {
-          height: 30px; }
+      body #root #Statto #Frame .Section_Batting_Rankings > .Outer {
+        flex: 1 60% !important; }
+      body #root #Statto #Frame .Section_Batting_Rankings .Inner {
+        padding: 5px; }
+      body #root #Statto #Frame #StattoTabs {
+        background-color: transparent; }
+        body #root #Statto #Frame #StattoTabs header {
+          position: relative;
+          background-color: #f5f5f5;
+          padding: 10px 0 0;
+          box-shadow: unset; }
+          body #root #Statto #Frame #StattoTabs header .StattoTabs img {
+            height: 30px;
+            color: #709dce; }
+          body #root #Statto #Frame #StattoTabs header .StattoTabs span {
+            color: #709dce; }
+        body #root #Statto #Frame #StattoTabs .TabIndicator-colorPrimary-177 {
+          background-color: #709dce; }
+        body #root #Statto #Frame #StattoTabs .TabContainer {
+          padding: 10px 0; }
       body #root #Statto #Frame .TableTabber div {
         width: 100%; }
         body #root #Statto #Frame .TableTabber div table tr th, body #root #Statto #Frame .TableTabber div table tr td {
@@ -849,3 +977,13 @@ body {
       height: 15px;
       list-style: none;
       margin: 2px 1px; }
+
+/**  Production **/
+.complete {
+  background-color: transparent; }
+
+.InProgress {
+  background-color: lightgoldenrodyellow; }
+
+.ToDo {
+  background-color: lightpink; }

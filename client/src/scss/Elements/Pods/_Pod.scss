@@ -23,10 +23,18 @@
     .animated{ 
         margin: 0; 
         padding: 0; 
-        #Pod{
-            padding: 0px;
+    }
+    #Pod{
+        padding: 0px;
+        margin: .2% !important;
             // Generic Inner Styles that are used by ALL Pods
-            .Inner{                
+            .Inner{            
+                border:1px solid rgba(0, 0, 0, 0.12);
+                border-radius: 5px;
+                padding: 10px 25px;
+                background-color: #fff;
+                position: relative;  
+
                 @import "./PodType";
                 @import "./PodButtons";
             }
@@ -35,10 +43,10 @@
             @import "./Type_IconPods";
             @import "./Type_SingleLinePod";
             @import "./Type_Zeroed";
-            @import "./Type_FilledPod";  
+             
         }
-    }
-
+   
+    @import "./Type_FilledPod"; 
     @import "./Pod_Generic";
     @import "./Type_RankingPod";
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
-// import Pod from "../../Template/Page/Pod";
+import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
 
 import RankingPods from "../../Elements/pods/RankingPods";
 import Title from "../../Elements/type/PageTitle";
@@ -48,31 +48,28 @@ export default class Section_Rankings extends Component {
     render() {
        //console.log(this.props.Rankings)  
         return ( 
-                <div className="Section_Rankings" >
+                <Row class="PodRow">
                     <Title Title={this.props.Title}/>
                     <SubTitle Title={this.props.SubTitle} />
-                    <Row class=""> 
-                        <div className="ContentContainer graph canvas1">
-                            <div className="Body">
-                                        <Chart 
-                                            series={this.state.Data}
-                                            Labels={this.state.Labels}
-                                            Created={this.state.Created} 
-                                            visable={this.props.isVisible}
-                                        />
-                                    </div>
-                            </div>
-
-                            <div className="ContentContainer icons canvas1">
-                                    <div className="Body RankingInt">
-                                        <RankingPods 
-                                            Rankings={this.props.Rankings} 
-                                            visable={this.props.isVisible}
-                                        />
-                            </div>
-                        </div>
-                    </Row>
-                </div> 
+                   
+                    <div className="RankingInt canvas1">
+                        <RankingPods 
+                                Rankings={this.props.Rankings} 
+                                visable={this.props.isVisible}
+                        />
+                    </div>
+                    
+                    <Pod canvas="canvas1">
+                        <Chart 
+                            series={this.state.Data}
+                            Labels={this.state.Labels}
+                            Created={this.state.Created} 
+                            visable={this.props.isVisible}
+                        />
+                    </Pod>
+                   
+                    
+                </Row>
             )
         }
     } 

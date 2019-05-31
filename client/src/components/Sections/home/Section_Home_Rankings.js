@@ -6,8 +6,7 @@ import Title from "../../Elements/type/PageTitle";
 
 // Icons
 import  {Batting,Bowling,Keeping} from "../../Icons/icons"; 
-// Pod
-import RankingPod from "../../Elements/pods/Ranking_Home_Pod" 
+import RankingPod from "../../Elements/pods/RankingHomePod";
 
 let stones=[];
 export default class Home_Section_Rankings extends Component {

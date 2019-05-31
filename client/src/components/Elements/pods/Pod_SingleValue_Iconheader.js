@@ -8,7 +8,7 @@ import PodFooter from "./PodStructure/Pod_Footer";
 
 const IconPod = (props) => (
 
-    <Pod col={props.col} type="IconPod" canvas="canvas1">
+    <Pod type="IconPod" canvas="canvas1">
         <PodHeader icon={props.icon} label ={props.label} />
         <PodSingleValueBody Value={props.total}/>
         <PodFooter>{props.Footer}</PodFooter>
@@ -16,4 +16,4 @@ const IconPod = (props) => (
 
 );
 export default IconPod;
-  
+   

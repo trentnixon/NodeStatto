@@ -1,14 +1,29 @@
 #StattoTabs{
-
+    background-color:  transparent;
     header{
         position: relative;
         background-color:$white;
         padding: 10px 0 0;
         box-shadow: unset;
 
-        img{
-            height: 30px;
+        
+
+        .StattoTabs{
+            img{
+                height: 30px;
+                color: $ColorBase;
+            }
+            span{
+                color: $ColorBase;
+            }
         }
+    }
+
+    .TabIndicator-colorPrimary-177{
+        background-color: $ColorBase;
+    }
+    .TabContainer{
+        padding: 10px 0;
     }
 }
 

@@ -28,11 +28,11 @@ export default class Statto extends Component {
           <Container>
               <SectionHeader h1={TITLES.DASHBOARD} h2={TITLES.OVERVIEW} /> 
 
-              <SectionContainer class="Section_Overview">
+              <SectionContainer class="Section_Overview complete" >
                   <Overview  {... this.props} />  
               </SectionContainer> 
                
-              <SectionContainer class="Section_Home_RankingPods">
+              <SectionContainer class="Section_Home_RankingPods complete">
                 <Rankings  
                   Title={TITLES.RANKINGS} 
                   Data={this.props.DATA.CAREER.Career.Meta.Rankings}
@@ -40,14 +40,14 @@ export default class Statto extends Component {
                 />
               </SectionContainer>
 
-              <SectionContainer class="Section_History">
+              <SectionContainer class="Section_History ToDo">
                   <BriefHistory 
                     Title={TITLES.RECENT}  
                     {... this.props} 
                   />
               </SectionContainer> 
               
-              <SectionContainer class="Section_Default">
+              <SectionContainer class="Section_Default ToDo">
                   <Charts  {... this.props} />
               </SectionContainer>
               

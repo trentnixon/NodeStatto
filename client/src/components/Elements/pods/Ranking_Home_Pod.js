@@ -1,14 +1,17 @@
 import React, {Component} from "react";
 
-import Pod from "../../Template/Page/Pod";
-import TrendingUp from '@material-ui/icons/TrendingUp'
-import TrendingDown from '@material-ui/icons/TrendingDown'
-import TrendingFlat from '@material-ui/icons/TrendingFlat'
+//import Pod from "../../Template/Page/OLD_Pod";
+
+import TrendingUp from '@material-ui/icons/TrendingUp';
+import TrendingDown from '@material-ui/icons/TrendingDown';
+import TrendingFlat from '@material-ui/icons/TrendingFlat';
 
 // Pod Structure
+
 import PodHeader from "./PodStructure/Pod_Header";
 import PodFooter from "./PodStructure/Pod_Footer";
-import PodBody from "./PodStructure/Pod_Value_and_Icon_Body"; 
+import PodBody from "./PodStructure/Pod_Value_and_Icon_Body";
+import Pod from "./Pod_Outer_Wrapper";
 
 export default class RankingHomePod extends Component { 
    

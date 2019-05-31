@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update'
 
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
 // import Title from "../Elements/type/PageTitle";
 // import SubTitle from "../../Elements/type/PageSubTitle";
 // import MostForAgainst from "../../Elements/Tables/MostForAgainst";
@@ -66,7 +66,7 @@ let stats=[
         Title:"Career Average"
     }, 
     {
-        Name:["Strike Rate"],
+        Name:["Strike Rate"], 
         Value:[0],
         Total:[0],
         Percentage:[0],
@@ -198,15 +198,15 @@ export default class Section_Rankings extends Component {
     componentWillUpdate(nextProps, nextState){}
     render() {
 
-      //console.log(this.state.Year);
+     //console.log(this.props.LABELS.SITE.FORM.INPUTLABELS.YEARS);
 
         return (
-            <div className="atAGlance">
-            <Row class="ContainerRow Form_Selector">
-                <Pod col="col-md-12 Selector" canvas="">
+            <div>
+            <Row class="PodRow Form_Selector">
+                <Pod col="Selector" canvas="">
                     <FormControl variant="outlined" className="YearSelector" >
                         <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                            Select a Year 
+                            {this.props.LABELS.SITE.FORM.INPUTLABELS.YEARS}
                         </InputLabel>
                         <Select
                             value={this.state.Year} 
@@ -218,7 +218,7 @@ export default class Section_Rankings extends Component {
                                     />
                                 }
                         >
-                                    <MenuItem value="Career" >Career</MenuItem>
+                                    <MenuItem value="Career" >{this.props.TITLES.CAREER}</MenuItem>
                                         {
                                             this.props.Data.overTheYears.map((year,i)=>{
                                                 return(
@@ -231,23 +231,22 @@ export default class Section_Rankings extends Component {
                 </Pod>
             </Row>   
 
-            <Row class="PodRow">
-                            {
-                                this.state.stats.map((radial,i)=>{
-                                    return(
-                                        <FillPod  
-                                            key={i}
-                                            Value={radial.Value}
-                                            Label={radial.Name}
-                                            Percentage={radial.Percentage}
-                                            Created={this.state.Created}
-                                            TitleValue={radial.TitleValue}
-                                            Title ={radial.Title}
-                                        />
-                                    )
-                                })
-                            }
-                      
+                <Row class="PodRow">
+                    {
+                        this.state.stats.map((radial,i)=>{
+                            return(
+                                    <FillPod  
+                                        key={i}
+                                        Value={radial.Value}
+                                        Label={radial.Name}
+                                        Percentage={radial.Percentage}
+                                        Created={this.state.Created}
+                                        TitleValue={radial.TitleValue}
+                                        Title ={radial.Title}
+                                    />
+                                )
+                        })
+                    } 
                 </Row>
             </div>
             )

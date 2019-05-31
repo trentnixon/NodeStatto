@@ -1,18 +1,85 @@
-.FillPod
-    {
+#Pod{
+    .FillPod
+        {
+            overflow: hidden;
 
-    .Header{
+            .Header{
+
+            }
+
+            .Body{
+                h2{}
+                h3{
+                    font-weight: 100;
+                }
+            }
+            .fill{
+                background-color: rgba(112, 157, 206, .1);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                bottom: 15px;
+                margin: 0 -25px -15px;
+                transition: height 0.25s ease-in;  
+            }
+        }
+
+    }
+    @media only screen  and (max-width : 576px) {
+        #Pod{
+            flex: 1 0 100% !important;
+            .FillPod{
        
-    }
-    .fill{
-        background-color: rgba(112, 157, 206, .1);
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        bottom: 15px;
-        margin: -15px;
-        transition: height 0.25s ease-in;  
-      
-    }
+                    padding: 5px 10px !important;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    align-content: center;
+    
+              
+                        .fill{
+                            margin: 0 -10px -15px;
+                        }
+                    .Header{
+                        flex: 1 0 30%;
+                        background-color: transparent !important;
+                        padding: 0 !important;
+                        h1{
+                            border-bottom: unset !important;
+                            color: $h1Color !important;
+                            font-size: 1.1em !important;
+                            
+                        }
+                }
 
-}
+                    .Body{
+                        flex: 1 0 67%;
+                        display: flex;
+                        padding: 0 10px !important;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        align-content: center;
+                            h2{
+                                font-size: 1.6em !important;
+                                padding: 0 0px !important;
+                                margin: 0 0 5px 0 !important;
+                                font-weight: 100;
+                               
+                            }
+                            h3{
+                                margin: 0 !important;
+                                padding: 0 0 10px 0 !important;
+                                color: $h1Color !important; 
+                                border:unset;
+                                
+                            }
+                    }
+                   
+                
+            }
+        }
+    }
