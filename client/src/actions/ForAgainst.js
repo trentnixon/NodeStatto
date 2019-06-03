@@ -39,10 +39,16 @@ function hasProperty(Property,parent,sub){
         
 
         // Bowling 
+        
         ObjKey.Wickets=StatsFor[int].Wickets + hasProperty(thisGame,'Bowling','Wickets');
         ObjKey.Overs=StatsFor[int].Overs + hasProperty(thisGame,'Bowling','OversInt');
         ObjKey.RunsConceded=StatsFor[int].RunsConceded + hasProperty(thisGame,'Bowling','Runs');
-  }
+        if(thisGame['Bowling']){
+            ObjKey.ECO = (ObjKey.RunsConceded/ObjKey.Overs).toFixed(2);
+            ObjKey.BOWLAVG = (ObjKey.RunsConceded / ObjKey.Wickets).toFixed(2);
+            ObjKey.BOWLSR = ((ObjKey.Overs * 5) /ObjKey.Wickets).toFixed(2)
+        }
+    }
 
 function StoreNew(Thisgame, StatsFor, Team, TeamID){
     StatsFor.push(
@@ -58,7 +64,10 @@ function StoreNew(Thisgame, StatsFor, Team, TeamID){
             "SR":0,
             "Wickets":0,
             "Overs":0,
-            "RunsConceded":0
+            "RunsConceded":0,
+            "ECO":0,
+            "BOWLAVG":0,
+            "BOWLSR":0
         }
     )
 
@@ -86,6 +95,7 @@ export function ForAgainst(data){
         else{ StoreForAgainstDetails(Thisgame, StatsAgainst,TeamPositionAgainst) }
     })
 
+    console.log(StatsFor,StatsAgainst)
     store.dispatch({ type:"STORE_FOR", payload:StatsFor });
     store.dispatch({ type:"STORE_AGAINST", payload:StatsAgainst });
     store.dispatch({ type:"DATA_SET_FORAGAINST", payload:true});  

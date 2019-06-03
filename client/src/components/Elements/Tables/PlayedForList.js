@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar';
+import PodHeaderBody from "../../Elements/pods/Pod_Header_Body";
+
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -50,22 +52,21 @@ export default class PlayedFor extends Component {
     
     
       return(
-          <div className={this.props.col}>
-            <div className="ContentContainer canvas1">
-                <div className="Header">
-                    <SubTitle Title={this.props.Label} />
-                    <Avatar className="Avatar" >{Num}</Avatar>
-                </div>
-                <div className="Body">
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>#</TableCell>
-                                <TableCell>{this.props.TITLES.TEAMS}</TableCell>
-                                <TableCell>{this.props.TITLES.GAMES}</TableCell>
-                            </TableRow>
-                        </TableHead> 
-                        <TableBody>
+
+            <PodHeaderBody
+                icon={<Avatar className="Avatar" >{Num}</Avatar>}
+                label={this.props.Label}
+                Footer={CTA}
+            >
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>#</TableCell>
+                            <TableCell>{this.props.TITLES.TEAMS}</TableCell>
+                            <TableCell>{this.props.TITLES.GAMES}</TableCell>
+                        </TableRow>
+                    </TableHead> 
+                    <TableBody>
                                 {
                                     Teams.map((Team,i)=>{
                                         return (
@@ -79,12 +80,9 @@ export default class PlayedFor extends Component {
                                 }
                         </TableBody>
                     </Table>
-                </div>
-                <div className="Footer">
-                    {CTA}
-                </div>
-            </div>
-        </div>
+            </PodHeaderBody>
+
+
       )
   }
 }

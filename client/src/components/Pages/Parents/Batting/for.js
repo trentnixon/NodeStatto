@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 // Template
 import Container from "../../../Template/Page/Container";
+import SectionHeader from "../../../Sections/global/Section_Global_Header";
+import SectionContainer from "../../../Sections/global/SectionContainer";
 import Row from "../../../Template/Page/Row";
-import Pod from "../../../Template/Page/Pod";
+import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
 import DataTable from "../../../Sections/batting/Section_Table_ForAgainst";
 //import PageHeader from "../../../Template/Page/Header";
 
@@ -12,11 +14,11 @@ import PeopleIcon from '@material-ui/icons/People';
 import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 
 // UI 
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
-import SectionContainer from "../../../Sections/global/SectionContainer";
+
+//import SectionContainer from "../../../Sections/global/SectionContainer";
 import Tabber from "../../../Template/Tabber/TabContaner";
 
-// Form 
+// Form  
   // Select
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -24,11 +26,12 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
   // Radio
+/*
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
-
+*/
 var _ = require('lodash');
 
 
@@ -97,18 +100,16 @@ export default class ForandAgainstMajorTable extends Component {
   }
 
   render() { 
+    
     return (
-      <div>
         <Container>
-          <SectionHeader  h1="For and Against" h2="Batting"  /> 
-            <Row>
-              <Pod col="col-md-12 filter" canvas="canvas1">
-                <Row class="ContainerRow Form_Selector">
-                  
-                  <Pod col="col-md-6 Selector" canvas="">
-                    <FormControl variant="outlined" className="GlobalSelect" >
+          <SectionHeader   h1={this.props.SUBS.FORAGAINST} h2={this.props.TITLES.BATTING} /> 
+            <SectionContainer class="Section_Batting_FORANDAGAINST_Form Selector">
+                <Row class="PodRow Form_Selector">
+                  <Pod>
+                  <FormControl variant="outlined" className="YearSelector" >
                       <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-Select"> 
-                            Filter By:  
+                          {this.props.LABELS.SITE.FORM.INPUTLABELS.FILTER}
                       </InputLabel>
                       <Select
                             value={this.state.Value}
@@ -128,32 +129,12 @@ export default class ForandAgainstMajorTable extends Component {
                               })
                           }
                         </Select>
-                      </FormControl>
-                    </Pod>
-
-                    <Pod col="col-md-6 Selector" canvas="">
-                      <FormControl component="fieldset" className="RadioButtons">
-                        <FormLabel component="legend"># Innings</FormLabel>
-                          <RadioGroup
-                            aria-label="Radio"
-                            name="Radio"
-                            value={this.state.RadioValue}
-                            onChange={this.handleRadioChange}
-                          >
-                            <FormControlLabel value="0" control={<Radio color="primary" />} label="All" />
-                            <FormControlLabel value="5" control={<Radio color="primary" />} label=">  5" />
-                            <FormControlLabel value="10" control={<Radio color="primary" />} label=">  10" />
-                            <FormControlLabel value="20" control={<Radio color="primary" />} label=">  20" />
-                        </RadioGroup>
-                      </FormControl>
-                    </Pod>
-                    
-                  </Row> 
-              </Pod>
-            </Row>
-            <Row class="TableTabber" >
-            <SectionContainer >
-                    <Tabber 
+                    </FormControl>
+                  </Pod>
+                </Row>
+          </SectionContainer>
+          <SectionContainer class="Section_Batting_FORANDAGAINST_Results" >
+              <Tabber 
                         Tabs={
                           [
                             {
@@ -181,11 +162,27 @@ export default class ForandAgainstMajorTable extends Component {
                               Icon:<PeopleIconOutline />
                             }
                         ]}
-                      /> 
-            </SectionContainer>
-          </Row>
+              /> 
+        
+          </SectionContainer>
         </Container>
-      </div>
     )
   }
 }
+
+
+/**
+ *  <FormControl component="fieldset" className="RadioButtons">
+                        <FormLabel component="legend">Num {this.props.SUBS.INNINGS}</FormLabel>
+                          <RadioGroup
+                            aria-label="Radio"
+                            name="Radio"
+                            value={this.state.RadioValue}
+                            onChange={this.handleRadioChange}
+                          >
+                            <FormControlLabel value="0" control={<Radio color="primary" />} label="All" />
+                            <FormControlLabel value="5" control={<Radio color="primary" />} label="<  10" />
+                            <FormControlLabel value="10" control={<Radio color="primary" />} label=">  10" />
+                        </RadioGroup>
+                      </FormControl>
+ */

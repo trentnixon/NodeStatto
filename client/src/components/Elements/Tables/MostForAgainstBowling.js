@@ -13,27 +13,40 @@ import ShowMore from  "../Buttons/ShowMore";
 
 let stats=[
     {
-        Name:["Innings"],
-        Title:"Career Innings"
+        Name:["Wickets"],
+        Title:"Career Wickets",
+        eq:">",
+        sv:"0"
     },
     {
-        Name:["Runs"],
-        Title:"Runs"
+        Name:["Overs"],
+        Title:"Career Overs",
+        eq:">",
+        sv:"0"
     },
     {
-        Name:["BF"],
-        Title:"Balls Faced"
+        Name:["RunsConceded"],
+        Title:"Runs Conceded",
+        eq:">",
+        sv:"0"
     },
+    
     {
-        Name:["NO"],
-        Title:"Not Out's" 
+        Name:["ECO"], 
+        Title:"Economy",
+        eq:"<",
+        sv:"99"
     },{
-        Name:["AVG"],
-        Title:"Average"
+        Name:["BOWLAVG"],
+        Title:"Average",
+        eq:"<",
+        sv:"99"
     },
     {
-        Name:["SR"],
-        Title:"Strike Rate"
+        Name:["BOWLSR"],
+        Title:"Strike Rate",
+        eq:"<",
+        sv:"99"
     }
 ];
 
@@ -48,29 +61,32 @@ export default class ForandAgainstTable extends Component {
 
     componentWillMount() {}
  
-      find(data, variable, Startvalue){
-          //console.log(data, variable);
+      find(data, variable, Startvalue,eq){
             let value = Startvalue;
             let pointer = 0; 
 
             // eslint-disable-next-line
             data.map((team,int)=>{
-                if(team[variable] > value){
-                  //console.log(team, team[variable], variable);
-                    pointer=int;
-                    value = team[variable]
+                if(eq === "<"){
+                    if(team[variable] < value && isFinite(team[variable]) ){
+                        pointer=int;
+                        value = team[variable]
+                    }
+                }
+                else if(eq=== ">"){
+                    if(team[variable] > value && isFinite(team[variable]) ){
+                        pointer=int;
+                        value = team[variable]
+                    }
                 }
             })
 
-           console.log(pointer)
         return data[pointer].Team + ' (' + data[pointer][variable] + ')';
       }
       shouldComponentUpdate(nextProps, nextState){ return true;}
       componentWillUpdate(nextProps, nextState){}
     render() {
-        
-        //console.log(this.props);
-
+        //console.log(this.props.Data.FOR);
         return (
                 <Row class="Table canvas1">  
                     <div className="tr">
@@ -85,10 +101,10 @@ export default class ForandAgainstTable extends Component {
                                             <div className="tr" key={i}>
                                                 <div className="td">{game.Title}</div>
                                                 <div className="td">
-                                                    { this.find(this.props.Data.FOR,game.Name[0],0 ) }
+                                                    { this.find(this.props.Data.FOR,game.Name[0],game.sv,game.eq ) }
                                                 </div>
                                                 <div className="td">
-                                                    { this.find(this.props.Data.AGAINST,game.Name[0],0 ) }
+                                                    { this.find(this.props.Data.AGAINST,game.Name[0],game.sv,game.eq ) }
                                                 </div>
                                             </div>
                                     )

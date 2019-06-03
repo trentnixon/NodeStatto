@@ -31,7 +31,8 @@ const URLVAR = 't20/?playerid=';
         // Store in Arr
         arr.push( {"name":id[0],"id":id[1],"meta":copy} );
         // Return
-        //console.log(copy)
+
+        //console.log(copy);
         return arr;
     }
 

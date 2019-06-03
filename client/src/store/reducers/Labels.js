@@ -17,7 +17,7 @@ const InitialState ={
                 LANG:"Select a Language"
             },
             SITE:{
-                TITLES:{
+                TITLES:{  
                     DASHBOARD:"DASHBOARD",
                     OVERVIEW:"OVERVIEW",
                     RANKINGS:"RANKINGS",
@@ -37,6 +37,7 @@ const InitialState ={
                     RUNS:"Runs",
                     WICKETS:"Wickets",
                     CATCHES:"Catches",
+                    INNINGS:"Innings",
                     PREVIOUS:"Previous",
                     NEXT:"Next",
                     FOR:"For",
@@ -49,7 +50,8 @@ const InitialState ={
                 },
                 FORM:{
                     INPUTLABELS:{
-                        YEARS:"Select a Year"
+                        YEARS:"Select a Year",
+                        FILTER:"Filter By"
                     }
                 },
                 CTA:{

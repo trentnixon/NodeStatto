@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Row from "../../Template/Page/Row";
 
 // Charts
@@ -10,20 +9,17 @@ export default class Section_Default extends Component {
     render() {
 
         return ( 
-                <Row>
+                <Row class="PodRow HomeCharts">
                         <PlayedFor
                             Label={this.props.TITLES.TEAMS}
                             num={5}
-                            col="col-md-7 col-sm-12" 
                             {... this.props}
                         />
-                        
                         <GamesPlayed 
                             {... this.props}
                             Title={this.props.TITLES.PLAYED}
-                            col="col-md-5 col-sm-12"
                         />
                 </Row> 
             )
         }
-    }  
+    }   

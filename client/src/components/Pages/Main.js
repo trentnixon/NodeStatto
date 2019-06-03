@@ -123,7 +123,7 @@ const  Navigation =[
 export default class Statto extends Component {
   componentWillMount() { }  
   render() {
-    console.log(this.props)
+    console.log(this.props.UX)
     // <Route  exact path="/:id/keeping/" render={()=> <ComponentKeeping {... this.props}/> }/>
     return (
       <Router>

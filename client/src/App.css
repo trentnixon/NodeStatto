@@ -3,6 +3,9 @@
 /* Basic Elements */
 @import url(~slick-carousel/slick/slick.css);
 @import url(~slick-carousel/slick/slick-theme.css);
+a {
+  text-decoration: none; }
+
 h1, h2, h3 {
   font-family: "Montserrat"; }
 
@@ -236,6 +239,7 @@ p {
     This pod has No padding and No Margin attached to them.
     Add a new class or inline styling to amend
 */
+/** END MIXINS */
 .PodRow .animated {
   margin: 0;
   padding: 0; }
@@ -389,13 +393,14 @@ p {
   padding: 0; }
   .PodRow .animated #Pod .Inner.RankingPod .Header {
     padding: 5px 15px;
-    background-color: #709dce; }
+    background-color: #709dce;
+    border-radius: 3px 3px 0 0; }
     .PodRow .animated #Pod .Inner.RankingPod .Header h1 {
-      text-align: left;
+      text-align: left !important;
       margin: 0;
-      font-size: 1.3em;
-      padding: 5px 0;
-      color: #f5f5f5; }
+      font-size: 1.3em !important;
+      padding: 5px 0 !important;
+      color: #f5f5f5 !important; }
       .PodRow .animated #Pod .Inner.RankingPod .Header h1 img {
         width: 25px;
         float: right;
@@ -459,6 +464,35 @@ p {
       .PodRow .animated .RankingPod h1 img {
         display: none; } }
 
+.PodRow .HeaderBodyPod {
+  padding: 0 !important;
+  margin: 0; }
+  .PodRow .HeaderBodyPod .Header {
+    padding: 5px 15px;
+    background-color: #709dce;
+    border-radius: 3px 3px 0 0; }
+    .PodRow .HeaderBodyPod .Header h1 {
+      text-align: left !important;
+      margin: 0;
+      font-size: 1.3em !important;
+      padding: 5px 0 !important;
+      color: #f5f5f5 !important; }
+      .PodRow .HeaderBodyPod .Header h1 .Avatar {
+        float: right;
+        color: rgba(0, 0, 0, 0.54);
+        background-color: #f5f5f5;
+        margin-top: -5px;
+        font-weight: 100;
+        width: 35px;
+        height: 35px;
+        font-size: .8em; }
+  .PodRow .HeaderBodyPod .Footer {
+    justify-content: flex-end;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25); }
+    .PodRow .HeaderBodyPod .Footer a {
+      color: #f5f5f5; }
+
 .Table .tr {
   flex: 1 0 100% !important;
   display: flex;
@@ -493,6 +527,61 @@ p {
     color: #f5f5f5; }
   .Table .Footer {
     background-color: #f5f5f5; } }
+
+.TeamList .ListItem {
+  text-indent: 2%;
+  padding: 1.5% 0 !important;
+  font-size: 1.1em; }
+
+.TeamList .Header {
+  font-weight: bold; }
+
+.ListItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: flex-start;
+  flex: 1 0 100% !important;
+  border-bottom: 1px solid #709dce;
+  padding: 2% 1%; }
+  .ListItem .GameTitle {
+    flex: 1 0 100%; }
+    .ListItem .GameTitle h1 {
+      font-size: 1.4em !important;
+      padding: 0;
+      margin: 0;
+      font-weight: 100; }
+  .ListItem .GameDate {
+    flex: 1 0 100%;
+    font-size: .8em;
+    color: #969696; }
+  .ListItem .GameBatting {
+    flex: 1 0 45%; }
+    .ListItem .GameBatting h2 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0; }
+  .ListItem .GameBowling {
+    flex: 1 0 45%; }
+    .ListItem .GameBowling h2 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0; }
+  .ListItem .GameCTA {
+    flex: 1 0 10%; }
+  .ListItem .TeamName, .ListItem .Number {
+    flex: 1 0 45%; }
+  @media only screen and (max-width: 576px) {
+    .ListItem .GameTitle h1 {
+      font-size: 1.2em !important; }
+    .ListItem .GameBowling, .ListItem .GameBatting, .ListItem .TeamName, .ListItem .Number {
+      flex: 1 0 40%; }
+    .ListItem .TeamName {
+      flex: 1 0 65%; }
+    .ListItem .Number {
+      flex: 1 0 10%; } }
 
 /*- Build up Dom Elements -*/
 #Login {
@@ -834,9 +923,9 @@ body {
           width: inherit; }
         .DrawerNav .NavBarTop {
           background-color: #709dce;
-          min-height: 200px;
+          min-height: 120px;
           text-align: center;
-          padding-top: 80px;
+          padding-top: 70px;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -881,6 +970,10 @@ body {
         .DrawerNav img.NavigationIcon.Bowling {
           width: 20px;
           margin-right: 20px; }
+        @media only screen and (max-width: 576px) {
+          .DrawerNav .NavBarTop {
+            min-height: 120px;
+            padding-top: 10px; } }
       body #root #Statto #Frame main {
         min-height: 100vh;
         -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
@@ -945,6 +1038,8 @@ body {
             margin: 0 .2%;
             padding: 0;
             flex: 1 0 32.5%; }
+      body #root #Statto #Frame .Selector {
+        margin: 0px; }
       body #root #Statto #Frame .Section_Batting_Rankings > .Outer {
         flex: 1 60% !important; }
       body #root #Statto #Frame .Section_Batting_Rankings .Inner {

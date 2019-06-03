@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
-// import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
+import Tabber from "../../../Template/Tabber/TabContaner";
+
+import PeopleIcon from '@material-ui/icons/People';
+import {Bowling} from "../../../Icons/icons";
+
+
+// import Title from "../../../Elements/type/PageTitle";
 // import Row from "../../../Template/Page/Row";
-import Pod from "../../../Template/Page/Pod";
+//import Pod from "../../../Template/Page/Pod";
 
 // Sections 
 import SectionContainer from "../../../Sections/global/SectionContainer";
@@ -11,40 +17,49 @@ import SectionHeader from "../../../Sections/global/Section_Global_Header";
 import SectionRankings from "../../../Sections/global/Section_Discipline_Rankings";
 import SectionFaBowling from "../../../Sections/bowling/Section_Fa_Bowling";
 import SectionCareerBowling from "../../../Sections/bowling/Section_Career_Bowling";
-
-export default class Batting extends Component {
+import SectionForandAgainst from "../../../Elements/Tables/MostForAgainstBowling";
+export default class BowlingHome extends Component {
 
   componentWillMount() { } 
 
   render() {
     return ( 
       <Container>
-        <SectionHeader   h1="Bowling" h2="Career"  /> 
-
+        <SectionHeader   h1={this.props.TITLES.OVERVIEW} h2={this.props.TITLES.BOWLING} /> 
+        
         <SectionContainer>
-          <SectionCareerBowling 
-            Data={this.props.DATA.CAREER.Career.bowling} 
-            Career={this.props.DATA.CLEAN}
+          <SectionRankings 
+            Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling} 
+            Title={this.props.TITLES.RANKINGS}
+            SubTitle={this.props.DESC.DESCRANKINGS}  
+            {... this.props}
           />
         </SectionContainer>
 
         <SectionContainer>
-          <SectionRankings Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling} />
+          <Tabber 
+            Tabs={
+              [
+                {
+                  Title:this.props.SUBS.STATS,
+                  Component:<SectionCareerBowling  Data={this.props.DATA.CAREER.Career.bowling} Career={this.props.DATA.CLEAN} {... this.props} />,
+                  Icon:<Bowling />
+                },
+                {
+                  Title:this.props.SUBS.FORAGAINST,
+                  Component:<SectionForandAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props}/>,
+                  Icon:<PeopleIcon />
+                }
+            ]}
+          />
         </SectionContainer>
-    
-          
-            
-        <SectionContainer>
-          <Pod col="col-md-12" > Recent Figures.</Pod>
-        </SectionContainer>
-          
          
-       
         
         <SectionContainer>
           <SectionFaBowling  
             Data={this.props.DATA.CAREER.Career.bowling}
-            Title="Milestones and Achievements"
+            Title={this.props.TITLES.MILESTONE}
+            {... this.props} 
           />
         </SectionContainer>
 

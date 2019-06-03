@@ -14,7 +14,7 @@ class App extends Component {
         this.props.history.push("/error/IDError")
       }
     }
-    render () { 
+    render () {       
         if(this.props.LOAD.UISTATE.STATTO === true && 
            this.props.LOAD.UISTATE.UI_READY === true)
            {
@@ -24,7 +24,7 @@ class App extends Component {
               DESC={this.props.LABELS.SITE.DESC}
               SUBS={this.props.LABELS.SITE.SUBS}
               CTA={this.props.LABELS.SITE.CTA}
-
+             
               {... this.props}  
             /> );
         }else{
@@ -36,6 +36,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({ 
     LOAD: state.LOAD,
     DATA: state.DATA,
-    LABELS:state.LABELS.lANG[SetLang]
+    LABELS:state.LABELS.lANG[SetLang],
+    UX:state.UX
 })
 export default connect(mapStateToProps)(App);

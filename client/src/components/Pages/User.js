@@ -47,6 +47,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({ 
     LOAD: state.LOAD,
     DATA: state.DATA,
-    LABELS:state.LABELS.lANG[SetLang]
+    LABELS:state.LABELS.lANG[SetLang],
+    UX:state.UX
 })
 export default connect(mapStateToProps)(App);

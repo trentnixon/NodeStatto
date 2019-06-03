@@ -52,7 +52,7 @@ export function FetchData(){
                 this.STOREUITRUE('INT_DATA_TRUE', true);
                 console.log('DATA_RECEIVED');
             
-                // Store Meta
+                // Store Meta 
                 //store.dispatch({ type:"STORE_NAME", payload:res.data.Meta.Name}); 
                 store.dispatch({ type:"STORE_META", payload:res.data.Meta}); 
                 
@@ -150,6 +150,10 @@ export function FetchData(){
      * 
      */
 
+    this.STRReplace = (str) =>{
+        str = str.replace('&apos;',"'").replace('&amp;','&').replace('&#x2019;',"'")
+        return str;
+    }
 
      this.StoreFixtures = (game) =>{
             
@@ -158,14 +162,17 @@ export function FetchData(){
          
          //let Fixed = new Date( SplitDate[2]+'/'+SplitDate[1]+'/'+SplitDate[0]).getTime();
          //console.log(SplitDate, Fixed)
+     
+           // console.log(game[2]["0"].meta, game[2]["0"].meta.replace('&apos;',"'").replace(['&amp;'],'&'));
+        
             this.StoredData.push({
                 Meta:{
                     Fixture:game["0"]["0"].id,
                     FixtureInt:Fixed,
                     Date:game["0"]["0"].meta,
-                    Team:game[1]["0"].meta.replace(/[|&;$%@"<>()+,]/g, ""),
+                    Team: this.STRReplace(game[1]["0"].meta) ,
                     TeamID:game[1]["0"].id,
-                    Opposition:game[2]["0"].meta.replace(/[|&;$%@"<>()+,]/g, ""),
+                    Opposition: this.STRReplace(game[2]["0"].meta),
                     OppositionID:game[2]["0"].id,
                 }
             })

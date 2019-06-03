@@ -19,6 +19,64 @@
     Add a new class or inline styling to amend
 */
 
+// Mixins
+@mixin Inner_Styles{
+    border:1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 10px 25px;
+    background-color: #fff;
+    position: relative;  
+}
+
+// Header
+@mixin Style_POD_Header {
+    padding: 5px 15px;
+    background-color:$ColorBase ;
+    border-radius: 3px 3px 0 0 ;
+  }
+@mixin Style_POD_Header_H1{
+    text-align: left !important;
+    margin: 0;
+    font-size: 1.3em !important;
+    padding: 5px 0 !important;
+    color:$h3Color !important;
+   
+}
+
+@mixin Style_POD_Header_IMG{
+    width: 25px;
+    float: right;
+    fill: white; 
+    margin-right: 15px;
+    background-color: $white;
+    border-radius: 50px;
+    padding: 3px;
+}
+
+@mixin Style_POD_Header_AVA{
+    float: right;
+    color: $IconColor;
+    background-color: $white;
+    margin-top: -5px;
+    font-weight: 100;
+    width: 35px;
+    height: 35px;
+    font-size: .8em;
+}
+
+@mixin Style_POD_Footer($color:$ColorBase){
+    justify-content: flex-end;
+        display: flex;
+        background-color: $color;
+}
+
+@mixin Style_POD_Footer_Link{
+    color: $white;
+}
+
+/** END MIXINS */
+
+
 .PodRow{
     .animated{ 
         margin: 0; 
@@ -29,11 +87,7 @@
         margin: .2% !important;
             // Generic Inner Styles that are used by ALL Pods
             .Inner{            
-                border:1px solid rgba(0, 0, 0, 0.12);
-                border-radius: 5px;
-                padding: 10px 25px;
-                background-color: #fff;
-                position: relative;  
+                @include Inner_Styles;
 
                 @import "./PodType";
                 @import "./PodButtons";
@@ -49,4 +103,7 @@
     @import "./Type_FilledPod"; 
     @import "./Pod_Generic";
     @import "./Type_RankingPod";
+    @import "./Type_HeaderBodyPod";
+
+    
 }

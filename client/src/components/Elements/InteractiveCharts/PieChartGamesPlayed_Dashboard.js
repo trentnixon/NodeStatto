@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Avatar from '@material-ui/core/Avatar';
+import PodHeaderBody from "../../Elements/pods/Pod_Header_Body";
 import Donut from "../../Charts/donut";
-
-// import Title from "../../Elements/type/PageTitle";
-import SubTitle from "../../Elements/type/PageSubTitle";
 
 let HistoryInt=[], HistoryYear=[];
 class Chart_Games_Home extends Component {
@@ -26,24 +24,19 @@ class Chart_Games_Home extends Component {
           })
       }
 
-      render() {
+      render() { 
         
           return (
-            <div className={this.props.col}>
-              <div className="ContentContainer canvas1" >
-                <div className="Header">
-                <SubTitle Title={this.props.Title} />
-                  <Avatar className="Avatar"  >{this.props.DATA.CAREER.Career.Meta.Games.int}</Avatar>
-                  
-                </div>
-                <div className="Body">
-                  <Donut 
-                        series={HistoryInt}
-                        Labels={HistoryYear} 
-                      />
-                </div>
-              </div>
-            </div>
+                <PodHeaderBody
+                    icon={<Avatar className="Avatar">{this.props.DATA.CAREER.Career.Meta.Games.int}</Avatar>}
+                    label={this.props.Title}
+                    Footer=""
+                >
+                    <Donut 
+                      series={HistoryInt}
+                      Labels={HistoryYear} 
+                    />
+                </PodHeaderBody>
           );
         }
 }

@@ -9,7 +9,9 @@ $SubHeaderSize:1.3em;
 
 
 /* Basic Elements */
-
+a{
+    text-decoration: none;
+}
 h1,h2,h3{ 
     font-family: $BodyFont; 
 }

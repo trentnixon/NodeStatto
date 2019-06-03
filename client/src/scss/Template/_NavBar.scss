@@ -20,9 +20,9 @@
     
     .NavBarTop{
         background-color: $ColorBase;
-        min-height: 200px;
+        min-height: 120px;
         text-align: center;
-        padding-top: 80px;
+        padding-top: 70px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -83,7 +83,14 @@
     img.NavigationIcon{ width:25px;     margin-right: 16px;}
     img.NavigationIcon.Bowling{width:20px;     margin-right: 20px;}
 
+    @media only screen and (max-width : 576px) {
+        .NavBarTop{
+            min-height: 120px;
+            padding-top: 10px;
+        }
+    }
 }
+    
 }
 
 // f3f3f3

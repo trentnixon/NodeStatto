@@ -24,7 +24,7 @@ export default class Section_Rankings extends Component {
         return ( 
        
             <Row class="PodRow">
-                <Title Title={this.props.Title}/>
+                <Title Title={this.props.Title}/> 
                 <SubTitle Title={this.props.SubTitle} />
                     {
                         stones.map((stone,i)=>{

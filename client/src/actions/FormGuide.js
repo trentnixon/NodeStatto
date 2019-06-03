@@ -106,7 +106,7 @@ export function FormGuide(data){
         }
     };
 
-    console.log(Stats);
+    //console.log(Stats);
 
     // Lets create a form guide
      // eslint-disable-next-line

@@ -61,7 +61,7 @@ let stats=[
         Value:[0], 
         Total:[0],
         Percentage:[0],
-        For:["Name"],
+        For:["Name"], 
         Against:["Name"],
         Title:"Career Average"
     }, 
@@ -77,7 +77,7 @@ let stats=[
 ];
  
 
-export default class Section_Rankings extends Component {
+export default class Section_Rankings extends Component { 
 
     state = {
         labelWidth: 100,
@@ -202,7 +202,7 @@ export default class Section_Rankings extends Component {
 
         return (
             <div>
-            <Row class="PodRow Form_Selector">
+            <Row class="PodRow Form_Selector"> 
                 <Pod col="Selector" canvas="">
                     <FormControl variant="outlined" className="YearSelector" >
                         <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
@@ -230,8 +230,7 @@ export default class Section_Rankings extends Component {
                     </FormControl>
                 </Pod>
             </Row>   
-
-                <Row class="PodRow">
+            <Row class="PodRow">
                     {
                         this.state.stats.map((radial,i)=>{
                             return(

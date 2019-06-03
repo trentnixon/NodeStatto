@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+//import Pod from "../../Template/Page/Pod";
+import PodWrapper from "../../Elements/pods/Pod_Outer_Wrapper";
 
-import SectionHeader from "../../Sections/global/Section_Global_Header";
 // import SubTitle from "../../Elements/type/PageSubTitle";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -69,49 +69,40 @@ export default class Section_HistoryList extends Component {
 
   render() {     
     return (
-        <div className="Section_History" >
-             <SectionHeader h1={this.props.TITLES.HISTORY} h2={this.props.TITLES.CAREER} />
-
-            <Row class="ContainerRow"> 
-            
-                <Pod col="col-md-12 Selector" type="Zeroed" >
-                        <FormControl variant="outlined" className="YearSelector" >
-                            <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                                Years 
-                            </InputLabel>
-
-                            <Select
-                                value={this.state.Year}
-                                onChange={this.handleChange}
-                                input={ <OutlinedInput labelWidth={this.state.labelWidth} name="year" id="outlined-year-simple" /> }
-                            >
-                                <MenuItem value="Career" >Career</MenuItem>
-                                    {
-                                        this.props.Years.map((year,i)=>{
-                                            return(
-                                                <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
-                                            )
-                                        })
-                                    }
-                            </Select>
-                        </FormControl>
-                </Pod>
-            
-
-                <div className="ContentContainer canvas1 col-12">
-                    <div className="Body">
-                        <List>
-                            <ListHistory 
-                                Games={this.state.List}
-                                        isVisible={true}
-                                        match={ this.props.Match}
-                                    />
-                        </List>
-                    </div>
-                </div>
-                
-        </Row>
-    </div> 
+        <div>
+            <Row class="PodRow Form_Selector">
+                <PodWrapper col="Selector" type="Zeroed" >
+                    <FormControl variant="outlined" className="YearSelector" >
+                        <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
+                            {this.props.LABELS.SITE.FORM.INPUTLABELS.YEARS} 
+                        </InputLabel>
+                        <Select
+                            value={this.state.Year}
+                            onChange={this.handleChange}
+                            input={ <OutlinedInput labelWidth={this.state.labelWidth} name="year" id="outlined-year-simple" /> }
+                        >
+                            <MenuItem value="Career" >{this.props.TITLES.CAREER}</MenuItem>
+                                {
+                                    this.props.Years.map((year,i)=>{
+                                        return(
+                            <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
+                                        )
+                                    })
+                                }
+                        </Select>
+                    </FormControl>
+                </PodWrapper>
+            </Row>
+            <Row class="PodRow">
+                <PodWrapper canvas="canvas1">
+                    <ListHistory 
+                        Games={this.state.List}
+                        isVisible={true}
+                        match={ this.props.Match}
+                    />
+                </PodWrapper>
+            </Row>
+        </div>
     )
   }
 } 

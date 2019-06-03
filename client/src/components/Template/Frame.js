@@ -14,10 +14,12 @@ import Routes from "./Navigation/Global_Routes";
 import StattoAppBarLayout from "./Navigation/AppBar";
 import NavBarTop from "./Navigation/NavBarTop";
 
+import {UXDrawer} from "../../actions/UI";
 // Developer
-import DeveloperRouter from "../../components/Pages/Dev/DevRouter";
+//import DeveloperRouter from "../../components/Pages/Dev/DevRouter";
 
 const drawerWidth = 280;
+let DrawerPosition = false;
 
 const styles = theme => ({
   root: {
@@ -56,7 +58,7 @@ const styles = theme => ({
 
 const NavBarBottom = (props) => (
   <div className="NavBarBottom">
-        <DeveloperRouter {... props}/>
+       
   </div>
 );
 
@@ -76,18 +78,27 @@ const NavLayout = (props) => (
 
 
 class ResponsiveDrawer extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
+  state = { mobileOpen: false };
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
+  
+  OpenDrawer = ()=>{
+    UXDrawer(true);
+  }
   render() {
 
+  
+    if(this.props.UX.Mobile)
+    {
+      DrawerPosition = this.props.UX.Mobile.MobileDrawerState
+    }
+    console.log(DrawerPosition)
     const { classes, theme } = this.props;
 
+    
     return (
       <div className={classes.root} id="Frame">
 
@@ -97,7 +108,7 @@ class ResponsiveDrawer extends React.Component {
             <IconButton
               color="default" 
               aria-label="Open drawer"
-              onClick={this.handleDrawerToggle}
+              onClick={this.OpenDrawer}
               className={classes.navIconHide}
             >
               <MenuIcon />
@@ -116,8 +127,8 @@ class ResponsiveDrawer extends React.Component {
           <Drawer
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
+            open={DrawerPosition}
+            onClose={this.OpenDrawer}
             classes={{
               paper: classes.drawerPaper,
             }}
@@ -135,7 +146,7 @@ class ResponsiveDrawer extends React.Component {
         <Hidden smDown implementation="css">
             <Drawer 
                 variant="permanent" 
-                open
+                open={DrawerPosition}
                 classes={{
                   paper: classes.drawerPaper,
                 }}
@@ -147,8 +158,6 @@ class ResponsiveDrawer extends React.Component {
 
               <main className={classes.content}>
                 <div className={classes.toolbar} />
-
-
                       {this.props.children} 
               </main>
       </div>

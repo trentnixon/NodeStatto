@@ -22,7 +22,7 @@ export default class BattingOverview extends Component {
    *  <SectionCareerBatting 
             Data={this.props.DATA.CAREER.Career.batting}   
             Career={this.props.DATA.CLEAN}
-          />
+          /> 
    */
   render() {  
     return (    
@@ -37,7 +37,7 @@ export default class BattingOverview extends Component {
             {... this.props}
           />
         </SectionContainer>
-
+ 
         <SectionContainer class="Section_Batting_ForAgainst complete">
  
           <Tabber 
@@ -55,7 +55,7 @@ export default class BattingOverview extends Component {
                 }
             ]}
           
-          /> 
+          />  
 
         </SectionContainer>
 

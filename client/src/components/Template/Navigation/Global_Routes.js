@@ -8,13 +8,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 
+import {UXDrawer} from "../../../actions/UI";
 
 // Icons
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore'; 
 
 
-const styles = theme => ({
+const styles = theme => ({ 
   root: {
     width: '100%',
     maxWidth: 400,
@@ -32,13 +33,18 @@ class NestedLists extends React.Component {
   state = { open: [false,false,false,false,false,false] };
 
   handleClick = (i) => {
-   
+   //console.log("Handle click")
     let state = this.state.open;
     let NewValue = !state[i];
     state[i]=NewValue
     this.setState({ open: state })
 
   };
+
+  CloseDrawer = ()=>{
+    console.log("Close")
+    UXDrawer(false)
+  }
 
   componentWillMount() {
     //console.log(this.props)
@@ -62,7 +68,7 @@ createCollapseItem(navItem,i){
 
         let Children = navItem.children.map((children,i)=>{
             return(
-                <Link key={i} to={`/${Path}/${navItem.path}/${children.path}`}>
+                <Link key={i}  onClick={()=>{this.CloseDrawer(true)}} to={`/${Path}/${navItem.path}/${children.path}`}>
                     <ListItem  button className={this.props.nested}>
                         <ListItemIcon>{children.icon}</ListItemIcon>
                         <ListItemText inset primary={children.label}/>
