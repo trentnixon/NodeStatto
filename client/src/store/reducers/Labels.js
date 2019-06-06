@@ -4,14 +4,14 @@ const InitialState ={
         EN:{
             META:{
                 SITENAME:"STATTO",
-                BYLINE:"Reviewing your LMS Career"
+                BYLINE:"Reviewing your LMS Career" 
             },
             LOADING:{
                 PRELOADTEAMS:"Fetching Teams",
                 PRONOUN:"Fetching",
                 PLAYERROSTER:"Player Roster",
                 PLAYERPRONOUN:"Player" 
-            },
+            }, 
             LOGIN:{
                 SELECTTEAM:"Select a Team",
                 LANG:"Select a Language"
@@ -20,7 +20,7 @@ const InitialState ={
                 TITLES:{  
                     DASHBOARD:"DASHBOARD",
                     OVERVIEW:"OVERVIEW",
-                    RANKINGS:"RANKINGS",
+                    RANKINGS:"RANKINGS", 
                     BATTING:"BATTING",
                     BOWLING:"BOWLING",
                     KEEPING:"KEEPING",
@@ -35,6 +35,7 @@ const InitialState ={
                 },
                 SUBS:{
                     RUNS:"Runs",
+                    BALLS:"By The Ball",
                     WICKETS:"Wickets",
                     CATCHES:"Catches",
                     INNINGS:"Innings",
@@ -43,7 +44,9 @@ const InitialState ={
                     FOR:"For",
                     AGAINST:"Against",
                     FORAGAINST:"For and Against",
-                    STATS:"Stats"
+                    STATS:"Stats",
+                    AVG:"Average",
+                    ECO:"Economy",
                 },
                 DESC:{
                     DESCRANKINGS:"Breakdown of World Rankings over a Career"

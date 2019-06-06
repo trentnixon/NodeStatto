@@ -62,7 +62,7 @@ const stats=[
 ];
 
 // let AGAINST;
-export default class ForandAgainstMajorTable extends Component {
+export default class Page_ForandAgainstMajorTable extends Component {
 
   state = {
     labelWidth: 100,

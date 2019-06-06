@@ -35,7 +35,7 @@ export default class Section_Rankings extends Component {
         this.props.Rankings.map((rank,i)=>{
             //console.log(rank)
             RankingValue[0].data.push(rank.rank);
-            Labels.push(rank.date)
+            Labels.push(rank.date) 
         })
         this.setState(
             { 

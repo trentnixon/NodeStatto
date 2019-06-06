@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import Row from "../../Template/Page/Row";
 import Pod from "../../Elements/pods/Pod_Outer_Wrapper"
 import Title from "../../Elements/type/PageTitle";
-import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Charts
 import Donut from "../../Charts/donut"; 
@@ -22,7 +21,7 @@ let RunsYear=[
     }
 ];
 
-export default class Section_Batting_BallsFaced extends Component {
+export default class Section_Bowling_WicketsOverTheYears extends Component {
     componentWillMount() {
 
         PieRuns=[]
@@ -54,7 +53,7 @@ export default class Section_Batting_BallsFaced extends Component {
         return (
             <Row class="PodRow">
                     
-                    <Title Title="Balls Faced Against Innings Played" />
+                    <Title Title="THESE CHARTS ARE NOT CORRECT... Balls Faced Against Innings Played" />
                     <Pod class ="flex-70" canvas="canvas1">
                        
                             <Bar 

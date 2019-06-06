@@ -536,6 +536,9 @@ p {
 .TeamList .Header {
   font-weight: bold; }
 
+.ListItem.Header h1 {
+  font-weight: bold !important; }
+
 .ListItem {
   display: flex;
   flex-direction: row;
@@ -545,7 +548,8 @@ p {
   align-content: flex-start;
   flex: 1 0 100% !important;
   border-bottom: 1px solid #709dce;
-  padding: 2% 1%; }
+  padding: 1.5% 1%;
+  font-weight: 100; }
   .ListItem .GameTitle {
     flex: 1 0 100%; }
     .ListItem .GameTitle h1 {
@@ -571,6 +575,38 @@ p {
       margin: 0; }
   .ListItem .GameCTA {
     flex: 1 0 10%; }
+  .ListItem .For {
+    flex-basis: 30%; }
+    .ListItem .For h1 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0;
+      font-weight: 100; }
+  .ListItem .Against {
+    flex-basis: 30%; }
+    .ListItem .Against h1 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0;
+      font-weight: 100; }
+  .ListItem .GameRuns {
+    flex-basis: 10%; }
+    .ListItem .GameRuns h1 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0;
+      font-weight: bold; }
+  .ListItem .GameBalls {
+    flex-basis: 10%; }
+    .ListItem .GameBalls h1 {
+      font-size: 1em !important;
+      padding: 0;
+      margin: 0;
+      font-weight: 100; }
+  .ListItem .Date {
+    flex-basis: 10%; }
+    .ListItem .Date h1 {
+      font-weight: 100; }
   .ListItem .TeamName, .ListItem .Number {
     flex: 1 0 45%; }
   @media only screen and (max-width: 576px) {
@@ -854,6 +890,16 @@ body {
                     > Content
 
 */ }
+      body #root #Statto #Frame .flex-70 {
+        flex-basis: 69.5% !important; }
+      body #root #Statto #Frame .flex-60 {
+        flex-basis: 59.5% !important; }
+      body #root #Statto #Frame .flex-50 {
+        flex-basis: 49.5% !important; }
+      body #root #Statto #Frame .flex-40 {
+        flex-basis: 39.5% !important; }
+      body #root #Statto #Frame .flex-30 {
+        flex-basis: 29.5% !important; }
       body #root #Statto #Frame header {
         position: fixed;
         z-index: 99999;
@@ -1044,6 +1090,8 @@ body {
         flex: 1 60% !important; }
       body #root #Statto #Frame .Section_Batting_Rankings .Inner {
         padding: 5px; }
+      body #root #Statto #Frame .Section_Batting_Runs.charts .row > div {
+        flex: 0 48%; }
       body #root #Statto #Frame #StattoTabs {
         background-color: transparent; }
         body #root #Statto #Frame #StattoTabs header {

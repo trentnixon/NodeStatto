@@ -2,39 +2,38 @@ import React, { Component } from 'react';
 
 import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
-import Row from "../../../Template/Page/Row";
-import Pod from "../../../Template/Page/Pod";
-//import PageHeader from "../../../Template/Page/Header";
+import SectionContainer from "../../../Sections/global/SectionContainer";
+import SectionHeader from "../../../Sections/global/Section_Global_Header";
 
+import WicketsOverTheYears from "../../../Sections/bowling/Section_Bowling_Wickets_OverTheYears";
 import InteractiveWicketsOverYears from "../../../Elements/InteractiveCharts/BarChart_WicketsOverTheYears";
 
 
 export default class Batting extends Component {
 
-  componentWillMount() { 
-    //console.log(this.props.DATA.CLEAN) 
-  }
+  componentWillMount() { }
 
   render() {
-    return (
+    return ( 
       <Container>
-      <Row>
-        <Title Title="Wickets" />
-      </Row>
-      <Row>
-        <Pod col="col-md-6" > Wickets over the years</Pod>
-        <Pod col="col-md-6" >  Wickets Most for and against </Pod>
-      </Row>
-         
+        <SectionHeader   h1={this.props.SUBS.WICKETS} h2={this.props.TITLES.BOWLING}  /> 
 
-      <InteractiveWicketsOverYears {... this.props} />
+        <SectionContainer  class="Section_Bowling_Wickets todo"> 
+          <WicketsOverTheYears 
+            {... this.props} 
+          />
+      
+        </SectionContainer>
+          
+        <SectionContainer class="Section_Bowling_Wickets todo">
+          <Title Title="Notable Bowling Performaces : Interactive List" />
+        </SectionContainer>
 
-
-       <Title Title="Notable Bowling Performaces " />
-      <Row>
-        <Pod col="col-md-12" > Interactive List</Pod>
-      </Row>
-    </Container>
+        <SectionContainer class="Section_Bowling_Wickets todo">
+          <InteractiveWicketsOverYears {... this.props} />
+        </SectionContainer>
+        
+    </Container> 
     )
   }
 } 

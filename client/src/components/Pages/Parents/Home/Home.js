@@ -60,7 +60,7 @@ export default class Statto extends Component {
               </SectionContainer> 
               
               <SectionContainer class="Section_Default complete">
-                  <Charts  {... this.props} />
+                  <Charts  {... this.props} /> 
               </SectionContainer>
           </Container>
     )

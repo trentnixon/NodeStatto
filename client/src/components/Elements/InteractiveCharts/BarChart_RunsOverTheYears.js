@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-//import Row from "../../Template/Page/Row";
-//import Pod from "../../Template/Page/Pod";
+import Row from "../../Template/Page/Row";
+import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
 //import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../../Elements/type/PageSubTitle";
 
@@ -24,7 +24,7 @@ let RunsYear=[
         data:[]
     }
 ];
-
+ 
 let Labels=[];
 
 export default class Section_Rankings extends Component {
@@ -95,41 +95,48 @@ export default class Section_Rankings extends Component {
     render() {
         return (
             <div> 
-                <FormControl variant="outlined" className="YearSelector" >
-                    <InputLabel
-                        ref={ref => { this.InputLabelRef = ref; }}
-                        htmlFor="outlined-year-simple"
-                    > 
-                        Select a Year 
-                    </InputLabel>
-                    <Select
-                        value={this.state.Year}
-                        onChange={this.handleChange}
-                        input={
-                                <OutlinedInput 
-                                    labelWidth={this.state.labelWidth}
-                                    name="year"
-                                    id="outlined-year-simple"
-                                />
-                        }
-                    >
-                        {
-                            this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
-                                    return(
-                                        <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
-                                    )
-                            })
-                        }
-                
-                    </Select>
-                </FormControl>
-                
-                <Bar 
-                    series={this.state.Data}
-                    Labels={this.state.Labels}
-                    Created={this.state.Created}
-                    horizontal={true}
-                />
+                <Row class="PodRow Form_Selector"> 
+                    <Pod col="Selector" canvas="">
+                        <FormControl variant="outlined" className="YearSelector" >
+                            <InputLabel
+                                ref={ref => { this.InputLabelRef = ref; }}
+                                htmlFor="outlined-year-simple"
+                            > 
+                                {this.props.LABELS.SITE.FORM.INPUTLABELS.YEARS}
+                            </InputLabel>
+                            <Select
+                                value={this.state.Year}
+                                onChange={this.handleChange}
+                                input={
+                                        <OutlinedInput 
+                                            labelWidth={this.state.labelWidth}
+                                            name="year"
+                                            id="outlined-year-simple"
+                                        />
+                                }
+                            >
+                                {
+                                    this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
+                                            return(
+                                                <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
+                                            )
+                                    })
+                                }
+                        
+                            </Select>
+                        </FormControl>
+                    </Pod>
+                </Row>
+                <Row class="PodRow">
+                    <Pod canvas="canvas1">
+                        <Bar 
+                            series={this.state.Data}
+                            Labels={this.state.Labels}
+                            Created={this.state.Created}
+                            horizontal={true}
+                        />
+                    </Pod>
+                </Row>
             </div>
             )
         }

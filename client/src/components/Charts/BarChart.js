@@ -89,8 +89,6 @@ class App extends Component {
     };
   }
 
-
-
   SetNewState(data){
     this.setState({
       series:  update(this.state.series, {$set: data.series}),
@@ -113,10 +111,7 @@ class App extends Component {
                             }
                         }
           ),
-      
     })
-    
-
   }
   componentWillMount() {  this.SetNewState(this.props)}
 
@@ -128,17 +123,11 @@ class App extends Component {
   render() {
 
     return (
-      <div className="app">
-      
-          <div className="mixed-chart">
             <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
+                options={this.state.options}
+                series={this.state.series}
+                type="bar"
             />
-          </div>
-       
-      </div>
     );
   }
 }

@@ -1,47 +1,63 @@
 import React, { Component } from 'react';
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 
 export default class BattingRecentScores extends Component {
 
     componentWillMount() { }
     render() {
-        return (
-                <div className="Table " id="RecentScores" >
-                   <Table >
-                        <TableHead>
-                        <TableRow>
-                            <TableCell>For</TableCell>
-                            <TableCell align="right">Against</TableCell>
-                            <TableCell align="right"></TableCell>
-                            <TableCell align="right">Runs</TableCell>
-                            <TableCell align="right">Balls</TableCell>
-                        </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {
-                                // eslint-disable-next-line
+        return (<div>
+
+
+                    <div className="ListItem Header">
+                            <div className="For">
+                                <h1>For</h1>
+                            </div>
+                            <div className="Against">
+                                <h1>Against</h1>
+                            </div>
+                            <div className="Date">
+                                <h1><small>Date</small></h1>
+                            </div>
+
+                            
+                            <div className="GameRuns">
+                                <h1>Runs</h1>
+                            </div>
+                            <div className="GameBalls"> 
+                                <h1>Balls</h1>
+                            </div>
+                    </div>
+                    {
+                                // eslint-disable-next-line 
                                 this.props.Data.slice(0,10).map((game,i)=>{
                                
                                     if(game.Batting){
                                         return(
-                                            <TableRow key={i}>
-                                                <TableCell component="th" scope="row">{game.Meta.Team}</TableCell>
-                                                <TableCell align="right">{game.Meta.Opposition}</TableCell>
-                                                <TableCell align="right"><small>{game.Meta.Date}</small></TableCell>
-                                                <TableCell align="right">{game.Batting.RunsValue}</TableCell>
-                                                <TableCell align="right">{game.Batting.BallsFaced}</TableCell>
-                                            </TableRow>
+                                            <div className="ListItem" key={i}>
+                                                    <div className="For">
+                                                        <h1>{game.Meta.Team}</h1>
+                                                    </div>
+                                                    <div className="Against">
+                                                        <h1>{game.Meta.Opposition}</h1>
+                                                    </div>
+                                                    <div className="Date">
+                                                        <h1><small>{game.Meta.Date}</small></h1>
+                                                    </div>
+                        
+                                                    
+                                                    <div className="GameRuns">
+                                                        <h1>{game.Batting.RunsValue}</h1>
+                                                    </div>
+                                                    <div className="GameBalls"> 
+                                                        <h1>{game.Batting.BallsFaced}</h1>
+                                                    </div>
+                                            </div>
+                                            
                                         )
                                     }
                                 })
                             }
-                        </TableBody>
-                    </Table>
+        
                 </div>
             )
         }

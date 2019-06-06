@@ -70,7 +70,7 @@ let stats=[
         Value:[0],
         Total:[0],
         Percentage:[0],
-        For:["Name"], 
+        For:["Name"],  
         Against:["Name"],
         Title:"Career Innings"
     }

@@ -8,6 +8,7 @@ import ComponentHistory from "./Parents/History/History";
 import ComponentBatting from "./Parents/Batting/Batting";
 import ComponentFormGuide from "./Parents/Batting/formguide";
 import ComponentRuns from "./Parents/Batting/runs";
+import ComponentBalls from "./Parents/Batting/balls";
 import ComponentAVG from "./Parents/Batting/avg";
 import ComponentFOR from "./Parents/Batting/for";
 import ComponentBowling from "./Parents/Bowling/Bowling";
@@ -54,6 +55,11 @@ const  Navigation =[
           "label":"Runs",
           "path":"runs",
           "icon":<Runs/>
+        },
+        {
+          "label":"By The Ball",
+          "path":"by-the-ball",
+          "icon":<Bowling />
         },
         {
           "label":"For & Against",
@@ -138,6 +144,8 @@ export default class Statto extends Component {
                 <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
                 <Route  exact path='/:id/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
                 <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
+                <Route  exact path='/:id/batting/by-the-ball' render={()=> <ComponentBalls {... this.props}/> }/>
+                
                 <Route  exact path='/:id/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>
                 <Route  exact path='/:id/batting/foragainst' render={()=> <ComponentFOR {... this.props}/> }/>
 

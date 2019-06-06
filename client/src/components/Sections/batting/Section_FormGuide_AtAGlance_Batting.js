@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update'
+import {Animated} from "react-animated-css";
 
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
 
 // Elelemnts
 import RadialPod from "../../Elements/pods/FillPods";
@@ -120,7 +121,7 @@ export default class Section_Rankings extends Component {
         if(Perc  > 100){ Perc = 100}
         return Perc;
     }
-    Divideexpected(int,value,played){
+    Divideexpected(int,value,played){ 
         return ((value/int)*played).toFixed(2);
     }
     Multiplyexpected(value,played){
@@ -133,29 +134,34 @@ export default class Section_Rankings extends Component {
     shouldComponentUpdate(nextProps, nextState){ return true;}
     componentWillUpdate(nextProps, nextState){}
     render() {
+        let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-            <div className="atAGlance">
-                <Pod col="col-md-12 NakedPod" >
-                        <Row class="Radial" > 
-                            {
+            <Row class="PodRow">
+                
+                            { 
                                 this.state.stats.map((radial,i)=>{
+                                    let Delay= 200*i;
                                     return(
-                                       
-                                        <RadialPod 
+                                        <Animated  
                                             key={i} 
-                                            Value={radial.Value}
-                                            Label={radial.Name}
-                                            Percentage={radial.Percentage}
-                                            Created={this.state.Created}
-                                            TitleValue={radial.TitleValue}
-                                            Title={radial.Title} 
-                                        />
+                                            animationIn="fadeInUp"
+                                            isVisible={this.props.isVisible}
+                                            animationInDelay={Delay}
+                                            animateOnMount={false}
+                                            className={IsVisable}
+                                        >
+                                            <SingleValuePod 
+                                                label={radial.Name}
+                                                total={radial.Value}
+                                                icon= ""
+                                                Footer = ""
+                                            />
+                                        </Animated> 
                                     )
                                 })
                             }
-                        </Row > 
-                    </Pod>
-            </div>
+             </Row>
+
             )
         }
     } 

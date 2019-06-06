@@ -84,37 +84,44 @@ export default class Section_Rankings extends Component {
     render() {
 
         return (
-            <Row>
-                <Pod col="col-md-12" > 
-                    <Title Title="Runs by Year" />
+            <Row class="PodRow">
+                <Title Title="Wickets By Teams and Year" />
+                    <div>
+                    <Row class="PodRow Form_Selector"> 
+                        <Pod col="Selector" canvas="">
+                            <FormControl variant="outlined" className="YearSelector" >
+                            <InputLabel
+                                ref={ref => { this.InputLabelRef = ref; }}
+                                htmlFor="outlined-year-simple"
+                            > Select a Year </InputLabel>
+                            <Select
+                                value={this.state.Year}
+                                onChange={this.handleChange}
+                                input={
+                                    <OutlinedInput
+                                        labelWidth={this.state.labelWidth}
+                                        name="year"
+                                        id="outlined-year-simple"
+                                    />
+                                }
+                            >
 
-                    <FormControl variant="outlined" className="YearSelector" >
-                        <InputLabel
-                            ref={ref => { this.InputLabelRef = ref; }}
-                            htmlFor="outlined-year-simple"
-                        > Select a Year </InputLabel>
-                        <Select
-                            value={this.state.Year}
-                            onChange={this.handleChange}
-                            input={
-                                <OutlinedInput
-                                    labelWidth={this.state.labelWidth}
-                                    name="year"
-                                    id="outlined-year-simple"
-                                />
+                            {
+                                this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
+                                        return(
+                                            <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
+                                        )
+                                })
                             }
-                        >
-
-                        {
-                            this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
-                                    return(
-                                        <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
-                                    )
-                            })
-                        }
-                
-                        </Select>
-                        </FormControl>
+                    
+                            </Select>
+                            </FormControl>
+                        </Pod>
+                    </Row>
+                    
+                    <Row class="PodRow">
+                    <Pod canvas="canvas1">
+                    
 
                     <Bar 
                         series={this.state.Data}
@@ -122,7 +129,9 @@ export default class Section_Rankings extends Component {
                         Created={this.state.Created}
                         horizontal={true}
                     />
-                </Pod>
+                        </Pod>
+            </Row>
+            </div>
             </Row>
             )
         }

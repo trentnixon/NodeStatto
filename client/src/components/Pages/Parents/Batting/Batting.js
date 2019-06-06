@@ -14,7 +14,7 @@ import SectionCareerBatting from "../../../Sections/batting/Section_Career_Batti
 import SectionMilestonesBatting from "../../../Sections/batting/Section_Career_Milestones_Batting";
 import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
-export default class BattingOverview extends Component {
+export default class Page_BattingOverview extends Component {
  
   componentWillMount() { }
 
@@ -57,7 +57,7 @@ export default class BattingOverview extends Component {
           
           />  
 
-        </SectionContainer>
+        </SectionContainer> 
 
         <SectionContainer class="Section_Batting_Milestones complete ">
           <SectionMilestonesBatting  

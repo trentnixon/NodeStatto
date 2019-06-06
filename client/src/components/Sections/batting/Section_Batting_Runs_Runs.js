@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Template
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+import Pod from "../../Elements/pods/Pod_Outer_Wrapper"
 
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
@@ -58,38 +58,24 @@ export default class Section_Rankings extends Component {
     render() {
         
         return (
-            <div className="Section Section_Runs">
-                <Row class="ContainerRow">
-                    <Pod col="col-md-12" > 
-                        <SubTitle  Title="Run % over the Years" />
-                        <SubTitle Title="Possibly move this into a MUI Tabber" />
-                        <Row>
-                            <Pod col="col-md-8" >
-                                <Bar 
-                                        series={RunsYear} 
-                                        Labels={Labels}
-                                        horizontal={false}
-                                />
-                            </Pod>
-                            <Pod col="col-md-4" >
-                                    <Donut series={PieRuns} Labels={Labels} />
-                            </Pod>
-                        </Row>
+            <Row class="PodRow">
+                 <SubTitle  Title="Runs over the Years" />
 
-                        
-                       
-                        <Row>
-                            <Pod col="col-md-8" > 
-                                <Title Title="Notable Scores" />
-                                Interactive List
-                            </Pod>
-                            <Pod col="col-md-4" > 
-                                <Title Title="Runs by the game" />    
-                            </Pod>
-                        </Row>
-                    </Pod>
-                </Row>
-            </div>
+                 <Pod  class ="flex-70" canvas="canvas1"> 
+                        <Bar 
+                            series={RunsYear} 
+                            Labels={Labels}
+                            horizontal={false}
+                        />
+                 </Pod>     
+                 <Pod class ="flex-30" canvas="canvas1">      
+                    <Title Title="Run % Over the Years" /> 
+                        <Donut 
+                            series={PieRuns} Labels={Labels}  
+                        />
+                    <Title Title="Most Runs for and against" />
+                </Pod>
+            </Row>
             )
         }
     } 
