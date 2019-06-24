@@ -17,19 +17,16 @@ import './App.css'
  * -- Command list
       git add .
       git commit -am "make it better"
-      git push heroku master
+      git push heroku master 
  */
-
-
 
 export default class App extends Component {
     render () {  
-     return ( 
+     return (  
         <Router> 
             <div id="statto-app">
               <Route  path="/:playerid" component={Stage} /> 
-              <Route  path="/u/:playerid" component={User} /> 
-              
+              <Route exact path="/u/:playerid" component={User} /> 
               <Route exact path="/" component={Login}/>
               <Route exact path="/error/IDError" component={Wrong_ID} />  
             </div>

@@ -8,6 +8,9 @@
                     background-color: #fff;
                     position: relative;
                 }
+                .Inner.Naked{
+                    @include Inner_Naked_Styles;
+                }
 
             }
 

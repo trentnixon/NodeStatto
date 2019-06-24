@@ -17,7 +17,7 @@ let PieRuns=[],Labels=[], PieBalls=[];
 
 let RunsYear=[
     { 
-        name:"Runs",
+        name:"Runs", 
         data:[]
     },
     {
@@ -61,20 +61,24 @@ export default class Section_Rankings extends Component {
             <Row class="PodRow">
                  <SubTitle  Title="Runs over the Years" />
 
-                 <Pod  class ="flex-70" canvas="canvas1"> 
+                 <Pod  class="flex-70" canvas="canvas1"> 
                         <Bar 
                             series={RunsYear} 
                             Labels={Labels}
                             horizontal={false}
                         />
                  </Pod>     
-                 <Pod class ="flex-30" canvas="canvas1">      
-                    <Title Title="Run % Over the Years" /> 
+                 <Pod class="flex-30" type="Naked" canvas="">      
+                   
                         <Donut 
                             series={PieRuns} Labels={Labels}  
                         />
+                    
+                </Pod>
+                <Pod  class="flex-100" canvas="canvas1">
                     <Title Title="Most Runs for and against" />
                 </Pod>
+                
             </Row>
             )
         }

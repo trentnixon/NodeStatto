@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+import PodWrapper from "../../Elements/pods/Pod_Outer_Wrapper";
 import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../Elements/type/PageSubTitle";
 
@@ -13,15 +13,14 @@ export default class Section_Rankings extends Component {
     }
     render() {
         return (
-            <div className="Section_Career">
-                <Row > 
-                        
-                        <Pod col="col-md-12" > 
+            <Row class="PodRow">  
+                <Title Title="Recent Figures" />
+                    <PodWrapper canvas="canvas1">
                         <Title Title="Recent Figures"/>
                            <Table  Data={ThisData}/>
-                        </Pod>
+                    </PodWrapper>
                 </Row>
-            </div>
+          
             )
         }
     } 

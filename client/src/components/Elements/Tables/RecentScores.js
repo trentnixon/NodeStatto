@@ -20,7 +20,7 @@ export default class BattingRecentScores extends Component {
                             </div>
 
                             
-                            <div className="GameRuns">
+                            <div className="GameRuns"> 
                                 <h1>Runs</h1>
                             </div>
                             <div className="GameBalls"> 

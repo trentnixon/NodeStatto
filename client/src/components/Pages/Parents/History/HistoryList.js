@@ -9,9 +9,9 @@ export default class History extends Component {
   render() {
     return (
       <div>
-        <SectionHeader h1={this.props.TITLES.HISTORY} h2={this.props.TITLES.CAREER} />
+          <SectionHeader h1={this.props.TITLES.HISTORY} h2={this.props.TITLES.CAREER} />
           <SectionContainer class="Section_History">
-            <ListHistory  
+            <ListHistory   
                 SelectedID={null}
                 List={this.props.DATA.CLEAN}
                 Years={this.props.DATA.CAREER.Career.batting.overTheYears}

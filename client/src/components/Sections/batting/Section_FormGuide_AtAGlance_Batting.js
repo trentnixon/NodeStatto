@@ -42,7 +42,7 @@ let stats=[
     {
         Name:["Average"],
         Value:[0], 
-        Total:[0],
+        Total:[0], 
         Percentage:[0],
         Title:"Expected"
     },

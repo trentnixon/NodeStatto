@@ -21,7 +21,7 @@ import SectionRunsBar from "../../../Sections/batting/Section_RunsOverTheYearsBa
 export default class Batting extends Component {
 
   componentWillMount() { }
- 
+  
   render() { 
     return (    
       <Container>
@@ -32,7 +32,9 @@ export default class Batting extends Component {
         </SectionContainer>
 
         <SectionContainer class="Section_Batting_Runs todo">
-            <SectionNotable  {... this.props} />
+            <SectionNotable  
+              {... this.props} 
+            /> 
         </SectionContainer>
 
         <SectionContainer class="Section_Batting_Runs todo">

@@ -13,36 +13,57 @@ export default class BattingRecentScores extends Component {
     render() {
         return (
                 <div className="Table " id="RecentScores" >
-                   <Table >
-                        <TableHead>
-                        <TableRow>
-                            <TableCell>For</TableCell>
-                            <TableCell align="right">Against</TableCell>
-                            <TableCell align="right"></TableCell>
-                            <TableCell align="right">Figures</TableCell>
-                            <TableCell align="right">Overs</TableCell>
-                        </TableRow>
-                        </TableHead>
-                        <TableBody>
+                     <div className="ListItem Header">
+                            <div className="For">
+                                <h1>For</h1>
+                            </div>
+                            <div className="Against">
+                                <h1>Against</h1>
+                            </div>
+                            <div className="Date">
+                                <h1><small>Date</small></h1>
+                            </div>
+
+                            
+                            <div className="GameRuns"> 
+                                <h1>Figures</h1>
+                            </div>
+                            <div className="GameBalls"> 
+                                <h1>Overs</h1>
+                            </div>
+                    </div>
+
                             {
                                 // eslint-disable-next-line
                                 this.props.Data.map((game,i)=>{
                                     
                                     if(game.Bowling){
                                         return(
-                                            <TableRow key={i}>
-                                                <TableCell component="th" scope="row">{game.Meta.Team}</TableCell>
-                                                <TableCell align="right">{game.Meta.Opposition}</TableCell>
-                                                <TableCell align="right"><small>{game.Meta.Date}</small></TableCell>
-                                                <TableCell align="right">{game.Bowling.Figures}</TableCell>
-                                                <TableCell align="right">{game.Bowling.Overs}</TableCell>
-                                            </TableRow>
+                                           
+                                            <div className="ListItem" key={i}>
+                                                <div className="For">
+                                                    <h1>{game.Meta.Team}</h1>
+                                                </div>
+                                                <div className="Against">
+                                                    <h1>{game.Meta.Opposition}</h1>
+                                                </div>
+                                                <div className="Date">
+                                                    <h1><small>{game.Meta.Date}</small></h1>
+                                                </div>
+                    
+                                                
+                                                <div className="GameRuns">
+                                                    <h1>{game.Bowling.Figures}</h1>
+                                                </div>
+                                                <div className="GameBalls"> 
+                                                    <h1>{game.Bowling.Overs}</h1>
+                                                </div>
+                                            </div>
                                         )
                                     }
                                 })
                             }
-                        </TableBody>
-                    </Table>
+                       
                 </div>
             )
         }

@@ -16,17 +16,11 @@ export default class Page_Batting_Formguide
   componentWillMount() {} 
 
   render() { 
-    /**
-     *    
-     * <SectionCareerBatting Data={this.props.DATA.CAREER.Form.batting} />
-             <PageHeader>
-             /10
-             </PageHeader> 
-     */ 
+ 
     return ( 
           <Container>
             <SectionHeader   h1={this.props.TITLES.FORMGUIDE} h2={this.props.TITLES.BATTING} /> 
-            <SectionP Copy="Form guide data is pulled from the last 5 Games"/>
+            <SectionP Copy={this.props.DESC.FORMGUIDE}/>
      
               <SectionContainer class="Section_Batting_FormGuide todo">
                 <SectionCareerBatting 
@@ -35,8 +29,8 @@ export default class Page_Batting_Formguide
                   Title=""
                   SubTitle=""
                   {... this.props}
-                />
-            </SectionContainer>
+                /> 
+            </SectionContainer> 
 
 
             <SectionContainer class="Section_Batting_FormGuide todo">

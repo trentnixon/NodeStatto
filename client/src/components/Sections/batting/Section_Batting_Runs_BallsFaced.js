@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Row from "../../Template/Page/Row";
 import Pod from "../../Elements/pods/Pod_Outer_Wrapper"
 import Title from "../../Elements/type/PageTitle";
-import SubTitle from "../../Elements/type/PageSubTitle";
+//import SubTitle from "../../Elements/type/PageSubTitle";
 
 // Charts
 import Donut from "../../Charts/donut"; 
@@ -51,10 +51,10 @@ export default class Section_Batting_BallsFaced extends Component {
           })
     }
     render() {
-        return (
+        return ( 
             <Row class="PodRow">
                     
-                    <Title Title="Balls Faced Against Innings Played" />
+                    <Title Title="Balls Faced" />
                     <Pod class ="flex-70" canvas="canvas1">
                        
                             <Bar 
@@ -64,16 +64,16 @@ export default class Section_Batting_BallsFaced extends Component {
                                 />
 
                      </Pod>  
-                     <Pod class ="flex-30" canvas="canvas1">    
-                        <Title Title="Balls over the Years" /> 
+                     <Pod class ="flex-30" type="Naked" canvas="">
                         <Donut 
                                     series={PieBalls}
                                     Labels={Labels}
                                 />
-                        <Title Title="Most Balls Faced for and against" />
-
                     </Pod>  
                     
+                    <Pod  class="flex-100" canvas="canvas1">
+                            <Title Title="Most Balls Faced for and against" />
+                    </Pod>
                 </Row>            
             )
         }

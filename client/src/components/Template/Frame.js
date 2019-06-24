@@ -138,7 +138,7 @@ class ResponsiveDrawer extends React.Component {
           >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
             
-
+      
             </Drawer>
         </Hidden>
 
@@ -152,7 +152,7 @@ class ResponsiveDrawer extends React.Component {
                 }}
             >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
-         
+                
             </Drawer>
         </Hidden>
 

@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
+
+import IconButton from '@material-ui/core/IconButton';
+import LaunchIcon from '@material-ui/icons/Launch';
+
+
 let Rows;
-export default class SectionTableForAgainst
- extends Component {
+export default class SectionTableForAgainst  extends Component {
+
     render(){
+        console.log(this.props)
      /**
       * 
                             <ROW 
@@ -18,7 +25,8 @@ export default class SectionTableForAgainst
                                 /> 
       */
         Rows = this.props.Data.map((team,i)=>{
-            if( team[this.props.Selected] !== 0 
+            
+            if( team[this.props.Selected] !== 0  
                 && team.Innings >= this.props.Int
                 && isFinite(team[this.props.Selected]))
             {
@@ -27,7 +35,11 @@ export default class SectionTableForAgainst
                     <div className="ListItem"  key={i} >
                             <div className="TeamName">{team.Team}</div>
                             <div className="Number">{team[this.props.Selected]}</div>
-                            <div className="GameCTA"></div>
+                            <div className="GameCTA">
+                                    <IconButton aria-label="Scorecard" component={Link} to={`/${this.props.match.params.playerid}/history/for/${team.ID}`}>
+                                            <LaunchIcon />
+                                    </IconButton>
+                            </div>
                      </div>   
                 )
             }

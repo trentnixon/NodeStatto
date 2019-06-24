@@ -18,6 +18,7 @@ export default class Page_BattingOverview extends Component {
  
   componentWillMount() { }
 
+  
   /**
    *  <SectionCareerBatting 
             Data={this.props.DATA.CAREER.Career.batting}   
@@ -25,6 +26,7 @@ export default class Page_BattingOverview extends Component {
           /> 
    */
   render() {  
+    console.log(this.props);
     return (    
       <Container>  
         <SectionHeader   h1={this.props.TITLES.OVERVIEW} h2={this.props.TITLES.BATTING}   /> 
@@ -33,14 +35,14 @@ export default class Page_BattingOverview extends Component {
           <SectionRankings  
             Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
             Title={this.props.TITLES.RANKINGS}
-            SubTitle={this.props.DESC.DESCRANKINGS}  
+            SubTitle={this.props.LABELS.SITE.DESC.DESCRANKINGS}  
             {... this.props}
           />
         </SectionContainer>
  
         <SectionContainer class="Section_Batting_ForAgainst complete">
  
-          <Tabber 
+          <Tabber  
             Tabs={
               [
                 {
@@ -52,7 +54,7 @@ export default class Page_BattingOverview extends Component {
                   Title:this.props.SUBS.FORAGAINST,
                   Component:<MostForAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props} />,
                   Icon:<PeopleIcon />
-                }
+                } 
             ]}
           
           />  

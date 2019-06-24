@@ -58,7 +58,7 @@ const stats=[
   {
       Name:["SR"],
       Title:"Strike Rate"
-  }
+  } 
 ];
 
 // let AGAINST;

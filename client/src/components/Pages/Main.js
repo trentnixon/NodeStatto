@@ -23,7 +23,7 @@ import ComponentAbout from "./Parents/about/about";
 // Icons
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import ShowChart from '@material-ui/icons/ShowChart';
+import ShowChart from '@material-ui/icons/ShowChart'; 
 import MultilineChart from '@material-ui/icons/MultilineChart';
 import People from '@material-ui/icons/People';
 import Settings from '@material-ui/icons/Settings';
@@ -139,13 +139,13 @@ export default class Statto extends Component {
                 <Route  exact path='/:id' render={()=> <ComponentHome {... this.props}/> }/>
                 <Route  exact path='/:id/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
 
-                <Route   path="/:id/history" render={()=> <ComponentHistory {... this.props}/> }/>
+                <Route   path="/:id/history" render={()=> <ComponentHistory /> }/>
           
                 <Route  exact path="/:id/batting" render={()=> <ComponentBatting {... this.props}/> }/>
                 <Route  exact path='/:id/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
                 <Route  exact path='/:id/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
                 <Route  exact path='/:id/batting/by-the-ball' render={()=> <ComponentBalls {... this.props}/> }/>
-                
+                 
                 <Route  exact path='/:id/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>
                 <Route  exact path='/:id/batting/foragainst' render={()=> <ComponentFOR {... this.props}/> }/>
 

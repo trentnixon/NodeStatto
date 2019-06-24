@@ -27,6 +27,12 @@
     background-color: #fff;
     position: relative;  
 }
+@mixin Inner_Naked_Styles{
+    border:unset;
+    border:none;
+    padding: 5px;
+    background-color: transparent;
+}
 
 // Header
 @mixin Style_POD_Header {
@@ -39,7 +45,7 @@
     margin: 0;
     font-size: 1.3em !important;
     padding: 5px 0 !important;
-    color:$h3Color !important;
+    color:$h3Color ;
    
 }
 
@@ -92,18 +98,22 @@
                 @import "./PodType";
                 @import "./PodButtons";
             }
+            .Inner.Naked{
+                @include Inner_Naked_Styles;
+            }
 
            
             @import "./Type_IconPods";
             @import "./Type_SingleLinePod";
             @import "./Type_Zeroed";
              
+            @import "./Type_HeaderBodyPod";
         }
    
     @import "./Type_FilledPod"; 
     @import "./Pod_Generic";
     @import "./Type_RankingPod";
-    @import "./Type_HeaderBodyPod";
+   
 
     
 }

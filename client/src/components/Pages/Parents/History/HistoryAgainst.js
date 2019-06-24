@@ -28,7 +28,7 @@ class HistoryPod extends Component {
 
 
 let DisplayTeam=null;
-export default class HistoryFor extends Component {
+export default class HistoryAgainst extends Component {
 
   componentWillMount() {
     DataStore = store.getState();

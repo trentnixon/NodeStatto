@@ -31,7 +31,7 @@ export default class BowlingHome extends Component {
           <SectionRankings 
             Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling} 
             Title={this.props.TITLES.RANKINGS}
-            SubTitle={this.props.DESC.DESCRANKINGS}  
+            SubTitle={this.props.LABELS.SITE.DESC.DESCRANKINGS}   
             {... this.props}
           />
         </SectionContainer>
@@ -50,7 +50,7 @@ export default class BowlingHome extends Component {
                   Component:<SectionForandAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props}/>,
                   Icon:<PeopleIcon />
                 }
-            ]}
+            ]} 
           />
         </SectionContainer>
          

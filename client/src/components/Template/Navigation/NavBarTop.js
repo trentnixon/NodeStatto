@@ -16,7 +16,7 @@ import CalendarToday from '@material-ui/icons/PermContactCalendar';
 
 const NavBarTop = (props) => {
     function CloseDrawer(){
-        console.log("Close");
+        //console.log("Close");
         UXDrawer(false);
       }
 

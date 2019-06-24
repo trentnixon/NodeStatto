@@ -2,12 +2,12 @@
     padding: 0 !important;
     margin: 0;
     
-
     .Header{ 
         @include Style_POD_Header;
          
         h1{ 
             @include Style_POD_Header_H1;
+           
             .Avatar{
                 @include Style_POD_Header_AVA;
             }

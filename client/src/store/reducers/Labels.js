@@ -35,7 +35,7 @@ const InitialState ={
                 },
                 SUBS:{
                     RUNS:"Runs",
-                    BALLS:"By The Ball",
+                    BALLS:"By The Ball", 
                     WICKETS:"Wickets",
                     CATCHES:"Catches",
                     INNINGS:"Innings",
@@ -49,12 +49,14 @@ const InitialState ={
                     ECO:"Economy",
                 },
                 DESC:{
-                    DESCRANKINGS:"Breakdown of World Rankings over a Career"
+                    DESCRANKINGS:"Breakdown of World Rankings over a Career",
+                    FORMGUIDE:"Form guide data is pulled from the last 5 Games"
                 },
                 FORM:{
                     INPUTLABELS:{
                         YEARS:"Select a Year",
-                        FILTER:"Filter By"
+                        FILTER:"Filter By",
+                        VARIABLE:"Select a Variable"
                     }
                 },
                 CTA:{

@@ -14,12 +14,12 @@ export default class History extends Component {
  
   componentWillMount() {}
   render() {
-    //console.log(this.props)
+    console.log(this.props)
     return ( 
-      <Container>
-          <Route exact path={`${this.props.match.path}/history/`} render={()=> <ListHistory {... this.props}/> } />
-          <Route path={`${this.props.match.path}/history/for/:teamID`} component={HistoryFor}  />
-          <Route path={`${this.props.match.path}/history/against/:teamID`} component={HistoryAgainst}  />
+      <Container> 
+        <Route exact path={`${this.props.match.path}/history/`} render={()=> <ListHistory {... this.props}/> } />
+        <Route exact path={`${this.props.match.path}/history/for/:teamID`} render={()=>  <HistoryFor {... this.props}/> } />
+        <Route exact path={`${this.props.match.path}/history/against/:teamID`}render={()=> <HistoryAgainst {... this.props} /> } />
       </Container>
     )
   }

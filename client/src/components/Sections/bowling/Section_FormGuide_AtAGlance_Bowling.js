@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update'
-
+import {Animated} from "react-animated-css";
 import Row from "../../Template/Page/Row";
 import Pod from "../../Template/Page/Pod";
 
 // Elements
 import RadialPod from "../../Elements/pods/FillPods";
+import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
+
 
 // var _ = require('lodash');
 
@@ -43,7 +45,7 @@ let stats=[
         Value:[0],
         Total:[0],
         Percentage:[0],
-        Title:"Expected"
+        Title:"Expected" 
     },
     {
         Name:["Strike Rate"],
@@ -130,29 +132,43 @@ export default class Section_Rankings extends Component {
     }
 
     render() {
+        let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-                <div className="atAGlance">
-                    <Pod col="col-md-12 NakedPod" >
-                        <Row class="Radial" > 
+            <Row class="PodRow">
                             {
                                 this.state.stats.map((radial,i)=>{
                                     //console.log(radial)
+                                    let Delay= 200*i;
                                     return(
-                                        <RadialPod 
-                                            key={i}
-                                            Value={radial.Value}
-                                            Label={radial.Name}
-                                            Percentage={radial.Percentage}
-                                            Created={this.state.Created}
-                                            TitleValue={radial.TitleValue}
-                                            Title ={radial.Title}
-                                        />
+                                        <Animated  
+                                        key={i} 
+                                        animationIn="fadeInUp"
+                                        isVisible={this.props.isVisible}
+                                        animationInDelay={Delay}
+                                        animateOnMount={false}
+                                        className={IsVisable}
+                                    >
+                                            <SingleValuePod 
+                                            label={radial.Name}
+                                            total={radial.Value}
+                                            icon= ""
+                                            Footer = ""
+                                            />
+                                        </Animated>
                                     )
                                 })
                             }
-                        </Row > 
-                    </Pod>
-                </div>
+            </Row >
             )
         }
     } 
+
+    /** <RadialPod 
+                                                key={i}
+                                                Value={radial.Value}
+                                                Label={radial.Name}
+                                                Percentage={radial.Percentage}
+                                                Created={this.state.Created}
+                                                TitleValue={radial.TitleValue}
+                                                Title ={radial.Title}
+                                            /> */

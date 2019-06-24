@@ -18,7 +18,7 @@ export default class Section_Rankings extends Component {
                     <PodWrapper canvas="canvas1">
                         <Table   Data={ThisData} /> 
                 </PodWrapper>
-            </Row>
+            </Row> 
             )
         }
     } 

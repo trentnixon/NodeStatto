@@ -22,7 +22,7 @@ class HistoryPod extends Component {
                     <Title  Title={this.props.Value} />
                 </div>
             </Pod>
-        )
+        ) 
     }
 }
 
@@ -31,11 +31,11 @@ let DisplayTeam=null;
 export default class HistoryFor extends Component {
 
   componentWillMount() {
-    const state = store.getState();
+    //const state = store.getState();
 
    //console.log(state, this.props.match.params.teamID);
    // eslint-disable-next-line
-    state.DATA.FOR.map((team,i)=>{
+   this.props.DATA.FOR.map((team,i)=>{
         if(team.ID === this.props.match.params.teamID){
             DisplayTeam = team
         }
@@ -43,6 +43,9 @@ export default class HistoryFor extends Component {
   }
 
   render() {
+      console.log(this.props);
+      console.log(this.props.DATA.FOR, this.props.match.params.teamID, DisplayTeam);
+      
     return (
      <div>
          <SectionHeader h1="History with" h2={DisplayTeam.Team} />

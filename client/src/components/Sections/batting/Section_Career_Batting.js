@@ -214,7 +214,7 @@ export default class Section_Rankings extends Component {
                             input={ <OutlinedInput 
                                         labelWidth={this.state.labelWidth}
                                         name="year"
-                                        id="outlined-year-simple"
+                                        id="outlined-year-simple" 
                                     />
                                 }
                         >
