@@ -23,11 +23,10 @@ export default class History extends Component {
           <Title Title={this.props.Title}/>
             
           <PodWrapper canvas="canvas1">
-              
-                        <ListHistory 
+              <ListHistory 
                             Games={DisplayList}
                             isVisible={this.props.isVisible} 
-                            match={ this.props.match}
+                            match={ this.props.match} 
                         />
                   
                

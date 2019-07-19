@@ -24,7 +24,7 @@ const List_History = (props) => (
                 return(
                     <Animated  
                         key={i} 
-                        animationIn="flipInX"
+                        animationIn="fadeIn"
                         isVisible={props.isVisible}
                         animationInDelay={Delay}  
                         animateOnMount={false}

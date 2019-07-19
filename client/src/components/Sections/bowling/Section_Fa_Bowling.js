@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
 import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
@@ -24,7 +23,7 @@ export default class Section_Rankings extends Component {
 
         return (
             <Row class="PodRow">
-                <Title Title={this.props.Title}/>
+                <Title Title={this.props.Title}/> 
                 <SubTitle Title={this.props.SubTitle} />
                  {
                     stones.map((stone,i)=>{

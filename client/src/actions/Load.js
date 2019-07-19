@@ -21,7 +21,7 @@ export function FetchData(){
 
     /** Set Properties */
     this.id = null;
-    this.StoredData = [];
+    this.StoredData = []; 
     this.FormGuide = []; 
 
      /** 

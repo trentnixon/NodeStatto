@@ -5,10 +5,6 @@ import {Animated} from "react-animated-css";
 import Row from "../../Template/Page/Row";
 import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
 
-// Elelemnts
-import RadialPod from "../../Elements/pods/FillPods";
-
-// var _ = require('lodash');
 
 let stats=[
     {

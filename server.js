@@ -7,12 +7,7 @@ var async = require("async");
 
 const Domain = 'https://www.lastmanstands.com/cricket-player/';
 const URLVAR = 't20/?playerid=';
-// https://www.lastmanstands.com/cricket-player/t20/?playerid=47918
-// https://www.lastmanstands.com/cricket-player/t20?playerid=47918
-// https://www.lastmanstands.com/cricket-player/batting-career-history/t20?playerid=47918
-//const Page = ['/batting-career-history/','/batting-career-history-non-counting-games/',
-//              '/bowling-career-history/','/bowling-career-history-non-counting-games/',
- //             '/keeping-career-history/','/keeping-career-history-non-counting-games/' ]
+
 
 /* *****************************************
 **
@@ -120,33 +115,24 @@ function TeamSheet(html){
 }
 
 
-
-
 /** PING */
 function ping(html,id){
     
     let  LMSData={}
 
-
-    //console.log(html);
     LMSData["Meta"]={};
     LMSData["Batting"]={};
     LMSData["Bowling"]={};
 
-        
-    const Full = html[0]+''+html[1]+''+html[2];
-    console.log(typeof Full);
+    const Full = html[0]+''+html[1];
+    //console.log(Full)
     let $ = cheerio.load(Full);
-    //let $OLDBowl = cheerio.load(html[1]);
-    //let $OLDBat = cheerio.load(html[2]);
     
     LMSData["Meta"] = PullMeta($,id);
-    LMSData["Batting"] = DataLoop($ , '#pp-batting-history-container .rank-table tbody tr');
-    //LMSData["Batting"].push(DataLoop($OLDBat , '.rank-table tbody tr'))
-    LMSData["Bowling"]= DataLoop($ , '#pp-bowling-history-container .rank-table tbody tr');
-    //LMSData["BowlingOld"]= DataLoop($OLDBowl , '.rank-table tbody tr');
-    
-   // console.log(LMSData);
+    LMSData["Batting"] = DataLoop(cheerio.load(html[0]), '.rank-table tbody tr');
+    LMSData["Bowling"] = DataLoop(cheerio.load(html[1]), '.rank-table tbody tr');
+
+    //console.log(LMSData);
 
     return LMSData;
 }
@@ -238,10 +224,6 @@ function StripscoreCard(html){
 })
 
 
-
-   
-  
-
 /*********************************************************************************
      * 
      * PING LMS
@@ -252,7 +234,6 @@ function StripscoreCard(html){
  app.get('/api/ping/:id', function(req, res){
     
     url = Domain+URLVAR+req.params.id;
-   
     /*
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
@@ -270,18 +251,16 @@ function StripscoreCard(html){
     })
 */
 async.parallel([
-    
     function(done){
         url = Domain+URLVAR+req.params.id;
-   
         request(url, function(error, response, html){
             if(!error && response.statusCode == 200){ 
-                //console.log("Full Page");
-                //var $ = cheerio.load(html);
-               //const data = $('#content-container').text();
-                //console.log(data)
-                done(null, html);
-                    
+                var $ = cheerio.load(html);
+    
+                const Bat = $('#pp-batting-history-container').html();
+                const Bowl = $('#pp-bowling-history-container').html();
+                
+                done(null, [Bat,Bowl]);
             }
         })
       },
@@ -289,101 +268,24 @@ async.parallel([
      
       request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
         if(!error && response.statusCode == 200){ 
-          
-            console.log("Bowling")
-            //console.log(html)
-            done(null, "<div id='pp-bowling-history-container'>"+html+"<div>");
+            //console.log(html);
+            done(null, html);
      }
     })
     },
       function(done){
         request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-batting-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
         if(!error && response.statusCode == 200){ 
-           
-            console.log("Batting")
-         
-        
-            done(null, "<div id='pp-batting-history-container'>"+html+"<div>");
-            
+                //console.log("Batting")
+                done(null, html);
             }
         })
       }],function(err, results){
-            console.log("Results " ,results.length)
-           res.json(ping(results,req.params.id));
+    
+          let Contructed =[ results[0][0]+results[2], results[0][1]+results[1] ]
+          res.json(ping(Contructed,req.params.id));
     })
 })
-
-
-
-
-
-    /*********************************************************************************
-     * 
-     * Collect Batting Data
-     * 
-     ********************************************************************************/
-
-
-     /** Counted Games */
-    app.get('/api/batting/:id', function(req, res){
-        url = Domain+Page[0]+URLVAR+req.params.id;
-        request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoop(html));}
-        })
-    })
-
-     /** NON Counted Games */
-     app.get('/api/NonCountingBatting/:id', function(req, res){
-        url = Domain+Page[1]+URLVAR+req.params.id;
-        request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoop(html)); }
-        }) 
-    })
-
-
-    /** *******************************************************************************
-     * 
-     * Collect Bowling Data
-     * 
-     ******************************************************************************* */
-    app.get('/api/bowling/:id', function(req, res){
-        url = Domain+Page[2]+URLVAR+req.params.id;
-        request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){res.json(DataLoop(html));}
-        })
-    })
-
-
-    /** NON Counted Games */
-    app.get('/api/NonCountingBowling/:id', function(req, res){
-        url = Domain+Page[3]+URLVAR+req.params.id;
-                request(url, function(error, response, html){
-                    if(!error && response.statusCode == 200){res.json(DataLoop(html));}
-            })
-        })
-
-
-    /** *******************************************************************************
-     * 
-     * Collect Keeping Stats
-     * 
-     ******************************************************************************* */
-    app.get('/api/Keeping/:id', function(req, res){
-        url = Domain+Page[4]+URLVAR+req.params.id;
-        request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoop(html)); }
-        })
-    })
-    
-       /** NON Counted Games */
-    app.get('/api/NonCountingKeeping/:id', function(req, res){
-        url = Domain+Page[5]+URLVAR+req.params.id;
-        request(url, function(error, response, html){
-            if(!error && response.statusCode == 200){ res.json(DataLoop(html)); }
-        })
-    })
-
-
 
   /*********************************************************************************
      * 
@@ -398,9 +300,7 @@ async.parallel([
     const URLVAR = 't20&fixtureid=';
 
     url = Domain+URLVAR+req.params.id;
-    
 
-    
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
               res.json(StripscoreCard(html));
@@ -412,10 +312,6 @@ async.parallel([
 
 
 /** End End Points */
-
-
-
-
 
 if(process.env.NODE_ENV === 'production'){
 

@@ -63,7 +63,8 @@ export default class AutoComplete extends React.Component{
   };
   createArray(TeamList){
     Filter=[];
-
+    
+    // eslint-disable-next-line
     TeamList.map((team,i)=>{
         Filter.push({"name":team[0], "id":team[1]})
     })  

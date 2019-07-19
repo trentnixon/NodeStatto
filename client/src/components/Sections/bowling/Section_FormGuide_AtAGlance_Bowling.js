@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update'
 import {Animated} from "react-animated-css";
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
-
 // Elements
-import RadialPod from "../../Elements/pods/FillPods";
 import SingleValuePod from "../../Elements/pods/Pod_SingleValue_Iconheader";
 
 

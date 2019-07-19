@@ -28,8 +28,8 @@ import MultilineChart from '@material-ui/icons/MultilineChart';
 import People from '@material-ui/icons/People';
 import Settings from '@material-ui/icons/Settings';
 import Search from '@material-ui/icons/Search';
-import  {Batting, Bowling,Keeping, Wickets,Runs} from "../Icons/icons";
-
+import  {Batting, Bowling,Wickets,Runs} from "../Icons/icons";
+//Keeping
 
 // DEV
 

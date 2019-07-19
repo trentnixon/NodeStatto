@@ -35,7 +35,7 @@ export default class Section_Rankings extends Component {
         let DivideBy=1;
         
         if (isMobile) {
-           DivideBy = parseInt((data.length/10));
+           DivideBy = parseInt((data.length/10),10);
         }
 
         for (let i = 0; i < data.length; i = i+DivideBy) {

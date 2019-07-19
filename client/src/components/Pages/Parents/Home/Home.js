@@ -49,7 +49,7 @@ export default class Statto extends Component {
                   Title={TITLES.RANKINGS} 
                   Data={this.props.DATA.CAREER.Career.Meta.Rankings}
                   {... this.props}
-                />
+                /> 
               </SectionContainer>
 
               <SectionContainer class="Section_History complete">

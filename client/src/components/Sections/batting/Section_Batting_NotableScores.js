@@ -13,7 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
-import Title from "../../Elements/type/PageTitle";
+//import Title from "../../Elements/type/PageTitle";
 import SubTitle from "../../Elements/type/PageSubTitle";
 
 import IconButton from '@material-ui/core/IconButton';
@@ -67,7 +67,7 @@ export default class Section_Rankings extends Component {
     
     FetchRuns(Var,Limit){
         let Results=[]
-        //console.log("Fetch Runs")
+        // eslint-disable-next-line
         this.props.DATA.CLEAN.map((game,i)=>{
           
             if(game.Batting){
