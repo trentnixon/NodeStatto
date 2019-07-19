@@ -163,7 +163,7 @@ export default class Statto extends Component {
                 
             </div>
           </Frame> 
-      </Router>
+      </Router> 
     ) 
   }
 }

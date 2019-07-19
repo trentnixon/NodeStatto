@@ -3,6 +3,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 const path = require('path')
 const app = express();
+var async = require("async");
 
 const Domain = 'https://www.lastmanstands.com/cricket-player/';
 const URLVAR = 't20/?playerid=';
@@ -18,7 +19,7 @@ const URLVAR = 't20/?playerid=';
   Handle Changes to the Data
 ** */
 
-// Split the Link
+// Split the Link 
     const SplitA = (str,copy) =>{
         // Variables
         let NewStr=null, id=null,arr=[];
@@ -41,7 +42,6 @@ const URLVAR = 't20/?playerid=';
 function DataLoop($ , xPath){
         let Rows=[];
         const data = $(xPath);
-
         data.has('td').each(function() {
             var arrayItem = {};
             $('td', $(this)).each(function(index, item) 
@@ -127,16 +127,27 @@ function ping(html,id){
     
     let  LMSData={}
 
+
+    //console.log(html);
     LMSData["Meta"]={};
     LMSData["Batting"]={};
     LMSData["Bowling"]={};
 
-    let $ = cheerio.load(html);
+        
+    const Full = html[0]+''+html[1]+''+html[2];
+    console.log(typeof Full);
+    let $ = cheerio.load(Full);
+    //let $OLDBowl = cheerio.load(html[1]);
+    //let $OLDBat = cheerio.load(html[2]);
     
     LMSData["Meta"] = PullMeta($,id);
     LMSData["Batting"] = DataLoop($ , '#pp-batting-history-container .rank-table tbody tr');
+    //LMSData["Batting"].push(DataLoop($OLDBat , '.rank-table tbody tr'))
     LMSData["Bowling"]= DataLoop($ , '#pp-bowling-history-container .rank-table tbody tr');
+    //LMSData["BowlingOld"]= DataLoop($OLDBowl , '.rank-table tbody tr');
     
+   // console.log(LMSData);
+
     return LMSData;
 }
 
@@ -227,6 +238,10 @@ function StripscoreCard(html){
 })
 
 
+
+   
+  
+
 /*********************************************************************************
      * 
      * PING LMS
@@ -238,12 +253,67 @@ function StripscoreCard(html){
     
     url = Domain+URLVAR+req.params.id;
    
+    /*
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
                 res.json(ping(html,req.params.id));
         }
+    })*/
+
+/*
+    request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
+        if(!error && response.statusCode == 200){ 
+            // res.json(ping(html,req.params.id));
+            console.log("Old")
+            console.log(html)
+     }
+    })
+*/
+async.parallel([
+    
+    function(done){
+        url = Domain+URLVAR+req.params.id;
+   
+        request(url, function(error, response, html){
+            if(!error && response.statusCode == 200){ 
+                //console.log("Full Page");
+                //var $ = cheerio.load(html);
+               //const data = $('#content-container').text();
+                //console.log(data)
+                done(null, html);
+                    
+            }
+        })
+      },
+    function(done){
+     
+      request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
+        if(!error && response.statusCode == 200){ 
+          
+            console.log("Bowling")
+            //console.log(html)
+            done(null, "<div id='pp-bowling-history-container'>"+html+"<div>");
+     }
+    })
+    },
+      function(done){
+        request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-batting-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
+        if(!error && response.statusCode == 200){ 
+           
+            console.log("Batting")
+         
+        
+            done(null, "<div id='pp-batting-history-container'>"+html+"<div>");
+            
+            }
+        })
+      }],function(err, results){
+            console.log("Results " ,results.length)
+           res.json(ping(results,req.params.id));
     })
 })
+
+
 
 
 
