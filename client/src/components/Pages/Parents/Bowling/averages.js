@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 
-import Title from "../../../Elements/type/PageTitle";
+import Title from     "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
-import Pod from "../../../Template/Page/Pod";
+import Pod from       "../../../Template/Page/Pod";
 
-import SectionContainer from "../../../Sections/global/SectionContainer";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+
 export default class Averages extends Component {
 
-  componentWillMount() { 
-      //console.log(this.props.DATA.CLEAN) 
-    }
+  componentWillMount() { }
 
   render() {
+    const SITELABELS = this.props.LABELS.SITE;
+    //const PRIMARY = this.props.PLAYER_DATA.Primary; 
+
     return (
       
       <Container>
 
-        <SectionHeader   h1={this.props.SUBS.AVG} h2={this.props.TITLES.BOWLING}  /> 
+        <SectionHeader   h1={SITELABELS.SUBS.AVG} h2={SITELABELS.TITLES.BOWLING}  /> 
 
         <SectionContainer class="Section_Bowling_AES todo">
         <Title Title="Average" /> 

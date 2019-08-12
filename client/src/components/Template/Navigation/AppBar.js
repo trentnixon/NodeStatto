@@ -22,7 +22,6 @@ const Nav_Icons=[
     "icon":<Keeping />,
     "link":"keeping"
   }
-  
 ]
 
 let Path=null;
@@ -37,7 +36,7 @@ export default class APPBARLAYOUT extends React.Component {
           <div id="AppBar"> 
             <div className="Left">
                 <Hidden smDown> 
-                  <Link to="/">
+                  <Link to="/"> 
                       <LOGO />
                   </Link>
                   
@@ -60,7 +59,7 @@ export default class APPBARLAYOUT extends React.Component {
                                 <IconButton component={Link} to={`/${Path}/${icon.link}`}>
                                    {icon.icon} 
                                 </IconButton>
-                                 <p>{this.props[icon.link].rank}</p>
+                                 <p>{this.props[icon.link]}</p>
                               </div>
                                 
                             )
@@ -71,10 +70,8 @@ export default class APPBARLAYOUT extends React.Component {
             </div>
 
             <div className="Right">
-               
-              <h1>{this.props.DATA.META.Name}</h1>
-              <Avatar>{this.props.DATA.META.Name.charAt(0)}</Avatar>
-
+              <h1>{this.props.PLAYER_DATA.Primary.Meta.Name}</h1>
+              <Avatar>{this.props.PLAYER_DATA.Primary.Meta.Name.charAt(0)}</Avatar>
             </div>
           </div>
     );

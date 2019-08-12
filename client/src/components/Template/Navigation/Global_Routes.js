@@ -26,8 +26,7 @@ const styles = theme => ({
   },
 });
 
-let Path=null;
-
+//let Path=null;
 
 class NestedLists extends React.Component {
   state = { open: [false,false,false,false,false,false] };
@@ -42,21 +41,21 @@ class NestedLists extends React.Component {
   };
 
   CloseDrawer = ()=>{
-    console.log("Close")
+    //console.log("Close")
     UXDrawer(false)
   }
 
   componentWillMount() {
     //console.log(this.props)
     
-    Path = this.props.Match.params.playerid; 
+    //Path = this.props.Match.params.playerid; 
     
     //console.log(this.props.Navigation)
   } 
 
  createListItem(navItem,i){
      return(
-        <Link key={i} to={`/${Path}/${navItem.path}`}>
+        <Link key={i} to={`/${navItem.path}`}>
             <ListItem button>
                 <ListItemIcon>{navItem.icon}</ListItemIcon>
                 <ListItemText inset primary={navItem.label}/>
@@ -68,7 +67,7 @@ createCollapseItem(navItem,i){
 
         let Children = navItem.children.map((children,i)=>{
             return(
-                <Link key={i}  onClick={()=>{this.CloseDrawer(true)}} to={`/${Path}/${navItem.path}/${children.path}`}>
+                <Link key={i}  onClick={()=>{this.CloseDrawer(true)}} to={`/${navItem.path}/${children.path}`}>
                     <ListItem  button className={this.props.nested}>
                         <ListItemIcon>{children.icon}</ListItemIcon>
                         <ListItemText inset primary={children.label}/>

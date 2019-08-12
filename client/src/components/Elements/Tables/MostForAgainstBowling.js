@@ -91,8 +91,8 @@ export default class ForandAgainstTable extends Component {
                 <Row class="Table canvas1">  
                     <div className="tr">
                         <div className="th"></div>
-                        <div className="th">{this.props.SUBS.FOR}</div>
-                        <div className="th">{this.props.SUBS.AGAINST}</div>
+                        <div className="th">{this.props.LABELS.SITE.SUBS.FOR}</div>
+                        <div className="th">{this.props.LABELS.SITE.SUBS.AGAINST}</div>
                     </div>
                     {
                                 // eslint-disable-next-line
@@ -112,7 +112,7 @@ export default class ForandAgainstTable extends Component {
                             }
                         <div className="Footer">
                                     <ShowMore 
-                                        Label={this.props.CTA.FULL}
+                                        Label={this.props.LABELS.SITE.CTA.FULL}
                                         class=" CTA ButtonRight"
                                         Player={this.props.match.params.playerid}
                                         Path="batting/foragainst"

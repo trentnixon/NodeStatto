@@ -11,59 +11,85 @@
  */
 
 
-
-
 import React, { Component } from 'react';
 
 // import PageHeader from "../../../Template/Page/Header";
 
 // Sections
 import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
-import SectionContainer from "../../../Sections/global/SectionContainer";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
 
 // Sections
-import Overview from "../../../Sections/home/Section_Home_overview";
-import Rankings from "../../../Sections/home/Section_Home_Rankings";
-import Charts from "../../../Sections/home/Section_Home_Charts";
-import BriefHistory from "../../../Sections/home/Section_Home_RecentGames";
+import Overview from "./Sections/Section_Home_overview";
+import MileStoneOverview from "./Sections/Section_Home_MileStone_Overview";
+import Rankings from "./Sections/Section_Home_Rankings";
+import Charts from "./Sections/Section_Home_Charts";
+import BriefHistory from "./Sections/Section_Home_RecentGames";
 
-let TITLES;
+let TITLES,PRIMARY;
 export default class Statto extends Component {
 
   componentWillMount() { }
 
   render() {
-    TITLES = this.props.TITLES
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary;
     
     return (
           <Container>
               <SectionHeader h1={TITLES.DASHBOARD} h2={TITLES.OVERVIEW} /> 
 
-              <SectionContainer class="Section_Overview complete" >
-                  <Overview  {... this.props} />  
-              </SectionContainer> 
-               
+              <SectionContainer class="Section_Overview complete" > 
+                  <Overview  
+                      SUBS={TITLES.SITE.SUBS}
+                      CTA={TITLES.SITE.CTA}
+                      TITLES = {TITLES.SITE.TITLES}
+                      DATA={PRIMARY}
+                    />  
+
+                  <MileStoneOverview 
+                      SUBS={TITLES.SITE.SUBS}
+                      CTA={TITLES.SITE.CTA}
+                      TITLES = {TITLES.SITE.TITLES}
+                      DATA={PRIMARY}
+                  />
+              </SectionContainer>   
+
               <SectionContainer class="Section_Home_RankingPods complete">
                 <Rankings  
-                  Title={TITLES.RANKINGS} 
-                  Data={this.props.DATA.CAREER.Career.Meta.Rankings}
-                  {... this.props}
+                    TITLE={TITLES.SITE.TITLES.RANKINGS} 
+                    SITE={TITLES.SITE.TITLES} 
+                    SUBS={TITLES.SITE.SUBS}
+                    DATA={PRIMARY.CAREER.Career.Meta.Rankings}
                 /> 
               </SectionContainer>
 
               <SectionContainer class="Section_History complete">
                   <BriefHistory 
-                    Title={TITLES.RECENT}  
-                    {... this.props} 
+                    TITLES={TITLES.SITE.TITLES} 
+                    CTA={TITLES.SITE.CTA}
+                    SUBS={TITLES.SITE.SUBS}
+                    DATA={PRIMARY.CLEAN}
+                 
                   />
               </SectionContainer> 
-              
+
               <SectionContainer class="Section_Default complete">
-                  <Charts  {... this.props} /> 
+                  <Charts   
+                      TITLES={TITLES.SITE.TITLES} 
+                      CTA={TITLES.SITE.CTA}
+                      SUBS={TITLES.SITE.SUBS}
+                      DATA={PRIMARY}
+                    
+                    /> 
               </SectionContainer>
           </Container>
     )
   }
 } 
 
+
+/**
+ *  
+ */

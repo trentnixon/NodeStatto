@@ -60,7 +60,7 @@ function DataLoop(html){
                     }
                 });
                 Rows.push(arrayItem);
-                console.log(Rows);
+                //console.log(Rows);
         }); // End Each
         return Rows;
     }

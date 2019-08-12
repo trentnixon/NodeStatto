@@ -47,7 +47,7 @@ const List_History = (props) => (
                                 <h2>{Bowling}</h2>
                             </div>
                             <div className="GameCTA"> 
-                            <IconButton aria-label="Scorecard" component={Link} to={`/${props.match.params.playerid}/scorecard/${game.Meta.Fixture}`}>
+                            <IconButton aria-label="Scorecard" component={Link} to={`/scorecard/${game.Meta.Fixture}`}>
                                     <LaunchIcon />
                                 </IconButton>
                             </div>

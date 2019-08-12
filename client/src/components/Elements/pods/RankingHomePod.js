@@ -33,10 +33,12 @@ export default class RankingHomePod extends Component {
     }
     componentWillMount() { }
     render() {
-        return (<Pod col={this.props.col} type="RankingPod" canvas="canvas1">
-            <PodHeader icon={this.props.icon} label={this.props.label} />
-            <PodBody TopLine={this.value(this.props.total, 1)} Icon={this.FindArrow(this.props.total)} BottomLine={this.props.ProNoun + " : " + this.value(this.props.total, 2)} />
-            <PodFooter />
-        </Pod>);
+        return (
+                <Pod col={this.props.col} type="RankingPod" canvas="canvas1">
+                    <PodHeader icon={this.props.icon} label={this.props.label} />
+                    <PodBody TopLine={this.value(this.props.total, 1)} Icon={this.FindArrow(this.props.total)} BottomLine={this.props.ProNoun + " : " + this.value(this.props.total, 2)} />
+                    <PodFooter />
+                </Pod>
+            );
     }
 }

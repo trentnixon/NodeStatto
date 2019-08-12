@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-//import Title from "../../../Elements/type/PageTitle";
+
 import Container from "../../../Template/Page/Container";
-//import PageHeader from "../../../Template/Page/Header"
 
 // Section 
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionP from "../../../Elements/type/PageParagraph";
-import SectionContainer from "../../../Sections/global/SectionContainer";
-import SectionCareerBowling from "../../../Sections/bowling/Section_FormGuide_AtAGlance_Bowling";
-import SectionFaBowling from "../../../Sections/bowling/Section_Fa_Bowling";
-import SectionRecentFigures from "../../../Sections/bowling/Section_Bowling_recentFigures";
+import SectionContainer from "../../../Template/Global/SectionContainer";
+import SectionCareerBowling from "./Sections/Section_FormGuide_AtAGlance_Bowling";
+import SectionFaBowling from "./Sections/Section_Fa_Bowling";
+import SectionRecentFigures from "./Sections/Section_Bowling_recentFigures";
 export default class Formguide
  extends Component {
 
@@ -17,42 +16,37 @@ export default class Formguide
 
   render() {
 
-    /**
-     * 
-     * <PageHeader> 
-          Current form /10
-        </PageHeader>    
-     */
+    const SITELABELS = this.props.LABELS.SITE;
+    const PRIMARY = this.props.PLAYER_DATA.Primary;
     return (
       <div>
             <Container> 
               <SectionHeader 
-                h1={this.props.TITLES.FORMGUIDE} h2={this.props.TITLES.BOWLING}  
+                h1={SITELABELS.TITLES.FORMGUIDE} h2={SITELABELS.TITLES.BOWLING}  
               /> 
-              <SectionP Copy={this.props.DESC.FORMGUIDE}/>
+              <SectionP Copy={SITELABELS.DESC.FORMGUIDE}/>
               
               <SectionContainer class="Section_Bowling_FormGuide todo">
                 <SectionCareerBowling 
-                  Data={this.props.DATA.CAREER.Form.bowling} 
-                  Career={this.props.DATA.CAREER.Career}
+                        Data={PRIMARY.CAREER.Form.bowling} 
+                        Career={PRIMARY.CAREER.Career}
                   {... this.props}
                 />
              </SectionContainer>
-              <SectionContainer>
+             <SectionContainer class="Section_Bowling_FormGuide todo">
                 <SectionRecentFigures 
-                  Data={this.props.DATA.CLEAN} 
+                  Data={PRIMARY.CLEAN} 
                   {... this.props}
                 />
               </SectionContainer>
-              
-              <SectionContainer>
+
+              <SectionContainer  class="Section_Bowling_FormGuide todo">
                 <SectionFaBowling  
-                    Data={this.props.DATA.CAREER.Form.bowling}
+                    Data={PRIMARY.CAREER.Form.bowling}
                     Title="Milestones and Achievements"
                     {... this.props}
                 />
               </SectionContainer>
-
             </Container>
         </div>
     )

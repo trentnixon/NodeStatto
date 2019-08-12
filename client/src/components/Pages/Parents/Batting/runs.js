@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
 
 import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
-import SectionContainer from "../../../Sections/global/SectionContainer";
-
-//import Title from "../../../Elements/type/PageTitle";
-//import SubTitle from "../../../Elements/type/PageSubTitle";
-//import Row from "../../../Template/Page/Row";
-//import Pod from "../../../Template/Page/Pod";
-//import PageHeader from "../../../Template/Page/Header";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
 
 // Sections
+import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
+import SectionRunsScatter from "./Sections/Section_RunsOverTheYearsScatterChart";
+import RunsOverYearsLineGraph from "./Sections/Section_RunsOverTheYears_LineGraph";
 
-import SectionRuns from "../../../Sections/batting/Section_Batting_Runs_Runs";
-import SectionNotable from "../../../Sections/batting/Section_Batting_NotableScores";
-//import SectionBalls from "../../../Sections/batting/Section_Batting_Runs_BallsFaced";
-import SectionRunsBar from "../../../Sections/batting/Section_RunsOverTheYearsBarChart";
-
-
+let PRIMARY,TITLES;
 export default class Batting extends Component {
 
-  componentWillMount() { }
+  componentWillMount() { 
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
+  }
   
   render() { 
     return (    
       <Container>
-        <SectionHeader   h1={this.props.SUBS.RUNS} h2={this.props.TITLES.BATTING}  /> 
+        <SectionHeader   h1={this.props.LABELS.SITE.SUBS.RUNS} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
       
         <SectionContainer class="Section_Batting_Runs charts todo">
-            <SectionRuns  {... this.props} />
+            <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
+            <SectionRunsScatter TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
         </SectionContainer>
 
-        <SectionContainer class="Section_Batting_Runs todo">
-            <SectionNotable  
-              {... this.props} 
-            /> 
+      
+        <SectionContainer class="Section_Batting_Runs todo"> 
+            <RunsOverYearsLineGraph 
+              TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY}
+            />
         </SectionContainer>
-
-        <SectionContainer class="Section_Batting_Runs todo">
-          <SectionRunsBar  
-            Title="Runs by Year"
-            {... this.props} 
-          />
-        </SectionContainer> 
-        
       </Container>
     )
   }

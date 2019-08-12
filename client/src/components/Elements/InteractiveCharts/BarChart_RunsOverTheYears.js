@@ -41,7 +41,7 @@ export default class Section_Rankings extends Component {
       componentDidMount() {}
     
       handleChange = event => {
-        this.createBars(this.props.DATA.CLEAN,event.target.value)
+        this.createBars(this.props.PLAYER_DATA.Primary.CLEAN,event.target.value)
       }
 
 
@@ -88,7 +88,7 @@ export default class Section_Rankings extends Component {
 
       
     componentWillMount() { 
-        this.createBars(this.props.DATA.CLEAN,this.props.DATA.CAREER.Career.batting.overTheYears[0].int)
+        this.createBars(this.props.PLAYER_DATA.Primary.CLEAN,this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears[0].int)
     }
     shouldComponentUpdate(nextProps, nextState){ return true;}
     componentWillUpdate(nextProps, nextState){}
@@ -116,7 +116,7 @@ export default class Section_Rankings extends Component {
                                 }
                             >
                                 {
-                                    this.props.DATA.CAREER.Career.batting.overTheYears.map((year,i)=>{
+                                    this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears.map((year,i)=>{
                                             return(
                                                 <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
                                             )

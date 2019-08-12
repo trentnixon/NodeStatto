@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 // Template
 import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
-import SectionContainer from "../../../Sections/global/SectionContainer";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
-import DataTable from "../../../Sections/batting/Section_Table_ForAgainst";
+import DataTable from "./Sections/Section_Table_ForAgainst";
 //import PageHeader from "../../../Template/Page/Header";
 
 // Icons
@@ -15,23 +15,17 @@ import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 
 // UI 
 
-//import SectionContainer from "../../../Sections/global/SectionContainer";
+//import SectionContainer from "../../../Template/Global/SectionContainer";
 import Tabber from "../../../Template/Tabber/TabContaner";
 
 // Form  
-  // Select
+// Select
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-  // Radio
-/*
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-*/
+
 var _ = require('lodash');
 
 
@@ -61,7 +55,8 @@ const stats=[
   } 
 ];
 
-// let AGAINST;
+
+let PRIMARY,TITLES;
 export default class Page_ForandAgainstMajorTable extends Component {
 
   state = {
@@ -93,9 +88,13 @@ export default class Page_ForandAgainstMajorTable extends Component {
   handleRadioChange = event => {
     this.setState({ RadioValue: event.target.value });
   };
-  componentWillMount() {
-    let  AGAINST = _.orderBy(this.props.DATA.AGAINST, ["Innings"],['desc']);
-    let  FOR = _.orderBy(this.props.DATA.FOR, ["Innings"],['desc']);
+  componentWillMount() { 
+    
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
+
+    let  AGAINST = _.orderBy(PRIMARY.AGAINST, ["Innings"],['desc']);
+    let  FOR = _.orderBy(PRIMARY.FOR, ["Innings"],['desc']);
     this.setState({ AGAINST: AGAINST,FOR:FOR })
   }
 
@@ -103,13 +102,13 @@ export default class Page_ForandAgainstMajorTable extends Component {
     
     return (
         <Container>
-          <SectionHeader   h1={this.props.SUBS.FORAGAINST} h2={this.props.TITLES.BATTING} /> 
+          <SectionHeader   h1={TITLES.SITE.SUBS.FORAGAINST} h2={TITLES.SITE.TITLES.BATTING} /> 
             <SectionContainer class="Section_Batting_FORANDAGAINST_Form Selector">
                 <Row class="PodRow Form_Selector">
                   <Pod>
                   <FormControl variant="outlined" className="YearSelector" >
                       <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-Select"> 
-                          {this.props.LABELS.SITE.FORM.INPUTLABELS.FILTER}
+                          {TITLES.SITE.FORM.INPUTLABELS.FILTER}
                       </InputLabel>
                       <Select
                             value={this.state.Value}
@@ -141,11 +140,11 @@ export default class Page_ForandAgainstMajorTable extends Component {
                               Title:"For",
                               Component:<DataTable 
                                               Type="For"
+                                              Path="for" 
                                               Data={this.state.FOR}
                                               Selected={this.state.SelectedStat}
                                               Int={this.state.RadioValue}
                                               Label={this.state.Value}
-                                              {... this.props}
                                           />,
                               Icon:<PeopleIcon />
                             },
@@ -153,11 +152,11 @@ export default class Page_ForandAgainstMajorTable extends Component {
                               Title:"Against",
                               Component:<DataTable 
                                               Type="Against"
+                                              Path="against"
                                               Data={this.state.AGAINST}
                                               Selected={this.state.SelectedStat}
                                               Int={this.state.RadioValue}
                                               Label={this.state.Value}
-                                              {... this.props}
                                           />,
                               Icon:<PeopleIconOutline />
                             }
@@ -169,20 +168,3 @@ export default class Page_ForandAgainstMajorTable extends Component {
     )
   }
 }
-
-
-/**
- *  <FormControl component="fieldset" className="RadioButtons">
-                        <FormLabel component="legend">Num {this.props.SUBS.INNINGS}</FormLabel>
-                          <RadioGroup
-                            aria-label="Radio"
-                            name="Radio"
-                            value={this.state.RadioValue}
-                            onChange={this.handleRadioChange}
-                          >
-                            <FormControlLabel value="0" control={<Radio color="primary" />} label="All" />
-                            <FormControlLabel value="5" control={<Radio color="primary" />} label="<  10" />
-                            <FormControlLabel value="10" control={<Radio color="primary" />} label=">  10" />
-                        </RadioGroup>
-                      </FormControl>
- */

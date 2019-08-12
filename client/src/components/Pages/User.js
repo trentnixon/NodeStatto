@@ -13,7 +13,7 @@ class App extends Component {
  
     componentWillMount() {
       // Set User ID
-      console.log(this.props.match.params.playerid);
+      //console.log(this.props.match.params.playerid);
       Content.id=this.props.match.params.playerid; 
       Content.start(); 
     } 
@@ -22,7 +22,7 @@ class App extends Component {
     
     componentDidUpdate(nextProps, nextState){
       if(this.props.LOAD.ERRORS.IDERROR === true){
-        this.props.history.push("/error/IDError")
+        this.props.history.push("/error/IDError") 
       }
     }
     render () { 

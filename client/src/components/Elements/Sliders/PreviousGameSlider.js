@@ -101,7 +101,7 @@ class PreviousGameSlider extends Component {
                                     </div>
                                       <div className="col-12 nopadding  scorecard">
                                         
-                                      <Link to={`/${this.props.match.params.playerid}/scorecard/${game.Meta.Fixture}`}>
+                                      <Link to={`/scorecard/${game.Meta.Fixture}`}>
                                         <Button 
                                             variant="contained" 
                                             color="primary" 

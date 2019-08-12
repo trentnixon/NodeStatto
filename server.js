@@ -59,7 +59,6 @@ function DataLoop($ , xPath){
     function PullMeta($,id){
 
             let Meta={};
-
             // Player Name
             Meta["ID"] = id;
             Meta["Name"] = $('#player-name-block p').text(); 
@@ -68,12 +67,15 @@ function DataLoop($ , xPath){
             Meta["Batting_Average"] = $('.non-phone #player-stats-batting-average2 span').text();
             Meta["Batting_SR"] = $('.non-phone #player-stats-strike-rate2 span').text();
             Meta["Batting_HS"] = $('.non-phone #player-stats-high-score2 span').text();
-
-            Meta["Bowling_Overs"] = $('.non-phone #player-stats-overs2 ').text();
-            Meta["Bowling_Wickets"] = $('.non-phone #player-stats-wickets2 ').text();
-            Meta["Bowling_Economy"] = $('.non-phone #player-stats-economy2 ').text();
-            Meta["Bowling_Average"] = $('.non-phone #player-stats-bowling-average2 ').text();
-            Meta["Bowling_Best"] = $('.non-phone #player-stats-best-figures2 ').text();
+            Meta["Bowling_Overs"] = $('.non-phone #player-stats-overs2 ').text().replace("Overs", "");
+            Meta["Bowling_Wickets"] = $('.non-phone #player-stats-wickets2 ').text().replace("Wickets", "");
+            Meta["Bowling_Economy"] = $('.non-phone #player-stats-economy2 ').text().replace("Economy", "");
+            Meta["Bowling_Average"] = $('.non-phone #player-stats-bowling-average2 ').text().replace("Average", "");
+            Meta["Bowling_Best"] = $('.non-phone #player-stats-best-figures2 ').text().replace("Best Figures", "");
+            Meta["Batting_Ranking_World_Current"] = $('.non-phone #player-stats-world-batting-rank2 ').text();
+            Meta["Batting_Ranking_Country_Current"] = $('.non-phone #player-stats-country-batting-rank2 ').text();
+            Meta["Bowling_Ranking_World_Current"] = $('.non-phone #player-stats-world-bowling-rank2 ').text();
+            Meta["Bowling_Ranking_Country_Current"] = $('.non-phone #player-stats-country-bowling-rank2 ').text();
             
             return Meta;
     }
@@ -128,7 +130,7 @@ function ping(html,id){
     //console.log(Full)
     let $ = cheerio.load(Full);
     
-    LMSData["Meta"] = PullMeta($,id);
+    LMSData["Meta"] = PullMeta(cheerio.load(html[2]),id);
     LMSData["Batting"] = DataLoop(cheerio.load(html[0]), '.rank-table tbody tr');
     LMSData["Bowling"] = DataLoop(cheerio.load(html[1]), '.rank-table tbody tr');
 
@@ -234,33 +236,20 @@ function StripscoreCard(html){
  app.get('/api/ping/:id', function(req, res){
     
     url = Domain+URLVAR+req.params.id;
-    /*
-    request(url, function(error, response, html){
-        if(!error && response.statusCode == 200){ 
-                res.json(ping(html,req.params.id));
-        }
-    })*/
-
-/*
-    request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
-        if(!error && response.statusCode == 200){ 
-            // res.json(ping(html,req.params.id));
-            console.log("Old")
-            console.log(html)
-     }
-    })
-*/
-async.parallel([
+    
+    async.parallel([
     function(done){
         url = Domain+URLVAR+req.params.id;
         request(url, function(error, response, html){
             if(!error && response.statusCode == 200){ 
                 var $ = cheerio.load(html);
-    
+        
+
+                const Meta = $('#player-profile-stat-block-container').html()
                 const Bat = $('#pp-batting-history-container').html();
                 const Bowl = $('#pp-bowling-history-container').html();
-                
-                done(null, [Bat,Bowl]);
+
+                done(null, [Bat,Bowl,Meta]);
             }
         })
       },
@@ -282,7 +271,9 @@ async.parallel([
         })
       }],function(err, results){
     
-          let Contructed =[ results[0][0]+results[2], results[0][1]+results[1] ]
+            //console.log(results[0][2])
+          let Contructed =[ results[0][0]+results[2], results[0][1]+results[1],results[0][2] ]
+          
           res.json(ping(Contructed,req.params.id));
     })
 })

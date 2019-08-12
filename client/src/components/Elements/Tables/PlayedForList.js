@@ -9,8 +9,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-// import Title from "../../Elements/type/PageTitle";
-// import SubTitle from "../../Elements/type/PageSubTitle";
 import ShowMore from "../../Elements/Buttons/ShowMore";
 
 var _ = require('lodash');
@@ -21,7 +19,7 @@ export default class PlayedFor extends Component {
         Teams=[]
        //console.log(this.props.DATA.CLEAN)
        // eslint-disable-next-line
-        this.props.DATA.CLEAN.map((game,i)=>{
+        this.props.DATA.map((game,i)=>{
 
             let TeamPosition = _.findIndex(Teams, function(o) { return o.team === game.Meta.Team; });
               
@@ -40,12 +38,12 @@ export default class PlayedFor extends Component {
   render() {
 
     Teams = _.orderBy(Teams, [function(o) { return o.Int; }],['desc']);
+    
     if(this.props.num !== null){
         Teams= Teams.slice(0,this.props.num); 
         CTA = <ShowMore 
                     Label={this.props.CTA.ALL}
                     class=" CTA ButtonRight"
-                    Player={this.props.match.params.playerid}
                     Path="playedFor/"
                 />
     }
@@ -55,8 +53,9 @@ export default class PlayedFor extends Component {
 
             <PodHeaderBody
                 icon={<Avatar className="Avatar" >{Num}</Avatar>}
-                label={this.props.Label}
+                label={this.props.TITLES.TEAMS}
                 Footer={CTA}
+                ClassName={this.props.ClassName}
             >
                 <Table>
                     <TableHead>
@@ -81,8 +80,6 @@ export default class PlayedFor extends Component {
                         </TableBody>
                     </Table>
             </PodHeaderBody>
-
-
       )
   }
 }

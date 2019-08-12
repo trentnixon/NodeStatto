@@ -15,6 +15,8 @@ class App extends Component {
       }
     }
     render () {       
+      //console.log("Stage", this.props);
+      
         if(this.props.LOAD.UISTATE.STATTO === true && 
            this.props.LOAD.UISTATE.UI_READY === true)
            {

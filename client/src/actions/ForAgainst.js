@@ -1,8 +1,6 @@
-
-import store from "../store/index"
+import {LoginSequence} from "./PrivateFunctions";
 //import {CalculateBatting} from "./CalculateStats"
 //const Batting = new CalculateBatting();
-
 
 var _ = require('lodash');
 
@@ -95,9 +93,16 @@ export function ForAgainst(data){
         else{ StoreForAgainstDetails(Thisgame, StatsAgainst,TeamPositionAgainst) }
     })
 
-    console.log(StatsFor,StatsAgainst)
-    store.dispatch({ type:"STORE_FOR", payload:StatsFor });
-    store.dispatch({ type:"STORE_AGAINST", payload:StatsAgainst });
-    store.dispatch({ type:"DATA_SET_FORAGAINST", payload:true});  
+    //console.log(StatsFor,StatsAgainst)
+    //store.dispatch({ type:"STORE_FOR", payload:StatsFor });
+    //store.dispatch({ type:"STORE_AGAINST", payload:StatsAgainst });
+    //store.dispatch({ type:"DATA_SET_FORAGAINST", payload:true}); 
+    
+    LoginSequence([
+        { Type:"DATA_STORE_PRIMARY_FOR", Value:StatsFor},
+        { Type:"DATA_STORE_PRIMARY_AGAINST", Value:StatsAgainst },
+        { Type:"DATA_SET_FORAGAINST", Value:true},
+        {Type:'LOGINSEQUENCE_STAGE4',  Value:true},
+    ]);
     console.log("FOR AND AGAINST STORED")
 }

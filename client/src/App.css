@@ -31,7 +31,7 @@ p {
   padding: 10px 25px;
   background-color: #fff;
   position: relative;
-  flex-basis: 100% !important; }
+  flex-basis: 99% !important; }
   .RankingInt .RankingPods {
     display: flex;
     flex-direction: row;
@@ -456,7 +456,8 @@ p {
       border-bottom: 1px solid;
       margin: 0 0 10px 0;
       padding: 0 0 7px 0;
-      line-height: 2em; }
+      line-height: 2em;
+      font-weight: 100; }
       .PodRow .animated #Pod .RankingPod .Body h2 svg {
         float: right;
         font-size: 1.6em; }
@@ -903,6 +904,8 @@ body {
                     > Content
 
 */ }
+      body #root #Statto #Frame .flex-100 {
+        flex-basis: 99.5% !important; }
       body #root #Statto #Frame .flex-70 {
         flex-basis: 69.5% !important; }
       body #root #Statto #Frame .flex-60 {
@@ -1096,7 +1099,7 @@ body {
           body #root #Statto #Frame section .row > div {
             margin: 0 .2%;
             padding: 0;
-            flex: 1 0 32.5%; }
+            flex: 1 0 24.5%; }
       body #root #Statto #Frame .Selector {
         margin: 0px; }
       body #root #Statto #Frame .Section_Batting_Rankings > .Outer {

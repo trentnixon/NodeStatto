@@ -1,111 +1,42 @@
-import React, { Component } from "react";
-import update from 'react-addons-update'
-import Chart from "react-apexcharts";
-
-
 /**
- * Include Annotations to line charts
- * annotations: {
-          points: [
-            {
-              x: new Date("27 Nov 2017").getTime(),
-              y: 8500.9,
-              marker: {
-                size: 6,
-                fillColor: "#fff",
-                strokeColor: "#2698FF",
-                radius: 2
-              },
-              label: {
-                borderColor: "#FF4560",
-                offsetY: 0,
-                style: {
-                  color: "#fff",
-                  background: "#FF4560"
-                },
-      
-                text: "Best"
-              }
-            }
-          ]
-        },
+ * 
+ *  Example : <Chart  series={this.state.Data} Labels={this.state.Labels} />
+ * 
  */
+import React, { Component } from "react";
 
-export default class LineCharts extends Component { 
+import Chart from "react-apexcharts";
+import {connect } from 'react-redux';
+
+class LineCharts extends Component { 
   constructor(props) {
     super(props);
- 
     this.state = {
       options: {
-        
         chart: {
           id: "LineChart",
-            animations: {
-              enabled: true,
-              easing: 'easeinout', // linear, easeout, easein, easeinout 
-              speed: 800,
-              animateGradually: {
-                delay: 250,
-                enabled: true
-              },
-              dynamicAnimation: {
-                enabled: true,
-                speed: 350
-              }
-          },
-          background: 'transparent',
-          dropShadow: { enabled: false},
-          offsetX: 0,
-          offsetY: 0,
-          height: 400,
-          toolbar: {
-              show: true,
-              tools: {
-                download: false,
-                selection: false,
-                zoom: false,
-                zoomin: false,
-                zoomout: false,
-                pan: false,
-                reset: false
-              },
-              autoSelected: 'zoom' // accepts -> zoom, pan, selection
-          },
+          animations: this.props.CHART.animations,
+          toolbar:this.props.CHART.toolbar,
+          background: this.props.CHART.background,
+          dropShadow: this.props.CHART.dropShadow,
+          offsetX: this.props.CHART.offsetX,
+          offsetY: this.props.CHART.offsetY,
         },
-        legend: { 
-          show: true,
-          floating: false,
-          position: 'bottom',
-          horizontalAlign: 'center', 
-        },
-        theme: {
-          palette: 'palette3', // If defined, it will overwrite globals.colors variable
-
-        },
-        xaxis: {
-          categories: [],
-        } 
+        xaxis: { categories: this.props.Labels,},
+        label : this.props.Labels,
+        fill: this.props.CHART.fill,
+        legend: this.props.CHART.legend,
+        theme: this.props.CHART.theme,
       },
-      series: [],
+      series: this.props.series,
     }; 
   } 
 
-  componentWillMount() { 
-     
-    //console.log(this.props.series);
-
-    this.setState({
-        series:  update(this.state.series,  {$set: this.props.series}),
-        options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels}}}),
-        // eslint-disable-next-line 
-        options: update(this.state.options,{labels:{$set:this.props.Labels}})
-      })
-  }
+  componentWillMount() {} 
 
   render() {
     return (
       <div className="Charts">
-      
           <div className="mixed-chart">
             <Chart
               options={this.state.options}
@@ -114,8 +45,10 @@ export default class LineCharts extends Component {
             
             />
           </div>
-       
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({ CHART:state.CHARTS })
+export default connect(mapStateToProps)(LineCharts); 

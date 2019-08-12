@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu'; 
 
 // Navigation
 import Routes from "./Navigation/Global_Routes";
@@ -95,7 +95,7 @@ class ResponsiveDrawer extends React.Component {
     {
       DrawerPosition = this.props.UX.Mobile.MobileDrawerState
     }
-    console.log(DrawerPosition)
+    //console.log(DrawerPosition)
     const { classes, theme } = this.props;
 
     
@@ -114,10 +114,10 @@ class ResponsiveDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
               <StattoAppBarLayout   
-                  {... this.props} 
-                batting={this.props.DATA.CAREER.Career.Meta.Rankings.Batting[0]}
-                bowling={this.props.DATA.CAREER.Career.Meta.Rankings.Bowling[0]}
-                //keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
+                  {... this.props}  
+                  batting={this.props.PLAYER_DATA.Primary.Meta.Batting_Ranking_World_Current}
+                  bowling={this.props.PLAYER_DATA.Primary.Meta.Bowling_Ranking_World_Current}
+                  //keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
               />
           </Toolbar>
         </AppBar>
@@ -160,7 +160,7 @@ class ResponsiveDrawer extends React.Component {
                 <div className={classes.toolbar} />
                       {this.props.children} 
               </main>
-      </div>
+      </div> 
     );
   }
 }

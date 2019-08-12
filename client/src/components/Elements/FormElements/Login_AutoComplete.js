@@ -1,6 +1,7 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import {FetchSelectedTeam} from "../../../actions/Login"
+//import {FetchSelectedTeam} from "../../../actions/Login"
+import FetchingTeams from "../../Pages/Parents/Login/stateless/Login_FetchingTeams";
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value,Teams) => {
@@ -18,17 +19,17 @@ const getSuggestions = (value,Teams) => {
 // input value for every given suggestion.
 const getSuggestionValue = suggestion => suggestion.name;
 // Use your imagination to render suggestions.
-const renderSuggestion = suggestion => (
+const renderSuggestion = suggestion => ( 
   <div>
     {suggestion.name}
   </div>
 );
  
-let Filter=[];
+let Filter=[]; 
 export default class AutoComplete extends React.Component{
   constructor() {
     super();
- 
+  
     // Autosuggest is a controlled component.
     // This means that you need to provide an input value
     // and an onChange handler that updates this value (see below).
@@ -72,7 +73,9 @@ export default class AutoComplete extends React.Component{
   }
 
   onSuggestionSelected(e,v){
-    FetchSelectedTeam(v.suggestion)
+    //console.log(v.suggestion.id, this.props)
+    this.props.history.push('/'+v.suggestion.id)
+    // FetchSelectedTeam(v.suggestion)
   }
   render() {
     const { value, suggestions } = this.state;
@@ -83,17 +86,25 @@ export default class AutoComplete extends React.Component{
       value,
       onChange: this.onChange
     };
-    this.createArray(this.props.LOGIN.LOGINDATA)
-    return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        onSuggestionSelected={this.onSuggestionSelected}
-        inputProps={inputProps}
-      />
-    )
+    this.createArray(this.props.DATA_SETUP.GoogleTeamList) 
+
+
+    if(this.props.STAGE.position === false){
+      return(<FetchingTeams PRONOUN={this.props.LABELS.LOADING.PRONOUN} Label={this.props.LABELS.LOADING.PLAYERROSTER}/>  )
+    }
+    else{
+        return (
+          <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            renderSuggestion={renderSuggestion}
+            onSuggestionSelected={this.onSuggestionSelected.bind(this)}
+            inputProps={inputProps}
+          />
+      )
+    }
+    
   }
 }

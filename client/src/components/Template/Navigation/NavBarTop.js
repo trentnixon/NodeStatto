@@ -20,23 +20,24 @@ const NavBarTop = (props) => {
         UXDrawer(false);
       }
 
+      //console.log(props.DATA_SETUP.SelectedPlayerID);
       return(
             <div className="NavBarTop">
         
         
         <div className="Actions">
             <div>
-                <IconButton onClick={()=>{CloseDrawer()}} component={Link} to={`/${props.match.params.playerid}/`}>
+                <IconButton onClick={()=>{CloseDrawer()}} component={Link} to={`/`}>
                     <Dashboard />
                 </IconButton> 
             </div>
             <div>
-                <IconButton onClick={()=>{CloseDrawer()}} component={Link}  to={`/${props.match.params.playerid}/history`}> 
+                <IconButton onClick={()=>{CloseDrawer()}} component={Link}  to={`/history`}> 
                     <History />
                 </IconButton>
             </div>
             <div>
-                <IconButton onClick={()=>{CloseDrawer()}} component={Link} to={`/${props.match.params.playerid}/fixtures`}>
+                <IconButton onClick={()=>{CloseDrawer()}} component={Link} to={`/fixtures`}>
                        <CalendarToday />
                 </IconButton>
             </div> 
@@ -45,9 +46,9 @@ const NavBarTop = (props) => {
             <div>
                 <Avatar
                     alt=""
-                    src="https://www.lastmanstands.com/player-uploads/47917.jpg"
+                    src={"https://admin.lastmanstands.com/SpawtzApp/Images/User/"+props.DATA_SETUP.SelectedPlayerID+"_UserProfileImage.jpeg"}
                     className="PlayerAvatar"
-                />
+                /> 
             </div>
 
         </div>

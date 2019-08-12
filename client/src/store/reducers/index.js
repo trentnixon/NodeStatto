@@ -1,16 +1,18 @@
 import {combineReducers} from 'redux';
-import LABELS from "./Labels";
-import LOAD from "./Load";
-import DATA from "./Data";
+import LABELS from "./Statto_UI_Labels";
+import LOAD from "./Statto_SwitchBoard";
+import DATA from "./Statto_Data_Store";
 import ScoreCard from "./ScoreCard";
-import LOGIN from "./LOGIN";
+import Chart_Variables from "./ChartVariables";
+//import LOGIN from "./LOGIN";
 import UX from "./UX";
 
 export default combineReducers({
   LOAD:LOAD,
   DATA:DATA,
-  SC:ScoreCard,
-  LOGIN:LOGIN,
+  SCORECARD:ScoreCard,
+  //LOGIN:LOGIN,
   LABELS:LABELS,
-  UX:UX
-})
+  UX:UX,
+  CHARTS:Chart_Variables
+}) 

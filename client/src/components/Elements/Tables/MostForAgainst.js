@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-
 import Row from "../../Template/Page/Row";
-/*
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-*/
-
 import ShowMore from  "../Buttons/ShowMore";
 
 let stats=[
@@ -59,24 +50,22 @@ export default class ForandAgainstTable extends Component {
                   //console.log(team, team[variable], variable);
                     pointer=int;
                     value = team[variable]
-                }
+                } 
             })
 
-           console.log(pointer)
+           //console.log(pointer)
         return data[pointer].Team + ' (' + data[pointer][variable] + ')';
       }
       shouldComponentUpdate(nextProps, nextState){ return true;}
       componentWillUpdate(nextProps, nextState){}
     render() {
         
-        //console.log(this.props);
-
         return (
                 <Row class="Table canvas1">  
                     <div className="tr">
                         <div className="th"></div>
-                        <div className="th">{this.props.SUBS.FOR}</div>
-                        <div className="th">{this.props.SUBS.AGAINST}</div>
+                        <div className="th">{this.props.TITLES.SUBS.FOR}</div>
+                        <div className="th">{this.props.TITLES.SUBS.AGAINST}</div>
                     </div>
                     {
                                 // eslint-disable-next-line
@@ -96,9 +85,8 @@ export default class ForandAgainstTable extends Component {
                             }
                         <div className="Footer">
                                     <ShowMore 
-                                        Label={this.props.CTA.FULL}
+                                        Label={this.props.TITLES.CTA.FULL}
                                         class=" CTA ButtonRight"
-                                        Player={this.props.match.params.playerid}
                                         Path="batting/foragainst"
                                     />
                         </div>

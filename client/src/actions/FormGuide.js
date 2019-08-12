@@ -1,11 +1,11 @@
-import store from "../store/index"
+import {LoginSequence} from "./PrivateFunctions";
 var _ = require('lodash');
 
 
 
 export function FormGuide(data){
 
-    console.log("FORM GUIDE STARTED")
+    //console.log("FORM GUIDE STARTED")
     data.reverse()
     let Stats={};
     Stats={
@@ -165,11 +165,14 @@ export function FormGuide(data){
     })
 
 
-        console.log(Stats);
+        //console.log(Stats);
 
-        store.dispatch({ type:"STORE_CAREER", payload:Stats});
-        store.dispatch({ type:"DATA_SET_LOAD_CAREER", payload:true});
-        console.log("FORM GUIDE STORED")
+        LoginSequence([
+            { Type:"DATA_STORE_PRIMARY_CAREER", Value:Stats},
+            { Type:"DATA_SET_LOAD_CAREER", Value:true}
+        ]);
+
+        console.log("FORM GUIDE STORED") 
 
     return true;
 }
@@ -237,9 +240,7 @@ function IncludeBowling(Bowling, game){
     if(Bowling.overTheYears !== undefined){
         Bowling.overTheYears = BowlingOverTheYears(Bowling.overTheYears,game);
     }
-    
     return Bowling;
-
 }
 
 function IncludeKeeping(Keeping, game){

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-// import Pod from "../../Template/Page/Pod";
 import Pod from "./Pod_Outer_Wrapper";
 import Title from "../type/PageTitle";
 import SubTitle from "../type/PageSubTitle";
@@ -34,7 +33,7 @@ export default class RankingPods extends Component {
         }
     }
     render() {
-        //console.log(this.props.visable);
+    
        let  IsVisable =  this.props.visable === true ? 'show':'';
         return (
                 <div className="RankingPods" >

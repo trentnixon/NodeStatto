@@ -5,72 +5,65 @@ import Container from "../../../Template/Page/Container";
 import PeopleIcon from '@material-ui/icons/People';
 import {Batting} from "../../../Icons/icons";
 // Sections 
-import SectionContainer from "../../../Sections/global/SectionContainer";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import Tabber from "../../../Template/Tabber/TabContaner";
 
-import SectionRankings from "../../../Sections/global/Section_Discipline_Rankings";
-import SectionCareerBatting from "../../../Sections/batting/Section_Career_Batting";
-import SectionMilestonesBatting from "../../../Sections/batting/Section_Career_Milestones_Batting";
+import SectionRankings from "../../../Template/Global/Section_Discipline_Rankings";
+import SectionCareerBatting from "./Sections/Section_Career_Batting";
+import SectionMilestonesBatting from "./Sections/Section_Career_Milestones_Batting";
 import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
+let PRIMARY,TITLES;
 export default class Page_BattingOverview extends Component {
  
-  componentWillMount() { }
+  componentWillMount() { 
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary;
+  }
 
-  
-  /**
-   *  <SectionCareerBatting 
-            Data={this.props.DATA.CAREER.Career.batting}   
-            Career={this.props.DATA.CLEAN}
-          /> 
-   */
   render() {  
-    console.log(this.props);
-    return (    
+    return (     
       <Container>  
-        <SectionHeader   h1={this.props.TITLES.OVERVIEW} h2={this.props.TITLES.BATTING}   /> 
+        <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
 
         <SectionContainer class="Section_Batting_Rankings complete">
-          <SectionRankings  
-            Rankings={this.props.DATA.CAREER.Career.Meta.Rankings.Batting}
-            Title={this.props.TITLES.RANKINGS}
-            SubTitle={this.props.LABELS.SITE.DESC.DESCRANKINGS}  
-            {... this.props}
-          />
+            <SectionRankings  
+                Rankings={PRIMARY.CAREER.Career.Meta.Rankings.Batting}
+                Title={TITLES.SITE.TITLES.RANKINGS}
+                SubTitle={TITLES.SITE.DESC.DESCRANKINGS}  
+            />
         </SectionContainer>
  
         <SectionContainer class="Section_Batting_ForAgainst complete">
- 
-          <Tabber  
-            Tabs={
-              [
-                {
-                  Title:this.props.SUBS.STATS,
-                  Component:<SectionCareerBatting  {... this.props} Data={this.props.DATA.CAREER.Career.batting}  Career={this.props.DATA.CLEAN}/>,
-                  Icon:<Batting />
-                },
-                {
-                  Title:this.props.SUBS.FORAGAINST,
-                  Component:<MostForAgainst Table={this.props.DATA.CLEAN} Data={this.props.DATA} {... this.props} />,
-                  Icon:<PeopleIcon />
-                } 
-            ]}
-          
-          />  
+            <Tabber  
+              Tabs={
+                [
+                  {
+                    Title:TITLES.SITE.SUBS.STATS,
+                    Component:<SectionCareerBatting  TITLES={TITLES.SITE} Data={PRIMARY.CAREER.Career.batting} />,
+                    Icon:<Batting />
+                  },
+                  {
+                    Title:TITLES.SITE.SUBS.FORAGAINST,
+                    Component:<MostForAgainst Data={PRIMARY} TITLES={TITLES.SITE}  />,
+                    Icon:<PeopleIcon />
+                  } 
+              ]}
+            />  
 
-        </SectionContainer> 
+            </SectionContainer> 
 
-        <SectionContainer class="Section_Batting_Milestones complete ">
-          <SectionMilestonesBatting  
-            Data={this.props.DATA.CAREER.Career.batting} 
-            Title={this.props.TITLES.MILESTONE}
-            {... this.props}
-          />
+            <SectionContainer class="Section_Batting_Milestones complete ">
+                <SectionMilestonesBatting  Data={PRIMARY.CAREER.Career.batting} TITLES={TITLES.SITE} />
         </SectionContainer>
-
       </Container>
     )
   }
 }
 
+/**
+ *  NOTES: 
+ * 
+ *    
+ */

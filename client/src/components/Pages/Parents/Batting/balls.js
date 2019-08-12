@@ -1,46 +1,38 @@
 import React, { Component } from 'react';
 
 import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Sections/global/Section_Global_Header";
-import SectionContainer from "../../../Sections/global/SectionContainer";
-
-//import Title from "../../../Elements/type/PageTitle";
-//import SubTitle from "../../../Elements/type/PageSubTitle";
-//import Row from "../../../Template/Page/Row";
-//import Pod from "../../../Template/Page/Pod";
-//import PageHeader from "../../../Template/Page/Header";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
 
 // Sections
 
-//import SectionRuns from "../../../Sections/batting/Section_Batting_Runs_Runs";
-import SectionBalls from "../../../Sections/batting/Section_Batting_Runs_BallsFaced";
-import SectionRunstoBalls from "../../../Sections/batting/Section_Batting_RunsToBalls"
-//import SectionRunsBar from "../../../Sections/batting/Section_RunsOverTheYearsBarChart";
+import SectionBalls from "./Sections/Section_Batting_Runs_BallsFaced";
+import SectionRunstoBalls from "./Sections/Section_Batting_RunsToBalls"
+//import SectionRunsBar from "./Sections/Section_RunsOverTheYearsBarChart";
+//import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
 
-
+let PRIMARY,TITLES;
 export default class Page_Balls extends Component {
-
-  componentWillMount() { }
+ 
+  componentWillMount() { 
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary;
+  }
 
   render() { 
     return (    
       <Container>
-        <SectionHeader   h1={this.props.SUBS.BALLS} h2={this.props.TITLES.BATTING}  /> 
-      
+        <SectionHeader   h1={TITLES.SITE.SUBS.BALLS} h2={TITLES.SITE.TITLES.BATTING}  /> 
 
         <SectionContainer class="Section_Batting_Runs_to_Balls todo">
-          <SectionBalls 
-            {... this.props} 
-          />
+          <SectionBalls DATA={PRIMARY.CAREER.Career.batting.overTheYears} />
         </SectionContainer>
 
         <SectionContainer class="Section_Batting_Runs_to_Balls todo">
-          <SectionRunstoBalls 
-            {... this.props} 
-          />
-           
-        </SectionContainer> 
+          <SectionRunstoBalls DATA={PRIMARY} TITLES={TITLES}/>
+        </SectionContainer>   
+        
       </Container>
     )
   } 
-} 
+}
