@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import { matchPath } from 'react-router'
 // Structure
 import Container from "../../../Template/Page/Container";
 import Row from "../../../Template/Page/Row";
@@ -10,22 +10,29 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 // Components
 import HistoryList from "./Sections/Section_List_History";
+import HistoryScatter from "./Sections/Section_History_ScatterChart";
 
-
-let DisplayTeam=null;
+let DisplayTeam=null,matchPlayer=null;
 class HistoryFor extends Component {
-    FindTeam(URL){
-        let Selected=null,Findmatch;
-        Findmatch = URL.split("/");
-        // eslint-disable-next-line
-        this.props.DATA.map((team,i)=>{ if(team.ID === Findmatch[3]){ Selected = team; } })
+    FindTeam(TEAMID){
+        let Selected=null;
+        this.props.DATA.map((team,i)=>{ 
+           if(team.ID === TEAMID)
+                 Selected = team;
+                 return true;
+            })
         return Selected;
     }
-0
-  componentWillMount() { DisplayTeam = this.FindTeam(this.props.history.location.pathname); }
+  componentWillMount() { 
+      
+      matchPlayer = matchPath(this.props.history.location.pathname, { path: '/history/:for/:displayTeam',})
+      DisplayTeam = this.FindTeam(matchPlayer.params.displayTeam); 
+      //console.log(this.props)
+    }
 
   render() {
-    return (
+    
+    return ( 
         <Container>
             <SectionHeader h1={this.props.TITLE} h2={DisplayTeam.Team} />
                 <SectionContainer class="Section_History_For todo">
@@ -48,7 +55,17 @@ class HistoryFor extends Component {
                             <SingleValuePod label="Runs Conceded" total={DisplayTeam.RunsConceded} icon= ""  Footer = "" /> 
                         </Row>
                 </SectionContainer>
-
+  
+                <SectionContainer>
+                        <HistoryScatter 
+                                DATA={this.props.PLAYER_DATA.Primary.CLEAN}  
+                                HS={100}
+                                FilterID={matchPlayer.params.displayTeam}
+                                OrderBy={this.props.OrderBy}
+                                TITLES={this.props.LABELS.SITE}
+                        />
+                </SectionContainer>
+                
                 <SectionContainer class="Section_History_For todo">
                     <SectionHeader  h2="Game History" />
                         <HistoryList 

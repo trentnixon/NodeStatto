@@ -21,8 +21,10 @@ class LineCharts extends Component {
           dropShadow: this.props.CHART.dropShadow,
           offsetX: this.props.CHART.offsetX,
           offsetY: this.props.CHART.offsetY,
+          
         },
         xaxis: { categories: this.props.Labels,},
+
         label : this.props.Labels,
         fill: this.props.CHART.fill,
         legend: this.props.CHART.legend,
@@ -51,4 +53,4 @@ class LineCharts extends Component {
 }
 
 const mapStateToProps = (state) => ({ CHART:state.CHARTS })
-export default connect(mapStateToProps)(LineCharts); 
+export default connect(mapStateToProps)(LineCharts);  

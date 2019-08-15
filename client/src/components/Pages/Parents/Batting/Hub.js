@@ -3,6 +3,7 @@ import {Route,Switch } from "react-router-dom";
 
 // Routes
 import ComponentBatting from "./Batting";
+import ComponentMilestones from "./Milestones";
 import ComponentFormGuide from "./formguide";
 import ComponentRuns from "./runs";
 import ComponentBalls from "./balls";
@@ -26,6 +27,8 @@ export default class BattingHub extends Component {
             <Container>           
                 <Switch>
                         <Route   path="/batting/overview" render={()=> <ComponentBatting {... this.props}/> }/>
+                        <Route   path="/batting/milestones" render={()=> <ComponentMilestones {... this.props}/> }/>
+                        
                         <Route   path='/batting/formguide' render={()=> <ComponentFormGuide {... this.props}/> }/>
                         <Route   path='/batting/runs' render={()=> <ComponentRuns {... this.props}/> }/>
                         <Route  exact path='/batting/by-the-ball' render={()=> <ComponentBalls {... this.props}/> }/>

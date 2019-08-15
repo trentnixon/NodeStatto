@@ -29,7 +29,7 @@ class Branch1 extends Component {
     // This variable will need changing
     BranchState = this.props.LOADSEQUENCE.StattoSequence.LOGIN_COMPLETE; 
    
-    console.log(this.props)
+    //console.log(this.props)
    
     if(BranchState !== true){
         this.UISetupState(this.props.LOADSEQUENCE);

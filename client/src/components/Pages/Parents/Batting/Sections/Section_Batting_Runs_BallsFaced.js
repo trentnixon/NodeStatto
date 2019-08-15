@@ -30,23 +30,22 @@ export default class Section_Batting_BallsFaced extends Component {
         PieBalls=[];
 
         RunsYear=[
-            { 
-                name:"BallsFaced",
-                data:[]
-            },
             {
-                name:"Innings",
+                name:"Runs Scored",
+                data:[]
+            },{ 
+                name:"Balls Faced",
                 data:[]
             }
+            
         ];
 
      // eslint-disable-next-line
         this.props.DATA.map((h,i)=>{ 
-          
                 PieRuns.push(h.TotalRuns);
                 PieBalls.push(h.TotalBF)
-                RunsYear[0].data.push(h.TotalBF);
-                RunsYear[1].data.push(h.HistoryRuns.length);
+                RunsYear[1].data.push(h.TotalBF);
+                RunsYear[0].data.push(h.TotalRuns);
                 Labels.push(h.int);
           })
     }
@@ -54,7 +53,7 @@ export default class Section_Batting_BallsFaced extends Component {
         return ( 
             <Row class="PodRow">
                     
-                    <Title Title="Balls Faced" />
+                    <Title Title={this.props.TITLES.SUBS.BF}/>
                     <Pod ClassName="flex-60" canvas="canvas1">
                         <Bar series={RunsYear} Labels={Labels} />
                      </Pod>  

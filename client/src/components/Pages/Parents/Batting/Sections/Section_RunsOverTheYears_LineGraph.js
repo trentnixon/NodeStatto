@@ -10,7 +10,7 @@ let Series=[], Labels=[];
 
 
 function FindValues(Year,Data){
-    let DataSeries=[], DateSplit=[], ReutrnedArr=[];
+    let DataSeries=[], DateSplit=[], ReturnArr=[];
     Year = Year.replace("20", "");
 
     Data.map((Game,i)=>{
@@ -31,30 +31,18 @@ function FindValues(Year,Data){
             }
     })
 
-    console.log(DataSeries);
-    /*
-    let Stored=0;
-    DataSeries.map((value,i)=>{
-            console.log(value, i);
-            ReutrnedArr.push(Stored + value)
-            Stored = Stored + value;
-    });
-*/
-
     let i=0,Stored=0,value=0;
     while (i < 12) {
        
         if(!DataSeries[i]){ value = 0}
         else{ value = DataSeries[i]}
-        ReutrnedArr.push(Stored + value);
+        ReturnArr.push(Stored + value);
         Stored = Stored + value;
-        console.log(i,Stored)
+        //console.log(i,Stored)
         i++;
       }
 
-
-    console.log(DataSeries, ReutrnedArr);
-    return ReutrnedArr;
+    return ReturnArr;
 }
 
 function FindName(Data,Years){

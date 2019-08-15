@@ -5,6 +5,7 @@ import PageHeader from "../../../Template/Page/Header";
 
 // Sections
 import Container from "../../../Template/Page/Container";
+
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import ScoreCardHeader from "./ScoreCardHeader";
@@ -15,12 +16,13 @@ import {FetchScoreCard} from "../../../../actions/Scorecard";
 
 const ScoreCard = new FetchScoreCard();
 
-class ScoreCardFrame extends Component {
+export default class ScoreCardFrame extends Component {
 
   componentWillMount() {
        
-        ScoreCard.Gameid = 238015;
-        ScoreCard.start();
+       // ScoreCard.Gameid = 238015;
+       // ScoreCard.start();
+       console.log(this.props)
    }
 
    shouldComponentUpdate(){return true;}
@@ -29,42 +31,27 @@ class ScoreCardFrame extends Component {
   render() {
     //console.log(this.props.SC)
 
-    if(this.props.SC.SC_Loading !== true){
-      return(
-        <div>          
-          <Container>
-              <SectionHeader h1="Scorecard" />
-
-              <SectionContainer>
-                    <p>Fetching Scroecard</p>
-              </SectionContainer>
-              
-          </Container>
-      </div>
-      )
-    }
-    else{}
     return (
-      <div>          
-           <PageHeader> 
-                <ScoreCardHeader 
-                  Data={this.props.SC} 
-                />
-            </PageHeader>
+
           <Container>
-              <SectionHeader h1="Scorecard" />
+              <SectionHeader h2="Scorecard" h1="Coming Soon"/>
 
               <SectionContainer>
                  
               </SectionContainer>
               
           </Container>
-      </div>
+
     )
+    
+   
   }
 } 
 
+/*
 const mapStateToProps = (state) => ({ 
   SC: state.SC,
 })
 export default connect(mapStateToProps)(ScoreCardFrame);
+
+*/

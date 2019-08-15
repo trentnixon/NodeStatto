@@ -8,6 +8,7 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 
 import SectionBalls from "./Sections/Section_Batting_Runs_BallsFaced";
 import SectionRunstoBalls from "./Sections/Section_Batting_RunsToBalls"
+import SectionBallsFacedScatter from "./Sections/Section_BallsFacedOverTheYearsScatterChart";
 //import SectionRunsBar from "./Sections/Section_RunsOverTheYearsBarChart";
 //import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
 
@@ -20,12 +21,14 @@ export default class Page_Balls extends Component {
   }
 
   render() { 
-    return (    
+    return (     
       <Container>
         <SectionHeader   h1={TITLES.SITE.SUBS.BALLS} h2={TITLES.SITE.TITLES.BATTING}  /> 
 
         <SectionContainer class="Section_Batting_Runs_to_Balls todo">
-          <SectionBalls DATA={PRIMARY.CAREER.Career.batting.overTheYears} />
+          <SectionBalls DATA={PRIMARY.CAREER.Career.batting.overTheYears}  TITLES={TITLES.SITE}/>
+          <SectionBallsFacedScatter TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={80}/>
+       
         </SectionContainer>
 
         <SectionContainer class="Section_Batting_Runs_to_Balls todo">

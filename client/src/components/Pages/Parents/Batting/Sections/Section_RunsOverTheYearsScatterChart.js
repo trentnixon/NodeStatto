@@ -8,7 +8,7 @@ import InteractiveScatterChart from "../../../../Charts/ScatterChart";
 let Series=[]
 function CreateScatter(CLEAN,range){
    
-    let series=[]
+    let series=[] 
     CLEAN.map((item,i)=>{
           if(item.Batting){
                   if(item.Batting.RunInt>= range.min && item.Batting.RunInt <= range.max )
@@ -53,7 +53,13 @@ export default class Section_Default extends Component {
             <Row class="PodRow">
                     <Title Title={this.props.TITLE.TITLES.SCORES} /> 
                     <Pod canvas="canvas1 " ClassName="flex-100">
-                        <InteractiveScatterChart DATA={Series} HS={this.props.HS}  />
+                        <InteractiveScatterChart 
+                            LookUp={this.props.DATA} 
+                            DATA={Series} 
+                            HS={this.props.HS} 
+                            Disc="Batting"
+                            Var="RunInt" 
+                        />
                     </Pod>
             </Row> 
         ) 

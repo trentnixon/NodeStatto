@@ -8,6 +8,8 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
 import SectionRunsScatter from "./Sections/Section_RunsOverTheYearsScatterChart";
 import RunsOverYearsLineGraph from "./Sections/Section_RunsOverTheYears_LineGraph";
+import RunsHeatMap from "./Sections/Section_RunstoBallsHeatmap";
+import MixedChart_Runs_AVG_Ranking from "./Sections/Section_MixedChart_Run_Avg_Ranking";
 
 let PRIMARY,TITLES;
 export default class Batting extends Component {
@@ -21,12 +23,18 @@ export default class Batting extends Component {
     return (    
       <Container>
         <SectionHeader   h1={this.props.LABELS.SITE.SUBS.RUNS} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
-      
+        
         <SectionContainer class="Section_Batting_Runs charts todo">
-            <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
-            <SectionRunsScatter TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
+            <MixedChart_Runs_AVG_Ranking TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
         </SectionContainer>
 
+        <SectionContainer class="Section_Batting_Runs charts todo">
+            <SectionRunsScatter TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
+        </SectionContainer>
+        
+        <SectionContainer class="Section_Batting_Runs charts todo">
+            <RunsHeatMap TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} />
+        </SectionContainer>
       
         <SectionContainer class="Section_Batting_Runs todo"> 
             <RunsOverYearsLineGraph 

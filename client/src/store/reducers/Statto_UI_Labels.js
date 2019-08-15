@@ -32,12 +32,12 @@ const InitialState ={
                     GAMES:"Games",
                     CAREER:"CAREER",
                     FORMGUIDE:"FORM",
-                    MILESTONE:"Milestones and Achievements", 
+                    MILESTONE:"Milestones and Achievements",  
                     SCORES:"SCORES"
                 },
                 SUBS:{
                     RUNS:"Runs",
-                    BALLS:"By The Ball", 
+                    BALLS:"By The Ball",  
                     WICKETS:"Wickets",
                     CATCHES:"Catches",
                     INNINGS:"Innings",
@@ -51,7 +51,15 @@ const InitialState ={
                     AVG:"Average",
                     ECO:"Economy",
                     HS:"Highest Score",
-                    BB:"Best Bowling"
+                    BB:"Best Bowling",
+                    BF:"Balls Faced",
+                    SR:"Strike Rate",
+                    CR:"Country Ranking",
+                    WR:"World Ranking"
+                },
+                CHARTS:{
+                    CHART:"Chart",
+                    SCATTER:"Scatter"
                 },
                 DESC:{
                     DESCRANKINGS:"Breakdown of World Rankings over a Career",

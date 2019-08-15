@@ -5,16 +5,18 @@ import Frame from "../Template/Frame";
 // Components
 import ComponentHome from "./Parents/Home/Home";
 import ComponentHistory from "./Parents/History/History";
+import RankingHub from "./Parents/Rankings/Hub";
 import BattingHub from "./Parents/Batting/Hub";
 import BowlingHub from "./Parents/Bowling/Hub";
 import ComponentPlayFor from "./Parents/Home/PlayerForFullList";
 import ComponentSearch from "./Parents/search/search";
+import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 
 /*
 import ComponentKeeping from "./Parents/Keeping/Keeping";
-import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
+
 import ComponentAbout from "./Parents/about/about";
-*/
+*/ 
 
 
 // Icons
@@ -30,7 +32,12 @@ import  {Batting, Bowling,Wickets,Runs} from "../Icons/icons";
 
 
 const  Navigation =[
-    
+  {
+    "label":"Rankings", 
+    "path":"rankings",
+    "icon":<Search/>, 
+    "children":null
+  },
   {
     "label":"Batting",
     "path":"batting",
@@ -59,6 +66,12 @@ const  Navigation =[
           "path":"by-the-ball",
           "icon":<Bowling />
         },
+        
+        {
+          "label":"Milestones",
+          "path":"milestones",
+          "icon":<Bowling />
+        },
         {
           "label":"For & Against",
           "path":"foragainst",
@@ -81,7 +94,20 @@ const  Navigation =[
         "path":"formguide",
         "icon":<ShowChart/>
       },
+      
       {
+        "label":"For & Against",
+        "path":"foragainst",
+        "icon":<People/>
+      }
+    ],
+    "icon":<Bowling/>
+  },
+
+  /**
+   * 
+   * // Extra Bowling Pages
+   * {
         "label":"Wickets",
         "path":"wickets",
         "icon":<Wickets/>
@@ -91,14 +117,8 @@ const  Navigation =[
         "path":"aes",
         "icon":<MultilineChart/>
       },
-      {
-        "label":"For & Against",
-        "path":"foragainst",
-        "icon":<People/>
-      }
-    ],
-    "icon":<Bowling/>
-  },
+
+   */
   /*{
     "label":"Keeping",
     "path":"keeping",
@@ -111,6 +131,7 @@ const  Navigation =[
     ],
     "icon":<Keeping/>
   },*/
+  
   {
     "label":"Change Player", 
     "path":"search",
@@ -137,11 +158,11 @@ export default class Statto extends Component {
                 <Route  exact path='/' render={()=> <ComponentHome {... this.props}/> }/>
                 <Route  exact path='/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
                 <Route  path="/history" render={()=> <ComponentHistory {... this.props} /> }/>
-
+                <Route  path="/rankings" render={()=> <RankingHub  {... this.props} /> }/>
                 <Route  path="/batting" render={()=> <BattingHub  {... this.props} /> }/>
                 <Route  path="/bowling" render={()=> <BowlingHub  {... this.props} /> }/>
                 <Route  path="/search" render={()=> <ComponentSearch {... this.props}/> }/>
-   
+                <Route  exact path="/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
             </div>
           </Frame> 
       </Router> 
@@ -160,7 +181,7 @@ export default class Statto extends Component {
                 <Route  exact path="/:id/search/" render={()=> <ComponentSearch {... this.props}/> }/>
                 <Route  exact path="/:id/settings/" render={()=> <ComponentAbout {... this.props}/> }/>
 
-                <Route  exact path="/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
+                
                 <Route  exact path="/:id/dev/datatable" render={()=> <DevDisplayDataTable {... this.props}/> }/>
  * 
  */

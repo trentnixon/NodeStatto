@@ -56,7 +56,7 @@ class NestedLists extends React.Component {
  createListItem(navItem,i){
      return(
         <Link key={i} to={`/${navItem.path}`}>
-            <ListItem button>
+            <ListItem button onClick={()=>{this.CloseDrawer(true)}} >
                 <ListItemIcon>{navItem.icon}</ListItemIcon>
                 <ListItemText inset primary={navItem.label}/>
             </ListItem>
@@ -113,7 +113,7 @@ createCollapseItem(navItem,i){
                 })
             }
         </List>
-      </div>
+      </div> 
     );
   }
 }

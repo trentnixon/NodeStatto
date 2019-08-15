@@ -11,13 +11,11 @@ import HistoryDeepDive from "./HistoryDeepDive";
 
 // Class
 export default  class History extends Component {
-  
+  componentWillMount() {}
   shouldComponentUpdate(){ return true;}
   componentWillUpdate(){ return true;}
-  componentWillMount() {}
-  componentDidUpdate(nextprops,nextState){
-    //console.log(nextprops,nextState);
-}
+  
+  componentDidUpdate(nextprops,nextState){}
   render() {
   
 
@@ -40,7 +38,7 @@ export default  class History extends Component {
                         {... this.props}/> } 
               /> 
               <Route  path={`/history/against/:teamID`}render={()=> 
-                  <HistoryDeepDive 
+                   <HistoryDeepDive 
                         TITLE={this.props.LABELS.SITE.TITLES.HISTORY+' '+ this.props.LABELS.SITE.SUBS.AGAINST} 
                         DATA={this.props.PLAYER_DATA.Primary.AGAINST} 
                         OrderBy='OppositionID'

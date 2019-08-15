@@ -27,7 +27,7 @@ export default class SectionTableForAgainst  extends Component {
                                     <IconButton aria-label="Scorecard" component={Link} to={`/history/${this.props.Path}/${team.ID}`}>
                                             <LaunchIcon />
                                     </IconButton>  
-                            </div>
+                            </div> 
                      </div>   
                 )
             }

@@ -30,6 +30,6 @@ export default class App extends Component {
                 <Route exact path="/error/IDError" component={Wrong_ID} />  
             </div>
         </Router>  
-      ) 
+      )  
     } 
   }

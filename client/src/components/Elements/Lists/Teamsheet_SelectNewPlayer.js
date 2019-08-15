@@ -30,7 +30,7 @@ export default  class Login extends Component {
                 {
                     this.props.DATA_SETUP.SelectTeamRoster.map((row,i)=>{
                         let  IsVisable =  this.props.isVisible === true ? 'show':'';
-                        let Delay= 100*i;
+                        let Delay = 50*i;
                        
                             return(
                                 <Animated   
