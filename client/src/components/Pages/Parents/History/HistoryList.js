@@ -12,7 +12,7 @@ export default class History extends Component {
     return (
       <div>
           <SectionHeader h1={this.props.SITE.HISTORY} h2={this.props.SITE.CAREER} />
-            <SectionContainer class="Section_History">
+            <SectionContainer className="Section_History">
               <ListHistory    
                   SelectedID={null}
                   List={this.props.PLAYER_DATA.Primary.CLEAN}

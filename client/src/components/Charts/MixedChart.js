@@ -29,7 +29,7 @@ class LineCharts extends Component {
           
         },
         stroke: {
-            width: [0, 2, 5],
+            width: [2],
             curve: 'smooth'
           },
         plotOptions: {
@@ -45,14 +45,15 @@ class LineCharts extends Component {
         
         label : this.props.Labels,
         fill: {
-            opacity: [0.85, 0.25, 1],
+          type: 'gradient',
             gradient: {
               inverseColors: false,
+              shadeIntensity: 1,
               shade: 'light',
               type: "vertical",
-              opacityFrom: 0.85,
-              opacityTo: 0.55,
-              stops: [0, 100, 100, 100]
+              opacityFrom: 1,
+              opacityTo: 0.3,
+              stops: [0, 98, 100]
             }
           },
         legend: this.props.CHART.legend,

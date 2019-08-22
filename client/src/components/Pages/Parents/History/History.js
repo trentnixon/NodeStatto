@@ -18,7 +18,7 @@ export default  class History extends Component {
   componentDidUpdate(nextprops,nextState){}
   render() {
   
-
+ 
     return (  
       <Container> 
         <Router basename={'/'+this.props.DATA_SETUP.SelectTeamID+'/'+this.props.DATA_SETUP.SelectedPlayerID }>

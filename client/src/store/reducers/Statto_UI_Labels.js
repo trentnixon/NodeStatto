@@ -4,7 +4,7 @@ const InitialState ={
         EN:{
             META:{
                 SITENAME:"STATTO",
-                BYLINE:"Reviewing your LMS Career"  
+                BYLINE:"Reviewing your LMS Career"   
             },
             LOADING:{
                 PRELOADTEAMS:"Teams",
@@ -33,12 +33,13 @@ const InitialState ={
                     CAREER:"CAREER",
                     FORMGUIDE:"FORM",
                     MILESTONE:"Milestones and Achievements",  
-                    SCORES:"SCORES"
+                    SCORES:"SCORES" 
                 },
                 SUBS:{
                     RUNS:"Runs",
                     BALLS:"By The Ball",  
                     WICKETS:"Wickets",
+                    OVERS:"Over",
                     CATCHES:"Catches",
                     INNINGS:"Innings",
                     NOTABLESCORES:"Notable Scores",

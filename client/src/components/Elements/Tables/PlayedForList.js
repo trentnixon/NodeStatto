@@ -43,7 +43,7 @@ export default class PlayedFor extends Component {
         Teams= Teams.slice(0,this.props.num); 
         CTA = <ShowMore 
                     Label={this.props.CTA.ALL}
-                    class=" CTA ButtonRight"
+                    className=" CTA ButtonRight"
                     Path="playedFor/"
                 />
     }
@@ -55,7 +55,7 @@ export default class PlayedFor extends Component {
                 icon={<Avatar className="Avatar" >{Num}</Avatar>}
                 label={this.props.TITLES.TEAMS}
                 Footer={CTA}
-                ClassName={this.props.ClassName}
+                className={this.props.className}
             >
                 <Table>
                     <TableHead>

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import {Animated} from "react-animated-css";
+
+// Actions
+import {ResetPlayer} from "../../../actions/Setup_Statto_UI";
+
+// Template
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import FetchingTeams from "../../Pages/Parents/Login/stateless/Login_FetchingTeams";
@@ -11,8 +15,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import IconButton from '@material-ui/core/IconButton';
 import LaunchIcon from '@material-ui/icons/Launch';
 */
-import {ResetPlayer} from "../../../actions/Setup_Statto_UI";
- 
+
+ // Start Class
 export default  class Login extends Component {
    FetchThisPlayer(Name, teamID,ID){
        //console.log(Name, teamID,ID, this.props)

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
 
-import Title from "../../../../Elements/type/PageTitle";
+//import Title from "../../../../Elements/type/PageTitle";
 import SubTitle from "../../../../Elements/type/PageSubTitle";
 
 // Charts
@@ -21,7 +21,7 @@ let RunsYear=[
         data:[]
     },
     {
-        name:"Innings",
+        name:"Innings", 
         data:[]
     }
 ];
@@ -60,14 +60,14 @@ export default class Section_Rankings extends Component {
         console.log(RunsYear[0].data.length);
         
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                  <SubTitle  Title="Runs over the Years" />
 
-                 <Pod  ClassName="flex-60" canvas="canvas1"> 
+                 <Pod  className="flex-60" canvas="canvas1"> 
                         <Bar  series={RunsYear}  Labels={Labels}/>
                  </Pod>     
 
-                 <Pod ClassName="flex-40" type="Naked" canvas="">      
+                 <Pod className="flex-40" type="Naked" canvas="">      
                         <Donut series={PieRuns} Labels={Labels}  />
                 </Pod>      
             </Row>

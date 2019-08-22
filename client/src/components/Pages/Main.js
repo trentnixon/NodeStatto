@@ -14,10 +14,8 @@ import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 
 /*
 import ComponentKeeping from "./Parents/Keeping/Keeping";
-
 import ComponentAbout from "./Parents/about/about";
 */ 
-
 
 // Icons
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -27,8 +25,8 @@ import People from '@material-ui/icons/People';
 import Settings from '@material-ui/icons/Settings';
 import Search from '@material-ui/icons/Search';
 import Looks4 from '@material-ui/icons/Looks4';
-import  {Batting, Bowling,Wickets,Runs} from "../Icons/icons";
-//Keeping
+import  {Batting, Wickets,Bowling,Runs} from "../Icons/icons";
+//Keeping,
 
 
 const  Navigation =[
@@ -88,11 +86,27 @@ const  Navigation =[
         "label":"Overview",
         "path":"overview",
         "icon":<AccountCircle/>
+      },{
+        "label":"Wickets",
+        "path":"wickets",
+        "icon":<Wickets/>
+      },{
+        "label":"AES",
+        "path":"aes",
+        "icon":<MultilineChart/>
       },
       {
         "label":"Form",
         "path":"formguide",
         "icon":<ShowChart/>
+      },{
+        "label":"Notable Figures",
+        "path":"notable",
+        "icon":<Looks4/>
+      },{
+        "label":"Milestones",
+        "path":"milestones",
+        "icon":<Bowling/>
       },
       
       {
@@ -107,16 +121,8 @@ const  Navigation =[
   /**
    * 
    * // Extra Bowling Pages
-   * {
-        "label":"Wickets",
-        "path":"wickets",
-        "icon":<Wickets/>
-      },
-      {
-        "label":"AES",
-        "path":"aes",
-        "icon":<MultilineChart/>
-      },
+   * 
+      ,
 
    */
   /*{

@@ -9,7 +9,8 @@ import PodBody from "./PodStructure/Pod_Value_and_Icon_Body";
 export default class RankingHomePod extends Component {
     FindArrow(data) {
         let Arrow;
-        if (data.length > 0) {
+        if (data.length > 1) { 
+            //console.log(data);
             if (data[data.length - 2].rank < data[data.length - 1].rank) {
                 Arrow = <TrendingDown nativeColor="#ce7070" className="RankingIcon" />;
             }
@@ -24,7 +25,7 @@ export default class RankingHomePod extends Component {
     }
     value(data, int) {
         //console.log(data);
-        if (data.length > 0) {
+        if (data.length > 1) {
             return data[data.length - int].rank;
         }
         else {

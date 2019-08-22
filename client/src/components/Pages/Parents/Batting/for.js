@@ -103,8 +103,8 @@ export default class Page_ForandAgainstMajorTable extends Component {
     return (
         <Container>
           <SectionHeader   h1={TITLES.SITE.SUBS.FORAGAINST} h2={TITLES.SITE.TITLES.BATTING} /> 
-            <SectionContainer class="Section_Batting_FORANDAGAINST_Form Selector">
-                <Row class="PodRow Form_Selector">
+            <SectionContainer className="Section_Batting_FORANDAGAINST_Form Selector">
+                <Row className="PodRow Form_Selector">
                   <Pod>
                   <FormControl variant="outlined" className="YearSelector" >
                       <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-Select"> 
@@ -132,7 +132,7 @@ export default class Page_ForandAgainstMajorTable extends Component {
                   </Pod>
                 </Row>
           </SectionContainer>
-          <SectionContainer class="Section_Batting_FORANDAGAINST_Results" >
+          <SectionContainer className="Section_Batting_FORANDAGAINST_Results" >
               <Tabber 
                         Tabs={
                           [

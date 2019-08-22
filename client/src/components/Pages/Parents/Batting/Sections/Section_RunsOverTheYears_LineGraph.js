@@ -15,20 +15,21 @@ function FindValues(Year,Data){
 
     Data.map((Game,i)=>{
         DateSplit = Game.Meta.Date.split("/");
-        if(DateSplit[2] == Year)
+        if(DateSplit[2] === Year)
             {
                 if(Game.Batting)
                 {
                     //console.log(DateSplit[1], DateSplit[2], Game.Batting.RunInt);
                     if(!DataSeries[ DateSplit[1]-1 ])
                     {
-                        DataSeries[DateSplit[1]-1 ]=Game.Batting.RunInt
+                        DataSeries[DateSplit[1]-1 ]= Game.Batting.RunInt
                     }
                     else{
-                        DataSeries[DateSplit[1]-1] = parseInt(DataSeries[DateSplit[1]-1]) + Game.Batting.RunInt
+                        DataSeries[DateSplit[1]-1] = parseInt(DataSeries[DateSplit[1]-1],10) + Game.Batting.RunInt
                     }
                 }  
             }
+        return true;
     })
 
     let i=0,Stored=0,value=0;
@@ -53,6 +54,7 @@ function FindName(Data,Years){
                 name:year.year,
                 data:FindValues(year.year,Data)
             })
+            return true;
     })
    // console.log(NewSeries);
    return NewSeries;
@@ -70,9 +72,9 @@ export default class Section_Default extends Component {
     render() {
         console.log(Series);
         return ( 
-            <Row class="PodRow"> 
+            <Row className="PodRow"> 
                     <Title Title={this.props.TITLE.TITLES.SCORES} /> 
-                    <Pod canvas="canvas1 " ClassName="flex-100">
+                    <Pod canvas="canvas1 " className="flex-100">
                         <LineGraph series={Series[0]} Labels={Labels}/>
                     </Pod>
             </Row> 

@@ -14,7 +14,7 @@ function CreateScatter(CLEAN,range){
                   if(item.Batting.RunInt>= range.min && item.Batting.RunInt <= range.max )
                       series.push([(item.Meta.FixtureInt*1000),item.Batting.RunInt])
           }
-          
+          return true;
     })
     return series;
 }
@@ -50,9 +50,9 @@ export default class Section_Default extends Component {
     render() {
    
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                     <Title Title={this.props.TITLE.TITLES.SCORES} /> 
-                    <Pod canvas="canvas1 " ClassName="flex-100">
+                    <Pod canvas="canvas1 " className="flex-100">
                         <InteractiveScatterChart 
                             LookUp={this.props.DATA} 
                             DATA={Series} 

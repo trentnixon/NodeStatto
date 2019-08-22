@@ -88,7 +88,7 @@ export default class ForandAgainstTable extends Component {
     render() {
         //console.log(this.props.Data.FOR);
         return (
-                <Row class="Table canvas1">  
+                <Row className="Table canvas1">  
                     <div className="tr">
                         <div className="th"></div>
                         <div className="th">{this.props.LABELS.SITE.SUBS.FOR}</div>
@@ -113,7 +113,7 @@ export default class ForandAgainstTable extends Component {
                         <div className="Footer">
                                     <ShowMore 
                                         Label={this.props.LABELS.SITE.CTA.FULL}
-                                        class=" CTA ButtonRight"
+                                        className=" CTA ButtonRight"
                                         Player={this.props.match.params.playerid}
                                         Path="batting/foragainst"
                                     />

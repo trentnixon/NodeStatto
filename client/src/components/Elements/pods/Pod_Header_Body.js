@@ -14,7 +14,7 @@ export default class PodHeaderBodyOnly extends Component {
     render() {
         
         return(
-            <Pod col="" type="HeaderBodyPod" ClassName={this.props.ClassName} canvas="canvas1"> 
+            <Pod col="" type="HeaderBodyPod" className={this.props.className} canvas="canvas1"> 
                 <PodHeader icon={this.props.icon} label ={this.props.label} />
                     <div className="Body">
                         {this.props.children}

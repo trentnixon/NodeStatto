@@ -4,13 +4,13 @@ import {Animated} from "react-animated-css";
 import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
-import  {Runs,Wickets,Keeping,Trophy } from "../../../../Icons/icons"; 
-
-//{<ShowMore Label={this.props.CTA.MORE} class=" CTA ButtonRight"  Path={stone.Path} />}
+import  {Runs,Trophy } from "../../../../Icons/icons"; 
+//Wickets,Keeping,
+//{<ShowMore Label={this.props.CTA.MORE} className=" CTA ButtonRight"  Path={stone.Path} />}
 let stones=[];
 export default class Home_Overview extends Component { 
     componentWillMount() { 
-        console.log(this.props.DATA.Meta)
+         //console.log(this.props.DATA.Meta)
          stones=[
             { var:this.props.DATA.Meta.Batting_HS,     Path:"batting/runs", label:this.props.SUBS.HS,icon:<Trophy/>},
             { var:this.props.DATA.Meta.Bowling_Best,   Path:"bowling/wickets", label:this.props.SUBS.BB,icon:<Runs/>}
@@ -19,7 +19,7 @@ export default class Home_Overview extends Component {
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-                <Row class="PodRow">
+                <Row className="PodRow">
                    { 
                     stones.map((stone,i)=>{
                         let Delay= 200*i;
@@ -30,7 +30,7 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={false}
-                            className={IsVisable}
+                            className={IsVisable + " flex-50"}
                         >
                             <IconPod 
                                 icon={stone.icon}

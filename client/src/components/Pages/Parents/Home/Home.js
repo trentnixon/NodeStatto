@@ -31,7 +31,7 @@ let TITLES,PRIMARY;
 export default class Statto extends Component {
 
   componentWillMount() { }
-
+ 
   render() {
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary;
@@ -40,7 +40,7 @@ export default class Statto extends Component {
           <Container>
               <SectionHeader h1={TITLES.DASHBOARD} h2={TITLES.OVERVIEW} /> 
 
-              <SectionContainer class="Section_Overview complete" > 
+              <SectionContainer className="Section_Overview complete" > 
                   <Overview  
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
@@ -56,7 +56,7 @@ export default class Statto extends Component {
                   />
               </SectionContainer>   
 
-              <SectionContainer class="Section_Home_RankingPods complete">
+              <SectionContainer className="Section_Home_RankingPods complete">
                 <Rankings  
                     TITLE={TITLES.SITE.TITLES.RANKINGS} 
                     SITE={TITLES.SITE.TITLES} 
@@ -65,7 +65,7 @@ export default class Statto extends Component {
                 /> 
               </SectionContainer>
 
-              <SectionContainer class="Section_History complete">
+              <SectionContainer className="Section_History complete">
                   <BriefHistory 
                     TITLES={TITLES.SITE.TITLES} 
                     CTA={TITLES.SITE.CTA}
@@ -75,7 +75,7 @@ export default class Statto extends Component {
                   />
               </SectionContainer> 
 
-              <SectionContainer class="Section_Default complete">
+              <SectionContainer className="Section_Default complete">
                   <Charts   
                       TITLES={TITLES.SITE.TITLES} 
                       CTA={TITLES.SITE.CTA}

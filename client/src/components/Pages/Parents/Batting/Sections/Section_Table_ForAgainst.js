@@ -38,8 +38,8 @@ export default class SectionTableForAgainst  extends Component {
         Rows = Rows.filter(function (el) { return el != null; });
 
         return(
-            <Row class="PodRow TeamList"> 
-                <Pod canvas="canvas1">
+            <Row className="PodRow TeamList"> 
+                <Pod canvas="canvas1" className="flex-100">
                      <div className="ListItem Header">
                             <div className="TeamName">{this.props.Type}</div>
                             <div className="Number">{this.props.Label}</div>

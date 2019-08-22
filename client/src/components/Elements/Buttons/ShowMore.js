@@ -4,7 +4,7 @@ import LinkIcon from '@material-ui/icons/ChevronRight'
 import Button from '@material-ui/core/Button';
 
 const ShowMore = (props) => (
-    <Button component={Link} to={`/${props.Path}`}  className={props.class}>
+    <Button component={Link} to={`/${props.Path}`}  className={props.Name}>
         {props.Label}
         <LinkIcon  />
       </Button>

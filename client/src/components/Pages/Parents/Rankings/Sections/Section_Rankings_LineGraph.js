@@ -1,48 +1,75 @@
 import React, { Component } from 'react';
-import {isMobile} from 'react-device-detect';
+// import {isMobile} from 'react-device-detect';
 
+
+// Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-
 import RankingPods from "../../../../Elements/pods/RankingPods";
 import Title from "../../../../Elements/type/PageTitle";
 import SubTitle from "../../../../Elements/type/PageSubTitle";
 
-import Chart from "../../../../Charts/LineChart";
+// Charts
+import Chart from "../../../../Charts/AreaChart";
 
+// Variables
+let Labels=null,Series=[];
 
-let Labels=[],Series=[];
+// Start Class
 export default class Section_Rankings extends Component {
     
     
-    CreateRanking(arr){
+    IsTrue(Var){
+        let IsTrue = true;
+        //console.log(Var)
+            if(Var === null){ IsTrue = false}
+            if(Var === 0){ IsTrue = false}
+        return IsTrue;
+    }
+    CreateRanking(arr,vari){
         let Series=[]
+    
             arr.map((rank,i)=>{
-                Series.push(rank.rank) 
+                if(this.IsTrue(rank[vari])){
+                    Series.push(rank[vari]) 
+                }
+                return true;
             })
         return Series;
     }
-    componentWillMount() {
+
+    CreateLabels(arr){
+        let Labels=[];
+        arr.map((row,i)=>{
+            if(this.IsTrue(row.Batting) || this.IsTrue(row.Bowling)){
+                Labels.push(row.ThisDate)
+            }
+            return true;
+        })
+        return Labels;
+    }
+    componentWillMount() { 
 
        Series =  [
             {
               name: 'Batting',
-              data: this.CreateRanking(this.props.Rankings.Batting)
+              data: this.CreateRanking(this.props.Rankings.Combined,'Batting')
             },
             { 
                 name: 'Bowling',
-                data: this.CreateRanking(this.props.Rankings.Bowling)
+                data: this.CreateRanking(this.props.Rankings.Combined,'Bowling') 
             },
             {
                 name: 'Keeping',
-                data: this.CreateRanking(this.props.Rankings.Keeping)
+                data: this.CreateRanking(this.props.Rankings.Combined,'Keeping')
             }
           ]
+          Labels=this.CreateLabels(this.props.Rankings.Combined)
     } 
     render() {
-        console.log(this.props.Rankings.Batting,Series)
+      
         return ( 
-                <Row class="PodRow">
+                <Row className="PodRow ">
                     
                     <Title Title={this.props.TITLES.SITE.TITLES.RANKINGS}/>
 
@@ -58,8 +85,8 @@ export default class Section_Rankings extends Component {
                             <RankingPods Rankings={this.props.Rankings.Bowling}  />
                         </div>
 
-                    <Pod canvas="canvas1" class="LineChart">
-                        <Chart  series={Series} labels={Labels} />
+                    <Pod canvas="canvas1" className=" flex-100">
+                        <Chart  series={Series} Labels={Labels} />
                     </Pod> 
 
                 </Row>

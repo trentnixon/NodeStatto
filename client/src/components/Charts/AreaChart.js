@@ -51,7 +51,7 @@ class LineCharts extends Component {
             <Chart
               options={this.state.options}
               series={this.state.series}
-              type="line" 
+              type="area" 
             
             />
           </div>

@@ -8,7 +8,7 @@ import Row from "../../Template/Page/Row";
 export default class SectionHeaders extends Component {
   render() {
     return (
-        <Row class="SectionHeader">
+        <Row className="SectionHeader">
           <Title Title={this.props.h1} />
           <SubTitle Title={this.props.h2}/>
         </Row>

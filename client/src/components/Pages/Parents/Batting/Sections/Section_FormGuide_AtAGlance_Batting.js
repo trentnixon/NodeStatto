@@ -127,7 +127,7 @@ export default class Section_Rankings extends Component {
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-            <Row class="PodRow">
+            <Row className="PodRow">
                 
                             { 
                                 this.state.stats.map((radial,i)=>{
@@ -139,7 +139,7 @@ export default class Section_Rankings extends Component {
                                             isVisible={this.props.isVisible}
                                             animationInDelay={Delay}
                                             animateOnMount={false}
-                                            className={IsVisable}
+                                            className={IsVisable + " flex-30"}
                                         >
                                             <SingleValuePod 
                                                 label={radial.Name}

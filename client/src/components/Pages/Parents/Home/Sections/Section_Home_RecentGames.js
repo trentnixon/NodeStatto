@@ -13,15 +13,15 @@ export default class History extends Component {
 
   render() {
     return (
-        <Row class="PodRow HistoryRow">  
+        <Row className="PodRow HistoryRow">   
           <Title Title={this.props.TITLE}/>
             
-          <PodWrapper canvas="canvas1">
+          <PodWrapper canvas="canvas1" className="flex-100">
               <ListHistory Games={DisplayList} />
               
               <ShowMore 
                   Label={this.props.CTA.ALL}
-                  class="CTA ButtonRight" 
+                  className="CTA ButtonRight" 
                   Path="history/"
               />
               

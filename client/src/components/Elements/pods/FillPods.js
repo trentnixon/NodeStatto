@@ -11,7 +11,7 @@ export default class FillPods extends Component {
         let FillStyle = {  height: this.props.Percentage+"%" }
 
         return (
-                <Pod  col="" type="FillPod" canvas="canvas1" >
+                <Pod  className={this.props.className} type="FillPod" canvas="canvas1" >
                     <PodHeader icon="" label ={this.props.Label} />
                         <PodBody 
                             TopLine={parseInt(this.props.Value, 10).toFixed(0)}

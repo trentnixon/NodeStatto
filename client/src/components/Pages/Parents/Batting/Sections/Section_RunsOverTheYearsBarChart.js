@@ -48,7 +48,7 @@ export default class Section_Default extends Component {
     } 
     render() {
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                 <Title Title={this.props.Title}/>
                     <Pod canvas="canvas1 ">
                         <InteractiveScatterChart DATA={Series} {... this.props} />

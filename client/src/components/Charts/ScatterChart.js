@@ -10,7 +10,7 @@
  *  
  * 
  */
-import React, { Component } from 'react';
+import React from 'react';
 import Chart from "react-apexcharts";
 import {connect } from 'react-redux';
 import SnackBar from "../Elements/UI/SnackBar";
@@ -19,7 +19,7 @@ let timeout;
 class ScatterChart extends React.Component {
       
 
-  SetState(bar,game){
+  SetState(bar,game){ 
     this.setState({
       ...this.state,
       SnackBar: bar,
@@ -42,8 +42,9 @@ class ScatterChart extends React.Component {
             if((game.Meta.FixtureInt*1000) === Path[0])
                 if(game[this.props.Disc][this.props.Var] === Path[1]){
                   CreateLink.push(game.Meta.Team,game.Meta.Opposition,game.Meta.Fixture)
-                  console.log(game.Meta.Team,game.Meta.Opposition,game.Meta.Fixture)
+                  //console.log(game.Meta.Team,game.Meta.Opposition,game.Meta.Fixture)
                 }
+                return true;
         });
         clearTimeout(timeout);
         this.SetState(true,CreateLink)

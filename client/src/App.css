@@ -915,7 +915,11 @@ body {
       body #root #Statto #Frame .flex-40 {
         flex-basis: 39.5% !important; }
       body #root #Statto #Frame .flex-30 {
-        flex-basis: 29.5% !important; }
+        flex-basis: 32.9%  !important; }
+      body #root #Statto #Frame .flex-25 {
+        flex-basis: 24.5% !important; }
+      body #root #Statto #Frame .flex-20 {
+        flex-basis: 19.5% !important; }
       body #root #Statto #Frame header {
         position: fixed;
         z-index: 99999;
@@ -1098,8 +1102,7 @@ body {
             flex: 1 0 100%; }
           body #root #Statto #Frame section .row > div {
             margin: 0 .2%;
-            padding: 0;
-            flex: 1 0 24.5%; }
+            padding: 0; }
       body #root #Statto #Frame .Selector {
         margin: 0px; }
       body #root #Statto #Frame .Section_Batting_Rankings > .Outer {

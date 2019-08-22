@@ -51,13 +51,13 @@ export default class Section_Batting_BallsFaced extends Component {
     }
     render() {
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                     
                     <Title Title={this.props.TITLES.SUBS.BF}/>
-                    <Pod ClassName="flex-60" canvas="canvas1">
+                    <Pod className="flex-60" canvas="canvas1">
                         <Bar series={RunsYear} Labels={Labels} />
                      </Pod>  
-                     <Pod ClassName="flex-40" type="Naked" canvas="">
+                     <Pod className="flex-40" type="Naked" canvas="">
                         <Donut  series={PieBalls} Labels={Labels}/>
                     </Pod>  
                     

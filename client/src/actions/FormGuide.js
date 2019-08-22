@@ -19,7 +19,16 @@ export function FormGuide(data){
                 Rankings:{
                     Batting:[],
                     Bowling:[], 
-                    Keeping:[]
+                    Keeping:[],
+                    Combined:[{
+                        ThisDate:null,
+                        Fixture: 0,
+                        FixtureInt: 0,
+                        Bowling : 0,
+                        Batting : 0,
+                        Keeping :0
+                    }
+                    ]
                 }
             },
             batting:{
@@ -112,7 +121,7 @@ export function FormGuide(data){
      // eslint-disable-next-line
     data.map((game,i)=>{
          
-      //console.log(game);
+            //console.log(game);
             // eslint-disable-next-line
             let Meta = Stats.Career.Meta;
             // eslint-disable-next-line
@@ -123,7 +132,12 @@ export function FormGuide(data){
             let Keeping = Stats.Career.Keeping;
 
             // Meta
-            if(game.Meta){ Meta = IncludeMeta(Meta,game);}
+            if(game.Meta){ 
+                Meta = IncludeMeta(Meta,game);
+                Meta.Rankings.Combined = CombinedRanking(Meta.Rankings.Combined,game)
+
+                //console.log(Meta.Rankings.Combined);
+            }
             // Batting
             if(game.Batting){
                 Batting = IncludeBatting(Batting,game);
@@ -255,6 +269,27 @@ function IncludeKeeping(Keeping, game){
 
 function Add(data,value){  if(!isNaN(value)){ return (data+value);}else{ return data}  }
 
+function isRankingTrue(value,Item,row,Combined){
+    
+    // value[Item] eg Game.Batting
+    let CheckRow = value[Item];
+  
+    // Check is Row is there
+    if(CheckRow){
+        let Rank= parseInt(CheckRow[row],10);
+        // If row Int is a number 
+        if(!isNaN(Rank)){
+            return parseInt(CheckRow[row],10);
+        }else{
+            return Combined[Combined.length-1][Item];
+        }
+    }
+    else{
+        return Combined[Combined.length-1][Item];
+    }
+   
+}
+
 function rankingPush(data,value,date){ 
     let year = date.split('/');
     if(!isNaN(value)){ 
@@ -268,6 +303,22 @@ function rankingPush(data,value,date){
     return data
 }
 
+function CombinedRanking(Combined,game){
+
+
+            Combined.push({
+                ThisDate:game.Meta.Date,
+                Fixture: game.Meta.Fixture,
+                FixtureInt: game.Meta.FixtureInt,
+                Bowling : isRankingTrue(game,'Bowling','Ranking',Combined),
+                Batting : isRankingTrue(game,'Batting','Ranking',Combined),
+                Keeping : isRankingTrue(game,'Keeping','Ranking',Combined)
+            })
+
+            //console.log(Combined)
+    return Combined;
+}
+
 function CountScores(data,stack,needle,variant){
     //console.log(stack,needle)   
     if(stack<needle && stack>variant){  data = data+1 ; }
@@ -275,7 +326,7 @@ function CountScores(data,stack,needle,variant){
 }
 
 function CountDucks(data,needle,variant){
-    if(needle === 0){
+    if(needle === 0){ 
        
         if(variant ===0){
             data=data+1;

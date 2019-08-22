@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Row from "../../Template/Page/Row";
 import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
+
 //import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../../Elements/type/PageSubTitle";
 
@@ -95,7 +96,7 @@ export default class Section_Rankings extends Component {
     render() {
         return (
             <div> 
-                <Row class="PodRow Form_Selector"> 
+                <Row className="PodRow Form_Selector"> 
                     <Pod col="Selector" canvas="">
                         <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel
@@ -126,8 +127,8 @@ export default class Section_Rankings extends Component {
                             </Select>
                         </FormControl>
                     </Pod>
-                </Row>
-                <Row class="PodRow">
+                </Row> 
+                <Row className="PodRow">
                     <Pod canvas="canvas1">
                         <Bar 
                             series={this.state.Data}

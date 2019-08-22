@@ -8,7 +8,7 @@ import InteractiveHeatMap from "../../../../Charts/HeatMap";
 
 let Series=[]
 function CreateScatter(CLEAN,range){
-   let count=[]
+
     let series=[0,0,0,0,0,0,0,0,0,0,0,0] 
     let int=0;
     CLEAN.map((item,i)=>{
@@ -26,6 +26,7 @@ function CreateScatter(CLEAN,range){
                         series[int] = series[int]+1
                   }
           }
+          return true;
     })
     return series;
 }
@@ -80,9 +81,9 @@ export default class Section_Default extends Component {
     render() {
    
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                     <Title Title={"HeatMap of " + this.props.TITLE.TITLES.SCORES } /> 
-                    <Pod canvas="canvas1 " ClassName="flex-100">
+                    <Pod canvas="canvas1 " className="flex-100">
                         <InteractiveHeatMap 
                             LookUp={this.props.DATA} 
                             series={Series} 

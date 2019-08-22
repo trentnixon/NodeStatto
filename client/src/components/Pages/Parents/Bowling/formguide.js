@@ -26,21 +26,21 @@ export default class Formguide
               /> 
               <SectionP Copy={SITELABELS.DESC.FORMGUIDE}/>
               
-              <SectionContainer class="Section_Bowling_FormGuide todo">
+              <SectionContainer className="Section_Bowling_FormGuide todo">
                 <SectionCareerBowling 
                         Data={PRIMARY.CAREER.Form.bowling} 
                         Career={PRIMARY.CAREER.Career}
                   {... this.props}
                 />
              </SectionContainer>
-             <SectionContainer class="Section_Bowling_FormGuide todo">
+             <SectionContainer className="Section_Bowling_FormGuide todo">
                 <SectionRecentFigures 
                   Data={PRIMARY.CLEAN} 
-                  {... this.props}
+                  {... this.props} 
                 />
               </SectionContainer>
 
-              <SectionContainer  class="Section_Bowling_FormGuide todo">
+              <SectionContainer  className="Section_Bowling_FormGuide todo">
                 <SectionFaBowling  
                     Data={PRIMARY.CAREER.Form.bowling}
                     Title="Milestones and Achievements"

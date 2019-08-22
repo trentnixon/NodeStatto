@@ -12,9 +12,9 @@ export default class Section_Rankings extends Component {
     }
     render() {
         return (
-            <Row class="PodRow">  
+            <Row className="PodRow">  
                 <Title Title="Recent Figures" />
-                    <PodWrapper canvas="canvas1">
+                    <PodWrapper canvas="canvas1" className="flex-100">
                         <Title Title="Recent Figures"/>
                            <Table  Data={ThisData}/>
                     </PodWrapper>

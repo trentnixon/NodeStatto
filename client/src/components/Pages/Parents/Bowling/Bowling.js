@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
-import Tabber from "../../../Template/Tabber/TabContaner";
-
-import PeopleIcon from '@material-ui/icons/People';
+// Icons
 import {Bowling} from "../../../Icons/icons";
+import PeopleIcon from '@material-ui/icons/People';
+//
+//import SectionRankings from "../../../Template/Global/Section_Discipline_Rankings";
+//import SectionFaBowling from "./Sections/Section_Fa_Bowling";
 
-
-import SectionForandAgainst from "../../../Elements/Tables/MostForAgainstBowling";
-// Sections 
+// Template
+import Container from "../../../Template/Page/Container";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionRankings from "../../../Template/Global/Section_Discipline_Rankings";
-
-import SectionFaBowling from "./Sections/Section_Fa_Bowling";
 import SectionCareerBowling from "./Sections/Section_Career_Bowling";
+import SectionForandAgainst from "../../../Elements/Tables/MostForAgainstBowling";
+// Sections 
+import Tabber from "../../../Template/Tabber/TabContaner";
+import BasicStatOverview from "./Sections/Section_Bowling_Overview_BasicStats";
+import SectionWicketsOverTheYears from "./Sections/Section_Bowling_Wickets_OverTheYears";
 
+// eslint-disable-next-line
+let PRIMARY,TITLES;
 export default class BowlingHome extends Component {
 
-  componentWillMount() { } 
+  componentWillMount() { 
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary;
+  } 
  
   render() {
-    const SITELABELS = this.props.LABELS.SITE;
+    const SITELABELS = this.props.LABELS.SITE; 
     const PRIMARY = this.props.PLAYER_DATA.Primary;
 
     return ( 
@@ -29,13 +36,23 @@ export default class BowlingHome extends Component {
         <SectionHeader   h1={SITELABELS.TITLES.OVERVIEW} h2={SITELABELS.TITLES.BOWLING} /> 
         
         <SectionContainer>
-          <SectionRankings 
-            Rankings={PRIMARY.CAREER.Career.Meta.Rankings.Bowling} 
-            Title={SITELABELS.TITLES.RANKINGS}
-            SubTitle={SITELABELS.DESC.DESCRANKINGS}   
-         
+        <BasicStatOverview  
+                      SUBS={TITLES.SITE.SUBS}
+                      CTA={TITLES.SITE.CTA}
+                      TITLES = {TITLES.SITE.TITLES}
+                      DATA={PRIMARY}
+                    />  
+        </SectionContainer>
+       
+
+        <SectionContainer>
+   
+          <SectionWicketsOverTheYears 
+            TITLE={TITLES.SITE}
+            Data={PRIMARY.CAREER.Career.bowling.overTheYears}
           />
         </SectionContainer>
+
         <SectionContainer>
           <Tabber 
             Tabs={
@@ -43,25 +60,16 @@ export default class BowlingHome extends Component {
                 {
                   Title:SITELABELS.SUBS.STATS,
                   Component:<SectionCareerBowling  Data={PRIMARY.CAREER.Career.bowling} Career={PRIMARY.CLEAN} {... this.props} />,
-                  Icon:<Bowling />
+                  Icon:<Bowling /> 
                 },
                 {
                   Title:SITELABELS.SUBS.FORAGAINST,
                   Component:<SectionForandAgainst Table={PRIMARY.CLEAN} Data={PRIMARY} {... this.props}/>,
                   Icon:<PeopleIcon />
-                }
+                } 
             ]} 
           />
         </SectionContainer>
-
-        <SectionContainer>
-          <SectionFaBowling  
-            Data={PRIMARY.CAREER.Career.bowling}
-            Title={SITELABELS.TITLES.MILESTONE}
-            {... this.props} 
-          />
-        </SectionContainer>
-
       </Container>
     )
   }

@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import {connect } from 'react-redux';
 
-import PageHeader from "../../../Template/Page/Header";
+//import {connect } from 'react-redux';
+//import PageHeader from "../../../Template/Page/Header";
 
 // Sections
 import Container from "../../../Template/Page/Container";
 
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
-import ScoreCardHeader from "./ScoreCardHeader";
+//import ScoreCardHeader from "./ScoreCardHeader";
 
 
 // Fetch ScoreCards
-import {FetchScoreCard} from "../../../../actions/Scorecard";
-
-const ScoreCard = new FetchScoreCard();
+//import {FetchScoreCard} from "../../../../actions/Scorecard";
+//const ScoreCard = new FetchScoreCard();
 
 export default class ScoreCardFrame extends Component {
 

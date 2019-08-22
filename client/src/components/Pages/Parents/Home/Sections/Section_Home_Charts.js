@@ -9,21 +9,21 @@ export default class Section_Default extends Component {
     render() {
 
         return ( 
-                <Row class="PodRow HomeCharts "> 
+                <Row className="PodRow HomeCharts "> 
                         <PlayedFor
                             TITLES={this.props.TITLES} 
                             CTA={this.props.CTA}
                             SUBS={this.props.SUBS}
                             num={5}
                             DATA={this.props.DATA.CLEAN}
-                            ClassName="flex-40"
+                            className="flex-40"
                        
                         />
  
                         <GamesPlayed  
                             TITLE={this.props.TITLES}
                             DATA={this.props.DATA} 
-                            ClassName="flex-60"
+                            className="flex-60"
                         />
                 </Row> 
             )

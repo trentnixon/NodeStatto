@@ -5,8 +5,8 @@ import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
 import ShowMore from "../../../../Elements/Buttons/ShowMore"
-import  {Runs,Wickets,Keeping,Trophy } from "../../../../Icons/icons"; 
-
+import  {Runs} from "../../../../Icons/icons"; 
+//Wickets,Keeping,Trophy 
 let stones=[];
 export default class Home_Overview extends Component {
     componentWillMount() { 
@@ -23,7 +23,7 @@ export default class Home_Overview extends Component {
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-                <Row class="PodRow">
+                <Row className="PodRow">
                    { 
                     stones.map((stone,i)=>{
                         let Delay= 200*i;
@@ -34,13 +34,14 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={false}
-                            className={IsVisable}
+                            className={IsVisable + " flex-25"}
                         >
                             <IconPod 
+                                className="flex-100"
                                 icon={stone.icon}
                                 label={stone.label}
                                 total={stone.var}
-                                Footer = {<ShowMore Label={this.props.CTA.MORE} class=" CTA ButtonRight"  Path={stone.Path} />}
+                                Footer = {<ShowMore Label={this.props.CTA.MORE} className=" CTA ButtonRight"  Path={stone.Path} />}
                             />
                         </Animated>
                         )

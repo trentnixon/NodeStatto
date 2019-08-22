@@ -15,7 +15,7 @@ export default class Section_Default extends Component {
         //console.log(this.props.isVisible)
         return ( 
                 <div className="Section_****" >
-                    <Row class="ContainerRow">
+                    <Row className="ContainerRow">
                         <Pod col="" > 
                             <Title Title={this.props.Title}/>
                             <SubTitle Title={this.props.SubTitle} />

@@ -35,24 +35,24 @@ class HistoryFor extends Component {
     return ( 
         <Container>
             <SectionHeader h1={this.props.TITLE} h2={DisplayTeam.Team} />
-                <SectionContainer class="Section_History_For todo">
+                <SectionContainer className="Section_History_For todo">
                     <SectionHeader  h2="Batting" />  
-                        <Row class="PodRow">
+                        <Row className="PodRow">
                             
-                            <SingleValuePod label="Innings" total={DisplayTeam.Innings} icon= ""  Footer = "" />
-                            <SingleValuePod label="Runs" total={DisplayTeam.Runs} icon= ""  Footer = "" />
-                            <SingleValuePod label="Average" total={DisplayTeam.AVG} icon= ""  Footer = "" />
-                            <SingleValuePod label="Balls Faced" total={DisplayTeam.BF} icon= ""  Footer = "" />
-                            <SingleValuePod label="Not Out's" total={DisplayTeam.NO} icon= ""  Footer = "" />
-                            <SingleValuePod label="Strike Rate" total={DisplayTeam.SR} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30" label="Innings" total={DisplayTeam.Innings} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30" label="Runs" total={DisplayTeam.Runs} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Average" total={DisplayTeam.AVG} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Balls Faced" total={DisplayTeam.BF} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Not Out's" total={DisplayTeam.NO} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Strike Rate" total={DisplayTeam.SR} icon= ""  Footer = "" />
                          
                         </Row>
 
                     <SectionHeader  h2="Bowling" />
-                        <Row class="PodRow">
-                            <SingleValuePod label="Wickets" total={DisplayTeam.Wickets} icon= ""  Footer = "" />
-                            <SingleValuePod label="Overs" total={DisplayTeam.Overs} icon= ""  Footer = "" />
-                            <SingleValuePod label="Runs Conceded" total={DisplayTeam.RunsConceded} icon= ""  Footer = "" /> 
+                        <Row className="PodRow">
+                            <SingleValuePod className="flex-30"  label="Wickets" total={DisplayTeam.Wickets} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Overs" total={DisplayTeam.Overs} icon= ""  Footer = "" />
+                            <SingleValuePod className="flex-30"  label="Runs Conceded" total={DisplayTeam.RunsConceded} icon= ""  Footer = "" /> 
                         </Row>
                 </SectionContainer>
   
@@ -64,11 +64,11 @@ class HistoryFor extends Component {
                                 OrderBy={this.props.OrderBy}
                                 TITLES={this.props.LABELS.SITE}
                         />
-                </SectionContainer>
+                </SectionContainer> 
                 
-                <SectionContainer class="Section_History_For todo">
+                <SectionContainer className="Section_History_For todo">
                     <SectionHeader  h2="Game History" />
-                        <HistoryList 
+                        <HistoryList  
                             Title={"History for " + DisplayTeam.Team}
                             SelectedID={this.props.match.params.teamID}
                             List={this.props.PLAYER_DATA.Primary.CLEAN}
@@ -81,7 +81,7 @@ class HistoryFor extends Component {
         </Container>
     )
   }
-}  
+}   
 
 export default  withRouter(HistoryFor)
 

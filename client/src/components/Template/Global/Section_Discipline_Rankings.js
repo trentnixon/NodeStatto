@@ -65,7 +65,7 @@ export default class Section_Rankings extends Component {
     } 
     render() {
         return ( 
-                <Row class="PodRow">
+                <Row className="PodRow">
                     <Title Title={this.props.Title}/>
                     <SubTitle Title={this.props.SubTitle} />
                    
@@ -73,7 +73,7 @@ export default class Section_Rankings extends Component {
                         <RankingPods Rankings={this.props.Rankings}  />
                     </div>
 
-                    <Pod canvas="canvas1" class="LineChart">
+                    <Pod canvas="canvas1" className="LineChart">
                         <Chart  series={this.state.Data} Labels={this.state.Labels} />
                     </Pod>
                 </Row>

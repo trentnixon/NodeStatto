@@ -15,6 +15,7 @@ function CreateScatter(CLEAN,range){
                       series.push([(item.Meta.FixtureInt*1000),item.Batting.BallsFacedInt])
           
         }
+        return true;
     })
     return series;
 }
@@ -62,11 +63,12 @@ export default class Section_Default extends Component {
             if(item.Batting)
                 if(item.Batting.BallsFacedInt > BF)
                     BF=item.Batting.BallsFacedInt; 
+            return true;
         })
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                     <Title Title={this.props.TITLE.SUBS.BF + ' '+ this.props.TITLE.CHARTS.SCATTER + ' ' + this.props.TITLE.CHARTS.CHART} /> 
-                    <Pod canvas="canvas1 " ClassName="flex-100">
+                    <Pod canvas="canvas1 " className="flex-100">
                         <InteractiveScatterChart 
                             LookUp={this.props.DATA} 
                             DATA={Series} 

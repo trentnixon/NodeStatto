@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 
+// Template
 import Container from "../../../Template/Page/Container";
-// Sections 
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Tabber from "../../../Template/Tabber/TabContaner";
+
+// Sections
 import BasicStatOverview from "./Sections/Section_Batting_Overview_BasicStats";
 import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
+import SectionCareerBatting from "./Sections/Section_Career_Batting";
+import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
+// Icons
+import PeopleIcon from '@material-ui/icons/People';
+import {Batting} from "../../../Icons/icons";
+
+// Variables
 let PRIMARY,TITLES;
+
+// Start Class
 export default class Page_BattingOverview extends Component {
  
   componentWillMount() { 
@@ -20,7 +32,7 @@ export default class Page_BattingOverview extends Component {
       <Container>  
         <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
 
-        <SectionContainer class="Section_Batting_Rankings complete">
+        <SectionContainer className="Section_Batting_Rankings complete">
           <BasicStatOverview  
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
@@ -28,9 +40,27 @@ export default class Page_BattingOverview extends Component {
                       DATA={PRIMARY}
                     />  
 
-          <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
+          <SectionRuns  
+            TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
         </SectionContainer>
-
+        <SectionContainer className="Section_Batting_ForAgainst complete">
+            <Tabber  
+              Tabs={
+                [ 
+                  {
+                    Title:TITLES.SITE.SUBS.STATS,
+                    Component:<SectionCareerBatting  TITLES={TITLES.SITE} Data={PRIMARY.CAREER.Career.batting} />,
+                    Icon:<Batting />  
+                  },
+                  {
+                    Title:TITLES.SITE.SUBS.FORAGAINST,
+                    Component:<MostForAgainst Data={PRIMARY} TITLES={TITLES.SITE}  />,
+                    Icon:<PeopleIcon /> 
+                  } 
+              ]}
+            />  
+ 
+            </SectionContainer> 
       </Container>
     )
   }

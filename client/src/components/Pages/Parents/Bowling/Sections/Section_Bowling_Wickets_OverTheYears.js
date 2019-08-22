@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 // Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
-import Title from "../../../../Elements/type/PageTitle";
-
+import SubTitle from "../../../../Elements/type/PageSubTitle";
 // Charts
 import Donut from "../../../../Charts/donut"; 
 import Bar from "../../../../Charts/BarChart";
 
-let PieRuns=[], Labels=[], PieBalls=[];
+let Labels=[], PieBalls=[];
 let RunsYear=[
     { 
         name:"BallsFaced",
@@ -24,52 +23,48 @@ let RunsYear=[
 export default class Section_Bowling_WicketsOverTheYears extends Component {
     componentWillMount() {
 
-        PieRuns=[]
+        //PieRuns=[]
         Labels=[]
         PieBalls=[];
 
         RunsYear=[
             { 
-                name:"BallsFaced",
-                data:[]
-            },
-            {
-                name:"Innings",
+                name:"Wickets",
                 data:[]
             }
         ];
-     //console.log(this.props.DATA.CAREER.Career.batting)
+/**,
+            {
+                name:"Overs Bowled",
+                data:[]
+            } */
+     console.log(this.props.Data)
      // eslint-disable-next-line
-        this.props.DATA.CAREER.Career.batting.overTheYears.map((h,i)=>{ 
+        this.props.Data.map((h,i)=>{  
           
-                PieRuns.push(h.TotalRuns);
-                PieBalls.push(h.TotalBF)
-                RunsYear[0].data.push(h.TotalBF);
-                RunsYear[1].data.push(h.HistoryRuns.length);
+                //PieRuns.push(h.TotalWickets);
+                PieBalls.push(h.TotalWickets)
+                RunsYear[0].data.push(h.TotalWickets);
+               // RunsYear[1].data.push(h.TotalOB);
                 Labels.push(h.int);
           })
     }
     render() {
         return (
-            <Row class="PodRow">
-                    
-                    <Title Title="THESE CHARTS ARE NOT CORRECT... Balls Faced Against Innings Played" />
-                    <Pod class ="flex-70" canvas="canvas1">
-                       
-                            <Bar 
-                                 series={RunsYear} 
-                                 Labels={Labels}
-                                 horizontal={false}
-                                />
+            <Row className="PodRow">
+                <SubTitle  Title="Wickets over year" />
+                <Pod className="flex-60" canvas="canvas1">
+                    <Bar 
+                        series={RunsYear} 
+                        Labels={Labels}
+                        horizontal={false}
+                    />
 
-                     </Pod>  
-                     <Pod class ="flex-30" canvas="canvas1">    
-                        <Title Title="Balls over the Years" /> 
+                </Pod>  
+                <Pod className="flex-40" type="Naked" canvas="">    
                         <Donut  series={PieBalls} Labels={Labels} />
-                        <Title Title="Most Balls Faced for and against" />
-
                     </Pod>  
-                    
+
                 </Row>            
             )
         }

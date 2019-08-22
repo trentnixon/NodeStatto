@@ -11,13 +11,13 @@ function CreateScatter(CLEAN,range,OrderBy,FilterID,d,v){
     let series=[] 
     CLEAN.map((item,i)=>{
      
-        if(item.Meta[OrderBy] == FilterID)
+        if(item.Meta[OrderBy] === FilterID)
 
           if(item[d]){
             
                 series.push([(item.Meta.FixtureInt*1000),item[d][v]])
           }
-          
+          return true;
     })
     return series;
 }
@@ -46,9 +46,9 @@ export default class Section_Default extends Component {
     render() {
   //console.log(this.props)
         return ( 
-            <Row class="PodRow">
+            <Row className="PodRow">
                     <Title Title={this.props.TITLES.CHARTS.SCATTER} /> 
-                    <Pod canvas="canvas1 " ClassName="flex-100">
+                    <Pod canvas="canvas1 " className="flex-100">
                         <InteractiveScatterChart 
                             LookUp={this.props.DATA} 
                             DATA={Series} 

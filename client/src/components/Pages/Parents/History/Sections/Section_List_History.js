@@ -68,7 +68,7 @@ export default class Section_HistoryList extends Component {
   render() {     
     return (
         <div>
-            <Row class="PodRow Form_Selector">
+            <Row className="PodRow Form_Selector">
                 <PodWrapper col="Selector" type="Zeroed" >
                     <FormControl variant="outlined" className="YearSelector" >
                         <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
@@ -91,8 +91,8 @@ export default class Section_HistoryList extends Component {
                     </FormControl>
                 </PodWrapper>
             </Row>
-            <Row class="PodRow">
-                <PodWrapper canvas="canvas1">
+            <Row className="PodRow"> 
+                <PodWrapper  className="flex-100" canvas="canvas1">
                     <ListHistory 
                         Games={this.state.List}
                         isVisible={true}

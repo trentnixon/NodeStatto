@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
+
 import Row from "../../Template/Page/Row";
-import Pod from "../../Template/Page/Pod";
+import Pod from "../../Elements/pods/Pod_Outer_Wrapper";
 import Title from "../../Elements/type/PageTitle";
 //import SubTitle from "../../Elements/type/PageSubTitle";
 
@@ -19,7 +20,7 @@ let WicketsYears=[
         name:"Wickets",
         data:[]
     },
-    {
+    { 
         name:"Runs",
         data:[]
     }
@@ -41,7 +42,9 @@ export default class Section_Rankings extends Component {
     
       componentDidMount() {}
     
-      handleChange = event => { this.createWickets(this.props.DATA.CLEAN,event.target.value); }
+      handleChange = event => { 
+          this.createWickets(this.props.DATA.CLEAN,event.target.value); 
+        }
 
       createWickets(data,year){
         Labels=[];
@@ -64,6 +67,8 @@ export default class Section_Rankings extends Component {
             }
         })
 
+       // console.log(WicketsYears, year);
+
         this.setState(
             { 
                 Year:year,
@@ -82,13 +87,12 @@ export default class Section_Rankings extends Component {
       this.createWickets(this.props.DATA.CLEAN,this.props.DATA.CAREER.Career.bowling.overTheYears[0].int)  
     }
     render() {
-
+        
         return (
-            <Row class="PodRow">
-                <Title Title="Wickets By Teams and Year" />
-                    <div>
-                    <Row class="PodRow Form_Selector"> 
-                        <Pod col="Selector" canvas="">
+            <div>
+                <Row className="PodRow Form_Selector"> 
+                    <Title Title="Wickets By Teams and Year" />
+                        <Pod col="Selector" className="flex-50" canvas="">
                             <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel
                                 ref={ref => { this.InputLabelRef = ref; }}
@@ -116,23 +120,21 @@ export default class Section_Rankings extends Component {
                     
                             </Select>
                             </FormControl>
-                        </Pod>
-                    </Row>
+                    </Pod>
+                </Row>
                     
-                    <Row class="PodRow">
-                    <Pod canvas="canvas1">
-                    
-
-                    <Bar 
-                        series={this.state.Data}
-                        Labels={this.state.Labels}
-                        Created={this.state.Created}
-                        horizontal={true}
-                    />
-                        </Pod>
-            </Row>
-            </div>
-            </Row>
+                    <Row className="PodRow">
+                        <Pod canvas="canvas1" className="flex-100">
+                                <Bar 
+                                    series={this.state.Data}
+                                    Labels={this.state.Labels}
+                                    Created={this.state.Created}
+                                    horizontal={true}
+                                />
+                    </Pod>
+                </Row>
+                </div>
+       
             )
         }
     } 

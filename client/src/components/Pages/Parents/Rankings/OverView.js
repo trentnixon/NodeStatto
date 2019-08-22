@@ -21,7 +21,7 @@ export default class Page_RankingOverview extends Component {
       <Container>  
         <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
 
-        <SectionContainer class="Section_Batting_Rankings complete">
+        <SectionContainer className="Section_Batting_Rankings complete">
             <SectionRankings  
                 Rankings={PRIMARY.CAREER.Career.Meta.Rankings}
                 TITLES={TITLES}

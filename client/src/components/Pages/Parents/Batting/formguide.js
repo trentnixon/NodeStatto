@@ -26,8 +26,8 @@ export default class Page_Batting_Formguide
             <SectionHeader   h1={this.props.LABELS.SITE.TITLES.FORMGUIDE} h2={this.props.LABELS.SITE.TITLES.BATTING} /> 
             <SectionP Copy={this.props.LABELS.SITE.DESC.FORMGUIDE}/>
      
-              <SectionContainer class="Section_Batting_FormGuide todo">
-                <SectionCareerBatting 
+              <SectionContainer className="Section_Batting_FormGuide todo">
+                <SectionCareerBatting  
                   Data={PRIMARY.CAREER.Form.batting} 
                   Career={PRIMARY.CAREER.Career}
                   TITLES={TITLES.SITE}
@@ -35,13 +35,13 @@ export default class Page_Batting_Formguide
                 /> 
             </SectionContainer> 
 
-            <SectionContainer class="Section_Batting_FormGuide todo">
+            <SectionContainer className="Section_Batting_FormGuide todo">
               <SectionBattingrecentScores  
                 Data={PRIMARY.CLEAN}
               />
             </SectionContainer>
            
-            <SectionContainer class="Section_Batting_FormGuide todo">
+            <SectionContainer className="Section_Batting_FormGuide todo">
               <SectionMilestonesBatting   Data={PRIMARY.CAREER.Form.batting} TITLES={TITLES.SITE} />
             </SectionContainer>
 

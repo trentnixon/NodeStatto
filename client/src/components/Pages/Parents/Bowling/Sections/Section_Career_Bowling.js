@@ -190,7 +190,7 @@ export default class Section_Rankings extends Component {
     render() {
         return (
             <div>
-                 <Row class="PodRow Form_Selector">
+                 <Row className="PodRow Form_Selector">
                  <Pod col="Selector" canvas="">
                         <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
@@ -219,13 +219,12 @@ export default class Section_Rankings extends Component {
                     </Pod>
                 </Row> 
 
-                <Row class="PodRow">
-             
+                <Row className="PodRow">
                             {
                                 this.state.stats.map((radial,i)=>{
                                     //console.log(radial)
                                     return(
-                                        <FillPods 
+                                        <FillPods  
                                             key={i}
                                             Value={radial.Value}
                                             Label={radial.Name}
@@ -233,6 +232,7 @@ export default class Section_Rankings extends Component {
                                             Created={this.state.Created}
                                             TitleValue={radial.TitleValue}
                                             Title ={radial.Title}
+                                            className="flex-30"
                                         />
                                     )
                                 })

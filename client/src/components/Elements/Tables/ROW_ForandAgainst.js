@@ -19,7 +19,7 @@ export default class ROW_ForandAgainst extends Component {
                 <TableCell valign="top"  align="right">
                         <Button 
                         Label=""
-                        class=" CTA ButtonRight"
+                        className=" CTA ButtonRight"
                         Player={this.props.match.params.playerid}
                         Path={'history/'+this.props.Path+'/'+this.props.ID}
                     />

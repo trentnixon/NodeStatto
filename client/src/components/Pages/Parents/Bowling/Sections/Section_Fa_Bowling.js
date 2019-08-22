@@ -20,7 +20,7 @@ export default class Section_Rankings extends Component {
     render() { 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
-            <Row class="PodRow">
+            <Row className="PodRow">
                 <Title Title={this.props.Title}/> 
                 <SubTitle Title={this.props.SubTitle} />
                  {
@@ -33,13 +33,13 @@ export default class Section_Rankings extends Component {
                                     isVisible={this.props.isVisible}
                                     animationInDelay={Delay}
                                     animateOnMount={false}
-                                    className={IsVisable}
+                                    className={IsVisable + " flex-30"}
                                 >
                                     <SingleValuePod 
                                         label={stone.label}
                                         total={this.props.Data[stone.var]}
                                         icon= {stone.icon} 
-                                        Footer = {<ShowMore Label={this.props.LABELS.SITE.CTA.MORE} class=" CTA ButtonRight"  Path={stone.path+"/"+stone.var} />}
+                                        Footer = {<ShowMore Label={this.props.LABELS.SITE.CTA.MORE} className=" CTA ButtonRight"  Path={stone.path+"/"+stone.var} />}
                                     />
                                 </Animated>
                             )

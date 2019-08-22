@@ -14,11 +14,13 @@ import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 //import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
+//import SubTitle from "../../../../Elements/type/PageSubTitle";
 
+// Icons
 import IconButton from '@material-ui/core/IconButton';
 import LaunchIcon from '@material-ui/icons/Launch';
 
+// VAriables
 const variables=[
     {
         Name:"Twenties",
@@ -109,8 +111,9 @@ export default class Section_Rankings extends Component {
      
         return (
             <div>
-                <Row class="PodRow Form_Selector"> 
-                <Pod col="Selector" canvas="">
+                <Row className="PodRow Form_Selector flex-100"> 
+                    <Pod  className="flex-50" canvas=""> 
+
                     <FormControl variant="outlined" className="YearSelector" >
                         <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
                             {this.props.TITLE.FORM.INPUTLABELS.VARIABLE}
@@ -137,8 +140,8 @@ export default class Section_Rankings extends Component {
                 </Pod>
             </Row>  
 
-            <Row class="PodRow">
-                                <Pod canvas="canvas1">        
+            <Row className="PodRow">
+                                <Pod canvas="canvas1" className="flex-100">        
                                     <div className="ListItem Header">
                                             <div className="For">
                                                 <h1>For</h1>

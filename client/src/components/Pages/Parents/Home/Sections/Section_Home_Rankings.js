@@ -22,7 +22,7 @@ export default class Home_Section_Rankings extends Component {
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
-                <Row class="PodRow"> 
+                <Row className="PodRow"> 
                         <Title Title={this.props.TITLE}/> 
                             {
                                 stones.map((stone,i)=>{
@@ -34,7 +34,8 @@ export default class Home_Section_Rankings extends Component {
                                             isVisible={this.props.isVisible}
                                             animationInDelay={Delay}
                                             animateOnMount={false}
-                                            className={IsVisable}
+                                          
+                                            className={IsVisable + " flex-50"}
                                         >
                                             <RankingPod 
                                                 total={stone.var}

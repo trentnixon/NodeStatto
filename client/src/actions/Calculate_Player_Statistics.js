@@ -228,7 +228,7 @@ export function FetchData(){
         this.StoredData[FixturePosition]["Keeping"]={
                     catches: parseInt(game[3], 10),
                     stumping:parseInt(game[4], 10),
-                    Ranking:game[11]
+                    Ranking:game[11] 
             }
     }
 }

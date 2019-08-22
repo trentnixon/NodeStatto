@@ -12,7 +12,7 @@ export default class Section_Rankings extends Component {
     }
     render() {
         return (
-            <Row class="PodRow">
+            <Row className="PodRow">
                     <Title Title="Balls Faced Against Runs Scored" />
                      <Pod class ="flex-100" canvas="canvas1"> 
                         <Title Title="Runs to Balls Faced" />

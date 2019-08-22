@@ -29,17 +29,16 @@ class BarChart extends Component {
           fill: this.props.CHART.fill,
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
-      },
+      }
      
-      series: this.props.series,
     };
   }
 
   componentWillMount() { }
-
+  componentWillUpdate(){ return true;}
   render() {
     return (
-            <Chart options={this.state.options} series={this.state.series} type="bar"  />
+            <Chart options={this.state.options} series={this.props.series} type="bar"  />
     );
   }
 }
