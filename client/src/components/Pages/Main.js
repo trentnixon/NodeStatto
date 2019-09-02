@@ -11,7 +11,7 @@ import BowlingHub from "./Parents/Bowling/Hub";
 import ComponentPlayFor from "./Parents/Home/PlayerForFullList";
 import ComponentSearch from "./Parents/search/search";
 import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
-
+import ComponentFlorish from "./Parents/Florish/Hub";
 /*
 import ComponentKeeping from "./Parents/Keeping/Keeping";
 import ComponentAbout from "./Parents/about/about";
@@ -145,6 +145,12 @@ const  Navigation =[
     "children":null
   },
   {
+    "label":"Florish Data", 
+    "path":"florish/overview",
+    "icon":<Search/>, 
+    "children":null
+  },
+  {
     "label":"About",
     "path":"settings",
     "icon":<Settings/>,
@@ -168,6 +174,8 @@ export default class Statto extends Component {
                 <Route  path="/batting" render={()=> <BattingHub  {... this.props} /> }/>
                 <Route  path="/bowling" render={()=> <BowlingHub  {... this.props} /> }/>
                 <Route  path="/search" render={()=> <ComponentSearch {... this.props}/> }/>
+                <Route  path="/florish" render={()=> <ComponentFlorish {... this.props}/> }/>
+                
                 <Route  exact path="/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
             </div>
           </Frame> 

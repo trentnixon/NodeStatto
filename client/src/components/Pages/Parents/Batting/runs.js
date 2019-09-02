@@ -16,10 +16,22 @@ let PRIMARY,TITLES;
 export default class Batting extends Component {
 
   componentWillMount() { 
+
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary; 
+
+    let RACE = [0];
+    console.log(PRIMARY.CAREER.Career.batting.overTheYears);
+
+    PRIMARY.CAREER.Career.batting.overTheYears.map((runs,i)=>{
+      console.log(runs.TotalRuns,RACE,RACE.length,RACE[RACE.length]) ;
+
+      RACE.push(runs.TotalRuns+RACE[RACE.length-1])
+
+    }) 
+    console.log(RACE);
   }
-  
+
   render() { 
     return (    
       <Container>

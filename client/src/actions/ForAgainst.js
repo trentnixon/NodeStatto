@@ -65,7 +65,8 @@ function StoreNew(Thisgame, StatsFor, Team, TeamID){
             "RunsConceded":0,
             "ECO":0,
             "BOWLAVG":0,
-            "BOWLSR":0
+            "BOWLSR":0,
+            "OvertheYears":[]
         }
     )
 

@@ -10,16 +10,19 @@ import InteractiveWicketsOverYears from "../../../Elements/InteractiveCharts/Bar
 
 export default class Batting extends Component {
 
-  componentWillMount() { }
+  componentWillMount() {}
 
+   arrSum = arr => arr.reduce((a,b) => a + b, 0)
   render() {
 
     const SITELABELS = this.props.LABELS.SITE;
     const PRIMARY = this.props.PLAYER_DATA.Primary;
+    
     return ( 
       <Container> 
         <SectionHeader   h1={SITELABELS.SUBS.WICKETS} h2={SITELABELS.TITLES.BOWLING}  /> 
         <SectionContainer  className="Section_Bowling_Wickets todo"> 
+            
           <WicketsOverTheYears  Data={PRIMARY.CAREER.Career.bowling.overTheYears} />
         </SectionContainer>
 
