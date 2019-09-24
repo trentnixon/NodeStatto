@@ -30,10 +30,10 @@ export default class Home_Overview extends Component {
                     return(  
                         <Animated   
                             key={i} 
-                            animationIn="fadeInUp"
+                            animationIn="fadeInUp" 
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
-                            animateOnMount={false}
+                            animateOnMount={true}
                             className={IsVisable + " flex-25"}
                         >
                             <IconPod 

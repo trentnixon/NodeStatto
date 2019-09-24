@@ -37,7 +37,8 @@ class Chart_DONUT extends Component {
 
       render() {
           return (
-            <Chart options={this.state.options} series={this.state.series} type="donut" />
+            <div className="Charts HidePortait"> <Chart options={this.state.options} series={this.state.series} type="donut" /></div>
+           
           );
         }
 }

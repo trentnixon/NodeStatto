@@ -19,15 +19,15 @@ export default class Page_RankingOverview extends Component {
     console.log(this.props)
     return (     
       <Container>  
-        <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
+        <SectionHeader   h1={TITLES.SITE.TITLES.RANKINGS} h2={TITLES.SITE.TITLES.OVERVIEW}   /> 
 
         <SectionContainer className="Section_Batting_Rankings complete">
             <SectionRankings  
                 Rankings={PRIMARY.CAREER.Career.Meta.Rankings}
                 TITLES={TITLES}
-                SubTitle={TITLES.SITE.DESC.DESCRANKINGS}  
-            />
-        </SectionContainer>
+                Name={PRIMARY.Meta.Name}
+            /> 
+        </SectionContainer> 
       </Container> 
     )
   }

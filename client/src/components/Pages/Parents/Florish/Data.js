@@ -6,51 +6,70 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 
 var _ = require('lodash');
 
-let EmptyArr=[0], level='noobie';
+let level='';
 export default class Batting extends Component {
 
   componentWillMount() {}
 
+  batting(){}
+
+  CreateData(Loop,string){
+    let Data = { batting:[],bowling:[], Played:[]}
+    Loop.map((item,i)=>{
+
+        /*
+            Incomplete!!
+
+            if(item.Meta.TeamID == string){
+                console.log(item.Meta.TeamID)
+                let Year = item.Meta.Date.split('/');
+
+                console.log(Year[2], _.find(Data.batting, ['Year', Year[2]]))
+
+
+                Data.batting.push({Year:Year[2]})
+                Data.bowling.push({Year:Year[2]})
+                Data.Played.push({Year:Year[2], Value:1})
+
+            }
+        */
+
+    })
+
+    console.log(Data);
+  }
+
+  CreateString(DataArr, PushTo, Var, Value){
+
+    let YearlList=["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"];
+    YearlList.map((year,i)=>{
+
+        let Find = _.find(DataArr, [Var, year]);
+        if(Find){  PushTo.push( PushTo[i] + Find[Value] ); }
+        else{ PushTo.push(PushTo[i] + 0); }
+
+    })
+
+    return PushTo.splice(1, YearlList.length);
+  }
+
 
   render() {
 
-    let YealList=["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"];
     const SITELABELS = this.props.LABELS.SITE;
     const PRIMARY = this.props.PLAYER_DATA.Primary;
-
-    let Wickets = [0], Runs=[0], Games=[0];
-    YealList.map((year,i)=>{
-
-        let Bowlingresult = _.find(PRIMARY.CAREER.Career.bowling.overTheYears, ['int', year]);
-        let Battingresult = _.find(PRIMARY.CAREER.Career.batting.overTheYears, ['int', year]);
-        let Gamesresult = _.find(PRIMARY.CAREER.Career.Meta.Games.history, ['year', year]);
-
-console.log(Gamesresult);
     
-        if(Bowlingresult){
-            Wickets.push( Wickets[i] + Bowlingresult.TotalWickets );
-        }else{
-            Wickets.push(Wickets[i] + 0);
-        }
+    console.log(PRIMARY);
 
-        if(Battingresult){
-            Runs.push( Runs[i] + Battingresult.TotalRuns );
-        }else{
-            Runs.push(Runs[i] + 0);
-        }
+    let BowlingResultNew=[0],BattingresultNew=[0],GamesresultNew=[0];
+    
+    this.CreateData(PRIMARY.CLEAN, '4590');
 
-        if(Gamesresult){
-            Games.push( Games[i] + Gamesresult.Int );
-        }else{
-            Games.push(Games[i] + 0);
-        }
+    BowlingResultNew = this.CreateString(PRIMARY.CAREER.Career.bowling.overTheYears,BowlingResultNew,'int','TotalWickets' );
+    BattingresultNew = this.CreateString(PRIMARY.CAREER.Career.batting.overTheYears,BattingresultNew,'int','TotalRuns' );
+    GamesresultNew = this.CreateString(PRIMARY.CAREER.Career.Meta.Games.history,GamesresultNew,'year','Int' );
 
-    })
-    Wickets = Wickets.splice(1, YealList.length)
-    Runs = Runs.splice(1, YealList.length)
-    Games= Games.splice(1, YealList.length)
-
-   console.log(PRIMARY);
+    
     
     switch( Math.floor(PRIMARY.Meta.Matches/100) ) {
         case 0:
@@ -79,13 +98,17 @@ console.log(Gamesresult);
         <SectionContainer  className="Section_Bowling_Wickets todo"> 
 
             <h1>Runs</h1>
-            <p>{PRIMARY.Meta.Name},{level},0,{Runs.toString()}</p>
-
+          
+            <p>{PRIMARY.Meta.Name},{level},0,{BattingresultNew.toString()}</p>
+            
             <h1>Wickets</h1>
-            <p>{PRIMARY.Meta.Name},{level},0,{Wickets.toString()}</p>
+        
+            <p>{PRIMARY.Meta.Name},{level},0,{BowlingResultNew.toString()}</p>
+            
 
             <h1>Games Played</h1>
-            <p>{PRIMARY.Meta.Name},{level},0,{Games.toString()}</p>
+         
+            <p>{PRIMARY.Meta.Name},{level},0,{GamesresultNew.toString()}</p>
             
         </SectionContainer>
     </Container> 

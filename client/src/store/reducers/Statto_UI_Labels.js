@@ -53,7 +53,7 @@ const InitialState ={
                     ECO:"Economy",
                     HS:"Highest Score",
                     BB:"Best Bowling",
-                    BF:"Balls Faced",
+                    BF:"Balls Faced", 
                     SR:"Strike Rate",
                     CR:"Country Ranking",
                     WR:"World Ranking"
@@ -75,7 +75,7 @@ const InitialState ={
                 },
                 CTA:{
                     ALL:"See All",
-                    MORE:"More",
+                    MORE:"",
                     FULL:"Full List"
                 }
             },

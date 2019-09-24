@@ -31,14 +31,17 @@
 @at-root
 #ChangePlayer{
     #TeamSheet{
-       div{
            li{ 
+            flex-basis:40%;
+            list-style:none;
+            margin: 1% 2.5%;
+            padding:0 2%;
                .RosterItem{ 
                    span {
                        color: #333 !important;
                    }
                }
            }
-       }
+       
     }
 }

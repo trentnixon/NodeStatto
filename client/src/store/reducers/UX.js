@@ -7,6 +7,9 @@ const InitialState ={
     Meta:{
         SETLANG:"EN"
     },
+    Device:{
+        isMobile:false
+    },
     Desktop:{}
    
 }
@@ -25,7 +28,13 @@ const UX = (state=InitialState, action) =>{
 				return {...state, Mobile: {...state.Mobile, MobileDrawerState:action.payload}}
 				// eslint-disable-next-line 
 				break
-            }            
+            }    
+            
+            case "ISMOBILE":{
+                return {...state, Device: {...state.Device, isMobile:action.payload}}
+				// eslint-disable-next-line 
+				break
+            }
         }
 		return state;
 	}

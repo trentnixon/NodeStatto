@@ -27,12 +27,3 @@ export default class Batting extends Component {
     )
   }
 }
-
-/**
- * 
-          
-       
-        
-        
-
- */

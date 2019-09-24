@@ -6,14 +6,20 @@ body{
     #root{
         #Statto{
 
-                display: flex;
-                min-width: 100vw;
-                min-height: 100vh;
+            display: flex;
+            min-width: 100vw;
+            min-height: 100vh;
             @import "../Template/Template";
-
             @import "../Elements/Dev";
+        }
 
+        #Statto.mobile{
+            @import "../Template/Mobile/Template_Mobile";
+        }
 
+        #Statto.desktop{
+           
         }
     }
 }
+ 

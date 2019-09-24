@@ -38,7 +38,10 @@ class BarChart extends Component {
   componentWillUpdate(){ return true;}
   render() {
     return (
-            <Chart options={this.state.options} series={this.props.series} type="bar"  />
+      <div className="Charts HidePortait">
+          <Chart options={this.state.options} series={this.props.series} type="bar"  />
+      </div>
+           
     );
   }
 }

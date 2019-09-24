@@ -20,12 +20,38 @@ p{
     font-family: $FontHeader;
 }
 
-.Page_Title{}
+.Page_Title{
+    
+}
 
 .Page_Sub_Title{
     font-size: $SubHeaderSize;
     display: inline-block;
     color: $h2Color;
     width: 100%;
-    margin: 10px 0 20px;
+    margin: 40px 0 5px;
+}
+
+.Page_P{
+
+}
+
+.Graph_Type_and_Info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    p{
+        flex-basis: 90%;
+        color: $h1Color;
+        margin: 0;
+    }
+    div{
+        flex-basis: 10%;
+        align-self:flex-end;
+    }
+
 }

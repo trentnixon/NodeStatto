@@ -39,7 +39,7 @@ export default class Batting extends Component {
         
         <SectionContainer className="Section_Batting_Runs charts todo">
             <MixedChartRunsAVGRanking TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
-        </SectionContainer>
+        </SectionContainer> 
 
         <SectionContainer className="Section_Batting_Runs charts todo">
             <SectionRunsScatter TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />

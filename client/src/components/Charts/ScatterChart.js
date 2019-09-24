@@ -95,7 +95,7 @@ class ScatterChart extends React.Component {
     componentWillMount() {  }  
     render() {
       return ( 
-        <div>
+        <div className="HidePortait">
             <Chart options={this.state.options} series={this.state.series} type="scatter" height="350" /> 
             <SnackBar open={this.state.SnackBar} Game={this.state.Game} />
         </div>

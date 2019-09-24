@@ -37,20 +37,13 @@ export default  class Login extends Component {
                         let Delay = 50*i;
                        
                             return(
-                                <Animated   
-                                    key={i} 
-                                    animationIn="flipInX"
-                                    isVisible={this.props.isVisible}
-                                    animationInDelay={Delay}  
-                                    animateOnMount={false}
-                                    className={IsVisable + " HistoryItem" }
-                                >
-                                    <li onClick={()=>{this.FetchThisPlayer(row.meta, this.props.DATA_SETUP.SelectTeamID, row.id)}} >
+                               
+                                    <li key={i} className="HistoryItem" onClick={()=>{this.FetchThisPlayer(row.meta, this.props.DATA_SETUP.SelectTeamID, row.id)}} >
                                      <ListItem button  >
                                         <ListItemText primary={row.meta} className="RosterItem"/>
                                      </ListItem> 
                                      </li>
-                                </Animated>
+                            
                             )
                     })
                 }

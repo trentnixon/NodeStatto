@@ -8,6 +8,7 @@ import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
 import RankingPods from "../../../../Elements/pods/RankingPods";
 import Title from "../../../../Elements/type/PageTitle";
 import SubTitle from "../../../../Elements/type/PageSubTitle";
+import ChartType from "../../../../Elements/type/ChartTypeandInfoHover";
 
 // Charts
 import Chart from "../../../../Charts/AreaChart";
@@ -19,7 +20,7 @@ let Labels=null,Series=[];
 export default class Section_Rankings extends Component {
     
     
-    IsTrue(Var){
+    IsTrue(Var){ 
         let IsTrue = true;
         //console.log(Var)
             if(Var === null){ IsTrue = false}
@@ -71,10 +72,7 @@ export default class Section_Rankings extends Component {
         return ( 
                 <Row className="PodRow ">
                     
-                    <Title Title={this.props.TITLES.SITE.TITLES.RANKINGS}/>
-
-                    <SubTitle Title={this.props.SubTitle} />
-                        
+                
                     <Title Title={this.props.TITLES.SITE.TITLES.BATTING}/>
                         <div className="RankingInt canvas1">
                             <RankingPods Rankings={this.props.Rankings.Batting}  />
@@ -84,6 +82,13 @@ export default class Section_Rankings extends Component {
                         <div className="RankingInt canvas1">
                             <RankingPods Rankings={this.props.Rankings.Bowling}  />
                         </div>
+
+                    <SubTitle Title={"Career Ranking Progression"} />
+                    
+                    <ChartType 
+                        Copy="Mixed Line Graph" 
+                        Info="Players Career Batting, Bowling and Keeping rankings Compared as a Line graph "
+                    />
 
                     <Pod canvas="canvas1" className=" flex-100">
                         <Chart  series={Series} Labels={Labels} />

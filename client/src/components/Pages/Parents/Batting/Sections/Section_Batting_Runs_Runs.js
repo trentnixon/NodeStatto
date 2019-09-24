@@ -65,7 +65,7 @@ export default class Section_Rankings extends Component {
 
                  <Pod  className="flex-60" canvas="canvas1"> 
                         <Bar  series={RunsYear}  Labels={Labels}/>
-                 </Pod>     
+                 </Pod>      
 
                  <Pod className="flex-40" type="Naked" canvas="">      
                         <Donut series={PieRuns} Labels={Labels}  />

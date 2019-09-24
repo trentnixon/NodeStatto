@@ -127,7 +127,6 @@ function ping(html,id){
     LMSData["Bowling"]={};
 
     const Full = html[0]+''+html[1];
-    //console.log(Full)
     let $ = cheerio.load(Full);
     
     LMSData["Meta"] = PullMeta(cheerio.load(html[2]),id);
@@ -251,39 +250,48 @@ function StripscoreCard(html){
 
                 done(null, [Bat,Bowl,Meta]);
             }
+            else{
+                done(null, null);
+            }
         })
       },
     function(done){
      
       request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
+
         if(!error && response.statusCode == 200){ 
-            //console.log(html);
-            done(null, html);
-     }
+
+                done(null, html);
+        }
+        else{
+            done(null, null);
+        }
     })
     },
       function(done){
         request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-batting-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
-        if(!error && response.statusCode == 200){ 
-                //console.log("Batting")
+            if(!error && response.statusCode == 200){ 
+
                 done(null, html);
+            }
+            else{
+                done(null, null);
             }
         })
       }],function(err, results){
     
-            //console.log(results[0][2])
-          let Contructed =[ results[0][0]+results[2], results[0][1]+results[1],results[0][2] ]
-          
-          res.json(ping(Contructed,req.params.id));
+            let Contructed =[ results[0][0]+results[2], results[0][1]+results[1],results[0][2] ]
+            res.json(ping(Contructed,req.params.id));
     })
 })
 
-  /*********************************************************************************
+    /*********************************************************************************
      * 
      * ScoreCards
      * 
      ********************************************************************************/
- /** Counted Games */
+    
+     /** Counted Games */
 
  app.get('/api/scorecards/:id', function(req, res){
     
@@ -297,7 +305,6 @@ function StripscoreCard(html){
               res.json(StripscoreCard(html));
         }
     })
-    
 })
 
 

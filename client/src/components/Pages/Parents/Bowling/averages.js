@@ -32,7 +32,7 @@ export default class Averages extends Component {
 
         <SectionContainer className="Section_Bowling_AES todo">
             <Title Title="Average" /> 
-            <Pod className="flex-100" > Line chart of average and economy rates</Pod>
+          
             <Pod className="flex-100" > Average the years : Pie Chart</Pod>
             <Pod className="flex-100"> Average : best for and against text</Pod>
             <Pod className="flex-100"  > Average over time against current: Line Chart</Pod>

@@ -47,7 +47,7 @@ const variables=[
         limit:10
     },
     {
-        Name:"60 and Above",
+        Name:"60 and Above", 
         Var:55,
         type:"runs",
         limit:9999

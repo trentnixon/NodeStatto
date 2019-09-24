@@ -17,7 +17,23 @@ p {
   display: inline-block;
   color: #5a5a5a;
   width: 100%;
-  margin: 10px 0 20px; }
+  margin: 40px 0 5px; }
+
+.Graph_Type_and_Info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start; }
+  .Graph_Type_and_Info p {
+    flex-basis: 90%;
+    color: #969696;
+    margin: 0; }
+  .Graph_Type_and_Info div {
+    flex-basis: 10%;
+    align-self: flex-end; }
 
 .canvas1 {
   background-repeat: repeat;
@@ -659,8 +675,8 @@ p {
     #Login .LoginHeader div.Logo {
       margin-bottom: -30px; }
       #Login .LoginHeader div.Logo img.STATTOLOGO {
-        width: 150px;
-        transform: rotate(135deg); }
+        width: 100px;
+        margin-bottom: 20px; }
     #Login .LoginHeader div.Titles h1.Page_Title {
       font-size: 2.5em;
       text-transform: uppercase;
@@ -809,8 +825,13 @@ p {
           list-style: none; }
           #TeamSheet div li .RosterItem span {
             color: #f5f5f5 !important; }
-    #ChangePlayer #TeamSheet div li .RosterItem span {
-      color: #333 !important; }
+    #ChangePlayer #TeamSheet li {
+      flex-basis: 40%;
+      list-style: none;
+      margin: 1% 2.5%;
+      padding: 0 2%; }
+      #ChangePlayer #TeamSheet li .RosterItem span {
+        color: #333 !important; }
   @media only screen and (max-width: 578px) {
     #Login .LoginHeader div.Logo img.STATTOLOGO {
       width: 100px; }
@@ -822,7 +843,7 @@ p {
       width: 90vw; }
     #Login .LoginFormContainer .RosterLoadedHeader h1 strong {
       font-size: 2em; }
-    #Login .LoginFormContainer #TeamSheet div {
+    #Login .LoginFormContainer #TeamSheet li {
       flex: 1 0 50%; } }
 
 #LoadingScreen {
@@ -934,8 +955,7 @@ body {
           align-content: center; }
           body #root #Statto #Frame header #AppBar img.STATTOLOGO {
             height: 50px;
-            margin: 0;
-            transform: rotate(135deg); }
+            margin: 0; }
           body #root #Statto #Frame header #AppBar .Left {
             justify-content: flex-start;
             display: flex;
@@ -1139,6 +1159,56 @@ body {
       height: 15px;
       list-style: none;
       margin: 2px 1px; }
+  body #root #Statto.mobile #Frame {
+    width: 100vw; }
+    body #root #Statto.mobile #Frame .flex-100 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-70 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-60 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-50 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-40 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-30 {
+      flex-basis: 99.5%  !important; }
+    body #root #Statto.mobile #Frame .flex-25 {
+      flex-basis: 99.5% !important; }
+    body #root #Statto.mobile #Frame .flex-20 {
+      flex-basis: 99.5% !important; }
+    @media (orientation: portrait) {
+      body #root #Statto.mobile #Frame .HidePortait {
+        background-image: url("/assets/rotateDevice.gif");
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        height: 250px;
+        text-align: center; }
+        body #root #Statto.mobile #Frame .HidePortait div {
+          display: none; }
+      body #root #Statto.mobile #Frame .HidePortait::before {
+        content: "Interactive Chart";
+        text-align: center;
+        display: inline;
+        font-size: 1.3rem;
+        padding: .5rem;
+        color: #5a5a5a;
+        top: 10px;
+        position: absolute;
+        width: 100%;
+        left: 0; }
+      body #root #Statto.mobile #Frame .HidePortait::after {
+        content: "Rotate Device to view.";
+        text-align: center;
+        display: inline;
+        font-size: 1.3rem;
+        padding: .5rem;
+        color: #5a5a5a;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        left: 0; } }
 
 /**  Production **/
 .complete {
