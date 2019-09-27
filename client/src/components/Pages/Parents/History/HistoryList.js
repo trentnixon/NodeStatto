@@ -9,9 +9,10 @@ export default class History extends Component {
 
   componentWillMount() {}
   render() {
+    console.log(this.props.SITE.TITLES.HISTORY)
     return (
       <div>
-          <SectionHeader h1={this.props.SITE.HISTORY} h2={this.props.SITE.CAREER} />
+          <SectionHeader h1={this.props.SITE.TITLES.HISTORY } h2={this.props.SITE.TITLES.CAREER} />
             <SectionContainer className="Section_History">
               <ListHistory    
                   SelectedID={null}

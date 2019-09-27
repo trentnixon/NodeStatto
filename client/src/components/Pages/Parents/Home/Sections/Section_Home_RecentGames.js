@@ -9,12 +9,12 @@ import ListHistory from "../../../../Elements/Lists/List_History"
 let DisplayList;
 export default class History extends Component {
  
-  componentWillMount() { DisplayList = this.props.DATA.slice(Math.max(this.props.DATA.length - 5, 1)).reverse(); }
+  componentWillMount() { DisplayList = this.props.DATA.slice(Math.max(this.props.DATA.length - 3, 1)).reverse(); }
 
   render() {
     return (
         <Row className="PodRow HistoryRow">   
-          <Title Title={this.props.TITLE}/>
+          <Title Title={this.props.TITLES.RECENT}/>
             
           <PodWrapper canvas="canvas1" className="flex-100">
               <ListHistory Games={DisplayList} />

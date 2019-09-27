@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import LinkIcon from '@material-ui/icons/ChevronRight'
 import Button from '@material-ui/core/Button';
-
+import IconButton from '@material-ui/core/IconButton';
 const ShowMore = (props) => (
-    <Button component={Link} to={`/${props.Path}`}  className={props.Name}>
-        {props.Label}
+    <IconButton component={Link} to={`/${props.Path}`}  className={props.Name}>
         <LinkIcon  />
-      </Button>
+      </IconButton>
     );
 export default ShowMore;

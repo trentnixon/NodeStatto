@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
+
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
@@ -54,6 +58,28 @@ const styles = theme => ({
 });
 
 
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
 
 
 const NavBarBottom = (props) => (
@@ -102,12 +128,12 @@ class ResponsiveDrawer extends React.Component {
     return (
       <div className={classes.root} id="Frame">
 
-      
+        <HideOnScroll {... this.props}>
         <AppBar className={classes.appBar} color="default">
           <Toolbar>
             <IconButton
               color="default" 
-              aria-label="Open drawer"
+              aria-label="Open drawer" 
               onClick={this.OpenDrawer}
               className={classes.navIconHide}
             >
@@ -121,6 +147,7 @@ class ResponsiveDrawer extends React.Component {
               />
           </Toolbar>
         </AppBar>
+        </HideOnScroll>
 
     
         <Hidden mdUp>

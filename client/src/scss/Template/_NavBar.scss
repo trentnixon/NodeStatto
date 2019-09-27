@@ -48,7 +48,10 @@
                     height: 70px;
                     border: 8px solid $pureWhite;
                     margin-bottom: -45px;
-                    z-index: 10;                  
+                    z-index: 10;      
+                    background-image: url(http://localhost:3000/assets/Statman.png);
+                    background-size: contain;
+                    background-color: $ColorBase;            
                     img{
                         width:70px;
                         }

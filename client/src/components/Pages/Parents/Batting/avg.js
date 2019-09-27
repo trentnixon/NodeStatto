@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
-import Title from "../../../Elements/type/PageTitle";
 
+// Template
+import Container from "../../../Template/Page/Container";
+import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Global/SectionContainer";
+// Sections
+import MixedChartRunsAVGRanking from "./Sections/Section_MixedChart_Run_Avg_Ranking";
+
+// Variables
+let PRIMARY,TITLES;
 export default class Formguide
  extends Component {
 
-  componentWillMount() {
-    //console.log(this.props.DATA.CLEAN)
+  componentWillMount() { 
+
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
   }
 
   render() {
     return (
-      <div>
-          <Title Title="Averages and Strike Rates" />
-          
-      </div>
+      <Container>
+          <SectionHeader   h1={this.props.LABELS.SITE.SUBS.AVG} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
+               
+        <SectionContainer className="Section_Batting_Runs charts todo">
+          <MixedChartRunsAVGRanking TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
+        </SectionContainer> 
+
+        </Container>
     )
-  }
+  } 
 }

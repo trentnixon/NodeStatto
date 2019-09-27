@@ -48,7 +48,13 @@ const  Navigation =[
           "label":"Runs",
           "path":"runs",
           "icon":<Runs/>
-        },{
+        },
+        {
+          "label":"Average",
+          "path":"averages",
+          "icon":<ShowChart/>
+        },
+        {
           "label":"Notable Scores",
           "path":"scores",
           "icon":<Looks4/>

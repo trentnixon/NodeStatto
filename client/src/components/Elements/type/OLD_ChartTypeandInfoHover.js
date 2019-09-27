@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Title = (props) => (
     <div className="Graph_Type_and_Info">
-        <p className="Page_P">{props.Copy}</p>
+        <p className="Page_P">{props.Copy}</p> 
         <div>
             <Tooltip title={props.Info} placement="top-start">
                     <IconButton  aria-label={props.Info}>

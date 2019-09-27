@@ -39,7 +39,7 @@ export default class Home_Overview extends Component {
                                 label={stone.label}
                                 total={stone.var}
                                 Footer = {<ShowMore Label={this.props.CTA.MORE} className=" CTA ButtonRight"  Path={stone.Path} />}
-                            />
+                            /> 
                         </Animated>
                         )
                     }) 

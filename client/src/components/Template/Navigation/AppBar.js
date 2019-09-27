@@ -12,15 +12,18 @@ import  {Batting,Bowling,Keeping} from "../../Icons/icons";
 const Nav_Icons=[
   {
     "icon":<Batting />,
-    "link":"batting"
+    "link":"batting/overview",
+    "title":"batting"
   },
   {
     "icon":<Bowling />,
-    "link":"bowling"
+    "link":"bowling/overview",
+    "title":"bowling"
   },
   {
     "icon":<Keeping />,
-    "link":"keeping"
+    "link":"keeping/overview",
+    "title":"keeping"
   }
 ]
 
@@ -45,7 +48,7 @@ export default class APPBARLAYOUT extends React.Component {
             <div className="Center">
               <Hidden smDown> 
                 <div>
-                  <IconButton   component={Link} to={`/${Path}/`} >
+                  <IconButton   component={Link} to={`/`} >
                     <Dashboard /> 
                   </IconButton>
                 </div>
@@ -53,13 +56,14 @@ export default class APPBARLAYOUT extends React.Component {
                       {
                         // eslint-disable-next-line
                         Nav_Icons.map((icon,i)=>{
-                          if(this.props[icon.link]){
+                          console.log(this.props,icon, icon.title, this.props[icon.title]);
+                          if(this.props[icon.title]){
                             return(
                               <div key={i}>
-                                <IconButton component={Link} to={`/${Path}/${icon.link}`}>
+                                <IconButton component={Link} to={`/${icon.link}`}>
                                    {icon.icon} 
                                 </IconButton>
-                                 <p>{this.props[icon.link]}</p>
+                                 <p>{this.props[icon.title]}</p>
                               </div>
                                 
                             )

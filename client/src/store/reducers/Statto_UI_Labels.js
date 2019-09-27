@@ -48,23 +48,33 @@ const InitialState ={
                     FOR:"For",
                     AGAINST:"Against",
                     FORAGAINST:"For and Against",
+                    BASIC:"The Run Down",
+                    BATTING:"Batting",
+                    RANKINGS:"Rankings",
                     STATS:"Stats",
                     AVG:"Average",
                     ECO:"Economy",
-                    HS:"Highest Score",
+                    HS:"Highest Score", 
                     BB:"Best Bowling",
                     BF:"Balls Faced", 
                     SR:"Strike Rate",
                     CR:"Country Ranking",
-                    WR:"World Ranking"
+                    WR:"World Ranking",
+                    NO:"Not Outs",
+                    DUCKS:"Ducks",
+                    FIFTY:"Fifties"
                 },
                 CHARTS:{
                     CHART:"Chart",
                     SCATTER:"Scatter"
                 },
                 DESC:{
+                    TODO:"CHART DESCRIPTION COMING SOON",
                     DESCRANKINGS:"Breakdown of World Rankings over a Career",
-                    FORMGUIDE:"Form data is pulled from the last 5 Games"
+                    FORMGUIDE:"Form data is pulled from the last 5 Games",
+                    RANKINGLINE:"Players Career Batting, Bowling and Keeping rankings Compared as a Line graph ",
+                    GAMESPLAYEDBAR:"Games played as a percentage over the years.",
+                    TEAMSPLAYEDFOR:"List of all the Teams played for and the Number of apperances for that Team"
                 },
                 FORM:{
                     INPUTLABELS:{

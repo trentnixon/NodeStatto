@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 
 // Template
 import Row from "../../../../Template/Page/Row";
+import ChartContainer from "../../../../Template/Page/ChartContainer";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
 import RankingPods from "../../../../Elements/pods/RankingPods";
 import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
-import ChartType from "../../../../Elements/type/ChartTypeandInfoHover";
-
+//import SubTitle from "../../../../Elements/type/PageSubTitle";
+//import InfoPopover from "../../../../Elements/type/InfoPopOver";
 // Charts
 import Chart from "../../../../Charts/AreaChart";
 
@@ -68,7 +68,6 @@ export default class Section_Rankings extends Component {
           Labels=this.CreateLabels(this.props.Rankings.Combined)
     } 
     render() {
-      
         return ( 
                 <Row className="PodRow ">
                     
@@ -83,16 +82,19 @@ export default class Section_Rankings extends Component {
                             <RankingPods Rankings={this.props.Rankings.Bowling}  />
                         </div>
 
-                    <SubTitle Title={"Career Ranking Progression"} />
-                    
-                    <ChartType 
-                        Copy="Mixed Line Graph" 
-                        Info="Players Career Batting, Bowling and Keeping rankings Compared as a Line graph "
-                    />
+                   
+                    <ChartContainer
+                        Info={this.props.TITLES.SITE.DESC.RANKINGLINE}
+                        Interactive={true}
+                        Title="Career Ranking Progression"
+                        flex=" flex-100"
+                    >
+                        <Pod canvas="canvas1" className=" flex-100">
+                            <Chart  series={Series} Labels={Labels} />
+                        </Pod> 
 
-                    <Pod canvas="canvas1" className=" flex-100">
-                        <Chart  series={Series} Labels={Labels} />
-                    </Pod> 
+                    </ChartContainer>
+                   
 
                 </Row>
             )

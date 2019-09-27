@@ -18,11 +18,11 @@ export default class Page_BattingOverview extends Component {
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary;
   }
-
+ 
   render() {   
     return (     
       <Container>  
-        <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
+        <SectionHeader   h1={TITLES.SITE.TITLES.MILESTONE} h2={TITLES.SITE.TITLES.BATTING}   /> 
         <SectionContainer className="Section_Batting_Milestones complete ">
             <SectionMilestonesBatting  Data={PRIMARY.CAREER.Career.batting} TITLES={TITLES.SITE} />
         </SectionContainer>

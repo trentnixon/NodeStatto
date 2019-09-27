@@ -19,21 +19,32 @@ p {
   width: 100%;
   margin: 40px 0 5px; }
 
-.Graph_Type_and_Info {
-  width: 100%;
+.ChartMetaContainer .ChartContainerTitlesandIcons {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: stretch;
-  align-content: flex-start; }
-  .Graph_Type_and_Info p {
-    flex-basis: 90%;
-    color: #969696;
-    margin: 0; }
-  .Graph_Type_and_Info div {
-    flex-basis: 10%;
-    align-self: flex-end; }
+  align-items: flex-end;
+  align-content: flex-start;
+  width: 100%; }
+  .ChartMetaContainer .ChartContainerTitlesandIcons .Graph_Type_and_Info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: flex-end; }
+    .ChartMetaContainer .ChartContainerTitlesandIcons .Graph_Type_and_Info p {
+      flex-basis: 90%;
+      color: #969696;
+      margin: 0; }
+    .ChartMetaContainer .ChartContainerTitlesandIcons .Graph_Type_and_Info div {
+      flex-basis: 10%;
+      align-self: flex-end; }
+    .ChartMetaContainer .ChartContainerTitlesandIcons .Graph_Type_and_Info .ChartMetaIcon {
+      padding: .2rem .3rem; }
+      .ChartMetaContainer .ChartContainerTitlesandIcons .Graph_Type_and_Info .ChartMetaIcon svg {
+        fill: #709dce; }
 
 .canvas1 {
   background-repeat: repeat;
@@ -304,7 +315,7 @@ p {
     font-size: 1.8em !important;
     color: #709dce !important;
     border-bottom: 1px solid;
-    margin: 0 0 0px 0;
+    margin: 0 0 5px 0;
     padding: 0 0 0px 0; }
   .PodRow #Pod .IconPod .Body h1.Page_Title {
     font-size: 1em !important;
@@ -1034,7 +1045,10 @@ body {
                 height: 70px;
                 border: 8px solid #fff;
                 margin-bottom: -45px;
-                z-index: 10; }
+                z-index: 10;
+                background-image: url(http://localhost:3000/assets/Statman.png);
+                background-size: contain;
+                background-color: #709dce; }
                 .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
                   width: 70px; }
           .DrawerNav .NavBarTop div.Actions {

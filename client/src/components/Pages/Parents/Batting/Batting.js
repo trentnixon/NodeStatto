@@ -8,7 +8,7 @@ import Tabber from "../../../Template/Tabber/TabContaner";
 
 // Sections
 import BasicStatOverview from "./Sections/Section_Batting_Overview_BasicStats";
-import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
+import BattingRankingPods from "./Sections/Section_Batting_Overview_RankingsPods";
 import SectionCareerBatting from "./Sections/Section_Career_Batting";
 import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
@@ -29,20 +29,29 @@ export default class Page_BattingOverview extends Component {
 
   render() {  
     return (     
-      <Container>  
-        <SectionHeader   h1={TITLES.SITE.TITLES.OVERVIEW} h2={TITLES.SITE.TITLES.BATTING}   /> 
+      <Container>   
+        <SectionHeader   h2={TITLES.SITE.TITLES.OVERVIEW} h1={TITLES.SITE.TITLES.BATTING}   /> 
+       
 
         <SectionContainer className="Section_Batting_Rankings complete">
-          <BasicStatOverview  
+            <BasicStatOverview  
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
                       TITLES = {TITLES.SITE.TITLES}
                       DATA={PRIMARY}
-                    />  
-
-          <SectionRuns  
-            TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
+                    /> 
         </SectionContainer>
+
+        <SectionContainer className="Section_Batting_Rankings complete">
+            <BattingRankingPods 
+              SUBS={TITLES.SITE.SUBS}
+              CTA={TITLES.SITE.CTA}
+              TITLES = {TITLES.SITE.TITLES}
+              DATA={PRIMARY}
+            />
+  
+        </SectionContainer>
+
         <SectionContainer className="Section_Batting_ForAgainst complete">
             <Tabber  
               Tabs={

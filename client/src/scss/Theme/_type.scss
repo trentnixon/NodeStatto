@@ -35,23 +35,42 @@ p{
 .Page_P{
 
 }
+ 
 
-.Graph_Type_and_Info{
-    width: 100%;
+.ChartMetaContainer{
+    .ChartContainerTitlesandIcons{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-end;
     align-content: flex-start;
-    p{
-        flex-basis: 90%;
-        color: $h1Color;
-        margin: 0;
-    }
-    div{
-        flex-basis: 10%;
-        align-self:flex-end;
-    }
+    width: 100%;
+    .Graph_Type_and_Info{
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: stretch;
+        align-content: flex-end;
+        p{
+            flex-basis: 90%;
+            color: $h1Color;
+            margin: 0;
+        }
+        div{
+            flex-basis: 10%;
+            align-self:flex-end;
+        }
 
+        .ChartMetaIcon{
+            padding: .2rem .3rem;
+            svg{
+                fill:#709dce;
+            }
+        }
+    
+    }
+    }
 }

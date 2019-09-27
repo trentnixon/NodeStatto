@@ -36,9 +36,12 @@ export default class Statto extends Component {
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary;
     
+  
     return (
           <Container>
-              <SectionHeader h1={TITLES.DASHBOARD} h2={TITLES.OVERVIEW} /> 
+              <SectionHeader h1={TITLES.SITE.TITLES.DASHBOARD} h2={TITLES.SITE.TITLES.OVERVIEW} /> 
+
+             
 
               <SectionContainer className="Section_Overview complete" > 
                   <Overview  
@@ -51,10 +54,20 @@ export default class Statto extends Component {
                   <MileStoneOverview 
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
-                      TITLES = {TITLES.SITE.TITLES}
+                      TITLES = {TITLES.SITE.TITLES} 
                       DATA={PRIMARY}
                   />
               </SectionContainer>   
+
+              <SectionContainer className="Section_History complete">
+                  <BriefHistory 
+                    TITLES={TITLES.SITE.TITLES} 
+                    CTA={TITLES.SITE.CTA} 
+                    SUBS={TITLES.SITE.SUBS}
+                    DATA={PRIMARY.CLEAN}
+                 
+                  />
+              </SectionContainer>  
 
               <SectionContainer className="Section_Home_RankingPods complete">
                 <Rankings  
@@ -65,19 +78,11 @@ export default class Statto extends Component {
                 /> 
               </SectionContainer>
 
-              <SectionContainer className="Section_History complete">
-                  <BriefHistory 
-                    TITLES={TITLES.SITE.TITLES} 
-                    CTA={TITLES.SITE.CTA}
-                    SUBS={TITLES.SITE.SUBS}
-                    DATA={PRIMARY.CLEAN}
-                 
-                  />
-              </SectionContainer> 
+              
 
               <SectionContainer className="Section_Default complete">
                   <Charts   
-                      TITLES={TITLES.SITE.TITLES} 
+                      TITLES={TITLES.SITE} 
                       CTA={TITLES.SITE.CTA}
                       SUBS={TITLES.SITE.SUBS}
                       DATA={PRIMARY}

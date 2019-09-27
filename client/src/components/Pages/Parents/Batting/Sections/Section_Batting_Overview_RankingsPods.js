@@ -6,27 +6,22 @@ import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 import Subtitle from "../../../../Elements/type/PageSubTitle";
 import ShowMore from "../../../../Elements/Buttons/ShowMore"
 import  {Runs} from "../../../../Icons/icons"; 
+
 //Wickets,Keeping,Trophy 
 let stones=[];
-export default class Home_Overview extends Component {
+export default class Home_Overview extends Component { 
     componentWillMount() { 
-        //console.log(this.props.DATA, this.props.DATA.CAREER.Career.batting.ballsFaced)
-         stones=[
-            { var:this.props.DATA.CAREER.Career.batting.innings,     Path:"batting/overview", label:this.props.SUBS.INNINGS,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Batting_Runs,                    Path:"batting/overview", label:this.props.SUBS.RUNS,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Batting_Average,                 Path:"batting/overview", label:this.props.SUBS.AVG, icon:<Runs/>},
-            { var:this.props.DATA.Meta.Batting_SR,                      Path:"batting/overview", label:this.props.SUBS.SR,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Batting_HS,                      Path:"batting/overview", label:this.props.SUBS.HS,icon:<Runs/>},
-            { var:this.props.DATA.CAREER.Career.batting.ballsFaced,     Path:"batting/overview", label:this.props.SUBS.BF,icon:<Runs/>},
-            { var:this.props.DATA.CAREER.Career.batting.s_50,     Path:"batting/overview", label:this.props.SUBS.FIFTY,icon:<Runs/>},
-            { var:this.props.DATA.CAREER.Career.batting.ducks,     Path:"batting/overview", label:this.props.SUBS.DUCKS,icon:<Runs/>},
-        ]
+
+        stones=[
+            { var:this.props.DATA.Meta.Batting_Ranking_Country_Current,     Path:"rankings", label:this.props.SUBS.CR,icon:<Runs/>},
+            { var:this.props.DATA.Meta.Batting_Ranking_World_Current,     Path:"rankings", label:this.props.SUBS.WR,icon:<Runs/>},
+         ]
      } 
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
                 <Row className="PodRow">
-                        <Subtitle Title={this.props.SUBS.BASIC}/>
+                    <Subtitle Title={this.props.SUBS.BATTING + ' '+this.props.SUBS.RANKINGS}/>
                    { 
                     stones.map((stone,i)=>{
                         let Delay= 200*i;
@@ -37,7 +32,7 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={true}
-                            className={IsVisable + " flex-25"}
+                            className={IsVisable + " flex-50"}
                         >
                             <IconPod 
                                 className="flex-100"

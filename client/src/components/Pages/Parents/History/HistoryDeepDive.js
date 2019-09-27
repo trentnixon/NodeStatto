@@ -12,6 +12,8 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import HistoryList from "./Sections/Section_List_History";
 import HistoryScatter from "./Sections/Section_History_ScatterChart";
 
+//import RunsBar from "../Batting/Sections/Section_Batting_Runs_Runs";
+
 let DisplayTeam=null,matchPlayer=null;
 class HistoryFor extends Component {
     FindTeam(TEAMID){
@@ -19,19 +21,20 @@ class HistoryFor extends Component {
         this.props.DATA.map((team,i)=>{ 
            if(team.ID === TEAMID)
                  Selected = team;
-                 return true;
+                 return true; 
             })
         return Selected;
+
     }
   componentWillMount() { 
       
       matchPlayer = matchPath(this.props.history.location.pathname, { path: '/history/:for/:displayTeam',})
       DisplayTeam = this.FindTeam(matchPlayer.params.displayTeam); 
-      //console.log(this.props)
+      
     }
 
   render() {
-    
+    console.log(DisplayTeam)
     return ( 
         <Container>
             <SectionHeader h1={this.props.TITLE} h2={DisplayTeam.Team} />
@@ -57,6 +60,7 @@ class HistoryFor extends Component {
                 </SectionContainer>
   
                 <SectionContainer>
+                  
                         <HistoryScatter 
                                 DATA={this.props.PLAYER_DATA.Primary.CLEAN}  
                                 HS={100}

@@ -33,7 +33,7 @@ export default class BowlingHome extends Component {
 
     return ( 
       <Container>
-        <SectionHeader   h1={SITELABELS.TITLES.OVERVIEW} h2={SITELABELS.TITLES.BOWLING} /> 
+        <SectionHeader   h2={SITELABELS.TITLES.OVERVIEW} h1={SITELABELS.TITLES.BOWLING} /> 
         
         <SectionContainer>
         <BasicStatOverview  
