@@ -34,8 +34,14 @@
 
         >div{
             padding:0;
+            div{  
+                div{
+                    display: inline-block;
+                }  
+               
+            }
             span{
-                color:$IconColor;
+               // color:$IconColor;
 
                 
             }

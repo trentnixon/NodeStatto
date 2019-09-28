@@ -1026,8 +1026,8 @@ body {
               color: rgba(0, 0, 0, 0.54); }
           .DrawerNav nav > div {
             padding: 0; }
-            .DrawerNav nav > div span {
-              color: rgba(0, 0, 0, 0.54); }
+            .DrawerNav nav > div div div {
+              display: inline-block; }
             .DrawerNav nav > div .Collapseable div div div a div svg {
               fill: rgba(0, 0, 0, 0.54); }
             .DrawerNav nav > div .Collapseable div div div a div div {
