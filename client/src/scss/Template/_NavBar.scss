@@ -34,23 +34,27 @@
 
         >div{
             padding:0;
+           
             div{  
+                
                 div{
                     display: inline-block;
                 }  
                
             }
             span{
-               // color:$IconColor;
-
-                
+               color:$IconColor;
             }
             .Collapseable{
                 
                 div{
                     div{
+                        padding-top:5px;
+                        
                         div{
+                          
                             a{
+                                padding:12px 0px;
                                 div{
                                     svg{
                                         fill:$IconColor;
