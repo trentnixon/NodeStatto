@@ -1015,7 +1015,7 @@ body {
           height: auto;
           background-color: #f5f5f5; }
           .DrawerNav .Collapseable a div {
-            padding-left: 35px; }
+            padding-left: 0px; }
         .DrawerNav nav {
           width: inherit; }
           .DrawerNav nav a > div {
@@ -1029,7 +1029,7 @@ body {
           .DrawerNav nav > div {
             padding: 0; }
             .DrawerNav nav > div div {
-              padding-left: 6px; }
+              padding-left: 9px; }
               .DrawerNav nav > div div div {
                 display: inline-block; }
             .DrawerNav nav > div span {
