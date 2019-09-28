@@ -1071,6 +1071,8 @@ body {
           display: flex; }
           .DrawerNav nav .MainNavItem .LinkParent .LinkIcon {
             display: inline-block; }
+          .DrawerNav nav .MainNavItem .LinkParent .LinkCopy span {
+            color: #5a5a5a; }
         .DrawerNav nav .MainNavItem .Collapseable {
           background-color: #f5f5f5; }
           .DrawerNav nav .MainNavItem .Collapseable .LinkContainer {
