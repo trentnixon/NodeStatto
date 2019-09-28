@@ -15,9 +15,57 @@
     }
 
     nav{
-        width: inherit;
+        width: inherit; 
+
+        a{
+          
+            >div{
+                padding:12px 24px;
+                svg{ 
+                        fill:$IconColor;
+                    }
+                div{
+                    span{
+                        color:$IconColor;
+                    }
+                }
+            }
+        }
+
+        >div{
+            padding:0;
+            span{
+                color:$IconColor;
+
+                
+            }
+            .Collapseable{
+                
+                div{
+                    div{
+                        div{
+                            a{
+                                div{
+                                    svg{
+                                        fill:$IconColor;
+                                    }
+                                    div{
+                                        padding: 0 0 0 5px;
+                                        span{
+                                            color:$IconColor;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
+
+
     .NavBarTop{
         background-color: $ColorBase;
         min-height: 120px;

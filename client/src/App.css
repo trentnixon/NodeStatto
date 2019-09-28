@@ -1018,6 +1018,22 @@ body {
             padding-left: 35px; }
         .DrawerNav nav {
           width: inherit; }
+          .DrawerNav nav a > div {
+            padding: 12px 24px; }
+            .DrawerNav nav a > div svg {
+              fill: rgba(0, 0, 0, 0.54); }
+            .DrawerNav nav a > div div span {
+              color: rgba(0, 0, 0, 0.54); }
+          .DrawerNav nav > div {
+            padding: 0; }
+            .DrawerNav nav > div span {
+              color: rgba(0, 0, 0, 0.54); }
+            .DrawerNav nav > div .Collapseable div div div a div svg {
+              fill: rgba(0, 0, 0, 0.54); }
+            .DrawerNav nav > div .Collapseable div div div a div div {
+              padding: 0 0 0 5px; }
+              .DrawerNav nav > div .Collapseable div div div a div div span {
+                color: rgba(0, 0, 0, 0.54); }
         .DrawerNav .NavBarTop {
           background-color: #709dce;
           min-height: 120px;
