@@ -31,13 +31,13 @@
                     display: flex;
 
                     .LinkContainer{
-                            
                         .LinkIcon{
                             display: inline-block;
                         }
                         .LinkCopy{}
                     }
-                    .LinkContainer.selected { color:red;}
+                  
+                    .MuiTouchRipple-root-113 span { background-color:$ColorBase;}
                 }
             }
         }

@@ -919,55 +919,6 @@ body {
     body #root #Statto #Frame {
       width: 100vw;
       /*
-    .Collapseable {
-        height: auto;
-        background-color: $white;
-        a{
-            div{  padding-left:0px;}
-        }
-    }
-*/
-      /*
-    nav{
-        width: inherit; 
-
-        a{
-          
-            >div{
-                padding:8px 16px;
-                svg{ 
-                        fill:$IconColor;
-                    }
-                div{
-                    padding-left: 6px;
-                    span{
-                        color:$IconColor;
-                    }
-                }
-            }
-        }
-
-        >div{
-            padding:0;
-           
-            div{  
-                padding-left: 9px;
-                div{
-                    display: inline-block;
-                }  
-               
-            }
-            span{
-               color:$IconColor;
-            }
-            .Collapseable{
-                
-            
-            }
-        }
-    }
-    */
-      /*
 *       TABLET NORMAL
 *
 */
@@ -1128,8 +1079,8 @@ body {
           display: flex; }
           .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkIcon {
             display: inline-block; }
-          .DrawerNav nav .MainNavItem .LinkChild .LinkContainer.selected {
-            color: red; }
+          .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root-113 span {
+            background-color: #709dce; }
       body #root #Statto #Frame main {
         min-height: 100vh;
         -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);
