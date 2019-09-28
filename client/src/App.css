@@ -1085,6 +1085,8 @@ body {
             display: inline-block; }
           .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkCopy {
             padding-left: 5px; }
+            .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkCopy span {
+              color: #5a5a5a; }
           .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root-113 span {
             background-color: #709dce; }
       body #root #Statto #Frame main {
