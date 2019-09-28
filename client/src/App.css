@@ -1072,7 +1072,7 @@ body {
           .DrawerNav nav .MainNavItem .LinkParent .LinkIcon {
             display: inline-block; }
         .DrawerNav nav .MainNavItem .Collapseable {
-          background-color: rgba(0, 0, 0, 0.25); }
+          background-color: #f5f5f5; }
           .DrawerNav nav .MainNavItem .Collapseable .LinkContainer {
             padding-left: 34px; }
         .DrawerNav nav .MainNavItem .LinkChild {

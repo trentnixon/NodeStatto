@@ -18,7 +18,7 @@ import './App.css'
  * -- Command list 
       git add .
       git commit -am "Statto Additions and Updates"
-      git push heroku master 
+      git push heroku master  
  */
 
 export default class App extends Component {
