@@ -18,6 +18,7 @@
                         display: inline-block;
                     }
                     .LinkCopy{
+                        padding-left:5px;
                        span{
                            color:$h2Color;
                        }
@@ -36,7 +37,9 @@
                         .LinkIcon{
                             display: inline-block;
                         }
-                        .LinkCopy{}
+                        .LinkCopy{
+                            padding-left:5px;
+                        }
                     }
                   
                     .MuiTouchRipple-root-113 span { background-color:$ColorBase;}

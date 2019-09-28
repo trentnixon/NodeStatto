@@ -1071,8 +1071,10 @@ body {
           display: flex; }
           .DrawerNav nav .MainNavItem .LinkParent .LinkIcon {
             display: inline-block; }
-          .DrawerNav nav .MainNavItem .LinkParent .LinkCopy span {
-            color: #5a5a5a; }
+          .DrawerNav nav .MainNavItem .LinkParent .LinkCopy {
+            padding-left: 5px; }
+            .DrawerNav nav .MainNavItem .LinkParent .LinkCopy span {
+              color: #5a5a5a; }
         .DrawerNav nav .MainNavItem .Collapseable {
           background-color: #f5f5f5; }
           .DrawerNav nav .MainNavItem .Collapseable .LinkContainer {
@@ -1081,6 +1083,8 @@ body {
           display: flex; }
           .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkIcon {
             display: inline-block; }
+          .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkCopy {
+            padding-left: 5px; }
           .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root-113 span {
             background-color: #709dce; }
       body #root #Statto #Frame main {
