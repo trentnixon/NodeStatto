@@ -40,52 +40,45 @@ class NestedLists extends React.Component {
 
   };
 
-  CloseDrawer = ()=>{
-    //console.log("Close")
-    UXDrawer(false)
-  }
+  CloseDrawer = ()=>{  UXDrawer(false) }
 
-  componentWillMount() {
-    //console.log(this.props)
-    
-    //Path = this.props.Match.params.playerid; 
-    
-    //console.log(this.props.Navigation)
-  } 
+  componentWillMount() {} 
 
  createListItem(navItem,i){
      return(
-        <Link key={i} to={`/${navItem.path}`}>
-            <ListItem button onClick={()=>{this.CloseDrawer(true)}} >
-                <ListItemIcon>{navItem.icon}</ListItemIcon>
-                <ListItemText inset primary={navItem.label}/>
-            </ListItem>
-        </Link> 
+        <div key={i} className="MainNavItem">
+          <Link className="LinkChild" to={`/${navItem.path}`}>
+              <ListItem  className="LinkContainer" button onClick={()=>{this.CloseDrawer(true)}} >
+                  <ListItemIcon className="LinkIcon" >{navItem.icon}</ListItemIcon>
+                  <ListItemText className="LinkCopy"  inset primary={navItem.label}/>
+              </ListItem>
+          </Link> 
+        </div>
      )
     }
 createCollapseItem(navItem,i){
 
         let Children = navItem.children.map((children,i)=>{
             return(
-                <Link key={i}  onClick={()=>{this.CloseDrawer(true)}} to={`/${navItem.path}/${children.path}`}>
-                    <ListItem  button className={this.props.nested}>
-                        <ListItemIcon>{children.icon}</ListItemIcon>
-                        <ListItemText inset primary={children.label}/>
+                <Link key={i} className="LinkChild" onClick={()=>{this.CloseDrawer(true)}} to={`/${navItem.path}/${children.path}`}>
+                    <ListItem  button className={this.props.nested + ' LinkContainer'}>
+                        <ListItemIcon className="LinkIcon" >{children.icon}</ListItemIcon>
+                        <ListItemText className="LinkCopy"  inset primary={children.label}/>
                     </ListItem>
-                </Link> 
+                </Link>
             )
         })
 
         return(
-            <div key={i} >
-                <ListItem button onClick={()=>{this.handleClick(i)}}>
-                  <ListItemIcon>{navItem.icon}</ListItemIcon>
-                  <ListItemText inset primary={navItem.label}/>
+            <div key={i} className="MainNavItem CollapseableParent" >
+                <ListItem button className="LinkParent" onClick={()=>{this.handleClick(i)}}>
+                  <ListItemIcon className="LinkIcon" >{navItem.icon}</ListItemIcon>
+                  <ListItemText className="LinkCopy" inset primary={navItem.label}/>
                     {this.state.open[i] ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                  
                 <Collapse in={this.state.open[i]} timeout="auto" unmountOnExit className="Collapseable">
-                    <List component="div" disablePadding>
+                    <List component="div"  disablePadding>
                         {Children}
                     </List>
                 </Collapse>
@@ -100,7 +93,6 @@ createCollapseItem(navItem,i){
     //console.log(this.props)
     
     return (
-      <div className={classes.root}>
         <List component="nav" >
             {
                 this.props.Navigation.map((nav,i)=>{
@@ -113,7 +105,6 @@ createCollapseItem(navItem,i){
                 })
             }
         </List>
-      </div> 
     );
   }
 }

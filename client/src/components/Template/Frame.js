@@ -57,7 +57,7 @@ const styles = theme => ({
   },
 });
 
-
+/** Hide Top Bar on Scroll */
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -74,17 +74,15 @@ function HideOnScroll(props) {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
+/* Finish Hide on Scroll */
+
 
 
 const NavBarBottom = (props) => (
   <div className="NavBarBottom">
-       
+    <p>Bottom</p>
   </div>
 );
 
@@ -92,13 +90,13 @@ const NavBarBottom = (props) => (
 const NavLayout = (props) => (
   // eslint-disable-next-line
         <div className="DrawerNav">
-              <NavBarTop {... props}/>
-                  <Routes 
-                    Match={props.match}
-                    Navigation={props.Navigation}
-                  />
-                <Divider />
-              <NavBarBottom {... props} />
+          <NavBarTop {... props}/>
+            <Routes 
+              Match={props.match}
+              Navigation={props.Navigation}
+            />
+            <Divider />
+            <NavBarBottom {... props} />
         </div>
 );
 
@@ -164,8 +162,7 @@ class ResponsiveDrawer extends React.Component {
             }}
           >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
-            
-      
+
             </Drawer>
         </Hidden>
 

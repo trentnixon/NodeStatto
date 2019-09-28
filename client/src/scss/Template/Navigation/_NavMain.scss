@@ -1,0 +1,45 @@
+@at-root{
+
+    img.NavigationIcon{ width:25px;     margin-right: 16px;}
+    img.NavigationIcon.Bowling{width:20px;     margin-right: 20px;}
+
+    .DrawerNav{ 
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        min-height: 100vh;
+    
+        nav{
+            .MainNavItem{
+                .LinkParent{
+                    display: flex;
+                    .LinkIcon{
+                        display: inline-block;
+                    }
+                    .LinkCopy{
+                       
+                    }
+                   
+                }
+                .Collapseable{
+                    background-color: $QarterBlack;
+                    .LinkContainer{padding-left: 34px;}
+                }
+                .LinkChild{
+                   
+                    display: flex;
+
+                    .LinkContainer{
+                            
+                        .LinkIcon{
+                            display: inline-block;
+                        }
+                        .LinkCopy{}
+                    }
+                    .LinkContainer.selected { color:red;}
+                }
+            }
+        }
+    }
+}

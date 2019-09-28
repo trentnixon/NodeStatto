@@ -919,6 +919,55 @@ body {
     body #root #Statto #Frame {
       width: 100vw;
       /*
+    .Collapseable {
+        height: auto;
+        background-color: $white;
+        a{
+            div{  padding-left:0px;}
+        }
+    }
+*/
+      /*
+    nav{
+        width: inherit; 
+
+        a{
+          
+            >div{
+                padding:8px 16px;
+                svg{ 
+                        fill:$IconColor;
+                    }
+                div{
+                    padding-left: 6px;
+                    span{
+                        color:$IconColor;
+                    }
+                }
+            }
+        }
+
+        >div{
+            padding:0;
+           
+            div{  
+                padding-left: 9px;
+                div{
+                    display: inline-block;
+                }  
+               
+            }
+            span{
+               color:$IconColor;
+            }
+            .Collapseable{
+                
+            
+            }
+        }
+    }
+    */
+      /*
 *       TABLET NORMAL
 *
 */
@@ -1006,100 +1055,81 @@ body {
               display: flex; }
               body #root #Statto #Frame header #AppBar .Right button a svg {
                 fill: rgba(0, 0, 0, 0.54); }
+      .NavBarTop {
+        background-color: #709dce;
+        min-height: 120px;
+        text-align: center;
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .NavBarTop > div {
+          flex-grow: 1;
+          width: 100%;
+          justify-content: center; }
+        .NavBarTop div.UserName {
+          flex-grow: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          border-bottom: 30px solid #fff; }
+          .NavBarTop div.UserName div {
+            align-self: center;
+            align-items: flex-end; }
+            .NavBarTop div.UserName div div.PlayerAvatar {
+              width: 70px;
+              height: 70px;
+              border: 8px solid #fff;
+              margin-bottom: -45px;
+              z-index: 10;
+              background-image: url(http://localhost:3000/assets/Statman.png);
+              background-size: contain;
+              background-color: #709dce; }
+              .NavBarTop div.UserName div div.PlayerAvatar img {
+                width: 70px; }
+        .NavBarTop div.Actions {
+          display: flex;
+          align-items: flex-start; }
+          .NavBarTop div.Actions div {
+            flex-grow: 1; }
+            .NavBarTop div.Actions div button {
+              background-color: #fff; }
+              .NavBarTop div.Actions div button a {
+                display: flex; }
+                .NavBarTop div.Actions div button a svg {
+                  fill: rgba(0, 0, 0, 0.54); }
+      @media only screen and (max-width: 576px) {
+        .NavBarTop {
+          min-height: 120px;
+          padding-top: 10px; } }
+      .DrawerNav .NavBarBottom {
+        min-height: 50px; }
+      img.NavigationIcon {
+        width: 25px;
+        margin-right: 16px; }
+      img.NavigationIcon.Bowling {
+        width: 20px;
+        margin-right: 20px; }
       .DrawerNav {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         min-height: 100vh; }
-        .DrawerNav .Collapseable {
-          height: auto;
-          background-color: #f5f5f5; }
-          .DrawerNav .Collapseable a div {
-            padding-left: 0px; }
-        .DrawerNav nav {
-          width: inherit; }
-          .DrawerNav nav a > div {
-            padding: 8px 16px; }
-            .DrawerNav nav a > div svg {
-              fill: rgba(0, 0, 0, 0.54); }
-            .DrawerNav nav a > div div {
-              padding-left: 6px; }
-              .DrawerNav nav a > div div span {
-                color: rgba(0, 0, 0, 0.54); }
-          .DrawerNav nav > div {
-            padding: 0; }
-            .DrawerNav nav > div div {
-              padding-left: 9px; }
-              .DrawerNav nav > div div div {
-                display: inline-block; }
-            .DrawerNav nav > div span {
-              color: rgba(0, 0, 0, 0.54); }
-            .DrawerNav nav > div .Collapseable div div {
-              padding-top: 5px; }
-              .DrawerNav nav > div .Collapseable div div div a {
-                padding: 12px 0px; }
-                .DrawerNav nav > div .Collapseable div div div a div svg {
-                  fill: rgba(0, 0, 0, 0.54); }
-                .DrawerNav nav > div .Collapseable div div div a div div {
-                  padding: 0 0 0 5px; }
-                  .DrawerNav nav > div .Collapseable div div div a div div span {
-                    color: rgba(0, 0, 0, 0.54); }
-        .DrawerNav .NavBarTop {
-          background-color: #709dce;
-          min-height: 120px;
-          text-align: center;
-          padding-top: 70px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center; }
-          .DrawerNav .NavBarTop > div {
-            flex-grow: 1;
-            width: 100%;
-            justify-content: center; }
-          .DrawerNav .NavBarTop div.UserName {
-            flex-grow: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            border-bottom: 30px solid #fff; }
-            .DrawerNav .NavBarTop div.UserName div {
-              align-self: center;
-              align-items: flex-end; }
-              .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar {
-                width: 70px;
-                height: 70px;
-                border: 8px solid #fff;
-                margin-bottom: -45px;
-                z-index: 10;
-                background-image: url(http://localhost:3000/assets/Statman.png);
-                background-size: contain;
-                background-color: #709dce; }
-                .DrawerNav .NavBarTop div.UserName div div.PlayerAvatar img {
-                  width: 70px; }
-          .DrawerNav .NavBarTop div.Actions {
-            display: flex;
-            align-items: flex-start; }
-            .DrawerNav .NavBarTop div.Actions div {
-              flex-grow: 1; }
-              .DrawerNav .NavBarTop div.Actions div button {
-                background-color: #fff; }
-                .DrawerNav .NavBarTop div.Actions div button a {
-                  display: flex; }
-                  .DrawerNav .NavBarTop div.Actions div button a svg {
-                    fill: rgba(0, 0, 0, 0.54); }
-        .DrawerNav .NavBarBottom {
-          min-height: 50px; }
-        .DrawerNav img.NavigationIcon {
-          width: 25px;
-          margin-right: 16px; }
-        .DrawerNav img.NavigationIcon.Bowling {
-          width: 20px;
-          margin-right: 20px; }
-        @media only screen and (max-width: 576px) {
-          .DrawerNav .NavBarTop {
-            min-height: 120px;
-            padding-top: 10px; } }
+        .DrawerNav nav .MainNavItem .LinkParent {
+          display: flex; }
+          .DrawerNav nav .MainNavItem .LinkParent .LinkIcon {
+            display: inline-block; }
+        .DrawerNav nav .MainNavItem .Collapseable {
+          background-color: rgba(0, 0, 0, 0.25); }
+          .DrawerNav nav .MainNavItem .Collapseable .LinkContainer {
+            padding-left: 34px; }
+        .DrawerNav nav .MainNavItem .LinkChild {
+          display: flex; }
+          .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkIcon {
+            display: inline-block; }
+          .DrawerNav nav .MainNavItem .LinkChild .LinkContainer.selected {
+            color: red; }
       body #root #Statto #Frame main {
         min-height: 100vh;
         -webkit-box-shadow: inset 4px 0px 14px -6px rgba(0, 0, 0, 0.5);

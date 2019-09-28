@@ -17,12 +17,12 @@ import CalendarToday from '@material-ui/icons/PermContactCalendar';
 const NavBarTop = (props) => {
     function CloseDrawer(){
         //console.log("Close");
-        UXDrawer(false);
+        UXDrawer(false); 
       }
 
       //console.log(props.DATA_SETUP.SelectedPlayerID);
       return(
-            <div className="NavBarTop">
+        <div className="NavBarTop">
         
         
         <div className="Actions">

@@ -1,0 +1,56 @@
+
+@import "./NavTop";
+@import "./NavBottom";
+@import "./NavMain";
+
+
+    /*
+    .Collapseable {
+        height: auto;
+        background-color: $white;
+        a{
+            div{  padding-left:0px;}
+        }
+    }
+*/
+
+/*
+    nav{
+        width: inherit; 
+
+        a{
+          
+            >div{
+                padding:8px 16px;
+                svg{ 
+                        fill:$IconColor;
+                    }
+                div{
+                    padding-left: 6px;
+                    span{
+                        color:$IconColor;
+                    }
+                }
+            }
+        }
+
+        >div{
+            padding:0;
+           
+            div{  
+                padding-left: 9px;
+                div{
+                    display: inline-block;
+                }  
+               
+            }
+            span{
+               color:$IconColor;
+            }
+            .Collapseable{
+                
+            
+            }
+        }
+    }
+    */
