@@ -20,11 +20,12 @@
         a{
           
             >div{
-                padding:12px 24px;
+                padding:8px 16px;
                 svg{ 
                         fill:$IconColor;
                     }
                 div{
+                    padding-left: 6px;
                     span{
                         color:$IconColor;
                     }
@@ -36,7 +37,7 @@
             padding:0;
            
             div{  
-                
+                padding-left: 6px;
                 div{
                     display: inline-block;
                 }  

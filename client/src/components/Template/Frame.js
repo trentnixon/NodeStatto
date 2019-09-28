@@ -137,7 +137,7 @@ class ResponsiveDrawer extends React.Component {
               onClick={this.OpenDrawer}
               className={classes.navIconHide}
             >
-              <MenuIcon /> tt
+              <MenuIcon />
             </IconButton>
               <StattoAppBarLayout   
                   {... this.props}  

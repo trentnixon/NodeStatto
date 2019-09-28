@@ -1019,15 +1019,19 @@ body {
         .DrawerNav nav {
           width: inherit; }
           .DrawerNav nav a > div {
-            padding: 12px 24px; }
+            padding: 8px 16px; }
             .DrawerNav nav a > div svg {
               fill: rgba(0, 0, 0, 0.54); }
-            .DrawerNav nav a > div div span {
-              color: rgba(0, 0, 0, 0.54); }
+            .DrawerNav nav a > div div {
+              padding-left: 6px; }
+              .DrawerNav nav a > div div span {
+                color: rgba(0, 0, 0, 0.54); }
           .DrawerNav nav > div {
             padding: 0; }
-            .DrawerNav nav > div div div {
-              display: inline-block; }
+            .DrawerNav nav > div div {
+              padding-left: 6px; }
+              .DrawerNav nav > div div div {
+                display: inline-block; }
             .DrawerNav nav > div span {
               color: rgba(0, 0, 0, 0.54); }
             .DrawerNav nav > div .Collapseable div div {
