@@ -7,6 +7,7 @@ import React, { Component } from "react";
 
 import Chart from "react-apexcharts";
 import {connect } from 'react-redux';
+import update from 'react-addons-update'
 
 class LineCharts extends Component { 
   constructor(props) {
@@ -34,14 +35,15 @@ class LineCharts extends Component {
           },
         plotOptions: {
             bar: {
-              columnWidth: '50%'
+              columnWidth: '70%'
             }
           },
         xaxis: { 
             labels: {
                 show: false,
             },
-            categories: this.props.Labels,},
+            categories: this.props.Labels,
+          },
         
         label : this.props.Labels,
         fill: {
@@ -75,7 +77,20 @@ class LineCharts extends Component {
     }; 
   } 
 
-  componentWillMount() {} 
+  CreateSeries(props){
+    this.setState({ 
+      series:props.series,
+      options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels} }})
+    })
+  }
+
+  componentWillMount() { this.CreateSeries(this.props) } 
+
+  componentWillUpdate(){ return true;}
+  
+  componentDidUpdate(nextprops,nextState){
+      if(this.props.series !== this.state.series){  this.setState({ Chart:null}); this.CreateSeries(nextprops)  }
+  }
 
   render() {
     return (

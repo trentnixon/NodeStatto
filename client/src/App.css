@@ -1087,7 +1087,7 @@ body {
             padding-left: 5px; }
             .DrawerNav nav .MainNavItem .LinkChild .LinkContainer .LinkCopy span {
               color: #5a5a5a; }
-          .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root-113 span {
+          .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root span, .DrawerNav nav .MainNavItem .LinkChild .MuiTouchRipple-root-113 span {
             background-color: #709dce; }
       body #root #Statto #Frame main {
         min-height: 100vh;

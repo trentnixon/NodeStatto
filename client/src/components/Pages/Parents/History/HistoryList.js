@@ -23,7 +23,7 @@ export default class History extends Component {
                   OrderBy={this.props.OrderBy}
               />
           </SectionContainer>
-      </div>
+      </div> 
     )
   }
 } 

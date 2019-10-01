@@ -3,96 +3,178 @@ import React, { Component } from 'react';
 // Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../Elements/type/PageTitle";
-
+import ChartContainer from "../../../../Template/Page/ChartContainer";
+import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 // Sections
-//import InteractiveScatterChart from "../../../../Charts/ScatterChart";
 import InteractiveChart from "../../../../Charts/MixedChart";
 
+// Form 
+import SelectYear from "../../../../Elements/FormElements/FormSelect/SelectYear";
 // Variables
-let Series=[],Labels =[];
+let Series=[],Labels =[], Min, Max,NotOut=0;
 
-// Start Class
+const SummaryPod = (props) => (
+            <IconPod 
+                label={props.label}
+                total={props.total}
+                className="flex-30"
+                icon=""
+                Footer = ""
+            />
+);
+
+// Start Class 
 export default class Section_Default extends Component {
 
+    state = {
+        Series:[],
+        Labels:[],
+        NotOuts:0
+      }
 
-    CreateRuns(Data){
-        let Series=[]
+    CreateRuns(Data, Needle){ 
+        let Series=[],NewYear, RunsTotal=0;
+
         Data.map((game,i)=>{
             if(game.Batting){
-                //console.log(game.Batting.RunInt)
-                Series.push(game.Batting.RunInt)
+                if(Needle === "Career"){
+                    Series.push(game.Batting.RunInt) ;
+                    RunsTotal = RunsTotal + game.Batting.RunInt
+                }
+                else{
+                    NewYear = game.Meta.Date.split("/")
+                    if(Needle === '20'+NewYear[2]){
+                        Series.push(game.Batting.RunInt);
+                        RunsTotal = RunsTotal + game.Batting.RunInt
+                    }
+                }
             }
             return true;
         })
-        //console.log(Series)
+
         return Series;
     }
 
-    CreateAVG(Data){
-        let Series=[]
-        let div=0,TR=0;
+    CreateAVG(Data,Needle){
+        let Series=[],NewYear;
+        let TR=0;
+        NotOut=0;
+
         Data.map((game,i)=>{
             let AVG=null;
+            NewYear = game.Meta.Date.split("/")
             if(game.Batting){
-                TR = TR + game.Batting.RunInt;
-                if(game.Batting.NotOut === 0){ div++}
-                AVG = TR/div;
-                if (!isFinite(AVG.toFixed(2))){AVG=0}
-                //console.log(AVG.toFixed(2),TR,div)
-                Series.push(parseFloat(AVG.toFixed(2)))
+                if(Needle === "Career"){
+                    // Redo all of this!!!
+                    TR = TR + game.Batting.RunInt;
+                    if(game.Batting.NotOut === 0){ NotOut++}
+                    AVG = TR/NotOut;
+                    if (!isFinite(AVG.toFixed(2))){AVG=0}
+                    Series.push(parseFloat(AVG.toFixed(2)))
+
+                }
+                else if(Needle === '20'+NewYear[2]){
+                        TR = TR + game.Batting.RunInt;
+                    if(game.Batting.NotOut === 0){ NotOut++}
+                    AVG = TR/NotOut;
+                    if (!isFinite(AVG.toFixed(2))){AVG=0}
+                    Series.push(parseFloat(AVG.toFixed(2)))
+                    }
             }
+            
             return true;
         })
-        //console.log(Series)
+       
         return Series;
     }
 
-    CreateDate(Data){
-        let Series=[]
+
+
+    CreateDate(Data,Needle){
+        let Series=[],NewYear;
         Data.map((game,i)=>{
+            NewYear = game.Meta.Date.split("/")
             if(game.Batting){
-                //console.log(game.Batting.RunInt)
-                Series.push(game.Meta.Date)
+                if(Needle === "Career"){ Series.push(game.Meta.Date) }
+                else if(Needle === '20'+NewYear[2]){ Series.push(game.Meta.Date) }
             }
             return true;
         })
-        //console.log(Series)
         return Series;
     }
 
-    
-    componentWillMount() {
-     
+    // Create Data Series
+    createSeries(DATA, Neddle){
         Series = [{
             name: 'Runs',
             type: 'column',
-            data: this.CreateRuns(this.props.DATA)
+            data: this.CreateRuns(DATA,Neddle)
           }, {
             name: 'Average',
             type: 'area',
-            data: this.CreateAVG(this.props.DATA)
-          }]
+            data: this.CreateAVG(DATA,Neddle)
+          }];
 
-          Labels = this.CreateDate(this.props.DATA)
-        //console.log(Series);
+          this.setState({ 
+            Series:Series,
+            Labels:this.CreateDate(this.props.DATA,Neddle),
+            Year:Neddle,
+        })
+    }
+
+   componentWillMount() { 
+       this.createSeries(this.props.DATA,this.props.UX.FORMS.SELECT.YEAR) 
     } 
-    render() {
+    shouldComponentUpdate(nextProps, nextState){ return true;}
+    componentWillUpdate(nextProps, nextState){
+        if(this.props.UX.FORMS.SELECT.YEAR !== nextProps.UX.FORMS.SELECT.YEAR)
+        { this.createSeries(this.props.DATA,nextProps.UX.FORMS.SELECT.YEAR) }
    
+    }
+    render() {
         return ( 
-            <Row className="PodRow">
-                    <Title Title={this.props.TITLE.TITLES.SCORES} /> 
-                    <Pod canvas="canvas1 " className="flex-100">
-                        <InteractiveChart 
-                            LookUp={this.props.DATA} 
-                            Labels={Labels}
-                            series={Series} 
-                            HS={this.props.HS} 
-                            Disc="Batting"
-                            Var="RunInt" 
-                        />
-                    </Pod>
-            </Row> 
+
+                <ChartContainer
+                    Info={this.props.TITLE.DESC.TODO}
+                    Interactive={true}
+                    Title={this.props.TITLE.SUBS.AVGVSRUN}
+                    flex=" flex-100"
+                >
+
+                    <SelectYear {... this.props}/>
+                    
+
+                    <Row className="PodRow">
+                            <Pod canvas="canvas1 " className="flex-100">
+                                <InteractiveChart 
+                                    LookUp={this.props.DATA} 
+                                    Labels={this.state.Labels}
+                                    series={this.state.Series} 
+                                    HS={this.props.HS} 
+                                    Disc="Batting"
+                                    Var="RunInt" 
+                                />
+                            </Pod>
+                    </Row> 
+
+                    <Row className="PodRow">
+                        <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>
+
+                        <SummaryPod label={this.props.UX.FORMS.SELECT.YEAR + " Average"} total={this.state.Series[1].data[this.state.Series[1].data.length-1]} />
+                        <SummaryPod label="Highest Average " total={Math.max(...this.state.Series[1].data)} />
+                        <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />
+                        
+                        <SummaryPod label="Innings count " total={this.state.Series[0].data.length} />
+                        <SummaryPod label="Total Runs  " total={this.state.Series[0].data.reduce((a, b) => a + b, 0)} />
+                        <SummaryPod label="Not Outs  " total={NotOut} />
+                    </Row>
+                </ChartContainer>
+           
         ) 
     }
-} 
+}
+
+/**
+ *  Create List of teams fro given period, with games played and ave against
+ *  
+ */

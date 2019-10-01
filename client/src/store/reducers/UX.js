@@ -10,8 +10,12 @@ const InitialState ={
     Device:{
         isMobile:false
     },
-    Desktop:{}
-   
+    Desktop:{},
+    FORMS:{
+        SELECT:{
+            YEAR:"Career"
+        }
+    }
 }
  
 const UX = (state=InitialState, action) =>{ 
@@ -35,6 +39,12 @@ const UX = (state=InitialState, action) =>{
 				// eslint-disable-next-line 
 				break
             }
+            case "SELECT_YEAR":{
+                //console.log(action.payload);
+				return {...state, FORMS: {...state.FORMS, SELECT:{...state.FORMS.SELECT, YEAR:action.payload} }}
+				// eslint-disable-next-line 
+				break
+            } 
         }
 		return state;
 	}

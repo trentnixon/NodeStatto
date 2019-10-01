@@ -13,7 +13,6 @@ export default class Formguide
  extends Component {
 
   componentWillMount() { 
-
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary; 
   }
@@ -24,8 +23,13 @@ export default class Formguide
           <SectionHeader   h1={this.props.LABELS.SITE.SUBS.AVG} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
                
         <SectionContainer className="Section_Batting_Runs charts todo">
-          <MixedChartRunsAVGRanking TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} HS={parseInt(PRIMARY.Meta.Batting_HS,10)} />
-        </SectionContainer> 
+          <MixedChartRunsAVGRanking 
+              TITLE={TITLES.SITE} 
+              DATA={PRIMARY.CLEAN} 
+              HS={parseInt(PRIMARY.Meta.Batting_HS,10)} 
+              {... this.props}
+            />
+        </SectionContainer>  
 
         </Container>
     )

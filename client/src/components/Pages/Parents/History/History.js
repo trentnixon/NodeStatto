@@ -27,7 +27,7 @@ export default  class History extends Component {
                   <ListHistory 
                       SITE={this.props.LABELS.SITE} 
                       OrderBy='TeamID'
-                      {... this.props}/> } 
+                      {... this.props}/> }   
               />
 
               <Route  path={`/history/for/:teamID`} render={()=>  

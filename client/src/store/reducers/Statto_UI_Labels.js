@@ -33,16 +33,17 @@ const InitialState ={
                     CAREER:"CAREER",
                     FORMGUIDE:"FORM",
                     MILESTONE:"Milestones and Achievements",  
-                    SCORES:"SCORES" 
+                    SCORES:"SCORES"
                 },
                 SUBS:{
                     RUNS:"Runs",
                     BALLS:"By The Ball",  
-                    WICKETS:"Wickets",
+                    WICKETS:"Wickets", 
                     OVERS:"Over",
                     CATCHES:"Catches",
                     INNINGS:"Innings",
                     NOTABLESCORES:"Notable Scores",
+                    AVGVSRUN:"Average vs Runs over time",
                     PREVIOUS:"Previous",
                     NEXT:"Next",
                     FOR:"For",

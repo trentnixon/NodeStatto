@@ -7,8 +7,12 @@ const InitialState ={
     Meta:{
         SETLANG:"EN"
     },
-    Desktop:{}
-   
+    Desktop:{},
+    FORMS:{
+        SELECT:{
+            YEAR:"Career"
+        }
+    }
 }
  
 const UX = (state=InitialState, action) =>{ 
@@ -25,7 +29,13 @@ const UX = (state=InitialState, action) =>{
 				return {...state, Mobile: {...state.Mobile, MobileDrawerState:action.payload}}
 				// eslint-disable-next-line 
 				break
-            }            
+            } 
+            case "SELECT_YEAR":{
+                //console.log(action.payload);
+				return {...state, FORMS: {...state.FORMS, SELECT:{...state.FORMS.SELECT, YEAR:action.payload} }}
+				// eslint-disable-next-line 
+				break
+            }           
         }
 		return state;
 	}
