@@ -11,7 +11,7 @@ import InteractiveChart from "../../../../Charts/MixedChart";
 // Form 
 import SelectYear from "../../../../Elements/FormElements/FormSelect/SelectYear";
 // Variables
-let Series=[],Labels =[], Min, Max,NotOut=0;
+let Series=[],Labels =[], Min, Max,Div=0, NotOut=0;
 
 const SummaryPod = (props) => (
             <IconPod 
@@ -58,7 +58,8 @@ export default class Section_Default extends Component {
     CreateAVG(Data,Needle){
         let Series=[],NewYear;
         let TR=0;
-        NotOut=0;
+        Div=0;
+        NotOut=0
 
         Data.map((game,i)=>{
             let AVG=null;
@@ -67,20 +68,23 @@ export default class Section_Default extends Component {
                 if(Needle === "Career"){
                     // Redo all of this!!!
                     TR = TR + game.Batting.RunInt;
-                    if(game.Batting.NotOut === 0){ NotOut++}
-                    AVG = TR/NotOut;
+                    if(game.Batting.NotOut === 0){ Div++} else{ NotOut++}
+                    AVG = TR/Div;
                     if (!isFinite(AVG.toFixed(2))){AVG=0}
                     Series.push(parseFloat(AVG.toFixed(2)))
+                    console.log(NotOut);
 
                 }
                 else if(Needle === '20'+NewYear[2]){
                         TR = TR + game.Batting.RunInt;
-                    if(game.Batting.NotOut === 0){ NotOut++}
-                    AVG = TR/NotOut;
-                    if (!isFinite(AVG.toFixed(2))){AVG=0}
-                    Series.push(parseFloat(AVG.toFixed(2)))
+                        if(game.Batting.NotOut === 0){ Div++}else{ NotOut++}
+                        AVG = TR/Div;
+                        if (!isFinite(AVG.toFixed(2))){AVG=0}
+                        Series.push(parseFloat(AVG.toFixed(2)));
+                        console.log(NotOut);
                     }
             }
+            
             
             return true;
         })
