@@ -17,14 +17,22 @@ export default class Home_Overview extends Component {
         BALLS=[];
         DATES=[];
         AVG=[]
-     let g=0;
+        let g=0, avg=0;
         Data.map((game,i)=>{
             if(game.Batting){
                 g++;
                 RUNS.push(game.Batting.RunInt);
                 BALLS.push(game.Batting.BallsFacedInt)
                 if(game.Batting.NotOut === 1){ NO.push(1)}
-                AVG.push((RUNS.reduce((a, b) => a + b, 0)/ (g - NO.length)).toFixed(2))
+                avg=(RUNS.reduce((a, b) => a + b, 0)/ (g - NO.length)).toFixed(2);
+                if(isFinite(avg))
+                    {
+                        AVG.push(avg)
+                    }
+                    else{
+                        AVG.push(0)
+                    }
+               
                 SR.push((RUNS.reduce((a, b) => a + b, 0)/BALLS.reduce((a, b) => a + b, 0)*100).toFixed(2))
                 DATES.push(game.Meta.Opposition)
 
@@ -40,7 +48,11 @@ export default class Home_Overview extends Component {
         ];
     }
     createSeries(DATA){
+        
         let CreateData = this.Create(DATA);
+        
+        console.log(CreateData);
+
         Series = [{
             name: 'Runs',
             type: 'column',
