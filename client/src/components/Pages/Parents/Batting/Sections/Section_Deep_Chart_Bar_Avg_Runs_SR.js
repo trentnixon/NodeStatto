@@ -17,15 +17,18 @@ export default class Home_Overview extends Component {
         BALLS=[];
         DATES=[];
         AVG=[]
+     let g=0;
         Data.map((game,i)=>{
             if(game.Batting){
-                console.log(game)
+                g++;
                 RUNS.push(game.Batting.RunInt);
                 BALLS.push(game.Batting.BallsFacedInt)
                 if(game.Batting.NotOut === 1){ NO.push(1)}
-                AVG.push((RUNS.reduce((a, b) => a + b, 0)/ (Data.length - NO.length)).toFixed(2))
+                AVG.push((RUNS.reduce((a, b) => a + b, 0)/ (g - NO.length)).toFixed(2))
                 SR.push((RUNS.reduce((a, b) => a + b, 0)/BALLS.reduce((a, b) => a + b, 0)*100).toFixed(2))
                 DATES.push(game.Meta.Opposition)
+
+               // console.log(RUNS.reduce((a, b) => a + b, 0),g,NO.length, (RUNS.reduce((a, b) => a + b, 0)/ (Data.length - NO.length)))
             }
         })
 
@@ -51,7 +54,7 @@ export default class Home_Overview extends Component {
             type: 'area',
             data: CreateData[2]
           }
-        ];
+        ]; 
 
           this.setState({ 
             Series:Series,
