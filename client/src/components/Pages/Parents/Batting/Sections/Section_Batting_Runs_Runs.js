@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
+import history from  '../../../../../History';
 // Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
 import ChartContainer from "../../../../Template/Page/ChartContainer";
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-//import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
-
 // Charts
-import Donut from "../../../../Charts/donut";
-import Bar from "../../../../Charts/BarChart"; 
+import Bar from "../../../../Charts/BarChart_with_ClickEvent_LINK"; 
 //import GamesPlayed from "../../../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
 // Elements
 
-let PieRuns=[],Labels=[], PieBalls=[],TextSeries=[];
+let Labels=[],MonthSeries=[];
 
 let RunsYear=[ 
     { 
@@ -27,68 +22,103 @@ let RunsYear=[
     }
 ];
 
+
 export default class Section_Rankings extends Component {
          
     componentWillMount() {
 
-      this.setState({ year: this.props.DATA.overTheYears[0].int});
-        TextSeries=[]
-        PieRuns=[];
-        Labels=[];
-        PieBalls=[];
+        Labels=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+       
         RunsYear=[
                     { 
-                        name:"Runs",
+                        name:"Jan",
                         data:[] 
                     },
                     {
-                        name:"Innings",
+                        name:"Feb",
+                        data:[]
+                    },
+                    {
+                        name:"Mar",
+                        data:[]
+                    },
+                    {
+                        name:"Apr",
+                        data:[]
+                    },
+                    {
+                        name:"May",
+                        data:[]
+                    },
+                    {
+                        name:"Jun",
+                        data:[]
+                    },
+                    {
+                        name:"Jul",
+                        data:[]
+                    },
+                    {
+                        name:"Aug",
+                        data:[]
+                    },
+                    {
+                        name:"Sep",
+                        data:[]
+                    },
+                    {
+                        name:"Oct",
+                        data:[]
+                    },
+                    {
+                        name:"Nov",
+                        data:[]
+                    },
+                    {
+                        name:"Dec",
                         data:[]
                     }
                 ]
 
-        console.log(this.props.DATA.runs);
-        // eslint-disable-next-line
+        
+        MonthSeries=[];
         this.props.DATA.overTheYears.map((h,i)=>{
-                RunsYear[0].data.push(h.TotalRuns);
-                RunsYear[1].data.push(h.HistoryRuns.length);
-                Labels.push(h.int);
-              //  PieBalls.push(h.TotalBF);
-              //  PieRuns.push(h.TotalRuns);
 
-          })
+                let t=0;
+            
+                if(!MonthSeries[i]){ 
+                    MonthSeries.push({'name':h.int, 'data':[]});
+                    while (t < 12) { 
+                            MonthSeries[i].data.push(0); 
+                            t++;
+                    }
+                }
+            h.Month.map((m,t)=>{
+                    MonthSeries[i].data[m-1] = MonthSeries[i].data[m-1] + parseInt(h.HistoryRuns[t]);
+            })
+                RunsYear = MonthSeries;
+          });
     }
+
     render() {
         
-        console.log(RunsYear, PieRuns, Labels, TextSeries);
-        let  IsVisable =  this.props.isVisible === true ? 'show':'';
+        console.log(this.props.PathOpt);
         return (  
             <Row className="PodRow">
                 <ChartContainer
                     Info={this.props.TITLE.DESC.TODO}
                     Interactive={true}
-                    Title="Runs over the Years"
+                    Title="Runs over the Years by Month"
                     flex=" flex-100"
                 >
                     <Pod  className="" canvas="canvas1"> 
-                        <Bar  series={RunsYear}  Labels={Labels}/>
+                        <Bar  
+                            series={RunsYear}  
+                            Labels={Labels} 
+                            BasePath={'/batting/deep'}/>
                     </Pod>  
                 </ChartContainer>
             </Row>
             )
         }
-    } 
-
-
-    /**
-     *  <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive={true}
-                    Title="&nbsp;"
-                    flex=" flex-40 hide-Mobile"
-                >
-                    <Pod className="" type="Naked" canvas="">      
-                            <Donut series={PieRuns} Labels={Labels}  />
-                    </Pod>   
-                </ChartContainer>   
-     */
+    }

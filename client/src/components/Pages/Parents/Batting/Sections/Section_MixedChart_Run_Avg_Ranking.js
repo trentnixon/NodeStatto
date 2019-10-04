@@ -29,7 +29,7 @@ export default class Section_Default extends Component {
     state = {
         Series:[],
         Labels:[],
-        NotOuts:0
+        NotOuts:0 
       }
 
     CreateRuns(Data, Needle){ 
@@ -72,7 +72,7 @@ export default class Section_Default extends Component {
                     AVG = TR/Div;
                     if (!isFinite(AVG.toFixed(2))){AVG=0}
                     Series.push(parseFloat(AVG.toFixed(2)))
-                    console.log(NotOut);
+                    //console.log(NotOut);
 
                 }
                 else if(Needle === '20'+NewYear[2]){
@@ -81,11 +81,9 @@ export default class Section_Default extends Component {
                         AVG = TR/Div;
                         if (!isFinite(AVG.toFixed(2))){AVG=0}
                         Series.push(parseFloat(AVG.toFixed(2)));
-                        console.log(NotOut);
+                        //console.log(NotOut);
                     }
-            }
-            
-            
+            }            
             return true;
         })
        
@@ -147,7 +145,18 @@ export default class Section_Default extends Component {
 
                     <SelectYear {... this.props}/>
                     
+                    <Row className="PodRow">
+                        <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>
 
+                        <SummaryPod label={this.props.UX.FORMS.SELECT.YEAR + " Average"} total={this.state.Series[1].data[this.state.Series[1].data.length-1]} />
+                        <SummaryPod label="Highest Average " total={Math.max(...this.state.Series[1].data)} />
+                        <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />
+                        
+                        <SummaryPod label="Innings count " total={this.state.Series[0].data.length} />
+                        <SummaryPod label="Total Runs  " total={this.state.Series[0].data.reduce((a, b) => a + b, 0)} />
+                        <SummaryPod label="Not Outs  " total={NotOut} />
+                    </Row>
+                    
                     <Row className="PodRow">
                             <Pod canvas="canvas1 " className="flex-100">
                                 <InteractiveChart 
@@ -161,17 +170,7 @@ export default class Section_Default extends Component {
                             </Pod>
                     </Row> 
 
-                    <Row className="PodRow">
-                        <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>
-
-                        <SummaryPod label={this.props.UX.FORMS.SELECT.YEAR + " Average"} total={this.state.Series[1].data[this.state.Series[1].data.length-1]} />
-                        <SummaryPod label="Highest Average " total={Math.max(...this.state.Series[1].data)} />
-                        <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />
-                        
-                        <SummaryPod label="Innings count " total={this.state.Series[0].data.length} />
-                        <SummaryPod label="Total Runs  " total={this.state.Series[0].data.reduce((a, b) => a + b, 0)} />
-                        <SummaryPod label="Not Outs  " total={NotOut} />
-                    </Row>
+                    
                 </ChartContainer>
            
         ) 

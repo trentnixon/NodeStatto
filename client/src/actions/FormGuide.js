@@ -377,6 +377,7 @@ function RunOverTheYears(data,game){
     data.push(
                     {
                         "int":'20'+from[2],
+                        "Month":[from[1]],
                         "TotalRuns":game.Batting.RunInt, 
                         "TotalBF":game.Batting.BallsFacedInt,
                         "HistoryGames":[game.Meta.Fixture],
@@ -394,6 +395,7 @@ function RunOverTheYears(data,game){
             data[findKey].HistoryRuns.push(game.Batting.RunsValue)
             // Meta
             data[findKey].HistoryGames.push(game.Meta.Fixture)
+            data[findKey].Month.push(from[1])
    }
     
      return data
@@ -414,6 +416,7 @@ function BowlingOverTheYears(data,game){
     data.push(
                     {
                         "int":'20'+from[2],
+                        "Month":[from[1]],
                         "HistoryGames":[game.Meta.Fixture],
                         "TotalOB":game.Bowling.OversInt,
                         "TotalRC":parseInt(game.Bowling.Runs,10),

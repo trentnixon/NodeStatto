@@ -6,12 +6,44 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import {connect } from 'react-redux';
+import SnackBar from "../Elements/UI/LinkSnackBar";
 
+let timeout;
 class BarChart extends Component {
 
+
+    SetState(bar,Link,Title){ 
+        this.setState({
+          ...this.state,
+          SnackBar: bar,
+          Link:Link,
+          Title:Title
+        })
+      }
+
+      SetTime(){
+        timeout = setTimeout(function(){ this.SetState(false,false) }.bind(this),10000)
+      }
+
+  MarkerClicked(seriesIndex,dataPointIndex){
+
+        let Path = this.props.BasePath+'/'+(dataPointIndex+1)+'/'+this.props.series[seriesIndex].name
+        let Title = 'View Stats for '+ (dataPointIndex+1) +'/'+this.props.series[seriesIndex].name
+  
+        clearTimeout(timeout);
+        this.SetState(true,Path,Title)
+        this.SetTime();
+
+  }
+
   constructor(props) {
+
     super(props);
+    this.MarkerClicked = this.MarkerClicked.bind(this);
     this.state = { 
+        SnackBar:false,
+        Link:null,
+        title:null,
       options: {
           chart: { 
               id: "bar-chart",
@@ -22,6 +54,13 @@ class BarChart extends Component {
               dropShadow: this.props.CHART.dropShadow,
               offsetX: this.props.CHART.offsetX,
               offsetY: this.props.CHART.offsetY,
+              events: {
+                dataPointSelection: function(event, chartContext, config) {
+                  //console.log(event,config.seriesIndex, config.dataPointIndex);
+                 // console.log(this.props.LookUp);
+                  this.MarkerClicked(config.seriesIndex, config.dataPointIndex);
+                }.bind(this)
+              }
           },
           plotOptions:this.props.CHART.plotOptions,
           xaxis: { categories: this.props.Labels },
@@ -40,6 +79,7 @@ class BarChart extends Component {
     return (
       <div className="Charts HidePortait">
           <Chart options={this.state.options} series={this.props.series} type="bar"  />
+          <SnackBar open={this.state.SnackBar} Link={this.state.Link} Title={this.state.Title} />
       </div>
            
     );

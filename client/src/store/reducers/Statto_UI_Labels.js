@@ -4,7 +4,7 @@ const InitialState ={
         EN:{
             META:{
                 SITENAME:"STATTO",
-                BYLINE:"Reviewing your LMS Career"   
+                BYLINE:"The Pursuit of the Unnecessary"   
             },
             LOADING:{
                 PRELOADTEAMS:"Teams",
@@ -44,6 +44,7 @@ const InitialState ={
                     INNINGS:"Innings",
                     NOTABLESCORES:"Notable Scores",
                     AVGVSRUN:"Average vs Runs over time",
+                    RUNSYEARSLINE:"Runs: Year on Year",
                     PREVIOUS:"Previous",
                     NEXT:"Next",
                     FOR:"For",
@@ -75,7 +76,8 @@ const InitialState ={
                     FORMGUIDE:"Form data is pulled from the last 5 Games",
                     RANKINGLINE:"Players Career Batting, Bowling and Keeping rankings Compared as a Line graph ",
                     GAMESPLAYEDBAR:"Games played as a percentage over the years.",
-                    TEAMSPLAYEDFOR:"List of all the Teams played for and the Number of apperances for that Team"
+                    TEAMSPLAYEDFOR:"List of all the Teams played for and the Number of apperances for that Team",
+                    RUNSYEARSLINE:"This Graph can be used to compare a Players Year against another. Each line in this graph represents an Annual Run Haul."
                 },
                 FORM:{
                     INPUTLABELS:{

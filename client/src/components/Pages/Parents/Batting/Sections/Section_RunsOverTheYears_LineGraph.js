@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../Elements/type/PageTitle";
-
+import ChartContainer from "../../../../Template/Page/ChartContainer";
 import LineGraph from "../../../../Charts/LineChart";
 
 let Series=[], Labels=[];
-
-
 
 function FindValues(Year,Data){
     let DataSeries=[], DateSplit=[], ReturnArr=[];
@@ -43,7 +40,7 @@ function FindValues(Year,Data){
         i++;
       }
 
-    return ReturnArr;
+    return ReturnArr; 
 }
 
 function FindName(Data,Years){
@@ -63,20 +60,26 @@ function FindName(Data,Years){
 
 export default class Section_Default extends Component {
     componentWillMount() {
-        //console.log(this.props.DATA, this.props.PRIMARY.CAREER.Career.Meta.Games.history);
-        
+
         Series =  [ FindName(this.props.DATA, this.props.PRIMARY.CAREER.Career.Meta.Games.history)]
          Labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct','Nov','Dec'];
         
     } 
     render() {
-        console.log(Series);
+      //  console.log(Series);
         return ( 
             <Row className="PodRow"> 
-                    <Title Title={this.props.TITLE.TITLES.SCORES} /> 
+                <ChartContainer
+                    Info={this.props.TITLE.DESC.RUNSYEARSLINE}
+                    Interactive={true}
+                    Title={this.props.TITLE.SUBS.RUNSYEARSLINE}
+                    flex=" flex-100"
+                >
                     <Pod canvas="canvas1 " className="flex-100">
                         <LineGraph series={Series[0]} Labels={Labels}/>
                     </Pod>
+                </ChartContainer>
+                    
             </Row> 
         ) 
     }

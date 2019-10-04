@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 // Template
 import Container from "../../../Template/Page/Container";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
@@ -20,24 +21,25 @@ export default class Batting extends Component {
 
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary; 
-
+    console.log(this.props.DATA_SETUP)
   }
 
   render() { 
     return (     
       <Container>
+        
+ 
+
         <SectionHeader   h1={this.props.LABELS.SITE.SUBS.RUNS} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
      
-        <p> Total Runs: Move Runs by year to Text(percentage as text as well) and Runs by Month to the Bar : </p>
-
         <SectionContainer className="Section_Batting_Runs charts todo">
           <SectionRunsBasics  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
         </SectionContainer>
         
         <SectionContainer className="Section_Batting_Runs charts todo">
-          <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
+          <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting}  PathOpt={this.props.DATA_SETUP}/>
         </SectionContainer>
-         
+          
         <SectionContainer className="Section_Batting_Runs todo"> 
             <RunsOverYearsLineGraph 
               TITLE={TITLES.SITE} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY}

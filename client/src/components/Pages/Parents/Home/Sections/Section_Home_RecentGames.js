@@ -26,7 +26,7 @@ export default class History extends Component {
               />
               
           </PodWrapper>      
-      </Row> 
+      </Row>  
     )
   }
 } 

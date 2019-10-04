@@ -32,7 +32,7 @@ export default class FORM_SELECT_YEAR extends Component {
         console.log(this.props.UX.FORMS.SELECT.YEAR)
         return (
                 <Row className="PodRow Form_Selector flex-100"> 
-                    <Pod  className="flex-50" canvas=""> 
+                    <Pod  className="flex-50" canvas="">  
                         <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
                                 {this.props.TITLE.FORM.INPUTLABELS.VARIABLE} Hello

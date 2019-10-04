@@ -184,6 +184,8 @@ export function FetchData(){
                     Fixture:game["0"]["0"].id,
                     FixtureInt:Fixed,
                     Date:game["0"]["0"].meta,
+                    Month: parseInt(SplitDate[1]),
+                    Year:parseInt('20'+SplitDate[2]),
                     Team: this.STRReplace(game[1]["0"].meta) ,
                     TeamID:game[1]["0"].id,
                     Opposition: this.STRReplace(game[2]["0"].meta),

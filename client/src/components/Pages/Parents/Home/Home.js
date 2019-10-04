@@ -54,7 +54,7 @@ export default class Statto extends Component {
                   <MileStoneOverview 
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
-                      TITLES = {TITLES.SITE.TITLES} 
+                      TITLES = {TITLES.SITE.TITLES}  
                       DATA={PRIMARY}
                   />
               </SectionContainer>   
@@ -64,7 +64,7 @@ export default class Statto extends Component {
                     TITLES={TITLES.SITE.TITLES} 
                     CTA={TITLES.SITE.CTA} 
                     SUBS={TITLES.SITE.SUBS}
-                    DATA={PRIMARY.CLEAN}
+                    DATA={PRIMARY.CLEAN} 
                  
                   />
               </SectionContainer>  

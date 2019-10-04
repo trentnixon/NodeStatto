@@ -6,7 +6,7 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 // Sections
 import MixedChartRunsAVGRanking from "./Sections/Section_MixedChart_Run_Avg_Ranking";
-
+import AverageByTeam from "./Sections/Section_Average_ByTeam";
 // Variables
 let PRIMARY,TITLES;
 export default class Formguide
@@ -31,6 +31,15 @@ export default class Formguide
             />
         </SectionContainer>  
 
+        <SectionContainer className="Section_Batting_Runs charts todo">
+          <AverageByTeam 
+            TITLE={TITLES.SITE} 
+            DATA={PRIMARY.CLEAN} 
+      
+            {... this.props}
+          />
+
+        </SectionContainer>
         </Container>
     )
   } 

@@ -20,13 +20,13 @@ export default class RankingHomePod extends Component {
        
         if(data.length > 0){
             if(data[data.length-2].rank < data[data.length-1].rank){
-                Arrow= <TrendingDown nativeColor="#ce7070" className="RankingIcon"/>;
+                Arrow= <TrendingDown color="#ce7070" className="RankingIcon"/>;
             }
             else if(data[data.length-2].rank > data[data.length-1].rank){
-                Arrow =<TrendingUp nativeColor="#70ce90" className="RankingIcon"/>;
+                Arrow =<TrendingUp color="#70ce90" className="RankingIcon"/>;
             }
             else if(data[data.length-2].rank === data[data.length-1].rank){
-                Arrow =<TrendingFlat nativeColor="#cec570" className="RankingIcon"/>;
+                Arrow =<TrendingFlat color="#cec570" className="RankingIcon"/>;
             }
             return Arrow;
         } 
