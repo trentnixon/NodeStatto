@@ -83,7 +83,7 @@ export default class Page_ForandAgainstMajorTable extends Component {
         AGAINST:AGAINST,
         FOR:FOR
     })
-  }
+  } 
 
   handleRadioChange = event => {
     this.setState({ RadioValue: event.target.value });

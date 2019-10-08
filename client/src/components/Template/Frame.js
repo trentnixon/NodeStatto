@@ -82,7 +82,7 @@ HideOnScroll.propTypes = {
 
 const NavBarBottom = (props) => (
   <div className="NavBarBottom">
-    <p>Bottom</p>
+
   </div>
 );
 

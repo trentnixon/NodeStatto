@@ -27,11 +27,11 @@ const Nav_Icons=[
   }
 ]
 
-let Path=null;
+//let Path;
 export default class APPBARLAYOUT extends React.Component {
   
   componentWillMount() { 
-    Path = this.props.match.params.playerid;
+      //Path = this.props.match.params.playerid;
   } 
   
   render() {

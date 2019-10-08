@@ -53,7 +53,7 @@ function FindName(Data,Years){
             })
             return true;
     })
-   // console.log(NewSeries);
+   //console.log(NewSeries);
    return NewSeries;
 }
 
@@ -66,7 +66,7 @@ export default class Section_Default extends Component {
         
     } 
     render() {
-      //  console.log(Series);
+      //console.log(Series);
         return ( 
             <Row className="PodRow"> 
                 <ChartContainer

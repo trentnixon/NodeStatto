@@ -36,7 +36,7 @@ export default function TransitionsSnackbar(props) {
   }
 /*
  function handlePush(id){
-        console.log(id);
+        //console.log(id);
  }
  */
   return (

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import history from  '../../../../../History';
 // Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
@@ -85,7 +84,6 @@ export default class Section_Rankings extends Component {
         this.props.DATA.overTheYears.map((h,i)=>{
 
                 let t=0;
-            
                 if(!MonthSeries[i]){ 
                     MonthSeries.push({'name':h.int, 'data':[]});
                     while (t < 12) { 
@@ -93,16 +91,18 @@ export default class Section_Rankings extends Component {
                             t++;
                     }
                 }
-            h.Month.map((m,t)=>{
-                    MonthSeries[i].data[m-1] = MonthSeries[i].data[m-1] + parseInt(h.HistoryRuns[t]);
-            })
+                h.Month.map((m,t)=>{
+                    MonthSeries[i].data[m-1] = MonthSeries[i].data[m-1] + parseInt(h.HistoryRuns[t],10);
+                        return true;
+                    })
                 RunsYear = MonthSeries;
+                return true;
           });
     }
 
     render() {
         
-        console.log(this.props.PathOpt);
+        //console.log(this.props.PathOpt);
         return (  
             <Row className="PodRow">
                 <ChartContainer
@@ -112,7 +112,7 @@ export default class Section_Rankings extends Component {
                     flex=" flex-100"
                 >
                     <Pod  className="" canvas="canvas1"> 
-                        <Bar  
+                        <Bar   
                             series={RunsYear}  
                             Labels={Labels} 
                             BasePath={'/batting/deep'}/>

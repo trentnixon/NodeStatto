@@ -7,6 +7,7 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import {connect } from 'react-redux';
 import SnackBar from "../Elements/UI/LinkSnackBar";
+import {ChartMouseEnter} from "../../actions/ga";
 
 let timeout;
 class BarChart extends Component {
@@ -54,11 +55,15 @@ class BarChart extends Component {
               dropShadow: this.props.CHART.dropShadow,
               offsetX: this.props.CHART.offsetX,
               offsetY: this.props.CHART.offsetY,
-              events: {
+              events: { 
                 dataPointSelection: function(event, chartContext, config) {
                   //console.log(event,config.seriesIndex, config.dataPointIndex);
-                 // console.log(this.props.LookUp);
+                 //console.log(this.props.LookUp);
                   this.MarkerClicked(config.seriesIndex, config.dataPointIndex);
+                  ChartMouseEnter("Chart Data Point Mouse Click", "Month by Year",(config.dataPointIndex+1)+'/'+this.props.series[config.seriesIndex].name)
+                }.bind(this),
+                dataPointMouseEnter: function(event, chartContext, config) {
+                  ChartMouseEnter("Chart Data Point Mouse Enter", "Month by Year",(config.dataPointIndex+1)+'/'+this.props.series[config.seriesIndex].name)
                 }.bind(this)
               }
           },

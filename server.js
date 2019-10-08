@@ -90,7 +90,7 @@ function TeamSheet(html){
     // team-profile-2019-content-block
     const TeamTable = $('#team-profile-2019-content-block');
     let Rows=[];
-   // console.log(TeamTable);
+   //console.log(TeamTable);
         TeamTable.has('div.team-top-player').each(function() {
             var arrayItem = {};
             $('div.name', $(this)).each(function(index, item) 
@@ -258,7 +258,7 @@ function StripscoreCard(html){
     function(done){
      
       request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
-
+      
         if(!error && response.statusCode == 200){ 
 
                 done(null, html);

@@ -30,7 +30,7 @@ class LineCharts extends Component {
           
         },
         stroke: {
-            width: [2],
+            width: [1],
             curve: 'smooth'
           },
         plotOptions: {

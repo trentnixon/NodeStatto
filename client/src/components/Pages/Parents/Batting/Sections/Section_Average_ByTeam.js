@@ -20,6 +20,7 @@ export default class Section_Default extends Component {
        Round1=[];
         Data.map((team,i)=>{
             if(team.Innings > Int){ Round1.push(team) }
+            return true;
         })
 
         Round1 = _.orderBy(Round1, [function(o) { return o.AVG; }],['desc']);

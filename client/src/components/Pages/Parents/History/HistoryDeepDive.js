@@ -29,12 +29,12 @@ class HistoryFor extends Component {
   componentWillMount() { 
       
       matchPlayer = matchPath(this.props.history.location.pathname, { path: '/history/:for/:displayTeam',})
-      DisplayTeam = this.FindTeam(matchPlayer.params.displayTeam); 
+      DisplayTeam = this.FindTeam(matchPlayer.params.displayTeam);  
       
     }
 
   render() {
-    console.log(DisplayTeam)
+    //console.log(DisplayTeam)
     return ( 
         <Container>
             <SectionHeader h1={this.props.TITLE} h2={DisplayTeam.Team} />
@@ -50,7 +50,7 @@ class HistoryFor extends Component {
                             <SingleValuePod className="flex-30"  label="Strike Rate" total={DisplayTeam.SR} icon= ""  Footer = "" />
                          
                         </Row>
-
+ 
                     <SectionHeader  h2="Bowling" />
                         <Row className="PodRow">
                             <SingleValuePod className="flex-30"  label="Wickets" total={DisplayTeam.Wickets} icon= ""  Footer = "" />

@@ -11,7 +11,7 @@ import InteractiveChart from "../../../../Charts/MixedChart";
 // Form 
 import SelectYear from "../../../../Elements/FormElements/FormSelect/SelectYear";
 // Variables
-let Series=[],Labels =[], Min, Max,Div=0, NotOut=0;
+let Series=[],Div=0, NotOut=0;
 
 const SummaryPod = (props) => (
             <IconPod 
@@ -20,7 +20,7 @@ const SummaryPod = (props) => (
                 className="flex-30"
                 icon=""
                 Footer = ""
-            />
+            /> 
 );
 
 // Start Class 
@@ -57,7 +57,7 @@ export default class Section_Default extends Component {
 
     CreateAVG(Data,Needle){
         let Series=[],NewYear;
-        let TR=0;
+        let TR=0; 
         Div=0;
         NotOut=0
 
@@ -143,7 +143,7 @@ export default class Section_Default extends Component {
                     flex=" flex-100"
                 >
 
-                    <SelectYear {... this.props}/>
+                    <SelectYear {... this.props}/> 
                     
                     <Row className="PodRow">
                         <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>

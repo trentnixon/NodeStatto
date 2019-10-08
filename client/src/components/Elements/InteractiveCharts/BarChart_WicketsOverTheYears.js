@@ -67,7 +67,7 @@ export default class Section_Rankings extends Component {
             }
         })
 
-       // console.log(WicketsYears, year);
+       //console.log(WicketsYears, year);
 
         this.setState(
             { 

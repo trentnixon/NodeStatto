@@ -15,6 +15,7 @@ export default class Formguide
   componentWillMount() { 
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary; 
+    
   }
 
   render() {

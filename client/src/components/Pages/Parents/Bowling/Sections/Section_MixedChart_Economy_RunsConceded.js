@@ -134,7 +134,7 @@ export default class Section_Default extends Component {
         //console.log(Series);
     } 
     render() {
-        console.log( this.props.DATA)
+        //console.log( this.props.DATA)
         return ( 
             <Row className="PodRow">
                     <Title Title={this.props.TITLE.SUBS.AVG + ' / ' +this.props.TITLE.SUBS.ECO + ' / ' +this.props.TITLE.SUBS.SR} /> 

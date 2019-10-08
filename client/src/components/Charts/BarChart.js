@@ -15,7 +15,7 @@ class BarChart extends Component {
       options: {
           chart: { 
               id: "bar-chart",
-              stacked: true,
+              stacked: false,
               animations: this.props.CHART.animations,
               toolbar:this.props.CHART.toolbar,
               background: this.props.CHART.background, 
@@ -25,8 +25,37 @@ class BarChart extends Component {
           },
           plotOptions:this.props.CHART.plotOptions,
           xaxis: { categories: this.props.Labels },
+          dataLabels: {
+            enabled: true,
+            style: {
+                colors: ['#969696']
+            },
+          },
           labels: [],
-          fill: this.props.CHART.fill,
+          fill: {
+            type: 'gradient',
+              gradient: {
+                inverseColors: false,
+                shadeIntensity: 1,
+                shade: 'light',
+                type: "vertical",
+                opacityFrom: 1,
+                opacityTo: 0.3,
+                stops: [0, 98, 100]
+              }
+            },
+            tooltip: {
+              shared: true,
+              intersect: false,
+              y: {
+                formatter: function (y) {
+                  if (typeof y !== "undefined") {
+                    return y.toFixed(2);
+                  }
+                  return y;
+                }
+              }
+            },
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
       }

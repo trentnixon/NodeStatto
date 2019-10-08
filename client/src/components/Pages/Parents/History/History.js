@@ -28,7 +28,7 @@ export default  class History extends Component {
                       SITE={this.props.LABELS.SITE} 
                       OrderBy='TeamID'
                       {... this.props}/> }   
-              />
+              />  
 
               <Route  path={`/history/for/:teamID`} render={()=>  
                     <HistoryDeepDive  

@@ -13,6 +13,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 // Action 
 import {Form_Select_Year} from "../../../../actions/UI";
+import {GA_Form_Select_Year} from "../../../../actions/ga";
 
 // Start Class 
 export default class FORM_SELECT_YEAR extends Component {
@@ -23,22 +24,25 @@ export default class FORM_SELECT_YEAR extends Component {
       }
 
 
-
+ 
     // Form Handling
-    handleChange = event => { Form_Select_Year(event.target.value) }
+    handleChange = event => { 
+        Form_Select_Year(event.target.value) 
+        GA_Form_Select_Year(event.target.value)
+    }
     componentWillMount() {  } 
 
     render() {
-        console.log(this.props.UX.FORMS.SELECT.YEAR)
+        //console.log(this.props)
         return (
                 <Row className="PodRow Form_Selector flex-100"> 
                     <Pod  className="flex-50" canvas="">  
                         <FormControl variant="outlined" className="YearSelector" >
                             <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                                {this.props.TITLE.FORM.INPUTLABELS.VARIABLE} Hello
+                                {this.props.TITLE.FORM.INPUTLABELS.VARIABLE}
                             </InputLabel>
                                 <Select
-                                    value={this.props.UX.FORMS.SELECT.YEAR} 
+                                    value={this.props.UX.FORMS.SELECT.YEAR}  
                                     onChange={this.handleChange}
                                     input={ <OutlinedInput 
                                                 labelWidth={this.state.labelWidth}

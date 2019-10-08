@@ -4,14 +4,8 @@ import Row from "../../../../Template/Page/Row";
 import PodWrapper from "../../../../Elements/pods/Pod_Outer_Wrapper";
 
 // Form 
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-
+import SELECTYEAR from "../../.././../Elements/FormElements/FormSelect/SelectYear"
 import ListHistory from "../../../../Elements/Lists/List_History"
-//import List from '@material-ui/core/List'; 
 
 var _ = require('lodash');
 
@@ -22,10 +16,6 @@ export default class Section_HistoryList extends Component {
             Year:"Career",
             Created:0,
             List:[]
-      }
-
-      handleChange = event => {
-        this.createList(this.props.List,event.target.value,this.props.SelectedID)
       }
     
       createList(arr , Year, SelectedTeam)  
@@ -62,34 +52,23 @@ export default class Section_HistoryList extends Component {
         }
 
   componentWillMount() { 
-        this.createList(this.props.List, "Career", this.props.SelectedID)
+        this.createList(this.props.List,this.props.UX.FORMS.SELECT.YEAR, this.props.SelectedID)
     }
 
+    shouldComponentUpdate(nextProps, nextState){ return true;}
+    componentWillUpdate(nextProps, nextState){
+        if(this.props.UX.FORMS.SELECT.YEAR !== nextProps.UX.FORMS.SELECT.YEAR)
+        { this.createList(this.props.List,nextProps.UX.FORMS.SELECT.YEAR,this.props.SelectedID) }
+   
+    } 
   render() {     
     return (
         <div>
             <Row className="PodRow Form_Selector">
-                <PodWrapper col="Selector" type="Zeroed" >
-                    <FormControl variant="outlined" className="YearSelector" >
-                        <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                            {this.props.LABELS.SITE.FORM.INPUTLABELS.YEARS} 
-                        </InputLabel>
-                        <Select
-                            value={this.state.Year}
-                            onChange={this.handleChange}
-                            input={ <OutlinedInput labelWidth={this.state.labelWidth} name="year" id="outlined-year-simple" /> }
-                        >
-                            <MenuItem value="Career" >{this.props.LABELS.SITE.TITLES.CAREER}</MenuItem>
-                                {
-                                    this.props.Years.map((year,i)=>{
-                                        return(
-                            <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
-                                        )
-                                    })
-                                }
-                        </Select>
-                    </FormControl>
-                </PodWrapper>
+                <SELECTYEAR 
+                    TITLE={this.props.LABELS.SITE} 
+                    {... this.props}
+                />
             </Row>
             <Row className="PodRow"> 
                 <PodWrapper  className="flex-100" canvas="canvas1">
@@ -105,11 +84,10 @@ export default class Section_HistoryList extends Component {
   }
 } 
 
-
 /**
  *  COMPONENT NOTES
  *  
  *  Complete move to Titles and Labels
- *  
+ *
  * 
  */

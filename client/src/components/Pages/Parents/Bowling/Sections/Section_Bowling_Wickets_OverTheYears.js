@@ -38,7 +38,7 @@ export default class Section_Bowling_WicketsOverTheYears extends Component {
                 name:"Overs Bowled",
                 data:[]
             } */
-     console.log(this.props.Data)
+     //console.log(this.props.Data)
      // eslint-disable-next-line
         this.props.Data.map((h,i)=>{  
           

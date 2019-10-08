@@ -23,7 +23,7 @@ export default class BattingHub extends Component {
  
   componentWillMount() {}
   render() {
-    console.log(this.props)
+    
     return ( 
             <Container>           
                 <Switch history={history}> 

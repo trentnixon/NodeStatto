@@ -79,7 +79,7 @@ export default class AutoComplete extends React.Component{
   }
   render() {
     const { value, suggestions } = this.state;
-   // console.log(this.props.LOGIN)
+   //console.log(this.props.LOGIN)
     // Autosuggest will pass through all these props to the input.
     const inputProps = {
       placeholder: this.props.LABELS.LOGIN.SELECTTEAM,

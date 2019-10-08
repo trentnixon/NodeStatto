@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
 
 // Actions
 import {ResetPlayer} from "../../../actions/Setup_Statto_UI";
@@ -32,10 +31,7 @@ export default  class Login extends Component {
         return (
             <ul id="TeamSheet">
                 {
-                    this.props.DATA_SETUP.SelectTeamRoster.map((row,i)=>{
-                        let  IsVisable =  this.props.isVisible === true ? 'show':'';
-                        let Delay = 50*i;
-                       
+                    this.props.DATA_SETUP.SelectTeamRoster.map((row,i)=>{                       
                             return(
                                
                                     <li key={i} className="HistoryItem" onClick={()=>{this.FetchThisPlayer(row.meta, this.props.DATA_SETUP.SelectTeamID, row.id)}} >

@@ -9,7 +9,7 @@ export default class History extends Component {
 
   componentWillMount() {}
   render() {
-    console.log(this.props.SITE.TITLES.HISTORY)
+    //console.log(this.props.SITE.TITLES.HISTORY, this.props)
     return (
       <div>
           <SectionHeader h1={this.props.SITE.TITLES.HISTORY } h2={this.props.SITE.TITLES.CAREER} />

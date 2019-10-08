@@ -11,7 +11,7 @@ import DeepGameTable from "./Sections/Section_Deep_Game_Table";
 
 
 // Variables
-let PRIMARY,TITLES, DeepData=[];
+let TITLES, DeepData=[];
 // Start Class
 export default class Batting extends Component {
 
@@ -19,6 +19,7 @@ export default class Batting extends Component {
     DeepData=[]
     this.props.PLAYER_DATA.Primary.CLEAN.map((game,i)=>{
         if(game.Meta.Month === m && game.Meta.Year === y){ DeepData.push(game)}
+        return true;
     })
 
     return DeepData;
@@ -30,8 +31,8 @@ export default class Batting extends Component {
 
   render() { 
     let matchPlayer = matchPath(window.location.pathname, 
-      { path: '/:team/:id/batting/deep/:m/:y',})
-    let Selected = this.FindClean(parseInt(matchPlayer.params.m) ,parseInt(matchPlayer.params.y))
+      { path: '/:team/:id/batting/deep/:m/:y'})
+    let Selected = this.FindClean(parseInt(matchPlayer.params.m, 10) ,parseInt(matchPlayer.params.y,10))
 
     return (     
       <Container>

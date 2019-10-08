@@ -21,7 +21,7 @@ export default class ScoreCardFrame extends Component {
        
        // ScoreCard.Gameid = 238015;
        // ScoreCard.start();
-       console.log(this.props)
+       //console.log(this.props)
    }
 
    shouldComponentUpdate(){return true;}

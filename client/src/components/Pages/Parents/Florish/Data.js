@@ -21,10 +21,10 @@ export default class Batting extends Component {
             Incomplete!!
 
             if(item.Meta.TeamID == string){
-                console.log(item.Meta.TeamID)
+                //console.log(item.Meta.TeamID)
                 let Year = item.Meta.Date.split('/');
 
-                console.log(Year[2], _.find(Data.batting, ['Year', Year[2]]))
+                //console.log(Year[2], _.find(Data.batting, ['Year', Year[2]]))
 
 
                 Data.batting.push({Year:Year[2]})
@@ -33,10 +33,10 @@ export default class Batting extends Component {
 
             }
         */
-
+            return true;
     })
 
-    console.log(Data);
+    //console.log(Data);
   }
 
   CreateString(DataArr, PushTo, Var, Value){
@@ -47,7 +47,7 @@ export default class Batting extends Component {
         let Find = _.find(DataArr, [Var, year]);
         if(Find){  PushTo.push( PushTo[i] + Find[Value] ); }
         else{ PushTo.push(PushTo[i] + 0); }
-
+      return true;
     })
 
     return PushTo.splice(1, YearlList.length);
@@ -56,10 +56,10 @@ export default class Batting extends Component {
 
   render() {
 
-    const SITELABELS = this.props.LABELS.SITE;
+    //const SITELABELS = this.props.LABELS.SITE;
     const PRIMARY = this.props.PLAYER_DATA.Primary;
     
-    console.log(PRIMARY);
+    //console.log(PRIMARY);
 
     let BowlingResultNew=[0],BattingresultNew=[0],GamesresultNew=[0];
     
@@ -70,7 +70,7 @@ export default class Batting extends Component {
     GamesresultNew = this.CreateString(PRIMARY.CAREER.Career.Meta.Games.history,GamesresultNew,'year','Int' );
 
     
-    
+    // eslint-disable-next-line
     switch( Math.floor(PRIMARY.Meta.Matches/100) ) {
         case 0:
             level='Less than 100 Games'
@@ -87,7 +87,7 @@ export default class Batting extends Component {
         case 4:
                 level='400 - 500 Games'
                 break;
-        case 4:
+        case 5:
                 level='500 - 600 Games'
             break;
       }

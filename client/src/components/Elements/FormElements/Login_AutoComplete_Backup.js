@@ -159,7 +159,7 @@ export default class DownshiftMultiple extends React.Component {
   handleKeyDown = event => {
     
     const { inputValue, selectedItem } = this.state;
-    console.log("handleKeyDown" + event.target.value)
+    //console.log("handleKeyDown" + event.target.value)
 
     if (selectedItem.length && !inputValue.length && event.key === 'Backspace') {
       this.setState({
@@ -171,13 +171,13 @@ export default class DownshiftMultiple extends React.Component {
   handleInputChange = event => {
     
     this.setState({ inputValue: event.target.value });
-    console.log("handle handleInputChange " + event.target.value)
+    //console.log("handle handleInputChange " + event.target.value)
   };
 
   handleChange = item => {
     let { selectedItem } = this.state;
 
-    console.log("handle change " + item)
+    //console.log("handle change " + item)
     if (selectedItem.indexOf(item) === -1) {
       selectedItem = [...selectedItem, item];
     }
@@ -262,7 +262,7 @@ DownshiftMultiple.propTypes = {
 
 function IntegrationDownshift(props) {
   const { classes } = props;
-  console.log(props.LOGIN.LOGINDATA)
+  //console.log(props.LOGIN.LOGINDATA)
 
   return (
     <div className="">

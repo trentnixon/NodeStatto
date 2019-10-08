@@ -21,7 +21,7 @@ export default class Statto extends Component {
     TITLES = this.props.LABELS ;
     PRIMARY = this.props.PLAYER_DATA.Primary;
 
-    console.log(TITLES);
+    //console.log(TITLES);
     return (
             <Container>
               <SectionHeader h1={TITLES.SITE.TITLES.TEAMS} h2={TITLES.SITE.CTA.FULL} /> 

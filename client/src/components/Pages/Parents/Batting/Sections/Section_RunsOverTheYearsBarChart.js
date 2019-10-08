@@ -44,7 +44,7 @@ export default class Section_Default extends Component {
                 data: CreateScatter(this.props.PLAYER_DATA.Primary.CLEAN,{ min: 60, max: 600})
             },
           ]
-        console.log(Series);
+        //console.log(Series);
     } 
     render() {
         return ( 

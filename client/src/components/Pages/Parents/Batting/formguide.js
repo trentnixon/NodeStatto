@@ -9,6 +9,7 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionCareerBatting from "./Sections/Section_FormGuide_AtAGlance_Batting";
 import SectionMilestonesBatting from "./Sections/Section_Career_Milestones_Batting";
 import SectionBattingrecentScores from "./Sections/Section_Batting_recentScores";
+import SectionRunsToBalls from "./Sections/Section_Batting_FORM_Runs_Balls";
 
 let PRIMARY, TITLES;
 export default class Page_Batting_Formguide
@@ -33,6 +34,8 @@ export default class Page_Batting_Formguide
                   TITLES={TITLES.SITE}
            
                 /> 
+
+              <SectionRunsToBalls Data={PRIMARY.CLEAN}  TITLES={TITLES.SITE}/>
             </SectionContainer> 
 
             <SectionContainer className="Section_Batting_FormGuide todo">

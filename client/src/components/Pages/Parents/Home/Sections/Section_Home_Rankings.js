@@ -12,7 +12,7 @@ import RankingPod from "../../../../Elements/pods/RankingHomePod";
 let stones=[];
 export default class Home_Section_Rankings extends Component {
     componentWillMount() {
-        console.log(this.props.DATA)
+        //console.log(this.props.DATA)
         //   { var:this.props.PLAYER_DATA.Primary.Keeping, Path:"/keeping/", label:this.props.TITLES.KEEPING,icon:<Keeping/>}
          stones=[
             { var:this.props.DATA.Batting,  Path:"/batting/", label:this.props.SITE.BATTING,icon:<Batting/>},

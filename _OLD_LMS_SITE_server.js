@@ -106,7 +106,7 @@ function DataLoopAddRow(html){
 function ping(html){
     //console.log(html)
     var $ = cheerio.load(html);
-   // console.log($('.rank-table tbody tr'));
+   //console.log($('.rank-table tbody tr'));
    DataLoop(html)
     const data = $('#pp-new-top-right-details h2');
     return data.text();

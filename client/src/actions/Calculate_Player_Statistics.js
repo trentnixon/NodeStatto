@@ -177,15 +177,15 @@ export function FetchData(){
          //let Fixed = new Date( SplitDate[2]+'/'+SplitDate[1]+'/'+SplitDate[0]).getTime();
          //console.log(SplitDate, Fixed)
      
-           // console.log(game[2]["0"].meta, game[2]["0"].meta.replace('&apos;',"'").replace(['&amp;'],'&'));
+           //console.log(game[2]["0"].meta, game[2]["0"].meta.replace('&apos;',"'").replace(['&amp;'],'&'));
         
             this.StoredData.push({
                 Meta:{
                     Fixture:game["0"]["0"].id,
                     FixtureInt:Fixed,
                     Date:game["0"]["0"].meta,
-                    Month: parseInt(SplitDate[1]),
-                    Year:parseInt('20'+SplitDate[2]),
+                    Month: parseInt(SplitDate[1],10),
+                    Year:parseInt('20'+SplitDate[2],10),
                     Team: this.STRReplace(game[1]["0"].meta) ,
                     TeamID:game[1]["0"].id,
                     Opposition: this.STRReplace(game[2]["0"].meta),

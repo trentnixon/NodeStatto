@@ -32,7 +32,7 @@ export default class SectionTableForAgainst  extends Component {
                 )
             }
             else{
-                return( null)
+                return( null) 
             } 
         }) 
         Rows = Rows.filter(function (el) { return el != null; });

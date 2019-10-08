@@ -10,7 +10,7 @@ import  {Runs} from "../../../../Icons/icons";
 let stones=[];
 export default class Home_Overview extends Component {
     componentWillMount() { 
-        console.log(this.props.DATA)
+        //console.log(this.props.DATA)
        
          stones=[
             { var:this.props.DATA.Meta.Bowling_Wickets,                    Path:"bowling/overview", label:this.props.SUBS.WICKETS,icon:<Runs/>},
