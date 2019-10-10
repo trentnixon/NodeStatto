@@ -87,6 +87,7 @@ class ScatterChart extends React.Component {
             yaxis: { max: this.props.HS+10 },
             legend: this.props.CHART.legend,
             theme: this.props.CHART.theme,
+            responsive: this.props.CHART.responsive
           },
           series: this.props.DATA,
         }

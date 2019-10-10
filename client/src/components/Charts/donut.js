@@ -27,6 +27,7 @@ class Chart_DONUT extends Component {
           labels: this.props.Labels,
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
+          responsive: this.props.CHART.responsive,
       },
      
       series:this.props.series,

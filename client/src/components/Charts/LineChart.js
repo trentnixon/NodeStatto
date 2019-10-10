@@ -32,11 +32,12 @@ class LineCharts extends Component {
         },
         xaxis: { categories: this.props.Labels,},
 
-        label : this.props.Labels,
+        labels : this.props.Labels,
         fill: this.props.CHART.fill,
         
         legend: this.props.CHART.legend,
         theme: this.props.CHART.theme,
+        responsive: this.props.CHART.responsive,
       },
       series: this.props.series,
     }; 

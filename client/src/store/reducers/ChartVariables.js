@@ -34,7 +34,7 @@ const InitialState ={
         position: 'bottom',
         horizontalAlign: 'left',
         offsetX: 40
-      },
+      }, 
       theme: {
         palette: 'palette3',
         /*monochrome: { // monochrome allows you to select just 1 color and fill out the rest with light/dark shade (intensity can be selected)
@@ -62,6 +62,31 @@ const InitialState ={
           }
         }
       },
+      responsive: [
+        {
+          breakpoint: 5000,
+          options: {
+            chart: { 
+                height:600,
+            }
+          }
+        },{
+            breakpoint: 2000,
+            options: {
+              chart: { 
+                  height:500,
+              }
+            }
+          },
+          {
+          breakpoint: 1024,
+          options: {
+            chart: { 
+                height:300,
+            }
+          }
+        }
+      ]
   
 }
 

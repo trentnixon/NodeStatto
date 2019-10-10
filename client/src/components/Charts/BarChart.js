@@ -58,6 +58,7 @@ class BarChart extends Component {
             },
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
+          responsive: this.props.CHART.responsive,
       }
      
     };

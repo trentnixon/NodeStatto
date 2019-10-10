@@ -26,6 +26,7 @@ class BarChart extends Component {
           chart: { 
               id: "bar-chart",
               stacked: false,
+           
               animations: this.props.CHART.animations,
               toolbar:this.props.CHART.toolbar,
               background: this.props.CHART.background, 
@@ -92,6 +93,7 @@ class BarChart extends Component {
             },
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
+          responsive: this.props.CHART.responsive
       }
      
     };

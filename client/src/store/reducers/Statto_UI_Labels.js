@@ -49,7 +49,7 @@ const InitialState ={
                     NEXT:"Next",
                     FOR:"For",
                     AGAINST:"Against",
-                    FORAGAINST:"For and Against",
+                    FORAGAINST:"For and Against", 
                     BASIC:"The Run Down",
                     BATTING:"Batting",
                     RANKINGS:"Rankings",
@@ -77,7 +77,10 @@ const InitialState ={
                     RANKINGLINE:"Players Career Batting, Bowling and Keeping rankings Compared as a Line graph ",
                     GAMESPLAYEDBAR:"Games played as a percentage over the years.",
                     TEAMSPLAYEDFOR:"List of all the Teams played for and the Number of apperances for that Team",
-                    RUNSYEARSLINE:"This Graph can be used to compare a Players Year against another. Each line in this graph represents an Annual Run Haul."
+                    RUNSANDBALLSBAR:"Runs compared to balls faced. Some charts may include the players overall strike rate for the games showen",
+                    RUNSYEARSLINE:"This Graph can be used to compare a Players Year against another. Each line in this graph represents an Annual Run Haul.",
+                    FORMBATTINGRADIAL:"Visual representation of a Players Form.  A players form is worked out by comparing Career and Current form variables such as Average and Strike Rate over time.",
+                    FORMBATTINGOVERTIME : "This chart shows a players form month on month over the lifespan of their career. Each month is compared to their current stats. Bars in Green show good form, Yellow Average and Red Poor Form"
                 },
                 FORM:{
                     INPUTLABELS:{

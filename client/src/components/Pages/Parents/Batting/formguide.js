@@ -22,7 +22,7 @@ export default class Page_Batting_Formguide
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary;
   } 
-   
+    
   /**
    * 
    */
@@ -31,7 +31,7 @@ export default class Page_Batting_Formguide
     return ( 
           <Container>
             <SectionHeader   h1={this.props.LABELS.SITE.TITLES.FORMGUIDE} h2={this.props.LABELS.SITE.TITLES.BATTING} /> 
-            <SectionP Copy={this.props.LABELS.SITE.DESC.FORMGUIDE}/>
+            
      
             <SectionContainer className="Section_Batting_FormGuide todo">
               <SectionEvaluation 
@@ -41,6 +41,7 @@ export default class Page_Batting_Formguide
               />
             </SectionContainer>
 
+            <SectionP Copy={this.props.LABELS.SITE.DESC.FORMGUIDE}/>
             <SectionContainer className="Section_Batting_FormGuide todo">
                   <SectionCareerBatting  
                     Data={PRIMARY.CAREER.Form.batting} 

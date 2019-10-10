@@ -37,6 +37,7 @@ class LineCharts extends Component {
         
         legend: this.props.CHART.legend,
         theme: this.props.CHART.theme,
+        responsive: this.props.CHART.responsive,
       },
       series: this.props.series,
     }; 

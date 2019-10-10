@@ -41,6 +41,7 @@ class SingleBarChart extends React.Component {
                 fill: this.props.CHART.fill,
                 legend: this.props.CHART.legend,
                 theme: this.props.CHART.theme,
+                responsive: this.props.CHART.responsive
           },
           series: this.props.DATA,
         }

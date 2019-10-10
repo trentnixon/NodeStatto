@@ -37,7 +37,7 @@ export default class Section_Batting_BallsFaced extends Component {
         return ( 
             <Row className="PodRow"> 
                 <ChartContainer 
-                    Info={this.props.TITLES.DESC.TODO}
+                    Info={this.props.TITLES.DESC.RUNSANDBALLSBAR}
                     Interactive={true}
                     Title={this.props.TITLES.SUBS.RUNS + ' vs '+this.props.TITLES.SUBS.BF}
                     flex=" flex-100"

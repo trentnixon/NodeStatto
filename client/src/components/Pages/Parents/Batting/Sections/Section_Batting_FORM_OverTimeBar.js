@@ -42,7 +42,7 @@ export default class Section_Batting_BallsFaced extends Component {
                             {... this.props}
                         />
                 <ChartContainer 
-                    Info={this.props.TITLES.DESC.TODO}
+                    Info={this.props.TITLES.DESC.FORMBATTINGOVERTIME} 
                     Interactive={false}
                     Title={"Form History"}
                     flex=" flex-100"
