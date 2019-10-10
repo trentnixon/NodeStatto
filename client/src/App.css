@@ -10,7 +10,7 @@ h1, h2, h3 {
   font-family: "Montserrat"; }
 
 p {
-  font-family: "Roboto"; }
+  font-family: "Montserrat"; }
 
 .Page_Sub_Title {
   font-size: 1.3em;
@@ -18,6 +18,10 @@ p {
   color: #5a5a5a;
   width: 100%;
   margin: 40px 0 5px; }
+
+.Page_P {
+  color: #5a5a5a;
+  font-size: 1em; }
 
 .ChartMetaContainer .ChartContainerTitlesandIcons {
   display: flex;
@@ -308,6 +312,13 @@ p {
     width: 30px;
     float: right;
     margin: 0 15px 0 0; }
+  .PodRow #Pod .IconPod .Header svg.FormTrending {
+    float: right;
+    font-size: 2rem; }
+  .PodRow #Pod .IconPod .Header svg.FormTrending.Up {
+    fill: #70ce90; }
+  .PodRow #Pod .IconPod .Header svg.FormTrending.Down {
+    fill: #ce7070; }
   .PodRow #Pod .IconPod .Body h1 {
     text-align: center;
     margin: 0; }
@@ -321,7 +332,9 @@ p {
     font-size: 1em !important;
     font-weight: 600; }
   .PodRow #Pod .IconPod .Footer {
-    text-align: right; }
+    text-align: right;
+    color: #709dce !important;
+    font-size: .8em !important; }
     .PodRow #Pod .IconPod .Footer button {
       float: unset !important; }
     .PodRow #Pod .IconPod .Footer a {

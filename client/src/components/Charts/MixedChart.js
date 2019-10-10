@@ -80,7 +80,7 @@ class LineCharts extends Component {
   CreateSeries(props){
     this.setState({ 
       series:props.series,
-      options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels} }})
+      options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels} }}) 
     })
   }
 

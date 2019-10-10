@@ -6,7 +6,7 @@ $BodyFont : 'Montserrat';
 
 $HeaderH1Size:2em;
 $SubHeaderSize:1.3em;
-
+$PSize:1em;
 
 /* Basic Elements */
 a{
@@ -17,7 +17,7 @@ h1,h2,h3{
 }
 
 p{
-    font-family: $FontHeader;
+    font-family: $BodyFont;
 }
 
 .Page_Title{
@@ -33,7 +33,8 @@ p{
 }
 
 .Page_P{
-
+    color: $h2Color;
+    font-size: $PSize;
 }
  
 

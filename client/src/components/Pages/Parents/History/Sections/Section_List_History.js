@@ -8,7 +8,7 @@ import SELECTYEAR from "../../.././../Elements/FormElements/FormSelect/SelectYea
 import ListHistory from "../../../../Elements/Lists/List_History"
 
 var _ = require('lodash');
-
+ 
 export default class Section_HistoryList extends Component { 
 
     state = {
@@ -18,7 +18,7 @@ export default class Section_HistoryList extends Component {
             List:[]
       }
     
-      createList(arr , Year, SelectedTeam)  
+      createList(arr , Year, SelectedTeam)   
         {
             let CreateNewList=[]
             let NewYear;

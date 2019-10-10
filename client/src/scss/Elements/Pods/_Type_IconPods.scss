@@ -8,6 +8,17 @@
                 float: right; 
                 margin: 0 15px 0 0;
             }
+
+            svg.FormTrending{
+                float: right;
+                font-size: 2rem;
+            }
+            svg.FormTrending.Up{
+                fill:$TrendingUp;
+            }
+            svg.FormTrending.Down{
+                fill:$TrendingDown;
+            }
         }
         .Body{
             h1{ 
@@ -29,6 +40,8 @@
         }
         .Footer{
             text-align: right;
+            color: $ColorBase !important;
+            font-size: .8em !important;
             button{
                 float: unset !important;
                 

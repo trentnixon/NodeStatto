@@ -37,11 +37,11 @@ class HistoryFor extends Component {
     //console.log(DisplayTeam)
     return ( 
         <Container>
-            <SectionHeader h1={this.props.TITLE} h2={DisplayTeam.Team} />
+            <SectionHeader h1={this.props.HEADING} h2={DisplayTeam.Team} />
                 <SectionContainer className="Section_History_For todo">
                     <SectionHeader  h2="Batting" />  
                         <Row className="PodRow">
-                            
+                             
                             <SingleValuePod className="flex-30" label="Innings" total={DisplayTeam.Innings} icon= ""  Footer = "" />
                             <SingleValuePod className="flex-30" label="Runs" total={DisplayTeam.Runs} icon= ""  Footer = "" />
                             <SingleValuePod className="flex-30"  label="Average" total={DisplayTeam.AVG} icon= ""  Footer = "" />
@@ -73,14 +73,13 @@ class HistoryFor extends Component {
                 <SectionContainer className="Section_History_For todo">
                     <SectionHeader  h2="Game History" />
                         <HistoryList  
-                            Title={"History for " + DisplayTeam.Team}
                             SelectedID={this.props.match.params.teamID}
                             List={this.props.PLAYER_DATA.Primary.CLEAN}
                             Years={this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears}
                             Match={this.props.match}
                             OrderBy={this.props.OrderBy}
-                            {... this.props}
-                        /> 
+                            {... this.props} 
+                        />  
                  </SectionContainer> 
         </Container>
     )

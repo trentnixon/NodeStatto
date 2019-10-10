@@ -1,113 +1,16 @@
 import React, { Component } from 'react';
-import update from 'react-addons-update'
 import {Animated} from "react-animated-css";
+
 import Row from "../../../../Template/Page/Row";
 import SingleValuePod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import { BattingBasics } from "../../../../../actions/UI"
 
+import TrendingDownIcon from '@material-ui/icons/TrendingDown';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 
-let stats=[
-    {
-        Name:["Innings"],
-        Value:[0], 
-        Total:[0],
-        Percentage:[0],
-        Title:"Expected"
-    },
-    {
-        Name:["Runs"],
-        Value:[0],
-        Total:[0],
-        Percentage:[0],
-        Title:"Expected"
-    },
-    {
-        Name:["Balls Faced"],
-        Value:[0],
-        Total:[0],
-        Percentage:[0],
-        Title:"Expected"
-    },
-    {
-        Name:["Not Out's"],
-        Value:[0],
-        Total:[0],
-        Percentage:[0],
-        Title:"Expected"
-    },
-    {
-        Name:["Average"],
-        Value:[0], 
-        Total:[0], 
-        Percentage:[0],
-        Title:"Expected"
-    },
-    {
-        Name:["Strike Rate"],
-        Value:[0],
-        Total:[0],  
-        Percentage:[0],
-        Title:"Expected"
-    }
-];
-
-
+let SentSeries,stats=[], CAREER;
 export default class Section_Rankings extends Component {
 
-    state = {
-        stats:stats,
-        Created:0,
-      }
-
-
-     createStats(Data,Year){
-            
-            this.setState({ 
-                    Created: Math.round((new Date()).getTime() / 1000),
-                })
-
-            this.setState({
-                    stats: update(this.state.stats,
-                        {
-                            0:{
-                                Value:{$set:[Data.innings]},
-                                Total:{$set:[Data.innings]},
-                                Percentage:{$set:[this.findPercentage(Data.innings,Data.innings)]},
-                                TitleValue:{$set:this.Divideexpected(this.props.Career.Meta.Games.int,this.props.Career.batting.innings,this.props.Data.innings)}
-                            },
-                            1:{
-                                Value:{$set:[Data.runs]},
-                                Total:{$set:[Data.runs]},
-                                Percentage:{$set:[this.findPercentage(Data.runs,Data.runs)]},
-                                TitleValue:{$set: this.Multiplyexpected(this.props.Career.batting.average,this.props.Data.innings)}
-                            },
-                            2:{
-                                Value:{$set:[Data.ballsFaced]},
-                                Total:{$set:[Data.ballsFaced]},
-                                Percentage:{$set:[this.findPercentage(Data.ballsFaced,Data.ballsFaced)]},
-                                TitleValue:{$set:this.Divideexpected(this.props.Career.Meta.Games.int,this.props.Career.batting.ballsFaced,this.props.Data.innings)} 
-                            },
-                            3:{
-                                Value:{$set:[Data.notOut]},
-                                Total:{$set:[Data.notOut]},
-                                Percentage:{$set:[this.findPercentage(Data.notOut,Data.notOut)]},
-                                TitleValue:{$set:this.Divideexpected(this.props.Career.Meta.Games.int,this.props.Career.batting.notOut,this.props.Data.innings)}
-                            },
-                            4:{
-                                Value:{$set:[Data.average]},
-                                Total:{$set:[Data.average]},
-                                Percentage:{$set:[this.findPercentage(Data.average,Data.average)]},
-                                TitleValue:{$set:this.props.Career.batting.average}
-                            },
-                            5:{
-                                Value:{$set:[Data.strikeRate]},
-                                Total:{$set:[Data.strikeRate]},
-                                Percentage:{$set:[this.findPercentage(Data.strikeRate,Data.strikeRate)]},
-                                TitleValue:{$set:this.props.Career.batting.strikeRate}
-                            }
-                        }
-                    ),
-                  })
-     }  
 
      // Functions
     findPercentage(int,total){ 
@@ -121,16 +24,73 @@ export default class Section_Rankings extends Component {
     Multiplyexpected(value,played){
         return (value*played).toFixed(2);
     }
-    componentWillMount() {  this.createStats(this.props.Data,"Career");  }
-    shouldComponentUpdate(nextProps, nextState){ return true;}
-    componentWillUpdate(nextProps, nextState){}
+    SelectIcon(val1,val2){
+
+        if(parseFloat(val1,10) < parseFloat(val2,10)){
+            return <TrendingDownIcon  className="FormTrending Down"/>
+        }
+        else{
+            return <TrendingUpIcon className="FormTrending Up" />
+        }
+    }
+    componentWillMount() {
+        SentSeries = BattingBasics(this.props.FORMDATA)
+        CAREER = this.props.Career.batting;
+        //console.log(this.props.Career);
+
+        stats=[
+            {
+                Name:["Innings"],
+                Value:SentSeries[0], 
+                Total:SentSeries[0],
+                Percentage:this.Divideexpected(CAREER.innings,this.props.Career.Meta.Games.int,SentSeries[0]),
+                Title:"Expected"
+            },
+            {
+                Name:["Runs"],
+                Value:SentSeries[4],
+                Total:SentSeries[4],
+                Percentage:this.Multiplyexpected(CAREER.average,SentSeries[0]),
+                Title:"Expected"
+            },
+            {
+                Name:["Balls Faced"],
+                Value:SentSeries[10],
+                Total:SentSeries[10],
+                Percentage:this.Divideexpected(CAREER.innings,CAREER.ballsFaced,SentSeries[0]),
+                Title:"Expected"
+            },
+            {
+                Name:["Not Out's"],
+                Value:SentSeries[15],
+                Total:SentSeries[15],
+                Percentage:this.Divideexpected(CAREER.innings,CAREER.notOut,SentSeries[0]),
+                Title:"Expected"
+            },
+            {
+                Name:["Average"],
+                Value:SentSeries[8], 
+                Total:SentSeries[8], 
+                Percentage:CAREER.average,
+                Title:"Expected"
+            },
+            {
+                Name:["Strike Rate"],
+                Value:SentSeries[12],
+                Total:SentSeries[12],  
+                Percentage:CAREER.strikeRate,
+                Title:"Expected"
+            }
+        ]
+    }
+
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
             <Row className="PodRow">
                 
                             { 
-                                this.state.stats.map((radial,i)=>{
+                                stats.map((radial,i)=>{
                                     let Delay= 200*i;
                                     return(
                                         <Animated  
@@ -144,13 +104,14 @@ export default class Section_Rankings extends Component {
                                             <SingleValuePod 
                                                 label={radial.Name}
                                                 total={radial.Value}
-                                                icon= ""
-                                                Footer = ""
+                                                icon= {this.SelectIcon(radial.Value, radial.Percentage)}
+                                                Footer = {radial.Title + ' ' +radial.Percentage}
                                             />
                                         </Animated> 
                                     )
                                 })
                             }
+                
              </Row>
 
             )

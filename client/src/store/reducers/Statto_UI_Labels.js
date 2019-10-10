@@ -35,7 +35,7 @@ const InitialState ={
                     MILESTONE:"Milestones and Achievements",  
                     SCORES:"SCORES"
                 },
-                SUBS:{
+                SUBS:{ 
                     RUNS:"Runs",
                     BALLS:"By The Ball",  
                     WICKETS:"Wickets", 

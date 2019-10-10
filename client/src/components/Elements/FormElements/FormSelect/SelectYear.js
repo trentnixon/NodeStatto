@@ -1,3 +1,12 @@
+/**
+ * COmponents Example 
+ * 
+ *  <SELECTYEAR 
+        TITLE={this.props.LABELS.SITE} 
+        {... this.props}
+    />
+ */
+
 import React, { Component } from 'react';
 
 // Template
@@ -33,7 +42,7 @@ export default class FORM_SELECT_YEAR extends Component {
     componentWillMount() {  } 
 
     render() {
-        //console.log(this.props)
+        console.log(this.props.TITLE)
         return (
                 <Row className="PodRow Form_Selector flex-100"> 
                     <Pod  className="flex-50" canvas="">  

@@ -4,20 +4,17 @@ import { BattingBasics } from "../../../../../actions/UI"
 // Template
 import Row from '../../../../Template/Page/Row';
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
-import Title from "../../../../Elements/type/PageTitle";
-//import SubTitle from "../../../../Elements/type/PageSubTitle";
-
+import ChartContainer from "../../../../Template/Page/ChartContainer";
 
 // Charts
 import Bar from "../../../../Charts/BarChart";
 
 let Labels=[],RunsYear=[];
-let ThisData, SentSeries=null;
+let SentSeries=null;
 export default class Section_Batting_BallsFaced extends Component {
     componentWillMount() {
 
-        ThisData = this.props.Data.slice(Math.max(this.props.Data.length - 5, 1)).reverse();
-        SentSeries = BattingBasics(ThisData)
+        SentSeries = BattingBasics(this.props.FORMDATA)
         Labels=SentSeries[1]
 
         RunsYear=[
@@ -27,7 +24,7 @@ export default class Section_Batting_BallsFaced extends Component {
                 type: 'column',
             }, { 
                 name:"Balls Faced",
-                data:SentSeries[9],
+                data:SentSeries[9], 
                 type: 'column',
             },{ 
                 name:"Strike Rate",
@@ -35,17 +32,21 @@ export default class Section_Batting_BallsFaced extends Component {
                 type: 'area',
             }
         ];
-
-        //console.log(RunsYear);
     }
     render() {
         return ( 
-            <Row className="PodRow">
-                    <Title Title={this.props.TITLES.SUBS.RUNS + ' vs '+this.props.TITLES.SUBS.BF}/>
+            <Row className="PodRow"> 
+                <ChartContainer 
+                    Info={this.props.TITLES.DESC.TODO}
+                    Interactive={true}
+                    Title={this.props.TITLES.SUBS.RUNS + ' vs '+this.props.TITLES.SUBS.BF}
+                    flex=" flex-100"
+                >
                     <Pod className="flex-100" canvas="canvas1">
                         <Bar series={RunsYear} Labels={Labels} />
                      </Pod> 
-                </Row>            
+                </ChartContainer>
+            </Row>            
             )
         }
     } 

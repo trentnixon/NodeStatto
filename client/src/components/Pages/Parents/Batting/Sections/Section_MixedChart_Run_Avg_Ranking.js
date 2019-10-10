@@ -165,7 +165,7 @@ export default class Section_Default extends Component {
                                     series={this.state.Series} 
                                     HS={this.props.HS} 
                                     Disc="Batting"
-                                    Var="RunInt" 
+                                    Var="RunInt"  
                                 />
                             </Pod>
                     </Row> 
