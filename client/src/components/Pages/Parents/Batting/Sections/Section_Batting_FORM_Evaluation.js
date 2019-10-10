@@ -43,7 +43,7 @@ export default class Section_Batting_BallsFaced extends Component {
                         Label='Exceptional'
                         Color ='#70ce90'
                         break;
-                case Perc < 100:
+                case Perc > 100:
                     Label= 'Form of Your Life'
                     Color ='#70ce90'
                   break;
