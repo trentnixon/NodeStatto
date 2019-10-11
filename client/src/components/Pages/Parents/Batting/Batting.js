@@ -44,7 +44,7 @@ export default class Page_BattingOverview extends Component {
 
         <SectionContainer className="Section_Batting_Rankings complete">
             <BattingRankingPods 
-              SUBS={TITLES.SITE.SUBS}
+              SUBS={TITLES.SITE.SUBS} 
               CTA={TITLES.SITE.CTA}
               TITLES = {TITLES.SITE.TITLES}
               DATA={PRIMARY}
@@ -55,7 +55,7 @@ export default class Page_BattingOverview extends Component {
         <SectionContainer className="Section_Batting_ForAgainst complete">
             <Tabber  
               Tabs={
-                [ 
+                [  
                   {
                     Title:TITLES.SITE.SUBS.STATS,
                     Component:<SectionCareerBatting  TITLES={TITLES.SITE} Data={PRIMARY.CAREER.Career.batting} />,

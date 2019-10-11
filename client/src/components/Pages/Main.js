@@ -21,11 +21,12 @@ import ComponentAbout from "./Parents/about/about";
 // Icons
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShowChart from '@material-ui/icons/ShowChart'; 
-import MultilineChart from '@material-ui/icons/MultilineChart';
 import People from '@material-ui/icons/People';
 import Settings from '@material-ui/icons/Settings';
 import Search from '@material-ui/icons/Search';
 import Looks4 from '@material-ui/icons/Looks4';
+import CakeIcon from '@material-ui/icons/Cake';
+import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import  {Batting, Wickets,Bowling,Runs} from "../Icons/icons";
 //Keeping,
 
@@ -45,6 +46,11 @@ const  Navigation =[
           "label":"Overview",
           "path":"overview",
           "icon":<AccountCircle/>,
+        },
+        {
+          "label":"Form",
+          "path":"formguide",
+          "icon":<ShowChart/>
         },{
           "label":"Runs",
           "path":"runs",
@@ -53,17 +59,12 @@ const  Navigation =[
         {
           "label":"Average",
           "path":"averages",
-          "icon":<ShowChart/>
+          "icon":<GraphicEqIcon/> 
         },
         {
           "label":"Notable Scores",
           "path":"scores",
           "icon":<Looks4/>
-        },
-        {
-          "label":"Form",
-          "path":"formguide",
-          "icon":<ShowChart/>
         },
         
         {
@@ -75,7 +76,7 @@ const  Navigation =[
         {
           "label":"Milestones",
           "path":"milestones",
-          "icon":<Bowling />
+          "icon":<CakeIcon />
         },
         {
           "label":"For & Against",
@@ -100,7 +101,7 @@ const  Navigation =[
       },{
         "label":"AES",
         "path":"aes",
-        "icon":<MultilineChart/>
+        "icon":<GraphicEqIcon/>
       },
       {
         "label":"Form",
@@ -113,7 +114,7 @@ const  Navigation =[
       },{
         "label":"Milestones",
         "path":"milestones",
-        "icon":<Bowling/>
+        "icon":<CakeIcon/>
       },
       
       {

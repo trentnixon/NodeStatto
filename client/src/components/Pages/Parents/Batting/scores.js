@@ -24,6 +24,6 @@ export default class Batting extends Component {
         </SectionContainer>
       </Container> 
     )
-  }
+  } 
 }
   

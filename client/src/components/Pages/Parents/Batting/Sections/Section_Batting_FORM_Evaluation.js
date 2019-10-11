@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { FormFactor } from "../../../../../actions/UI"
 // Template
 import Row from '../../../../Template/Page/Row';
-import Title from "../../../../Elements/type/PageSubTitle";
 import ChartContainer from "../../../../Template/Page/ChartContainer";
 import FormRadial from "../../../../Charts/FormRadialChart";
 let PrintFormFactor;

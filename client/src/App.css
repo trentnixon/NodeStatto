@@ -308,7 +308,7 @@ p {
     border: none;
     padding: 5px;
     background-color: transparent; }
-  .PodRow #Pod .IconPod .Header img {
+  .PodRow #Pod .IconPod .Header img, .PodRow #Pod .IconPod .Header svg {
     width: 30px;
     float: right;
     margin: 0 15px 0 0; }
@@ -501,6 +501,15 @@ p {
       .PodRow .animated #Pod .RankingPod .Body h2 svg {
         float: right;
         font-size: 1.6em; }
+      .PodRow .animated #Pod .RankingPod .Body h2 svg.Down {
+        fill: #ce7070;
+        color: #ce7070; }
+      .PodRow .animated #Pod .RankingPod .Body h2 svg.Up {
+        fill: #70ce90;
+        color: #70ce90; }
+      .PodRow .animated #Pod .RankingPod .Body h2 svg.Flat {
+        fill: #cec570;
+        color: #cec570; }
     .PodRow .animated #Pod .RankingPod .Body h3 {
       font-size: 1em;
       font-weight: 600;
@@ -1069,7 +1078,7 @@ body {
           padding-top: 10px; } }
       .DrawerNav .NavBarBottom {
         min-height: 50px; }
-      img.NavigationIcon {
+      img.NavigationIcon, svg.NavigationIcon {
         width: 25px;
         margin-right: 16px; }
       img.NavigationIcon.Bowling {

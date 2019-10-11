@@ -16,7 +16,6 @@ export default class Section_Batting_BallsFaced extends Component {
 
     componentWillMount() {
         PrintFormFactor = FormoverTime(this.props.CAREER.CLEAN, this.props.CAREER.CAREER.Career, this.props.UX.FORMS.SELECT.YEAR)
-        console.log(PrintFormFactor, this.props.UX.FORMS.SELECT.YEAR);
     }
 
     shouldComponentUpdate(nextProps, nextState){ return true;}
@@ -37,19 +36,14 @@ export default class Section_Batting_BallsFaced extends Component {
         ];
         return ( 
             <Row className="PodRow"> 
-                <SELECTYEAR 
-                            TITLE={this.props.LABELS.SITE} 
-                            {... this.props}
-                        />
+                <SELECTYEAR TITLE={this.props.LABELS.SITE} {... this.props} />
                 <ChartContainer 
                     Info={this.props.TITLES.DESC.FORMBATTINGOVERTIME} 
-                    Interactive={false}
+                    Interactive={true}
                     Title={"Form History"}
                     flex=" flex-100"
                 >
                       <Pod className="flex-100" canvas="canvas1">
-                      
-
                         <Bar series={FormYears} Labels={Labels}  BasePath='/batting/deep'/>
                      </Pod> 
                 </ChartContainer>

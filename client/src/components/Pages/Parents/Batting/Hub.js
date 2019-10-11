@@ -39,7 +39,7 @@ export default class BattingHub extends Component {
                         
                 </Switch>
             </Container>
-    )
+    ) 
   }
 } 
 

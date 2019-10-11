@@ -5,7 +5,9 @@ import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 import Subtitle from "../../../../Elements/type/PageSubTitle";
 import ShowMore from "../../../../Elements/Buttons/ShowMore"
-import  {Runs} from "../../../../Icons/icons"; 
+
+import PublicIcon from '@material-ui/icons/Public';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 
 //Wickets,Keeping,Trophy 
 let stones=[];
@@ -13,8 +15,8 @@ export default class Home_Overview extends Component {
     componentWillMount() { 
 
         stones=[
-            { var:this.props.DATA.Meta.Batting_Ranking_Country_Current,     Path:"rankings", label:this.props.SUBS.CR,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Batting_Ranking_World_Current,     Path:"rankings", label:this.props.SUBS.WR,icon:<Runs/>},
+            { var:this.props.DATA.Meta.Batting_Ranking_Country_Current,     Path:"rankings", label:this.props.SUBS.CR,icon:<LocationCityIcon/>},
+            { var:this.props.DATA.Meta.Batting_Ranking_World_Current,     Path:"rankings", label:this.props.SUBS.WR,icon:<PublicIcon />},
          ]
      } 
     render() {

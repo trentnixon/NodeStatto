@@ -44,7 +44,7 @@ export default class Statto extends Component {
              
 
               <SectionContainer className="Section_Overview complete" > 
-                  <Overview  
+                  <Overview   
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
                       TITLES = {TITLES.SITE.TITLES}

@@ -19,7 +19,7 @@ export default class Home_Section_Rankings extends Component {
             { var:this.props.DATA.Bowling, Path:"/bowling/", label:this.props.SITE.BOWLING,icon:<Bowling/>}
         ] 
      } 
-    render() {
+    render() { 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return ( 
                 <Row className="PodRow"> 

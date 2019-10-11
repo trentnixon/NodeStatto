@@ -36,7 +36,7 @@ export default class Formguide
           <AverageByTeam 
             TITLE={TITLES.SITE} 
             DATA={PRIMARY.CLEAN} 
-      
+       
             {... this.props}
           />
 

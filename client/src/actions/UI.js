@@ -103,7 +103,7 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
     const monthNames = [null,"January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ];
 
     // Orgainse Career by Year
-    let ByYear = CLEAN.reduce((acc, item) => {
+    let ByYear = CLEAN.reduce((acc, item) => { 
           
         if (!acc[item.Meta.Year]) {
             acc[item.Meta.Year] = [];

@@ -68,7 +68,7 @@ const InitialState ={
                 },
                 CHARTS:{
                     CHART:"Chart",
-                    SCATTER:"Scatter"
+                    SCATTER:"Scatter" 
                 },
                 DESC:{
                     TODO:"CHART DESCRIPTION COMING SOON",

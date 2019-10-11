@@ -3,8 +3,13 @@ import {Animated} from "react-animated-css";
 
 import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import  {Runs,Trophy } from "../../../../Icons/icons"; 
 
+import  {Runs, Trophy, Bowling, Duck} from "../../../../Icons/icons"; 
+import GraphicEqIcon from '@material-ui/icons/GraphicEq';
+import Looks6Icon from '@material-ui/icons/Looks6';
+import StarsIcon from '@material-ui/icons/Stars';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
+import AcUnitIcon from '@material-ui/icons/AcUnit';
 // Actions 
 import { BattingBasics } from "../../../../../actions/UI";
 
@@ -20,17 +25,17 @@ export default class DEEP_Overview extends Component {
         stones=[
             { var:FetchStats[0],  label:LABELS.TITLES.GAMES,icon:<Trophy/>},
             { var:FetchStats[4], label:LABELS.SUBS.RUNS,icon:<Runs/>},
-            { var:FetchStats[5],  label:LABELS.SUBS.HS,icon:<Runs/>},
+            { var:FetchStats[5],  label:LABELS.SUBS.HS,icon:<Looks6Icon/>},
             
-            { var:FetchStats[8], label:LABELS.SUBS.AVG, icon:<Runs/>},
-            { var:FetchStats[10],  label:LABELS.SUBS.BF,icon:<Runs/>},
-            { var:FetchStats[12],  label:LABELS.SUBS.SR,icon:<Runs/>},
+            { var:FetchStats[8], label:LABELS.SUBS.AVG, icon:<GraphicEqIcon/>},
+            { var:FetchStats[10],  label:LABELS.SUBS.BF,icon:<Bowling/>},
+            { var:FetchStats[12],  label:LABELS.SUBS.SR,icon:<WhatshotIcon/>},
             
-            { var:FetchStats[13],  label:LABELS.SUBS.FIFTY,icon:<Runs/>},
-            { var:FetchStats[14],  label:LABELS.SUBS.DUCKS,icon:<Runs/>},
-            { var:FetchStats[15],  label:LABELS.SUBS.NO,icon:<Runs/>},
+            { var:FetchStats[13],  label:LABELS.SUBS.FIFTY,icon:<StarsIcon/>},
+            { var:FetchStats[14],  label:LABELS.SUBS.DUCKS,icon:<Duck />},
+            { var:FetchStats[15],  label:LABELS.SUBS.NO,icon:<AcUnitIcon/>},
         ]
- 
+  
      } 
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';

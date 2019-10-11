@@ -28,7 +28,7 @@ export default class Section_Default extends Component {
 
     state = {
         Series:[],
-        Labels:[],
+        Labels:[], 
         NotOuts:0 
       }
 

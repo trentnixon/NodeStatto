@@ -29,6 +29,9 @@
                         float: right;
                         font-size: 1.6em ;
                     }
+                    svg.Down{ fill:$TrendingDown; color: $TrendingDown;}
+                    svg.Up{fill:$TrendingUp; color: $TrendingUp;}
+                    svg.Flat{fill:$TrendingFlat; color: $TrendingFlat;}
                 }
                 h3{
                     font-size: 1em ;

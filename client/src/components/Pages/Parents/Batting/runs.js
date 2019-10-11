@@ -35,7 +35,7 @@ export default class Batting extends Component {
         <SectionContainer className="Section_Batting_Runs charts todo">
           <SectionRunsBasics  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting} />
         </SectionContainer>
-        
+         
         <SectionContainer className="Section_Batting_Runs charts todo">
           <SectionRuns  TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting}  PathOpt={this.props.DATA_SETUP}/>
         </SectionContainer>

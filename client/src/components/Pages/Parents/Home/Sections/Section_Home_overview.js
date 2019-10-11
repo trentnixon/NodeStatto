@@ -15,7 +15,7 @@ export default class Home_Overview extends Component {
             { var:this.props.DATA.CAREER.Career.batting.runs,    Path:"batting/overview", label:this.props.SUBS.RUNS,icon:<Runs/>},
             { var:this.props.DATA.CAREER.Career.bowling.wickets, Path:"bowling/overview", label:this.props.SUBS.WICKETS,icon:<Wickets/>},
             { var:this.props.DATA.CAREER.Career.Keeping.catches, Path:"keeping/overview", label:this.props.SUBS.CATCHES,icon:<Keeping/>}
-        ]
+        ] 
      } 
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
