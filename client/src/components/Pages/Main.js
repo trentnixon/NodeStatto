@@ -167,7 +167,8 @@ const  Navigation =[
 ]  
 export default class Statto extends Component {
   componentWillMount() { 
-    
+    let PlayerName = this.props.PLAYER_DATA.Primary.Meta.Name 
+    document.title = PlayerName + ' '+ window.location.pathname +' STATTO';
   }  
   render() {
     

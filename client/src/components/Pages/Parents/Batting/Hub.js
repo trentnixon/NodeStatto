@@ -21,7 +21,9 @@ import Container from "../../../Template/Page/Container";
 // Class
 export default class BattingHub extends Component {
  
-  componentWillMount() {}
+  componentWillMount() {
+
+  }
   render() {
     
     return ( 
@@ -42,7 +44,7 @@ export default class BattingHub extends Component {
     ) 
   }
 } 
-
+ 
 /**
 
                
