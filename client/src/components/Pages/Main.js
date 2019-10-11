@@ -167,12 +167,14 @@ const  Navigation =[
 ]  
 export default class Statto extends Component {
   componentWillMount() { 
-    let PlayerName = this.props.PLAYER_DATA.Primary.Meta.Name 
-    document.title = PlayerName + ' '+ window.location.pathname +' STATTO';
+    
+    
   }  
   render() {
     
-    //console.log(this.props, window.location.pathname + window.location.search)
+    let PlayerName = this.props.PLAYER_DATA.Primary.Meta.Name 
+    let Section = window.location.pathname.split('/')
+    document.title = PlayerName + ' '+ Section[3] + ' '+Section[4] +' STATTO';
 
     PageView(window.location.pathname + window.location.search)
     BasicTracking(this.props.DATA_SETUP.SelectTeamID,this.props.PLAYER_DATA.Primary.Meta.Name, window.location.pathname)
