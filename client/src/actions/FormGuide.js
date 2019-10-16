@@ -405,6 +405,8 @@ function RunOverTheYears(data,game){
 
 function BowlingOverTheYears(data,game){
     
+    console.log(game); 
+
     let from = game.Meta.Date.split("/");
     let findKey;
 
@@ -431,12 +433,12 @@ function BowlingOverTheYears(data,game){
             data[findKey].TotalOB = data[findKey].TotalOB + game.Bowling.OversInt
             data[findKey].TotalRC = data[findKey].TotalRC + parseInt(game.Bowling.Runs,10)
             data[findKey].TotalWickets = data[findKey].TotalWickets + parseInt(game.Bowling.Wickets,10)
-            
             data[findKey].HistoryRC.push(parseInt(game.Bowling.Runs,10))
             data[findKey].HistoryWickets.push(parseInt(game.Bowling.Wickets,10))
 
             // Meta
             data[findKey].HistoryGames.push(game.Meta.Fixture)
+            data[findKey].Month.push(from[1])
    }
 
      return data

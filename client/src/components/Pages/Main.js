@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Frame from "../Template/Frame";
 import {PageView, BasicTracking} from "../../actions/ga";
+import {SetPageTitle} from "../../actions/UI";
+
 
 // Components
 import ComponentHome from "./Parents/Home/Home";
@@ -11,8 +13,10 @@ import BattingHub from "./Parents/Batting/Hub";
 import BowlingHub from "./Parents/Bowling/Hub";
 import ComponentPlayFor from "./Parents/Home/PlayerForFullList";
 import ComponentSearch from "./Parents/search/search";
+import ComponentReset from "./Parents/search/ChangeTeam";
 import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 import ComponentFlorish from "./Parents/Florish/Hub";
+import ComponentRoadMap from "./Parents/RoadMap/Hub"
 /*
 import ComponentKeeping from "./Parents/Keeping/Keeping";
 import ComponentAbout from "./Parents/about/about";
@@ -28,6 +32,9 @@ import Looks4 from '@material-ui/icons/Looks4';
 import CakeIcon from '@material-ui/icons/Cake';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import  {Batting, Wickets,Bowling,Runs} from "../Icons/icons";
+import BackspaceIcon from '@material-ui/icons/Backspace';
+import ViewWeekIcon from '@material-ui/icons/ViewWeek';
+import MapIcon from '@material-ui/icons/Map';
 //Keeping,
 
 
@@ -151,11 +158,16 @@ const  Navigation =[
     "path":"search",
     "icon":<Search/>, 
     "children":null
+  },{
+    "label":"Change Team", 
+    "path":"reset",
+    "icon":<BackspaceIcon />, 
+    "children":null
   },
   {
     "label":"Florish Data", 
     "path":"florish/overview",
-    "icon":<Search/>, 
+    "icon":<ViewWeekIcon />, 
     "children":null
   },
   {
@@ -163,19 +175,18 @@ const  Navigation =[
     "path":"settings",
     "icon":<Settings/>,
     "children":null
+  },
+  {
+    "label":"Road Map",
+    "path":"roadmap",
+    "icon":<MapIcon />,
+    "children":null
   }
 ]  
 export default class Statto extends Component {
-  componentWillMount() { 
-    
-    
-  }  
+  componentWillMount() {}  
   render() {
-    
-    let PlayerName = this.props.PLAYER_DATA.Primary.Meta.Name 
-    let Section = window.location.pathname.split('/')
-    document.title = PlayerName + ' '+ Section[3] + ' '+Section[4] +' STATTO';
-
+    SetPageTitle();
     PageView(window.location.pathname + window.location.search)
     BasicTracking(this.props.DATA_SETUP.SelectTeamID,this.props.PLAYER_DATA.Primary.Meta.Name, window.location.pathname)
 
@@ -191,7 +202,9 @@ export default class Statto extends Component {
                 <Route  path="/batting" render={()=> <BattingHub  {... this.props} /> }/>
                 <Route  path="/bowling" render={()=> <BowlingHub  {... this.props} /> }/>
                 <Route  path="/search" render={()=> <ComponentSearch {... this.props}/> }/>
+                <Route  path="/reset" render={()=> <ComponentReset {... this.props}/> }/>
                 <Route  path="/florish" render={()=> <ComponentFlorish {... this.props}/> }/>
+                <Route  path="/roadmap" render={()=> <ComponentRoadMap {... this.props}/> }/>
                 
                 <Route  exact path="/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
             </div>

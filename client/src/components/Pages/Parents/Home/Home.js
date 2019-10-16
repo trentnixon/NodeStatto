@@ -27,10 +27,14 @@ import Rankings from "./Sections/Section_Home_Rankings";
 import Charts from "./Sections/Section_Home_Charts";
 import BriefHistory from "./Sections/Section_Home_RecentGames";
 
+import {SetPageTitle} from "../../../../actions/UI";
+
 let TITLES,PRIMARY;
 export default class Statto extends Component {
 
-  componentWillMount() { }
+  componentWillMount() {
+      //SetPageTitle()
+   }
  
   render() {
     TITLES = this.props.LABELS 

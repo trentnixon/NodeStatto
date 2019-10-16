@@ -1,0 +1,50 @@
+
+        ul.roadMap{
+            margin: 10px 20px;
+            padding: 0;
+            list-style: none;
+            li{
+                font-size: 1.3rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                background-color: $white !important;
+                align-items: flex-end;
+                align-content: center;
+                justify-content: space-between;
+                padding: 5px 0;
+                span{
+                    flex-basis: 50%;
+                    font-size:1.1rem;
+                    .LinkIcon{
+                        min-width: auto;
+                        width: 50px;
+                        height: 25px;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                    .MuiBadge-root{
+                        span{
+                            font-size: .5rem;
+                        }
+                    }
+                }
+            }
+            li.ToDo{
+                color: $TrendingDown;
+                opacity: .3;
+            }
+            li.Ready{
+                color: $TrendingUp;
+         
+            }
+            li.InDevelopment{
+                color:$ColorBase;
+            }
+            li.Testing{
+                color: $h2Color;
+                font-weight: 800;
+            }
+        }

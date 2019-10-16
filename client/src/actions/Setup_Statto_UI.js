@@ -156,51 +156,53 @@ export function StoreName(Name){
 // Reset Statto
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
+
+function FlattenUI(Name){
+  const arr=[
+            
+    // Amend SwitchBoard
+    {Type:'INT_SET_LOGIN_COMPLETE', Value:false},
+    {Type:'LOGINSEQUENCE_STAGE_ID', Value:1},
+    {Type:'LOGINSEQUENCE_STAGE3', Value:false},
+    {Type:'LOGINSEQUENCE_STAGE4', Value:false},
+    {Type:'LOGINSEQUENCE_STAGE5', Value:false},
+    {Type:'LOGINSEQUENCE_STAGE_POSITION',  Value:false},
+    {Type:'DATA_SET_LOAD_META',  Value:false},
+    {Type:'DATA_SET_LOAD_CLEAN',  Value:false},
+    {Type:'DATA_SET_LOAD_CAREER',  Value:false},
+    {Type:'DATA_SET_FORAGAINST',  Value:false},
+     
+    // Clear out Data
+    {Type:'DATA_STORE_SELECTED_PLAYER_ID',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_PLAYER_ID',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_META',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_CLEAN',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_CAREER',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_FOR',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_AGAINST',  Value:false},
+    {Type:'DATA_STORE_PRIMARY_NAME',  Value:Name},
+    
+         
+];
+
+LoginSequence(arr)
+}
+
 export function ResetPlayer(Name, teamID,ID){
-  console.log("ResetPlayer - FIX THIS");
+  
+    console.log("ResetPlayer - FIX THIS");
   /* 
-  
-  
     store.dispatch({ type:"STORE_CLEAN", payload:null });
     store.dispatch({ type:"STORE_META", payload:null });
     store.dispatch({ type:"STORE_CAREER", payload:null });
     store.dispatch({ type:"STORE_FOR", payload:null });
     store.dispatch({ type:"STORE_AGAINST", payload:null });
-*/
-             
-
-    const arr=[
-           
-            // Amend SwitchBoard
-            {Type:'INT_SET_LOGIN_COMPLETE', Value:false},
-            {Type:'LOGINSEQUENCE_STAGE_ID', Value:1},
-            {Type:'LOGINSEQUENCE_STAGE3', Value:false},
-            {Type:'LOGINSEQUENCE_STAGE4', Value:false},
-            {Type:'LOGINSEQUENCE_STAGE5', Value:false},
-            {Type:'LOGINSEQUENCE_STAGE_POSITION',  Value:false},
-            {Type:'DATA_SET_LOAD_META',  Value:false},
-            {Type:'DATA_SET_LOAD_CLEAN',  Value:false},
-            {Type:'DATA_SET_LOAD_CAREER',  Value:false},
-            {Type:'DATA_SET_FORAGAINST',  Value:false},
-             
-            // Clear out Data
-            {Type:'DATA_STORE_SELECTED_PLAYER_ID',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_PLAYER_ID',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_META',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_CLEAN',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_CAREER',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_FOR',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_AGAINST',  Value:false},
-            {Type:'DATA_STORE_PRIMARY_NAME',  Value:Name},
-                 
-      ];
-
-      LoginSequence(arr)
-
+  */
+          
+      FlattenUI(Name)
       const Content = new FetchData();
       Content.id=ID;
       Content.start();
-
 
 }
 
@@ -209,6 +211,19 @@ export function SelectNewPlayer(){
 
 }
 
+export function ResetTeams(){
+  FlattenUI(false)
+
+  const arr=[
+    // Amend SwitchBoard
+    {Type:'DATA_STORE_SELECTED_TEAM_ID', Value:false},
+    {Type:'DATA_STORE_SELECTED_TEAM_ROSTER', Value:false},
+    {Type:'LOGINSEQUENCE_STAGE_POSITION', Value:true},
+    
+    
+  ];
+  LoginSequence(arr)
+}
 export function ResetLogin (){
   console.log("Reset") 
   store.dispatch({ type:"SAVE_SELECTED_ID", payload:null});

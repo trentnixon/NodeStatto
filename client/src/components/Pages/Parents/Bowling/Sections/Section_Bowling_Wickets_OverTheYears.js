@@ -51,21 +51,16 @@ export default class Section_Bowling_WicketsOverTheYears extends Component {
     }
     render() {
         return (
-            <Row className="PodRow">
+             <Row className="PodRow">
                 <SubTitle  Title="Wickets over year" />
-                <Pod className="flex-60" canvas="canvas1">
-                    <Bar 
-                        series={RunsYear} 
-                        Labels={Labels}
-                        horizontal={false}
-                    />
-
-                </Pod>  
-                <Pod className="flex-40" type="Naked" canvas="">    
-                        <Donut  series={PieBalls} Labels={Labels} />
+                    <Pod className="flex-100" canvas="canvas1">
+                        <Bar 
+                            series={RunsYear} 
+                            Labels={Labels}
+                            horizontal={false}
+                        />
                     </Pod>  
-
-                </Row>            
+            </Row>            
             )
         }
     } 

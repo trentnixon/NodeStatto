@@ -26,7 +26,7 @@ export default  class Login extends Component {
   render() {
     if(this.props.STAGE.position === false){
         return(<FetchingTeams PRONOUN={this.props.LABELS.LOADING.PRONOUN} Label={this.props.LABELS.LOADING.PLAYERROSTER} />  )
-      }
+      } 
     else{
         return (
             <ul id="TeamSheet">
@@ -35,12 +35,12 @@ export default  class Login extends Component {
                             return(
                                
                                     <li key={i} className="HistoryItem" onClick={()=>{this.FetchThisPlayer(row.meta, this.props.DATA_SETUP.SelectTeamID, row.id)}} >
-                                     <ListItem button  >
-                                        <ListItemText primary={row.meta} className="RosterItem"/>
-                                     </ListItem> 
+                                      <ListItem button  >
+                                          <ListItemText primary={row.meta} className="RosterItem"/>
+                                      </ListItem> 
                                      </li>
                             
-                            )
+                            ) 
                     })
                 }
             </ul>

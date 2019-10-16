@@ -22,27 +22,27 @@ export default class Section_Batting_BallsFaced extends Component {
                     Label='Awful'
                     Color ='#ce7070'
                   break;
-                case Perc > 20 && Perc < 30:
-                    Label='Poor'
+                case Perc >= 20 && Perc < 30:
+                    Label ='Poor'
                     Color ='#ce7070'
                   break;
-                case Perc > 30 && Perc < 45:
+                case Perc >= 30 && Perc < 45:
                     Label='Slightly Out'
                     Color ='#cec570'
                   break;
-                case Perc > 45 && Perc < 70:
+                case Perc >= 45 && Perc < 70:
                         Label='In Form'
                         Color ='#cec570'
                       break;
-                case Perc > 70 && Perc < 90:
+                case Perc >= 70 && Perc < 90:
                         Label='Great'
                         Color ='#70ce90'
                     break;
-                case Perc > 90 && Perc < 100:
+                case Perc >= 90 && Perc < 100:
                         Label='Exceptional'
                         Color ='#70ce90'
                         break;
-                case Perc > 100:
+                case Perc >= 100:
                     Label= 'Form of Your Life'
                     Color ='#70ce90'
                   break;

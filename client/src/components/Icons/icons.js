@@ -12,7 +12,7 @@ export const Duck = ({name}) => ( <img  alt="icon" src="/assets/icons/duck.svg" 
 
 /**
  * 
- * 
+ *  
  * Material UI ICons Used
  *
  * 
@@ -23,6 +23,10 @@ export const Duck = ({name}) => ( <img  alt="icon" src="/assets/icons/duck.svg" 
     import PublicIcon from '@material-ui/icons/Public';
     import LocationCityIcon from '@material-ui/icons/LocationCity';
     import AcUnitIcon from '@material-ui/icons/AcUnit';
+    import Dashboard from '@material-ui/icons/Dashboard';
+   import History from '@material-ui/icons/History';
+   import CalendarToday from '@material-ui/icons/PermContactCalendar';
+  import MapIcon from '@material-ui/icons/Map';
  * 
  * 
  */

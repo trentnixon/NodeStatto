@@ -26,10 +26,8 @@ export default class Batting extends Component {
 
   render() { 
     return (     
-      <Container>
-        
- 
-
+      <Container> 
+      
         <SectionHeader   h1={this.props.LABELS.SITE.SUBS.RUNS} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
      
         <SectionContainer className="Section_Batting_Runs charts todo">

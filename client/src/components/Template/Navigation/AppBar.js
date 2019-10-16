@@ -7,6 +7,7 @@ import {LOGO} from "../../Icons/icons"
 // Icons
 import Dashboard from '@material-ui/icons/Dashboard';
 import  {Batting,Bowling,Keeping} from "../../Icons/icons";
+import {TeamName} from "../../../actions/UI"
 
 
 const Nav_Icons=[
@@ -32,6 +33,7 @@ export default class APPBARLAYOUT extends React.Component {
   
   componentWillMount() { 
       //Path = this.props.match.params.playerid;
+      //console.log(this.props)
   } 
   
   render() {
@@ -74,7 +76,10 @@ export default class APPBARLAYOUT extends React.Component {
             </div>
 
             <div className="Right">
-              <h1>{this.props.PLAYER_DATA.Primary.Meta.Name}</h1>
+              <h1>
+                <span className="big">{this.props.PLAYER_DATA.Primary.Meta.Name}</span>
+                <span className="small">{TeamName(this.props.STATTODATA.SetUpData.SelectTeamID)}</span>
+              </h1>
               <Avatar>{this.props.PLAYER_DATA.Primary.Meta.Name.charAt(0)}</Avatar>
             </div>
           </div>

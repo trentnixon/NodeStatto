@@ -5,23 +5,31 @@ import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
 import ShowMore from "../../../../Elements/Buttons/ShowMore"
-import  {Runs} from "../../../../Icons/icons"; 
+import  {Runs,Wickets, Trophy, Bowling, Duck} from "../../../../Icons/icons"; 
+import GraphicEqIcon from '@material-ui/icons/GraphicEq';
+import Looks6Icon from '@material-ui/icons/Looks6';
+import StarsIcon from '@material-ui/icons/Stars';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
+
 //Wickets,Keeping,Trophy 
-let stones=[];
+let stones=[], BSR=0;
 export default class Home_Overview extends Component {
     componentWillMount() { 
         //console.log(this.props.DATA)
-       
+            BSR = (this.props.DATA.Meta.Bowling_Overs * 5) / this.props.DATA.Meta.Bowling_Wickets; 
          stones=[
-            { var:this.props.DATA.Meta.Bowling_Wickets,                    Path:"bowling/overview", label:this.props.SUBS.WICKETS,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Overs,                      Path:"bowling/overview", label:this.props.SUBS.OVERS,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Economy,                 Path:"bowling/overview", label:this.props.SUBS.ECO, icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Average,                      Path:"bowling/overview", label:this.props.SUBS.AVG,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Ranking_Country_Current, Path:"bowling/overview", label:this.props.SUBS.CR,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Ranking_World_Current,   Path:"bowling/overview", label:this.props.SUBS.WR,icon:<Runs/>},
-            { var:this.props.DATA.Meta.Bowling_Best,   Path:"bowling/overview", label:this.props.SUBS.BB,icon:<Runs/>},
+            { var:this.props.DATA.Meta.Bowling_Best,        Path:"bowling/overview", label:this.props.SUBS.BB,          icon:<StarsIcon/>},
+            { var:this.props.DATA.Meta.Bowling_Wickets,     Path:"bowling/overview", label:this.props.SUBS.WICKETS,     icon:<Wickets/>},
+            { var:this.props.DATA.Meta.Bowling_Overs,       Path:"bowling/overview", label:this.props.SUBS.OVERS,       icon:<Bowling/>},
+            { var:this.props.DATA.Meta.Bowling_Economy,     Path:"bowling/overview", label:this.props.SUBS.ECO,         icon:<Looks6Icon/>},
+            { var:this.props.DATA.Meta.Bowling_Average,     Path:"bowling/overview", label:this.props.SUBS.AVG,         icon:<GraphicEqIcon/>},
+            { var:(BSR).toFixed(2),                         Path:"bowling/overview", label:this.props.SUBS.SR,         icon:<WhatshotIcon/>},
+            
         ]
      } 
+
+     //   { var:this.props.DATA.Meta.Bowling_Ranking_Country_Current, Path:"bowling/overview", label:this.props.SUBS.CR,icon:<Runs/>},
+    // { var:this.props.DATA.Meta.Bowling_Ranking_World_Current,   Path:"bowling/overview", label:this.props.SUBS.WR,icon:<Runs/>},
     render() {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
@@ -36,7 +44,7 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={false}
-                            className={IsVisable + " flex-25"}
+                            className={IsVisable + " flex-30"}
                         >
                             <IconPod 
                                 className="flex-100"

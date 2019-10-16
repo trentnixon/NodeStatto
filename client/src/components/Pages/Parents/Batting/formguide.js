@@ -7,7 +7,7 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionP from "../../../Elements/type/PageParagraph";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionCareerBatting from "./Sections/Section_FormGuide_AtAGlance_Batting";
-import SectionMilestonesBatting from "./Sections/Section_Career_Milestones_Batting";
+import SectionMilestonesBatting from "./Sections/Section_Career_Achievments_Batting";
 import SectionBattingrecentScores from "./Sections/Section_Batting_FORM_recentScores";
 import SectionRunsToBalls from "./Sections/Section_Batting_FORM_Runs_Balls";
 import SectionEvaluation from "./Sections/Section_Batting_FORM_Evaluation";
@@ -47,7 +47,7 @@ export default class Page_Batting_Formguide
                     Data={PRIMARY.CAREER.Form.batting} 
                     Career={PRIMARY.CAREER.Career}
                     TITLES={TITLES.SITE}
-                    FORMDATA={FORMDATA}
+                    FORMDATA={FORMDATA} 
                   /> 
               </SectionContainer>
 

@@ -11,7 +11,7 @@ header{
         flex-wrap: nowrap;
         justify-content: center;
         width: 100%;
-        align-items: center; 
+        align-items: center;  
         align-content: center;
     
         img.STATTOLOGO{
@@ -56,10 +56,20 @@ header{
             >div{ background-color: $h2Color;}
             h1{
                 font-size: 1.1em;
-                line-height: 2.3em;
+                line-height: 1.2em;
                 margin: 0 20px 0 10px;
                 color: $h2Color;
+                span.big{
+                    
+                    display: block;
+                }
+                span.small{
+                    font-size: .8em;
+                    font-weight: 100;
+                    display: block;
+                }
             }
+            
             button{
                 a{
                     display: flex;

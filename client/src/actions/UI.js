@@ -13,7 +13,29 @@ export function Form_Select_Year(value){
     store.dispatch({ type:"SELECT_YEAR", payload:value});
 }
 
+export function TeamName(ID){
+    let TeamName = store.getState().DATA.SetUpData.GoogleTeamList
+    let ReturnName;
+     TeamName.map((team,i)=>{
+            if(team[1] == ID){
+                ReturnName= team[0];
+            }
+    })
 
+    return ReturnName;
+    
+}
+export function SetPageTitle(){
+
+    let PlayerName = store.getState().DATA.SelectedPlayer.Primary.Meta.Name
+    let Section = window.location.pathname.split('/')
+    Section.splice(0,3)
+    let str='';
+    Section.map((path,i)=>{
+                str = str.concat(path.toUpperCase(),' | ')
+        })
+    document.title = PlayerName + ' | ' + str;
+}
 
 // UI calculations
 
@@ -75,6 +97,36 @@ export function BattingBasics(DATA){
         NO.length                           //  15  Notouts
     ]
 }
+
+export function BattingMileStones(DATA, CLEAN){ 
+
+    console.log(DATA, (Math.ceil(DATA.s_50/100)*100) );
+
+    // 
+
+    return [
+        DATA.runs,                                                  // 0 Current Runs
+        (Math.ceil(DATA.runs/1000)*1000),                           // 1 Next Milestone Runs
+        ( (Math.ceil(DATA.runs/1000)*1000) - DATA.runs ),           // 2 Difference
+        DATA.s_50,                                                  // 3 Current 50s
+        (Math.ceil(DATA.s_50/100)*100),                             // 4 Next Milestone 50s
+        ( (Math.ceil(DATA.s_50/100)*100) - DATA.s_50 ),             // 5 Difference
+        DATA.ballsFaced,                                            // 6 Current 50s
+        (Math.ceil(DATA.ballsFaced/1000)*1000),                     // 7 Next Milestone 50s
+        ( (Math.ceil(DATA.ballsFaced/1000)*1000) - DATA.ballsFaced ),    // 8 Difference
+        DATA.innings,                                            // 9 Current 50s
+        (Math.ceil(DATA.innings/100)*100),                     // 10 Next Milestone 50s
+        ( (Math.ceil(DATA.innings/100)*100) - DATA.innings ),    // 11 Difference
+        DATA.notOut,                                            // 12 Current 50s
+        (Math.ceil(DATA.notOut/100)*100),                     // 13 Next Milestone 50s
+        ( (Math.ceil(DATA.notOut/100)*100) - DATA.notOut ),    // 14 Difference
+        DATA.ducks,                                            // 12 Current 50s
+        (Math.ceil(DATA.ducks/100)*100),                     // 13 Next Milestone 50s
+        ( (Math.ceil(DATA.ducks/100)*100) - DATA.ducks )    // 14 Difference
+        
+    ]
+}
+
 
 
 export function FormFactor(FORM,CAREER){

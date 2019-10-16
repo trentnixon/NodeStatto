@@ -20,7 +20,7 @@ import {Batting} from "../../../Icons/icons";
 let PRIMARY,TITLES;
 
 // Start Class
-export default class Page_BattingOverview extends Component {
+export default class Page_BattingOverview extends Component { 
  
   componentWillMount() { 
     TITLES = this.props.LABELS 
@@ -39,7 +39,7 @@ export default class Page_BattingOverview extends Component {
                       CTA={TITLES.SITE.CTA}
                       TITLES = {TITLES.SITE.TITLES}
                       DATA={PRIMARY}
-                    /> 
+                    />  
         </SectionContainer>
 
         <SectionContainer className="Section_Batting_Rankings complete">
