@@ -20,7 +20,7 @@ import './App.css'
       git commit -am "Statto Additions and Updates"
       git push heroku master   
  */
-
+ 
 
 const GACode='UA-149608106-1';
 ReactGA.initialize(GACode);
@@ -31,7 +31,6 @@ export default class App extends Component {
      return (  
         <Router> 
             <div id="statto-app">
-             
                 <Route  path="/" component={Branch}/>
                 <Route exact path="/error/IDError" component={Wrong_ID} />  
             </div>

@@ -8,7 +8,7 @@ import Table from "../../../../Elements/Tables/RecentFigures";
 let ThisData;
 export default class Section_Rankings extends Component {
     componentWillMount() {
-        ThisData = this.props.Data.slice(Math.max(this.props.Data.length - 10, 1)).reverse();
+        ThisData = this.props.Data.slice(Math.max(this.props.Data.length - 5, 1)).reverse();
     }
     render() {
         return (
