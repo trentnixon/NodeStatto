@@ -25,6 +25,50 @@ export function TeamName(ID){
     return ReturnName;
     
 }
+
+
+
+/**
+ * 
+ *  This function seporates Game date by a Date provided as a Needle
+ *  if Needle === Career then the full data set is sent back
+ *  
+ */
+export function FindDataSeries(DATA,Needle){
+ 
+    let Series=[];
+    if(Needle === "Career"){
+        return DATA
+    }else{
+        DATA.map((game,i)=>{
+           let NewYear = game.Meta.Date.split("/")
+           if(Needle === '20'+NewYear[2]){
+                Series.push(game)
+            }
+        })
+        return Series;
+    }
+}
+/**
+ * 
+ *  This function Creates the Data Labesl for Grapghs for the function above
+ *  if Needle === Career then the full data set is sent back
+ *  
+ */
+export function CreateLabelData(Data,Needle){
+    let Series=[],NewYear;
+    Data.map((game,i)=>{
+        NewYear = game.Meta.Date.split("/")
+        if(Needle === "Career"){ Series.push(game.Meta.Date) }
+        else if(Needle === '20'+NewYear[2]){ Series.push(game.Meta.Date) }
+        return true;
+    })
+    return Series;
+}
+
+
+
+// Set the page Titles
 export function SetPageTitle(){
 
     let PlayerName = store.getState().DATA.SelectedPlayer.Primary.Meta.Name
@@ -100,7 +144,7 @@ export function BattingBasics(DATA){
 
 export function BattingMileStones(DATA, CLEAN){ 
 
-    console.log(DATA, (Math.ceil(DATA.s_50/100)*100) );
+    //console.log(DATA, (Math.ceil(DATA.s_50/100)*100) );
 
     // 
 
@@ -129,7 +173,34 @@ export function BattingMileStones(DATA, CLEAN){
 
 
 
-export function FormFactor(FORM,CAREER){
+export function BowlingMileStones(DATA){ 
+
+    // console.log(DATA, (Math.ceil(DATA.s_50/100)*100) );
+
+    return [
+        DATA.innings,                                                  // 0 Current innings
+        (Math.ceil(DATA.innings/100)*100),                           // 1 Next Milestone innings
+        ( (Math.ceil(DATA.innings/100)*100) - DATA.innings ),           // 2 Difference
+        DATA.ob,                                                  // 3 Current ob
+        (Math.ceil(DATA.ob/100)*100),                             // 4 Next Milestone ob
+        ( (Math.ceil(DATA.ob/100)*100) - DATA.ob ),             // 5 Difference
+        DATA.rc,                                            // 6 Current rc
+        (Math.ceil(DATA.rc/500)*500),                     // 7 Next Milestone rc
+        ( (Math.ceil(DATA.rc/500)*500) - DATA.rc ),    // 8 Difference
+        DATA.wickets,                                            // 9 Current wickets
+        (Math.ceil(DATA.wickets/100)*100),                     // 10 Next Milestone wickets
+        ( (Math.ceil(DATA.wickets/100)*100) - DATA.wickets ),    // 11 Difference
+        DATA.fa2,                                            // 12 Current fa2
+        (Math.ceil(DATA.fa2/50)*50),                     // 13 Next Milestone fa2
+        ( (Math.ceil(DATA.fa2/50)*50) - DATA.fa2 ),    // 14 Difference
+        
+    ]
+}
+
+
+
+export function FormFactor(FORM,CAREER){ 
+
 
         let FetchForm = BattingBasics(FORM)
 
@@ -152,6 +223,21 @@ export function FormFactor(FORM,CAREER){
 
 
 export function FormoverTime(CLEAN,CAREER, SELECTOR){
+
+
+
+    /**
+     * 
+     *  Changes to this alog
+     *  Create NEW Meta stats to use as a Benchmark
+     *  Currently using Carrer Meta, which is very limiting. 
+     *  var CAREER should be dynamic based on year selected
+     *  var FORM will be limited by the Global YEAR var as well
+     *  Then pass through the below eq
+     */
+
+
+
     const monthNames = [null,"January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ];
 
     // Orgainse Career by Year
@@ -203,5 +289,56 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
                     }
                 })
       })
-      return [FormBar,FormLabels];
+      return [FormBar,FormLabels]; 
+}
+
+
+
+
+export function BowlingBasics(DATA){
+    let Games =[], Overs=[], Wickets=[], RC=[], AVG_OT=[], ECO_OT=[], SR_OT=[];
+    let PRO_AVG=0, PRO_ECO=0, PRO_SR=0;
+    DATA.map((game,i)=>{ 
+           
+         if(game.Bowling){ 
+            
+            // Bowling Innings
+            Overs.push(parseFloat(game.Bowling.Overs))
+            Games.push(1);
+            // Wickets
+            Wickets.push(parseInt(game.Bowling.Wickets,10))
+            
+            // RC
+            RC.push(parseInt(game.Bowling.Runs,10))
+            // Average
+            PRO_AVG =  (RC.reduce((a, b) => a + b, 0) / Wickets.reduce((a, b) => a + b, 0)).toFixed(2);
+            if (!isFinite(PRO_AVG)){PRO_AVG=0}
+            AVG_OT.push(PRO_AVG);
+            // Economy
+            PRO_ECO = (RC.reduce((a, b) => a + b, 0)/Overs.reduce((a, b) => a + b, 0)).toFixed(2);
+            if (!isFinite(PRO_ECO)){PRO_ECO=0}
+            ECO_OT.push(PRO_ECO);
+            // Strike Rate
+            PRO_SR = ((Overs.reduce((a, b) => a + b, 0) * 5) /Wickets.reduce((a, b) => a + b, 0)).toFixed(2);
+            if (!isFinite(PRO_SR)){PRO_SR=0}
+            SR_OT.push(PRO_SR);
+    
+        }})
+
+    return [
+        Games,                                                                                   // 0 Bowling Innings
+        Wickets,                                                                                 // 1 Wickets Arr
+        Wickets.reduce((a, b) => a + b, 0),                                                      // 2 Wickets Total
+        Overs,                                                                                   // 3 Overs
+        Overs.reduce((a, b) => a + b, 0),                                                        // 4 Overs Total
+        RC,                                                                                      // 5 RC
+        RC.reduce((a, b) => a + b, 0),                                                           // 6 RC Total
+        (RC.reduce((a, b) => a + b, 0)/Overs.reduce((a, b) => a + b, 0)).toFixed(2) ,            // 7 EC
+        ECO_OT,                                                                                  // 8 ECO ARR Over Time
+        ((Overs.reduce((a, b) => a + b, 0) * 5) /Wickets.reduce((a, b) => a + b, 0)).toFixed(2), // 9 SR
+        SR_OT,                                                                                   // 10 SR ARR Over Time
+        (RC.reduce((a, b) => a + b, 0) / Wickets.reduce((a, b) => a + b, 0)).toFixed(2),         // 11 AVG
+        AVG_OT                                                                                   // 12 Average ARR Over Time
+
+    ]
 }

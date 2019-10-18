@@ -36,9 +36,9 @@ const Rows=[
     },
     {
         "label":"Bowling Section", 
-        "stage":"InDevelopment",
+        "stage":"Testing",
         "icon":<AccountCircle />, 
-        "perc":'50',
+        "perc":'90',
         "date":""
     },
     {

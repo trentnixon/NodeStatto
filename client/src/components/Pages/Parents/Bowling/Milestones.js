@@ -6,6 +6,7 @@ import Container from "../../../Template/Page/Container";
 // Sections
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Section_Bowling_Milestones from "./Sections/Section_Fa_Bowling_MIlestones";
 import SectionFaBowling from "./Sections/Section_Fa_Bowling";
 
 // Start Class
@@ -19,14 +20,23 @@ export default class BowlingHome extends Component {
 
     return ( 
       <Container>
-        <SectionHeader   h1={SITELABELS.TITLES.OVERVIEW} h2={SITELABELS.TITLES.BOWLING} /> 
+        <SectionHeader h1={SITELABELS.TITLES.MILESTONE} h2={SITELABELS.TITLES.BOWLING} /> 
         
+        
+        <SectionContainer>
+          <Section_Bowling_Milestones  
+            DATA={PRIMARY.CAREER.Career.bowling}
+            TITLE={SITELABELS.TITLES.MILESTONE}
+            {... this.props} 
+          /> 
+        </SectionContainer>
+
         <SectionContainer>
           <SectionFaBowling  
             Data={PRIMARY.CAREER.Career.bowling}
-            Title={SITELABELS.TITLES.MILESTONE}
+            TITLE={SITELABELS.TITLES.ACHIEVEMENTS}
             {... this.props} 
-          />
+          /> 
         </SectionContainer>
       
       </Container> 

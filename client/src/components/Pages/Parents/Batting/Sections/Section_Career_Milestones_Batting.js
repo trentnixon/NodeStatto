@@ -41,7 +41,7 @@ export default class Section_Rankings extends Component {
                                     return(
                                         <Animated    
                                             key={i} 
-                                            animationIn="fadeInUp"
+                                            animationIn="fadeInUp" 
                                             isVisible={this.props.isVisible}
                                             animationInDelay={Delay}
                                             animateOnMount={false}

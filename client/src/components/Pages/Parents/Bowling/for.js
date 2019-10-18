@@ -112,7 +112,7 @@ export default class ForandAgainstMajorTable extends Component {
 
     return (
         <Container>
-          <SectionHeader   h1={SITELABELS.SUBS.FORAGAINST} h2={SITELABELS.TITLES.BATTING} /> 
+          <SectionHeader   h1={SITELABELS.SUBS.FORAGAINST} h2={SITELABELS.TITLES.BOWLING} /> 
             <SectionContainer className="Section_Batting_FORANDAGAINST_Form Selector">
                 <Row className="PodRow Form_Selector">
                   <Pod>

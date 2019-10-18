@@ -23,7 +23,7 @@ export default class Batting extends Component {
             <SectionNotable DATA={PRIMARY.CLEAN} TITLE={TITLES.SITE} />  
         </SectionContainer>
       </Container> 
-    )
+    ) 
   } 
 }
   

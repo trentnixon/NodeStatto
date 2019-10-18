@@ -10,6 +10,7 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionCareerBowling from "./Sections/Section_Career_Bowling";
 import SectionForandAgainst from "../../../Elements/Tables/MostForAgainstBowling";
+import WicketsOverTheYears from "./Sections/Section_Bowling_Wickets_OverTheYears";
 // Sections 
 import Tabber from "../../../Template/Tabber/TabContaner";
 import BasicStatOverview from "./Sections/Section_Bowling_Overview_BasicStats";
@@ -39,7 +40,7 @@ export default class BowlingHome extends Component {
                       CTA={TITLES.SITE.CTA}
                       TITLES = {TITLES.SITE.TITLES}
                       DATA={PRIMARY}
-              />  
+              />   
         </SectionContainer>
        
         <SectionContainer className="Section_Batting_Rankings complete">
@@ -51,6 +52,10 @@ export default class BowlingHome extends Component {
             />
   
         </SectionContainer>
+
+        <SectionContainer className="Section_Bowling_Wickets complete">
+            <WicketsOverTheYears  Data={PRIMARY.CAREER.Career.bowling.overTheYears} />
+          </SectionContainer>
 
         <SectionContainer>
           <Tabber 

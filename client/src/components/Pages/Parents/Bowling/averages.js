@@ -9,7 +9,7 @@ import SectionContainer from "../../../Template/Global/SectionContainer";
 
 // Sections 
 import MixedChartEcoRuns from "./Sections/Section_MixedChart_Economy_RunsConceded";
-
+import InteractivePods from "./Sections/Section_Bowling_Average_Economy_SR_Interactive_Pods";
 
 export default class Averages extends Component {
 
@@ -23,42 +23,17 @@ export default class Averages extends Component {
       
       <Container>
  
-        <SectionHeader   h1={TITLES.SUBS.AVG} h2={TITLES.TITLES.BOWLING}  /> 
+          <SectionHeader   h1={TITLES.SUBS.AVG + ', ' + this.props.LABELS.SITE.SUBS.ECO + ', ' + this.props.LABELS.SITE.SUBS.SR} h2={TITLES.TITLES.BOWLING}  /> 
 
-        <SectionContainer className="Section_Batting_Runs charts todo">
-            <Title Title="Overview" />
-            <MixedChartEcoRuns TITLE={TITLES} DATA={PRIMARY.CLEAN} />
+          <SectionContainer className="Section_Batting_Runs charts todo">
+              <InteractivePods TITLE={TITLES} DATA={PRIMARY.CLEAN} {... this.props} />
+          </SectionContainer>  
+
+          <SectionContainer className="Section_Batting_Runs charts todo">
+            <MixedChartEcoRuns TITLE={TITLES} DATA={PRIMARY.CLEAN}  {... this.props}/>
           </SectionContainer>
-
-        <SectionContainer className="Section_Bowling_AES todo">
-            <Title Title="Average" /> 
-          
-            <Pod className="flex-100" > Average the years : Pie Chart</Pod>
-            <Pod className="flex-100"> Average : best for and against text</Pod>
-            <Pod className="flex-100"  > Average over time against current: Line Chart</Pod>
-        </SectionContainer>
-
-        <SectionContainer className="Section_Bowling_AES todo">
-
-          <Title Title="Economy" />
-          <Pod  className="flex-100"> Economy the years : Pie Chart</Pod>
-          <Pod  className="flex-100"> Economy : best for and against text</Pod>
-          <Pod  className="flex-100"> Economy over time against current: Line Chart</Pod>
-
-        </SectionContainer>
-      
-       
-
-        <SectionContainer className="Section_Bowling_AES todo">
-
-          <Title Title="Strike Rate" />
-          <Pod className="flex-100" > Strike Rate the years : Pie Chart</Pod>
-          <Pod className="flex-100" > Strike Rate : best for and against text</Pod>
-          <Pod cclassName="flex-100" > Strike Rate over time against current: Line Chart</Pod>
-
-        </SectionContainer>
-            
+             
       </Container>
     )
   }
-}
+} 

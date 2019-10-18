@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
-
+import Subtitle from "../../../../Elements/type/PageSubTitle";
 import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
@@ -34,6 +34,7 @@ export default class Home_Overview extends Component {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
                 <Row className="PodRow">
+                 <Subtitle Title={this.props.SUBS.BASIC}/>
                    { 
                     stones.map((stone,i)=>{
                         let Delay= 200*i;

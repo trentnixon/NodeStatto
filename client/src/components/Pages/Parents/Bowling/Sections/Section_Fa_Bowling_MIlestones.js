@@ -6,19 +6,24 @@ import SubTitle from "../../../../Elements/type/PageSubTitle";
 import SingleValuePod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 import ShowMore from "../../../../Elements/Buttons/ShowMore";
 
-const stones=[
-    { var:"fa2",label:"2 fa", path:"bowling/fas"},
-    { var:"fa3",label:"3 fa", path:"bowling/fas"},
-    { var:"fa4",label:"4 fa", path:"bowling/fas"},
-    { var:"fa5",label:"5 fa", path:"bowling/fas"}, 
-    { var:"fa6",label:"6 fa", path:"bowling/fas"},
-    { var:"fa7",label:"7 fa", path:"bowling/fas"} 
-]
+import {BowlingMileStones} from "../../../../../actions/UI";
 
+
+let Milestones, stones=[];
 export default class Section_Rankings extends Component {
     componentWillMount() {}
     render() { 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
+   
+        Milestones = BowlingMileStones(this.props.DATA); 
+        console.log(Milestones);
+        stones=[
+            { var:Milestones[2],label:"To "+ Milestones[1] + ' Bowling Innings', Current:'Current : ' +Milestones[0] },
+            { var:Milestones[5],label:"To "+ Milestones[4] + ' Overs Bowled', Current:'Current : ' + Milestones[3] },
+            { var:Milestones[8],label:"To "+ Milestones[7] + ' Runs Conceded', Current:'Current : ' + Milestones[6] },
+            { var:Milestones[11],label:"To "+ Milestones[10] + ' Wickets', Current:'Current : ' + Milestones[9] },
+            { var:Milestones[14],label:"To "+ Milestones[13] + ' 2 fas', Current:'Current : ' + Milestones[12] },     
+        ]
         return (
             <Row className="PodRow">
                 <Title Title={this.props.TITLE}/> 
@@ -35,11 +40,11 @@ export default class Section_Rankings extends Component {
                                     className={IsVisable + " flex-30"}
                                 >
                                     <SingleValuePod 
-                                        label={stone.label}
-                                        total={this.props.Data[stone.var]}
-                                        icon= {stone.icon} 
-                                        Footer = {<ShowMore Label={this.props.LABELS.SITE.CTA.MORE} className=" CTA ButtonRight"  Path={stone.path+"/"+stone.var} />}
-                                    />
+                                                label={stone.label}
+                                                total={stone.var}
+                                                icon= {stone.icon}
+                                                Footer = {stone.Current}
+                                            />
                                 </Animated>
                             )
                         }) 

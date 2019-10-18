@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { FormoverTime } from "../../../../../actions/UI"
+import { FormoverTime, FindDataSeries } from "../../../../../actions/UI"
 // Template
 import Row from '../../../../Template/Page/Row';
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
@@ -15,6 +15,7 @@ export default class Section_Batting_BallsFaced extends Component {
 
 
     componentWillMount() {
+        console.log(this.props.CAREER.CLEAN, this.props.CAREER.CAREER.Career, this.props.UX.FORMS.SELECT.YEAR);
         PrintFormFactor = FormoverTime(this.props.CAREER.CLEAN, this.props.CAREER.CAREER.Career, this.props.UX.FORMS.SELECT.YEAR)
     }
 
@@ -40,12 +41,12 @@ export default class Section_Batting_BallsFaced extends Component {
                 <ChartContainer 
                     Info={this.props.TITLES.DESC.FORMBATTINGOVERTIME} 
                     Interactive={true}
-                    Title={"Form History"}
+                    Title={"Form History"} 
                     flex=" flex-100"
                 >
                       <Pod className="flex-100" canvas="canvas1">
                         <Bar series={FormYears} Labels={Labels}  BasePath='/batting/deep'/>
-                     </Pod> 
+                     </Pod>
                 </ChartContainer>
             </Row>            
             )

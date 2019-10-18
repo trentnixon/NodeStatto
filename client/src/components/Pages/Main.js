@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Frame from "../Template/Frame";
 import {PageView, BasicTracking} from "../../actions/ga";
 import {SetPageTitle} from "../../actions/UI";
-
+import ScrollToTop from "../../ScrollToTop";
 
 // Components
 import ComponentHome from "./Parents/Home/Home";
@@ -101,6 +101,11 @@ const  Navigation =[
         "label":"Overview",
         "path":"overview",
         "icon":<AccountCircle/>
+      },
+      {
+        "label":"Form",
+        "path":"formguide",
+        "icon":<ShowChart/>
       },{
         "label":"Wickets",
         "path":"wickets",
@@ -109,11 +114,6 @@ const  Navigation =[
         "label":"AES",
         "path":"aes",
         "icon":<GraphicEqIcon/>
-      },
-      {
-        "label":"Form",
-        "path":"formguide",
-        "icon":<ShowChart/>
       },{
         "label":"Notable Figures",
         "path":"notable",
@@ -123,7 +123,6 @@ const  Navigation =[
         "path":"milestones",
         "icon":<CakeIcon/>
       },
-      
       {
         "label":"For & Against",
         "path":"foragainst",
@@ -191,10 +190,10 @@ export default class Statto extends Component {
     BasicTracking(this.props.DATA_SETUP.SelectTeamID,this.props.PLAYER_DATA.Primary.Meta.Name, window.location.pathname)
 
     return (
-      <Router basename={'/'+this.props.DATA_SETUP.SelectTeamID+'/'+this.props.DATA_SETUP.SelectedPlayerID }>
+      <Router  basename={'/'+this.props.DATA_SETUP.SelectTeamID+'/'+this.props.DATA_SETUP.SelectedPlayerID }>
           <Frame {... this.props} Navigation={Navigation} >
             <div id="display-statto-app"> 
-                
+                <ScrollToTop />
                 <Route  exact path='/' render={()=> <ComponentHome {... this.props}/> }/>
                 <Route  exact path='/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
                 <Route  path="/history" render={()=> <ComponentHistory {... this.props} /> }/>

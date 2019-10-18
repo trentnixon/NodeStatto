@@ -19,7 +19,7 @@ export default class Page_Batting_Formguide
  extends Component {
 
   componentWillMount() {
-    TITLES = this.props.LABELS 
+    TITLES = this.props.LABELS  
     PRIMARY = this.props.PLAYER_DATA.Primary;
   } 
     

@@ -236,7 +236,7 @@ function IncludeBatting(Batting, game){
 
 function IncludeBowling(Bowling, game){
 
-    Bowling.wickets =  Add(Bowling.wickets, parseInt(game.Bowling.Wickets,10))
+    Bowling.wickets =  Add(Bowling.wickets, parseInt(game.Bowling.Wickets,10)) 
     Bowling.innings =   Add(Bowling.innings,1);
     Bowling.ob =  Add(Bowling.ob, parseInt(game.Bowling.OversInt,10))
     Bowling.rc =  Add(Bowling.rc, parseInt(game.Bowling.Runs,10))

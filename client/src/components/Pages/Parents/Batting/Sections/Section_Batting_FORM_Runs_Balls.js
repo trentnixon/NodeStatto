@@ -16,7 +16,7 @@ export default class Section_Batting_BallsFaced extends Component {
 
         SentSeries = BattingBasics(this.props.FORMDATA)
         Labels=SentSeries[1]
-
+ 
         RunsYear=[
             {
                 name:"Runs Scored",

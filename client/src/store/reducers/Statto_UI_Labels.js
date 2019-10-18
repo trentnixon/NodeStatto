@@ -33,7 +33,7 @@ const InitialState ={
                     CAREER:"CAREER",
                     FORMGUIDE:"FORM",
                     MILESTONE:"Milestones",  
-                    ACHIEVEMENTS:"Achievements",
+                    ACHIEVEMENTS:"Achievements", 
                     SCORES:"SCORES"
                 },
                 SUBS:{ 
@@ -44,6 +44,7 @@ const InitialState ={
                     CATCHES:"Catches",
                     INNINGS:"Innings",
                     NOTABLESCORES:"Notable Scores",
+                    NOTABLEFIGURES:"Notable Figures",
                     AVGVSRUN:"Average vs Runs over time",
                     RUNSYEARSLINE:"Runs: Year on Year",
                     WICKETSYEARSLINE:"Wickets: Year on Year",

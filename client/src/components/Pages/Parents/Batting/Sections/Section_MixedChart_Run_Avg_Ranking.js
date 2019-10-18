@@ -31,7 +31,7 @@ export default class Section_Default extends Component {
         Labels:[], 
         NotOuts:0 
       }
-
+ 
     CreateRuns(Data, Needle){ 
         let Series=[],NewYear, RunsTotal=0;
 
@@ -56,7 +56,7 @@ export default class Section_Default extends Component {
     }
 
     CreateAVG(Data,Needle){
-        let Series=[],NewYear;
+        let Series=[],NewYear; 
         let TR=0; 
         Div=0;
         NotOut=0

@@ -23,18 +23,18 @@ import  {Bowling,Runs,Wickets} from "../../../../Icons/icons";
 const Rows=[
     {
         "label":"Overview",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<AccountCircle/>
       },{
         "label":"Wickets",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<Wickets/>
       },{
         "label":"AES",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<GraphicEqIcon/>
       },
       {
@@ -44,20 +44,20 @@ const Rows=[
         "icon":<ShowChart/>
       },{
         "label":"Notable Figures",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<Looks4/>
       },{
         "label":"Milestones",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<CakeIcon/>
       },
       
       {
         "label":"For & Against",
-        "perc":'50',
-        "stage":"ToDo",
+        "perc":'90',
+        "stage":"Testing",
         "icon":<People/>
       }
 ]

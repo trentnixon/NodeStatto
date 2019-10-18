@@ -2,8 +2,6 @@ import React,  { Component } from 'react'
 import ReactGA from 'react-ga';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Branch from "./components/Pages/Parents/Branches/Branch_Setup";
-
-
 // Errors
 import Wrong_ID from "./components/Pages/Errors/ID_Missing";
 
@@ -20,7 +18,7 @@ import './App.css'
  * -- Command list 
       git add .
       git commit -am "Statto Additions and Updates"
-      git push heroku master  
+      git push heroku master   
  */
 
 
@@ -33,6 +31,7 @@ export default class App extends Component {
      return (  
         <Router> 
             <div id="statto-app">
+             
                 <Route  path="/" component={Branch}/>
                 <Route exact path="/error/IDError" component={Wrong_ID} />  
             </div>

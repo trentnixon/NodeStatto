@@ -4,11 +4,15 @@ import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Notable from "./Sections/Section_Bowling_NotableFigures";
 
-
+let PRIMARY,TITLES;
 export default class Batting extends Component {
 
-  componentWillMount() { }
+  componentWillMount() { 
+    TITLES = this.props.LABELS 
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
+  }
 
   render() {
 
@@ -16,14 +20,14 @@ export default class Batting extends Component {
    // const PRIMARY = this.props.PLAYER_DATA.Primary;
     return ( 
       <Container>
-        <SectionHeader   h1={this.props.LABELS.SITE.SUBS.NOTABLESCORES} h2={SITELABELS.TITLES.BOWLING}  /> 
+        <SectionHeader   h1={this.props.LABELS.SITE.SUBS.NOTABLEFIGURES} h2={SITELABELS.TITLES.BOWLING}  /> 
  
         <SectionContainer className="Section_Bowling_Wickets todo">
-          <Title Title="Notable Bowling Performaces : Interactive List" />
+          <Notable DATA={PRIMARY.CLEAN} TITLE={TITLES.SITE} />  
         </SectionContainer>
 
       
     </Container> 
-    )
+    ) 
   }
 }

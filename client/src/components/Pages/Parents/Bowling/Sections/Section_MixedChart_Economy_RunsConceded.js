@@ -3,148 +3,68 @@ import React, { Component } from 'react';
 // Template
 import Row from "../../../../Template/Page/Row";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../Elements/type/PageTitle";
+// import Title from "../../../../Elements/type/PageTitle";
+
+// Actions
+import {BowlingBasics, FindDataSeries, CreateLabelData} from "../../../../../actions/UI";
 
 // Sections
 //import InteractiveScatterChart from "../../../../Charts/ScatterChart";
 import InteractiveChart from "../../../../Charts/MixedChart";
 
 // Variables
-let Series=[],Labels =[];
+let DataSeries=[],DataLabels =[];
 
 // Start Class
 export default class Section_Default extends Component {
+    state = {
+        Series:[],
+        Labels:[]
+      }
+      // Create Data Series
+      createSeries(DATA, Neddle){  
 
+        let ReturnedSeries = BowlingBasics(FindDataSeries(DATA,Neddle));
+         DataLabels = CreateLabelData(DATA,Neddle)
+ 
+                    DataSeries = [{
+                        name: 'Average',
+                        type: 'area',
+                        data: ReturnedSeries[12]
+                    },{
+                        name: 'Economy',
+                        type: 'area',
+                        data: ReturnedSeries[8]
+                    },{
+                        name: 'Strike Rate',
+                        type: 'area',
+                        data: ReturnedSeries[10]
+                    }
+                    ]
 
-    CreateRuns(Data){
-        let Series=[]
-        Data.map((game,i)=>{
-            if(game.Bowling){
-                Series.push(game.Bowling.Runs)
-            }
-            return true;
-        })
-        //console.log(Series)
-        return Series;
-    }
+                this.setState({  
+                    Series:DataSeries,
+                    Labels:DataLabels,
+                })
+        }
 
-    CreateSR(Data){
-        let Series=[]
-        let OB=0,WT=0;
-        // OversInt , RunInt
-        Data.map((game,i)=>{
-            let SR=null;
-            if(game.Bowling){
-                WT = WT + parseInt(game.Bowling.Wickets,10);
-                OB = OB + game.Bowling.OversInt;
-                SR = (OB * 5) / WT
-               
-                if (!isFinite(SR.toFixed(2))){SR=0}
-                Series.push(parseFloat(SR.toFixed(2)))
-            }
-            return true;
-        })
-        //console.log(Series)
-        return Series;
-    }
-
-
-    CreateECO(Data){
-        let Series=[]
-        let OB=0,RC=0;
-        // OversInt , RunInt
-        Data.map((game,i)=>{
-            let ECO=null;
-            if(game.Bowling){
-                RC = RC + parseInt(game.Bowling.Runs, 10);
-                OB = OB + game.Bowling.OversInt;
-               
-                ECO = RC/OB;
-                if (!isFinite(ECO.toFixed(2))){ECO=0}
-                Series.push(parseFloat(ECO.toFixed(2)))
-            }
-            return true;
-        })
-        //console.log(Series)
-        return Series;
-    }
-
-    CreateAVG(Data){
-        let Series=[]
-        let WT=0,RC=0;
-        // OversInt , RunInt
-        Data.map((game,i)=>{
-            let AVG=null;
-            if(game.Bowling){
-                RC = RC + parseInt(game.Bowling.Runs, 10);
-                WT = WT + parseInt(game.Bowling.Wickets,10);
-               
-                AVG = RC/WT;
-                //console.log(AVG, RC, OB);
-
-                if (!isFinite(AVG.toFixed(2))){AVG=0}
-           
-                Series.push(parseFloat(AVG.toFixed(2)))
-            }
-            return true;
-        })
-        //console.log(Series)
-        return Series;
-    }
-
-    CreateDate(Data){
-        let Series=[]
-        Data.map((game,i)=>{
-            if(game.Bowling){
-                //console.log(game.Batting.RunInt)
-                Series.push(game.Meta.Date)
-            }
-            return true;
-        })
-        //console.log(Series)
-        return Series;
-    }
-
+        componentWillMount() { 
+            this.createSeries(this.props.DATA,this.props.UX.FORMS.SELECT.YEAR)             
+        } 
+        shouldComponentUpdate(nextProps, nextState){ return true;}
+        componentWillUpdate(nextProps, nextState){
+            if(this.props.UX.FORMS.SELECT.YEAR !== nextProps.UX.FORMS.SELECT.YEAR)
+            { this.createSeries(this.props.DATA,nextProps.UX.FORMS.SELECT.YEAR) }
+        }
     
-    componentWillMount() {
-     
-        /**
-         * {
-            name: 'Runs Conceded',
-            type: 'column',
-            data: this.CreateRuns(this.props.DATA)
-          },
-         */
-        Series = [{
-            name: 'Average',
-            type: 'area',
-            data: this.CreateAVG(this.props.DATA)
-          },{
-            name: 'Economy',
-            type: 'area',
-            data: this.CreateECO(this.props.DATA)
-          },{
-            name: 'Strike Rate',
-            type: 'area',
-            data: this.CreateSR(this.props.DATA)
-          }
-        ]
-
-          Labels = this.CreateDate(this.props.DATA)
-        //console.log(Series);
-    } 
     render() {
-        //console.log( this.props.DATA)
+        //console.log(this.state)
         return ( 
             <Row className="PodRow">
-                    <Title Title={this.props.TITLE.SUBS.AVG + ' / ' +this.props.TITLE.SUBS.ECO + ' / ' +this.props.TITLE.SUBS.SR} /> 
                     <Pod canvas="canvas1 " className="flex-100">
-                        <InteractiveChart 
-                            LookUp={this.props.DATA} 
-                            Labels={Labels}
-                            series={Series} 
-                            Disc="Batting"
-                            Var="RunInt" 
+                        <InteractiveChart
+                            Labels={this.state.Labels}
+                            series={this.state.Series}
                         />
                     </Pod>
             </Row> 

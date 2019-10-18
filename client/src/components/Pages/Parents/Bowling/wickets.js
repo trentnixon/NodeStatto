@@ -9,7 +9,7 @@ import Bowling_Wickets_Text_Basics from "./Sections/Section_Bowling_Wickets_Basi
 import WicketsByMonth from "./Sections/Section_Bowling_Wickets_BarByMonthOverYear";
 
 
-import WicketsOverTheYears from "./Sections/Section_Bowling_Wickets_OverTheYears";
+
 import InteractiveWicketsOverYears from "../../../Elements/InteractiveCharts/BarChart_WicketsOverTheYears";
 import Section_WicketsOverTheYears_LineGraph from "./Sections/Section_WicketsOverTheYears_LineGraph";
 
@@ -24,7 +24,7 @@ export default class Batting extends Component {
     
     return ( 
       <Container> 
-        <SectionHeader   h2={SITELABELS.SUBS.WICKETS} h1={SITELABELS.TITLES.BOWLING}  /> 
+        <SectionHeader   h1={SITELABELS.SUBS.WICKETS} h2={SITELABELS.TITLES.BOWLING}  /> 
          
           <SectionContainer  className="Section_Bowling_Wickets Compelete"> 
              <Bowling_Wickets_Text_Basics TITLE={SITELABELS} DATA={PRIMARY.CAREER.Career.bowling} />
@@ -38,12 +38,7 @@ export default class Batting extends Component {
             <Section_WicketsOverTheYears_LineGraph TITLE={SITELABELS} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY}/>
           </SectionContainer>
 
-
-          <SectionContainer className="Section_Bowling_Wickets ToDo">
-            <WicketsOverTheYears  Data={PRIMARY.CAREER.Career.bowling.overTheYears} />
-          </SectionContainer>
-
-          <SectionContainer className="Section_Bowling_Wickets ToDo">
+          <SectionContainer className="Section_Bowling_Wickets complete">
             <InteractiveWicketsOverYears DATA={PRIMARY}  />
           </SectionContainer>
     </Container> 

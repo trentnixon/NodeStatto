@@ -39,13 +39,11 @@ class LineCharts extends Component {
             }
           },
         xaxis: { 
-            labels: {
-                show: false,
-            },
+            labels: {show: false, },
             categories: this.props.Labels,
           },
         
-        label : this.props.Labels,
+        labels : this.props.Labels,
         fill: {
           type: 'gradient',
             gradient: {
@@ -66,7 +64,7 @@ class LineCharts extends Component {
             intersect: false,
             y: {
               formatter: function (y) {
-                if (typeof y !== "undefined") {
+                if (typeof y !== "undefined"){
                   return y.toFixed(2);
                 }
                 return y;
@@ -79,23 +77,29 @@ class LineCharts extends Component {
   } 
 
   CreateSeries(props){
+    //console.log(props.Labels);
     this.setState({ 
       series:props.series,
-      options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels} }}) 
+      options: update(
+            this.state.options,{
+                xaxis:{categories:{$set:props.Labels} },
+                labels :{$set:props.Labels}
+              }
+          ) 
     })
   }
 
-  componentWillMount() { this.CreateSeries(this.props) } 
+  componentWillMount() { this.CreateSeries(this.props) }  
 
   componentWillUpdate(){ return true;}
   
   componentDidUpdate(nextprops,nextState){
-      if(this.props.series !== this.state.series){  this.setState({ Chart:null}); this.CreateSeries(nextprops)  }
+      if(this.props.series !== this.state.series){ this.CreateSeries(nextprops)  }
   }
 
   render() {
     return (
-      <div className="Charts HidePortait">
+      <div className="Charts HidePortait"> 
           <div className="mixed-chart">
             <Chart
               options={this.state.options}
@@ -109,4 +113,4 @@ class LineCharts extends Component {
 }
 
 const mapStateToProps = (state) => ({ CHART:state.CHARTS })
-export default connect(mapStateToProps)(LineCharts); 
+export default connect(mapStateToProps)(LineCharts);   
