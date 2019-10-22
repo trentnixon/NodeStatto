@@ -36,12 +36,13 @@ const InitialState ={
                     ACHIEVEMENTS:"Achievements", 
                     SCORES:"SCORES"
                 },
-                SUBS:{ 
+                SUBS:{  
                     RUNS:"Runs",
                     BALLS:"By The Ball",  
                     WICKETS:"Wickets", 
                     OVERS:"Over",
                     CATCHES:"Catches",
+                    STUMPINGS:"Stumpings",
                     INNINGS:"Innings",
                     NOTABLESCORES:"Notable Scores",
                     NOTABLEFIGURES:"Notable Figures",

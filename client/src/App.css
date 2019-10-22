@@ -999,7 +999,8 @@ body {
             justify-content: flex-start; }
             body #root #Statto #Frame header #AppBar .Center img.NavigationIcon {
               width: 25px;
-              height: 25px; }
+              height: 25px;
+              margin: 0; }
             body #root #Statto #Frame header #AppBar .Center img.NavigationIcon.Bowling {
               width: 20px;
               height: 20px; }

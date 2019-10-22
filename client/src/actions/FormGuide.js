@@ -67,6 +67,7 @@ export function FormGuide(data){
             Keeping:{
                 catches:0,
                 stumping:0,
+                innings:0,
                 overTheYears:[]
             }
         },
@@ -110,7 +111,8 @@ export function FormGuide(data){
             },
             Keeping:{
                 catches:0,
-                stumping:0
+                stumping:0,
+                innings:0,
             }
         }
     };
@@ -260,7 +262,11 @@ function IncludeBowling(Bowling, game){
 function IncludeKeeping(Keeping, game){
     Keeping.catches = Add(Keeping.catches, parseInt(game.Keeping.catches,10))
     Keeping.stumping = Add(Keeping.stumping, parseInt(game.Keeping.stumping,10))
+    Keeping.innings ++;
 
+    if(Keeping.overTheYears !== undefined){
+        Keeping.overTheYears = KeepingOverTheYears(Keeping.overTheYears,game);
+    }
     return Keeping;
 }
  
@@ -405,7 +411,7 @@ function RunOverTheYears(data,game){
 
 function BowlingOverTheYears(data,game){
     
-    console.log(game); 
+    //console.log(game); 
 
     let from = game.Meta.Date.split("/");
     let findKey;
@@ -435,6 +441,47 @@ function BowlingOverTheYears(data,game){
             data[findKey].TotalWickets = data[findKey].TotalWickets + parseInt(game.Bowling.Wickets,10)
             data[findKey].HistoryRC.push(parseInt(game.Bowling.Runs,10))
             data[findKey].HistoryWickets.push(parseInt(game.Bowling.Wickets,10))
+
+            // Meta
+            data[findKey].HistoryGames.push(game.Meta.Fixture)
+            data[findKey].Month.push(from[1])
+   }
+
+     return data
+
+}
+
+function KeepingOverTheYears(data,game){
+    
+   // console.log(data, game); 
+
+    let from = game.Meta.Date.split("/");
+    let findKey;
+
+   findKey = _.findKey(data, { 'int': '20'+from[2]});
+     
+   if(findKey === undefined){
+          
+    
+    data.push(
+                    {
+                        "int":'20'+from[2],
+                        "Month":[from[1]],
+                        "HistoryGames":[game.Meta.Fixture],
+                        "TotalCaught":game.Keeping.catches,
+                        "CaughtARR":[game.Keeping.catches],
+                        "TotalStumping":game.Keeping.stumping,
+                        "StumpingARR":[game.Keeping.stumping]
+                        
+                    }
+            );
+   }
+   else{
+            // Keeping
+            data[findKey].TotalCaught = data[findKey].TotalCaught + game.Keeping.catches
+            data[findKey].CaughtARR.push(game.Keeping.catches)
+            data[findKey].TotalStumping = data[findKey].TotalStumping + game.Keeping.stumping
+            data[findKey].StumpingARR.push(game.Keeping.stumping)
 
             // Meta
             data[findKey].HistoryGames.push(game.Meta.Fixture)

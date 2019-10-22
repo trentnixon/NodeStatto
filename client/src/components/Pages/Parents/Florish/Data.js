@@ -11,33 +11,6 @@ export default class Batting extends Component {
 
   componentWillMount() {}
 
-  batting(){}
-
-  CreateData(Loop,string){
-    let Data = { batting:[],bowling:[], Played:[]}
-    Loop.map((item,i)=>{
-
-        /*
-            Incomplete!!
-
-            if(item.Meta.TeamID == string){
-                //console.log(item.Meta.TeamID)
-                let Year = item.Meta.Date.split('/');
-
-                //console.log(Year[2], _.find(Data.batting, ['Year', Year[2]]))
-
-
-                Data.batting.push({Year:Year[2]})
-                Data.bowling.push({Year:Year[2]})
-                Data.Played.push({Year:Year[2], Value:1})
-
-            }
-        */
-            return true;
-    })
-
-    //console.log(Data);
-  }
 
   CreateString(DataArr, PushTo, Var, Value){
 
@@ -56,14 +29,9 @@ export default class Batting extends Component {
 
   render() {
 
-    //const SITELABELS = this.props.LABELS.SITE;
     const PRIMARY = this.props.PLAYER_DATA.Primary;
-    
-    //console.log(PRIMARY);
 
     let BowlingResultNew=[0],BattingresultNew=[0],GamesresultNew=[0];
-    
-    this.CreateData(PRIMARY.CLEAN, '4590');
 
     BowlingResultNew = this.CreateString(PRIMARY.CAREER.Career.bowling.overTheYears,BowlingResultNew,'int','TotalWickets' );
     BattingresultNew = this.CreateString(PRIMARY.CAREER.Career.batting.overTheYears,BattingresultNew,'int','TotalRuns' );

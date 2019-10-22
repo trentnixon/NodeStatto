@@ -7,7 +7,6 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionP from "../../../Elements/type/PageParagraph";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionCareerBowling from "./Sections/Section_FormGuide_AtAGlance_Bowling";
-import SectionFaBowling from "./Sections/Section_Fa_Bowling";
 import SectionRecentFigures from "./Sections/Section_Bowling_recentFigures";
 export default class Formguide
  extends Component {
@@ -40,13 +39,6 @@ export default class Formguide
                 />
               </SectionContainer>
 
-              <SectionContainer  className="Section_Bowling_FormGuide todo">
-                <SectionFaBowling  
-                    Data={PRIMARY.CAREER.Form.bowling}
-                    Title="Milestones and Achievements"
-                    {... this.props}
-                />
-              </SectionContainer>
             </Container>
         </div>
     )

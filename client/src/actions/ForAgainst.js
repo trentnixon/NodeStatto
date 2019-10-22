@@ -16,8 +16,10 @@ function hasProperty(Property,parent,sub){
 }
 
   function StoreForAgainstDetails(thisGame, StatsFor, int){
-     //console.log(thisGame)
-        let ObjKey = StatsFor[int];
+     
+    //console.log(thisGame)
+    
+    let ObjKey = StatsFor[int];
         
         // Meta
         ObjKey.Game=StatsFor[int].Games+1;
@@ -46,6 +48,10 @@ function hasProperty(Property,parent,sub){
             ObjKey.BOWLAVG = (ObjKey.RunsConceded / ObjKey.Wickets).toFixed(2);
             ObjKey.BOWLSR = ((ObjKey.Overs * 5) /ObjKey.Wickets).toFixed(2)
         }
+
+        // Keeping
+        ObjKey.CaughtBehind=StatsFor[int].CaughtBehind + hasProperty(thisGame,'Keeping','catches');
+        ObjKey.Stumpings=StatsFor[int].Stumpings + hasProperty(thisGame,'Keeping','stumping');
     }
 
 function StoreNew(Thisgame, StatsFor, Team, TeamID){
@@ -66,6 +72,8 @@ function StoreNew(Thisgame, StatsFor, Team, TeamID){
             "ECO":0,
             "BOWLAVG":0,
             "BOWLSR":0,
+            "CaughtBehind":0,
+            "Stumpings":0,
             "OvertheYears":[]
         }
     )

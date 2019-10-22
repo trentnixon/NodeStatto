@@ -12,16 +12,7 @@ export default class Section_Rankings extends Component {
     render() {
         return (
             <div className="Section_Career">
-                <Row >
-                        <Pod col="" >
-                            <Title  Title="Caught Behind" />
-                            <SubTitle Title={this.props.Data.catches} />
-                        </Pod>
-                        <Pod col="" > 
-                            <Title  Title="Stumpings" />
-                            <SubTitle Title={this.props.Data.stumping} />   
-                        </Pod>
-                </Row>
+                
                 </div>
             )
         }

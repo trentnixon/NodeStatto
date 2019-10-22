@@ -80,7 +80,7 @@ function DataLoop($ , xPath){
             return Meta;
     }
 
-
+ 
 
     /** Strip TeamSheet */
 
@@ -122,16 +122,20 @@ function ping(html,id){
     
     let  LMSData={}
 
+    //console.log(html);
+
     LMSData["Meta"]={};
     LMSData["Batting"]={};
     LMSData["Bowling"]={};
+    LMSData["Keeping"]={};
 
     const Full = html[0]+''+html[1];
     let $ = cheerio.load(Full);
     
-    LMSData["Meta"] = PullMeta(cheerio.load(html[2]),id);
+    LMSData["Meta"] = PullMeta(cheerio.load(html[3]),id);
     LMSData["Batting"] = DataLoop(cheerio.load(html[0]), '.rank-table tbody tr');
     LMSData["Bowling"] = DataLoop(cheerio.load(html[1]), '.rank-table tbody tr');
+    LMSData["Keeping"] = DataLoop(cheerio.load(html[2]), '.rank-table tbody tr');
 
     //console.log(LMSData);
 
@@ -247,8 +251,9 @@ function StripscoreCard(html){
                 const Meta = $('#player-profile-stat-block-container').html()
                 const Bat = $('#pp-batting-history-container').html();
                 const Bowl = $('#pp-bowling-history-container').html();
+                const Keep = $('#pp-keeping-history-container').html();
 
-                done(null, [Bat,Bowl,Meta]);
+                done(null, [Bat,Bowl,Keep,Meta]);
             }
             else{
                 done(null, null);
@@ -278,9 +283,25 @@ function StripscoreCard(html){
                 done(null, null);
             }
         })
+      },function(done){
+        request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-keeping-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
+            if(!error && response.statusCode == 200){ 
+
+                done(null, html);
+            }
+            else{
+                done(null, null);
+            }
+        })
       }],function(err, results){
     
-            let Contructed =[ results[0][0]+results[2], results[0][1]+results[1],results[0][2] ]
+            //console.log(results)
+            let Contructed =[ 
+                results[0][0]+results[2],  // Batting
+                results[0][1]+results[1],  // Bowling
+                results[0][2]+results[3],  // Keeping
+                results[0][3]  // Meta
+        ]
             res.json(ping(Contructed,req.params.id));
     })
 })

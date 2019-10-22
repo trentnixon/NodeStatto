@@ -18,7 +18,7 @@ var _ = require('lodash');
  * 
  */
 export function FetchData(){
-
+ 
     /** Set Properties */ 
     this.id = null;
     this.StoredData = []; 
@@ -65,8 +65,9 @@ export function FetchData(){
                 // Send the Data to be Cleaned
                 let BattingStored = this.Clean(res.data.Batting,1)
                 let BowlingStored = this.Clean(res.data.Bowling,2)
+                let KeepingStored = this.Clean(res.data.Keeping,3)
                 //uncomment when Keeping Stats are live
-                //this.Clean(res.data.Keeping,3)
+             
 
                 //LoginSequence([{Type:'STORE_NAME',  Value:res.data.Meta.Name}]);
                 LoginSequence([
@@ -77,10 +78,10 @@ export function FetchData(){
                 ]);
 
                 // Once the Data has been Cleaned, Run any Additoinal logic and set the UI to true
-                if(BattingStored === true && BowlingStored === true){
+                if(BattingStored === true && BowlingStored === true && KeepingStored === true){
 
                     console.log("CLEANED DATA AND STORED");
-                    
+                     
                     FormGuide(this.StoredData)
                     ForAgainst(this.StoredData)
 
@@ -227,6 +228,7 @@ export function FetchData(){
     }
 
     this.StoreKeeping = (game,FixturePosition) =>{
+        
         this.StoredData[FixturePosition]["Keeping"]={
                     catches: parseInt(game[3], 10),
                     stumping:parseInt(game[4], 10),

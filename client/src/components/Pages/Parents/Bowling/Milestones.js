@@ -6,7 +6,7 @@ import Container from "../../../Template/Page/Container";
 // Sections
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import Section_Bowling_Milestones from "./Sections/Section_Fa_Bowling_MIlestones";
+import SectionBowlingMilestones from "./Sections/Section_Fa_Bowling_MIlestones";
 import SectionFaBowling from "./Sections/Section_Fa_Bowling";
 
 // Start Class
@@ -24,7 +24,7 @@ export default class BowlingHome extends Component {
         
         
         <SectionContainer>
-          <Section_Bowling_Milestones  
+          <SectionBowlingMilestones  
             DATA={PRIMARY.CAREER.Career.bowling}
             TITLE={SITELABELS.TITLES.MILESTONE}
             {... this.props} 

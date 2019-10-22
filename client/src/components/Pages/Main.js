@@ -17,11 +17,10 @@ import ComponentReset from "./Parents/search/ChangeTeam";
 import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
 import ComponentFlorish from "./Parents/Florish/Hub";
 import ComponentRoadMap from "./Parents/RoadMap/Hub"
-/*
-import ComponentKeeping from "./Parents/Keeping/Keeping";
-import ComponentAbout from "./Parents/about/about";
-*/ 
 
+import ComponentKeeping from "./Parents/Keeping/Hub";
+//import ComponentAbout from "./Parents/about/about";
+ 
 // Icons
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShowChart from '@material-ui/icons/ShowChart'; 
@@ -31,7 +30,7 @@ import Search from '@material-ui/icons/Search';
 import Looks4 from '@material-ui/icons/Looks4';
 import CakeIcon from '@material-ui/icons/Cake';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
-import  {Batting, Wickets,Bowling,Runs} from "../Icons/icons";
+import  {Batting, Wickets,Bowling,Runs, Keeping} from "../Icons/icons";
 import BackspaceIcon from '@material-ui/icons/Backspace';
 import ViewWeekIcon from '@material-ui/icons/ViewWeek';
 import MapIcon from '@material-ui/icons/Map';
@@ -131,27 +130,26 @@ const  Navigation =[
     ],
     "icon":<Bowling/>
   },
-
-  /**
-   * 
-   * // Extra Bowling Pages
-   * 
-      ,
-
-   */
-  /*{
+{
     "label":"Keeping",
     "path":"keeping",
     "children":[
       {
-        "label":"Overview",
-        "path":"",
-        "icon":<AccountCircle/>
+        "label":"Catches",
+        "path":"catches",
+        "icon":<Keeping/>
+      },{
+        "label":"Stumpings",
+        "path":"stumpings",
+        "icon":<Keeping/>
+      },{
+        "label":"For & Against",
+        "path":"foragainst",
+        "icon":<People/>
       }
     ],
     "icon":<Keeping/>
-  },*/
-  
+  },
   {
     "label":"Change Player", 
     "path":"search",
@@ -200,6 +198,8 @@ export default class Statto extends Component {
                 <Route  path="/rankings" render={()=> <RankingHub  {... this.props} /> }/>
                 <Route  path="/batting" render={()=> <BattingHub  {... this.props} /> }/>
                 <Route  path="/bowling" render={()=> <BowlingHub  {... this.props} /> }/>
+                <Route  path="/keeping" render={()=> <ComponentKeeping  {... this.props} /> }/>
+               
                 <Route  path="/search" render={()=> <ComponentSearch {... this.props}/> }/>
                 <Route  path="/reset" render={()=> <ComponentReset {... this.props}/> }/>
                 <Route  path="/florish" render={()=> <ComponentFlorish {... this.props}/> }/>

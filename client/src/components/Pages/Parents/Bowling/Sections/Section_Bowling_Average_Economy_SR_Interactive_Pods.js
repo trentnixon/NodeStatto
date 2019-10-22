@@ -50,7 +50,7 @@ export default class Section_Default extends Component {
                     Interactive={false}
                     Title=""
                     flex=" flex-100"
-                >
+                > 
 
                     <SelectYear {... this.props}/> 
                     

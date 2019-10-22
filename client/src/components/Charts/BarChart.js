@@ -6,6 +6,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import {connect } from 'react-redux';
+import update from 'react-addons-update'
 
 class BarChart extends Component {
 
@@ -25,6 +26,7 @@ class BarChart extends Component {
           },
           plotOptions:this.props.CHART.plotOptions,
           xaxis: { categories: this.props.Labels },
+          
           dataLabels: {
             enabled: true,
             style: {
@@ -58,7 +60,7 @@ class BarChart extends Component {
             },
           legend: this.props.CHART.legend,
           theme: this.props.CHART.theme,
-          responsive: this.props.CHART.responsive,
+          responsive: this.props.CHART.responsive, 
       }
      
     };
@@ -66,6 +68,14 @@ class BarChart extends Component {
 
   componentWillMount() { }
   componentWillUpdate(){ return true;}
+  componentDidUpdate(nextProps, nextState){
+    if(this.props.Labels !== nextProps.Labels){
+        this.setState({ 
+            options: update(this.state.options,{xaxis:{categories:{$set:this.props.Labels} }}) 
+        })
+    }
+}
+
   render() {
     return (
       <div className="Charts HidePortait">
@@ -77,4 +87,4 @@ class BarChart extends Component {
 }
 
 const mapStateToProps = (state) => ({ CHART:state.CHARTS })
-export default connect(mapStateToProps)(BarChart);
+export default connect(mapStateToProps)(BarChart); 

@@ -17,16 +17,15 @@ export function TeamName(ID){
     let TeamName = store.getState().DATA.SetUpData.GoogleTeamList
     let ReturnName;
      TeamName.map((team,i)=>{
-            if(team[1] == ID){
+            if(team[1] === ID){
                 ReturnName= team[0];
             }
+            return true;
     })
 
     return ReturnName;
-    
+   
 }
-
-
 
 /**
  * 
@@ -45,6 +44,7 @@ export function FindDataSeries(DATA,Needle){
            if(Needle === '20'+NewYear[2]){
                 Series.push(game)
             }
+            return true;
         })
         return Series;
     }
@@ -76,7 +76,8 @@ export function SetPageTitle(){
     Section.splice(0,3)
     let str='';
     Section.map((path,i)=>{
-                str = str.concat(path.toUpperCase(),' | ')
+                str = str.concat(path.toUpperCase(),' | ');
+                return true;
         })
     document.title = PlayerName + ' | ' + str;
 }
@@ -225,7 +226,7 @@ export function FormFactor(FORM,CAREER){
 export function FormoverTime(CLEAN,CAREER, SELECTOR){
 
 
-
+ 
     /**
      * 
      *  Changes to this alog
@@ -254,6 +255,9 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
 
       // Sort Years into Months 
       let Create=[];
+      let FormBar=[]
+      let FormLabels=[]
+
       Object.keys(ByYear).map((year,i)=>{
 
         let PASSING = ByYear[year].reduce((acc, item) => {
@@ -265,7 +269,7 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
                 return acc;
               }, {})
               Create[year]=PASSING
-              
+              return true;
       })
 
        let FilteredList = [];
@@ -278,8 +282,7 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
         FilteredList = Create
       }
 
-      let FormBar=[]
-      let FormLabels=[]
+     
       FilteredList.map((year,i)=>{
             Object.keys(year).map((month,t)=>{
                     let v = FormFactor(year[month],CAREER)[3];
@@ -287,7 +290,9 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
                         FormBar.push(v)
                         FormLabels.push(i +' '+monthNames[month])
                     }
-                })
+                    return true;
+                });
+                return true;
       })
       return [FormBar,FormLabels]; 
 }
@@ -297,7 +302,7 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
 
 export function BowlingBasics(DATA){
     let Games =[], Overs=[], Wickets=[], RC=[], AVG_OT=[], ECO_OT=[], SR_OT=[];
-    let PRO_AVG=0, PRO_ECO=0, PRO_SR=0;
+    let PRO_AVG=0, PRO_ECO=0, PRO_SR=0, Oppo=[], Team=[];
     DATA.map((game,i)=>{ 
            
          if(game.Bowling){ 
@@ -322,8 +327,12 @@ export function BowlingBasics(DATA){
             PRO_SR = ((Overs.reduce((a, b) => a + b, 0) * 5) /Wickets.reduce((a, b) => a + b, 0)).toFixed(2);
             if (!isFinite(PRO_SR)){PRO_SR=0}
             SR_OT.push(PRO_SR);
-    
-        }})
+            
+            Oppo.push(game.Meta.Opposition)
+            Team.push(game.Meta.Team);
+        }
+        return true;
+    })
 
     return [
         Games,                                                                                   // 0 Bowling Innings
@@ -338,7 +347,8 @@ export function BowlingBasics(DATA){
         ((Overs.reduce((a, b) => a + b, 0) * 5) /Wickets.reduce((a, b) => a + b, 0)).toFixed(2), // 9 SR
         SR_OT,                                                                                   // 10 SR ARR Over Time
         (RC.reduce((a, b) => a + b, 0) / Wickets.reduce((a, b) => a + b, 0)).toFixed(2),         // 11 AVG
-        AVG_OT                                                                                   // 12 Average ARR Over Time
-
+        AVG_OT,                                                                                   // 12 Average ARR Over Time
+        Team,                                                                                   // 13 Team
+        Oppo                                                                                   // 14 Oppo
     ]
 }

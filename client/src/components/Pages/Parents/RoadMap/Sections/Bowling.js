@@ -17,7 +17,7 @@ import People from '@material-ui/icons/People';
 import Looks4 from '@material-ui/icons/Looks4';
 import CakeIcon from '@material-ui/icons/Cake';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
-import  {Bowling,Runs,Wickets} from "../../../../Icons/icons";
+import  {Wickets} from "../../../../Icons/icons";
 
 // <Badge className="" badgeContent={'new'} color="secondary">{"Form"}</Badge>,
 const Rows=[

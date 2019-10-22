@@ -10,24 +10,36 @@ import ListItem from "./ListItem";
 // Class
 
 // Icons
-
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import ShowChart from '@material-ui/icons/ShowChart'; 
-import People from '@material-ui/icons/People';
-import Looks4 from '@material-ui/icons/Looks4';
-import CakeIcon from '@material-ui/icons/Cake';
-import GraphicEqIcon from '@material-ui/icons/GraphicEq';
-import  {Bowling,Runs,Keeping} from "../../../../Icons/icons";
+import  {Keeping} from "../../../../Icons/icons";
 
 // <Badge className="" badgeContent={'new'} color="secondary">{"Form"}</Badge>,
 const Rows=[
     {
-        "label":"Overview", 
-        "stage":"ToDo",
+        "label":"Caught Behind", 
+        "stage":"Testing",
         "icon":<Keeping/>, 
-        "perc":'0',
+        "perc":'80',
         "date":""
-  }
+  },
+  {
+    "label":"Stumpings", 
+    "stage":"Testing",
+    "icon":<Keeping/>, 
+    "perc":'80',
+    "date":""
+    },{
+      "label":"For and Against", 
+      "stage":"Testing",
+      "icon":<Keeping/>, 
+      "perc":'90',
+      "date":""
+    },{
+      "label":"DEEP", 
+      "stage":"ToDo",
+      "icon":<Keeping/>, 
+      "perc":'0',
+      "date":""
+    }
 ]
 
 

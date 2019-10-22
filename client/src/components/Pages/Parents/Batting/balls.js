@@ -9,8 +9,8 @@ import BallsFacedBasics from "./Sections/Section_Batting_BallsFaced_Basics";
 
 
 import SectionBalls from "./Sections/Section_Batting_BallsFaced_Bar";
-import SectionRunstoBalls from "./Sections/Section_Batting_RunsToBalls"
-import SectionBallsFacedScatter from "./Sections/Section_BallsFacedOverTheYearsScatterChart";
+//import SectionRunstoBalls from "./Sections/Section_Batting_RunsToBalls"
+//import SectionBallsFacedScatter from "./Sections/Section_BallsFacedOverTheYearsScatterChart";
 //import SectionRunsBar from "./Sections/Section_RunsOverTheYearsBarChart";
 //import SectionRuns from "./Sections/Section_Batting_Runs_Runs";
 
