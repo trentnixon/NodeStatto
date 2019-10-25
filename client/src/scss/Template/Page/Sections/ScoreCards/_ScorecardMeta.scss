@@ -18,3 +18,41 @@
             border-color: $TrendingDown;
         }
 }
+
+.ScorecardScores{
+    .ScoreCard_Scores{
+        >div{
+            margin: 10px 0 !important;
+        }
+       
+    }
+
+    h1{
+        text-align: center;
+    }
+}
+
+
+.Scorecard{
+     .Inner{
+         padding: 0 3%;
+     }
+}
+
+
+@media only screen and (min-width : 576px) and (max-width : 768px) {
+
+}
+
+/* Medium Phones ----------- */
+@media only screen and (min-width : 480px) and (max-width : 576px) {
+
+}
+
+/* Small Phones ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  
+}
+    
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {}

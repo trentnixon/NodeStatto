@@ -9,7 +9,7 @@
 
 .Scorecard.ListItem{
     padding: 1% 0;
-    margin: 0 0 0 5%;
+    margin: 0%;
     border: none;
       // ScoreCard Items
 
@@ -29,7 +29,7 @@
             margin: 0;
             font-size: 1.1rem;
           }
-          small{}
+ 
 
           .PlayerAvatar{
             float: left;
@@ -54,5 +54,24 @@
     .Wickets{ flex-basis: 10%; }
     .BowlingRuns{ flex-basis: 10%;}
     .Economy{ flex-basis: 10%; }
+
+
+
+    @media only screen and (max-width : 576px) {
+      .Player{flex-basis: 50%; 
+          .PlayerAvatar{display: none;}
+          h1{ font-size: 1rem; }
+        }
+      .HowOut{ flex-basis: 25%; h2{ font-size: 1rem; }}
+      .Runs{ flex-basis: 15%; h2{ font-size: 1rem; }}
+      .Balls{ flex-basis: 10%; h2{ font-size: 1rem; }}
+      .StrikeRate{flex-basis: 50%; display: none;}
+
+      .Overs{flex-basis: 10%; h2{ font-size: 1rem; }}
+      .Wickets{ flex-basis: 10%;  h2{ font-size: 1rem;  }}
+      .BowlingRuns{ flex-basis: 10%; h2{ font-size: 1rem; }}
+      .Economy{ flex-basis: 10%; display: none; }
+
+    }
 
 }

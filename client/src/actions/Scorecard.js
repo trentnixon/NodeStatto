@@ -159,13 +159,44 @@ export function FetchScoreCard(){
         ]
     }
 
+    this.FindRuns=(inn)=>{
+        let Runs=[0,0,0,0,0,0,0,0]
+        console.log(inn);
+            //let Ordered = _.orderBy(inn,[1],['desc'])
+           // console.log(Ordered);
+           inn.map((p,i)=>{
+                if(p[1] !== "0"){
+                    console.log(p[2])
+                    Runs[p[1]-1] = p[2] 
+                }
+            })
+            return Runs;
+    }
+    this.ByBattingOrder=(SC,Meta)=>{
+
+        console.log(SC[0]);
+        this.FindRuns(SC[0]);
+        
+        return [
+            {
+                name: Meta.Meta.first.Name,
+              data:  this.FindRuns(SC[0])
+            },
+            { name: Meta.Meta.second.Name,
+                data:  this.FindRuns(SC[1])
+            }
+          ];
+    }
 
     this.ScoreCardCharts =(SC, Meta)=>{
         let FindByes = this.byes(SC, Meta)
-
+        
+        
+        
         return {
             Labels:this.Labels(Meta),
             Worm:this.Worm(SC,Meta,FindByes),
+            BattingOrder:this.ByBattingOrder(SC,Meta),
             byes:FindByes
         }
         

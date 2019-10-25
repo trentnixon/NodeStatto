@@ -24,7 +24,7 @@ export default class Page_BattingOverview extends Component {
  
   componentWillMount() { 
     TITLES = this.props.LABELS 
-    PRIMARY = this.props.PLAYER_DATA.Primary;
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
   }
 
   render() {  

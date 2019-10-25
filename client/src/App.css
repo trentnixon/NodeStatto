@@ -311,7 +311,7 @@ p {
       margin: 15px 0 0 0; }
     .PodRow #Pod .Inner .Scorecard.ListItem {
       padding: 1% 0;
-      margin: 0 0 0 5%;
+      margin: 0%;
       border: none; }
       .PodRow #Pod .Inner .Scorecard.ListItem div {
         text-align: center; }
@@ -364,6 +364,43 @@ p {
         flex-basis: 10%; }
       .PodRow #Pod .Inner .Scorecard.ListItem .Economy {
         flex-basis: 10%; }
+      @media only screen and (max-width: 576px) {
+        .PodRow #Pod .Inner .Scorecard.ListItem .Player {
+          flex-basis: 50%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Player .PlayerAvatar {
+            display: none; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Player h1 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .HowOut {
+          flex-basis: 25%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .HowOut h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Runs {
+          flex-basis: 15%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Runs h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Balls {
+          flex-basis: 10%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Balls h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .StrikeRate {
+          flex-basis: 50%;
+          display: none; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Overs {
+          flex-basis: 10%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Overs h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Wickets {
+          flex-basis: 10%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .Wickets h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .BowlingRuns {
+          flex-basis: 10%; }
+          .PodRow #Pod .Inner .Scorecard.ListItem .BowlingRuns h2 {
+            font-size: 1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Economy {
+          flex-basis: 10%;
+          display: none; } }
   .PodRow #Pod .Inner.Naked {
     border: unset;
     border: none;
@@ -1018,7 +1055,10 @@ body {
                 > .ContentType
                     > Content
 
-*/ }
+*/
+      /* Medium Phones ----------- */
+      /* Small Phones ----------- */
+      /* Smartphones (portrait) ----------- */ }
       body #root #Statto #Frame .flex-100 {
         flex-basis: 99.5% !important; }
       body #root #Statto #Frame .flex-70 {
@@ -1295,6 +1335,12 @@ body {
         border-color: #70ce90; }
       body #root #Statto #Frame .ScoreCard_Scores .Inner {
         border-color: #ce7070; }
+      body #root #Statto #Frame .ScorecardScores .ScoreCard_Scores > div {
+        margin: 10px 0 !important; }
+      body #root #Statto #Frame .ScorecardScores h1 {
+        text-align: center; }
+      body #root #Statto #Frame .Scorecard .Inner {
+        padding: 0 3%; }
       body #root #Statto #Frame #StattoTabs {
         background-color: transparent; }
         body #root #Statto #Frame #StattoTabs header {
