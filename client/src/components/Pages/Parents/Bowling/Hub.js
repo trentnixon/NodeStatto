@@ -33,5 +33,5 @@ export default class BowlingHub extends Component {
                 </Switch>
             </Container>
     )
-  }
+  } 
 } 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+//import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
-
 
 let PRIMARY,TITLES;
 export default class Section_Rankings extends Component {
@@ -14,9 +13,8 @@ export default class Section_Rankings extends Component {
     render() {
         return (
             <Container>
-                <SectionHeader   h1={TITLES.SITE.SUBS.STUMPINGS} h2={TITLES.SITE.TITLES.KEEPING}  /> 
-     
-                Coming Soon
+                <SectionHeader PRIMARY={PRIMARY}  h1={TITLES.SITE.SUBS.STUMPINGS} h2={TITLES.SITE.TITLES.KEEPING}  /> 
+                    Coming Soon
             </Container>
             )
         }

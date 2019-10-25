@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Title from "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
@@ -15,9 +14,8 @@ export default class Batting extends Component {
   }
 
   render() {
-
     const SITELABELS = this.props.LABELS.SITE;
-   // const PRIMARY = this.props.PLAYER_DATA.Primary;
+
     return ( 
       <Container>
         <SectionHeader   h1={this.props.LABELS.SITE.SUBS.NOTABLEFIGURES} h2={SITELABELS.TITLES.BOWLING}  /> 
@@ -25,8 +23,7 @@ export default class Batting extends Component {
         <SectionContainer className="Section_Bowling_Wickets todo">
           <Notable DATA={PRIMARY.CLEAN} TITLE={TITLES.SITE} />  
         </SectionContainer>
-
-      
+        
     </Container> 
     ) 
   }

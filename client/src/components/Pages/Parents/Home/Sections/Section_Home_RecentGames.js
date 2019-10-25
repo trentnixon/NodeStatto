@@ -25,7 +25,7 @@ export default class History extends Component {
                   Path="history/"
               />
               
-          </PodWrapper>      
+          </PodWrapper>       
       </Row>  
     )
   }

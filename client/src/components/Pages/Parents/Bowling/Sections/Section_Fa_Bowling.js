@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 import Row from "../../../../Template/Page/Row";
 import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
 import SingleValuePod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 import ShowMore from "../../../../Elements/Buttons/ShowMore";
 

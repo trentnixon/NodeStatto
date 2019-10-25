@@ -87,34 +87,22 @@ function DataLoop($ , xPath){
 function TeamSheet(html){
     
     var $ = cheerio.load(html);
-    // team-profile-2019-content-block
     const TeamTable = $('#team-profile-2019-content-block');
     let Rows=[];
-   //console.log(TeamTable);
+
         TeamTable.has('div.team-top-player').each(function() {
+            
             var arrayItem = {};
-            $('div.name', $(this)).each(function(index, item) 
-           
-                {
-                    // arrayItem[index] = $(item).html();
 
+            $('div.name', $(this)).each(function(index, item) {
                     arrayItem[index]=SplitA($(item).find('a').attr('href'), $(item).find('a').html());
+            });
+            Rows.push(arrayItem);
 
-                    //console.log(item);
-                    // If Link, Split and Create Object
-               /*   if($(item).find('a').length != 0){
-                            arrayItem[index]=SplitA($(item).find('a').attr('href'), $(item).find('a').html());
-                    }
-                        //else raw copy, Insert into array
-                    else{
-                            arrayItem[index] = $(item).html();
-                    }*/
-                });
-                Rows.push(arrayItem);
         }); // End Each
-        //console.log(Rows);
         return Rows; 
 }
+
 
 
 /** PING */
@@ -154,22 +142,21 @@ function StripscoreCard(html){
     
     // Pick up the Meta Data for the Game
     Meta.has('p').each(function() {
-        var arrayMeta = {};
+        var arrayMeta = {}, i=0;
         $('p', $(this)).each(function(index, item) 
-        {
-            if( $(item).html() !== '&#xA0;')
             {
-                GameMeta = $(item).html().split('<br>')
-
-                if(GameMeta.length > 1){
-                    arrayMeta[index] = GameMeta;
-                }
+                if( $(item).html() !== '&#xA0;')
+                {
+                    GameMeta = $(item).html().split('<br>')
+                        if(GameMeta.length > 1){
+                            GameMeta.map((item2,i)=>{
+                                    arrayMeta[i] = item2;
+                            })
+                        }
             }
         });
         Rows.push(arrayMeta);
     });
-
-
     // Loop through the Team Scores
     Teams.find('.sortable').each(function(MainIndex,item) {
         

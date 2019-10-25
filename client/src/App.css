@@ -303,6 +303,67 @@ p {
       margin-top: 5px; }
     .PodRow #Pod .Inner button {
       float: right; }
+    .PodRow #Pod .Inner .Scorecard.ListItem.Header {
+      margin: 20px 0 0 0; }
+    .PodRow #Pod .Inner .Scorecard.ListItem.WrapUp {
+      border-top: 1px solid #709dce;
+      border-bottom: 1px solid #709dce;
+      margin: 15px 0 0 0; }
+    .PodRow #Pod .Inner .Scorecard.ListItem {
+      padding: 1% 0;
+      margin: 0 0 0 5%;
+      border: none; }
+      .PodRow #Pod .Inner .Scorecard.ListItem div {
+        text-align: center; }
+        .PodRow #Pod .Inner .Scorecard.ListItem div h1 {
+          font-weight: 100;
+          margin: 0;
+          padding: 0;
+          line-height: 1.9rem;
+          font-size: 1.1rem;
+          text-align: left; }
+        .PodRow #Pod .Inner .Scorecard.ListItem div h2 {
+          font-weight: 100;
+          padding: 0;
+          margin: 0;
+          font-size: 1.1rem; }
+        .PodRow #Pod .Inner .Scorecard.ListItem div .PlayerAvatar {
+          float: left;
+          margin-right: 10px;
+          background-image: url("https://lastmanstands.com/images/logo.png");
+          background-size: contain;
+          background-color: #709dce;
+          width: 30px;
+          height: 30px; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Player {
+        flex-basis: 50%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .HowOut {
+        flex-basis: 15%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Runs {
+        flex-basis: 15%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Runs.Not {
+        flex-basis: 15%; }
+        .PodRow #Pod .Inner .Scorecard.ListItem .Runs.Not h2 {
+          font-weight: 800;
+          color: #70ce90; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .p_01 h2, .PodRow #Pod .Inner .Scorecard.ListItem .p_01 small {
+        color: #ce7070;
+        font-weight: 800; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .w_3 h2, .PodRow #Pod .Inner .Scorecard.ListItem .w_4 h2, .PodRow #Pod .Inner .Scorecard.ListItem .w_5 h2, .PodRow #Pod .Inner .Scorecard.ListItem .w_6 h2, .PodRow #Pod .Inner .Scorecard.ListItem .w_7 h2 {
+        font-weight: 800;
+        color: #70ce90; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Balls {
+        flex-basis: 10%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .StrikeRate {
+        flex-basis: 10%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Overs {
+        flex-basis: 10%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Wickets {
+        flex-basis: 10%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .BowlingRuns {
+        flex-basis: 10%; }
+      .PodRow #Pod .Inner .Scorecard.ListItem .Economy {
+        flex-basis: 10%; }
   .PodRow #Pod .Inner.Naked {
     border: unset;
     border: none;
@@ -1225,6 +1286,15 @@ body {
         padding: 5px; }
       body #root #Statto #Frame .Section_Batting_Runs.charts .row > div {
         flex: 0 48%; }
+      body #root #Statto #Frame .ScorecardMeta {
+        margin: 0 0 10px 0; }
+        body #root #Statto #Frame .ScorecardMeta h1.Page_Title {
+          text-align: right;
+          margin: 0; }
+      body #root #Statto #Frame .ScoreCard_Scores .Winner .Inner {
+        border-color: #70ce90; }
+      body #root #Statto #Frame .ScoreCard_Scores .Inner {
+        border-color: #ce7070; }
       body #root #Statto #Frame #StattoTabs {
         background-color: transparent; }
         body #root #Statto #Frame #StattoTabs header {

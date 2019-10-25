@@ -4,7 +4,7 @@ import {Animated} from "react-animated-css";
 import Row from "../../../../Template/Page/Row";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
-import  {Runs,Trophy } from "../../../../Icons/icons";
+import  {Runs } from "../../../../Icons/icons";
 import Looks6Icon from '@material-ui/icons/Looks6';  
 //Wickets,Keeping,
 //{<ShowMore Label={this.props.CTA.MORE} className=" CTA ButtonRight"  Path={stone.Path} />}

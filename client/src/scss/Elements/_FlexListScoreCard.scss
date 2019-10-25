@@ -1,0 +1,58 @@
+.Scorecard.ListItem.Header{
+    margin: 20px 0 0 0;
+}
+.Scorecard.ListItem.WrapUp{
+    border-top:1px solid $ColorBase;
+    border-bottom:1px solid $ColorBase;
+    margin: 15px 0 0 0;
+}
+
+.Scorecard.ListItem{
+    padding: 1% 0;
+    margin: 0 0 0 5%;
+    border: none;
+      // ScoreCard Items
+
+      div{
+        text-align: center;
+          h1{
+              font-weight: 100;
+            margin: 0;
+            padding: 0;
+            line-height: 1.9rem;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+          h2{
+            font-weight: 100;
+            padding: 0;
+            margin: 0;
+            font-size: 1.1rem;
+          }
+          small{}
+
+          .PlayerAvatar{
+            float: left;
+            margin-right: 10px;
+            background-image: url('https://lastmanstands.com/images/logo.png');
+                background-size: contain;
+                background-color: $ColorBase;  
+            width:30px;
+            height:30px;
+        }
+      }
+
+    .Player{flex-basis: 50%; }
+    .HowOut{ flex-basis: 15%;}
+    .Runs{ flex-basis: 15%;}
+    .Runs.Not{ flex-basis: 15%; h2{ font-weight: 800; color: $TrendingUp;}}
+    .p_01{ h2,small{color: $TrendingDown;font-weight: 800;}}
+    .w_3,.w_4,.w_5,.w_6,.w_7{h2{ font-weight: 800; color: $TrendingUp;}}
+    .Balls{ flex-basis: 10%;}
+    .StrikeRate{flex-basis: 10%;}
+    .Overs{flex-basis: 10%; }
+    .Wickets{ flex-basis: 10%; }
+    .BowlingRuns{ flex-basis: 10%;}
+    .Economy{ flex-basis: 10%; }
+
+}

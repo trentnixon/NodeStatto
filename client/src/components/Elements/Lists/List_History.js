@@ -22,12 +22,12 @@ const List_History = (props) => (
                 if(game.Bowling){ Bowling = game.Bowling.Figures +" off "+ game.Bowling.Overs;}
               
                 return(
-                    <Animated  
+                    <Animated   
                         key={i} 
                         animationIn="fadeIn"
                         isVisible={props.isVisible}
                         animationInDelay={Delay}  
-                        animateOnMount={false}
+                        animateOnMount={false} 
                         className={IsVisable + " HistoryItem" }
                         once
                     >

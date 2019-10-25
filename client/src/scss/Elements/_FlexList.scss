@@ -29,6 +29,9 @@
     h1{font-weight: bold !important;}
     
 }
+
+
+
 .ListItem{
     display: flex;
     flex-direction: row;
@@ -129,5 +132,5 @@
         .GameBowling,.GameBatting,.TeamName,.Number{flex:1 0 40%;}
         .TeamName{flex:1 0 65%;}
         .Number{flex:1 0 10%;}
-    }   
+    }
 }

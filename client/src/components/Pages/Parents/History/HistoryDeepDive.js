@@ -34,7 +34,7 @@ class HistoryFor extends Component {
     }
 
   render() {
-    //console.log(DisplayTeam)
+    console.log(DisplayTeam)
     return ( 
         <Container>
             <SectionHeader h1={this.props.HEADING} h2={DisplayTeam.Team} />

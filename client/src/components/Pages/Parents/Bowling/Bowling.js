@@ -14,7 +14,7 @@ import WicketsOverTheYears from "./Sections/Section_Bowling_Wickets_OverTheYears
 // Sections 
 import Tabber from "../../../Template/Tabber/TabContaner";
 import BasicStatOverview from "./Sections/Section_Bowling_Overview_BasicStats";
-import Section_Ranking_Overview from "./Sections/Section_Bowling_Overview_Rankings";
+import SectionRankingOverview from "./Sections/Section_Bowling_Overview_Rankings";
 
 
 // eslint-disable-next-line
@@ -44,7 +44,7 @@ export default class BowlingHome extends Component {
         </SectionContainer>
        
         <SectionContainer className="Section_Batting_Rankings complete">
-            <Section_Ranking_Overview 
+            <SectionRankingOverview 
               SUBS={TITLES.SITE.SUBS} 
               CTA={TITLES.SITE.CTA}
               TITLES = {TITLES.SITE.TITLES}
@@ -78,11 +78,3 @@ export default class BowlingHome extends Component {
     )
   }
 }
-
-
-/**
- * 
- *  //
-//import SectionRankings from "../../../Template/Global/Section_Discipline_Rankings";
-//import SectionFaBowling from "./Sections/Section_Fa_Bowling";
- */

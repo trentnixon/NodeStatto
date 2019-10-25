@@ -44,6 +44,8 @@ class LineCharts extends Component {
   } 
 
   componentWillMount() {} 
+  shouldComponentUpdate(){return true;}
+  componentDidUpdate(nextProps, nextState){} 
 
   render() {
     return (
@@ -51,7 +53,7 @@ class LineCharts extends Component {
           <div className="mixed-chart">
             <Chart
               options={this.state.options}
-              series={this.state.series}
+              series={this.props.series}
               type="area" 
             />
           </div>

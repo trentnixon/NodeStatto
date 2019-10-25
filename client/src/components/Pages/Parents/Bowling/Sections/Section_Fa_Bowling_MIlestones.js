@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 import Row from "../../../../Template/Page/Row";
 import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
 import SingleValuePod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import ShowMore from "../../../../Elements/Buttons/ShowMore";
-
 import {BowlingMileStones} from "../../../../../actions/UI";
-
 
 let Milestones, stones=[];
 export default class Section_Rankings extends Component {
@@ -16,7 +12,7 @@ export default class Section_Rankings extends Component {
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
    
         Milestones = BowlingMileStones(this.props.DATA); 
-        console.log(Milestones);
+
         stones=[
             { var:Milestones[2],label:"To "+ Milestones[1] + ' Bowling Innings', Current:'Current : ' +Milestones[0] },
             { var:Milestones[5],label:"To "+ Milestones[4] + ' Overs Bowled', Current:'Current : ' + Milestones[3] },

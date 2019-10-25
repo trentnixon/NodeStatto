@@ -11,7 +11,7 @@ export const Trophy = ({name}) => ( <img  alt="icon" src="/assets/icons/1414791.
 export const Duck = ({name}) => ( <img  alt="icon" src="/assets/icons/duck.svg" className="NavigationIcon"/>); 
 
 /**
- * 
+ *  
  *  
  * Material UI ICons Used
  *

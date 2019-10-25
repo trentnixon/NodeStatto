@@ -97,6 +97,7 @@
 
                 @import "./PodType";
                 @import "./PodButtons";
+                @import "../FlexListScoreCard";
             }
             .Inner.Naked{
                 @include Inner_Naked_Styles;

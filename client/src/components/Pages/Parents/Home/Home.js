@@ -27,14 +27,11 @@ import Rankings from "./Sections/Section_Home_Rankings";
 import Charts from "./Sections/Section_Home_Charts";
 import BriefHistory from "./Sections/Section_Home_RecentGames";
 
-import {SetPageTitle} from "../../../../actions/UI";
  
 let TITLES,PRIMARY;
 export default class Statto extends Component {
 
-  componentWillMount() {
-      //SetPageTitle()
-   }
+  componentWillMount() {}
  
   render() {
     TITLES = this.props.LABELS 
@@ -53,7 +50,7 @@ export default class Statto extends Component {
                       CTA={TITLES.SITE.CTA}
                       TITLES = {TITLES.SITE.TITLES}
                       DATA={PRIMARY}
-                    />  
+                    />   
 
                   <MileStoneOverview 
                       SUBS={TITLES.SITE.SUBS}

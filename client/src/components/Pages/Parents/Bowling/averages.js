@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// import Row from "../../../Template/Page/Row";
-import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from     "../../../Elements/type/PageTitle";
 import Container from "../../../Template/Page/Container";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
@@ -20,7 +17,6 @@ export default class Averages extends Component {
     const PRIMARY = this.props.PLAYER_DATA.Primary; 
 
     return (
-      
       <Container>
  
           <SectionHeader   h1={TITLES.SUBS.AVG + ', ' + this.props.LABELS.SITE.SUBS.ECO + ', ' + this.props.LABELS.SITE.SUBS.SR} h2={TITLES.TITLES.BOWLING}  /> 

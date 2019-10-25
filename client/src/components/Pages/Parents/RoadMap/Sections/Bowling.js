@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Container from "../../../../Template/Page/Container";
-
-// import Badge from '@material-ui/core/Badge';
 // Template
 
 import SectionHeader from "../../../../Template/Global/Section_Global_Header";

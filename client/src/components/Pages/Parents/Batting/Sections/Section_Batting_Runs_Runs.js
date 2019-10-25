@@ -82,7 +82,7 @@ export default class Section_Rankings extends Component {
         
         MonthSeries=[];
         this.props.DATA.overTheYears.map((h,i)=>{
-                console.log(h,i)
+                //console.log(h,i)
                 let t=0;
                 if(!MonthSeries[i]){ 
                     MonthSeries.push({'name':h.int, 'data':[]});
@@ -92,7 +92,7 @@ export default class Section_Rankings extends Component {
                     }
                 }
                 h.Month.map((m,t)=>{
-                    console.log(m,t,h,h.Month)
+                    //console.log(m,t,h,h.Month)
                     MonthSeries[i].data[m-1] = MonthSeries[i].data[m-1] + parseInt(h.HistoryRuns[t],10);
                         return true;
                     })

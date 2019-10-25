@@ -1,8 +1,8 @@
 const InitialState ={
   SC_Loading:false,
   Scorecard:false,
-  ScoreMeta:false,
-  
+  ScoreMeta:false, 
+  ScoreCharts:false
 }
 
 const SCLoad = (state=InitialState, action) =>{
@@ -18,13 +18,19 @@ const SCLoad = (state=InitialState, action) =>{
             }
             case "SC_STORE_CARD":{
                 //console.log(action.payload);
-				return {...state, Scorecard:action.payload}
+				return {...state, Scorecard:action.payload} 
 				// eslint-disable-next-line 
 				break
             }
             case "SC_STORE_META":{
                 //console.log(action.payload);
 				return {...state, ScoreMeta:action.payload}
+				// eslint-disable-next-line 
+				break
+            }
+            case "SC_STORE_CHARTS":{
+                //console.log(action.payload);
+				return {...state, ScoreCharts:action.payload}
 				// eslint-disable-next-line 
 				break
             }

@@ -14,7 +14,7 @@ import BowlingHub from "./Parents/Bowling/Hub";
 import ComponentPlayFor from "./Parents/Home/PlayerForFullList";
 import ComponentSearch from "./Parents/search/search";
 import ComponentReset from "./Parents/search/ChangeTeam";
-import ComponentScorecard from "./Parents/Scorecards/ScorecardMain";
+import ComponentScorecard from "./Parents/Scorecards/Hub";
 import ComponentFlorish from "./Parents/Florish/Hub";
 import ComponentRoadMap from "./Parents/RoadMap/Hub"
 
@@ -186,7 +186,7 @@ export default class Statto extends Component {
     SetPageTitle();
     PageView(window.location.pathname + window.location.search)
     BasicTracking(this.props.DATA_SETUP.SelectTeamID,this.props.PLAYER_DATA.Primary.Meta.Name, window.location.pathname)
-
+  console.log("MAIN")
     return (
       <Router  basename={'/'+this.props.DATA_SETUP.SelectTeamID+'/'+this.props.DATA_SETUP.SelectedPlayerID }>
           <Frame {... this.props} Navigation={Navigation} >
@@ -199,16 +199,14 @@ export default class Statto extends Component {
                 <Route  path="/batting" render={()=> <BattingHub  {... this.props} /> }/>
                 <Route  path="/bowling" render={()=> <BowlingHub  {... this.props} /> }/>
                 <Route  path="/keeping" render={()=> <ComponentKeeping  {... this.props} /> }/>
-               
+                <Route  path="/scorecard"  render={()=> <ComponentScorecard {... this.props}/> }/>
                 <Route  path="/search" render={()=> <ComponentSearch {... this.props}/> }/>
                 <Route  path="/reset" render={()=> <ComponentReset {... this.props}/> }/>
                 <Route  path="/florish" render={()=> <ComponentFlorish {... this.props}/> }/>
                 <Route  path="/roadmap" render={()=> <ComponentRoadMap {... this.props}/> }/>
-                
-                <Route  exact path="/scorecard/:gameid" render={()=> <ComponentScorecard {... this.props}/> }/>
             </div>
           </Frame> 
-      </Router> 
+      </Router>  
     )  
   }
 }
