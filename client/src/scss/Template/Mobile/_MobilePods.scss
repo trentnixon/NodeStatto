@@ -1,0 +1,27 @@
+  // PODS. Requires own page
+  .PodRow{
+  .animated{
+    flex-basis: 50%;
+    .IconPod{
+        flex-wrap: wrap;
+        .Header,.Body,.Footer{
+             
+                flex-basis: 100%;
+        }
+        .Header{
+            h1{
+                margin: 10px 0 0;
+                font-weight: 100;
+            }
+        }
+        .Body{
+            h1{
+                margin: 0;;
+            }
+        }
+        .Footer{
+            display: none;
+        }
+    }
+}
+  }

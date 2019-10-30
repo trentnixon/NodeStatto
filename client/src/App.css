@@ -100,13 +100,17 @@ p {
         flex-direction: row !important;
         flex-wrap: wrap !important; }
         .RankingInt .RankingPods .animated {
-          flex: 1 0 100% !important; }
+          flex-basis: 30% !important; }
           .RankingInt .RankingPods .animated .Inner h1 {
             width: 50%;
-            margin: 0%; }
+            margin: 0%;
+            order: 1;
+            width: 100%; }
           .RankingInt .RankingPods .animated .Inner h1.Page_Sub_Title {
             font-weight: bold !important;
-            border: unset !important; } }
+            border: unset !important;
+            order: 2;
+            width: 100%; } }
 
 #Header_Slider {
   text-align: center;
@@ -563,7 +567,7 @@ p {
         flex: 1 0 33%; }
       .PodRow .animated .Inner .Body h1.Page_Sub_Title {
         border-bottom: unset !important; }
-      .PodRow .animated .Inner h1 img {
+      .PodRow .animated .Inner h1 img, .PodRow .animated .Inner h1 svg {
         display: none; } }
 
 .PodRow .animated #Pod .RankingPod {
@@ -650,6 +654,11 @@ p {
           color: #969696 !important; }
       .PodRow .animated .RankingPod h1 img {
         display: none; } }
+
+.mobile .PodRow #Pod .Inner {
+  padding: 10px 10px; }
+  .mobile .PodRow #Pod .Inner .Header h1 {
+    font-size: .9rem; }
 
 .Table .tr {
   flex: 1 0 100% !important;
@@ -1340,7 +1349,7 @@ body {
       body #root #Statto #Frame .ScorecardScores h1 {
         text-align: center; }
       body #root #Statto #Frame .Scorecard .Inner {
-        padding: 0 3%; }
+        padding: 2% 3%; }
       body #root #Statto #Frame #StattoTabs {
         background-color: transparent; }
         body #root #Statto #Frame #StattoTabs header {
@@ -1370,55 +1379,56 @@ body {
       list-style: none;
       margin: 2px 1px; }
   body #root #Statto.mobile #Frame {
-    width: 100vw; }
-    body #root #Statto.mobile #Frame .flex-100 {
+    width: 100vw;
+    /*
+        .flex-100{ flex-basis: 99.5% !important;}
+        .flex-70{ flex-basis: 99.5%!important;}
+        .flex-60{ flex-basis: 99.5%!important;}
+        .flex-40{ flex-basis: 99.5% !important;}
+        .flex-30{ flex-basis:  99.5%  !important;}
+        .flex-25{ flex-basis:  99.5% !important;}
+        .flex-20{ flex-basis:  99.5% !important;}
+    */ }
+    body #root #Statto.mobile #Frame .flex-m-50 {
+      flex-basis: 49.5% !important; }
+    body #root #Statto.mobile #Frame .flex-m-100 {
       flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-70 {
-      flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-60 {
-      flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-50 {
-      flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-40 {
-      flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-30 {
-      flex-basis: 99.5%  !important; }
-    body #root #Statto.mobile #Frame .flex-25 {
-      flex-basis: 99.5% !important; }
-    body #root #Statto.mobile #Frame .flex-20 {
-      flex-basis: 99.5% !important; }
-    @media (orientation: portrait) {
-      body #root #Statto.mobile #Frame .HidePortait {
-        background-image: url("/assets/rotateDevice.gif");
-        background-position: center;
-        background-size: 50%;
-        background-repeat: no-repeat;
-        height: 250px;
-        text-align: center; }
-        body #root #Statto.mobile #Frame .HidePortait div {
+    body #root #Statto.mobile #Frame .PodRow .animated {
+      flex-basis: 50%; }
+      body #root #Statto.mobile #Frame .PodRow .animated .IconPod {
+        flex-wrap: wrap; }
+        body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Header, body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Body, body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Footer {
+          flex-basis: 100%; }
+        body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Header h1 {
+          margin: 10px 0 0;
+          font-weight: 100; }
+        body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Body h1 {
+          margin: 0; }
+        body #root #Statto.mobile #Frame .PodRow .animated .IconPod .Footer {
           display: none; }
-      body #root #Statto.mobile #Frame .HidePortait::before {
-        content: "Interactive Chart";
-        text-align: center;
-        display: inline;
-        font-size: 1.3rem;
-        padding: .5rem;
-        color: #5a5a5a;
-        top: 10px;
-        position: absolute;
-        width: 100%;
-        left: 0; }
-      body #root #Statto.mobile #Frame .HidePortait::after {
-        content: "Rotate Device to view.";
-        text-align: center;
-        display: inline;
-        font-size: 1.3rem;
-        padding: .5rem;
-        color: #5a5a5a;
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-        left: 0; } }
+    body #root #Statto.mobile #Frame .ListItem .For {
+      flex-basis: 100%; }
+      body #root #Statto.mobile #Frame .ListItem .For h1 {
+        font-weight: 800;
+        font-size: 1.3rem !important; }
+    body #root #Statto.mobile #Frame .ListItem .Against {
+      flex-basis: 100%; }
+      body #root #Statto.mobile #Frame .ListItem .Against h1 {
+        font-size: .7rem !important; }
+    body #root #Statto.mobile #Frame .ListItem .Date {
+      flex-basis: 15%; }
+    body #root #Statto.mobile #Frame .ListItem .GameRuns {
+      flex-basis: 35%; }
+      body #root #Statto.mobile #Frame .ListItem .GameRuns h1 {
+        text-align: center; }
+    body #root #Statto.mobile #Frame .ListItem .GameBalls {
+      flex-basis: 35%; }
+      body #root #Statto.mobile #Frame .ListItem .GameBalls h1 {
+        text-align: center; }
+    body #root #Statto.mobile #Frame .ListItem .GameCTA {
+      flex-basis: 10%; }
+    body #root #Statto.mobile #Frame .ListItem.Header {
+      display: none; }
 
 /**  Production **/
 .complete {

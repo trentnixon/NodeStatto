@@ -108,7 +108,7 @@ class LineCharts extends Component {
 
   render() {
     return (
-      <div className="Charts HidePortait">
+      <div className="Charts">
           <div className="mixed-chart">
             <Chart
               options={this.state.options}

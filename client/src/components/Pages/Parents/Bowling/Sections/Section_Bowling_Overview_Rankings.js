@@ -33,7 +33,7 @@ export default class Home_Overview extends Component {
                             isVisible={this.props.isVisible}
                             animationInDelay={Delay}
                             animateOnMount={false}
-                            className={IsVisable + " flex-50"}
+                            className={IsVisable + " flex-50 flex-m-50"}
                         >
                             <IconPod 
                                 className="flex-100"

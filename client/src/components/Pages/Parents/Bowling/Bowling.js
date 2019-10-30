@@ -37,7 +37,7 @@ export default class BowlingHome extends Component {
         <SectionContainer className="Section_Bowling_Rankings complete">
             <BasicStatOverview   
                       SUBS={TITLES.SITE.SUBS}
-                      CTA={TITLES.SITE.CTA}
+                      CTA={TITLES.SITE.CTA} 
                       TITLES = {TITLES.SITE.TITLES}
                       DATA={PRIMARY}
               />   

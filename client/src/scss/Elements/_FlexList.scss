@@ -127,6 +127,7 @@
     .TeamName,.Number{
         flex:1 0 45%;
     }
+    
     @media only screen  and (max-width : 576px) {
         .GameTitle{ h1{ font-size: 1.2em !important;}}
         .GameBowling,.GameBatting,.TeamName,.Number{flex:1 0 40%;}

@@ -1,0 +1,36 @@
+@media (orientation: portrait) {
+    .HidePortait{
+        background-image: url("/assets/rotateDevice.gif");
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        height: 250px;
+        text-align: center;
+        div{
+            display: none;}
+    }
+    .HidePortait::before{
+        content:"Interactive Chart";
+        text-align: center;
+        display: inline;
+        font-size: 1.3rem; 
+        padding: .5rem;
+        color: $h2Color;
+        top:10px;
+        position: absolute;
+        width: 100%;
+        left:0;
+    }
+    .HidePortait::after{
+        content:"Rotate Device to view.";
+        text-align: center;
+        display: inline;
+        font-size: 1.3rem;
+        padding: .5rem;
+        color: $h2Color;
+        bottom:0;
+        position: absolute;
+        width: 100%;
+        left:0;
+    }
+}

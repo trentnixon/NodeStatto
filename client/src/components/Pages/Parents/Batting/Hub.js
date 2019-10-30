@@ -28,7 +28,7 @@ export default class BattingHub extends Component {
     
     return ( 
             <Container>           
-                <Switch history={history}> 
+                <Switch history={history}>  
                         <Route   path="/batting/overview" render={()=> <ComponentBatting {... this.props}/> }/>
                         <Route   path="/batting/milestones" render={()=> <ComponentMilestones {... this.props}/> }/>
                         <Route   path='/batting/averages' render={()=> <ComponentAVG {... this.props}/> }/>

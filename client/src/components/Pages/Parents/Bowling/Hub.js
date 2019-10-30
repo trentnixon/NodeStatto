@@ -20,7 +20,7 @@ export default class BowlingHub extends Component {
   render() {
     //console.log(this.props);
     return ( 
-            <Container>           
+            <Container>            
                 <Switch>
                     <Route  exact path="/bowling/overview" render={()=>  <ComponentBowling {... this.props}/> }/>
                     <Route  exact path="/bowling/formguide" render={()=> <ComponentFormguide {... this.props}/> }/>

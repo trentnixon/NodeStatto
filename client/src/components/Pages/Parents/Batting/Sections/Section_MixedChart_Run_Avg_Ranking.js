@@ -17,7 +17,7 @@ const SummaryPod = (props) => (
             <IconPod 
                 label={props.label}
                 total={props.total}
-                className="flex-30"
+                className="flex-30 flex-m-50"
                 icon=""
                 Footer = ""
             /> 
@@ -147,7 +147,7 @@ export default class Section_Default extends Component {
                     
                     <Row className="PodRow">
                         <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>
-
+ 
                         <SummaryPod label={this.props.UX.FORMS.SELECT.YEAR + " Average"} total={this.state.Series[1].data[this.state.Series[1].data.length-1]} />
                         <SummaryPod label="Highest Average " total={Math.max(...this.state.Series[1].data)} />
                         <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />

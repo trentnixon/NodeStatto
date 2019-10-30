@@ -20,21 +20,21 @@ import Looks4 from '@material-ui/icons/Looks4';
 const Rows=[
     {
         "label":"Overview", 
-        "stage":"ToDo",
+        "stage":"Testing",
         "icon":<AccountCircle/>, 
-        "perc":'0',
+        "perc":'80',
         "date":""
     },{
         "label":"ScoreCard", 
-        "stage":"ToDo",
+        "stage":"Testing",
         "icon":<Looks4/>, 
-        "perc":'0',
+        "perc":'80',
         "date":""
     },{
         "label":"Match Stats", 
         "stage":"ToDo",
         "icon":<ShowChart/>, 
-        "perc":'0',
+        "perc":'40',
         "date":""
     }
 ]

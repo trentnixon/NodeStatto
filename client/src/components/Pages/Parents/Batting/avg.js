@@ -32,7 +32,7 @@ export default class Formguide
               HS={parseInt(PRIMARY.Meta.Batting_HS,10)} 
               {... this.props}
             />
-        </SectionContainer>  
+        </SectionContainer>   
 
         <SectionContainer className="Section_Batting_Runs charts todo">
           <AverageByTeam 

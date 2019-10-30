@@ -34,7 +34,7 @@ export default class Home_Overview extends Component {
                             animationInDelay={Delay}
                             animateOnMount={false}
                          
-                            className={IsVisable + " flex-25"}
+                            className={IsVisable + " flex-25 flex-m-50"}
                         >
                             <IconPod 
                                 icon={stone.icon}

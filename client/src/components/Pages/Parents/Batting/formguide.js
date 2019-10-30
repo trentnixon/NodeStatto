@@ -34,7 +34,7 @@ export default class Page_Batting_Formguide
             
      
             <SectionContainer className="Section_Batting_FormGuide todo">
-              <SectionEvaluation 
+              <SectionEvaluation  
                     FORMDATA={FORMDATA}
                     CAREER={PRIMARY.CAREER}
                     TITLES={TITLES.SITE}

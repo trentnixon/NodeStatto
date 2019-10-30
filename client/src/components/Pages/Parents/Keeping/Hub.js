@@ -16,7 +16,7 @@ export default class BowlingHub extends Component {
   render() {
     //console.log(this.props);
     return ( 
-            <Container>           
+            <Container>            
                 <Switch>
                     <Route  exact path="/keeping/catches" render={()=>  <ComponentCaught {... this.props}/> }/>
                     <Route  exact path="/keeping/stumpings" render={()=>  <ComponentStumping {... this.props}/> }/>

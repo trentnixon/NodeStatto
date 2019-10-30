@@ -16,7 +16,7 @@ export default class BattingRecentScores extends Component {
                                 <h1>Against</h1>
                             </div>
                             <div className="Date">
-                                <h1><small>Date</small></h1>
+                                <h1><small>Date</small></h1> 
                             </div>
 
                             

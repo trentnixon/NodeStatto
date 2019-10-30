@@ -48,7 +48,7 @@ export default class Statto extends Component {
                   <Overview   
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
-                      TITLES = {TITLES.SITE.TITLES}
+                      TITLES = {TITLES.SITE.TITLES} 
                       DATA={PRIMARY}
                     />   
 

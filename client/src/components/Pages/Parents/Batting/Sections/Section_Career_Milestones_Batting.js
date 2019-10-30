@@ -45,7 +45,7 @@ export default class Section_Rankings extends Component {
                                             isVisible={this.props.isVisible}
                                             animationInDelay={Delay}
                                             animateOnMount={false}
-                                            className={IsVisable + " flex-30"}
+                                            className={IsVisable + " flex-30 flex-m-50"}
                                         >
                                             <SingleValuePod 
                                                 label={stone.label}

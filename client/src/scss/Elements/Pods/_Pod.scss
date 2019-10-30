@@ -71,7 +71,7 @@
 }
 
 @mixin Style_POD_Footer($color:$ColorBase){
-    justify-content: flex-end;
+        justify-content: flex-end;
         display: flex;
         background-color: $color;
 }
@@ -93,7 +93,7 @@
         margin: .2% !important;
             // Generic Inner Styles that are used by ALL Pods
             .Inner{            
-                @include Inner_Styles;
+                @include Inner_Styles; 
 
                 @import "./PodType";
                 @import "./PodButtons";
@@ -113,8 +113,21 @@
    
     @import "./Type_FilledPod"; 
     @import "./Pod_Generic";
-    @import "./Type_RankingPod";
-   
+    @import "./Type_RankingPod";   
+}
 
-    
+.mobile{
+    .PodRow{
+        #Pod{
+            .Inner{   
+                padding: 10px 10px;
+                .Header{
+                    h1{
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+        
+    }
 }

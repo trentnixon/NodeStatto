@@ -100,7 +100,7 @@ class ScoreCardFrame extends Component {
                     <ScoreCardMeta SC={this.props.SC}/>
                     <Title Title={Game.ScoreMeta.Meta.Result[0] +' '+ Game.ScoreMeta.Meta.Result[1]} />
                 </SectionContainer>
-               
+                
 
                 <SectionContainer className="Scorecard">
                   <Tabber  

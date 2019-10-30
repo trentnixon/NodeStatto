@@ -10,7 +10,7 @@ export default class Section_Default extends Component {
         return ( 
                 <Row className="PodRow HomeCharts "> 
                       <ChartRow
-                            flex="flex-40"
+                            flex="flex-40 flex-m-100"
                             Info={this.props.TITLES.DESC.TEAMSPLAYEDFOR}
                             Interactive={false}
                         >
@@ -26,7 +26,7 @@ export default class Section_Default extends Component {
                         
  
                     <ChartRow
-                        flex="flex-60"
+                        flex="flex-60 flex-m-100"
                         Info={this.props.TITLES.DESC.GAMESPLAYEDBAR}
                         Interactive={true}
                     >
@@ -37,9 +37,7 @@ export default class Section_Default extends Component {
                            
                         />
       
-                </ChartRow>
-            
-                   
+                    </ChartRow>
                 </Row> 
             )
         }

@@ -69,16 +69,20 @@
             flex-direction: row !important;
             flex-wrap: wrap !important;
             .animated{
-                flex: 1 0 100% !important;
+                flex-basis: 30% !important;
                 .Inner{
                     
                     h1{
                         width: 50%;
                         margin: 0%;
+                        order:1;
+                        width: 100%;
                     }
                     h1.Page_Sub_Title{
                         font-weight: bold !important;
                         border: unset !important;
+                        order:2;
+                        width: 100%;
                     }
                 }
             }

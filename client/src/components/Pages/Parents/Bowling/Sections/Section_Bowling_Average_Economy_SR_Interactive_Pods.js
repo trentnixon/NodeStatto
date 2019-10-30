@@ -16,7 +16,7 @@ const SummaryPod = (props) => (
             <IconPod 
                 label={props.label}
                 total={props.total}
-                className="flex-30"
+                className="flex-30 flex-m-50"
                 icon=""
                 Footer = ""
             /> 

@@ -232,7 +232,7 @@ export default class Section_Rankings extends Component {
                                             Created={this.state.Created}
                                             TitleValue={radial.TitleValue}
                                             Title ={radial.Title}
-                                            className="flex-30"
+                                            className="flex-30 flex-m-100"
                                         />
                                     )
                                 })

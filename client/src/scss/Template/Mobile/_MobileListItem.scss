@@ -1,0 +1,30 @@
+.ListItem{
+
+    .For{
+        flex-basis: 100%;
+        h1{ font-weight: 800; font-size: 1.3rem !important;}
+    }
+    .Against{
+        flex-basis: 100%;
+        h1{
+            font-size: .7rem !important;
+        }
+    }
+
+    .Date{
+        flex-basis: 15%;
+    }
+    .GameRuns{
+        flex-basis: 35%;
+        h1{ text-align: center; }
+    }
+    .GameBalls{
+        flex-basis: 35%;
+        h1{ text-align: center; }
+    }
+    .GameCTA{
+        flex-basis: 10%;
+    }
+}
+.ListItem.Header{ display: none;}
+

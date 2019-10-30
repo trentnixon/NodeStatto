@@ -37,7 +37,7 @@ export default class Page_BattingOverview extends Component {
             <BasicStatOverview  
                       SUBS={TITLES.SITE.SUBS}
                       CTA={TITLES.SITE.CTA}
-                      TITLES = {TITLES.SITE.TITLES}
+                      TITLES = {TITLES.SITE.TITLES} 
                       DATA={PRIMARY}
                     />   
         </SectionContainer>

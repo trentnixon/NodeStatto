@@ -11,10 +11,10 @@ export default class Home_Overview extends Component {
     FindWinner(ARR,VAL){
         console.log(parseFloat(VAL) , Math.max(...ARR))
         if(parseFloat(VAL)  === Math.max(...ARR)){
-            return 'flex-50 Winner'
+            return 'flex-50 flex-m-100 Winner'
         }
         else{
-            return 'flex-50 Loser'
+            return 'flex-50  flex-m-100 Loser'
         }
     }
     render() {
