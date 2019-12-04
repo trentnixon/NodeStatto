@@ -73,7 +73,7 @@ export function FetchData(){
                 LoginSequence([
                     {Type:'DATA_STORE_PRIMARY_META',  Value:res.data.Meta},
                     {Type:'DATA_SET_LOAD_META',  Value:true},
-                    {Type:'DATA_SET_LOAD_CLEAN',  Value:true},
+                    {Type:'DATA_SET_LOAD_CLEAN',  Value:true}, 
                     {Type:'INT_SET_PLAYERDATA_RECIEVED',  Value:true}
                 ]);
 
@@ -174,7 +174,7 @@ export function FetchData(){
             
          let SplitDate = game["0"]["0"].meta.split('/');
          let Fixed = Math.floor(new Date( SplitDate[1]+'/'+SplitDate[0]+'/20'+SplitDate[2]).getTime()/1000);
-         
+        
          //let Fixed = new Date( SplitDate[2]+'/'+SplitDate[1]+'/'+SplitDate[0]).getTime();
          //console.log(SplitDate, Fixed)
      
@@ -191,6 +191,7 @@ export function FetchData(){
                     TeamID:game[1]["0"].id,
                     Opposition: this.STRReplace(game[2]["0"].meta),
                     OppositionID:game[2]["0"].id,
+                    LW:parseFloat(game[6])
                 }
             })
             
@@ -201,6 +202,7 @@ export function FetchData(){
 
      this.StoreBatting = (game,FixturePosition) =>{
 
+           
             let NoutOut=0;
             if(game[3].indexOf("*") !== -1){ NoutOut=1 }
 
@@ -210,7 +212,8 @@ export function FetchData(){
                 BallsFaced:game[4],
                 BallsFacedInt:parseInt(game[4], 10),
                 Ranking:game[11],
-                NotOut:NoutOut
+                NotOut:NoutOut,
+                LW:parseFloat(game[6])
             }
      }
 
@@ -223,7 +226,8 @@ export function FetchData(){
                     Figures:game[4],
                     Wickets:SplitFigures[0],
                     Runs:SplitFigures[1],
-                    Ranking:game[11]
+                    Ranking:game[11],
+                    LW:parseFloat(game[6])
             }
     }
 

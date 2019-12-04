@@ -5,8 +5,6 @@ import Row from "../../../../Template/Page/Row";
 import ChartContainer from "../../../../Template/Page/ChartContainer";
 import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
-// Form 
-import SelectYear from "../../../../Elements/FormElements/FormSelect/SelectYear";
 
 // Actions
 import {BowlingBasics, FindDataSeries} from "../../../../../actions/UI";
@@ -51,8 +49,6 @@ export default class Section_Default extends Component {
                     Title=""
                     flex=" flex-100"
                 > 
-
-                    <SelectYear {... this.props}/> 
                     
                     <Row className="PodRow">
                         <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} </h1>

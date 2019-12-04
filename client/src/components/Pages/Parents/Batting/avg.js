@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Container from "../../../Template/Page/Container";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
+import Filter from "../../../Template/Navigation/DataFilterOptions";
+
 // Sections
 import MixedChartRunsAVGRanking from "./Sections/Section_MixedChart_Run_Avg_Ranking";
 import AverageByTeam from "./Sections/Section_Average_ByTeam";
@@ -25,6 +27,8 @@ export default class Formguide
     return (
       <Container>
           <SectionHeader   h1={this.props.LABELS.SITE.SUBS.AVG} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
+         
+
         <SectionContainer className="Section_Batting_Runs charts todo">
           <MixedChartRunsAVGRanking 
               TITLE={TITLES.SITE} 
@@ -33,6 +37,7 @@ export default class Formguide
               {... this.props}
             />
         </SectionContainer>   
+      
 
         <SectionContainer className="Section_Batting_Runs charts todo">
           <AverageByTeam 

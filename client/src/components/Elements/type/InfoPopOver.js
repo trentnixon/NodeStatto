@@ -1,6 +1,7 @@
 import React from 'react';
+import Filter from "../../Template/Navigation/DataFilterOptions";
 import { makeStyles } from '@material-ui/core/styles';
-import Popover from '@material-ui/core/Popover';
+import Popover from '@material-ui/core/Popover'; 
 import Typography from '@material-ui/core/Typography';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -24,7 +25,7 @@ function Interactive  (props){
   else{ return false; }
 }
 
-export default function SimplePopover(props) {
+export default function SimplePopover(props) { 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -47,22 +48,25 @@ export default function SimplePopover(props) {
         </IconButton>
 
         <Interactive {... props}/>
-            <Popover
-              id={id}
-              open={open}
-              anchorEl={anchorEl} 
-              onClose={handleClose}
-              anchorOrigin={{
-                  vertical: 'center',
-                  horizontal: 'center',
-                }}
-                transformOrigin={{
-                  vertical: 'center',
-                  horizontal: 'center',
-                }}
-            >
+        
+        <Popover
+            id={id}
+            open={open}
+                  anchorEl={anchorEl} 
+                  onClose={handleClose}
+                  anchorOrigin={{
+                      vertical: 'center',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'center',
+                      horizontal: 'center',
+                    }}
+                >
               <Typography className={classes.typography}>{props.Info}</Typography>
-          </Popover>
+          </Popover> 
+
+          <Filter {... props}/>
     </div>
   );
 }

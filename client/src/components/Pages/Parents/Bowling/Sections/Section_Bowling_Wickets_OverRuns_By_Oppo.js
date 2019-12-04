@@ -9,7 +9,6 @@ import {BowlingBasics, FindDataSeries} from "../../../../../actions/UI";
 
 
 // Form 
-import SelectYear from "../../../../Elements/FormElements/FormSelect/SelectYear";
 import Bar from "../../../../Charts/BarChart";
 
 
@@ -58,7 +57,7 @@ export default class Section_Rankings extends Component {
                     Title=""
                     flex=" flex-100"
                 >
-                <SelectYear {... this.props}/> 
+           
                     
                         <Pod canvas="canvas1" className="flex-100">
                                 <Bar 

@@ -1,5 +1,6 @@
 import store from "../store/index"
 //import { Route } from 'react-router-dom'
+//var _ = require('lodash');
 
 export function UXDrawer(value){
     store.dispatch({ type:"MobileDrawerState", payload:value});
@@ -10,7 +11,11 @@ export function ISMOBILE(value){
 }
 
 export function Form_Select_Year(value){
-    store.dispatch({ type:"SELECT_YEAR", payload:value});
+    store.dispatch({ type:"SELECT_YEAR", payload:value}); 
+}
+export function Form_Select_League(value){
+    console.log(value)
+    store.dispatch({ type:"SELECT_LEAGUE", payload:value});
 }
 
 export function TeamName(ID){
@@ -34,7 +39,6 @@ export function TeamName(ID){
  *  
  */
 export function FindDataSeries(DATA,Needle){
- 
     let Series=[];
     if(Needle === "Career"){
         return DATA
@@ -49,6 +53,58 @@ export function FindDataSeries(DATA,Needle){
         return Series;
     }
 }
+
+
+
+// Filter Options
+// Filter on Year
+function YearFilter(DATA,Year){
+    let Series=[]
+        DATA.map((game,i)=>{
+                if(game.Meta.Year == parseFloat(Year))
+                    {
+                        Series.push(game)
+                    }
+        })
+        console.log(Series)
+    return Series;
+}
+// Filter on LW
+
+function LWFilter(DATA,LW){
+    let Series=[]
+        DATA.map((game,i)=>{
+                if(game.Meta.LW == parseFloat(LW))
+                    {
+                        Series.push(game)
+                    }
+        })
+
+        console.log(Series)
+    return Series;
+}
+// Filter on Both
+
+function FilterSeries(DATA,Filter){
+    let Series = DATA.filter(function(item) {
+        for (var key in Filter) {
+              if (item.Meta[key] === undefined || item.Meta[key] != Filter[key])
+               return false;
+        }
+        return true;
+      });
+
+      console.log(Series)
+   return Series;
+}
+
+export function FilterDataSeries(DATA,Filter){
+    if(Filter.Year === 'Career' && parseFloat(Filter.LW) === 0){ return DATA; }
+    else if(Filter.Year === 'Career'){ return LWFilter(DATA,Filter.LW ) }
+    else if(parseFloat(Filter.LW) === 0){ return YearFilter(DATA,Filter.Year )}
+    else if(Filter.Year != 'Career' && Filter.LW != 0){ return FilterSeries(DATA,Filter) }
+}
+
 /**
  * 
  *  This function Creates the Data Labesl for Grapghs for the function above
@@ -67,6 +123,19 @@ export function CreateLabelData(Data,Needle){
 }
 
 
+export function LW(props){
+   let Weight=[]
+    props.map((lw,i)=>{
+           
+            if(Weight.indexOf(lw.Meta.LW) === -1){
+                Weight.push(lw.Meta.LW)
+            }
+           
+            
+    });
+   // _.orderBy(Weight, [function(o) { return o.Int; }],['desc']);
+    return Weight.sort();
+}
 
 // Set the page Titles
 export function SetPageTitle(){

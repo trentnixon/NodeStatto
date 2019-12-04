@@ -10,7 +10,7 @@ import {UXDrawer} from "../../../actions/UI";
 import Dashboard from '@material-ui/icons/Dashboard';
 import History from '@material-ui/icons/History';
 import CalendarToday from '@material-ui/icons/PermContactCalendar';
- 
+
 
 
 
@@ -23,7 +23,6 @@ const NavBarTop = (props) => {
       //console.log(props.DATA_SETUP.SelectedPlayerID);
       return(
         <div className="NavBarTop">
-        
         
         <div className="Actions">
             <div>
@@ -58,3 +57,8 @@ const NavBarTop = (props) => {
     };
 
 export default  NavBarTop;
+
+/**
+ *        <FormSelect TITLE={props.LABELS.SITE} 
+                    {... props}/>
+ */

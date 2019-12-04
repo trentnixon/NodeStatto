@@ -31,7 +31,6 @@ export default class Page_BattingOverview extends Component {
     return (     
       <Container>   
         <SectionHeader   h2={TITLES.SITE.TITLES.OVERVIEW} h1={TITLES.SITE.TITLES.BATTING}   /> 
-       
 
         <SectionContainer className="Section_Batting_Rankings complete">
             <BasicStatOverview  
@@ -41,7 +40,7 @@ export default class Page_BattingOverview extends Component {
                       DATA={PRIMARY}
                     />   
         </SectionContainer>
-
+   
         <SectionContainer className="Section_Batting_Rankings complete">
             <BattingRankingPods 
               SUBS={TITLES.SITE.SUBS} 

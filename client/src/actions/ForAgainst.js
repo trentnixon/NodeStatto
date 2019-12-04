@@ -5,7 +5,7 @@ import {LoginSequence} from "./PrivateFunctions";
 var _ = require('lodash');
 
     /**    
-    *     Store For Against Functions 
+    *     Store For Against Functions  
     */
 //function 
 

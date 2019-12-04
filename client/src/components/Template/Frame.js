@@ -137,6 +137,7 @@ class ResponsiveDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+
               <StattoAppBarLayout   
                   {... this.props}  
                   batting={this.props.PLAYER_DATA.Primary.Meta.Batting_Ranking_World_Current}
@@ -144,6 +145,8 @@ class ResponsiveDrawer extends React.Component {
                   //keeping={this.props.DATA.CAREER.Career.Meta.Rankings.Keeping[0]}
               />
           </Toolbar>
+
+          
         </AppBar>
         </HideOnScroll>
 
@@ -162,7 +165,7 @@ class ResponsiveDrawer extends React.Component {
             }}
           >
               <NavLayout {... this.props}  Navigation={this.props.Navigation}/>
-
+ 
             </Drawer>
         </Hidden>
 

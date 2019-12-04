@@ -1,9 +1,7 @@
 const InitialState ={
-
     Mobile:{
         MobileDrawerState:false,
     },
-
     Meta:{
         SETLANG:"EN"
     },
@@ -13,7 +11,8 @@ const InitialState ={
     Desktop:{},
     FORMS:{
         SELECT:{
-            YEAR:"Career"
+            YEAR:"Career",
+            LEAGUE:"0"
         }
     }
 }
@@ -44,6 +43,13 @@ const UX = (state=InitialState, action) =>{
 				return {...state, FORMS: {...state.FORMS, SELECT:{...state.FORMS.SELECT, YEAR:action.payload} }}
 				// eslint-disable-next-line 
 				break
+            } 
+            case "SELECT_LEAGUE":{
+                //console.log(action.payload);
+				return {...state, FORMS: {...state.FORMS, SELECT:{...state.FORMS.SELECT, LEAGUE:action.payload} }}
+				// eslint-disable-next-line 
+                break
+                
             } 
         }
 		return state;

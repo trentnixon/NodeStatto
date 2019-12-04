@@ -76,7 +76,7 @@ createCollapseItem(navItem,i){
                   <ListItemText className="LinkCopy" inset primary={navItem.label}/>
                     {this.state.open[i] ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
-                 
+              
                 <Collapse in={this.state.open[i]} timeout="auto" unmountOnExit className="Collapseable">
                     <List component="div"  disablePadding>
                         {Children}

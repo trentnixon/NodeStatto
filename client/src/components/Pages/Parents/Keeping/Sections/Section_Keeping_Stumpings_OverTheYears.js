@@ -27,8 +27,6 @@ export default class Section_Rankings extends Component {
         return (  
             <Row className="PodRow">
 
-            
-
             <ChartContainer
                     Info={this.props.TITLE.SITE.DESC.TODO}
                     Interactive=""

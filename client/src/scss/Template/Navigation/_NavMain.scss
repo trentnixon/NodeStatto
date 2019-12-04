@@ -50,4 +50,15 @@
             }
         }
     }
+
+    .MuiDrawer-paperAnchorBottom{
+        padding:20px 10px;
+        background-color:$white !important;
+
+        .Page_Sub_Title{
+            margin:10px 0 5px 0;
+            font-weight:100;
+            font-size:1.2rem
+        }
+    }
 }

@@ -5,8 +5,7 @@ import { FormoverTime } from "../../../../../actions/UI"
 import Row from '../../../../Template/Page/Row';
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
 import ChartContainer from "../../../../Template/Page/ChartContainer";
-// FOrm
-import SELECTYEAR from "../../../../Elements/FormElements/FormSelect/SelectYear";
+
 // Charts
 import Bar from "../../../../Charts/BarChart_Positive_Negitive";
 
@@ -37,7 +36,7 @@ export default class Section_Batting_BallsFaced extends Component {
         ];
         return ( 
             <Row className="PodRow"> 
-                <SELECTYEAR TITLE={this.props.LABELS.SITE} {... this.props} />
+           
                 <ChartContainer 
                     Info={this.props.TITLES.DESC.FORMBATTINGOVERTIME} 
                     Interactive={true}

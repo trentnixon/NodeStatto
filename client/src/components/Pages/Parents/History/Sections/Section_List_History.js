@@ -5,7 +5,11 @@ import PodWrapper from "../../../../Elements/pods/Pod_Outer_Wrapper";
 
 // Form 
 import SELECTYEAR from "../../.././../Elements/FormElements/FormSelect/SelectYear"
+import Filter from "../../../../Template/Navigation/DataFilterOptions"
 import ListHistory from "../../../../Elements/Lists/List_History"
+
+
+
 
 var _ = require('lodash');
  
@@ -65,11 +69,10 @@ export default class Section_HistoryList extends Component {
     return (
         <div>
             <Row className="PodRow Form_Selector">
-                <SELECTYEAR 
-                    TITLE={this.props.LABELS.SITE} 
-                    {... this.props}
-                />
-            </Row>
+               <Filter />
+            </Row> 
+
+            
             <Row className="PodRow"> 
                 <PodWrapper  className="flex-100" canvas="canvas1">
                     <ListHistory 

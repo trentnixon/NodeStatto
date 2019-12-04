@@ -8,24 +8,27 @@
  */
 
 import React, { Component } from 'react';
-
+import {connect } from 'react-redux';
 // Template
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
+import SubTitle from "../../type/PageSubTitle"
 
-// Form 
+// Form  
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-
+import LW from "./SelectLW";
 // Action 
 import {Form_Select_Year} from "../../../../actions/UI";
 import {GA_Form_Select_Year} from "../../../../actions/ga";
 
+let SetLang="EN";
+
 // Start Class 
-export default class FORM_SELECT_YEAR extends Component {
+class FORM_SELECT_YEAR extends Component {
 
     state = {
         labelWidth: 100,
@@ -33,7 +36,6 @@ export default class FORM_SELECT_YEAR extends Component {
       }
 
 
- 
     // Form Handling
     handleChange = event => { 
         Form_Select_Year(event.target.value) 
@@ -42,37 +44,50 @@ export default class FORM_SELECT_YEAR extends Component {
     componentWillMount() {  } 
 
     render() {
-        console.log(this.props.TITLE)
+        console.log(this.props)
         return (
+ 
                 <Row className="PodRow Form_Selector flex-100"> 
-                    <Pod  className="flex-50" canvas="">  
-                        <FormControl variant="outlined" className="YearSelector" >
-                            <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
-                                {this.props.TITLE.FORM.INPUTLABELS.VARIABLE}
-                            </InputLabel>
-                                <Select
-                                    value={this.props.UX.FORMS.SELECT.YEAR}  
-                                    onChange={this.handleChange}
-                                    input={ <OutlinedInput 
-                                                labelWidth={this.state.labelWidth}
-                                                name="Year"
-                                                id="outlined-year-simple"
-                                                value={this.props.UX.FORMS.SELECT.YEAR}
-                                            />
-                                        }
-                                >
-                                        <MenuItem value="Career" >{this.props.LABELS.SITE.TITLES.CAREER}</MenuItem>
-                                        {
-                                            this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears.map((year,i)=>{
-                                                return(
-                                                        <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
-                                                )
-                                            })
-                                        }
-                                </Select>
-                    </FormControl>
-                </Pod>
-            </Row>
+                <SubTitle Title="Select a Year" />
+                        <Pod  className="flex-50" canvas="">  
+                            <FormControl variant="outlined" className="YearSelector" >
+
+                                <InputLabel ref={ref => { this.InputLabelRef = ref; }} htmlFor="outlined-year-simple"> 
+                                    {this.props.LABELS.SITE.FORM.INPUTLABELS.VARIABLE}
+                                </InputLabel>
+                                    <Select
+                                        value={this.props.UX.FORMS.SELECT.YEAR}  
+                                        onChange={this.handleChange}
+                                        input={ <OutlinedInput 
+                                                    labelWidth={this.state.labelWidth}
+                                                    name="Year"
+                                                    id="outlined-year-simple"
+                                                    value={this.props.UX.FORMS.SELECT.YEAR}
+                                                />
+                                            }
+                                    >
+                                            <MenuItem value="Career" >{this.props.LABELS.SITE.TITLES.CAREER}</MenuItem>
+                                            {
+                                                this.props.DATA.SelectedPlayer.Primary.CAREER.Career.batting.overTheYears.map((year,i)=>{
+                                                    return(
+                                                            <MenuItem key={i} value={year.int}>{year.int}</MenuItem>
+                                                    )
+                                                })
+                                            }
+                                    </Select>
+                        </FormControl>
+                    
+                    </Pod>
+                    <LW {... this.props}/>
+                </Row> 
         ) 
     }
 } 
+
+const mapStateToProps = (state) => ({ 
+    LOAD: state.LOAD,
+    DATA: state.DATA,
+    LABELS:state.LABELS.lANG[SetLang],
+    UX:state.UX
+})
+export default connect(mapStateToProps)(FORM_SELECT_YEAR);

@@ -6,7 +6,7 @@ const InitialState ={
         SelectedPlayerID:false
     },
     SelectedPlayer:{
-        Primary:{
+        Primary:{ 
             PlayerName:false,
             PlayerID:false,
             Meta:false,
