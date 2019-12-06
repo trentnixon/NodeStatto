@@ -4,7 +4,7 @@ import Popover from '@material-ui/core/Popover';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-
+import ResetFilter from "../../Elements/FormElements/FormSelect/ResetFilter"
 //let Path;
 const  SELECT = {
     YEAR:"Career",
@@ -33,14 +33,22 @@ export default function ActiveFilter(props) {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
     let Path = props.UX.FORMS.SELECT;
-    console.log( Path.LEAGUE , SELECT.LEAGUE )
+    console.log( Path.LEAGUE , Path.YEAR)
     if(Path.YEAR !==SELECT.YEAR || Path.LEAGUE !==SELECT.LEAGUE ){
         return (
-            <div className="FilterActive">
+            <div className="FilterActive"> 
                
+               <p>
+
                 <IconButton className="ChartMetaIcon" aria-describedby={id} variant="contained" onClick={handleClick}>
                   <FilterIcon />
                 </IconButton>
+
+                 <strong> Filter Active  </strong> | Year: {Path.YEAR} | League: {Path.LEAGUE} | 
+
+                 <ResetFilter />
+              </p> 
+
                     <Popover
                         id={id}
                         open={open}
@@ -58,6 +66,7 @@ export default function ActiveFilter(props) {
                         <Typography className={classes.typography}>Filter is Active! Some stats may be missing.</Typography>
                     </Popover> 
         
+               
             </div>
           );
     }

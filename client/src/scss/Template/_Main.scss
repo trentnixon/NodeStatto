@@ -7,5 +7,32 @@ main{
     width: 100%;
     padding: 1%;
 
+    #display-statto-app{
+        position: relative;
+        .FilterActive{
+            position: fixed;
+            top:0;
+            background-color: $ColorBase;
+            z-index: 100;
+            width: 99%;
+            left: -1%;
+            padding: 0 1%;
+            text-align: right;
+
+                
+                p{
+                        text-align: right;
+                        padding: 0;
+                        margin: 0;
+                        color: $white;
+                        button{
+                     
+                            svg{
+                                fill:rgba(255, 255, 255,1) !important;
+                            }
+                    }
+                }
+        }
+    }
     .show{  opacity: 1 !important;}
 }

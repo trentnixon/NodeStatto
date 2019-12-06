@@ -17,7 +17,7 @@ import ComponentReset from "./Parents/search/ChangeTeam";
 import ComponentScorecard from "./Parents/Scorecards/Hub";
 import ComponentFlorish from "./Parents/Florish/Hub";
 import ComponentRoadMap from "./Parents/RoadMap/Hub"
-
+import ActiveFilter from "../Template/Navigation/FilterActive"
 import ComponentKeeping from "./Parents/Keeping/Hub";
 //import ComponentAbout from "./Parents/about/about";
  
@@ -186,12 +186,13 @@ export default class Statto extends Component {
     SetPageTitle();
     PageView(window.location.pathname + window.location.search)
     BasicTracking(this.props.DATA_SETUP.SelectTeamID,this.props.PLAYER_DATA.Primary.Meta.Name, window.location.pathname)
-  console.log("MAIN")
+  //console.log("MAIN")
     return (
       <Router  basename={'/'+this.props.DATA_SETUP.SelectTeamID+'/'+this.props.DATA_SETUP.SelectedPlayerID }>
           <Frame {... this.props} Navigation={Navigation} >
             <div id="display-statto-app"> 
-                <ScrollToTop />
+                <ScrollToTop /> 
+                <ActiveFilter {... this.props} />
                 <Route  exact path='/' render={()=> <ComponentHome {... this.props}/> }/>
                 <Route  exact path='/playedfor' render={()=> <ComponentPlayFor {... this.props}/> }/>
                 <Route  path="/history" render={()=> <ComponentHistory {... this.props} /> }/>

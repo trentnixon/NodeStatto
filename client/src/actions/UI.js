@@ -14,8 +14,13 @@ export function Form_Select_Year(value){
     store.dispatch({ type:"SELECT_YEAR", payload:value}); 
 }
 export function Form_Select_League(value){
-    console.log(value)
     store.dispatch({ type:"SELECT_LEAGUE", payload:value});
+}
+
+export function ResetFilter(){
+   
+    Form_Select_Year("Career")
+    Form_Select_League("0")
 }
 
 export function TeamName(ID){

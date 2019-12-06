@@ -21,6 +21,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import LW from "./SelectLW";
+import ResetFilter from "./ResetFilter"
+
+
 // Action 
 import {Form_Select_Year} from "../../../../actions/UI";
 import {GA_Form_Select_Year} from "../../../../actions/ga";
@@ -79,6 +82,7 @@ class FORM_SELECT_YEAR extends Component {
                     
                     </Pod>
                     <LW {... this.props}/>
+                    <ResetFilter />
                 </Row> 
         ) 
     }
@@ -90,4 +94,4 @@ const mapStateToProps = (state) => ({
     LABELS:state.LABELS.lANG[SetLang],
     UX:state.UX
 })
-export default connect(mapStateToProps)(FORM_SELECT_YEAR);
+export default connect(mapStateToProps)(FORM_SELECT_YEAR); 

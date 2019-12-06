@@ -18,6 +18,8 @@ import Routes from "./Navigation/Global_Routes";
 import StattoAppBarLayout from "./Navigation/AppBar";
 import NavBarTop from "./Navigation/NavBarTop";
 
+
+
 import {UXDrawer} from "../../actions/UI";
 // Developer
 //import DeveloperRouter from "../../components/Pages/Dev/DevRouter";
@@ -184,9 +186,12 @@ class ResponsiveDrawer extends React.Component {
         </Hidden>
 
               <main className={classes.content}>
+              
                 <div className={classes.toolbar} /> 
-                      {this.props.children} 
+                  
+                  {this.props.children} 
               </main>
+              
       </div> 
     );
   }

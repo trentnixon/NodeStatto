@@ -37,11 +37,11 @@ export default function TemporaryDrawer(props) {
     <div >
       <Button className="ChartMetaIcon" onClick={toggleDrawer('bottom', true)}>
           <FilterIcon   />  Filter
-      </Button>
+      </Button> 
 
           <Drawer className="FilterDraw"  anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
                 <FilterOptions />
-         </Drawer> 
+         </Drawer>  
     </div>
   );
 }
