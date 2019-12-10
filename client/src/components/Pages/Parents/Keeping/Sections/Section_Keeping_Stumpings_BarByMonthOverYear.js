@@ -103,12 +103,16 @@ export default class Section_Rankings extends Component {
     }
 
     render() {
-        
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.SITE.DESC.TODO,
+            "Interactive":true,
+            "Filterable":false 
+          }
         return (  
             <Row className="PodRow">
                 <ChartContainer
-                    Info={this.props.TITLE.SITE.DESC.TODO}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title="Stumpings by Month on Years"
                     flex=" flex-100"
                 >

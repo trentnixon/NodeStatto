@@ -15,12 +15,16 @@ export default class Section_Rankings extends Component {
     shouldComponentUpdate(){return true;}
     componentDidUpdate(nextProps, nextState){} 
     render() {
-
+        const icons= {
+            "HasInfo":true,
+            "Info":" ",
+            "Interactive":true,
+            "Filterable":false 
+          }
         return ( 
                 <Row className="PodRow ">
                     <ChartContainer
-                        Info={" "}
-                        Interactive={true}
+                         DisplayIcons={icons}
                         Title="WORM"
                         flex=" flex-100"
                     >

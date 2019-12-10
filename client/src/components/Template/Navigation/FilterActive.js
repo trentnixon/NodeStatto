@@ -33,22 +33,17 @@ export default function ActiveFilter(props) {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
     let Path = props.UX.FORMS.SELECT;
-    console.log( Path.LEAGUE , Path.YEAR)
+
     if(Path.YEAR !==SELECT.YEAR || Path.LEAGUE !==SELECT.LEAGUE ){
         return (
             <div className="FilterActive"> 
-               
-               <p>
-
+                
                 <IconButton className="ChartMetaIcon" aria-describedby={id} variant="contained" onClick={handleClick}>
                   <FilterIcon />
                 </IconButton>
 
-                 <strong> Filter Active  </strong> | Year: {Path.YEAR} | League: {Path.LEAGUE} | 
-
-                 <ResetFilter />
-              </p> 
-
+               <p> Year: {Path.YEAR}  League: {Path.LEAGUE}</p> 
+              <ResetFilter />
                     <Popover
                         id={id}
                         open={open}
@@ -64,9 +59,7 @@ export default function ActiveFilter(props) {
                         }}
                     >
                         <Typography className={classes.typography}>Filter is Active! Some stats may be missing.</Typography>
-                    </Popover> 
-        
-               
+                    </Popover>
             </div>
           );
     }

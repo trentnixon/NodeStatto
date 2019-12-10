@@ -1,10 +1,14 @@
 /**
  * Example
- *                  <ChartContainer
-                        Info={this.props.TITLES.SITE.DESC.RANKINGLINE}
-                        Interactive={true}
+ *                  <ChartContainer 
                         Title="Career Ranking Progression"
                         flex=" flex-100"
+                         DisplayIcons={{
+                        "HasInfo":true,
+                        "Info":this.props.TITLES.DESC.TEAMSPLAYEDFOR,
+                        "Interactive":false,
+                        "Filterable":false
+                        }}
                     >
  */
 import React, { Component } from 'react';
@@ -17,9 +21,9 @@ export default class Row extends Component {
         <div className={"ChartMetaContainer "+this.props.flex}>  
             <div className="ChartContainerTitlesandIcons">
                 <SubTitle Title={this.props.Title} />
-                <InfoPopover  Info={this.props.Info}Interactive={this.props.Interactive} />
+                <InfoPopover  DisplayIcons={this.props.DisplayIcons}/>
             </div>
-           
+            
             {this.props.children}  
         </div>
     )

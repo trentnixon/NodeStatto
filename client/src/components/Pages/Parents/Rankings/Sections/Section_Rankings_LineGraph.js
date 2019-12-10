@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 // import {isMobile} from 'react-device-detect';
 
-
 // Template
 import Row from "../../../../Template/Page/Row";
 import ChartContainer from "../../../../Template/Page/ChartContainer";
 import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
 import RankingPods from "../../../../Elements/pods/RankingPods";
 import Title from "../../../../Elements/type/PageTitle";
-//import SubTitle from "../../../../Elements/type/PageSubTitle";
-//import InfoPopover from "../../../../Elements/type/InfoPopOver";
+
 // Charts
 import Chart from "../../../../Charts/AreaChart";
 
@@ -68,6 +66,12 @@ export default class Section_Rankings extends Component {
           Labels=this.CreateLabels(this.props.Rankings.Combined)
     } 
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLES.SITE.DESC.RANKINGLINE,
+            "Interactive":true,
+            "Filterable":false 
+          }
         return ( 
                 <Row className="PodRow ">
                     
@@ -84,24 +88,15 @@ export default class Section_Rankings extends Component {
 
                    
                     <ChartContainer
-                        Info={this.props.TITLES.SITE.DESC.RANKINGLINE}
-                        Interactive={true}
+                        DisplayIcons={icons}
                         Title="Career Ranking Progression"
-                        flex=" flex-100"
+                        flex=" flex-100" 
                     >
                         <Pod canvas="canvas1" className=" flex-100">
                             <Chart  series={Series} Labels={Labels} />
-                        </Pod> 
-
+                        </Pod>
                     </ChartContainer>
-                   
-
                 </Row>
             )
         }
-    } 
-
-    /**
-     *  <Title Title={this.props.Title}/>
-                        <RankingPods Rankings={this.props.Rankings.Keeping}  />
-     */
+    }

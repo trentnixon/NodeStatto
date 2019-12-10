@@ -11,14 +11,14 @@ import InteractiveChart from "../../../../Charts/MixedChart";
 // Action
 import {FilterDataSeries} from "../../../../../actions/UI";
 
-// Variables
+// Variables 
 let Series=[],Div=0, NotOut=0;
 
 const SummaryPod = (props) => (
             <IconPod 
                 label={props.label}
                 total={props.total}
-                className="flex-30 flex-m-50"
+                className="flex-30 flex-m-50" 
                 icon=""
                 Footer = ""
             /> 
@@ -61,7 +61,6 @@ export default class Section_Default extends Component {
             }            
             return true;
         })
-       
         return Series;
     }
 
@@ -84,8 +83,6 @@ export default class Section_Default extends Component {
 
         let NewSeries = FilterDataSeries(DATA,{Year:Year,LW:LEAGUE})
         // Test
-        console.log(NewSeries)
-
         Series = [{
             name: 'Runs',
             type: 'column',
@@ -115,24 +112,24 @@ export default class Section_Default extends Component {
    
     }
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":"ToDo",
+            "Interactive":false,
+            "Filterable":true 
+          }
         return ( 
 
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title={this.props.TITLE.SUBS.AVGVSRUN}
                     flex=" flex-100"
                 >
 
-                  
-                    
                     <Row className="PodRow">
-                        <h1 className="Page_Sub_Title"> Summary for : {this.props.UX.FORMS.SELECT.YEAR} - League : {this.props.UX.FORMS.SELECT.LEAGUE} </h1>
- 
                         <SummaryPod label={this.props.UX.FORMS.SELECT.YEAR + " Average"} total={this.state.Series[1].data[this.state.Series[1].data.length-1]} />
                         <SummaryPod label="Highest Average " total={Math.max(...this.state.Series[1].data)} />
                         <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />
-                        
                         <SummaryPod label="Innings count " total={this.state.Series[0].data.length} />
                         <SummaryPod label="Total Runs  " total={this.state.Series[0].data.reduce((a, b) => a + b, 0)} />
                         <SummaryPod label="Not Outs  " total={NotOut} />
@@ -150,10 +147,7 @@ export default class Section_Default extends Component {
                                 />
                             </Pod>
                     </Row> 
-
-                    
                 </ChartContainer>
-           
         ) 
     }
 }

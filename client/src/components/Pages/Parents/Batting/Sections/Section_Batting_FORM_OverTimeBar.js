@@ -24,7 +24,12 @@ export default class Section_Batting_BallsFaced extends Component {
         { PrintFormFactor = FormoverTime(this.props.CAREER.CLEAN, this.props.CAREER.CAREER.Career, nextProps.UX.FORMS.SELECT.YEAR) }
     } 
     render() {
-
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLES.DESC.TODO,
+            "Interactive":true,
+            "Filterable":true 
+          }
         Labels=PrintFormFactor[1]
 
         FormYears=[
@@ -38,8 +43,7 @@ export default class Section_Batting_BallsFaced extends Component {
             <Row className="PodRow"> 
            
                 <ChartContainer 
-                    Info={this.props.TITLES.DESC.FORMBATTINGOVERTIME} 
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title={"Form History"} 
                     flex=" flex-100"
                 >

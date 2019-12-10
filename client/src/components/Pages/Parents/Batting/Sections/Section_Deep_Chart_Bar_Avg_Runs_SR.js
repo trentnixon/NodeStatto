@@ -36,12 +36,16 @@ export default class Home_Overview extends Component {
      
     componentWillMount() {  this.createSeries(this.props.Data) } 
     render() {
-        
+      const icons= {
+        "HasInfo":true,
+        "Info":"FIX",
+        "Interactive":true,
+        "Filterable":false 
+      }
         return (
             <Row className="PodRow">
               <ChartContainer
-                        Info={this.props.TITLES.SITE.DESC.TODO}
-                        Interactive={true}
+                        DisplayIcons={icons}
                         Title="Runs - Average - Strike Rate"
                         flex=" flex-100"
                     >

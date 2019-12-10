@@ -14,13 +14,17 @@ export default class Section_Rankings extends Component {
     shouldComponentUpdate(){return true;}
     componentDidUpdate(nextProps, nextState){} 
     render() {
-        console.log(this.props.SC);
-
+     //console.log(this.props.SC);
+        const icons= {
+            "HasInfo":true,
+            "Info":" ",
+            "Interactive":true,
+            "Filterable":false 
+          }
         return ( 
                 <Row className="PodRow ">
                     <ChartContainer
-                        Info={" "}
-                        Interactive={true}
+                        DisplayIcons={icons}
                         Title="Batting Order Comparison"
                         flex=" flex-100"
                     >

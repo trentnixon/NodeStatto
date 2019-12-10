@@ -66,12 +66,16 @@ export default class Section_Default extends Component {
         
     } 
     render() {
-      //console.log(Series);
+        const icons= {
+            "HasInfo":true,
+            "Info":"FIX",
+            "Interactive":true,
+            "Filterable":false 
+          }
         return ( 
             <Row className="PodRow"> 
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.RUNSYEARSLINE}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title={this.props.TITLE.SUBS.RUNSYEARSLINE}
                     flex=" flex-100"
                 >

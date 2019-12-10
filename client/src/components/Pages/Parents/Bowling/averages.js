@@ -31,5 +31,5 @@ export default class Averages extends Component {
              
       </Container>
     )
-  }
-} 
+  } 
+}  

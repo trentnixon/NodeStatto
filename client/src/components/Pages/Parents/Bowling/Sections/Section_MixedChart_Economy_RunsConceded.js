@@ -58,7 +58,7 @@ export default class Section_Default extends Component {
         }
     
     render() {
-        //console.log(this.state)
+        console.log(this.state.Labels) 
         return ( 
             <Row className="PodRow">
                     <Pod canvas="canvas1 " className="flex-100">

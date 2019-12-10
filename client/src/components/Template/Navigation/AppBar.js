@@ -77,7 +77,7 @@ export default class APPBARLAYOUT extends React.Component {
             </div>
 
             <div className="Right">
-              <ActiveFilter {... this.props}/>
+
               <h1>
                 <span className="big">{this.props.PLAYER_DATA.Primary.Meta.Name}</span>
                 <span className="small">{TeamName(this.props.STATTODATA.SetUpData.SelectTeamID)}</span>

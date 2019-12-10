@@ -49,27 +49,13 @@ header{
                 line-height: 4em;
             }
         }
-        .Right{
+        .Right{ 
             flex-grow: 1;
             display: flex;
             justify-content: flex-end;
 
             >div{ background-color: $h2Color;}
-            
-            .FilterActive{
-                background-color: transparent;
-                button{
-                  
-                        display: flex;
-                        svg{
-                            fill:rgba(111, 156, 208,1) !important;
-                        }
-                    
-                }
-                p{
-                    display: none;
-                }
-            }
+           
             h1{
                 font-size: 1.1em;
                 line-height: 1.2em;

@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import FilterIcon from '@material-ui/icons/FilterList';
 import FilterOptions from "../../Elements/FormElements/FormSelect/SelectYear"
 
-
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -29,19 +28,17 @@ export default function TemporaryDrawer(props) {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [side]: open });
   };
 
   return (
-    <div >
+    <div>
       <Button className="ChartMetaIcon" onClick={toggleDrawer('bottom', true)}>
-          <FilterIcon   />  Filter
+          <FilterIcon   /> Filter
       </Button> 
-
-          <Drawer className="FilterDraw"  anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
-                <FilterOptions />
-         </Drawer>  
+      <Drawer className="FilterDraw"  anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
+        <FilterOptions />
+      </Drawer>  
     </div>
   );
 }

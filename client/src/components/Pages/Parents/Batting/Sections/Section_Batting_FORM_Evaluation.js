@@ -51,11 +51,16 @@ export default class Section_Batting_BallsFaced extends Component {
               }
         }
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLES.DESC.FORMBATTINGRADIAL,
+            "Interactive":false,
+            "Filterable":false 
+          }
         return ( 
             <Row className="PodRow"> 
                 <ChartContainer 
-                    Info={this.props.TITLES.DESC.FORMBATTINGRADIAL}
-                    Interactive={false}
+                    DisplayIcons={icons}
                     Title=""
                     flex=" flex-100"
                 >

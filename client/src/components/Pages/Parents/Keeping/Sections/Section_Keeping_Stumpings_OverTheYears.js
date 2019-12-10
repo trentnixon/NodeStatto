@@ -22,18 +22,22 @@ export default class Section_Rankings extends Component {
           })
     }
     render() {
-
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.SITE.DESC.TODO,
+            "Interactive":false,
+            "Filterable":false 
+          }
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (  
             <Row className="PodRow">
 
             <ChartContainer
-                    Info={this.props.TITLE.SITE.DESC.TODO}
-                    Interactive=""
+                    DisplayIcons={icons}
                     Title="Stumpings over the Years"
                     flex=" flex-100"
                 >
-            </ChartContainer>
+            </ChartContainer> 
                 {
                     TextSeries.map((text,i)=>{
                         let Delay= 200*i;

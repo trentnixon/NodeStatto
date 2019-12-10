@@ -29,19 +29,25 @@ export default class Section_Default extends Component {
    componentWillMount() { 
             Against= this.createAgainst(this.props.PLAYER_DATA.Primary.AGAINST, 5)
             For= this.createAgainst(this.props.PLAYER_DATA.Primary.FOR, 5)
+           
     } 
 
     shouldComponentUpdate(nextProps, nextState){ return true;}
     componentWillUpdate(nextProps, nextState){}
 
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.DESC.TODO,
+            "Interactive":false,
+            "Filterable":false 
+          }
         return ( 
 
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive={false}
-                    Title="Career Best Averages :  (min 5 Inn)"
                     flex=" flex-100"
+                    DisplayIcons={icons}
+                    Title="Career Best Averages :  (min 5 Inn)"   
                 >
                     <Table>
                         <TableHead>
@@ -106,8 +112,3 @@ export default class Section_Default extends Component {
         ) 
     }
 }
-
-/**
- *  
- *  
- */

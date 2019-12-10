@@ -102,13 +102,17 @@ export default class Section_Rankings extends Component {
     }
 
     render() {
-        
-        //console.log(this.props.PathOpt);
+        const icons= {
+            "HasInfo":true,
+            "Info":"TODO",
+            "Interactive":true,
+            "Filterable":false 
+          }
+    
         return (  
             <Row className="PodRow">
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title="Runs over the Years by Month"
                     flex=" flex-100"
                 >

@@ -14,19 +14,32 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+/* ********************************************* */
+// Is Interactive
+/* ********************************************* */
 function Interactive  (props){
-  if(props.Interactive === true){
+  if(props.DisplayIcons.Interactive === true){
     return(
       <IconButton className="ChartMetaIcon" variant="contained" >
         <TouchApp />
       </IconButton>
     )
-  }
-  else{ return false; }
+  } else{ return false; }
 }
 
-export default function SimplePopover(props) { 
-  const classes = useStyles();
+/* ********************************************* */
+// IS Fiterable
+/* ********************************************* */
+function FilterAble(props){
+  if(props.DisplayIcons.Filterable === true){
+    return( <Filter {... props}/> )
+  } else{ return false; }
+}
+
+/* ********************************************* */
+// Has Info
+/* ********************************************* */
+function HasInfo(props){
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -39,34 +52,45 @@ export default function SimplePopover(props) {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+  const classes = useStyles();
+  if(props.DisplayIcons.HasInfo === true){
+    return(
+      <div>
+          <IconButton className="ChartMetaIcon" aria-describedby={id} variant="contained" onClick={handleClick}>
+            <Info />
+          </IconButton>
+              <Popover
+                  id={id}
+                  open={open}
+                    anchorEl={anchorEl} 
+                    onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: 'center',
+                        horizontal: 'center',
+                      }}
+                      transformOrigin={{
+                        vertical: 'center',
+                        horizontal: 'center',
+                      }}
+                  >
+                <Typography className={classes.typography}>{props.DisplayIcons.Info}</Typography>
+            </Popover> 
+         </div>
+    )
+  }
+  else{ return false; }
+}
 
+/* ********************************************* */
+// Export Component
+/* ********************************************* */
+
+export default function SimplePopover(props) { 
   return (
     <div className="Graph_Type_and_Info">
-       
-        <IconButton className="ChartMetaIcon" aria-describedby={id} variant="contained" onClick={handleClick}>
-          <Info />
-        </IconButton>
-
+        <HasInfo {... props}/>
         <Interactive {... props}/>
-        
-        <Popover
-            id={id}
-            open={open}
-                  anchorEl={anchorEl} 
-                  onClose={handleClose}
-                  anchorOrigin={{
-                      vertical: 'center',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'center',
-                      horizontal: 'center',
-                    }}
-                >
-              <Typography className={classes.typography}>{props.Info}</Typography>
-          </Popover> 
-
-          <Filter {... props}/>
+        <FilterAble {... props} />
     </div>
   );
 }

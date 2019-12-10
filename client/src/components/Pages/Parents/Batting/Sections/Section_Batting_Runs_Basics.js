@@ -21,6 +21,12 @@ export default class Section_Rankings extends Component {
           })
     }
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":"TODO",
+            "Interactive":false,
+            "Filterable":false 
+          }
 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (  
@@ -43,8 +49,7 @@ export default class Section_Rankings extends Component {
                         </Animated>
 
             <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive=""
+                    DisplayIcons={icons}
                     Title="Runs over the Years"
                     flex=" flex-100"
                 >

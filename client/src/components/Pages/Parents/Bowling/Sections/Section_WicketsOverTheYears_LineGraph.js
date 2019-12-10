@@ -66,12 +66,16 @@ export default class Section_Default extends Component {
         
     } 
     render() {
-      //console.log(Series);
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.DESC.WICKETSYEARSLINE,
+            "Interactive":true,
+            "Filterable":false 
+          }
         return ( 
             <Row className="PodRow"> 
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.WICKETSYEARSLINE}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title={this.props.TITLE.SUBS.WICKETSYEARSLINE}
                     flex=" flex-100"
                 >
@@ -79,7 +83,6 @@ export default class Section_Default extends Component {
                         <LineGraph series={Series[0]} Labels={Labels}/>
                     </Pod>
                 </ChartContainer>
-                    
             </Row> 
         ) 
     }

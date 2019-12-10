@@ -13,7 +13,7 @@ class LineCharts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      options: {
+      options: { 
         chart: {
           id: "LineChart",
           zoom: {
@@ -76,7 +76,7 @@ class LineCharts extends Component {
     }; 
   } 
 
-  CreateSeries(props){
+  CreateSeries(props){ 
     //console.log(props.Labels);
     this.setState({ 
       series:props.series,
@@ -94,7 +94,7 @@ class LineCharts extends Component {
   componentWillUpdate(){ return true;}
   
   componentDidUpdate(nextprops,nextState){
-      if(this.props.series !== this.state.series){ this.CreateSeries(nextprops)  }
+      if(this.props.series !== this.state.series){ this.CreateSeries(nextprops)  } 
   }
 
   render() {
@@ -105,7 +105,7 @@ class LineCharts extends Component {
               options={this.state.options}
               series={this.state.series}
               type="line"
-            />
+            /> 
           </div>
       </div>
     );

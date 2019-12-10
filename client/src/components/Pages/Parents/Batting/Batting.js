@@ -40,7 +40,7 @@ export default class Page_BattingOverview extends Component {
                       DATA={PRIMARY}
                     />   
         </SectionContainer>
-   
+    
         <SectionContainer className="Section_Batting_Rankings complete">
             <BattingRankingPods 
               SUBS={TITLES.SITE.SUBS} 

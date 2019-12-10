@@ -102,12 +102,16 @@ export default class Section_Rankings extends Component {
     }
 
     render() {
-        
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.DESC.TODO,
+            "Interactive":true,
+            "Filterable":false 
+          }
         return (  
             <Row className="PodRow">
                 <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive={true}
+                    DisplayIcons={icons}
                     Title="Wickets by Month on Years"
                     flex=" flex-100"
                 >
@@ -117,7 +121,7 @@ export default class Section_Rankings extends Component {
                             Labels={Labels} 
                             BasePath={'/bowling/deep'}/>
                     </Pod>  
-                </ChartContainer>
+                </ChartContainer> 
             </Row>
             )
         }

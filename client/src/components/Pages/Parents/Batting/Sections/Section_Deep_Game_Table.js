@@ -10,16 +10,21 @@ import ListHistory from "../../../../Elements/Lists/List_History"
 export default class Home_Overview extends Component {
     componentWillMount() { } 
     render() {
+        const icons= {
+            "HasInfo":true,
+            "Info":"FIX",
+            "Interactive":false,
+            "Filterable":false 
+          }
         return (
             <Row className="PodRow">
                 <ChartContainer
-                        Info={this.props.TITLES.SITE.DESC.TODO}
-                        Interactive={false}
-                        Title="Games Played"
-                        flex=" flex-100"
-                    >
+                    DisplayIcons={icons}
+                    Title="Games Played"
+                    flex=" flex-100"
+                >
                     <Pod canvas="canvas1 " className="flex-100">
-                            <ListHistory  Games={this.props.Data} />
+                        <ListHistory  Games={this.props.Data} />
                     </Pod>
                 </ChartContainer>
             </Row>

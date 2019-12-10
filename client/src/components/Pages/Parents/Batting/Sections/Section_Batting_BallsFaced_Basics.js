@@ -26,6 +26,13 @@ export default class Section_Rankings extends Component {
     render() { 
 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
+        const icons= {
+            "HasInfo":true,
+            "Info":this.props.TITLE.DESC.TODO,
+            "Interactive":false,
+            "Filterable":false 
+          }
+
         return (  
             <Row className="PodRow">
 
@@ -47,8 +54,7 @@ export default class Section_Rankings extends Component {
 
 
             <ChartContainer
-                    Info={this.props.TITLE.DESC.TODO}
-                    Interactive=""
+                    DisplayIcons={icons}
                     Title="Balls Faced over the Years"
                     flex=" flex-100"
                 >
