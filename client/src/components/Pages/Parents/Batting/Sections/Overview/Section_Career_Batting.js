@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update'
 
-import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
+import Row from "../../../../../Template/Page/Row";
+import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
 // import Title from "../../../Elements/type/PageTitle";
 // import SubTitle from "../../../../Elements/type/PageSubTitle";
 // import MostForAgainst from "../../../../Elements/Tables/MostForAgainst";
@@ -14,7 +14,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 // Elements
-import FillPod from "../../../../Elements/pods/FillPods";
+import FillPod from "../../../../../Elements/pods/FillPods";
 
 
 var _ = require('lodash');

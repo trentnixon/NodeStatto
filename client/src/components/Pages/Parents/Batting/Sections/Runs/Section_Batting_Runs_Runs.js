@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // Template
-import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
-import ChartContainer from "../../../../Template/Page/ChartContainer";
+import Row from "../../../../../Template/Page/Row";
+import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper"
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
 // Charts
-import Bar from "../../../../Charts/BarChart_with_ClickEvent_LINK"; 
+import Bar from "../../../../../Charts/BarChart_with_ClickEvent_LINK"; 
 //import GamesPlayed from "../../../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
 // Elements
 

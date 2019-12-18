@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-import Row from "../../../../Template/Page/Row";
-import SingleValuePod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import { BattingBasics } from "../../../../../actions/UI"
+import Row from "../../../../../Template/Page/Row";
+import SingleValuePod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import { BattingBasics } from "../../../../../../actions/UI"
 
 import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';

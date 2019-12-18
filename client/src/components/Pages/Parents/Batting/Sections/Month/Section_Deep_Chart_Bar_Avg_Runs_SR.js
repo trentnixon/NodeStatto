@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // Template
-import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import ChartContainer from "../../../../Template/Page/ChartContainer";
+import Row from "../../../../../Template/Page/Row";
+import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
 
 // Sections
-import InteractiveChart from "../../../../Charts/MixedChart";
+import InteractiveChart from "../../../../../Charts/MixedChart";
 
 // Actions
-import { BattingBasics } from "../../../../../actions/UI";
+import { BattingBasics } from "../../../../../../actions/UI";
 // Variables
 let Series=[];
 export default class Home_Overview extends Component {

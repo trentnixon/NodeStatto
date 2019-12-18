@@ -1,58 +1,67 @@
 import React, { Component } from 'react';
 
 // Template
-import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import Tabber from "../../../Template/Tabber/TabContaner";
+import PageContaner from "../../../Template/Global/PageContainer";
 
-// Sections
-import BasicStatOverview from "./Sections/Section_Batting_Overview_BasicStats";
-import BattingRankingPods from "./Sections/Section_Batting_Overview_RankingsPods";
-import SectionCareerBatting from "./Sections/Section_Career_Batting";
+
+// Components
+import BasicStatOverview from "./Sections/Overview/Section_Batting_Overview_BasicStats";
+import BattingRankingPods from "./Sections/Overview/Section_Batting_Overview_RankingsPods";
+// Table 
 import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
 
-// Icons
-import PeopleIcon from '@material-ui/icons/People';
-import {Batting} from "../../../Icons/icons";
+// Legacy
+//import SectionCareerBatting from "./Sections/Section_Career_Batting";
+//import Tabber from "../../../Template/Tabber/TabContaner";
 
 // Variables
-let PRIMARY,TITLES;
+let PRIMARY,TITLES; 
 
 // Start Class
-export default class Page_BattingOverview extends Component { 
+export default class Page_Batting_Overview extends Component { 
  
-  componentWillMount() { 
+  componentWillMount() {
     TITLES = this.props.LABELS 
     PRIMARY = this.props.PLAYER_DATA.Primary; 
   }
 
   render() {  
-    return (     
-      <Container>   
-        <SectionHeader   h2={TITLES.SITE.TITLES.OVERVIEW} h1={TITLES.SITE.TITLES.BATTING}   /> 
 
-        <SectionContainer className="Section_Batting_Rankings complete">
-            <BasicStatOverview  
-                      SUBS={TITLES.SITE.SUBS}
-                      CTA={TITLES.SITE.CTA}
-                      TITLES = {TITLES.SITE.TITLES} 
-                      DATA={PRIMARY}
-                    />   
-        </SectionContainer>
-    
-        <SectionContainer className="Section_Batting_Rankings complete">
-            <BattingRankingPods 
-              SUBS={TITLES.SITE.SUBS} 
-              CTA={TITLES.SITE.CTA}
-              TITLES = {TITLES.SITE.TITLES}
-              DATA={PRIMARY}
-            />
-  
-        </SectionContainer>
+      const Components =[
+        {
+          COMP:<BattingRankingPods  SUBS={TITLES.SITE.SUBS} CTA={TITLES.SITE.CTA} TITLES = {TITLES.SITE.TITLES} DATA={PRIMARY} />,
+          CLASS:"Section_Batting_Rankings complete"
+        },
+        {
+          COMP: <BasicStatOverview SUBS={TITLES.SITE.SUBS} CTA={TITLES.SITE.CTA} TITLES = {TITLES.SITE.TITLES}  DATA={PRIMARY} /> ,
+          CLASS:"Section_Batting_Overview complete"
+        },
+        {
+          COMP:<MostForAgainst Data={PRIMARY} TITLES={TITLES.SITE}  />,
+          CLASS:"Section_Batting_ForAgainst complete"
+        }
+      ]
+    return (<PageContaner Titles={[TITLES.SITE.TITLES.BATTING,TITLES.SITE.TITLES.OVERVIEW]} Components={Components} />)
+  }
+}
 
-        <SectionContainer className="Section_Batting_ForAgainst complete">
-            <Tabber  
+/**
+ *  NOTES: 
+ * 
+ * 
+ * 
+ *    
+ */
+
+ /**
+  * 
+  *  Legacy 
+  * 
+  * // Icons
+    //import PeopleIcon from '@material-ui/icons/People';
+    //import {Batting} from "../../../Icons/icons";
+  *   Tabber for stats and for and against
+  *  <Tabber  
               Tabs={
                 [  
                   {
@@ -67,15 +76,6 @@ export default class Page_BattingOverview extends Component {
                   } 
               ]}
             />  
- 
-            </SectionContainer> 
-      </Container>
-    )
-  }
-}
-
-/**
- *  NOTES: 
- * 
- *    
- */
+  * 
+  * 
+  */

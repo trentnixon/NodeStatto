@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
+// Template
+import PageContaner from "../../../Template/Global/PageContainer";
 // Sections 
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionRankings from "./Sections/Section_Rankings_LineGraph";
-
 
 let PRIMARY,TITLES;
 export default class Page_RankingOverview extends Component {
@@ -16,18 +14,13 @@ export default class Page_RankingOverview extends Component {
   }
 
   render() {  
-    return (     
-      <Container>  
-        <SectionHeader   h1={TITLES.SITE.TITLES.RANKINGS} h2={TITLES.SITE.TITLES.OVERVIEW}   /> 
+    const Components =[
+      {
+        COMP: <SectionRankings Rankings={PRIMARY.CAREER.Career.Meta.Rankings} TITLES={TITLES} Name={PRIMARY.Meta.Name}/> ,
+        CLASS:"Section_Career_Rankings complete"
+      }
+    ]
 
-        <SectionContainer className="Section_Batting_Rankings complete">
-            <SectionRankings   
-                Rankings={PRIMARY.CAREER.Career.Meta.Rankings}
-                TITLES={TITLES}
-                Name={PRIMARY.Meta.Name}
-            /> 
-        </SectionContainer> 
-      </Container> 
-    )
+    return (<PageContaner Titles={[TITLES.SITE.TITLES.RANKINGS,TITLES.SITE.TITLES.OVERVIEW]} Components={Components} />)
   }
 }

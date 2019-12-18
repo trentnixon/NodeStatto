@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 // Template
-import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import ChartContainer from "../../../../Template/Page/ChartContainer";
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import Row from "../../../../../Template/Page/Row";
+import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
 // Sections
-import InteractiveChart from "../../../../Charts/MixedChart";
+import InteractiveChart from "../../../../../Charts/MixedChart";
 
 // Action
-import {FilterDataSeries} from "../../../../../actions/UI";
+import {FilterDataSeries} from "../../../../../../actions/UI";
 
 // Variables 
 let Series=[],Div=0, NotOut=0;
@@ -31,7 +31,7 @@ export default class Section_Default extends Component {
         Series:[],
         Labels:[], 
         NotOuts:0 
-      }
+      } 
  
     CreateRuns(Data){ 
         let Series=[], RunsTotal=0;
@@ -132,7 +132,7 @@ export default class Section_Default extends Component {
                         <SummaryPod label="Lowest Average " total={ Math.min(...this.state.Series[1].data)} />
                         <SummaryPod label="Innings count " total={this.state.Series[0].data.length} />
                         <SummaryPod label="Total Runs  " total={this.state.Series[0].data.reduce((a, b) => a + b, 0)} />
-                        <SummaryPod label="Not Outs  " total={NotOut} />
+                        <SummaryPod label="Not Outs  " total={NotOut} /> 
                     </Row>
                     
                     <Row className="PodRow">
@@ -143,7 +143,7 @@ export default class Section_Default extends Component {
                                     series={this.state.Series} 
                                     HS={this.props.HS} 
                                     Disc="Batting"
-                                    Var="RunInt"  
+                                    Var="RunInt"
                                 />
                             </Pod>
                     </Row> 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Row from "../../../../Template/Page/Row";
-import PodWrapper from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../Elements/type/PageTitle";
+import Row from "../../../../../Template/Page/Row";
+import PodWrapper from "../../../../../Elements/pods/Pod_Outer_Wrapper";
+import Title from "../../../../../Elements/type/PageTitle";
 
-import Table from "../../../../Elements/Tables/RecentScores";
+import Table from "../../../../../Elements/Tables/RecentScores";
 
 export default class Section_Rankings extends Component {
     componentWillMount() {}

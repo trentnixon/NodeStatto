@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 // Template
-import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
-import SectionP from "../../../../Template/Global/Section_Global_Paragraph";
+import Row from "../../../../../Template/Page/Row";
+import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper"
+import SectionP from "../../../../../Template/Global/Section_Global_Paragraph";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';

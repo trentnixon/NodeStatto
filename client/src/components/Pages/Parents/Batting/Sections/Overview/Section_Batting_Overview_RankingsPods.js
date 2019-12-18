@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-import Row from "../../../../Template/Page/Row";
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import Subtitle from "../../../../Elements/type/PageSubTitle";
-import ShowMore from "../../../../Elements/Buttons/ShowMore"
+import Row from "../../../../../Template/Page/Row";
+import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import Subtitle from "../../../../../Elements/type/PageSubTitle";
+import ShowMore from "../../../../../Elements/Buttons/ShowMore"
 
 import PublicIcon from '@material-ui/icons/Public';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 
 //Wickets,Keeping,Trophy 
-let stones=[];
+let stones=[]; 
 export default class Home_Overview extends Component { 
     componentWillMount() { 
 

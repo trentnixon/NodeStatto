@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
-import Row from "../../../../Template/Page/Row";
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import Subtitle from "../../../../Elements/type/PageSubTitle";
-import ShowMore from "../../../../Elements/Buttons/ShowMore"
+import Row from "../../../../../Template/Page/Row";
+import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import Subtitle from "../../../../../Elements/type/PageSubTitle";
+import ShowMore from "../../../../../Elements/Buttons/ShowMore"
 
-import  {Runs, Trophy, Bowling, Duck} from "../../../../Icons/icons"; 
+import  {Runs, Trophy, Bowling, Duck} from "../../../../../Icons/icons"; 
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import Looks6Icon from '@material-ui/icons/Looks6';
 import StarsIcon from '@material-ui/icons/Stars';
@@ -28,7 +28,7 @@ export default class Home_Overview extends Component {
             { var:this.props.DATA.CAREER.Career.batting.ducks,     Path:"batting/scores", label:this.props.SUBS.DUCKS,icon:<Duck/>},
         ]  
      }  
-    render() {
+    render() { 
         let  IsVisable =  this.props.isVisible === true ? 'show':'';
         return (
                 <Row className="PodRow">

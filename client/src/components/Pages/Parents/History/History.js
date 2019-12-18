@@ -4,7 +4,6 @@ import {Route,Switch } from "react-router-dom";
 // Template
 import Container from "../../../Template/Page/Container";
 
-
 // Routes
 import ListHistory from "./HistoryList";
 import HistoryDeepDive from "./HistoryDeepDive";
@@ -18,7 +17,7 @@ export default  class History extends Component {
   render() {
   
     console.log(this.props)
- 
+  
     return (  
       <Container> 
           <Switch>

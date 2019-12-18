@@ -18,7 +18,7 @@ export default  class Login extends Component {
       let Stage = this.props.LOADSEQUENCE.LoginSequence.stage
       // Team Ids 
       //console.log(match.params.teamid,StoredMatch.SelectTeamID)
-      if(Stage.id  === 1 && Stage.position  === true ){ 
+      if(Stage.id  === 1 && Stage.position  === true ){  
           // Start with the Team ID
           console.log("Stage 1")
           if(match.params.teamid !== StoredMatch.SelectTeamID){
@@ -34,7 +34,6 @@ export default  class Login extends Component {
              Content.start();
           }
       }
-    
   }
   componentWillMount() {  }   
 
@@ -68,6 +67,5 @@ export default  class Login extends Component {
        </LoginShell>
      )
    }
-    
   }
 }

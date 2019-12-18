@@ -5,10 +5,10 @@ import Container from "../../../Template/Page/Container";
 import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 // Components
-import DeepOverview from "./Sections/Section_Deep_overview";
-import DeepBarChart from "./Sections/Section_Deep_Chart_Bar_Avg_Runs_SR";
-import DeepGameTable from "./Sections/Section_Deep_Game_Table";
-
+import DeepOverview from "./Sections/Month/Section_Deep_overview";
+import DeepBarChart from "./Sections/Month/Section_Deep_Chart_Bar_Avg_Runs_SR";
+import DeepGameTable from "./Sections/Month/Section_Deep_Game_Table";
+ 
 // Variables
 let TITLES, DeepData=[];
 // Start Class

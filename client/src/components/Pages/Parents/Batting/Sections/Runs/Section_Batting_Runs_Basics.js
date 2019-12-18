@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 // Template
-import Row from "../../../../Template/Page/Row";
-import ChartContainer from "../../../../Template/Page/ChartContainer";
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import Row from "../../../../../Template/Page/Row";
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
 
 let TextSeries=[], PercNum=0;
 

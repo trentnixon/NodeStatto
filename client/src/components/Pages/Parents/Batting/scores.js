@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-
+// Templates
+import PageContaner from "../../../Template/Global/PageContainer";
 // Sections
-import SectionNotable from "./Sections/Section_Batting_NotableScores";
-
+import SectionNotable from "./Sections/Scores/Section_Batting_NotableScores";
+ 
 let PRIMARY,TITLES;
 export default class Batting extends Component {
 
@@ -16,14 +14,13 @@ export default class Batting extends Component {
   }
   
   render() { 
-    return (    
-      <Container>
-        <SectionHeader   h1={this.props.LABELS.SITE.SUBS.NOTABLESCORES} h2={this.props.LABELS.SITE.TITLES.BATTING}  /> 
-        <SectionContainer className="Section_Batting_Runs todo"> 
-            <SectionNotable DATA={PRIMARY.CLEAN} TITLE={TITLES.SITE} />  
-        </SectionContainer>
-      </Container> 
-    ) 
+    const Components =[
+      {
+        COMP:<SectionNotable DATA={PRIMARY.CLEAN} TITLE={TITLES.SITE} /> ,
+        CLASS:"Section_Batting_Scores Table todo"
+      }
+    ]
+    return ( <PageContaner Titles={[TITLES.SITE.SUBS.NOTABLESCORES,TITLES.SITE.TITLES.BATTING]} Components={Components} />) 
   } 
 }
-  
+   

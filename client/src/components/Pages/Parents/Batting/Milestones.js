@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-// Template 
-import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+// Template
+import PageContaner from "../../../Template/Global/PageContainer";
 
 // Sections
-import SectionMilestonesBatting from "./Sections/Section_Career_Milestones_Batting";
-import SectionAchievmentsBatting from "./Sections/Section_Career_Achievments_Batting";
-
+import SectionMilestonesBatting from "./Sections/Milestones/Section_Career_Milestones_Batting";
+import SectionAchievmentsBatting from "./Sections/Form/Section_Career_Achievments_Batting";
+ 
 // Variables
 let PRIMARY,TITLES;
 
@@ -21,20 +19,18 @@ export default class Page_BattingOverview extends Component {
   }
  
   render() {   
-    return (     
-      <Container>  
-        <SectionHeader   h1={TITLES.SITE.TITLES.MILESTONE +' & '+TITLES.SITE.TITLES.ACHIEVEMENTS} h2={TITLES.SITE.TITLES.BATTING}   /> 
-        <SectionContainer className="Section_Batting_Milestones complete ">
-            <SectionMilestonesBatting  Data={PRIMARY} TITLES={TITLES.SITE} />
-            <SectionAchievmentsBatting  Data={PRIMARY.CAREER.Career.batting} TITLES={TITLES.SITE} />
-        </SectionContainer>
-      </Container>
-    )
+
+    const Components =[
+      {
+        COMP:<SectionMilestonesBatting  Data={PRIMARY} TITLES={TITLES.SITE} /> ,
+        CLASS:"Section_Batting_Runs_to_Balls  todo"
+      },
+      {
+        COMP:<SectionAchievmentsBatting  Data={PRIMARY.CAREER.Career.batting} TITLES={TITLES.SITE} />,
+        CLASS:"Section_Batting_Runs_to_Balls  todo"
+      }
+    ]
+
+    return (<PageContaner Titles={[TITLES.SITE.TITLES.MILESTONE +' & '+TITLES.SITE.TITLES.ACHIEVEMENTS,TITLES.SITE.TITLES.BATTING]} Components={Components} /> )
   }
 }
-
-/**
- *  NOTES: 
- *  
- *    
- */

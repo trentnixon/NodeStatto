@@ -25,10 +25,12 @@ const URLVAR = 't20/?playerid=';
         // Split Params
         id = NewStr[1].split('=');
         // Store in Arr
+        copy = copy.replace(/&quot;/g,"'");
+        copy = copy.replace(/&apos;/g,"'");
+        
+        //console.log(copy)
         arr.push( {"name":id[0],"id":id[1],"meta":copy} );
         // Return
-
-        //console.log(copy);
         return arr;
     }
 
@@ -80,9 +82,7 @@ function DataLoop($ , xPath){
             return Meta;
     }
 
- 
-
-    /** Strip TeamSheet */
+/** Strip TeamSheet */
 
 function TeamSheet(html){
     
@@ -284,7 +284,7 @@ function StripscoreCard(html){
     
             //console.log(results)
             let Contructed =[ 
-                results[0][0]+results[2],  // Batting
+                results[0][0]+results[2],  // Batting 
                 results[0][1]+results[1],  // Bowling
                 results[0][2]+results[3],  // Keeping
                 results[0][3]  // Meta

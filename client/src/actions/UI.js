@@ -322,7 +322,7 @@ export function FormoverTime(CLEAN,CAREER, SELECTOR){
             acc[item.Meta.Year] = [];
             }
       
-         acc[item.Meta.Year].push(item);
+         acc[item.Meta.Year].push(item); 
             return acc;
       }, {})
 

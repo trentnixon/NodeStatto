@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FormFactor } from "../../../../../actions/UI"
+import { FormFactor } from "../../../../../../actions/UI"
 // Template
-import Row from '../../../../Template/Page/Row';
-import ChartContainer from "../../../../Template/Page/ChartContainer";
-import FormRadial from "../../../../Charts/FormRadialChart";
+import Row from '../../../../../Template/Page/Row';
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import FormRadial from "../../../../../Charts/FormRadialChart";
 let PrintFormFactor;
 
 let Perc=0, Label='',Color='';

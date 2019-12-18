@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import ChartContainer from "../../../../Template/Page/ChartContainer";
+import ChartContainer from "../../../../../Template/Page/ChartContainer";
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';

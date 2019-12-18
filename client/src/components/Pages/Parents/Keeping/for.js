@@ -14,7 +14,7 @@ import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 // UI 
 
 import Tabber from "../../../Template/Tabber/TabContaner";
-import DataTable from "../Batting/Sections/Section_Table_ForAgainst";
+import DataTable from "../Batting/Sections/ForAgainst/Section_Table_ForAgainst";
 
 // Form  
   // Select

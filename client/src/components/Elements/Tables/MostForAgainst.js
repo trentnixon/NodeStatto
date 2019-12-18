@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Row from "../../Template/Page/Row";
 import ShowMore from  "../Buttons/ShowMore";
-
+import Subtitle from "../../Elements/type/PageSubTitle";
 let stats=[
     {
         Name:["Innings"],
@@ -59,9 +59,11 @@ export default class ForandAgainstTable extends Component {
       shouldComponentUpdate(nextProps, nextState){ return true;}
       componentWillUpdate(nextProps, nextState){}
     render() {
-        
+         
         return (
-                <Row className="Table canvas1">  
+                <Row className="Table"> 
+                   <Subtitle Title="For &amp; Against Overview"/> 
+                
                     <div className="tr">
                         <div className="th"></div>
                         <div className="th">{this.props.TITLES.SUBS.FOR}</div>

@@ -1,3 +1,11 @@
+
+/**
+ * 
+ *  Components requires more care when moving to page container.
+ *  Move the components to individual files
+ * 
+ */
+
 import React, { Component } from 'react';
 
 // Template
@@ -6,19 +14,18 @@ import SectionHeader from "../../../Template/Global/Section_Global_Header";
 import SectionContainer from "../../../Template/Global/SectionContainer";
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
-import DataTable from "./Sections/Section_Table_ForAgainst";
+import DataTable from "./Sections/ForAgainst/Section_Table_ForAgainst";
 //import PageHeader from "../../../Template/Page/Header";
 
 // Icons
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 
-// UI 
-
+// UI
 //import SectionContainer from "../../../Template/Global/SectionContainer";
 import Tabber from "../../../Template/Tabber/TabContaner";
 
-// Form  
+// Form   
 // Select
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -28,8 +35,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 var _ = require('lodash');
 
-
-const stats=[
+const stats=[ 
   {
       Name:["Innings"],
       Title:"Innings"

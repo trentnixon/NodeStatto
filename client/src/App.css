@@ -419,7 +419,7 @@ p {
   .PodRow #Pod .IconPod .Header img, .PodRow #Pod .IconPod .Header svg {
     width: 30px;
     float: right;
-    margin: 0 15px 0 0; }
+    margin: 0; }
   .PodRow #Pod .IconPod .Header svg.FormTrending {
     float: right;
     font-size: 2rem; }
@@ -690,7 +690,8 @@ p {
   justify-content: flex-end;
   display: flex;
   background-color: #709dce;
-  padding: 0 5%; }
+  padding: 0 5%;
+  flex-basis: 100%; }
 
 @media only screen and (max-width: 576px) {
   .Table .th:first-child, .Table .td:first-child {
@@ -1329,6 +1330,8 @@ body {
             padding: 0; }
       body #root #Statto #Frame .Selector {
         margin: 0px; }
+      body #root #Statto #Frame .Section_Overview_Top {
+        margin: 0 0 5px 0; }
       body #root #Statto #Frame ul.roadMap {
         margin: 10px 20px;
         padding: 0;
@@ -1367,8 +1370,6 @@ body {
           font-weight: 800; }
       body #root #Statto #Frame .Section_Batting_Rankings > .Outer {
         flex: 1 60% !important; }
-      body #root #Statto #Frame .Section_Batting_Rankings .Inner {
-        padding: 5px; }
       body #root #Statto #Frame .Section_Batting_Runs.charts .row > div {
         flex: 0 48%; }
       body #root #Statto #Frame .ScorecardMeta {
