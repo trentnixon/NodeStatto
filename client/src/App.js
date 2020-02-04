@@ -17,7 +17,7 @@ import './App.css'
  * 4. Push to heroku
  * -- Command list    
       git add . 
-      git commit -am "Statto Additions and Updates"
+      git commit -am "Refactoring V1 Test"
       git push heroku master   
  */
   
