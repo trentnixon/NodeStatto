@@ -13,7 +13,7 @@ import InteractiveChart from "../../../../../Venders/ApexCharts/MixedChart";
 import {FilterDataSeries, BattingBasics,CreateGraphDates} from "../../../../../../actions/UI/UI";
 
 // Variables 
-let Series=[],Div=0, NotOut=0;
+let Series=[], NotOut=0;
 
 const SummaryPod = (props) => (
             <IconPod 

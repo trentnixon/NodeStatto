@@ -123,7 +123,7 @@ export function FilterDataSeries(DATA,Filter){
         }
     else if(Filter.Year !== 'Career' && Filter.LW !== 0)
         { 
-            return DATA.filter(function(v, i) { return (v["Meta"]["Year"] === Filter.Year && v["Meta"]["LW"] == Filter.LW ); });
+            return DATA.filter(function(v, i) { return (v["Meta"]["Year"] === Filter.Year && v["Meta"]["LW"] === Filter.LW ); });
         }
 }
 

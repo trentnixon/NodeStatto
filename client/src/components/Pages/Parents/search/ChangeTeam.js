@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import {TeamName} from "../../../../actions/UI/UI"
 
 // Actions
-import {ResetTeams, ResetLogin} from "../../../../actions/PreRender/Setup_Statto_UI";
+import {ResetTeams} from "../../../../actions/PreRender/Setup_Statto_UI";
 
 export default class Search extends Component {
 
