@@ -26,7 +26,7 @@ const routes = [
   { Rpath: "/playedfor",  component: ComponentPlayFor,  exact:true},
   { Rpath: "/history", component: ComponentHistory,exact:false }, 
   { Rpath: "/rankings", component: RankingHub,exact:false},
-  { Rpath: "/batting", component: BattingHub,exact:false},
+  //{ Rpath: "/batting", component: BattingHub,exact:false},
   { Rpath: "/bowling", component: BowlingHub,exact:false},
   { Rpath: "/keeping", component: ComponentKeeping,exact:false},
   { Rpath: "/scorecard", component: ComponentScorecard,exact:false},
