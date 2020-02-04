@@ -1,11 +1,11 @@
 {
-  "name":"Statto",
-  "version": "1.0.0",
+  "name": "Statto",
+  "version": "4.0.0",
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "8.11.2",
-    "npm": "5.6.0"
+    "node": "12.14.1",
+    "npm": "6.13.4"
   },
   "scripts": {
     "client-install": "cd client && npm install",
@@ -19,14 +19,12 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "@material-ui/core": "^3.2.0",
     "async": "^3.1.0",
     "cheerio": "^1.0.0-rc.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "nodemon": "^1.14.7",
     "react-icons": "^3.2.1",
-    "react-router": "^4.3.1",
     "request": "^2.88.0"
   }
 }

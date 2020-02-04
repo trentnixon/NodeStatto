@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer"; 
+import PageContaner from "../../../Template/Page/Containers/PageContainer"; 
 
 // Components
 import MixedChartRunsAVGRanking from "./Sections/Average/Section_MixedChart_Run_Avg_Ranking";
@@ -31,4 +31,4 @@ export default class Formguide
     ]
     return ( <PageContaner Titles={[TITLES.SITE.SUBS.AVG,TITLES.SITE.TITLES.BATTING]} Components={Components} />)
   } 
-}
+}  

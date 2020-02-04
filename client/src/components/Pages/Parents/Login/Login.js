@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { matchPath } from 'react-router'
-import {FetchSelectedTeam} from "../../../../actions/Setup_Statto_UI"
+import {FetchSelectedTeam} from "../../../../actions/PreRender/Setup_Statto_UI"
 //ResetPlayer
 //import {LoginSequence} from "../../../../actions/PrivateFunctions";
-import { FetchData } from "../../../../actions/Calculate_Player_Statistics";
-
+import { FetchData } from "../../../../actions/PreRender/ProcessPlayer/BeginPlayerProcessing";
+  
 // Stateless Component
 import LoginShell from "./stateless/LoginShell";
 // Logic Components
@@ -55,15 +55,16 @@ export default  class Login extends Component {
     //console.log(this.props.ERRORS.ERROR)
    if(this.props.ERRORS.ERROR !== true){
     return ( 
-      <LoginShell {... this.props}>
+      <LoginShell {... this.props}> 
           <LoginForm  StattoMatch={match} LOGIN={this.props.LOGIN} {... this.props} />                       
       </LoginShell>
     )
-   }
+   } 
    else{
      return(
       <LoginShell {... this.props}>
-         <h1>ERROR- Create a Error </h1>
+         <h1>No Response. </h1>
+         <p>There was no response from LMS. This may be due to there site being down. Please refresh this page.</p>
        </LoginShell>
      )
    }

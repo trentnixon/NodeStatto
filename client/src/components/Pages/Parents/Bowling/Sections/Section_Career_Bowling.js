@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update'
 
 import Row from "../../../../Template/Page/Row";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper"
+import Pod from "../../../../Template/Page/Structure/Pods/PodType/Pod_Basic"
  
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
@@ -12,8 +12,8 @@ import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 // Elements
-import FillPods from "../../../../Elements/pods/FillPods";
-
+import FillPods from "../../../../Elements/pods/Pod_Type_Fill";
+ 
 var _ = require('lodash');
 
 let stats=[

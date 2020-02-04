@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import { BattingBasics } from "../../../../../../actions/UI"
+import { BattingBasics } from "../../../../../../actions/UI/UI"
 // Template
 import Row from '../../../../../Template/Page/Row';
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper"
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic"
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
 
 // Charts
-import Bar from "../../../../../Charts/BarChart";
+import Bar from "../../../../../Venders/ApexCharts/BarChart";
 
 let Labels=[],RunsYear=[];
 let SentSeries=null;

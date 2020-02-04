@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // Template
-import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
 
 import Overall from "./Sections/Overall";
 import MapBatting from "./Sections/Batting";

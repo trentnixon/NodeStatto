@@ -26,7 +26,7 @@ const GACode='UA-149608106-1';
 ReactGA.initialize(GACode);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-export default class App extends Component {
+export default class App extends Component { 
     render () {
      return (  
         <Router> 

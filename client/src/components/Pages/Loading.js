@@ -9,6 +9,7 @@ export default  class Loading extends Component {
     shouldComponentUpdate(){return true;}
     
     componentDidUpdate(nextProps, nextState){
+        //console.log("this.props.LOAD.UISTATE.STATTO" + this.props.LOAD.UISTATE.STATTO)
             if( this.props.LOAD.UISTATE.STATTO === true )
                 { 
                     Content.STOREUITRUE('INT_SET_UI_READY', true)
@@ -30,6 +31,6 @@ export default  class Loading extends Component {
                         </h2>
                     </div>
             </div>
-        )
+        )   
     }
 } 

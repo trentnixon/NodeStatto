@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
 import Row from "../../../../Template/Page/Row";
-import Title from "../../../../Elements/type/PageTitle";
+import Title from "../../../../Template/Page/Typography/PageTitle";
 
 // Icons
 //Keeping
-import  {Batting,Bowling} from "../../../../Icons/icons"; 
-import RankingPod from "../../../../Elements/pods/RankingHomePod";
+import  {Batting,Bowling} from "../../../../Template/Utilities/Icons/icons"; 
+import RankingPod from "../../../../Template/Page/Structure/Pods/PodType/RankingHomePod"; 
 
 let stones=[];
 export default class Home_Section_Rankings extends Component {

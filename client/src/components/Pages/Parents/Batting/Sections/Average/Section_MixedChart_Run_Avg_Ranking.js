@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 
 // Template
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
-import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
+import IconPod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
+
 // Sections
-import InteractiveChart from "../../../../../Charts/MixedChart";
+import InteractiveChart from "../../../../../Venders/ApexCharts/MixedChart";
 
 // Action
-import {FilterDataSeries} from "../../../../../../actions/UI";
+import {FilterDataSeries, BattingBasics,CreateGraphDates} from "../../../../../../actions/UI/UI";
 
 // Variables 
 let Series=[],Div=0, NotOut=0;
@@ -18,10 +19,10 @@ const SummaryPod = (props) => (
             <IconPod 
                 label={props.label}
                 total={props.total}
-                className="flex-30 flex-m-50" 
+                className="flex-30 flex-m-50"  
                 icon=""
                 Footer = ""
-            /> 
+            />  
 );
 
 // Start Class 
@@ -32,50 +33,6 @@ export default class Section_Default extends Component {
         Labels:[], 
         NotOuts:0 
       } 
- 
-    CreateRuns(Data){ 
-        let Series=[], RunsTotal=0;
-        Data.map((game,i)=>{
-            if(game.Batting){
-                Series.push(game.Batting.RunInt);
-                RunsTotal = RunsTotal + game.Batting.RunInt
-            }
-            return true;
-        })
-        return Series;
-    }
-
-    CreateAVG(Data){
-        let Series=[]; 
-        let TR=0; 
-        Div=0;
-        NotOut=0
-        Data.map((game,i)=>{
-            let AVG=null;
-            if(game.Batting){
-                        TR = TR + game.Batting.RunInt;
-                        if(game.Batting.NotOut === 0){ Div++}else{ NotOut++}
-                        AVG = TR/Div;
-                        if (!isFinite(AVG.toFixed(2))){AVG=0}
-                        Series.push(parseFloat(AVG.toFixed(2)));
-            }            
-            return true;
-        })
-        return Series;
-    }
-
-
-    CreateDate(Data){
-        let Series=[];
-        Data.map((game,i)=>{
-    
-            if(game.Batting){
-                Series.push(game.Meta.Date)
-            }
-            return true;
-        })
-        return Series;
-    }
 
 
     // Create Data Series
@@ -86,16 +43,16 @@ export default class Section_Default extends Component {
         Series = [{
             name: 'Runs',
             type: 'column',
-            data: this.CreateRuns(NewSeries,Year, LEAGUE)
+            data: BattingBasics(NewSeries)[3]
           }, {
             name: 'Average',
             type: 'area', 
-            data: this.CreateAVG(NewSeries)
+            data: BattingBasics(NewSeries)[7]
           }];
 
           this.setState({ 
             Series:Series,
-            Labels:this.CreateDate(NewSeries),
+            Labels:CreateGraphDates(NewSeries, "Batting"),
             Year:Year,
         })
     }
@@ -107,7 +64,6 @@ export default class Section_Default extends Component {
     componentWillUpdate(nextProps, nextState){
         if(this.props.UX.FORMS.SELECT.YEAR !== nextProps.UX.FORMS.SELECT.YEAR || 
            this.props.UX.FORMS.SELECT.LEAGUE !== nextProps.UX.FORMS.SELECT.LEAGUE)
-
         { this.createSeries(this.props.DATA,nextProps.UX.FORMS.SELECT.YEAR,nextProps.UX.FORMS.SELECT.LEAGUE) }
    
     }

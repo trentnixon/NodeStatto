@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
 import Row from "../../../../../Template/Page/Row";
-import SingleValuePod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import { BattingBasics } from "../../../../../../actions/UI"
+import SingleValuePod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
+import { BattingBasics } from "../../../../../../actions/UI/UI"
 
 import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
@@ -23,20 +23,20 @@ export default class Section_Rankings extends Component {
     }
     Multiplyexpected(value,played){
         return (value*played).toFixed(2);
-    }
+    } 
     SelectIcon(val1,val2){
 
         if(parseFloat(val1,10) < parseFloat(val2,10)){
             return <TrendingDownIcon  className="FormTrending Down"/>
-        }
+        } 
         else{
-            return <TrendingUpIcon className="FormTrending Up" />
+            return <TrendingUpIcon className="FormTrending Up" /> 
         }
     }
     componentWillMount() {
         SentSeries = BattingBasics(this.props.FORMDATA)
-        CAREER = this.props.Career.batting;
-        //console.log(this.props.Career);
+        CAREER = this.props.Career.Batting;
+        
 
         stats=[
             {

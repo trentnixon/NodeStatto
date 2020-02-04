@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
 import Row from "../../../../../Template/Page/Row";
-import IconPod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import IconPod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
 
-import  {Runs, Trophy, Bowling, Duck} from "../../../../../Icons/icons"; 
+import  {Runs, Trophy, Bowling, Duck} from "../../../../../Template/Utilities/Icons/icons"; 
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import Looks6Icon from '@material-ui/icons/Looks6';
 import StarsIcon from '@material-ui/icons/Stars';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 // Actions 
-import { BattingBasics } from "../../../../../../actions/UI";
+import { BattingBasics } from "../../../../../../actions/UI/UI";
 
 let stones=[];
 export default class DEEP_Overview extends Component {

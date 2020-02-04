@@ -5,7 +5,7 @@ import {Route,Switch } from "react-router-dom";
 import ComponentData from "./Data";
 
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 
 // Class
 export default class BowlingHub extends Component {

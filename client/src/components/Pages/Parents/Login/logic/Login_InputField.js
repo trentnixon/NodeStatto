@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 // Stateless Components
 import FetchingTeams from "../stateless/Login_FetchingTeams"; 
 
-import AutoComplete from "../../../../Elements/FormElements/Login_AutoComplete";
-import TeamRosterList from "../../../../Elements/Lists/Login_Teamsheet";
+import AutoComplete from "../../../../Venders/MaterialUI/FormElements/Login_AutoComplete";
+import TeamRosterList from "../../../../Venders/MaterialUI/Lists/Login_Teamsheet";
 
 let STAGE=0
 export default class LoginForm extends Component {

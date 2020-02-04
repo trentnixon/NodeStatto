@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import LaunchIcon from '@material-ui/icons/Launch';
 
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
 
 
 let Rows;

@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from "../../../../Elements/type/PageTitle";
-import SubTitle from "../../../../Elements/type/PageSubTitle";
-import {LOGO} from "../../../../Icons/icons";
+import Title from "../../../../Template/Page/Typography/PageTitle";
+import SubTitle from "../../../../Template/Page/Typography/PageSubTitle";
+import {LOGO} from "../../../../Template/Utilities/Icons/icons";
 
 const LoginHeader = props => (
     <div className="LoginHeader">

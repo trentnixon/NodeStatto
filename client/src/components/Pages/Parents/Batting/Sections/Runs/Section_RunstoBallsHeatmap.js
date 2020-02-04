@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../../Elements/type/PageTitle";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
+import Title from "../../../../../Template/Page/Typography/PageTitle";
 
 
-import InteractiveHeatMap from "../../../../../Charts/HeatMap";
+import InteractiveHeatMap from "../../../../../Venders/ApexCharts/HeatMap";
 
 let Series=[]
 function CreateScatter(CLEAN,range){

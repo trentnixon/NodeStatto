@@ -6,16 +6,16 @@ import history from  '../../../../History';
 // Routes
 import ComponentBatting from "./Batting";
 import ComponentMilestones from "./Milestones";
-import ComponentFormGuide from "./formguide";
-import ComponentRuns from "./runs";
-import ComponentBalls from "./balls";
-import ComponentAVG from "./avg";
-import ComponentFOR from "./for";
-import ComponentScores from "./scores";
-import ComponentRunsbyMonth from "./runsByMonth";
+import ComponentFormGuide from "./FormGuide";
+import ComponentRuns from "./Runs";
+import ComponentBalls from "./Balls";
+import ComponentAVG from "./AVG";
+import ComponentFOR from "./For";
+import ComponentScores from "./Scores";
+import ComponentRunsbyMonth from "./RunsByMonth";
 
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 
 const routes = [
   { path: "/batting/overview", component: ComponentBatting},
@@ -44,9 +44,7 @@ export default class BattingHub extends Component {
     return ( 
             <Container>           
               <Switch history={history}>
-                {
-                  routes.map((route, i) => ( <RouteWithSubRoutes key={i} {...route} {... this.props} /> ))
-                }
+                { routes.map((route, i) => ( <RouteWithSubRoutes key={i} {...route} {... this.props} /> )) }
               </Switch>
             </Container>
     ) 

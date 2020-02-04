@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Sections
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 
 
 export default class Statto extends Component {

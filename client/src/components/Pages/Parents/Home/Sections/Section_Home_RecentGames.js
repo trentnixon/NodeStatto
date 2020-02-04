@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import Row from "../../../../Template/Page/Row";
-import PodWrapper from "../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../Elements/type/PageTitle";
-import ShowMore from "../../../../Elements/Buttons/ShowMore";
-import ListHistory from "../../../../Elements/Lists/List_History"
+import PodWrapper from "../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
+import Title from "../../../../Template/Page/Typography/PageTitle";
+import ShowMore from "../../../../Venders/MaterialUI/Buttons/ShowMore";
+import ListHistory from "../../../../Venders/MaterialUI/Lists/List_History"
 
 let DisplayList;
 export default class History extends Component {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
-//import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
 
 let PRIMARY,TITLES;
 export default class Section_Rankings extends Component {

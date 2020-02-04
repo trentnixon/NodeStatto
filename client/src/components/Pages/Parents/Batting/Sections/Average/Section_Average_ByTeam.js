@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -27,8 +27,8 @@ export default class Section_Default extends Component {
         return Round1;
     }
    componentWillMount() { 
-            Against= this.createAgainst(this.props.PLAYER_DATA.Primary.AGAINST, 5)
-            For= this.createAgainst(this.props.PLAYER_DATA.Primary.FOR, 5)
+            Against= this.createAgainst(this.props.PLAYER_DATA.Primary.FORAGAINST.For, 5)
+            For= this.createAgainst(this.props.PLAYER_DATA.Primary.FORAGAINST.For, 5)
            
     } 
 

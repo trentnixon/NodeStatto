@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 
 // Sections 
 import SectionRunsBasics from "./Sections/Runs/Section_Batting_Runs_Basics";
@@ -22,13 +22,13 @@ export default class Batting extends Component {
 
     const Components =[
       {
-        COMP:<SectionRunsBasics  TITLE={TITLES} DATA={PRIMARY.CAREER.Career.batting} />,
+        COMP:<SectionRunsBasics  TITLE={TITLES} DATA={PRIMARY.CAREER.Batting} />,
         CLASS:"Section_Batting_Runs charts todo"
       },{
         COMP:<RunsOverYearsLineGraph TITLE={TITLES} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY} />,
         CLASS:"Section_Batting_Runs charts todo"
       },{
-        COMP:<SectionRuns  TITLE={TITLES} DATA={PRIMARY.CAREER.Career.batting}  PathOpt={this.props.DATA_SETUP}/>,
+        COMP:<SectionRuns  TITLE={TITLES} DATA={PRIMARY.CAREER.Batting}  PathOpt={this.props.DATA_SETUP}/>,
         CLASS:"Section_Batting_Runs charts todo"
       }
     ]

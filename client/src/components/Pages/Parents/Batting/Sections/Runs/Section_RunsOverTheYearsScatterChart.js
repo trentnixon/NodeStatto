@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
-import Title from "../../../../../Elements/type/PageTitle";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
+import Title from "../../../../../Template/Page/Typography/PageTitle";
 
-import InteractiveScatterChart from "../../../../../Charts/ScatterChart";
+import InteractiveScatterChart from "../../../../../Venders/ApexCharts/ScatterChart";
 
 let Series=[]
 function CreateScatter(CLEAN,range){

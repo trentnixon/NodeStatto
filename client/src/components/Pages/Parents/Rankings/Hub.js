@@ -5,7 +5,7 @@ import {Route,Switch } from "react-router-dom";
 import ComponentRanking from "./OverView";
 
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 
 // Class
 export default class BattingHub extends Component {

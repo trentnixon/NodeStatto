@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Container from "../../../../Template/Page/Container";
+import Container from "../../../../Template/Page/Containers/Container";
 
 // import Badge from '@material-ui/core/Badge';
 // Template
 
-import SectionHeader from "../../../../Template/Global/Section_Global_Header";
+import SectionHeader from "../../../../Template/Page/Structure/Structure_Page_Header_Main";
 import ListHeader from "./ListHeader";
 import ListItem from "./ListItem";
 // Class
 
 // Icons
-import  {Keeping} from "../../../../Icons/icons";
+import  {Keeping} from "../../../../Template/Utilities/Icons/icons";
 
 // <Badge className="" badgeContent={'new'} color="secondary">{"Form"}</Badge>,
 const Rows=[

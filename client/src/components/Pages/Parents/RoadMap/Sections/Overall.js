@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Container from "../../../../Template/Page/Container";
+import Container from "../../../../Template/Page/Containers/Container";
 // import Badge from '@material-ui/core/Badge';
 // Template
 
-import SectionHeader from "../../../../Template/Global/Section_Global_Header";
+import SectionHeader from "../../../../Template/Page/Structure/Structure_Page_Header_Main";
 import ListHeader from "./ListHeader";
 import ListItem from "./ListItem";
 // Class

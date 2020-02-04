@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
-import LineGraph from "../../../../../Charts/LineChart";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
+import LineGraph from "../../../../../Venders/ApexCharts/LineChart";
 
 let Series=[], Labels=[];
 
@@ -61,7 +61,7 @@ function FindName(Data,Years){
 export default class Section_Default extends Component {
     componentWillMount() {
 
-        Series =  [ FindName(this.props.DATA, this.props.PRIMARY.CAREER.Career.Meta.Games.history)]
+        Series =  [ FindName(this.props.DATA, this.props.PRIMARY.CAREER.Meta.Games.history)]
          Labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct','Nov','Dec'];
         
     } 

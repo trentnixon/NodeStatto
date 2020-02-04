@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Container from "../../../../Template/Page/Container";
+import Container from "../../../../Template/Page/Containers/Container";
 // Template
 
-import SectionHeader from "../../../../Template/Global/Section_Global_Header";
+import SectionHeader from "../../../../Template/Page/Structure/Structure_Page_Header_Main";
 import ListHeader from "./ListHeader";
 import ListItem from "./ListItem";
 // Class
@@ -14,7 +14,7 @@ import People from '@material-ui/icons/People';
 import Looks4 from '@material-ui/icons/Looks4';
 import CakeIcon from '@material-ui/icons/Cake';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
-import  {Bowling,Runs} from "../../../../Icons/icons";
+import  {Bowling,Runs} from "../../../../Template/Utilities/Icons/icons";
 
 const Rows=[
     {
@@ -87,7 +87,7 @@ export default class RoadMap extends Component {
                         <ListHeader /> 
                         { Rows.map((item,i)=>{ return( <ListItem key={i} item={item}/>) }) }
                     </ul>
-        `</Container>
+        </Container>
        
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
 import ListHistory from "./Sections/Section_List_History";
 
 export default class History extends Component {
@@ -16,7 +16,7 @@ export default class History extends Component {
               <ListHistory    
                   SelectedID={null}
                   List={this.props.PLAYER_DATA.Primary.CLEAN}
-                  Years={this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears}
+                  Years={this.props.PLAYER_DATA.Primary.CAREER.Batting.overTheYears}
                   Match={this.props.match}
                   OrderBy={this.props.OrderBy}
                   {...this.props} 

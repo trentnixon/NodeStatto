@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 // Template
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
 import Row from "../../../Template/Page/Row";
-import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
+import Pod from "../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
 
 // Icons
 import PeopleIcon from '@material-ui/icons/People';
@@ -13,7 +13,7 @@ import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 
 // UI 
 
-import Tabber from "../../../Template/Tabber/TabContaner";
+import Tabber from "../../../Venders/MaterialUI/Tabber/TabContaner";
 import DataTable from "../Batting/Sections/ForAgainst/Section_Table_ForAgainst";
 
 // Form  
@@ -66,7 +66,7 @@ let stats=[
   }
 ];
 
-// let AGAINST;
+let PRIMARY;
 export default class ForandAgainstMajorTable extends Component {
 
   state = {
@@ -100,8 +100,9 @@ export default class ForandAgainstMajorTable extends Component {
 //  };
 
   componentWillMount() {
-    let  AGAINST = _.orderBy(this.props.PLAYER_DATA.Primary.AGAINST, ["Wickets"],['desc']);
-    let  FOR = _.orderBy(this.props.PLAYER_DATA.Primary.FOR, ["Wickets"],['desc']);
+    PRIMARY = this.props.PLAYER_DATA.Primary; 
+    let  AGAINST = _.orderBy(PRIMARY.FORAGAINST.Against, ["Wickets"],['desc']);
+    let  FOR = _.orderBy(PRIMARY.FORAGAINST.For, ["Wickets"],['desc']);
     this.setState({ AGAINST: AGAINST,FOR:FOR })
   }
 

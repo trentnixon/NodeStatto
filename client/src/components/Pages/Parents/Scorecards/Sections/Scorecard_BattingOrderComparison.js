@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 // Template
 import Row from "../../../../Template/Page/Row";
-import ChartContainer from "../../../../Template/Page/ChartContainer";
-import Pod from "../../../../Elements/pods/Pod_Outer_Wrapper";
+import ChartContainer from "../../../../Template/Page/Containers/ChartContainer";
+import Pod from "../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
 
 // Charts
-import Bar from "../../../../Charts/BarChart_SingleInt";
+import Bar from "../../../../Venders/ApexCharts/BarChart_SingleInt";
 // Start Class
 export default class Section_Rankings extends Component {
     

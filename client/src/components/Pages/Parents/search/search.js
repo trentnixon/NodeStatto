@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import {connect } from 'react-redux';
 // Sections
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
 
-import TeamSheet from "../../../Elements/Lists/Teamsheet_SelectNewPlayer"; 
+import TeamSheet from "../../../Venders/MaterialUI/Lists/Teamsheet_SelectNewPlayer"; 
 
 export default class Search extends Component {
 
@@ -24,7 +24,7 @@ export default class Search extends Component {
                     {... this.props} 
                   />
               </SectionContainer> 
-          </Container>
+          </Container> 
       </div>
     )
   }

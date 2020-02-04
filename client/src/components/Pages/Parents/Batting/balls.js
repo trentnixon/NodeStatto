@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 
 // Sections
 import BallsFacedBasics from "./Sections/ByTheBall/Section_Batting_BallsFaced_Basics";
@@ -24,11 +24,11 @@ export default class Page_Balls extends Component {
   render() {  
     const Components =[
       {
-        COMP:<BallsFacedBasics TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Career.batting}/> ,
+        COMP:<BallsFacedBasics TITLE={TITLES.SITE} DATA={PRIMARY.CAREER.Batting}/> ,
         CLASS:"Section_Batting_Runs_to_Balls  todo"
       },
       {
-        COMP:<SectionBalls DATA={PRIMARY.CAREER.Career.batting.overTheYears}  TITLES={TITLES.SITE}/>,
+        COMP:<SectionBalls DATA={PRIMARY.CAREER.Batting.overTheYears}  TITLES={TITLES.SITE}/>,
         CLASS:"Section_Batting_Runs_to_Balls  todo"
       }
     ]

@@ -3,13 +3,13 @@ import { matchPath } from 'react-router'
 import {connect } from 'react-redux';
 
 // Sections
-import Container from "../../../Template/Page/Container";
-import Pod from "../../../Elements/pods/Pod_Outer_Wrapper" 
+import Container from "../../../Template/Page/Containers/Container";
+import Pod from "../../../Template/Page/Structure/Pods/PodType/Pod_Basic" 
 import Row from "../../../Template/Page/Row";
-import Title from "../../../Elements/type/PageTitle";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import Tabber from "../../../Template/Tabber/TabContaner";
+import Title from "../../../Template/Page/Typography/PageTitle";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
+import Tabber from "../../../Venders/MaterialUI/Tabber/TabContaner";
 
 //import ScoreCardHeader from "./ScoreCardHeader";
 import ScoreCardMeta from "./Sections/ScoreCardMeta";
@@ -18,7 +18,7 @@ import BowlingList from "./Sections/ScoreCardTeamListBowling";
 import Worm from "./Sections/Scorecard_LineGraph";
 import Comparison from "./Sections/Scorecard_BattingOrderComparison";
 // Fetch ScoreCards
-import {FetchScoreCard} from "../../../../actions/Scorecard";
+import {FetchScoreCard} from "../../../../actions/UI/Scorecard";
 
 
 const ScoreCard = new FetchScoreCard();

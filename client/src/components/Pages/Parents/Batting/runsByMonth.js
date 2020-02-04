@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { matchPath } from 'react-router'
 // Template
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
 // Components
 import DeepOverview from "./Sections/Month/Section_Deep_overview";
 import DeepBarChart from "./Sections/Month/Section_Deep_Chart_Bar_Avg_Runs_SR";

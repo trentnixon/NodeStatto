@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // Template
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper"
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic"
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
 // Charts
-import Bar from "../../../../../Charts/BarChart_with_ClickEvent_LINK"; 
-//import GamesPlayed from "../../../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
+import Bar from "../../../../../Venders/ApexCharts/BarChart_with_ClickEvent_LINK"; 
+
 // Elements
 
 let Labels=[],MonthSeries=[];

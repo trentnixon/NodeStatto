@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update'
 
 import Row from "../../../../../Template/Page/Row";
-import Pod from "../../../../../Elements/pods/Pod_Outer_Wrapper";
-// import Title from "../../../Elements/type/PageTitle";
-// import SubTitle from "../../../../Elements/type/PageSubTitle";
-// import MostForAgainst from "../../../../Elements/Tables/MostForAgainst";
-
+import Pod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
 // Form 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -14,9 +10,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 // Elements
-import FillPod from "../../../../../Elements/pods/FillPods";
+import FillPod from "../../../../../Elements/pods/Pod_Type_Fill";
 
-
+ 
 var _ = require('lodash');
 
 let stats=[

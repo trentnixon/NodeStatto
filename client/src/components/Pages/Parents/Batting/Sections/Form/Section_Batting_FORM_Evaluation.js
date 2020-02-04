@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { FormFactor } from "../../../../../../actions/UI"
+import { FormFactor } from "../../../../../../actions/UI/UI"
 // Template
 import Row from '../../../../../Template/Page/Row';
-import ChartContainer from "../../../../../Template/Page/ChartContainer";
-import FormRadial from "../../../../../Charts/FormRadialChart";
+import ChartContainer from "../../../../../Template/Page/Containers/ChartContainer";
+import FormRadial from "../../../../../Venders/ApexCharts/FormRadialChart";
 let PrintFormFactor;
 
 let Perc=0, Label='',Color='';
 export default class Section_Batting_BallsFaced extends Component {
     componentWillMount() {
-            PrintFormFactor =FormFactor(this.props.FORMDATA, this.props.CAREER.Career);
+            PrintFormFactor =FormFactor(this.props.FORMDATA, this.props.CAREER);
             Perc = (PrintFormFactor[0]*100)/2;
 
             /**
@@ -21,7 +21,7 @@ export default class Section_Batting_BallsFaced extends Component {
                 case Perc < 20:
                     Label='Awful'
                     Color ='#ce7070'
-                  break;
+                  break; 
                 case Perc >= 20 && Perc < 30:
                     Label ='Poor'
                     Color ='#ce7070'

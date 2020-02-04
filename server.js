@@ -8,7 +8,6 @@ var async = require("async");
 const Domain = 'https://www.lastmanstands.com/cricket-player/';
 const URLVAR = 't20/?playerid=';
 
-
 /* *****************************************
 **
   Handle Changes to the Data
@@ -81,9 +80,8 @@ function DataLoop($ , xPath){
             
             return Meta;
     }
-
+ 
 /** Strip TeamSheet */
-
 function TeamSheet(html){
     
     var $ = cheerio.load(html);
@@ -102,8 +100,6 @@ function TeamSheet(html){
         }); // End Each
         return Rows; 
 }
-
-
 
 /** PING */
 function ping(html,id){
@@ -210,7 +206,8 @@ function StripscoreCard(html){
     request(url, function(error, response, html){
         if(!error && response.statusCode == 200){ 
 
-            res.json(TeamSheet(html));
+            //console.log(html);
+           res.json(TeamSheet(html));
         }
     })
 })
@@ -251,8 +248,7 @@ function StripscoreCard(html){
      
       request.post({url:'https://www.lastmanstands.com/ranking-files/career-history-bowling-old.php', form: {playerId:req.params.id}}, function(error, response, html){ 
       
-        if(!error && response.statusCode == 200){ 
-
+        if(!error && response.statusCode == 200){
                 done(null, html);
         }
         else{

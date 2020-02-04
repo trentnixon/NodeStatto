@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
-import {fetchSheets,StattoReady} from "../../../../actions/Setup_Statto_UI"
+import {fetchSheets,StattoReady} from "../../../../actions/PreRender/Setup_Statto_UI"
 // Select Player
 import FindPlayer from "../Login/Login";
 import Statto from "../../Main";
 
- 
-let SetLang="EN", BranchState=null;
+ let SetLang="EN", BranchState=null;
 
 const THISLOGIN = new fetchSheets(); 
 
@@ -22,15 +21,14 @@ class Branch1 extends Component {
       ){
         //console.log("STATTO READY");
         StattoReady();
-      }
+      } 
   }
   render() { 
-
     // This variable will need changing
     BranchState = this.props.LOADSEQUENCE.StattoSequence.LOGIN_COMPLETE; 
-   
-    //console.log(this.props)
-   
+     
+    //console.log("LOADSEQUENCE ", this.props.LOADSEQUENCE);
+
     if(BranchState !== true){
         this.UISetupState(this.props.LOADSEQUENCE);
         return (

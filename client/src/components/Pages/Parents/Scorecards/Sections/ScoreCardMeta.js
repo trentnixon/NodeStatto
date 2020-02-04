@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
-import SectionHeader from "../../../../Template/Global/Section_Global_Header";
+//import {Animated} from "react-animated-css";
+//import SectionHeader from "../../../../Template/Page/Structure/Structure_Page_Header_Main";
 import Row from "../../../../Template/Page/Row";
-import  {Runs,Wickets,Keeping,Trophy } from "../../../../Icons/icons"; 
-import IconPod from "../../../../Elements/pods/Pod_SingleValue_Iconheader";
+import  {Runs} from "../../../../Template/Utilities/Icons/icons"; 
+// Wickets,Keeping,Trophy 
+import IconPod from "../../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
 
 let PATH;
 export default class Home_Overview extends Component {

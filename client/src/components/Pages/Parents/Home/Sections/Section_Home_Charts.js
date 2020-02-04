@@ -1,46 +1,31 @@
 import React, { Component } from 'react';
 import Row from "../../../../Template/Page/Row";
-import ChartRow from "../../../../Template/Page/ChartContainer";
+import ChartRow from "../../../../Template/Page/Containers/ChartContainer";
+
 // Charts
-import GamesPlayed from "../../../../Elements/InteractiveCharts/PieChartGamesPlayed_Dashboard";
-import PlayedFor from "../../../../Elements/Tables/PlayedForList";
+import GamesPlayed from "../../../../Venders/ApexCharts/InteractiveCharts/PieChartGamesPlayed_Dashboard";
 
 export default class Section_Default extends Component {  
     render() {
+
+        console.log(this.props)
         return ( 
             <Row className="PodRow HomeCharts "> 
                 <ChartRow
-                    flex="flex-40 flex-m-100"
+                    flex="flex-100 flex-m-100"
                     DisplayIcons={{
+                        "Info":this.props.TITLES.SITE.DESC.GAMESPLAYEDBAR,
                         "HasInfo":true,
-                        "Info":this.props.TITLES.DESC.TEAMSPLAYEDFOR,
-                        "Interactive":false,
-                        "Filterable":false
-                        }}
-                >
-                    <PlayedFor
-                        TITLES={this.props.TITLES.TITLES} 
-                        CTA={this.props.CTA}
-                        SUBS={this.props.SUBS}
-                        num={5}
-                        DATA={this.props.DATA.CLEAN}
-                    />
-                </ChartRow>
-                <ChartRow
-                    flex="flex-60 flex-m-100"
-                    Info={this.props.TITLES.DESC.GAMESPLAYEDBAR}
-                    DisplayIcons={{
-                        "HasInfo":false,
                         "Interactive":true,
                         "Filterable":false
                     }}
                 >
                     <GamesPlayed  
-                        TITLE={this.props.TITLES.TITLES}
+                        TITLES={this.props.TITLES}
                         DATA={this.props.DATA}
                     />
                 </ChartRow>
             </Row> 
             )
         }
-    }    
+    }

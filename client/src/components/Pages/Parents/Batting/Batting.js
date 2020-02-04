@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 
 
 // Components
 import BasicStatOverview from "./Sections/Overview/Section_Batting_Overview_BasicStats";
 import BattingRankingPods from "./Sections/Overview/Section_Batting_Overview_RankingsPods";
 // Table 
-import MostForAgainst from "../../../Elements/Tables/MostForAgainst"; 
+
+import MostForAgainst from "../../../Template/Page/Structure/Tables/MostForAgainst"; 
 
 // Legacy
 //import SectionCareerBatting from "./Sections/Section_Career_Batting";
@@ -52,30 +53,3 @@ export default class Page_Batting_Overview extends Component {
  * 
  *    
  */
-
- /**
-  * 
-  *  Legacy 
-  * 
-  * // Icons
-    //import PeopleIcon from '@material-ui/icons/People';
-    //import {Batting} from "../../../Icons/icons";
-  *   Tabber for stats and for and against
-  *  <Tabber  
-              Tabs={
-                [  
-                  {
-                    Title:TITLES.SITE.SUBS.STATS,
-                    Component:<SectionCareerBatting  TITLES={TITLES.SITE} Data={PRIMARY.CAREER.Career.batting} />,
-                    Icon:<Batting />  
-                  },
-                  {
-                    Title:TITLES.SITE.SUBS.FORAGAINST,
-                    Component:<MostForAgainst Data={PRIMARY} TITLES={TITLES.SITE}  />,
-                    Icon:<PeopleIcon /> 
-                  } 
-              ]}
-            />  
-  * 
-  * 
-  */

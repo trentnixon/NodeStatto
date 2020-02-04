@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
 
 import Row from "../../../../../Template/Page/Row";
-import Title from "../../../../../Elements/type/PageTitle";
-//import SubTitle from "../../../../Elements/type/PageSubTitle";
-import SingleValuePod from "../../../../../Elements/pods/Pod_SingleValue_Iconheader";
-import ShowMore from "../../../../../Elements/Buttons/ShowMore";
+import Title from "../../../../../Template/Page/Typography/PageTitle";
+import SingleValuePod from "../../../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
+import ShowMore from "../../../../../Venders/MaterialUI/Buttons/ShowMore"
 
 const stones=[
     { var:"ducks",label:"Ducks", path:"batting/scores"},

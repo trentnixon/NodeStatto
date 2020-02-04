@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
 // Template
-import Container from "../../../Template/Page/Container";
+import PageContaner from "../../../Template/Page/Containers/PageContainer"; 
 
 // Sections
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionBowlingMilestones from "./Sections/Section_Fa_Bowling_MIlestones";
-import SectionFaBowling from "./Sections/Section_Fa_Bowling";
+import SectionBowlingMilestones from "./Sections/Milestones/Section_Fa_Bowling_MIlestones";
+import SectionFaBowling from "./Sections/Milestones/Section_Fa_Bowling";
 
 // Start Class
 export default class BowlingHome extends Component {
@@ -17,29 +15,15 @@ export default class BowlingHome extends Component {
   render() {
     const SITELABELS = this.props.LABELS.SITE; 
     const PRIMARY = this.props.PLAYER_DATA.Primary;
-
-    return ( 
-      <Container>
-        <SectionHeader h1={SITELABELS.TITLES.MILESTONE} h2={SITELABELS.TITLES.BOWLING} /> 
-        
-        
-        <SectionContainer>
-          <SectionBowlingMilestones  
-            DATA={PRIMARY.CAREER.Career.bowling}
-            TITLE={SITELABELS.TITLES.MILESTONE}
-            {... this.props} 
-          /> 
-        </SectionContainer>
-
-        <SectionContainer>
-          <SectionFaBowling  
-            Data={PRIMARY.CAREER.Career.bowling}
-            TITLE={SITELABELS.TITLES.ACHIEVEMENTS}
-            {... this.props} 
-          /> 
-        </SectionContainer>
-      
-      </Container> 
-    )
+    const Components =[
+      {
+        COMP:<SectionBowlingMilestones DATA={PRIMARY.CAREER.Bowling} TITLE={SITELABELS.TITLES.MILESTONE} {... this.props}  /> ,
+        CLASS:"Section_Bowling  todo"
+      },{
+        COMP:<SectionFaBowling   Data={PRIMARY.CAREER.Bowling} TITLE={SITELABELS.TITLES.ACHIEVEMENTS} {... this.props}  />,
+        CLASS:"Section_Bowling todo"
+      }
+    ]
+    return ( <PageContaner Titles={[SITELABELS.TITLES.MILESTONE,SITELABELS.TITLES.BOWLING]} Components={Components} />)
   }
 }

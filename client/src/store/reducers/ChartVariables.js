@@ -18,7 +18,7 @@ const InitialState ={
         }
     },
     toolbar: {
-        show: false,
+        show: true,
         tools: {
           download: true,
           selection: true,

@@ -19,7 +19,7 @@ const InitialState ={
             },
             SITE:{
                 TITLES:{  
-                    DASHBOARD:"DASHBOARD", 
+                    DASHBOARD:"DASHBOARD",  
                     OVERVIEW:"OVERVIEW", 
                     RANKINGS:"RANKINGS", 
                     BATTING:"BATTING",

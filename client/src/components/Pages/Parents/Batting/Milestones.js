@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 
 // Sections
 import SectionMilestonesBatting from "./Sections/Milestones/Section_Career_Milestones_Batting";
@@ -26,7 +26,7 @@ export default class Page_BattingOverview extends Component {
         CLASS:"Section_Batting_Runs_to_Balls  todo"
       },
       {
-        COMP:<SectionAchievmentsBatting  Data={PRIMARY.CAREER.Career.batting} TITLES={TITLES.SITE} />,
+        COMP:<SectionAchievmentsBatting  Data={PRIMARY.CAREER.Batting} TITLES={TITLES.SITE} />,
         CLASS:"Section_Batting_Runs_to_Balls  todo"
       }
     ]

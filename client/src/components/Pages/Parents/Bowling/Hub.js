@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route,Switch } from "react-router-dom";
-
+import history from  '../../../../History';
 // Routes
 import ComponentBowling from "./Bowling";
 import ComponentFormguide from "./formguide";
@@ -11,7 +11,26 @@ import ComponentBowlingAVG from "./averages";
 import ComponentBowlingMilestones from "./Milestones";
 
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
+
+const routes = [
+  { path: "/bowling/overview", component: ComponentBowling},
+  { path: "/bowling/formguide", component: ComponentFormguide},
+  { path: "/bowling/wickets", component: ComponentWickets},
+  { path: "/bowling/notable", component: ComponentNotable},
+  { path: "/bowling/milestones", component: ComponentBowlingMilestones},
+  { path: "/bowling/aes", component: ComponentBowlingAVG},
+  { path: "/bowling/foragainst", component: ComponentBowlingFor},
+];
+
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={props => ( <route.component {...route}  /> )}
+    />
+  );
+}
 
 // Class
 export default class BowlingHub extends Component {
@@ -20,18 +39,13 @@ export default class BowlingHub extends Component {
   render() {
     //console.log(this.props);
     return ( 
-            <Container>            
-                <Switch>
-                    <Route  exact path="/bowling/overview" render={()=>  <ComponentBowling {... this.props}/> }/>
-                    <Route  exact path="/bowling/formguide" render={()=> <ComponentFormguide {... this.props}/> }/>
-                    <Route  exact path="/bowling/wickets" render={()=>   <ComponentWickets {... this.props}/> }/>
-                    <Route  exact path="/bowling/notable" render={()=>   <ComponentNotable {... this.props}/> }/>
-    
-                    <Route  exact path="/bowling/milestones" render={()=> <ComponentBowlingMilestones  {... this.props}/> }/>
-                    <Route  exact path="/bowling/aes" render={()=> <ComponentBowlingAVG {... this.props}/> }/>
-                    <Route  exact path="/bowling/foragainst" render={()=> <ComponentBowlingFor {... this.props}/> }/>
-                </Switch>
-            </Container>
+            <Container>   
+              <Switch history={history}> 
+                {
+                  routes.map((route, i) => ( <RouteWithSubRoutes key={i} {...route} {... this.props} /> ))
+                }
+              </Switch>
+            </Container> 
     )
   } 
-} 
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Route,Switch } from "react-router-dom";
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 
 // Routes
 import ListHistory from "./HistoryList";
@@ -27,7 +27,7 @@ export default  class History extends Component {
                         SITE={this.props.LABELS.SITE} 
                         OrderBy='TeamID'
                         HEADING={this.props.LABELS.SITE.TITLES.HISTORY+' '+ this.props.LABELS.SITE.SUBS.FOR} 
-                        DATA={this.props.PLAYER_DATA.Primary.FOR} 
+                        DATA={this.props.PLAYER_DATA.Primary.FORAGAINST.For}  
                         {... this.props}/> } 
               /> 
               <Route  path={`/history/against/:teamID`} render={()=> 
@@ -35,7 +35,7 @@ export default  class History extends Component {
                         SITE={this.props.LABELS.SITE} 
                         OrderBy='OppositionID'
                         HEADING={this.props.LABELS.SITE.TITLES.HISTORY+' '+ this.props.LABELS.SITE.SUBS.AGAINST} 
-                        DATA={this.props.PLAYER_DATA.Primary.AGAINST} 
+                        DATA={this.props.PLAYER_DATA.Primary.FORAGAINST.Against} 
                         {... this.props} /> } 
                 />
           </Switch>

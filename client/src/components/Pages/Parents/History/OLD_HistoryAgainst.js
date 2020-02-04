@@ -7,9 +7,9 @@ import HistoryList from "../../../Sections/History/Section_List_History";
 import Row from "../../../Template/Page/Row";
 import Pod from "../../../Template/Page/Pod";
 
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import Title from "../../../Elements/type/PageTitle";
-import SubTitle from "../../../Elements/type/PageSubTitle";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import Title from "../../../Template/Page/Typography/PageTitle";
+import SubTitle from "../../../Template/Page/Typography/PageSubTitle";
 
 
 let DataStore;
@@ -70,7 +70,7 @@ export default class HistoryAgainst extends Component {
                 Title={"History Against " + DisplayTeam.Team}
                 SelectedID={this.props.match.params.teamID}
                 List={store.getState().DATA.CLEAN}
-                Years={store.getState().DATA.CAREER.Career.batting.overTheYears}
+                Years={store.getState().DATA.CAREER.Batting.overTheYears}
                 Match={this.props.match}
         />
      </div>

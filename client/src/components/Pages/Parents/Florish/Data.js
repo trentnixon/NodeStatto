@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
 
 var _ = require('lodash');
 
@@ -33,9 +33,9 @@ export default class Batting extends Component {
 
     let BowlingResultNew=[0],BattingresultNew=[0],GamesresultNew=[0];
 
-    BowlingResultNew = this.CreateString(PRIMARY.CAREER.Career.bowling.overTheYears,BowlingResultNew,'int','TotalWickets' );
-    BattingresultNew = this.CreateString(PRIMARY.CAREER.Career.batting.overTheYears,BattingresultNew,'int','TotalRuns' );
-    GamesresultNew = this.CreateString(PRIMARY.CAREER.Career.Meta.Games.history,GamesresultNew,'year','Int' );
+    BowlingResultNew = this.CreateString(PRIMARY.CAREER.Bowling.overTheYears,BowlingResultNew,'int','TotalWickets' );
+    BattingresultNew = this.CreateString(PRIMARY.CAREER.Batting.overTheYears,BattingresultNew,'int','TotalRuns' );
+    GamesresultNew = this.CreateString(PRIMARY.CAREER.Meta.Games.history,GamesresultNew,'year','Int' );
 
     
     // eslint-disable-next-line

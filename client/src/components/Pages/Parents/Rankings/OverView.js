@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Template
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 // Sections 
 import SectionRankings from "./Sections/Section_Rankings_LineGraph";
 
@@ -16,7 +16,7 @@ export default class Page_RankingOverview extends Component {
   render() {  
     const Components =[
       {
-        COMP: <SectionRankings Rankings={PRIMARY.CAREER.Career.Meta.Rankings} TITLES={TITLES} Name={PRIMARY.Meta.Name}/> ,
+        COMP: <SectionRankings Rankings={PRIMARY.CAREER.Meta.Rankings} TITLES={TITLES} Name={PRIMARY.Meta.Name}/> ,
         CLASS:"Section_Career_Rankings complete"
       }
     ]

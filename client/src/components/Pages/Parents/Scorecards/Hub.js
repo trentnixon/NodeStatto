@@ -3,7 +3,7 @@ import {Route,Switch } from "react-router-dom";
 // Routes
 import ComponentScoreCard from "./ScorecardMain";
 // Template
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 // Class
 export default class ScoreCardHub extends Component {
   componentWillMount() {}

@@ -58,7 +58,7 @@ const LOAD = (state=InitialState, action) =>{
 		// eslint-disable-next-line 
 		switch(action.type){
 // UI STATE 
- 
+
                 // Fetch Initial Meta Data
                 case "INT_SET_UI_READY":{
                     return {...state, UISTATE: {...state.UISTATE, StattoSequence:{...state.UISTATE.StattoSequence, UI_READY:action.payload } }}
@@ -157,6 +157,13 @@ const LOAD = (state=InitialState, action) =>{
                  // eslint-disable-next-line 
                  break
              }
+// Complete  State Reset
+                case "COMPLETE_STATE_RESET":{
+                    return {...state, UISTATE :InitialState.UISTATE }
+                 
+                    // eslint-disable-next-line 
+                    break
+                }
         }
 		return state;
 	}

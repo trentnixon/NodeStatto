@@ -11,8 +11,7 @@ const InitialState ={
             PlayerID:false,
             Meta:false,
             CAREER:null, 
-            FOR:null,
-            AGAINST:null, 
+            FORAGAINST:null,
             CLEAN:null,
         },
         Comparision1:{
@@ -69,7 +68,7 @@ const LOAD = (state=InitialState, action) =>{
                     // eslint-disable-next-line 
                 break
               }
-              
+               
              
               
 // *********************************************************** */
@@ -81,7 +80,7 @@ const LOAD = (state=InitialState, action) =>{
                     // eslint-disable-next-line 
                 break
               }
-                case "DATA_STORE_PRIMARY_META":{
+                case "DATA_STORE_PRIMARY_META":{ 
                 return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{...state.SelectedPlayer.Primary, Meta:action.payload} }}
                     // eslint-disable-next-line 
                 break
@@ -102,26 +101,36 @@ const LOAD = (state=InitialState, action) =>{
 				break
             }
 
-            case "DATA_STORE_PRIMARY_FOR":{
+            case "DATA_STORE_PRIMARY_FORAGAINST":{
                 //console.log(action.payload);
-                return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{...state.SelectedPlayer.Primary, FOR:action.payload} }}
-            
-				// eslint-disable-next-line 
-				break
-            }
-            case "DATA_STORE_PRIMARY_AGAINST":{
-                //console.log(action.payload);
-                return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{...state.SelectedPlayer.Primary, AGAINST:action.payload} }}
+                return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{...state.SelectedPlayer.Primary, FORAGAINST:action.payload} }}
 				// eslint-disable-next-line 
 				break
             } 
-            case "DATA_STORE_PRIMARY_NAME":{
+            
+            case "DATA_STORE_PRIMARY_NAME":{  
                 //console.log(action.payload);
                 return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{...state.SelectedPlayer.Primary, PlayerName:action.payload} }}
 				// eslint-disable-next-line 
 				break
             }   
 // *********************************************************** */
+            // Reset Players to Defaults
+             case "DATA_PLAYER_RESET":{
+                 console.log("DATA_PLAYER_RESET");
+                return {...state, SelectedPlayer: {...state.SelectedPlayer, Primary:{ 
+                                                                                        PlayerName:false,
+                                                                                        PlayerID:false,
+                                                                                        Meta:false,
+                                                                                        CAREER:null, 
+                                                                                        FORAGAINST:null,
+                                                                                        CLEAN:null,
+                                                                                    } }}
+				// eslint-disable-next-line 
+				break
+
+                 
+             }
             
         }
 		return state;

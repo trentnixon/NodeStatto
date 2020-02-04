@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { matchPath } from 'react-router'
 // Structure
-import Container from "../../../Template/Page/Container";
+import Container from "../../../Template/Page/Containers/Container";
 import Row from "../../../Template/Page/Row";
-import SingleValuePod from "../../../Elements/pods/Pod_SingleValue_Iconheader";
+import SingleValuePod from "../../../Template/Page/Structure/Pods/PodType/Pod_Header_SingleValue_Footer";
 
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
 // Components
 import HistoryList from "./Sections/Section_List_History";
 import HistoryScatter from "./Sections/Section_History_ScatterChart";
@@ -21,9 +21,9 @@ class HistoryFor extends Component {
         this.props.DATA.map((team,i)=>{ 
            if(team.ID === TEAMID)
                  Selected = team;
-                 return true; 
+                 return true;  
             })
-        return Selected;
+        return Selected; 
 
     }
   componentWillMount() { 
@@ -75,7 +75,7 @@ class HistoryFor extends Component {
                         <HistoryList  
                             SelectedID={this.props.match.params.teamID}
                             List={this.props.PLAYER_DATA.Primary.CLEAN}
-                            Years={this.props.PLAYER_DATA.Primary.CAREER.Career.batting.overTheYears}
+                            Years={this.props.PLAYER_DATA.Primary.CAREER.Batting.overTheYears}
                             Match={this.props.match}
                             OrderBy={this.props.OrderBy}
                             {... this.props} 

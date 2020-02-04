@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import {connect } from 'react-redux';
 // Sections
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionP from "../../../Template/Global/Section_Global_Paragraph";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionP from "../../../Template/Page/Typography/PageParagraph";
 import Button from '@material-ui/core/Button';
-import {TeamName} from "../../../../actions/UI"
+import {TeamName} from "../../../../actions/UI/UI"
 
 // Actions
-import {ResetTeams, ResetLogin} from "../../../../actions/Setup_Statto_UI";
+import {ResetTeams, ResetLogin} from "../../../../actions/PreRender/Setup_Statto_UI";
 
 export default class Search extends Component {
 
@@ -21,7 +21,7 @@ export default class Search extends Component {
 
   handleToggle(){
     ResetTeams();
-    ResetLogin();
+    //ResetLogin();
     this.props.history.push(`/`);
   }
 

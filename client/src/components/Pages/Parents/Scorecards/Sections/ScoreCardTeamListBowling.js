@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ListBowling from "../../../../Elements/Lists/List_ScoreCard_Bowling";
-import Container from "../../../../Template/Page/Container";
-import {Bowling} from "../../../../Icons/icons";
+import ListBowling from "../../../../Venders/MaterialUI/Lists/List_ScoreCard_Bowling";
+import Container from "../../../../Template/Page/Containers/Container";
+import {Bowling} from "../../../../Template/Utilities/Icons/icons";
 import WrapUp from "../Sections/ScoreBowlingWrapUp";
 export default class Home_Overview extends Component {
     componentWillMount() {} 

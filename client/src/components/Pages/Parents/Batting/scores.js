@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Templates
-import PageContaner from "../../../Template/Global/PageContainer";
+import PageContaner from "../../../Template/Page/Containers/PageContainer";
 // Sections
 import SectionNotable from "./Sections/Scores/Section_Batting_NotableScores";
  

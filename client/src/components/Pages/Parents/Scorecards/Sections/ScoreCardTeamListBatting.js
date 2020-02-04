@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ListBatting from "../../../../Elements/Lists/List_ScoreCard_Batting";
-import Container from "../../../../Template/Page/Container";
-import {Batting} from "../../../../Icons/icons";
+import ListBatting from "../../../../Venders/MaterialUI/Lists/List_ScoreCard_Batting";
+import Container from "../../../../Template/Page/Containers/Container";
+import {Batting} from "../../../../Template/Utilities/Icons/icons";
 import WrapUp from "../Sections/ScoreBattingWrapUp";
 
 export default class Home_Overview extends Component {

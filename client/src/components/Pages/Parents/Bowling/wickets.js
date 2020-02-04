@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 
-import Container from "../../../Template/Page/Container";
-import SectionContainer from "../../../Template/Global/SectionContainer";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
+// Template
+import PageContaner from "../../../Template/Page/Containers/PageContainer"; 
 
 // Sections
-import BowlingWicketsTextBasics from "./Sections/Section_Bowling_Wickets_Basics";
-import WicketsByMonth from "./Sections/Section_Bowling_Wickets_BarByMonthOverYear";
-
-
-import InteractiveWicketsOverYears from "./Sections/Section_Bowling_Wickets_OverRuns_By_Oppo";
-import SectionWicketsOverTheYearsLineGraph from "./Sections/Section_WicketsOverTheYears_LineGraph";
+import BowlingWicketsTextBasics from "./Sections/Wickets/Section_Bowling_Wickets_Basics";
+import WicketsByMonth from "./Sections/Wickets/Section_Bowling_Wickets_BarByMonthOverYear";
+import InteractiveWicketsOverYears from "./Sections/Wickets/Section_Bowling_Wickets_OverRuns_By_Oppo";
+import SectionWicketsOverTheYearsLineGraph from "./Sections/Wickets/Section_WicketsOverTheYears_LineGraph";
 
 export default class Batting extends Component {
 
@@ -20,27 +17,22 @@ export default class Batting extends Component {
  
     const SITELABELS = this.props.LABELS.SITE;
     const PRIMARY = this.props.PLAYER_DATA.Primary;
-    
-    return ( 
-      <Container> 
-        <SectionHeader   h1={SITELABELS.SUBS.WICKETS} h2={SITELABELS.TITLES.BOWLING}  /> 
-          
-          <SectionContainer  className="Section_Bowling_Wickets Compelete"> 
-             <BowlingWicketsTextBasics TITLE={SITELABELS} DATA={PRIMARY.CAREER.Career.bowling} />
-          </SectionContainer>
+    const Components =[
+      {
+        COMP:<BowlingWicketsTextBasics TITLE={SITELABELS} DATA={PRIMARY.CAREER.Bowling} />,
+        CLASS:"Section_Bowling_Wickets Compelete"
+      },{
+        COMP:<WicketsByMonth   TITLE={SITELABELS} DATA={PRIMARY.CAREER.Bowling}  PathOpt={this.props.DATA_SETUP} />,
+        CLASS:"Section_Bowling_Wickets Compelete"
+      },{
+        COMP:<SectionWicketsOverTheYearsLineGraph TITLE={SITELABELS} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY}/>,
+        CLASS:"Section_Bowling_Wickets Compelete"
+      },{
+        COMP:<InteractiveWicketsOverYears DATA={PRIMARY} TITLE={SITELABELS} {... this.props}/>,
+        CLASS:"Section_Bowling_Wickets Compelete"
+      }
+    ]
 
-          <SectionContainer  className="Section_Bowling_Wickets Compelete">
-            <WicketsByMonth   TITLE={SITELABELS} DATA={PRIMARY.CAREER.Career.bowling}  PathOpt={this.props.DATA_SETUP} />
-          </SectionContainer>
-
-          <SectionContainer  className="Section_Bowling_Wickets Compelete">
-            <SectionWicketsOverTheYearsLineGraph TITLE={SITELABELS} DATA={PRIMARY.CLEAN} PRIMARY={PRIMARY}/>
-          </SectionContainer>
-
-          <SectionContainer className="Section_Bowling_Wickets complete">
-            <InteractiveWicketsOverYears DATA={PRIMARY} TITLE={SITELABELS} {... this.props}/>
-          </SectionContainer>
-    </Container> 
-    )
+    return ( <PageContaner Titles={[SITELABELS.SUBS.WICKETS,SITELABELS.TITLES.BOWLING]} Components={Components} /> )
   }
 }

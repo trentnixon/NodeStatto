@@ -9,21 +9,19 @@
 import React, { Component } from 'react';
 
 // Template
-import Container from "../../../Template/Page/Container";
-import SectionHeader from "../../../Template/Global/Section_Global_Header";
-import SectionContainer from "../../../Template/Global/SectionContainer";
+import Container from "../../../Template/Page/Containers/Container";
+import SectionHeader from "../../../Template/Page/Structure/Structure_Page_Header_Main";
+import SectionContainer from "../../../Template/Page/Structure/Structure_IsVisable_Container";
 import Row from "../../../Template/Page/Row";
-import Pod from "../../../Elements/pods/Pod_Outer_Wrapper";
+import Pod from "../../../Template/Page/Structure/Pods/PodType/Pod_Basic";
 import DataTable from "./Sections/ForAgainst/Section_Table_ForAgainst";
-//import PageHeader from "../../../Template/Page/Header";
 
 // Icons
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleIconOutline from '@material-ui/icons/PeopleOutline';
 
 // UI
-//import SectionContainer from "../../../Template/Global/SectionContainer";
-import Tabber from "../../../Template/Tabber/TabContaner";
+import Tabber from "../../../Venders/MaterialUI/Tabber/TabContaner";
 
 // Form   
 // Select
@@ -86,7 +84,7 @@ export default class Page_ForandAgainstMajorTable extends Component {
         Created: Math.round((new Date()).getTime() / 1000),
         Value:this.state.stats[Int].Title,
         SelectedStat:this.state.stats[Int].Name[0],
-        AGAINST:AGAINST,
+        AGAINST:AGAINST, 
         FOR:FOR
     })
   } 
@@ -94,13 +92,12 @@ export default class Page_ForandAgainstMajorTable extends Component {
   handleRadioChange = event => {
     this.setState({ RadioValue: event.target.value });
   };
-  componentWillMount() { 
+  componentWillMount() {  
     
     TITLES = this.props.LABELS 
-    PRIMARY = this.props.PLAYER_DATA.Primary; 
-
-    let  AGAINST = _.orderBy(PRIMARY.AGAINST, ["Innings"],['desc']);
-    let  FOR = _.orderBy(PRIMARY.FOR, ["Innings"],['desc']);
+    PRIMARY = this.props.PLAYER_DATA.Primary;
+    let  AGAINST = _.orderBy(PRIMARY.FORAGAINST.Against, ["Innings"],['desc']);
+    let  FOR = _.orderBy(PRIMARY.FORAGAINST.For, ["Innings"],['desc']);
     this.setState({ AGAINST: AGAINST,FOR:FOR })
   }
 
